@@ -68,14 +68,15 @@
                 n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js'),
                 n(/*! whatwg-fetch */ './node_modules/whatwg-fetch/fetch.js'),
                 n(/*! url-polyfill */ './node_modules/url-polyfill/url-polyfill.js');
-            var o = i(n(/*! ./utilities */ './js/utilities.js')),
-                r = i(n(/*! ./components/algolia */ './js/components/algolia.js')),
-                s = i(n(/*! ./build_tools/path */ './js/build_tools/path.js')),
-                a = i(n(/*! ./components/lucid_banner/lucid-banner */ './js/components/lucid_banner/lucid-banner.js'));
-            function i(e) {
+            var o = c(n(/*! ./utilities */ './js/utilities.js')),
+                r = c(n(/*! ./components/autocomplete/autocomplete */ './js/components/autocomplete/autocomplete.js')),
+                s = c(n(/*! ./components/algolia */ './js/components/algolia.js')),
+                a = c(n(/*! ./build_tools/path */ './js/build_tools/path.js')),
+                i = c(n(/*! ./components/lucid_banner/lucid-banner */ './js/components/lucid_banner/lucid-banner.js'));
+            function c(e) {
                 return e && e.__esModule ? e : {default: e};
             }
-            function c(e, t, n, o, r, s, a) {
+            function u(e, t, n, o, r, s, a) {
                 try {
                     var i = e[s](a),
                         c = i.value;
@@ -84,49 +85,50 @@
                 }
                 i.done ? t(c) : Promise.resolve(c).then(o, r);
             }
-            function u(e) {
+            function l(e) {
                 return function () {
                     var t = this,
                         n = arguments;
                     return new Promise(function (o, r) {
                         var s = e.apply(t, n);
                         function a(e) {
-                            c(s, o, r, a, i, 'next', e);
+                            u(s, o, r, a, i, 'next', e);
                         }
                         function i(e) {
-                            c(s, o, r, a, i, 'throw', e);
+                            u(s, o, r, a, i, 'throw', e);
                         }
                         a(void 0);
                     });
                 };
             }
-            function l(e, t) {
+            function d(e, t) {
                 for (var n = 0; n < t.length; n++) {
                     var o = t[n];
                     (o.enumerable = o.enumerable || !1), (o.configurable = !0), 'value' in o && (o.writable = !0), Object.defineProperty(e, o.key, o);
                 }
             }
-            var d = new s.default(),
-                m = n(/*! dayjs */ './node_modules/dayjs/dayjs.min.js'),
-                f = n(/*! dayjs/plugin/customParseFormat */ './node_modules/dayjs/plugin/customParseFormat.js');
-            m.extend(f);
-            var p = new o.default(),
-                h = new r.default(),
-                y = (function () {
+            var m = 'hotelsforhope.com',
+                p = new a.default(),
+                f = n(/*! dayjs */ './node_modules/dayjs/dayjs.min.js'),
+                h = n(/*! dayjs/plugin/customParseFormat */ './node_modules/dayjs/plugin/customParseFormat.js');
+            f.extend(h);
+            var y = new o.default(),
+                g = new s.default(),
+                v = (function () {
                     function e(t) {
                         !(function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e),
                             (this.site_id = ''),
-                            (this.page_name = p.getPageName()),
+                            (this.page_name = y.getPageName()),
                             (this.site_config = t),
                             (this.currency = ''),
                             (this.svg_arrow =
                                 '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'),
                             (this.map_loaded = !1),
-                            (this.selected_currency = p.getMetaTagContent('currency') ? p.getMetaTagContent('currency') : 'USD');
+                            (this.selected_currency = y.getMetaTagContent('currency') ? y.getMetaTagContent('currency') : 'USD');
                     }
-                    var t, n, o, r, s, i, c, f, y, g, v, _, j, b;
+                    var t, n, o, s, a, c, u, h, v, _, j, b, S, w;
                     return (
                         (t = e),
                         (n = [
@@ -136,29 +138,29 @@
                                     var e = this;
                                     this.site_config || console.error('No site config found.'),
                                         this.initializeARNRatesReadyEvent(),
-                                        p.ieForEachPolyfill(),
+                                        y.ieForEachPolyfill(),
                                         this.getSiteID().then(
                                             (function () {
-                                                var t = u(
+                                                var t = l(
                                                     regeneratorRuntime.mark(function t(n) {
                                                         return regeneratorRuntime.wrap(function (t) {
                                                             for (;;)
                                                                 switch ((t.prev = t.next)) {
                                                                     case 0:
                                                                         return (
-                                                                            p.getPageName(),
+                                                                            y.getPageName(),
                                                                             e.applyConfigStyles(),
                                                                             e.setupDatePrompt(),
                                                                             e.showLanguageFromCongif(),
                                                                             e.showFilters(),
                                                                             e.buildMobileMenu(),
-                                                                            p.createHTML(
+                                                                            y.createHTML(
                                                                                 '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
                                                                                 'head',
                                                                                 'beforeEnd'
                                                                             ),
                                                                             (t.next = 9),
-                                                                            p.createHTML(
+                                                                            y.createHTML(
                                                                                 '<header><a class="logo" href="'
                                                                                     .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
                                                                                     .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
@@ -168,14 +170,14 @@
                                                                         );
                                                                     case 9:
                                                                         'cug' === e.site_config.site_type &&
-                                                                            p.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                                u(
+                                                                            y.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                                l(
                                                                                     regeneratorRuntime.mark(function e() {
                                                                                         return regeneratorRuntime.wrap(function (e) {
                                                                                             for (;;)
                                                                                                 switch ((e.prev = e.next)) {
                                                                                                     case 0:
-                                                                                                        p.appendToParent('#commands', 'header');
+                                                                                                        y.appendToParent('#commands', 'header');
                                                                                                     case 1:
                                                                                                     case 'end':
                                                                                                         return e.stop();
@@ -184,14 +186,14 @@
                                                                                     })
                                                                                 )
                                                                             ),
-                                                                            p.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
+                                                                            y.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
                                                                             'property-detail' === e.page_name &&
                                                                                 (e.addImageSlideshow(),
                                                                                 e.updateAmenitiesLegendTag(),
-                                                                                p.updateHTML('.SinglePropDetail .Map a', 'Map'),
-                                                                                p.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
-                                                                                p.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
-                                                                                p.updateHTML('.SinglePropDetail .Details a', 'General Info'),
+                                                                                y.updateHTML('.SinglePropDetail .Map a', 'Map'),
+                                                                                y.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
+                                                                                y.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
+                                                                                y.updateHTML('.SinglePropDetail .Details a', 'General Info'),
                                                                                 e.isPropByGateway(
                                                                                     e.site_config.exclusive_rate_text,
                                                                                     e.site_config.host_hotel_text,
@@ -204,80 +206,86 @@
                                                                                         e.showFullStayAndNightlyRates(t, n);
                                                                                     });
                                                                                 }),
-                                                                                p.moveElementIntoExistingWrapper(
+                                                                                y.moveElementIntoExistingWrapper(
                                                                                     '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
                                                                                     '.SinglePropDetail .ArnPropAddress',
                                                                                     'afterEnd'
                                                                                 ),
-                                                                                p.moveElementIntoExistingWrapper(
+                                                                                y.moveElementIntoExistingWrapper(
                                                                                     'div.subHeaderContainer > div > a > span.translateMe',
                                                                                     '.SinglePropDetail .ArnLeftListContainer',
                                                                                     'afterBegin'
                                                                                 ),
                                                                                 e.showOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
                                                                             'checkout' === e.page_name &&
-                                                                                (p.createModal(
-                                                                                    [document.querySelector('#theStayPolicies')],
-                                                                                    'Policies & Fees',
-                                                                                    'checkout',
-                                                                                    '#theConfirmationContainer',
-                                                                                    'afterBegin'
-                                                                                ),
-                                                                                p.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
-                                                                                p.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                                p.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
-                                                                                p.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
-                                                                                p.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
-                                                                                p.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
-                                                                                p.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
-                                                                                p.updateHTML('#theCharges legend', 'Rate Info'),
-                                                                                p.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
-                                                                                p.updateHTML('#theHotel legend', 'Reservation Summary'),
-                                                                                e.formatCheckoutForm(),
+                                                                                ('52342' !== e.site_id &&
+                                                                                    y.createModal(
+                                                                                        [document.querySelector('#theStayPolicies')],
+                                                                                        'Policies & Fees',
+                                                                                        'checkout',
+                                                                                        '#theConfirmationContainer',
+                                                                                        'afterBegin'
+                                                                                    ),
+                                                                                y.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
+                                                                                y.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
+                                                                                y.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
+                                                                                y.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
+                                                                                y.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
+                                                                                y.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
+                                                                                y.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
+                                                                                y.updateHTML('#theCharges legend', 'Rate Info'),
+                                                                                y.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
+                                                                                y.updateHTML('#theHotel legend', 'Reservation Summary'),
                                                                                 e.setupReservationSummaryContainer(),
-                                                                                p.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
+                                                                                y.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
                                                                                 e.fixCheckoutInputTabOrder(),
-                                                                                p.selectCheckboxOnLabelClick(
+                                                                                y.selectCheckboxOnLabelClick(
                                                                                     '.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax'
                                                                                 )),
                                                                             'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
+                                                                            'terms-conditions' === e.page_name && e.setCurrentYearOnElement('#year'),
                                                                             document.querySelector('.RootBody') &&
-                                                                                (h.init(e.site_config, e.page_name, p),
+                                                                                (e.site_config.use_google_autocomplete
+                                                                                    ? new r.default(e.site_config, e.page_name)
+                                                                                    : g.init(e.site_config, e.page_name, y),
                                                                                 e.buildCurrencyDropdown(),
-                                                                                p.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
-                                                                                p.createHTML(
+                                                                                y.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
+                                                                                y.createHTML(
                                                                                     '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
                                                                                     '.RootBody .ArnPrimarySearchContainer',
                                                                                     'beforeBegin'
                                                                                 ),
-                                                                                p.moveOrphanedElementsIntoNewWrapper(
+                                                                                y.moveOrphanedElementsIntoNewWrapper(
                                                                                     [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
                                                                                     'root-search-container',
                                                                                     '.RootBody .ArnSearchContainerMainDiv',
                                                                                     'afterBegin'
                                                                                 ),
-                                                                                p.moveElementIntoExistingWrapper(
+                                                                                y.moveElementIntoExistingWrapper(
                                                                                     '.ArnSecondarySearchOuterContainer',
                                                                                     '.ArnPrimarySearchContainer',
                                                                                     'beforeEnd'
                                                                                 ),
-                                                                                p.selectCheckboxOnLabelClick('.ArnSearchField div')),
-                                                                            p.updateHTML('#thePassCodeAjax label', 'Promocode'),
-                                                                            p.updateHTML('#theUserNameAjax label', 'Username/Email'),
-                                                                            p.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
-                                                                            p.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
-                                                                            p.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
-                                                                            p.createHTML(
+                                                                                y.selectCheckboxOnLabelClick('.ArnSearchField div')),
+                                                                            y.updateHTML('#thePassCodeAjax label', 'Promocode'),
+                                                                            y.updateHTML('#theUserNameAjax label', 'Username/Email'),
+                                                                            y.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
+                                                                            y.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
+                                                                            y.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
+                                                                            y.createHTML(
                                                                                 '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
                                                                                 '#theWBLoginFormBody .ForgotPasswordAction',
                                                                                 'afterEnd'
                                                                             ),
                                                                             'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                             'search-results' === e.page_name &&
-                                                                                (h.init(e.site_config, e.page_name, p), e.showOriginalPrice('.ArnProperty', '.arnPrice')),
+                                                                                (e.site_config.use_google_autocomplete
+                                                                                    ? new r.default(e.site_config, e.page_name)
+                                                                                    : g.init(e.site_config, e.page_name, y),
+                                                                                e.showOriginalPrice('.ArnProperty', '.arnPrice')),
                                                                             jQuery('#theBody').on(
                                                                                 'arnMapLoadedEvent',
-                                                                                u(
+                                                                                l(
                                                                                     regeneratorRuntime.mark(function t() {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -286,7 +294,7 @@
                                                                                                         return (
                                                                                                             (e.map_loaded = !0),
                                                                                                             (t.next = 3),
-                                                                                                            p.waitForSelectorInDOM('.pollingFinished')
+                                                                                                            y.waitForSelectorInDOM('.pollingFinished')
                                                                                                         );
                                                                                                     case 3:
                                                                                                         document.querySelector('.leaflet-control-scale-line') ||
@@ -304,7 +312,7 @@
                                                                             ),
                                                                             jQuery(document).on(
                                                                                 'ratesReadyEvent',
-                                                                                u(
+                                                                                l(
                                                                                     regeneratorRuntime.mark(function t() {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
@@ -329,9 +337,9 @@
                                                                                     })
                                                                                 )
                                                                             ),
-                                                                            p.waitForSelectorInDOM('.pollingFinished').then(
+                                                                            y.waitForSelectorInDOM('.pollingFinished').then(
                                                                                 (function () {
-                                                                                    var t = u(
+                                                                                    var t = l(
                                                                                         regeneratorRuntime.mark(function t(n) {
                                                                                             return regeneratorRuntime.wrap(function (t) {
                                                                                                 for (;;)
@@ -340,7 +348,7 @@
                                                                                                             if (
                                                                                                                 ('hold-rooms' === e.page_name &&
                                                                                                                     (e.moveReviewsIntoPropNameContainer(),
-                                                                                                                    p.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
+                                                                                                                    y.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
                                                                                                                 'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
                                                                                                             ) {
                                                                                                                 t.next = 3;
@@ -365,55 +373,55 @@
                                                                                                                 e.showSearchContainerOnMobile(),
                                                                                                                 e.moveFooterOutOfSearchContainer(),
                                                                                                                 e.moveReviewsIntoPropNameContainer(),
-                                                                                                                p.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
+                                                                                                                y.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
                                                                                                                 e.movePropClassBelowPropName(),
-                                                                                                                p.selectCheckboxOnLabelClick('.ArnSearchField div'),
-                                                                                                                p.updateHTML('#ShowHotelOnMap', 'Open Map'),
-                                                                                                                p.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                                p.updateHTML('.lblRating', 'Stars'),
-                                                                                                                p.updateHTML('.lblCurrency', 'Currency'),
-                                                                                                                p.updateHTML('.lblAmenities', 'Amenities'),
-                                                                                                                p.updateHTML('.lblNearbyCities', 'Nearby Cities'),
-                                                                                                                p.updateHTML('.lblPropertyType', 'Property Type'),
-                                                                                                                p.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
-                                                                                                                p.updateHTML('.ArnSearchHeader', 'Update Search'),
-                                                                                                                p.moveElementIntoExistingWrapper(
+                                                                                                                y.selectCheckboxOnLabelClick('.ArnSearchField div'),
+                                                                                                                y.updateHTML('#ShowHotelOnMap', 'Open Map'),
+                                                                                                                y.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
+                                                                                                                y.updateHTML('.lblRating', 'Stars'),
+                                                                                                                y.updateHTML('.lblCurrency', 'Currency'),
+                                                                                                                y.updateHTML('.lblAmenities', 'Amenities'),
+                                                                                                                y.updateHTML('.lblNearbyCities', 'Nearby Cities'),
+                                                                                                                y.updateHTML('.lblPropertyType', 'Property Type'),
+                                                                                                                y.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
+                                                                                                                y.updateHTML('.ArnSearchHeader', 'Update Search'),
+                                                                                                                y.moveElementIntoExistingWrapper(
                                                                                                                     '.ArnPropClass',
                                                                                                                     '.ArnPropName',
                                                                                                                     'beforeEnd'
                                                                                                                 ),
-                                                                                                                p.moveElementIntoExistingWrapper(
+                                                                                                                y.moveElementIntoExistingWrapper(
                                                                                                                     '#theOtherSubmitButton',
                                                                                                                     '.ArnSecondarySearchOuterContainer',
                                                                                                                     'beforeEnd'
                                                                                                                 ),
                                                                                                                 (t.next = 31),
-                                                                                                                p.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
-                                                                                                                    p.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                                                                                                                y.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
+                                                                                                                    y.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
                                                                                                                 })
                                                                                                             );
                                                                                                         case 31:
                                                                                                             return (
                                                                                                                 (t.next = 33),
-                                                                                                                p.waitForSelectorInDOM('.ArnSortContainer').then(function () {
-                                                                                                                    p.createWrapper(
+                                                                                                                y.waitForSelectorInDOM('.ArnSortContainer').then(function () {
+                                                                                                                    y.createWrapper(
                                                                                                                         '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
                                                                                                                         '.ArnSecondarySearchOuterContainer',
                                                                                                                         'sort-wrapper',
                                                                                                                         'afterBegin'
                                                                                                                     ).then(function () {
                                                                                                                         e.createMobileSortAndFilter(),
-                                                                                                                            p.createHTML(
+                                                                                                                            y.createHTML(
                                                                                                                                 '<h4>Sort</h4>',
                                                                                                                                 '.sort-wrapper',
                                                                                                                                 'afterBegin'
                                                                                                                             ),
-                                                                                                                            p.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                            y.matchMediaQuery('min-width: 1105px') &&
                                                                                                                                 document.body.insertAdjacentHTML(
                                                                                                                                     'afterBegin',
                                                                                                                                     '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
                                                                                                                                 ),
-                                                                                                                            p.matchMediaQuery('max-width: 800px') &&
+                                                                                                                            y.matchMediaQuery('max-width: 800px') &&
                                                                                                                                 document.body.insertAdjacentHTML(
                                                                                                                                     'afterBegin',
                                                                                                                                     '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
@@ -426,7 +434,7 @@
                                                                                                                 t.next = 41;
                                                                                                                 break;
                                                                                                             }
-                                                                                                            return (t.next = 37), p.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                            return (t.next = 37), y.waitForSelectorInDOM('#ArnPropertyMap');
                                                                                                         case 37:
                                                                                                             document.querySelector('.leaflet-control-scale-line') ||
                                                                                                                 L.control.scale().addTo(window.ArnMap),
@@ -458,10 +466,7 @@
                                                                             e.showMoreAmenities(),
                                                                             e.appendMemberTokenForCug(),
                                                                             e.hideRemainingRooms(),
-                                                                            e.replaceHTMLWithFile(
-                                                                                'https://static.hotelsforhope.com/ares/html/terms.html',
-                                                                                '.ArnSubPage.ArnTermsConditions'
-                                                                            ),
+                                                                            e.replaceHTMLWithFile(''.concat(p.path, '/html/terms.html'), '.ArnSubPage.ArnTermsConditions'),
                                                                             e.addLinkToLoginFromRegisterPage(),
                                                                             e.setCheckDatesToReadOnlyOnMobile(),
                                                                             e.updateSupportPageText(),
@@ -471,8 +476,9 @@
                                                                                 e.site_config.lodging.event_name,
                                                                                 e.site_config.group_booking_form_url
                                                                             ),
+                                                                            e.applyHybridCompensationModelUpdates(),
                                                                             document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 47:
+                                                                    case 49:
                                                                     case 'end':
                                                                         return t.stop();
                                                                 }
@@ -504,7 +510,7 @@
                             {
                                 key: 'getSiteID',
                                 value:
-                                    ((b = u(
+                                    ((w = l(
                                         regeneratorRuntime.mark(function e() {
                                             return regeneratorRuntime.wrap(
                                                 function (e) {
@@ -529,13 +535,13 @@
                                         })
                                     )),
                                     function () {
-                                        return b.apply(this, arguments);
+                                        return w.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'getCurrency',
                                 value:
-                                    ((j = u(
+                                    ((S = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -561,7 +567,7 @@
                                         })
                                     )),
                                     function () {
-                                        return j.apply(this, arguments);
+                                        return S.apply(this, arguments);
                                     }),
                             },
                             {
@@ -637,11 +643,11 @@
                                 key: 'createMobileSortAndFilter',
                                 value: function () {
                                     if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
-                                        p.updateHTML(
+                                        y.updateHTML(
                                             '.sort',
                                             '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
                                         ),
-                                            p.createHTML(
+                                            y.createHTML(
                                                 '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
                                                 '#searchForm',
                                                 'beforeEnd'
@@ -686,23 +692,23 @@
                                         u = document.querySelector('meta[name="checkIn"]'),
                                         l = document.querySelector('meta[name="checkOut"]'),
                                         d = document.querySelector('meta[name="numberOfAdults"]'),
-                                        f = document.querySelector('meta[name="SearchLocation"]'),
-                                        h = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+                                        m = document.querySelector('meta[name="SearchLocation"]'),
+                                        p = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
                                     u &&
                                         l &&
-                                        f &&
+                                        m &&
                                         d &&
                                         ((e = d.getAttribute('content')),
-                                        (a = f.getAttribute('content')),
+                                        (a = m.getAttribute('content')),
                                         (t = u.getAttribute('content')),
                                         (n = l.getAttribute('content')),
-                                        (i = m(t)),
-                                        (c = m(n)),
+                                        (i = f(t)),
+                                        (c = f(n)),
                                         (('cug' === this.site_config.site_type.toLowerCase() && null !== r.get('destination')) ||
                                             ('retail' === this.site_config.site_type.toLowerCase() && null !== r.get('destination'))) &&
                                             (a = r.get('destination')),
                                         (null !== r.get('destination') && 'location' !== a) || (a = s.get('destination')),
-                                        p.createHTML(
+                                        y.createHTML(
                                             '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
                                                 .concat(a, '</h3>\n                    <span>\n                        <span class="search-dates">')
                                                 .concat(i.format('MMMM D'), ' - ')
@@ -712,14 +718,14 @@
                                             'beforeBegin'
                                         ),
                                         document.querySelector('.show-search-container').addEventListener('click', function () {
-                                            h.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
+                                            p.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
                                         }));
                                 },
                             },
                             {
                                 key: 'buildMobileMenu',
                                 value:
-                                    ((_ = u(
+                                    ((b = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -749,7 +755,7 @@
                                                                     o.classList.toggle('is-active'), t.classList.toggle('active');
                                                                 }),
                                                                 (e.next = 11),
-                                                                p.waitForSelectorInDOM('header')
+                                                                y.waitForSelectorInDOM('header')
                                                             );
                                                         case 11:
                                                             document.querySelector('header').insertAdjacentElement('beforeend', n);
@@ -761,7 +767,7 @@
                                         })
                                     )),
                                     function () {
-                                        return _.apply(this, arguments);
+                                        return b.apply(this, arguments);
                                     }),
                             },
                             {
@@ -774,7 +780,7 @@
                                     window.matchMedia('(max-width:800px)').matches &&
                                         document.querySelector('#theBookingPage') &&
                                         (o.insertAdjacentElement('afterEnd', e),
-                                        p.moveOrphanedElementsIntoNewWrapper(
+                                        y.moveOrphanedElementsIntoNewWrapper(
                                             document.querySelectorAll('#theStayPolicies *'),
                                             'policies-container',
                                             '#theStayPolicies',
@@ -910,10 +916,10 @@
                                         a &&
                                         ((t = r.textContent),
                                         (o = s.textContent),
-                                        (e = m(t).format(this.site_config.dayjs_date_format)),
-                                        (n = m(o).format(this.site_config.dayjs_date_format)),
-                                        p.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
-                                        p.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
+                                        (e = f(t).format(this.site_config.dayjs_date_format)),
+                                        (n = f(o).format(this.site_config.dayjs_date_format)),
+                                        y.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
+                                        y.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
                                 },
                             },
                             {
@@ -923,12 +929,12 @@
                                         t = 0;
                                     e.forEach(function (e) {
                                         (t += 1),
-                                            p.moveElementIntoExistingWrapper(
+                                            y.moveElementIntoExistingWrapper(
                                                 '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
                                                 '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
                                                 'afterEnd'
                                             ),
-                                            p.createWrapper(
+                                            y.createWrapper(
                                                 '.RoomNumber-'
                                                     .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
                                                     .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
@@ -938,7 +944,7 @@
                                                 'billing-details-container',
                                                 'afterEnd'
                                             ),
-                                            p.createWrapper(
+                                            y.createWrapper(
                                                 '.RoomNumber-'
                                                     .concat(t, ' #theCreditCardBillingNameAjax')
                                                     .concat(t, ',\n                .RoomNumber-')
@@ -948,14 +954,17 @@
                                                 'credit-card-details',
                                                 'afterEnd'
                                             ),
-                                            p.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
-                                            p.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
-                                            p.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
-                                            t > 1 && p.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
-                                            p.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
-                                            p.updateHTML(
+                                            y.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
+                                            y.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
+                                            y.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
+                                            t > 1 && y.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
+                                            y.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
+                                            y.updateHTML(
                                                 '.cardNumber label',
-                                                '<div class="creditcards"><img src="https://static.hotelsforhope.com/ares/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
+                                                '<div class="creditcards"><img src="'.concat(
+                                                    p.path,
+                                                    '/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
+                                                )
                                             );
                                     }),
                                         this.keepHeaderConsistentWhenSameAsLastGuestClicked(t);
@@ -967,8 +976,8 @@
                                     document.querySelector('#theCopyInfoAjax input') &&
                                         document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
                                             setTimeout(function () {
-                                                p.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
-                                                    e > 1 && p.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
+                                                y.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
+                                                    e > 1 && y.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
                                             }, 750);
                                         });
                                 },
@@ -979,21 +988,22 @@
                                     var e = document.querySelector('#h4h-styles');
                                     this.site_config &&
                                         e &&
-                                        (p.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
-                                        e.insertAdjacentHTML(
-                                            'beforeend',
-                                            '<link href="'
-                                                .concat(d.path, '/site_configs/')
-                                                .concat(this.site_config.directory_name, '/styles/')
-                                                .concat(this.site_config.site_id, '.css" rel="stylesheet">')
-                                        ));
+                                        (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                        '52342' !== this.site_config.site_id &&
+                                            e.insertAdjacentHTML(
+                                                'beforeend',
+                                                '<link href="'
+                                                    .concat(p.path, '/site_configs/')
+                                                    .concat(this.site_config.directory_name, '/styles/')
+                                                    .concat(this.site_config.site_id, '.css" rel="stylesheet">')
+                                            ));
                                 },
                             },
                             {
                                 key: 'applyDarkTheme',
                                 value: function () {
                                     'light' !== this.site_config.theme.toLowerCase() &&
-                                        document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(d.path, '/styles/dark.css" rel="stylesheet">'));
+                                        document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(p.path, '/styles/dark.css" rel="stylesheet">'));
                                 },
                             },
                             {
@@ -1011,12 +1021,12 @@
                                         u = document.querySelector('input#theCheckIn'),
                                         l = document.querySelector('input#theCheckOut'),
                                         d = new URLSearchParams(window.location.search);
-                                    function f(o, r) {
-                                        (e = m(u.value, o).format('M/D/YYYY')),
-                                            (t = m(l.value, o).format('M/D/YYYY')),
-                                            (n = m(t).diff(m(e), 'days')),
-                                            (e = m(u.value, o).format(r)),
-                                            (t = m(l.value, o).format(r));
+                                    function m(o, r) {
+                                        (e = f(u.value, o).format('M/D/YYYY')),
+                                            (t = f(l.value, o).format('M/D/YYYY')),
+                                            (n = f(t).diff(f(e), 'days')),
+                                            (e = f(u.value, o).format(r)),
+                                            (t = f(l.value, o).format(r));
                                     }
                                     this.site_config &&
                                         i &&
@@ -1042,19 +1052,19 @@
                                                           ? 'standard' !== r || 'standard' === s || s.includes('mandarin')
                                                               ? 'standard' === r || r.includes('mandarin') || 'standard' === s || s.includes('mandarin')
                                                                   ? r.includes('mandarin') && 'standard' !== s
-                                                                      ? f('D/M/YYYY', 'YYYY/M/D')
+                                                                      ? m('D/M/YYYY', 'YYYY/M/D')
                                                                       : r.includes('mandarin') && s.includes('mandarin')
-                                                                      ? f('YYYY/M/D', 'YYYY/M/D')
+                                                                      ? m('YYYY/M/D', 'YYYY/M/D')
                                                                       : r.includes('mandarin') && 'standard' === s
-                                                                      ? f('M/D/YYYY', 'YYYY/M/D')
+                                                                      ? m('M/D/YYYY', 'YYYY/M/D')
                                                                       : 'standard' === r && s.includes('mandarin')
-                                                                      ? f('YYYY/M/D', 'M/D/YYYY')
+                                                                      ? m('YYYY/M/D', 'M/D/YYYY')
                                                                       : 'standard' !== r && s.includes('mandarin')
-                                                                      ? f('YYYY/M/D', 'D/M/YYYY')
-                                                                      : 16980 === o.site_config.affilaite_id && f('D/M/YYYY', 'D/M/YYYY')
-                                                                  : f('D/M/YYYY', 'D/M/YYYY')
-                                                              : f('D/M/YYYY', 'M/D/YYYY')
-                                                          : f('M/D/YYYY', 'D/M/YYYY'),
+                                                                      ? m('YYYY/M/D', 'D/M/YYYY')
+                                                                      : 16980 === o.site_config.affilaite_id && m('D/M/YYYY', 'D/M/YYYY')
+                                                                  : m('D/M/YYYY', 'D/M/YYYY')
+                                                              : m('D/M/YYYY', 'M/D/YYYY')
+                                                          : m('M/D/YYYY', 'D/M/YYYY'),
                                                       'search-results' === o.page_name && (d.set('nights', n), d.set('checkin', e)),
                                                       (window.location.search = d.toString()));
                                               }),
@@ -1076,7 +1086,7 @@
                             {
                                 key: 'buildCurrencyDropdown',
                                 value:
-                                    ((v = u(
+                                    ((j = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t,
                                                 n,
@@ -1089,7 +1099,7 @@
                                                         case 0:
                                                             return (
                                                                 (t = function () {
-                                                                    fetch(''.concat(d.path, '/js/json/currencies.json'))
+                                                                    fetch(''.concat(p.path, '/js/json/currencies.json'))
                                                                         .then(function (e) {
                                                                             if (!e.ok) throw e;
                                                                             return e.json();
@@ -1126,16 +1136,20 @@
                                                                             '<span id="'.concat(r, '"><strong>').concat(r, '</strong> - ').concat(e[r].name, '</span>')
                                                                         );
                                                                     t.insertAdjacentElement('beforeEnd', n),
-                                                                        p.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
+                                                                        y.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
                                                                 }),
                                                                 (o = function () {
                                                                     var e = new URLSearchParams(window.location.search),
                                                                         t = document.querySelector('.dropdown');
                                                                     t &&
                                                                         t.addEventListener('click', function (t) {
-                                                                            (s.selected_currency = t.target.id),
+                                                                            console.log(t),
+                                                                                console.log('after event listener'),
+                                                                                (s.selected_currency = t.target.id),
+                                                                                console.log(s.selected_currency),
                                                                                 s.selected_currency &&
-                                                                                    (document.querySelector('.active-currency').classList.remove('active-currency'),
+                                                                                    (console.log('after early return: !this.selected_currency'),
+                                                                                    document.querySelector('.active-currency').classList.remove('active-currency'),
                                                                                     document.querySelector('#'.concat(t.target.id)).classList.add('active-currency'),
                                                                                     (document.querySelector('#currency-label span').textContent = document.querySelector(
                                                                                         '.active-currency'
@@ -1149,7 +1163,7 @@
                                                                         t = document.querySelector('meta[name="currency"]');
                                                                     if (t) {
                                                                         var n = /\((.*)\)/;
-                                                                        (e = t.content.match(n) ? t.content.match(n)[1] : p.getMetaTagContent('currency')),
+                                                                        (e = t.content.match(n) ? t.content.match(n)[1] : y.getMetaTagContent('currency')),
                                                                             (s.selected_currency = e),
                                                                             document.querySelector('#'.concat(e)).classList.add('active-currency'),
                                                                             (document.querySelector('#currency-label span').textContent = document.querySelector(
@@ -1168,7 +1182,7 @@
                                         })
                                     )),
                                     function () {
-                                        return v.apply(this, arguments);
+                                        return j.apply(this, arguments);
                                     }),
                             },
                             {
@@ -1207,7 +1221,7 @@
                                             o,
                                             r,
                                             s,
-                                            a = p.getMetaTagContent('showFullTotals');
+                                            a = y.getMetaTagContent('showFullTotals');
                                         a ||
                                             (document.querySelector('.SearchHotels') &&
                                                 (document.querySelectorAll('.ArnContainer').forEach(function (t) {
@@ -1276,7 +1290,7 @@
                             {
                                 key: 'getTotalNights',
                                 value:
-                                    ((g = u(
+                                    ((_ = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o, r, s;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -1307,7 +1321,7 @@
                                         })
                                     )),
                                     function () {
-                                        return g.apply(this, arguments);
+                                        return _.apply(this, arguments);
                                     }),
                             },
                             {
@@ -1454,10 +1468,12 @@
                                                         .querySelector('.arnPrice')
                                                         .insertAdjacentHTML(
                                                             'afterEnd',
-                                                            '\n                <a href="https://events.hotelsforhope.com/v6/low-rate-guarantee?siteid='.concat(
-                                                                e.site_id,
-                                                                '&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>\n            '
-                                                            )
+                                                            '\n                <a href="https://events.'
+                                                                .concat(m, '/v6/low-rate-guarantee?siteid=')
+                                                                .concat(
+                                                                    e.site_id,
+                                                                    '&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>\n            '
+                                                                )
                                                         );
                                             });
                                     }
@@ -1466,7 +1482,7 @@
                             {
                                 key: 'replaceLRGForm',
                                 value:
-                                    ((y = u(
+                                    ((v = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -1483,7 +1499,7 @@
                                                                 return (
                                                                     (e.prev = 2),
                                                                     (e.next = 5),
-                                                                    fetch('https://static.hotelsforhope.com/components/lrg-form/lrg-form.html').then(function (e) {
+                                                                    fetch('https://'.concat(m, '/components/lrg-form/lrg-form.html')).then(function (e) {
                                                                         return e.text();
                                                                     })
                                                                 );
@@ -1504,7 +1520,7 @@
                                         })
                                     )),
                                     function () {
-                                        return y.apply(this, arguments);
+                                        return v.apply(this, arguments);
                                     }),
                             },
                             {
@@ -1528,7 +1544,7 @@
                                         return a.apply(this, arguments);
                                     }
                                     function a() {
-                                        return (a = u(
+                                        return (a = l(
                                             regeneratorRuntime.mark(function e() {
                                                 var t;
                                                 return regeneratorRuntime.wrap(
@@ -1581,10 +1597,10 @@
                                         }
                                     }
                                     function c() {
-                                        return l.apply(this, arguments);
+                                        return u.apply(this, arguments);
                                     }
-                                    function l() {
-                                        return (l = u(
+                                    function u() {
+                                        return (u = l(
                                             regeneratorRuntime.mark(function t() {
                                                 return regeneratorRuntime.wrap(function (t) {
                                                     for (;;)
@@ -1616,7 +1632,7 @@
                                             o + 1 === e.length && (t.style.display = 'none'));
                                     }
                                     function m() {
-                                        return (m = u(
+                                        return (m = l(
                                             regeneratorRuntime.mark(function e() {
                                                 var n, r, s;
                                                 return regeneratorRuntime.wrap(function (e) {
@@ -1665,10 +1681,8 @@
                                             'beforeend',
                                             '<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">\n            <meta property="og:type" content="website" >\n            <meta property="og:title" content="'
                                                 .concat(e, '" >\n            <meta property="og:description" content="I just booked my room for ')
-                                                .concat(
-                                                    e,
-                                                    ' through Hotels4Hope and donated to charity!" >\n            <meta property="og:image" content="https://events.hotelsforhope.com/group-event?id='
-                                                )
+                                                .concat(e, ' through Hotels4Hope and donated to charity!" >\n            <meta property="og:image" content="https://events.')
+                                                .concat(m, '/group-event?id=')
                                                 .concat(t, '">')
                                         );
                                 },
@@ -1689,7 +1703,8 @@
                                                         t,
                                                         '&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>\n\n                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for '
                                                     )
-                                                    .concat(e, ' through Hotels4Hope and donated to charity!" data-url="https://events.hotelsforhope.com/group-event?id=')
+                                                    .concat(e, ' through Hotels4Hope and donated to charity!" data-url="https://events.')
+                                                    .concat(m, '/group-event?id=')
                                                     .concat(t, '" data-via="Hotels4Hope" data-show-count="false">Tweet</a>\n                </div>')
                                             );
                                     }
@@ -1853,7 +1868,10 @@
                                         .querySelector('.ArnSupportBottom')
                                         .insertAdjacentHTML(
                                             'beforeend',
-                                            '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="https://static.hotelsforhope.com/ares/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
+                                            '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="'.concat(
+                                                p.path,
+                                                '/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
+                                            )
                                         );
                                 },
                             },
@@ -1861,15 +1879,15 @@
                                 key: 'updateConfirmationCheckBoxes',
                                 value: function () {
                                     'checkout' === this.page_name &&
+                                        '52342' !== this.site_id &&
                                         ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
                                         (document.querySelector(
                                             'span.confirmationAgreement'
-                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.hotelsforhope.com/v6/terms-and-conditions?&siteId='.concat(
-                                            this.site_id,
-                                            '&theme=standard">Terms & Conditions</a> found on this website.'
-                                        )),
-                                        p.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
-                                        p.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
+                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.'
+                                            .concat(m, '/v6/terms-and-conditions?&siteId=')
+                                            .concat(this.site_id, '&theme=standard">Terms & Conditions</a> found on this website.')),
+                                        y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
+                                        y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                         document.querySelector('#policies-fees').addEventListener('click', function () {
                                             document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
                                         }),
@@ -1887,13 +1905,14 @@
                                     if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
                                         var e = window.arnCustomerEmailAddress,
                                             t = this.site_config.confirmation_email_from;
-                                        (null != t && '' !== t) || (t = 'reservations@hotelsforhope.com');
+                                        (null != t && '' !== t) || (t = 'reservations@'.concat(m));
                                         var n = document.querySelector('.supportInfo');
                                         e &&
                                             n &&
                                             n.insertAdjacentHTML(
                                                 'afterEnd',
-                                                '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@hotelsforhope.com"><strong>'
+                                                '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@'
+                                                    .concat(m, '"><strong>')
                                                     .concat(t, '</strong></a> at <strong>')
                                                     .concat(e, '</strong> shortly.</p>\n            </div>\n            ')
                                             );
@@ -1921,17 +1940,17 @@
                                                 d = document.querySelector('.RoomNumber-'.concat(o, ' .cardYear'));
                                             if (!(r && s && a && i && c && u && l && d)) return;
                                             var m = r.tabIndex,
-                                                f = a.tabIndex,
-                                                p = s.tabIndex,
+                                                p = a.tabIndex,
+                                                f = s.tabIndex,
                                                 h = i.tabIndex,
                                                 y = c.tabIndex,
                                                 g = u.tabIndex,
                                                 v = l.tabIndex,
                                                 _ = d.tabIndex;
-                                            r.setAttribute('tabIndex', p),
+                                            r.setAttribute('tabIndex', f),
                                                 a.setAttribute('tabIndex', m),
                                                 s.setAttribute('tabIndex', h),
-                                                i.setAttribute('tabIndex', f),
+                                                i.setAttribute('tabIndex', p),
                                                 c.setAttribute('tabIndex', g),
                                                 u.setAttribute('tabIndex', v),
                                                 l.setAttribute('tabIndex', _),
@@ -1992,7 +2011,7 @@
                             {
                                 key: 'replaceHTMLWithFile',
                                 value:
-                                    ((f = u(
+                                    ((h = l(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             var o, r;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -2005,7 +2024,7 @@
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (o = document.querySelector(n)), (e.next = 5), p.fetchHTMLFromFile(t);
+                                                            return (o = document.querySelector(n)), (e.next = 5), y.fetchHTMLFromFile(t);
                                                         case 5:
                                                             (r = e.sent), (o.innerHTML = r);
                                                         case 7:
@@ -2016,13 +2035,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return f.apply(this, arguments);
+                                        return h.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'appendMemberTokenForCug',
                                 value:
-                                    ((c = u(
+                                    ((u = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o, r;
                                             return regeneratorRuntime.wrap(
@@ -2043,7 +2062,7 @@
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 2:
-                                                                return (t = this.site_config.header.logo_outbound_url), (e.next = 5), p.waitForSelectorInDOM('.logo');
+                                                                return (t = this.site_config.header.logo_outbound_url), (e.next = 5), y.waitForSelectorInDOM('.logo');
                                                             case 5:
                                                                 if (document.querySelector('meta[name="memberToken"]')) {
                                                                     e.next = 7;
@@ -2072,7 +2091,7 @@
                                         })
                                     )),
                                     function () {
-                                        return c.apply(this, arguments);
+                                        return u.apply(this, arguments);
                                     }),
                             },
                             {
@@ -2088,7 +2107,7 @@
                             {
                                 key: 'setCheckDatesToReadOnlyOnMobile',
                                 value:
-                                    ((i = u(
+                                    ((c = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(
@@ -2096,13 +2115,13 @@
                                                     for (;;)
                                                         switch ((e.prev = e.next)) {
                                                             case 0:
-                                                                if (p.matchMediaQuery('max-width: 800px')) {
+                                                                if (y.matchMediaQuery('max-width: 800px')) {
                                                                     e.next = 2;
                                                                     break;
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 2:
-                                                                return (e.next = 4), p.waitForSelectorInDOM('#theCheckIn');
+                                                                return (e.next = 4), y.waitForSelectorInDOM('#theCheckIn');
                                                             case 4:
                                                                 if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
                                                                     e.next = 11;
@@ -2126,7 +2145,7 @@
                                         })
                                     )),
                                     function () {
-                                        return i.apply(this, arguments);
+                                        return c.apply(this, arguments);
                                     }),
                             },
                             {
@@ -2144,7 +2163,7 @@
                             {
                                 key: 'showOriginalPrice',
                                 value:
-                                    ((s = u(
+                                    ((a = l(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             return regeneratorRuntime.wrap(
                                                 function (e) {
@@ -2157,7 +2176,7 @@
                                                                 }
                                                                 return e.abrupt('return');
                                                             case 2:
-                                                                return (e.next = 4), p.waitForSelectorInDOM('.pollingFinished');
+                                                                return (e.next = 4), y.waitForSelectorInDOM('.pollingFinished');
                                                             case 4:
                                                                 document.querySelectorAll(t).forEach(function (e) {
                                                                     if (e.querySelector('div.originalPrice')) {
@@ -2193,7 +2212,7 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return s.apply(this, arguments);
+                                        return a.apply(this, arguments);
                                     }),
                             },
                             {
@@ -2226,7 +2245,7 @@
                             {
                                 key: 'updatePropThumbToFeaturedImage',
                                 value:
-                                    ((r = u(
+                                    ((s = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o;
                                             return regeneratorRuntime.wrap(
@@ -2244,7 +2263,7 @@
                                                                         return t;
                                                                     }),
                                                                     (n = function () {
-                                                                        return (n = u(
+                                                                        return (n = l(
                                                                             regeneratorRuntime.mark(function e(t) {
                                                                                 var n, o;
                                                                                 return regeneratorRuntime.wrap(
@@ -2289,7 +2308,7 @@
                                                                         return n.apply(this, arguments);
                                                                     }),
                                                                     (e.next = 5),
-                                                                    p.waitForSelectorInDOM('.pollingFinished')
+                                                                    y.waitForSelectorInDOM('.pollingFinished')
                                                                 );
                                                             case 5:
                                                                 if ('search-results' === this.page_name) {
@@ -2318,19 +2337,19 @@
                                         })
                                     )),
                                     function () {
-                                        return r.apply(this, arguments);
+                                        return s.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'addGroupBookingBannerBelowHeader',
                                 value: function (e, t) {
-                                    this.site_config.has_group_booking_banner && '' !== this.site_config.group_booking_form_url && (0, a.default)(e, t);
+                                    this.site_config.has_group_booking_banner && '' !== this.site_config.group_booking_form_url && (0, i.default)(e, t);
                                 },
                             },
                             {
                                 key: 'shouldSiteRedirect',
                                 value: function (e, t, n) {
-                                    e && t && 'landing-page' === n && 'search-results' === n && 'property-detail' === n && p.checkForPastDate(e) && (window.location.href = t);
+                                    e && t && 'landing-page' === n && 'search-results' === n && 'property-detail' === n && y.checkForPastDate(e) && (window.location.href = t);
                                 },
                             },
                             {
@@ -2388,12 +2407,46 @@
                                     }
                                 },
                             },
-                        ]) && l(t.prototype, n),
-                        o && l(t, o),
+                            {
+                                key: 'setCurrentYearOnElement',
+                                value: function (e) {
+                                    e && document.querySelector(e) && (document.querySelector(e).textContent = new Date().getFullYear());
+                                },
+                            },
+                            {
+                                key: 'applyHybridCompensationModelUpdates',
+                                value: function () {
+                                    this.site_config.uses_hybrid_compensation_model &&
+                                        'checkout' === this.page_name &&
+                                        (y.replaceSpecificText('.dueNowRow th', /(^|)Due(?=\s|$)/gi, 'Deposit Due'),
+                                        y.replaceSpecificText('.balanceDueRow th', /(^|)Balance(?=\s|$)/gi, 'Future Balance'),
+                                        y.replaceSpecificText('#theConfirmationPoliciesAjax h4:first-child', /(^|)Balance(?=\s|$)/gi, 'Future Balance'));
+                                },
+                            },
+                            {
+                                key: 'addSupportWidget',
+                                value: function () {
+                                    var e = document.querySelector('.supportLink').href;
+                                    if (e) {
+                                        var t = window.matchMedia('(max-width: 1100px)'),
+                                            n = '<div class="contact-float">\n        <a href="'
+                                                .concat(e, '" target="_blank" class="floating-support-icon"><img src="')
+                                                .concat(p.path, '/emails/icons/phone.png"/></a>\n    </div>');
+                                        t.matches &&
+                                            (n = '<div class="contact-float">\n            <a href="'.concat(
+                                                e,
+                                                '" target="_blank" class="floating-support-icon">Contact Us</a>\n        </div>'
+                                            )),
+                                            document.body.insertAdjacentHTML('beforeend', n);
+                                    }
+                                },
+                            },
+                        ]) && d(t.prototype, n),
+                        o && d(t, o),
                         e
                     );
                 })();
-            t.default = y;
+            t.default = v;
         },
     './js/build_tools/path.js':
         /*!********************************!*\
@@ -2401,8 +2454,9 @@
   \********************************/
         /*! no static exports found */ function (e, t, n) {
             'use strict';
-            e.exports = function () {
-                return {path: 'https://dev-static.hotelsforhope.com/ares'};
+            Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0);
+            t.default = function () {
+                return {path: 'https://dev-static.'.concat('hotelsforhope.com', '/ares')};
             };
         },
     './js/components/algolia.js':
@@ -2475,14 +2529,14 @@
                                     l = new URL(window.location.href),
                                     d = new URLSearchParams(l.search),
                                     m = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
-                                function f(e) {
+                                function p(e) {
                                     document.querySelector('.SearchHotels') &&
                                         document.querySelectorAll(e).forEach(function (e) {
                                             e.style.display = 'none';
                                         });
                                 }
-                                function p() {
-                                    return (p = r(
+                                function f() {
+                                    return (f = r(
                                         regeneratorRuntime.mark(function e(t) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -2555,8 +2609,8 @@
                                         c,
                                         l,
                                         d,
-                                        f,
                                         p,
+                                        f,
                                         h = window.location.origin,
                                         j = ''
                                             .concat(h, '/v6/?type=geo&siteid=')
@@ -2571,17 +2625,17 @@
                                     52342 === e.site_id || ('standard' === n.getMetaTagContent('theme') && 16980 !== e.affiliate_id)
                                         ? ((l = a(document.querySelector('input#theCheckIn').value, 'M/D/YYYY').format('M/D/YYYY')),
                                           (d = a(document.querySelector('input#theCheckOut').value, 'M/D/YYYY').format('M/D/YYYY')),
-                                          (f = a(d).diff(a(l), 'days')))
+                                          (p = a(d).diff(a(l), 'days')))
                                         : 'mandarin' === n.getMetaTagContent('theme') || 'tw_mandarin' === n.getMetaTagContent('theme')
                                         ? ((l = a(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('M/D/YYYY')),
                                           (d = a(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('M/D/YYYY')),
-                                          (f = a(d).diff(a(l), 'days')),
+                                          (p = a(d).diff(a(l), 'days')),
                                           (l = a(document.querySelector('input#theCheckIn').value, 'YYYY/M/D').format('YYYY/M/D')),
                                           (d = a(document.querySelector('input#theCheckOut').value, 'YYYY/M/D').format('YYYY/M/D')))
                                         : (16980 === e.affiliate_id || e.site_id,
                                           (l = a(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('M/D/YYYY')),
                                           (d = a(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('M/D/YYYY')),
-                                          (f = a(d).diff(a(l), 'days')),
+                                          (p = a(d).diff(a(l), 'days')),
                                           (l = a(document.querySelector('input#theCheckIn').value, 'D/M/YYYY').format('D/M/YYYY')),
                                           (d = a(document.querySelector('input#theCheckOut').value, 'D/M/YYYY').format('D/M/YYYY'))),
                                         'standard' !== n.getMetaTagContent('theme') &&
@@ -2598,17 +2652,18 @@
                                             destination: {
                                                 key: 'destination',
                                                 value:
-                                                    ((p = 'input#address-input'),
-                                                    null !== document.querySelector(p).value
-                                                        ? document.querySelector(p).value
+                                                    ((f = 'input#address-input'),
+                                                    null !== document.querySelector(f).value
+                                                        ? document.querySelector(f).value
                                                         : m.has('destination')
                                                         ? m.get('destination')
                                                         : void 0),
                                             },
                                             checkin: {key: 'checkin', value: l},
-                                            nights: {key: 'nights', value: f},
+                                            nights: {key: 'nights', value: p},
                                             rooms: {key: 'rooms', value: y('select#rooms')},
                                             adults: {key: 'adults', value: y('select#adults')},
+                                            kids: {key: 'children', value: y('select#kids')},
                                             currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
                                             amenities: {key: 'amenities', value: v('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
                                             stars: {key: 'propertyclasses', value: v('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
@@ -2632,7 +2687,7 @@
                                         (window.location.href = decodeURIComponent(b));
                                 }),
                                     (function (e) {
-                                        p.apply(this, arguments);
+                                        f.apply(this, arguments);
                                     })('input#city'),
                                     'landing-page' === t &&
                                         h(
@@ -2666,7 +2721,7 @@
                                             }
                                         })()),
                                     document.querySelector('input#theSubmitButton').setAttribute('onClick', ''),
-                                    f('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
+                                    p('.ArnGoCitySearch, div.ArnSearchHotelsImg+br, .ArnGoLandmarkSearch, .ArnGoAirportSearch'),
                                     'search-results' === t &&
                                         'cug' !== e.site_type.toLowerCase() &&
                                         'retail' !== e.site_type.toLowerCase() &&
@@ -2676,10 +2731,11 @@
                                         }),
                                     y('select#rooms'),
                                     y('select#adults'),
+                                    y('select#kids'),
                                     (i = 'input#theCheckIn'),
                                     document.querySelector(i) && (document.querySelector(i).required = !0),
                                     jQuery('#theBody').on('arnMapLoadedEvent', function () {
-                                        d.has('locationlabel') || d.has('points') || f('img.arn-green-marker-icon');
+                                        d.has('locationlabel') || d.has('points') || p('img.arn-green-marker-icon');
                                     }),
                                     (c = places({appId: e.algolia_app_id, apiKey: e.algolia_api_key, container: document.querySelector('input#address-input')}).configure({
                                         aroundLatLngViaIP: 'false',
@@ -2698,6 +2754,351 @@
                 );
             })();
             t.default = c;
+        },
+    './js/components/autocomplete/autocomplete.js':
+        /*!****************************************************!*\
+  !*** ./js/components/autocomplete/autocomplete.js ***!
+  \****************************************************/
+        /*! no static exports found */ function (e, t, n) {
+            'use strict';
+            Object.defineProperty(t, '__esModule', {value: !0}),
+                (t.default = void 0),
+                n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
+                n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
+                n(/*! core-js/modules/es6.regexp.search */ './node_modules/core-js/modules/es6.regexp.search.js'),
+                n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js');
+            var o,
+                r = (o = n(/*! ../../utilities */ './js/utilities.js')) && o.__esModule ? o : {default: o};
+            function s(e, t, n, o, r, s, a) {
+                try {
+                    var i = e[s](a),
+                        c = i.value;
+                } catch (e) {
+                    return void n(e);
+                }
+                i.done ? t(c) : Promise.resolve(c).then(o, r);
+            }
+            function a(e, t) {
+                for (var n = 0; n < t.length; n++) {
+                    var o = t[n];
+                    (o.enumerable = o.enumerable || !1), (o.configurable = !0), 'value' in o && (o.writable = !0), Object.defineProperty(e, o.key, o);
+                }
+            }
+            var i = n(/*! dayjs */ './node_modules/dayjs/dayjs.min.js'),
+                c = n(/*! dayjs/plugin/customParseFormat */ './node_modules/dayjs/plugin/customParseFormat.js');
+            i.extend(c);
+            var u = new r.default(),
+                l = (function () {
+                    function e(t, n) {
+                        !(function (e, t) {
+                            if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
+                        })(this, e),
+                            (this.event_params = {
+                                properties: null,
+                                utm_source: null,
+                                utm_campaign: null,
+                                utm_medium: null,
+                                locationlabel: null,
+                                radius: null,
+                                groupid: null,
+                                cid: null,
+                                points: null,
+                            }),
+                            (this.lat = null),
+                            (this.lng = null),
+                            (this.site_config = t),
+                            (this.page_name = n),
+                            (this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content)),
+                            this.sumbitListener(),
+                            this.removeAttribute('input#city', 'required'),
+                            this.insertNewSearchInput(
+                                'landing-page',
+                                'div#CitySearchContainer span',
+                                'beforeEnd',
+                                '<input type="search" id="address-input" placeholder="Destination" required/>'
+                            ),
+                            this.insertNewSearchInput(
+                                'search-results',
+                                'div#theSearchBox',
+                                'afterBegin',
+                                '<span>City Search:</span><input type="search" id="address-input" placeholder="Destination" required/>'
+                            ),
+                            this.googleMapsScript(),
+                            this.resetArnElementAttribute('input#theCheckIn', 'required', !0),
+                            this.resetArnElementAttribute('input#theSubmitButton', 'onClick', ''),
+                            this.retreiveDestinationValueToPrePopulateInput('input#address-input'),
+                            'search-results' === this.page_name &&
+                                'lodging' === this.site_config.site_type.toLowerCase() &&
+                                (this.getEventOriginalParams(this.event_params), this.removeCitySearchForEvent());
+                    }
+                    var t, n, o, r, c;
+                    return (
+                        (t = e),
+                        (n = [
+                            {
+                                key: 'removeCitySearchForEvent',
+                                value: function () {
+                                    (document.querySelector('input#address-input').style.display = 'none'),
+                                        (document.querySelector('#theSearchBox').firstChild.style.display = 'none');
+                                },
+                            },
+                            {
+                                key: 'removeAttribute',
+                                value:
+                                    ((r = regeneratorRuntime.mark(function e(t, n) {
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return (e.next = 2), u.waitForSelectorInDOM(t);
+                                                    case 2:
+                                                        document.querySelector(t).removeAttribute(n);
+                                                    case 3:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })),
+                                    (c = function () {
+                                        var e = this,
+                                            t = arguments;
+                                        return new Promise(function (n, o) {
+                                            var a = r.apply(e, t);
+                                            function i(e) {
+                                                s(a, n, o, i, c, 'next', e);
+                                            }
+                                            function c(e) {
+                                                s(a, n, o, i, c, 'throw', e);
+                                            }
+                                            i(void 0);
+                                        });
+                                    }),
+                                    function (e, t) {
+                                        return c.apply(this, arguments);
+                                    }),
+                            },
+                            {
+                                key: 'insertNewSearchInput',
+                                value: function (e, t, n, o) {
+                                    this.page_name === e && document.querySelector(t).insertAdjacentHTML(n, o);
+                                },
+                            },
+                            {
+                                key: 'resetArnElementAttribute',
+                                value: function (e, t, n) {
+                                    document.querySelector(e) && document.querySelector(e).setAttribute(t, n);
+                                },
+                            },
+                            {
+                                key: 'getDestination',
+                                value: function (e) {
+                                    return '' !== document.querySelector(e).getAttribute('value')
+                                        ? document.querySelector(e).value
+                                        : this.original_params.has('destination')
+                                        ? this.original_params.get('destination')
+                                        : new Error('No destination available');
+                                },
+                            },
+                            {
+                                key: 'getFirstSuggestionOnPressOfEnter',
+                                value: function (e) {
+                                    var t = e.addEventListener;
+                                    e.addEventListener = function (n, o) {
+                                        if ('keydown' === n) {
+                                            var r = o;
+                                            o = function (t) {
+                                                var n = document.getElementsByClassName('pac-item-selected').length;
+                                                if ('Enter' === t.key && !n) {
+                                                    t.preventDefault();
+                                                    var o = new KeyboardEvent('keydown', {key: 'ArrowDown', code: 'ArrowDown', keyCode: 40});
+                                                    r.apply(e, [o]);
+                                                }
+                                                r.apply(e, [t]);
+                                            };
+                                        }
+                                        t.apply(e, [n, o]);
+                                    };
+                                },
+                            },
+                            {
+                                key: 'googleMapsScript',
+                                value: function () {
+                                    var e = this,
+                                        t = document.querySelector('input#address-input'),
+                                        n = new google.maps.places.Autocomplete(t, {types: ['(cities)']});
+                                    this.getFirstSuggestionOnPressOfEnter(t),
+                                        google.maps.event.addListener(n, 'place_changed', function (t) {
+                                            e.onPlaceChanged(n);
+                                        }),
+                                        google.maps.event.addDomListener(t, 'keydown', function (e) {
+                                            13 === e.keyCode && e.preventDefault();
+                                        });
+                                },
+                            },
+                            {
+                                key: 'onPlaceChanged',
+                                value: function (e) {
+                                    var t = e.getPlace();
+                                    (this.lat = t.geometry.location.lat()), (this.lng = t.geometry.location.lng()), (this.destination = this.getDestination('input#address-input'));
+                                },
+                            },
+                            {
+                                key: 'getEventOriginalParams',
+                                value: function (e) {
+                                    for (var t in e) e[t] = this.original_params.get(t);
+                                },
+                            },
+                            {
+                                key: 'getDropdownValue',
+                                value: function (e) {
+                                    var t = document.querySelector(e);
+                                    return document.querySelector('option[value="'.concat(t.value, '"]')).textContent;
+                                },
+                            },
+                            {
+                                key: 'getFilters',
+                                value: function (e, t) {
+                                    var n = '';
+                                    return (
+                                        document.querySelectorAll(e).forEach(function (e) {
+                                            if (!e.classList.contains(t)) {
+                                                if (e.querySelector('input').checked) {
+                                                    var o = e.querySelector('span').textContent;
+                                                    n += ''.concat(o, ',');
+                                                }
+                                                return n;
+                                            }
+                                        }),
+                                        (n = n.length ? n.slice(0, -1) : null)
+                                    );
+                                },
+                            },
+                            {
+                                key: 'getOptionalHotelName',
+                                value: function (e) {
+                                    if ('search-results' === this.page_name && '' !== document.querySelector(e).value) return document.querySelector(e).value;
+                                },
+                            },
+                            {
+                                key: 'retreiveDestinationValueToPrePopulateInput',
+                                value: function (e) {
+                                    if ('search-results' === this.page_name) {
+                                        var t,
+                                            n = new URL(window.location.href),
+                                            o = new URLSearchParams(n.search);
+                                        return (
+                                            (t = o.has('destination')
+                                                ? o.get('destination')
+                                                : this.original_params.has('destination')
+                                                ? this.original_params.get('destination')
+                                                : ''
+                                                      .concat(document.querySelector('span[itemprop="addressLocality"]').textContent, ', ')
+                                                      .concat(document.querySelector('span[itemprop="addressRegion"]').textContent)),
+                                            this.setAndClearInput(e, t),
+                                            t
+                                        );
+                                    }
+                                },
+                            },
+                            {
+                                key: 'setAndClearInput',
+                                value: function (e, t) {
+                                    var n = document.querySelector(e);
+                                    (n.value = t),
+                                        n.addEventListener('click', function () {
+                                            n.value = '';
+                                        });
+                                },
+                            },
+                            {
+                                key: 'appendParamsToURL',
+                                value: function (e, t) {
+                                    for (var n in t) t[n].value && t[n].key && e.searchParams.append(t[n].key, t[n].value);
+                                },
+                            },
+                            {
+                                key: 'setDateFormat',
+                                value: function (e, t, n) {
+                                    var o,
+                                        r,
+                                        s,
+                                        a = document.querySelector('input#theCheckIn').value,
+                                        c = document.querySelector('input#theCheckOut').value;
+                                    return 52342 === n ||
+                                        ('standard' === e && 16980 !== t) ||
+                                        ('Austin' === document.querySelector('span[itemprop="addressLocality"]').textContent && 16980 === t && 'standard' === e)
+                                        ? ((o = i(a, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (r = i(c, 'M/D/YYYY').format('M/D/YYYY')),
+                                          {check_in_value: o, nights: (s = i(r).diff(i(o), 'days'))})
+                                        : 'mandarin' === e || 'tw_mandarin' === e
+                                        ? ((o = i(a, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (r = i(c, 'YYYY/M/D').format('YYYY/M/D')),
+                                          {check_in_value: o, nights: (s = i(r).diff(i(o), 'days'))})
+                                        : ((o = i(a, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (r = i(c, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (s = i(r).diff(i(o), 'days')),
+                                          (o = i(a, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (r = i(c, 'D/M/YYYY').format('D/M/YYYY')),
+                                          {check_in_value: o, nights: s});
+                                },
+                            },
+                            {
+                                key: 'constructUrl',
+                                value: function (e) {
+                                    var t = ''
+                                            .concat(window.location.origin, '/v6/?type=geo&siteid=')
+                                            .concat(document.querySelector('meta[name="siteId"]').content, '&pagesize=10&')
+                                            .concat(this.site_config.distance_unit),
+                                        n = new URL(t);
+                                    this.appendParamsToURL(n, {
+                                        longitude: {key: 'longitude', value: this.lng ? this.lng : this.original_params.get('longitude')},
+                                        latitude: {key: 'latitude', value: this.lat ? this.lat : this.original_params.get('latitude')},
+                                        destination: {key: 'destination', value: this.getDestination('input#address-input')},
+                                        checkin: {key: 'checkin', value: e.check_in_value},
+                                        nights: {key: 'nights', value: e.nights},
+                                        rooms: {key: 'rooms', value: this.getDropdownValue('#rooms')},
+                                        adults: {key: 'adults', value: this.getDropdownValue('#adults')},
+                                        children: {key: 'children', value: this.getDropdownValue('#kids')},
+                                        currency: {key: 'currency', value: u.getMetaTagContent('currency') ? u.getMetaTagContent('currency') : 'USD'},
+                                        amenities: {key: 'amenities', value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                        propertyClasses: {key: 'propertyclasses', value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                        propertyTypes: {key: 'propertytypes', value: this.getFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                        optionalHotel: {key: 'hotelname', value: this.getOptionalHotelName('input#hotelName')},
+                                        memberToken: {key: 'memberToken', value: u.getMetaTagContent('memberToken')},
+                                    }),
+                                        'search-results' === this.page_name &&
+                                            'lodging' === this.site_config.site_type.toLowerCase() &&
+                                            this.appendParamsToURL(n, {
+                                                properties: {key: 'properties', value: this.event_params.properties},
+                                                utm_source: {key: 'utm_source', value: this.event_params.utm_source},
+                                                utm_medium: {key: 'utm_medium', value: this.event_params.utm_medium},
+                                                utm_campaign: {key: 'utm_campaign', value: this.event_params.utm_campaign},
+                                                locationLabel: {key: 'locationlabel', value: this.event_params.locationlabel},
+                                                radius: {key: 'radius', value: this.event_params.radius},
+                                                groupId: {key: 'groupid', value: this.event_params.groupid},
+                                                cid: {key: 'cid', value: this.event_params.cid},
+                                                points: {key: 'points', value: this.event_params.points},
+                                            }),
+                                        (window.location.href = decodeURIComponent(n));
+                                },
+                            },
+                            {
+                                key: 'sumbitListener',
+                                value: function () {
+                                    var e = this;
+                                    document.querySelector('form#searchForm').addEventListener('submit', function (t) {
+                                        t.preventDefault();
+                                        var n = e.setDateFormat(u.getMetaTagContent('theme'), e.site_config.affiliate_id, e.site_config.site_id);
+                                        e.constructUrl(n);
+                                    });
+                                },
+                            },
+                        ]) && a(t.prototype, n),
+                        o && a(t, o),
+                        e
+                    );
+                })();
+            t.default = l;
         },
     './js/components/lucid_banner/lucid-banner.js':
         /*!****************************************************!*\
@@ -2767,7 +3168,7 @@
                                                     )
                                                     .concat(
                                                         n,
-                                                        '">Contact Us</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                        '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
                                                     )
                                             );
                                     case 4:
@@ -2833,7 +3234,7 @@
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, e);
                     }
-                    var t, n, o, i, c, u, l, d, m, f, p, h, y, g, v;
+                    var t, n, o, i, c, u, l, d, m, p, f, h, y, g, v;
                     return (
                         (t = e),
                         (n = [
@@ -2999,7 +3400,7 @@
                             {
                                 key: 'moveOrphanedElementsIntoNewWrapper',
                                 value:
-                                    ((p = r(
+                                    ((f = r(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -3023,13 +3424,13 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return p.apply(this, arguments);
+                                        return f.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'createWrapper',
                                 value:
-                                    ((f = r(
+                                    ((p = r(
                                         regeneratorRuntime.mark(function e(t, n, o, r) {
                                             var s;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -3055,7 +3456,7 @@
                                         })
                                     )),
                                     function (e, t, n, o) {
-                                        return f.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {
@@ -3281,7 +3682,7 @@
                                                                         n = e.text();
                                                                     })
                                                                     .catch(function (e) {
-                                                                        (n = e.toString()), console.error('Could not fetch text from '.concat(t), e.toString());
+                                                                        n = e.toString();
                                                                     })
                                                             );
                                                         case 3:
@@ -3782,16 +4183,16 @@
                         l,
                         d,
                         m,
-                        f = e & c.F,
-                        p = e & c.G,
+                        p = e & c.F,
+                        f = e & c.G,
                         h = e & c.S,
                         y = e & c.P,
                         g = e & c.B,
-                        v = p ? o : h ? o[t] || (o[t] = {}) : (o[t] || {}).prototype,
-                        _ = p ? r : r[t] || (r[t] = {}),
+                        v = f ? o : h ? o[t] || (o[t] = {}) : (o[t] || {}).prototype,
+                        _ = f ? r : r[t] || (r[t] = {}),
                         j = _.prototype || (_.prototype = {});
-                    for (u in (p && (n = t), n))
-                        (d = ((l = !f && v && void 0 !== v[u]) ? v : n)[u]),
+                    for (u in (f && (n = t), n))
+                        (d = ((l = !p && v && void 0 !== v[u]) ? v : n)[u]),
                             (m = g && l ? i(d, o) : y && 'function' == typeof d ? i(Function.call, d) : d),
                             v && a(v, u, d, e & c.U),
                             _[u] != d && s(_, u, m),
@@ -3865,7 +4266,7 @@
                 })();
             e.exports = function (e, t, n) {
                 var m = i(e),
-                    f = !s(function () {
+                    p = !s(function () {
                         var t = {};
                         return (
                             (t[m] = function () {
@@ -3874,7 +4275,7 @@
                             7 != ''[e](t)
                         );
                     }),
-                    p = f
+                    f = p
                         ? !s(function () {
                               var t = !1,
                                   n = /a/;
@@ -3892,10 +4293,10 @@
                               );
                           })
                         : void 0;
-                if (!f || !p || ('replace' === e && !l) || ('split' === e && !d)) {
+                if (!p || !f || ('replace' === e && !l) || ('split' === e && !d)) {
                     var h = /./[m],
                         y = n(a, m, ''[e], function (e, t, n, o, r) {
-                            return t.exec === c ? (f && !r ? {done: !0, value: h.call(t, n, o)} : {done: !0, value: e.call(n, t, o)}) : {done: !1};
+                            return t.exec === c ? (p && !r ? {done: !0, value: h.call(t, n, o)} : {done: !0, value: e.call(n, t, o)}) : {done: !1};
                         }),
                         g = y[0],
                         v = y[1];
@@ -3941,8 +4342,8 @@
                 u = {},
                 l = {};
             ((t = e.exports = function (e, t, n, d, m) {
-                var f,
-                    p,
+                var p,
+                    f,
                     h,
                     y,
                     g = m
@@ -3954,8 +4355,8 @@
                     _ = 0;
                 if ('function' != typeof g) throw TypeError(e + ' is not iterable!');
                 if (s(g)) {
-                    for (f = i(e.length); f > _; _++) if ((y = t ? v(a((p = e[_]))[0], p[1]) : v(e[_])) === u || y === l) return y;
-                } else for (h = g.call(e); !(p = h.next()).done; ) if ((y = r(h, v, p.value, t)) === u || y === l) return y;
+                    for (p = i(e.length); p > _; _++) if ((y = t ? v(a((f = e[_]))[0], f[1]) : v(e[_])) === u || y === l) return y;
+                } else for (h = g.call(e); !(f = h.next()).done; ) if ((y = r(h, v, f.value, t)) === u || y === l) return y;
             }).BREAK = u),
                 (t.RETURN = l);
         },
@@ -4166,16 +4567,16 @@
                 l = n(/*! ./_object-gpo */ './node_modules/core-js/modules/_object-gpo.js'),
                 d = n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('iterator'),
                 m = !([].keys && 'next' in [].keys()),
-                f = function () {
+                p = function () {
                     return this;
                 };
-            e.exports = function (e, t, n, p, h, y, g) {
-                c(n, t, p);
+            e.exports = function (e, t, n, f, h, y, g) {
+                c(n, t, f);
                 var v,
                     _,
                     j,
                     b = function (e) {
-                        if (!m && e in k) return k[e];
+                        if (!m && e in x) return x[e];
                         switch (e) {
                             case 'keys':
                             case 'values':
@@ -4189,28 +4590,28 @@
                     },
                     S = t + ' Iterator',
                     w = 'values' == h,
-                    x = !1,
-                    k = e.prototype,
-                    A = k[d] || k['@@iterator'] || (h && k[h]),
+                    k = !1,
+                    x = e.prototype,
+                    A = x[d] || x['@@iterator'] || (h && x[h]),
                     M = A || b(h),
-                    q = h ? (w ? b('entries') : M) : void 0,
-                    C = ('Array' == t && k.entries) || A;
+                    C = h ? (w ? b('entries') : M) : void 0,
+                    q = ('Array' == t && x.entries) || A;
                 if (
-                    (C && (j = l(C.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || a(j, d, f)),
+                    (q && (j = l(q.call(new e()))) !== Object.prototype && j.next && (u(j, S, !0), o || 'function' == typeof j[d] || a(j, d, p)),
                     w &&
                         A &&
                         'values' !== A.name &&
-                        ((x = !0),
+                        ((k = !0),
                         (M = function () {
                             return A.call(this);
                         })),
-                    (o && !g) || (!m && !x && k[d]) || a(k, d, M),
+                    (o && !g) || (!m && !k && x[d]) || a(x, d, M),
                     (i[t] = M),
-                    (i[S] = f),
+                    (i[S] = p),
                     h)
                 )
-                    if (((v = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: q}), g)) for (_ in v) _ in k || s(k, _, v[_]);
-                    else r(r.P + r.F * (m || x), t, v);
+                    if (((v = {values: w ? M : b('values'), keys: y ? M : b('keys'), entries: C}), g)) for (_ in v) _ in x || s(x, _, v[_]);
+                    else r(r.P + r.F * (m || k), t, v);
                 return v;
             };
         },
@@ -4953,8 +5354,8 @@
                 l = n(/*! ./_global */ './node_modules/core-js/modules/_global.js'),
                 d = l.process,
                 m = l.setImmediate,
-                f = l.clearImmediate,
-                p = l.MessageChannel,
+                p = l.clearImmediate,
+                f = l.MessageChannel,
                 h = l.Dispatch,
                 y = 0,
                 g = {},
@@ -4968,7 +5369,7 @@
                 _ = function (e) {
                     v.call(e.data);
                 };
-            (m && f) ||
+            (m && p) ||
                 ((m = function (e) {
                     for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
                     return (
@@ -4979,7 +5380,7 @@
                         y
                     );
                 }),
-                (f = function (e) {
+                (p = function (e) {
                     delete g[e];
                 }),
                 'process' == n(/*! ./_cof */ './node_modules/core-js/modules/_cof.js')(d)
@@ -4990,8 +5391,8 @@
                     ? (o = function (e) {
                           h.now(a(v, e, 1));
                       })
-                    : p
-                    ? ((s = (r = new p()).port2), (r.port1.onmessage = _), (o = a(s.postMessage, s, 1)))
+                    : f
+                    ? ((s = (r = new f()).port2), (r.port1.onmessage = _), (o = a(s.postMessage, s, 1)))
                     : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
                     ? ((o = function (e) {
                           l.postMessage(e + '', '*');
@@ -5007,7 +5408,7 @@
                               : function (e) {
                                     setTimeout(a(v, e, 1), 0);
                                 })),
-                (e.exports = {set: m, clear: f});
+                (e.exports = {set: m, clear: p});
         },
     './node_modules/core-js/modules/_to-absolute-index.js':
         /*!************************************************************!*\
@@ -5211,9 +5612,9 @@
                 l = n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js').f,
                 d = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js').f,
                 m = n(/*! ./_string-trim */ './node_modules/core-js/modules/_string-trim.js').trim,
-                f = o.Number,
-                p = f,
-                h = f.prototype,
+                p = o.Number,
+                f = p,
+                h = p.prototype,
                 y = 'Number' == s(n(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js')(h)),
                 g = 'trim' in String.prototype,
                 v = function (e) {
@@ -5244,23 +5645,23 @@
                     }
                     return +t;
                 };
-            if (!f(' 0o1') || !f('0b1') || f('+0x1')) {
-                f = function (e) {
+            if (!p(' 0o1') || !p('0b1') || p('+0x1')) {
+                p = function (e) {
                     var t = arguments.length < 1 ? 0 : e,
                         n = this;
-                    return n instanceof f &&
+                    return n instanceof p &&
                         (y
                             ? c(function () {
                                   h.valueOf.call(n);
                               })
                             : 'Number' != s(n))
-                        ? a(new p(v(t)), n, f)
+                        ? a(new f(v(t)), n, p)
                         : v(t);
                 };
                 for (
                     var _,
                         j = n(/*! ./_descriptors */ './node_modules/core-js/modules/_descriptors.js')
-                            ? u(p)
+                            ? u(f)
                             : 'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'.split(
                                   ','
                               ),
@@ -5268,8 +5669,8 @@
                     j.length > b;
                     b++
                 )
-                    r(p, (_ = j[b])) && !r(f, _) && d(f, _, l(p, _));
-                (f.prototype = h), (h.constructor = f), n(/*! ./_redefine */ './node_modules/core-js/modules/_redefine.js')(o, 'Number', f);
+                    r(f, (_ = j[b])) && !r(p, _) && d(p, _, l(f, _));
+                (p.prototype = h), (h.constructor = p), n(/*! ./_redefine */ './node_modules/core-js/modules/_redefine.js')(o, 'Number', p);
             }
         },
     './node_modules/core-js/modules/es6.object.keys.js':
@@ -5320,8 +5721,8 @@
                 l = n(/*! ./_classof */ './node_modules/core-js/modules/_classof.js'),
                 d = n(/*! ./_export */ './node_modules/core-js/modules/_export.js'),
                 m = n(/*! ./_is-object */ './node_modules/core-js/modules/_is-object.js'),
-                f = n(/*! ./_a-function */ './node_modules/core-js/modules/_a-function.js'),
-                p = n(/*! ./_an-instance */ './node_modules/core-js/modules/_an-instance.js'),
+                p = n(/*! ./_a-function */ './node_modules/core-js/modules/_a-function.js'),
+                f = n(/*! ./_an-instance */ './node_modules/core-js/modules/_an-instance.js'),
                 h = n(/*! ./_for-of */ './node_modules/core-js/modules/_for-of.js'),
                 y = n(/*! ./_species-constructor */ './node_modules/core-js/modules/_species-constructor.js'),
                 g = n(/*! ./_task */ './node_modules/core-js/modules/_task.js').set,
@@ -5331,20 +5732,20 @@
                 b = n(/*! ./_user-agent */ './node_modules/core-js/modules/_user-agent.js'),
                 S = n(/*! ./_promise-resolve */ './node_modules/core-js/modules/_promise-resolve.js'),
                 w = c.TypeError,
-                x = c.process,
-                k = x && x.versions,
-                A = (k && k.v8) || '',
+                k = c.process,
+                x = k && k.versions,
+                A = (x && x.v8) || '',
                 M = c.Promise,
-                q = 'process' == l(x),
-                C = function () {},
+                C = 'process' == l(k),
+                q = function () {},
                 L = (r = _.f),
                 E = !!(function () {
                     try {
                         var e = M.resolve(1),
                             t = ((e.constructor = {})[n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
-                                e(C, C);
+                                e(q, q);
                             });
-                        return (q || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
+                        return (C || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
                 T = function (e) {
@@ -5370,7 +5771,7 @@
                                             l = t.domain;
                                         try {
                                             i
-                                                ? (r || (2 == e._h && I(e), (e._h = 1)),
+                                                ? (r || (2 == e._h && D(e), (e._h = 1)),
                                                   !0 === i ? (n = o) : (l && l.enter(), (n = i(o)), l && (l.exit(), (a = !0))),
                                                   n === t.promise ? u(w('Promise-chain cycle')) : (s = T(n)) ? s.call(n, c, u) : c(n))
                                                 : u(o);
@@ -5396,13 +5797,13 @@
                         if (
                             (s &&
                                 ((t = j(function () {
-                                    q
-                                        ? x.emit('unhandledRejection', r, e)
+                                    C
+                                        ? k.emit('unhandledRejection', r, e)
                                         : (n = c.onunhandledrejection)
                                         ? n({promise: e, reason: r})
                                         : (o = c.console) && o.error && o.error('Unhandled promise rejection', r);
                                 })),
-                                (e._h = q || O(e) ? 2 : 1)),
+                                (e._h = C || O(e) ? 2 : 1)),
                             (e._a = void 0),
                             s && t.e)
                         )
@@ -5412,17 +5813,17 @@
                 O = function (e) {
                     return 1 !== e._h && 0 === (e._a || e._c).length;
                 },
-                I = function (e) {
+                D = function (e) {
                     g.call(c, function () {
                         var t;
-                        q ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
+                        C ? k.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
                     });
                 },
-                D = function (e) {
+                I = function (e) {
                     var t = this;
                     t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
                 },
-                F = function (e) {
+                Y = function (e) {
                     var t,
                         n = this;
                     if (!n._d) {
@@ -5433,24 +5834,24 @@
                                 ? v(function () {
                                       var o = {_w: n, _d: !1};
                                       try {
-                                          t.call(e, u(F, o, 1), u(D, o, 1));
+                                          t.call(e, u(Y, o, 1), u(I, o, 1));
                                       } catch (e) {
-                                          D.call(o, e);
+                                          I.call(o, e);
                                       }
                                   })
                                 : ((n._v = e), (n._s = 1), P(n, !1));
                         } catch (e) {
-                            D.call({_w: n, _d: !1}, e);
+                            I.call({_w: n, _d: !1}, e);
                         }
                     }
                 };
             E ||
                 ((M = function (e) {
-                    p(this, M, 'Promise', '_h'), f(e), o.call(this);
+                    f(this, M, 'Promise', '_h'), p(e), o.call(this);
                     try {
-                        e(u(F, this, 1), u(D, this, 1));
+                        e(u(Y, this, 1), u(I, this, 1));
                     } catch (e) {
-                        D.call(this, e);
+                        I.call(this, e);
                     }
                 }),
                 ((o = function (e) {
@@ -5461,7 +5862,7 @@
                         return (
                             (n.ok = 'function' != typeof e || e),
                             (n.fail = 'function' == typeof t && t),
-                            (n.domain = q ? x.domain : void 0),
+                            (n.domain = C ? k.domain : void 0),
                             this._c.push(n),
                             this._a && this._a.push(n),
                             this._s && P(this, !1),
@@ -5474,7 +5875,7 @@
                 })),
                 (s = function () {
                     var e = new o();
-                    (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(D, e, 1));
+                    (this.promise = e), (this.resolve = u(Y, e, 1)), (this.reject = u(I, e, 1));
                 }),
                 (_.f = L = function (e) {
                     return e === M || e === a ? new s(e) : r(e);
@@ -5500,7 +5901,7 @@
                             !(
                                 E &&
                                 n(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
-                                    M.all(e).catch(C);
+                                    M.all(e).catch(q);
                                 })
                             ),
                     'Promise',
@@ -5583,9 +5984,9 @@
                         return o.push.apply(o, t), new (u.apply(e, o))();
                     }
                     var c = n.prototype,
-                        f = r(i(c) ? c : Object.prototype),
-                        p = Function.apply.call(e, f, t);
-                    return i(p) ? p : f;
+                        p = r(i(c) ? c : Object.prototype),
+                        f = Function.apply.call(e, p, t);
+                    return i(f) ? f : p;
                 },
             });
         },
@@ -5655,11 +6056,11 @@
                         if (!c.global) return a(c, u);
                         var l = c.unicode;
                         c.lastIndex = 0;
-                        for (var d, m = [], f = 0; null !== (d = a(c, u)); ) {
-                            var p = String(d[0]);
-                            (m[f] = p), '' === p && (c.lastIndex = s(u, r(c.lastIndex), l)), f++;
+                        for (var d, m = [], p = 0; null !== (d = a(c, u)); ) {
+                            var f = String(d[0]);
+                            (m[p] = f), '' === f && (c.lastIndex = s(u, r(c.lastIndex), l)), p++;
                         }
-                        return 0 === f ? null : m;
+                        return 0 === p ? null : m;
                     },
                 ];
             });
@@ -5680,8 +6081,8 @@
                 l = Math.min,
                 d = Math.floor,
                 m = /\$([$&`']|\d\d?|<[^>]*>)/g,
-                f = /\$([$&`']|\d\d?)/g;
-            n(/*! ./_fix-re-wks */ './node_modules/core-js/modules/_fix-re-wks.js')('replace', 2, function (e, t, n, p) {
+                p = /\$([$&`']|\d\d?)/g;
+            n(/*! ./_fix-re-wks */ './node_modules/core-js/modules/_fix-re-wks.js')('replace', 2, function (e, t, n, f) {
                 return [
                     function (o, r) {
                         var s = e(this),
@@ -5689,12 +6090,12 @@
                         return void 0 !== a ? a.call(o, s, r) : n.call(String(s), o, r);
                     },
                     function (e, t) {
-                        var r = p(n, e, this, t);
+                        var r = f(n, e, this, t);
                         if (r.done) return r.value;
                         var d = o(e),
                             m = String(this),
-                            f = 'function' == typeof t;
-                        f || (t = String(t));
+                            p = 'function' == typeof t;
+                        p || (t = String(t));
                         var y = d.global;
                         if (y) {
                             var g = d.unicode;
@@ -5708,14 +6109,14 @@
                         }
                         for (var j, b = '', S = 0, w = 0; w < v.length; w++) {
                             _ = v[w];
-                            for (var x = String(_[0]), k = u(l(a(_.index), m.length), 0), A = [], M = 1; M < _.length; M++) A.push(void 0 === (j = _[M]) ? j : String(j));
-                            var q = _.groups;
-                            if (f) {
-                                var C = [x].concat(A, k, m);
-                                void 0 !== q && C.push(q);
-                                var L = String(t.apply(void 0, C));
-                            } else L = h(x, m, k, A, q, t);
-                            k >= S && ((b += m.slice(S, k) + L), (S = k + x.length));
+                            for (var k = String(_[0]), x = u(l(a(_.index), m.length), 0), A = [], M = 1; M < _.length; M++) A.push(void 0 === (j = _[M]) ? j : String(j));
+                            var C = _.groups;
+                            if (p) {
+                                var q = [k].concat(A, x, m);
+                                void 0 !== C && q.push(C);
+                                var L = String(t.apply(void 0, q));
+                            } else L = h(k, m, x, A, C, t);
+                            x >= S && ((b += m.slice(S, x) + L), (S = x + k.length));
                         }
                         return b + m.slice(S);
                     },
@@ -5723,7 +6124,7 @@
                 function h(e, t, o, s, a, i) {
                     var c = o + e.length,
                         u = s.length,
-                        l = f;
+                        l = p;
                     return (
                         void 0 !== a && ((a = r(a)), (l = m)),
                         n.call(i, l, function (n, r) {
@@ -5800,8 +6201,8 @@
                 l = n(/*! ./_fails */ './node_modules/core-js/modules/_fails.js'),
                 d = Math.min,
                 m = [].push,
-                f = 'length',
-                p = !l(function () {
+                p = 'length',
+                f = !l(function () {
                     RegExp(4294967295, 'y');
                 });
             n(/*! ./_fix-re-wks */ './node_modules/core-js/modules/_fix-re-wks.js')('split', 2, function (e, t, n, l) {
@@ -5809,11 +6210,11 @@
                 return (
                     (h =
                         'c' == 'abbc'.split(/(b)*/)[1] ||
-                        4 != 'test'.split(/(?:)/, -1)[f] ||
-                        2 != 'ab'.split(/(?:ab)*/)[f] ||
-                        4 != '.'.split(/(.?)(.?)/)[f] ||
-                        '.'.split(/()()/)[f] > 1 ||
-                        ''.split(/.?/)[f]
+                        4 != 'test'.split(/(?:)/, -1)[p] ||
+                        2 != 'ab'.split(/(?:ab)*/)[p] ||
+                        4 != '.'.split(/(.?)(.?)/)[p] ||
+                        '.'.split(/()()/)[p] > 1 ||
+                        ''.split(/.?/)[p]
                             ? function (e, t) {
                                   var r = String(this);
                                   if (void 0 === e && 0 === t) return [];
@@ -5825,19 +6226,19 @@
                                           c = [],
                                           l = (e.ignoreCase ? 'i' : '') + (e.multiline ? 'm' : '') + (e.unicode ? 'u' : '') + (e.sticky ? 'y' : ''),
                                           d = 0,
-                                          p = void 0 === t ? 4294967295 : t >>> 0,
+                                          f = void 0 === t ? 4294967295 : t >>> 0,
                                           h = new RegExp(e.source, l + 'g');
                                       (s = u.call(h, r)) &&
                                       !(
                                           (a = h.lastIndex) > d &&
-                                          (c.push(r.slice(d, s.index)), s[f] > 1 && s.index < r[f] && m.apply(c, s.slice(1)), (i = s[0][f]), (d = a), c[f] >= p)
+                                          (c.push(r.slice(d, s.index)), s[p] > 1 && s.index < r[p] && m.apply(c, s.slice(1)), (i = s[0][p]), (d = a), c[p] >= f)
                                       );
 
                                   )
                                       h.lastIndex === s.index && h.lastIndex++;
-                                  return d === r[f] ? (!i && h.test('')) || c.push('') : c.push(r.slice(d)), c[f] > p ? c.slice(0, p) : c;
+                                  return d === r[p] ? (!i && h.test('')) || c.push('') : c.push(r.slice(d)), c[p] > f ? c.slice(0, f) : c;
                               }
-                            : '0'.split(void 0, 0)[f]
+                            : '0'.split(void 0, 0)[p]
                             ? function (e, t) {
                                   return void 0 === e && 0 === t ? [] : n.call(this, e, t);
                               }
@@ -5853,21 +6254,21 @@
                             if (o.done) return o.value;
                             var u = r(e),
                                 m = String(this),
-                                f = s(u, RegExp),
+                                p = s(u, RegExp),
                                 y = u.unicode,
-                                g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (p ? 'y' : 'g'),
-                                v = new f(p ? u : '^(?:' + u.source + ')', g),
+                                g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (f ? 'y' : 'g'),
+                                v = new p(f ? u : '^(?:' + u.source + ')', g),
                                 _ = void 0 === t ? 4294967295 : t >>> 0;
                             if (0 === _) return [];
                             if (0 === m.length) return null === c(v, m) ? [m] : [];
                             for (var j = 0, b = 0, S = []; b < m.length; ) {
-                                v.lastIndex = p ? b : 0;
+                                v.lastIndex = f ? b : 0;
                                 var w,
-                                    x = c(v, p ? m : m.slice(b));
-                                if (null === x || (w = d(i(v.lastIndex + (p ? 0 : b)), m.length)) === j) b = a(m, b, y);
+                                    k = c(v, f ? m : m.slice(b));
+                                if (null === k || (w = d(i(v.lastIndex + (f ? 0 : b)), m.length)) === j) b = a(m, b, y);
                                 else {
                                     if ((S.push(m.slice(j, b)), S.length === _)) return S;
-                                    for (var k = 1; k <= x.length - 1; k++) if ((S.push(x[k]), S.length === _)) return S;
+                                    for (var x = 1; x <= k.length - 1; x++) if ((S.push(k[x]), S.length === _)) return S;
                                     b = j = w;
                                 }
                             }
@@ -5941,8 +6342,8 @@
                 l = n(/*! ./_shared */ './node_modules/core-js/modules/_shared.js'),
                 d = n(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js'),
                 m = n(/*! ./_uid */ './node_modules/core-js/modules/_uid.js'),
-                f = n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js'),
-                p = n(/*! ./_wks-ext */ './node_modules/core-js/modules/_wks-ext.js'),
+                p = n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js'),
+                f = n(/*! ./_wks-ext */ './node_modules/core-js/modules/_wks-ext.js'),
                 h = n(/*! ./_wks-define */ './node_modules/core-js/modules/_wks-define.js'),
                 y = n(/*! ./_enum-keys */ './node_modules/core-js/modules/_enum-keys.js'),
                 g = n(/*! ./_is-array */ './node_modules/core-js/modules/_is-array.js'),
@@ -5952,24 +6353,24 @@
                 b = n(/*! ./_to-iobject */ './node_modules/core-js/modules/_to-iobject.js'),
                 S = n(/*! ./_to-primitive */ './node_modules/core-js/modules/_to-primitive.js'),
                 w = n(/*! ./_property-desc */ './node_modules/core-js/modules/_property-desc.js'),
-                x = n(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js'),
-                k = n(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
+                k = n(/*! ./_object-create */ './node_modules/core-js/modules/_object-create.js'),
+                x = n(/*! ./_object-gopn-ext */ './node_modules/core-js/modules/_object-gopn-ext.js'),
                 A = n(/*! ./_object-gopd */ './node_modules/core-js/modules/_object-gopd.js'),
                 M = n(/*! ./_object-gops */ './node_modules/core-js/modules/_object-gops.js'),
-                q = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
-                C = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
+                C = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
+                q = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 L = A.f,
-                E = q.f,
-                T = k.f,
+                E = C.f,
+                T = x.f,
                 P = o.Symbol,
                 R = o.JSON,
                 O = R && R.stringify,
-                I = f('_hidden'),
-                D = f('toPrimitive'),
-                F = {}.propertyIsEnumerable,
-                H = l('symbol-registry'),
-                B = l('symbols'),
-                Y = l('op-symbols'),
+                D = p('_hidden'),
+                I = p('toPrimitive'),
+                Y = {}.propertyIsEnumerable,
+                F = l('symbol-registry'),
+                H = l('symbols'),
+                B = l('op-symbols'),
                 N = Object.prototype,
                 U = 'function' == typeof P && !!M.f,
                 $ = o.QObject,
@@ -5979,7 +6380,7 @@
                     u(function () {
                         return (
                             7 !=
-                            x(
+                            k(
                                 E({}, 'a', {
                                     get: function () {
                                         return E(this, 'a', {value: 7}).a;
@@ -5994,7 +6395,7 @@
                           }
                         : E,
                 V = function (e) {
-                    var t = (B[e] = x(P.prototype));
+                    var t = (H[e] = k(P.prototype));
                     return (t._k = e), t;
                 },
                 z =
@@ -6007,12 +6408,12 @@
                           },
                 Q = function (e, t, n) {
                     return (
-                        e === N && Q(Y, t, n),
+                        e === N && Q(B, t, n),
                         v(e),
                         (t = S(t, !0)),
                         v(n),
-                        r(B, t)
-                            ? (n.enumerable ? (r(e, I) && e[I][t] && (e[I][t] = !1), (n = x(n, {enumerable: w(0, !1)}))) : (r(e, I) || E(e, I, w(1, {})), (e[I][t] = !0)),
+                        r(H, t)
+                            ? (n.enumerable ? (r(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: w(0, !1)}))) : (r(e, D) || E(e, D, w(1, {})), (e[D][t] = !0)),
                               G(e, t, n))
                             : E(e, t, n)
                     );
@@ -6023,21 +6424,21 @@
                     return e;
                 },
                 K = function (e) {
-                    var t = F.call(this, (e = S(e, !0)));
-                    return !(this === N && r(B, e) && !r(Y, e)) && (!(t || !r(this, e) || !r(B, e) || (r(this, I) && this[I][e])) || t);
+                    var t = Y.call(this, (e = S(e, !0)));
+                    return !(this === N && r(H, e) && !r(B, e)) && (!(t || !r(this, e) || !r(H, e) || (r(this, D) && this[D][e])) || t);
                 },
                 J = function (e, t) {
-                    if (((e = b(e)), (t = S(t, !0)), e !== N || !r(B, t) || r(Y, t))) {
+                    if (((e = b(e)), (t = S(t, !0)), e !== N || !r(H, t) || r(B, t))) {
                         var n = L(e, t);
-                        return !n || !r(B, t) || (r(e, I) && e[I][t]) || (n.enumerable = !0), n;
+                        return !n || !r(H, t) || (r(e, D) && e[D][t]) || (n.enumerable = !0), n;
                     }
                 },
                 X = function (e) {
-                    for (var t, n = T(b(e)), o = [], s = 0; n.length > s; ) r(B, (t = n[s++])) || t == I || t == c || o.push(t);
+                    for (var t, n = T(b(e)), o = [], s = 0; n.length > s; ) r(H, (t = n[s++])) || t == D || t == c || o.push(t);
                     return o;
                 },
                 ee = function (e) {
-                    for (var t, n = e === N, o = T(n ? Y : b(e)), s = [], a = 0; o.length > a; ) !r(B, (t = o[a++])) || (n && !r(N, t)) || s.push(B[t]);
+                    for (var t, n = e === N, o = T(n ? B : b(e)), s = [], a = 0; o.length > a; ) !r(H, (t = o[a++])) || (n && !r(N, t)) || s.push(H[t]);
                     return s;
                 };
             U ||
@@ -6046,7 +6447,7 @@
                         if (this instanceof P) throw TypeError('Symbol is not a constructor!');
                         var e = m(arguments.length > 0 ? arguments[0] : void 0),
                             t = function (n) {
-                                this === N && t.call(Y, n), r(this, I) && r(this[I], e) && (this[I][e] = !1), G(this, e, w(1, n));
+                                this === N && t.call(B, n), r(this, D) && r(this[D], e) && (this[D][e] = !1), G(this, e, w(1, n));
                             };
                         return s && W && G(N, e, {configurable: !0, set: t}), V(e);
                     }).prototype,
@@ -6056,25 +6457,25 @@
                     }
                 ),
                 (A.f = J),
-                (q.f = Q),
-                (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = X),
+                (C.f = Q),
+                (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = x.f = X),
                 (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = K),
                 (M.f = ee),
                 s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && i(N, 'propertyIsEnumerable', K, !0),
-                (p.f = function (e) {
-                    return V(f(e));
+                (f.f = function (e) {
+                    return V(p(e));
                 })),
                 a(a.G + a.W + a.F * !U, {Symbol: P});
             for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
-                f(te[ne++]);
-            for (var oe = C(f.store), re = 0; oe.length > re; ) h(oe[re++]);
+                p(te[ne++]);
+            for (var oe = q(p.store), re = 0; oe.length > re; ) h(oe[re++]);
             a(a.S + a.F * !U, 'Symbol', {
                 for: function (e) {
-                    return r(H, (e += '')) ? H[e] : (H[e] = P(e));
+                    return r(F, (e += '')) ? F[e] : (F[e] = P(e));
                 },
                 keyFor: function (e) {
                     if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                    for (var t in H) if (H[t] === e) return t;
+                    for (var t in F) if (F[t] === e) return t;
                 },
                 useSetter: function () {
                     W = !0;
@@ -6085,7 +6486,7 @@
             }),
                 a(a.S + a.F * !U, 'Object', {
                     create: function (e, t) {
-                        return void 0 === t ? x(e) : Z(x(e), t);
+                        return void 0 === t ? k(e) : Z(k(e), t);
                     },
                     defineProperty: Q,
                     defineProperties: Z,
@@ -6126,7 +6527,7 @@
                             },
                         }
                     ),
-                P.prototype[D] || n(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, D, P.prototype.valueOf),
+                P.prototype[I] || n(/*! ./_hide */ './node_modules/core-js/modules/_hide.js')(P.prototype, I, P.prototype.valueOf),
                 d(P, 'Symbol'),
                 d(Math, 'Math', !0),
                 d(o.JSON, 'JSON', !0);
@@ -6169,7 +6570,7 @@
                     l = u('iterator'),
                     d = u('toStringTag'),
                     m = c.Array,
-                    f = {
+                    p = {
                         CSSRuleList: !0,
                         CSSStyleDeclaration: !1,
                         CSSValueList: !1,
@@ -6202,14 +6603,14 @@
                         TextTrackList: !1,
                         TouchList: !1,
                     },
-                    p = r(f),
+                    f = r(p),
                     h = 0;
-                h < p.length;
+                h < f.length;
                 h++
             ) {
                 var y,
-                    g = p[h],
-                    v = f[g],
+                    g = f[h],
+                    v = p[g],
                     _ = a[g],
                     j = _ && _.prototype;
                 if (j && (j[l] || i(j, l, m), j[d] || i(j, d, g), (c[g] = m), v)) for (y in o) j[y] || s(j, y, o[y], !0);
@@ -6238,7 +6639,7 @@
                         var o = String(e);
                         return !o || o.length >= t ? e : '' + Array(t + 1 - o.length).join(n) + e;
                     },
-                    f = {
+                    p = {
                         s: m,
                         z: function (e) {
                             var t = -e.utcOffset(),
@@ -6270,14 +6671,14 @@
                             return void 0 === e;
                         },
                     },
-                    p = {
+                    f = {
                         name: 'en',
                         weekdays: 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
                         months: 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
                     },
                     h = 'en',
                     y = {};
-                y[h] = p;
+                y[h] = f;
                 var g = function (e) {
                         return e instanceof b;
                     },
@@ -6296,7 +6697,7 @@
                         var n = 'object' == typeof t ? t : {};
                         return (n.date = e), (n.args = arguments), new b(n);
                     },
-                    j = f;
+                    j = p;
                 (j.l = v),
                     (j.i = g),
                     (j.w = function (e, t) {
@@ -6306,9 +6707,9 @@
                         function m(e) {
                             (this.$L = this.$L || v(e.locale, null, !0)), this.parse(e);
                         }
-                        var f = m.prototype;
+                        var p = m.prototype;
                         return (
-                            (f.parse = function (e) {
+                            (p.parse = function (e) {
                                 (this.$d = (function (e) {
                                     var t = e.date,
                                         n = e.utc;
@@ -6329,7 +6730,7 @@
                                 })(e)),
                                     this.init();
                             }),
-                            (f.init = function () {
+                            (p.init = function () {
                                 var e = this.$d;
                                 (this.$y = e.getFullYear()),
                                     (this.$M = e.getMonth()),
@@ -6340,40 +6741,40 @@
                                     (this.$s = e.getSeconds()),
                                     (this.$ms = e.getMilliseconds());
                             }),
-                            (f.$utils = function () {
+                            (p.$utils = function () {
                                 return j;
                             }),
-                            (f.isValid = function () {
+                            (p.isValid = function () {
                                 return !('Invalid Date' === this.$d.toString());
                             }),
-                            (f.isSame = function (e, t) {
+                            (p.isSame = function (e, t) {
                                 var n = _(e);
                                 return this.startOf(t) <= n && n <= this.endOf(t);
                             }),
-                            (f.isAfter = function (e, t) {
+                            (p.isAfter = function (e, t) {
                                 return _(e) < this.startOf(t);
                             }),
-                            (f.isBefore = function (e, t) {
+                            (p.isBefore = function (e, t) {
                                 return this.endOf(t) < _(e);
                             }),
-                            (f.$g = function (e, t, n) {
+                            (p.$g = function (e, t, n) {
                                 return j.u(e) ? this[t] : this.set(n, e);
                             }),
-                            (f.unix = function () {
+                            (p.unix = function () {
                                 return Math.floor(this.valueOf() / 1e3);
                             }),
-                            (f.valueOf = function () {
+                            (p.valueOf = function () {
                                 return this.$d.getTime();
                             }),
-                            (f.startOf = function (e, i) {
+                            (p.startOf = function (e, i) {
                                 var l = this,
                                     d = !!j.u(i) || i,
                                     m = j.p(e),
-                                    f = function (e, t) {
+                                    p = function (e, t) {
                                         var n = j.w(l.$u ? Date.UTC(l.$y, t, e) : new Date(l.$y, t, e), l);
                                         return d ? n : n.endOf(r);
                                     },
-                                    p = function (e, t) {
+                                    f = function (e, t) {
                                         return j.w(l.toDate()[e].apply(l.toDate('s'), (d ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(t)), l);
                                     },
                                     h = this.$W,
@@ -6382,34 +6783,34 @@
                                     v = 'set' + (this.$u ? 'UTC' : '');
                                 switch (m) {
                                     case c:
-                                        return d ? f(1, 0) : f(31, 11);
+                                        return d ? p(1, 0) : p(31, 11);
                                     case a:
-                                        return d ? f(1, y) : f(0, y + 1);
+                                        return d ? p(1, y) : p(0, y + 1);
                                     case s:
                                         var _ = this.$locale().weekStart || 0,
                                             b = (h < _ ? h + 7 : h) - _;
-                                        return f(d ? g - b : g + (6 - b), y);
+                                        return p(d ? g - b : g + (6 - b), y);
                                     case r:
                                     case u:
-                                        return p(v + 'Hours', 0);
+                                        return f(v + 'Hours', 0);
                                     case o:
-                                        return p(v + 'Minutes', 1);
+                                        return f(v + 'Minutes', 1);
                                     case n:
-                                        return p(v + 'Seconds', 2);
+                                        return f(v + 'Seconds', 2);
                                     case t:
-                                        return p(v + 'Milliseconds', 3);
+                                        return f(v + 'Milliseconds', 3);
                                     default:
                                         return this.clone();
                                 }
                             }),
-                            (f.endOf = function (e) {
+                            (p.endOf = function (e) {
                                 return this.startOf(e, !1);
                             }),
-                            (f.$set = function (s, i) {
+                            (p.$set = function (s, i) {
                                 var l,
                                     d = j.p(s),
                                     m = 'set' + (this.$u ? 'UTC' : ''),
-                                    f = ((l = {}),
+                                    p = ((l = {}),
                                     (l[r] = m + 'Date'),
                                     (l[u] = m + 'Date'),
                                     (l[a] = m + 'Month'),
@@ -6419,20 +6820,20 @@
                                     (l[t] = m + 'Seconds'),
                                     (l[e] = m + 'Milliseconds'),
                                     l)[d],
-                                    p = d === r ? this.$D + (i - this.$W) : i;
+                                    f = d === r ? this.$D + (i - this.$W) : i;
                                 if (d === a || d === c) {
                                     var h = this.clone().set(u, 1);
-                                    h.$d[f](p), h.init(), (this.$d = h.set(u, Math.min(this.$D, h.daysInMonth())).$d);
-                                } else f && this.$d[f](p);
+                                    h.$d[p](f), h.init(), (this.$d = h.set(u, Math.min(this.$D, h.daysInMonth())).$d);
+                                } else p && this.$d[p](f);
                                 return this.init(), this;
                             }),
-                            (f.set = function (e, t) {
+                            (p.set = function (e, t) {
                                 return this.clone().$set(e, t);
                             }),
-                            (f.get = function (e) {
+                            (p.get = function (e) {
                                 return this[j.p(e)]();
                             }),
-                            (f.add = function (e, i) {
+                            (p.add = function (e, i) {
                                 var u,
                                     l = this;
                                 e = Number(e);
@@ -6445,14 +6846,14 @@
                                 if (d === c) return this.set(c, this.$y + e);
                                 if (d === r) return m(1);
                                 if (d === s) return m(7);
-                                var f = ((u = {}), (u[n] = 6e4), (u[o] = 36e5), (u[t] = 1e3), u)[d] || 1,
-                                    p = this.$d.getTime() + e * f;
-                                return j.w(p, this);
+                                var p = ((u = {}), (u[n] = 6e4), (u[o] = 36e5), (u[t] = 1e3), u)[d] || 1,
+                                    f = this.$d.getTime() + e * p;
+                                return j.w(f, this);
                             }),
-                            (f.subtract = function (e, t) {
+                            (p.subtract = function (e, t) {
                                 return this.add(-1 * e, t);
                             }),
-                            (f.format = function (e) {
+                            (p.format = function (e) {
                                 var t = this;
                                 if (!this.isValid()) return 'Invalid Date';
                                 var n = e || 'YYYY-MM-DDTHH:mm:ssZ',
@@ -6469,13 +6870,13 @@
                                     m = function (e) {
                                         return j.s(s % 12 || 12, e, '0');
                                     },
-                                    f =
+                                    p =
                                         r.meridiem ||
                                         function (e, t, n) {
                                             var o = e < 12 ? 'AM' : 'PM';
                                             return n ? o.toLowerCase() : o;
                                         },
-                                    p = {
+                                    f = {
                                         YY: String(this.$y).slice(-2),
                                         YYYY: this.$y,
                                         M: i + 1,
@@ -6492,8 +6893,8 @@
                                         HH: j.s(s, 2, '0'),
                                         h: m(1),
                                         hh: m(2),
-                                        a: f(s, a, !0),
-                                        A: f(s, a, !1),
+                                        a: p(s, a, !0),
+                                        A: p(s, a, !1),
                                         m: String(a),
                                         mm: j.s(a, 2, '0'),
                                         s: String(this.$s),
@@ -6502,27 +6903,27 @@
                                         Z: o,
                                     };
                                 return n.replace(d, function (e, t) {
-                                    return t || p[e] || o.replace(':', '');
+                                    return t || f[e] || o.replace(':', '');
                                 });
                             }),
-                            (f.utcOffset = function () {
+                            (p.utcOffset = function () {
                                 return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
                             }),
-                            (f.diff = function (e, u, l) {
+                            (p.diff = function (e, u, l) {
                                 var d,
                                     m = j.p(u),
-                                    f = _(e),
-                                    p = 6e4 * (f.utcOffset() - this.utcOffset()),
-                                    h = this - f,
-                                    y = j.m(this, f);
+                                    p = _(e),
+                                    f = 6e4 * (p.utcOffset() - this.utcOffset()),
+                                    h = this - p,
+                                    y = j.m(this, p);
                                 return (
                                     (y =
                                         ((d = {}),
                                         (d[c] = y / 12),
                                         (d[a] = y),
                                         (d[i] = y / 3),
-                                        (d[s] = (h - p) / 6048e5),
-                                        (d[r] = (h - p) / 864e5),
+                                        (d[s] = (h - f) / 6048e5),
+                                        (d[r] = (h - f) / 864e5),
                                         (d[o] = h / 36e5),
                                         (d[n] = h / 6e4),
                                         (d[t] = h / 1e3),
@@ -6530,31 +6931,31 @@
                                     l ? y : j.a(y)
                                 );
                             }),
-                            (f.daysInMonth = function () {
+                            (p.daysInMonth = function () {
                                 return this.endOf(a).$D;
                             }),
-                            (f.$locale = function () {
+                            (p.$locale = function () {
                                 return y[this.$L];
                             }),
-                            (f.locale = function (e, t) {
+                            (p.locale = function (e, t) {
                                 if (!e) return this.$L;
                                 var n = this.clone(),
                                     o = v(e, t, !0);
                                 return o && (n.$L = o), n;
                             }),
-                            (f.clone = function () {
+                            (p.clone = function () {
                                 return j.w(this.$d, this);
                             }),
-                            (f.toDate = function () {
+                            (p.toDate = function () {
                                 return new Date(this.valueOf());
                             }),
-                            (f.toJSON = function () {
+                            (p.toJSON = function () {
                                 return this.isValid() ? this.toISOString() : null;
                             }),
-                            (f.toISOString = function () {
+                            (p.toISOString = function () {
                                 return this.$d.toISOString();
                             }),
-                            (f.toString = function () {
+                            (p.toString = function () {
                                 return this.$d.toUTCString();
                             }),
                             m
@@ -6745,17 +7146,17 @@
                                 l = r.minutes,
                                 d = r.seconds,
                                 m = r.milliseconds,
-                                f = r.zone,
-                                p = new Date(),
-                                h = i || (s || a ? 1 : p.getDate()),
-                                y = s || p.getFullYear(),
+                                p = r.zone,
+                                f = new Date(),
+                                h = i || (s || a ? 1 : f.getDate()),
+                                y = s || f.getFullYear(),
                                 g = 0;
-                            (s && !a) || (g = a > 0 ? a - 1 : p.getMonth());
+                            (s && !a) || (g = a > 0 ? a - 1 : f.getMonth());
                             var v = u || 0,
                                 _ = l || 0,
                                 j = d || 0,
                                 b = m || 0;
-                            return f ? new Date(Date.UTC(y, g, h, v, _, j, b + 60 * f.offset * 1e3)) : o ? new Date(Date.UTC(y, g, h, v, _, j, b)) : new Date(y, g, h, v, _, j, b);
+                            return p ? new Date(Date.UTC(y, g, h, v, _, j, b + 60 * p.offset * 1e3)) : o ? new Date(Date.UTC(y, g, h, v, _, j, b)) : new Date(y, g, h, v, _, j, b);
                         } catch (e) {
                             return new Date('');
                         }
@@ -6781,14 +7182,14 @@
                                 m && !0 !== m && (this.$L = this.locale(m).$L),
                                 d && n !== this.format(i) && (this.$d = new Date(''));
                         } else if (i instanceof Array)
-                            for (var f = i.length, p = 1; p <= f; p += 1) {
-                                a[1] = i[p - 1];
+                            for (var p = i.length, f = 1; f <= p; f += 1) {
+                                a[1] = i[f - 1];
                                 var h = o.apply(this, a);
                                 if (h.isValid()) {
                                     (this.$d = h.$d), (this.$L = h.$L), this.init();
                                     break;
                                 }
-                                p === f && (this.$d = new Date(''));
+                                f === p && (this.$d = new Date(''));
                             }
                         else s.call(this, t);
                     };
@@ -6829,7 +7230,7 @@
                                 if ('executing' === o) throw new Error('Generator is already running');
                                 if ('completed' === o) {
                                     if ('throw' === r) throw s;
-                                    return k();
+                                    return x();
                                 }
                                 for (n.method = r, n.arg = s; ; ) {
                                     var a = n.delegate;
@@ -6869,15 +7270,15 @@
                 var l = {};
                 function d() {}
                 function m() {}
-                function f() {}
-                var p = {};
-                p[r] = function () {
+                function p() {}
+                var f = {};
+                f[r] = function () {
                     return this;
                 };
                 var h = Object.getPrototypeOf,
-                    y = h && h(h(x([])));
-                y && y !== t && n.call(y, r) && (p = y);
-                var g = (f.prototype = d.prototype = Object.create(p));
+                    y = h && h(h(k([])));
+                y && y !== t && n.call(y, r) && (f = y);
+                var g = (p.prototype = d.prototype = Object.create(f));
                 function v(e) {
                     ['next', 'throw', 'return'].forEach(function (t) {
                         i(e, t, function (e) {
@@ -6949,7 +7350,7 @@
                 function w(e) {
                     (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(b, this), this.reset(!0);
                 }
-                function x(e) {
+                function k(e) {
                     if (e) {
                         var t = e[r];
                         if (t) return t.call(e);
@@ -6963,21 +7364,21 @@
                             return (s.next = s);
                         }
                     }
-                    return {next: k};
+                    return {next: x};
                 }
-                function k() {
+                function x() {
                     return {value: void 0, done: !0};
                 }
                 return (
-                    (m.prototype = g.constructor = f),
-                    (f.constructor = m),
-                    (m.displayName = i(f, a, 'GeneratorFunction')),
+                    (m.prototype = g.constructor = p),
+                    (p.constructor = m),
+                    (m.displayName = i(p, a, 'GeneratorFunction')),
                     (e.isGeneratorFunction = function (e) {
                         var t = 'function' == typeof e && e.constructor;
                         return !!t && (t === m || 'GeneratorFunction' === (t.displayName || t.name));
                     }),
                     (e.mark = function (e) {
-                        return Object.setPrototypeOf ? Object.setPrototypeOf(e, f) : ((e.__proto__ = f), i(e, a, 'GeneratorFunction')), (e.prototype = Object.create(g)), e;
+                        return Object.setPrototypeOf ? Object.setPrototypeOf(e, p) : ((e.__proto__ = p), i(e, a, 'GeneratorFunction')), (e.prototype = Object.create(g)), e;
                     }),
                     (e.awrap = function (e) {
                         return {__await: e};
@@ -7018,7 +7419,7 @@
                             }
                         );
                     }),
-                    (e.values = x),
+                    (e.values = k),
                     (w.prototype = {
                         constructor: w,
                         reset: function (e) {
@@ -7110,7 +7511,7 @@
                             throw new Error('illegal catch attempt');
                         },
                         delegateYield: function (e, t, n) {
-                            return (this.delegate = {iterator: x(e), resultName: t, nextLoc: n}), 'next' === this.method && (this.arg = void 0), l;
+                            return (this.delegate = {iterator: k(e), resultName: t, nextLoc: n}), 'next' === this.method && (this.arg = void 0), l;
                         },
                     }),
                     e
@@ -7460,7 +7861,7 @@
             'use strict';
             n.r(t),
                 n.d(t, 'Headers', function () {
-                    return p;
+                    return f;
                 }),
                 n.d(t, 'Request', function () {
                     return b;
@@ -7469,7 +7870,7 @@
                     return w;
                 }),
                 n.d(t, 'DOMException', function () {
-                    return k;
+                    return x;
                 }),
                 n.d(t, 'fetch', function () {
                     return A;
@@ -7513,7 +7914,7 @@
             function m(e) {
                 return 'string' != typeof e && (e = String(e)), e;
             }
-            function f(e) {
+            function p(e) {
                 var t = {
                     next: function () {
                         var t = e.shift();
@@ -7528,9 +7929,9 @@
                     t
                 );
             }
-            function p(e) {
+            function f(e) {
                 (this.map = {}),
-                    e instanceof p
+                    e instanceof f
                         ? e.forEach(function (e, t) {
                               this.append(t, e);
                           }, this)
@@ -7649,54 +8050,54 @@
                     this
                 );
             }
-            (p.prototype.append = function (e, t) {
+            (f.prototype.append = function (e, t) {
                 (e = d(e)), (t = m(t));
                 var n = this.map[e];
                 this.map[e] = n ? n + ', ' + t : t;
             }),
-                (p.prototype.delete = function (e) {
+                (f.prototype.delete = function (e) {
                     delete this.map[d(e)];
                 }),
-                (p.prototype.get = function (e) {
+                (f.prototype.get = function (e) {
                     return (e = d(e)), this.has(e) ? this.map[e] : null;
                 }),
-                (p.prototype.has = function (e) {
+                (f.prototype.has = function (e) {
                     return this.map.hasOwnProperty(d(e));
                 }),
-                (p.prototype.set = function (e, t) {
+                (f.prototype.set = function (e, t) {
                     this.map[d(e)] = m(t);
                 }),
-                (p.prototype.forEach = function (e, t) {
+                (f.prototype.forEach = function (e, t) {
                     for (var n in this.map) this.map.hasOwnProperty(n) && e.call(t, this.map[n], n, this);
                 }),
-                (p.prototype.keys = function () {
+                (f.prototype.keys = function () {
                     var e = [];
                     return (
                         this.forEach(function (t, n) {
                             e.push(n);
                         }),
-                        f(e)
+                        p(e)
                     );
                 }),
-                (p.prototype.values = function () {
+                (f.prototype.values = function () {
                     var e = [];
                     return (
                         this.forEach(function (t) {
                             e.push(t);
                         }),
-                        f(e)
+                        p(e)
                     );
                 }),
-                (p.prototype.entries = function () {
+                (f.prototype.entries = function () {
                     var e = [];
                     return (
                         this.forEach(function (t, n) {
                             e.push([n, t]);
                         }),
-                        f(e)
+                        p(e)
                     );
                 }),
-                s && (p.prototype[Symbol.iterator] = p.prototype.entries);
+                s && (f.prototype[Symbol.iterator] = f.prototype.entries);
             var j = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
             function b(e, t) {
                 if (!(this instanceof b)) throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
@@ -7707,7 +8108,7 @@
                     if (e.bodyUsed) throw new TypeError('Already read');
                     (this.url = e.url),
                         (this.credentials = e.credentials),
-                        t.headers || (this.headers = new p(e.headers)),
+                        t.headers || (this.headers = new f(e.headers)),
                         (this.method = e.method),
                         (this.mode = e.mode),
                         (this.signal = e.signal),
@@ -7715,7 +8116,7 @@
                 } else this.url = String(e);
                 if (
                     ((this.credentials = t.credentials || this.credentials || 'same-origin'),
-                    (!t.headers && this.headers) || (this.headers = new p(t.headers)),
+                    (!t.headers && this.headers) || (this.headers = new f(t.headers)),
                     (this.method = ((n = t.method || this.method || 'GET'), (o = n.toUpperCase()), j.indexOf(o) > -1 ? o : n)),
                     (this.mode = t.mode || this.mode || null),
                     (this.signal = t.signal || this.signal),
@@ -7755,7 +8156,7 @@
                     (this.status = void 0 === t.status ? 200 : t.status),
                     (this.ok = this.status >= 200 && this.status < 300),
                     (this.statusText = 'statusText' in t ? t.statusText : ''),
-                    (this.headers = new p(t.headers)),
+                    (this.headers = new f(t.headers)),
                     (this.url = t.url || ''),
                     this._initBody(e);
             }
@@ -7765,32 +8166,32 @@
                 _.call(b.prototype),
                 _.call(w.prototype),
                 (w.prototype.clone = function () {
-                    return new w(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new p(this.headers), url: this.url});
+                    return new w(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new f(this.headers), url: this.url});
                 }),
                 (w.error = function () {
                     var e = new w(null, {status: 0, statusText: ''});
                     return (e.type = 'error'), e;
                 });
-            var x = [301, 302, 303, 307, 308];
+            var k = [301, 302, 303, 307, 308];
             w.redirect = function (e, t) {
-                if (-1 === x.indexOf(t)) throw new RangeError('Invalid status code');
+                if (-1 === k.indexOf(t)) throw new RangeError('Invalid status code');
                 return new w(null, {status: t, headers: {location: e}});
             };
-            var k = o.DOMException;
+            var x = o.DOMException;
             try {
-                new k();
+                new x();
             } catch (e) {
-                ((k = function (e, t) {
+                ((x = function (e, t) {
                     (this.message = e), (this.name = t);
                     var n = Error(e);
                     this.stack = n.stack;
                 }).prototype = Object.create(Error.prototype)),
-                    (k.prototype.constructor = k);
+                    (x.prototype.constructor = x);
             }
             function A(e, t) {
                 return new Promise(function (n, r) {
                     var s = new b(e, t);
-                    if (s.signal && s.signal.aborted) return r(new k('Aborted', 'AbortError'));
+                    if (s.signal && s.signal.aborted) return r(new x('Aborted', 'AbortError'));
                     var i = new XMLHttpRequest();
                     function u() {
                         i.abort();
@@ -7803,7 +8204,7 @@
                                 statusText: i.statusText,
                                 headers:
                                     ((e = i.getAllResponseHeaders() || ''),
-                                    (t = new p()),
+                                    (t = new f()),
                                     e
                                         .replace(/\r?\n[\t ]+/g, ' ')
                                         .split(/\r?\n/)
@@ -7835,7 +8236,7 @@
                         }),
                         (i.onabort = function () {
                             setTimeout(function () {
-                                r(new k('Aborted', 'AbortError'));
+                                r(new x('Aborted', 'AbortError'));
                             }, 0);
                         }),
                         i.open(
@@ -7857,7 +8258,7 @@
                                   s.headers.get('Content-Type') &&
                                   -1 !== s.headers.get('Content-Type').indexOf('application/octet-stream') &&
                                   (i.responseType = 'arraybuffer')),
-                        !t || 'object' != typeof t.headers || t.headers instanceof p
+                        !t || 'object' != typeof t.headers || t.headers instanceof f
                             ? s.headers.forEach(function (e, t) {
                                   i.setRequestHeader(t, e);
                               })
@@ -7872,7 +8273,7 @@
                         i.send(void 0 === s._bodyInit ? null : s._bodyInit);
                 });
             }
-            (A.polyfill = !0), o.fetch || ((o.fetch = A), (o.Headers = p), (o.Request = b), (o.Response = w));
+            (A.polyfill = !0), o.fetch || ((o.fetch = A), (o.Headers = f), (o.Request = b), (o.Response = w));
         },
     './site_configs/roomcash_develop-63713/js/63713-config.js':
         /*!****************************************************************!*\
@@ -7891,6 +8292,7 @@
                         site_type: 'cug',
                         algolia_app_id: 'pl58QCMXHS4C',
                         algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
+                        use_google_autocomplete: !0,
                         distance_unit: 'useMiles',
                         lodging: {event_id: '', event_name: 'RoomCash Develop', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
                         cug: {is_cug: !0, show_points: !1, allow_registration: !1, percent_off_text: '', show_percent_savings: !1},
@@ -8007,14 +8409,14 @@
                 };
             }
             function m(e, t) {
-                return !t || ('object' !== i(t) && 'function' != typeof t) ? f(e) : t;
+                return !t || ('object' !== i(t) && 'function' != typeof t) ? p(e) : t;
             }
-            function f(e) {
+            function p(e) {
                 if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                 return e;
             }
-            function p(e, t, n) {
-                return (p =
+            function f(e, t, n) {
+                return (f =
                     'undefined' != typeof Reflect && Reflect.get
                         ? Reflect.get
                         : function (e, t, n) {
@@ -8054,7 +8456,7 @@
                         (function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, m),
-                        p(((e = f((t = i.call(this, g)))), h(m.prototype)), 'init', e).call(e),
+                        f(((e = p((t = i.call(this, g)))), h(m.prototype)), 'init', e).call(e),
                         new s.default(g),
                         t.addDevelopTextToHeader(),
                         t
@@ -8177,7 +8579,7 @@
                                 '\n        <span id="sub-header-container">\n                <a id="how-it-works" target="_blank" href="https://roomcash.com/how-it-works">How It Works</a>\n                <a id="faq" target="_blank" href="https://roomcash.com/faqs">FAQ</a>\n                <a id="daily-deals" target="_blank" href="https://roomcash.com/daily-deals">Daily Deals</a>\n                <a id="partners" target="_blank" href="https://roomcash.com/partnerships">Partnerships</a>\n        </span>'),
                             this.init();
                     }
-                    var t, n, o, r, a, i, m, f, p, h, y, g, v, _, j;
+                    var t, n, o, r, a, i, m, p, f, h, y, g, v, _, j;
                     return (
                         (t = e),
                         (n = [
@@ -8588,7 +8990,7 @@
                             {
                                 key: 'updateText',
                                 value:
-                                    ((p = c(
+                                    ((f = c(
                                         regeneratorRuntime.mark(function e(t, n) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8605,13 +9007,13 @@
                                         })
                                     )),
                                     function (e, t) {
-                                        return p.apply(this, arguments);
+                                        return f.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateAttribute',
                                 value:
-                                    ((f = c(
+                                    ((p = c(
                                         regeneratorRuntime.mark(function e(t, n, o) {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -8628,7 +9030,7 @@
                                         })
                                     )),
                                     function (e, t, n) {
-                                        return f.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {

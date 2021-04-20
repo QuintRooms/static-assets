@@ -643,6 +643,14 @@ has_custom_emails: true,
 
         confirmation_email_from: 'Hotels for Hope',
 
+### <span style="text-decoration:underline;">Email Logo</span>
+
+(String)
+```
+Email_logo_file_location: ‘path’
+```
+
+If a portal uses the “light” theme (white background with dark fonts), and has a white logo, the logo will not be visible in the default confirmation email. For this we have the email_logo_file_location which is a place to add a different colored logo for the email. The email build script will use this logo if the config key exists.
 
 ## <span style="text-decoration:underline;">Components</span>
 

@@ -138,12 +138,9 @@ export default class Autocomplete {
      *@description Instantiates the Google Places autocomplete restricted to cities. latitude, longitude and destination properties are also set when the place_changed event occurs.
      */
     googleMapsScript() {
-        const options = {
-            types: ['(cities)'],
-        };
         const input = document.querySelector('input#address-input');
         // eslint-disable-next-line no-undef
-        const autocomplete = new google.maps.places.Autocomplete(input, options);
+        const autocomplete = new google.maps.places.Autocomplete(input);
         this.getFirstSuggestionOnPressOfEnter(input);
         // eslint-disable-next-line no-undef
         google.maps.event.addListener(autocomplete, 'place_changed', (e) => {

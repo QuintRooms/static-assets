@@ -2869,8 +2869,13 @@
     },
     function (e, t, n) {
         'use strict';
-        function r(e) {
-            return (r =
+        n(70), n(71), n(40), n(16), n(81), n(83);
+        var r = o(n(84));
+        function o(e) {
+            return e && e.__esModule ? e : {default: e};
+        }
+        function i(e) {
+            return (i =
                 'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                     ? function (e) {
                           return typeof e;
@@ -2878,11 +2883,6 @@
                     : function (e) {
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
-        }
-        n(70), n(71), n(40), n(16), n(81), n(83);
-        var o = i(n(84));
-        function i(e) {
-            return e && e.__esModule ? e : {default: e};
         }
         function a(e, t) {
             return (a =
@@ -2913,7 +2913,7 @@
             };
         }
         function s(e, t) {
-            return !t || ('object' !== r(t) && 'function' != typeof t) ? u(e) : t;
+            return !t || ('object' !== i(t) && 'function' != typeof t) ? u(e) : t;
         }
         function u(e) {
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -2941,7 +2941,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var f = new (i(n(119)).default)();
+        var f = new (o(n(119)).default)();
         new ((function (e) {
             !(function (e, t) {
                 if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
@@ -2959,7 +2959,7 @@
                 );
             }
             return n;
-        })(o.default))();
+        })(r.default))();
     },
     function (e, t, n) {
         n(48)('asyncIterator');
@@ -4289,7 +4289,17 @@
                             key: 'applyConfigStyles',
                             value: function () {
                                 var e = document.querySelector('#h4h-styles');
-                                this.site_config && e && y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd');
+                                this.site_config &&
+                                    e &&
+                                    (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    '52342' !== this.site_config.site_id &&
+                                        e.insertAdjacentHTML(
+                                            'beforeend',
+                                            '<link href="'
+                                                .concat(p.path, '/site_configs/')
+                                                .concat(this.site_config.directory_name, '/styles/')
+                                                .concat(this.site_config.site_id, '.css" rel="stylesheet">')
+                                        ));
                             },
                         },
                         {
@@ -6990,7 +7000,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(22), n(16), Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(44), n(24);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(22), n(16), n(44), n(24);
         var r,
             o = (r = n(45)) && r.__esModule ? r : {default: r};
         function i(e, t, n, r, o, i, a) {
@@ -7148,7 +7158,7 @@
                             value: function () {
                                 var e = this,
                                     t = document.querySelector('input#address-input'),
-                                    n = new google.maps.places.Autocomplete(t, {types: ['(cities)']});
+                                    n = new google.maps.places.Autocomplete(t);
                                 this.getFirstSuggestionOnPressOfEnter(t),
                                     google.maps.event.addListener(n, 'place_changed', function (t) {
                                         e.onPlaceChanged(n);
@@ -7356,7 +7366,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        n(22), Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(24), n(65), n(46), n(16), n(66), n(44);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(22), n(24), n(65), n(46), n(16), n(66), n(44);
         var a = n(33),
             c = n(47);
         a.extend(c);

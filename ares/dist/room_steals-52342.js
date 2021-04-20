@@ -4292,7 +4292,7 @@
                                 this.site_config &&
                                     e &&
                                     (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
-                                    '52342' !== this.site_config.site_id &&
+                                    '52342' !== this.site_id &&
                                         e.insertAdjacentHTML(
                                             'beforeend',
                                             '<link href="'

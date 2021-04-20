@@ -796,7 +796,7 @@ export default class BasePortal {
 
         utilities.createHTML(`<link href="${this.site_config.google_font_url}" rel="stylesheet">`, 'head', 'beforeEnd');
 
-        if (this.site_config.site_id === '52342') return;
+        if (this.site_id === '52342') return;
         style_element.insertAdjacentHTML(
             'beforeend',
             `<link href="${env_path.path}/site_configs/${this.site_config.directory_name}/styles/${this.site_config.site_id}.css" rel="stylesheet">`

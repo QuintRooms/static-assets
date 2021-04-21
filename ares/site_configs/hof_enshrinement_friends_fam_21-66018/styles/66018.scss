@@ -22,5 +22,5 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 
 .CheckOutForm .DSFormFields {
-    display: unset;
+    display: unset!important;
 }

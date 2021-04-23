@@ -1283,7 +1283,7 @@ export default class BasePortal {
         */
         function updateRoomDescription(selector, name, text) {
             if (!document.querySelector('.SinglePropDetail')) return;
-            const original = selector.querySelector('.RoomDescription');
+            const original = selector.querySelector('.ArnRateList tr td:first-child');
             original.innerHTML = original.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate">${name} ${text}</span>`);
         }
 

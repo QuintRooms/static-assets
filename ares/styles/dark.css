@@ -1,5 +1,5 @@
 body, .ArnPropNameLink span, .CheckOutForm #theHotel, .CheckOutForm label, .CheckOutForm legend, .sort-wrapper a, .theHotelName, .CheckOutForm #theRateSummaryInfo div, .CheckOutForm #theConfirmCheckboxesAjax, .CheckOutForm #theConfirmCheckboxesAjax a, .CheckOutForm #theConfirmCheckboxesAjax span, .ConfirmationForm .PaymentPolicies, .ConfirmationForm .GuestForms, .ConfirmationForm a, #batch a, .emailWarning2 a, .eventRateGuarantee h2, .eventRateGuarantee span, #theConfirmationPoliciesAjax, .SinglePropDetail #exclusive-event-rate {
-  color: #fff; }
+  color: #fff !important; }
 
 svg.arrow polyline {
   stroke: #fff; }

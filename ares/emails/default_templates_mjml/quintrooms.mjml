@@ -173,7 +173,7 @@
         </mj-text>
         <mj-raw>
           [endif]
-          [if:payment_terms]
+          [if:property_policy]
         </mj-raw>
         <mj-text>
           <h5>Property Policy</h5>
@@ -214,7 +214,7 @@
           <h5>Reservation Information</h5>
           <!--email_off-->
           <span>For further assistance or if you have questions about your reservation, contact Hotels for Hope at 1.866.584.0204 or <a style="color:inherit;" href="mailto:reservations@quintrooms.com"> reservations@quintrooms.com</a>. To speak to the hotel directly, contact
-            {{hotel}} at {{hotel_phone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
+            {{hotel}} at <a style="color:inherit;" href="tel:{{hotel_phone}}">{{hotel_phone}}</a>.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.hotelsforhope.com/v6/cancel-or-resend?siteid={{site_id}}">click here.</a></span>
           <!--/email_off-->
         </mj-text>
       </mj-column>
@@ -230,14 +230,14 @@
           <h4>QuintRooms</h4>
         </mj-text>
         <mj-text padding-bottom="5px">
-          <a style="color:inherit;" href="https://www.hotelsforhope.com/">www.hotelsforhope.com</a>
+          <a style="color:inherit;" href="https://www.quintrooms.com/">www.quintrooms.com</a>
         </mj-text>
         <mj-text padding-bottom="5px">
           <div>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</div>
         </mj-text>
         <mj-text padding-bottom="5px">
           <!--email_off-->
-          <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@quintrooms.com</a>
+          <a style="color:inherit;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a>
           <!--/email_off-->
         </mj-text>
         <mj-text padding-bottom="5px">
@@ -254,10 +254,10 @@
       </mj-column>
       <mj-column width="50%">
         <mj-social padding-top="20px" font-size="15px" icon-size="30px" mode="horizontal" border-radius="20px">
-          <mj-social-element icon-padding="3px" background-color="#00a498" name="facebook" href="https://www.facebook.com/hotels4hope" />
-          <mj-social-element icon-padding="3px" background-color="#00a498" name="instagram" href="https://www.instagram.com/hotels4hope/" />
-          <mj-social-element icon-padding="3px" background-color="#00a498" name="twitter" href="https://twitter.com/hotels4hope" />
-          <mj-social-element icon-padding="3px" background-color="#00a498" name="linkedin" href="https://www.linkedin.com/company/hotels-for-hope" />
+          <mj-social-element icon-padding="3px" background-color="#00a498" name="facebook" href="https://www.facebook.com/QuintRooms" />
+          <mj-social-element icon-padding="3px" background-color="#00a498" name="instagram" href="https://www.instagram.com/QuintRooms" />
+          <mj-social-element icon-padding="3px" background-color="#00a498" name="twitter" href="https://twitter.com/QuintRooms" />
+          <mj-social-element icon-padding="3px" background-color="#00a498" name="linkedin" href="https://www.linkedin.com/company/quint-rooms" />
         </mj-social>
       </mj-column>
     </mj-section>

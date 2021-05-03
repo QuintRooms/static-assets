@@ -11,8 +11,8 @@
 4. [EsLint/Prettier](#EsLint-&-Prettier)
 5. [Build Tools](#Build-Tools)
 6. [Styles](#Styles)
-7. Webpack
-8. Testing
+7. [Webpack](#Webpack)
+8. [Testing](#Testing)
 
 
 # Ares Portal Configuration Keys
@@ -664,3 +664,18 @@ We are then able to create `$banner_image` using [sass string inerpolation](http
 When a site is first built, the site specific sass stylesheet is where we add the brand/client colors and logos.
 
 If you are building a site for the first time, I suggest throwing some colors in the variable values, updating the `.env` file to the new site details and running a local build. Try switching the colors between `$primary_color` and `$secondary_color` etc to see how these colors are implemented.
+
+# Webpack
+
+# Testing
+
+A test file can be created for any JavaScript file within Ares using [Jest](https://jestjs.io/docs/getting-started). For a good example of some Jest unit tests against an Ares file, see the `autocomplete` directory located: `ares/js/components/autocomplete`. 
+
+For a file you wish to also write tests for, create another file next to the file being tested and name it `[name].test.js`, import the file you want to test at the top, then write your unit tests.
+
+All test suites within Ares can be run in the command line like so:
+```
+npm run test
+```
+
+*Note: when a pull request is made to the Develop branch, a GitHub action is performed to run all tests on the repo. If any tests fail, the pull request will fail.

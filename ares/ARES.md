@@ -12,6 +12,7 @@
 5. Build Tools
 6. Styles
 7. Webpack
+8. Testing
 
 
 # Ares Portal Configuration Keys
@@ -502,7 +503,11 @@ See the confirmation email workflow inside Integromat [here](https://www.integro
 
 
 ### **Custom Email**
-
+As long as a site has the following config:
+```
+has_custom_emails: true,
+```
+For every file within a site's `/emails` directory that has the file extension `.mjml`, a function within the [build-emails.js script](#Build-Email-Script) will be run on that file. It will compile it into HTML using the site specific colors and logo.
 
 # EsLint & Prettier
 
@@ -517,9 +522,29 @@ See the confirmation email workflow inside Integromat [here](https://www.integro
 
 
 ### **About**
+The Ares codebase uses EsLint and Prettier to give our code a uniform style. Both Eslint and Prettier are set to run/format on a git hook. This means that when you attempt to commit code, if there are significant issues, it won't allow it. If issues exist that Prettier can handle, it will fix them for you. To view the code for the on commit hook, look in `package.json` of Static Assets.
 
+```
+"husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js, html}": [
+            "eslint --fix",
+            "prettier --single-quote --write",
+            "npm run test --verbose --passWithNoTests --findRelatedTests",
+            "git add"
+        ]
+    },
+```
 
 ### **EsLint**
+Our EsLint setup extends the Air-Bnb style guide. See the `.eslintrc.js` file in the root of Static Assets for more specific rules we have applied.
 
+Documentation: [EsLint](https://eslint.org/)
 
 ### **Prettier**
+Prettier formats our code to keep spacing and other such things uniform within the repo. See the `.prettierrc` file in the root of Static Assets to add to or view the rules.
+Documentation: [Prettier](https://prettier.io/docs/en/index.html)

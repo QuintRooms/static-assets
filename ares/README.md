@@ -9,8 +9,8 @@
 2. [Components](#Components)
 3. [Email](#Email)
 4. [EsLint/Prettier](#EsLint-&-Prettier)
-5. Build Tools
-6. Styles
+5. [Build Tools](#Build-Tools)
+6. [Styles](#Styles)
 7. Webpack
 8. Testing
 
@@ -548,3 +548,119 @@ Documentation: [EsLint](https://eslint.org/)
 ### **Prettier**
 Prettier formats our code to keep spacing and other such things uniform within the repo. See the `.prettierrc` file in the root of Static Assets to add to or view the rules.
 Documentation: [Prettier](https://prettier.io/docs/en/index.html)
+
+# Build Tools
+
+## Contents
+
+1. [About](#About)
+2. [entry-points.js](#entry-points.js)
+3. [path.js](#path.js)
+4. [site-build.js](#site-build.js)
+
+### **About**
+The directory `build_tools`, located: `ares/js/build_tools`, is where files that aid us in creating sites - general helper tools.
+
+Below is a description of the most commonly used.
+### **entry-points**
+Entry points is where every site within Ares is listed. The position of where this site is listed within this file dictates is environment/what path and urls its assets are given. For example:
+
+Develop Environment:
+```
+logo_path: 'https://dev-static.quintrooms/ares/logo'
+```
+Local Environment:
+```
+logo_path: '../../logo'
+```
+
+As a site is built and developed, it should be moved to the list of Production environment sites and commented out.
+### **path.js**
+Path.js sets the path for asset paths (as described in [entry-points](#entry-points)) depending on the `process.env.NODE_ENV` (our `NODE_ENV` is set based on which script from `package.json` is run - `npm run local/dev/prod`)
+### **site-build.js**
+
+The `site-build.js` script will create all necessary files for a new site. Simply type: 
+```
+npm run build-site
+```
+into the command line and answer the questions. 
+
+# Styles
+
+## Contents
+
+
+1. [Sass/Scss](#Sass/Scss)
+2. [base-styles](#base-styles)
+3. [config-styles](#config-styles)
+4. [sass-functions](#sass-functions)
+5. [Site Specific Styles](#Site-Specific-Styles) ([site_id].scss)
+
+### **Sass/Scss**
+All styles written in the Ares repo should be written in SCSS. 
+
+[Sass or Scss](https://sass-lang.com/guide) is a CSS extension that allos us to use variables, functions and nesting to make it quicker and easier to write styles. All styles written in Scss end up as CSS when a build is run. For Example, when adding colors to a site's `.scss` file, you won't see any CSS files within the `site_name/styles` directory. When the build is run, the Scss is compiled into CSS and eventually injected into the DOM on load of the page.
+
+### **base-styles**
+The `base-styles` directory holds the `.scss` files for three different types of sites. These styles aren't specific to a site (they do not hold client specific colors or logos etc), they simply apply styles that are consistent across all of our portals.
+
+### **config-styles**
+The `config-styles` directory holds `.scss` files that use the variables that are definied in each site's `/styles/[site_id].scss` file. If you look in a site's `/styles/[site_id].scss` file, you will see that the `base-styles.config.scss` file is imported AFTER the variables are definied.
+
+### **sass-functions**
+One major advantage of using Sass is that we are able to write functions just like we would in JavaScript or any other language.
+
+See Sass docs on functions [here](https://sass-lang.com/documentation/at-rules/function)
+
+*Note: In sass a `@function` returns a single response, a `@mixin` returns some styles that can be reused over and over - it's easy to get these confused with each other.
+
+We currently only have one Sass function within the Ares repo. It is performs the same task as [path.js](#path.js) but for our assets in any sass files.
+
+Here is an example:
+
+-styles/12345.scss
+```
+$site_name: 'voodoo_21-60792';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+```
+-styles/sass/sass-functions/func.scss
+```
+@function set-path($env) {
+    @if ($env == 'local') {
+        $path: '../../..';
+        @return $path;
+    }
+    @if ($env == 'develop') {
+        $path: 'https://dev-static.#{$domain}/ares';
+        @return $path;
+    }
+    @if ($env == 'production') {
+        $path: 'https://static.#{$domain}/ares';
+        @return $path;
+    }
+}
+```
+-Webpack.config.js
+```
+ options: {
+        sourceMap: false,
+        additionalData: `$env: ${process.env.NODE_ENV};\n $domain: '${process.env.domain}';`,
+},
+```
+There's a few things going on here, so let's start with the `$env`. The current environment is passed as a sass variable to our stylesheets when they are run through webpack (when running a build, `npm run local/dev/prod`). So when `npm run dev` is run, `$env` will equal `'develop'`.
+
+Now in the `12345.scss` file we can see we have a few variables defined: 
+- $site_name
+- $path
+- $banner_image
+
+`$path` is set to the returned value of the sass function `set-path($env)` called with the variable we mentioned about `$env`. The Sass function `set-path()` is simply taking the variable of $env (which holds a string) and returning the string inside which ever conditional matches $env's value.
+
+We are then able to create `$banner_image` using [sass string inerpolation](https://sass-lang.com/documentation/interpolation), thus making our asset paths fully dynamic for whichever environment we choose to run the site in.
+
+### **Site Specific Styles**
+
+When a site is first built, the site specific sass stylesheet is where we add the brand/client colors and logos.
+
+If you are building a site for the first time, I suggest throwing some colors in the variable values, updating the `.env` file to the new site details and running a local build. Try switching the colors between `$primary_color` and `$secondary_color` etc to see how these colors are implemented.

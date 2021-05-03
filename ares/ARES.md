@@ -40,7 +40,7 @@ Documented below are the configuration keys for the Ares portal build system. Ea
 15. [Advertizing](#Advertizing)
 16. [Hybrid Compensation Model Text Changes](#heading=h.p09xqhqcpigk)
 17. [Search Page Header Text](#heading=h.2wk6kclacn79)
-18. Custom Emails
+18. [Custom Emails](#Custom-Emails)
 
  
 
@@ -161,11 +161,10 @@ This boolean will switch between the reviews section on the property page being 
 
 ### **Property Filtering**
 
-(Boolean) \
-`show_stars: false,`
-
+(Boolean) 
 
 ```
+show_stars: false,
 show_property_type: false,
 ```
 
@@ -176,9 +175,9 @@ The stars and property type filers can have their display toggled using a boolea
 ### **Language**
 
 (Boolean)
-
- `show_language_select: false`,
-
+```
+ show_language_select: false,
+```
 Turns on the language select component in the header of a portal.
 
 
@@ -300,32 +299,32 @@ Simply sets the font for the portal.
 ### **Hybrid Compensation model**
 
 (Boolean)
+Having the Hybrid Compensation Model set to true changes the text in two places on the checkout page. 
 
+See an example on [this](https://bookrooms.formula1.com/group-event?id=46260&utm_source=internal) portal (on the Checkout page)
 
 ```
 uses_hybrid_compensation_model: true,
 ```
 
-
-
 ### **Search Page Header Text**
 
 (String)
 
+These two keys represent the text that is shown on the search (.RootBody) page.
 
 ```
  root_page_header_text: 'Start Your Search',
  root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
 ```
 
-
-        
-
-
 ### **Custom Emails**
 
 (Boolean)
 
+When `has_custom_emails` is set to `true`, it will trigger a conditional in the [build_emails](#Build-Email-Script) script that will use the custom [mjml](#MJML) file inside that site's directory instead of the default confirmation email template.
+
+For a good example of the use of custom emails, see the RoomCash emails directory.
 
 ```
 has_custom_emails: true,
@@ -343,11 +342,12 @@ has_custom_emails: true,
 ### **Email Logo**
 
 (String)
+
+Sometimes a site's logo may not work with the default confirmation email template - for example if the logo has white text, the logo will not be visible (the default email template has a white background), therefore a second logo can be provided by specifiying the path to it as the value for the below key. The [email build script](#Build-Email-Script) will use this logo if the config key exists.
+
 ```
 Email_logo_file_location: ‘path’
 ```
-
-If a portal uses the “light” theme (white background with dark fonts), and has a white logo, the logo will not be visible in the default confirmation email. For this we have the email_logo_file_location which is a place to add a different colored logo for the email. The email build script will use this logo if the config key exists.
 
 # Components
 
@@ -356,10 +356,10 @@ If a portal uses the “light” theme (white background with dark fonts), and h
 
 
 
-1. [Group Booking Banner](#heading=h.4uaksm2zyt4z)
-2. [Landing Page](#heading=h.qd6b5xonxyn)
-3. [Popup](#heading=h.xcxkd0kkshpq)
-4. [Property Image Replacement](#heading=h.olzv9os63sep)
+1. [Group Booking Banner](#Group-Booking-Banner)
+2. [Landing Page](#Landing-Page)
+3. [Popup](#Popup)
+4. [Property Image Replacement](#Property-Image-Replacement)
 
         
 
@@ -377,7 +377,7 @@ group_booking_form_url: 'https:{jorform url}?bookingPortal=BJAC%20Las%20Vegas',
 
 The group booking banner component will add a full width banner below the header of a portal with the message:
 
- \
+
 “_Need 10+ rooms for {event_name} or another event? We're here to help you secure great rates._”
 
 NOTE: {event_name} is taken from that portal’s config `event_name.`
@@ -418,10 +418,10 @@ The landing page component changes the DOM of the RootBody (search) page to show
 
 ### **Popup**
 
-(Import “popUp” from js/components/event_popup/multiple-event-weekends)
-
-
+-Child.js file
 ```
+Import “popUp” from js/components/event_popup/multiple-event-weekends
+
 popUp(
     site_config,
     'Sakhir Grand Prix',
@@ -467,19 +467,38 @@ This component will update the thumbnail image for a given property on the searc
 
 
 ### **MJML**
+MJML is a markup language designed to reduce the pain of coding a responsive email. Its semantic syntax makes it easy and straightforward and its rich standard components library speeds up your development time and lightens your email codebase. MJML’s open-source engine generates high quality responsive HTML compliant with best practices.
 
 Find MJML documentation [here](https://mjml.io/documentation/).
 
+Withing the Ares repo, all mjml is compiled into HTML. To compiles a single mjml file into an HTML file on demand, run the following command:
+
+```
+npm run mjml [../dir/emails/input.mjml] -0 [../dir/emails/output.html]
+
+```
+
+*Note: The npm command `mjml` is a custom script in `package.json` that is just running `./node_modules/.bin/mjml` before the specified input file name.
+
 
 ### **Build Email Script**
+Located in: `ares/js/build_tools/build-emails.js`
 
+This script will be called for each site being built through webpack when in either Develop or Production environment.
+
+The script handles a few things:
+- It gathers key data for the current site like primary/secondary colors, logo path and client name etc and creates an object out of that for later use.
+- It will create an `emails` directory inside that site's directory, within that emails directory a json file is created to hold the object with key data, and, unless the site is using a [custom email design](#Custom-Emails), will create a confirmation email in HTML using the client's colors and logo.
+- Adds the name and site ID of the current site to `site-names.json` in `ares/js/json/site-names.json`. For more info on this, see [Site names Json File](#Site-names-Json-File)
 
 ### **Site names Json File**
 
+This file exists purely to serve as a helper to the tool we use to parse and send the confirmation email to customers using [Integromat](www.integromat.com). It is just a list of every site that has an email HTML file that the Integromat scenario checks against to then do a Get request for that HTML.
 
 ### **Integromat Confirmation Email Scenario**
+Integromat handles a few things in regards to sending a confirmation email. First it receieves the data payload from our CRM (ZOHO) then it checks to see if that site ID has its own confirmation.HTML. If it doesn't, it will send a fallback confirmation email (located in: `ares/emails/default_templates_mjml/quintrooms.mjml`) as well as an email to `dev@quintrooms` with a description of the error that caused it to send the fallback email.
 
-See the confirmation email workflow [here](https://www.integromat.com/scenario/2011949/edit).
+See the confirmation email workflow inside Integromat [here](https://www.integromat.com/scenario/2011949/edit).
 
 
 ### **Custom Email**

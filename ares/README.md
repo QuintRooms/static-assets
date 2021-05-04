@@ -1,9 +1,4 @@
-# Ares Portal
-
-
 ## Contents
-
-
 
 1. [Ares Portal Configuration Keys](#Ares-Portal-Configuration-Keys)
 2. [Components](#Components)
@@ -13,8 +8,8 @@
 6. [Styles](#Styles)
 7. [Webpack](#Webpack)
 8. [Testing](#Testing)
-
-
+9. [Build a Portal](#Build-a-Portal)
+ 
 # Ares Portal Configuration Keys
 
 Documented below are the configuration keys for the Ares portal build system. Each config will enable or disable certain features within a portal.
@@ -524,6 +519,8 @@ For every file within a site's `/emails` directory that has the file extension `
 ### **About**
 The Ares codebase uses EsLint and Prettier to give our code a uniform style. Both Eslint and Prettier are set to run/format on a git hook. This means that when you attempt to commit code, if there are significant issues, it won't allow it. If issues exist that Prettier can handle, it will fix them for you. To view the code for the on commit hook, look in `package.json` of Static Assets.
 
+For more documentation on the pre-commit hook, see [this](https://docs.google.com/document/d/1Z1bUbdvngcxNKbKeHSnOwxBAZGHN5cDAhHasgotjyTk/edit?usp=sharing) SOP.
+
 ```
 "husky": {
         "hooks": {
@@ -666,7 +663,17 @@ When a site is first built, the site specific sass stylesheet is where we add th
 If you are building a site for the first time, I suggest throwing some colors in the variable values, updating the `.env` file to the new site details and running a local build. Try switching the colors between `$primary_color` and `$secondary_color` etc to see how these colors are implemented.
 
 # Webpack
+Webpack bundles all our code for each site together, into one convenient file (dist file). In the Ares set up, it takes its input from any uncommented sites in [Entry Points](#entry-points.js) (entry-points.js) for whichever environment you're building in. For each site running through Webpack, certain processes are performed on it using various [plugins](https://webpack.js.org/concepts/#plugins) and [loaders](https://webpack.js.org/concepts/#loaders). For example, this is where we convert any `.Scss` files that are run through Webpack into a `.css` file that is added to the current site's directory in `[site_name]/styles/[site_id].css`. Another example is the [sass-loader](https://www.npmjs.com/package/sass-loader) which is used to parse our Sass/Sccs and crucially, pass extra variables to Scss files using the sass-loader `options > additionalData`. See below:
 
+```
+{
+    loader: 'sass-loader',
+    options: {
+        sourceMap: false,
+        additionalData: `$env: ${process.env.NODE_ENV};\n $domain: '${process.env.domain}';`,
+    },
+}
+```
 # Testing
 
 A test file can be created for any JavaScript file within Ares using [Jest](https://jestjs.io/docs/getting-started). For a good example of some Jest unit tests against an Ares file, see the `autocomplete` directory located: `ares/js/components/autocomplete`. 
@@ -679,3 +686,18 @@ npm run test
 ```
 
 *Note: when a pull request is made to the Develop branch, a GitHub action is performed to run all tests on the repo. If any tests fail, the pull request will fail.
+
+# Build a Portal
+Listed below are the steps that need to be taken when building a new portal. Many of these steps will refer to other items listed in this documentation. So it would be a good idea to have a read through it all first... or just wing it.
+
+1. See [this](https://docs.google.com/document/d/1XU0msvclGuaBw6ToYxCqytQy17-_pz8Vso5jbA3QLoM/edit?usp=sharing) SOP document for creating and naming the site ID you wish to use for the new site.
+2. Now you have the site ID and the record has been added to the CRM you can build the files for the site. If the site is for a new client, it's easiest to run the [Build site](#site-build.js) command in the command line. It will ask for the site ID and site name then create all the files necessary (site directory with img, js & styles child directories; a src file and an entry in [entry-points.js](#entry-points.js)) pre-populated with the specified ID and name. It will also ask if you want to update the `.env` file to show the new site locally - say `Y` to this and you will be able to view your the site before making it live.
+3. When happy with the site locally, go to [entry-points.js](#entry-points.js) (located `ares/js/build_tools/entry-points.js`), cut and paste the line for the site and move it up to the `develop` environment object.
+4. Now, in the command line, run `npm run dev`. This will do multiple things, it will compile the site's `.scss` files into `.css`, it will build an HTML confirmation email using the colors and logo from the scss file, and it will create a `dist` (compiled code) file in `ares/dist`.
+5. You're ready to push to the dev server! Stage and commit the code, write a descriptive commit message and push.
+6. The code and all assets for the new site is now on the QuintRooms dev server - `https://dev-static.quintrooms/ares`, the compiled file that Webpack created can be found using this path: `https://dev-static.quintrooms/ares/dist/[site_name]-[site_id].js`. Therefore this is the url we need to the Skin Editor for our site inside the `footer.html` file like so: 
+
+```
+<script async src="https://dev-static.quintrooms/ares/dist/[site_name]-[site_id].js"></script>
+```
+7. Click `Save` followed by `Publish`. Now the site is live.

@@ -187,8 +187,8 @@ header {
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
 a.ArnShowRatesLink,
-.WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton
-{
+.WBConfirmedBooking .submit,
+.GroupHoldForm .bookRoomButton {
     background: #fff;
     color: #333;
     border: 1px solid #333;
@@ -220,7 +220,8 @@ input#theConfirmationButton:hover,
 input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
 a.ArnShowRatesLink:hover,
-.WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
+.WBConfirmedBooking .submit:hover,
+.GroupHoldForm .bookRoomButton:hover {
     background: rgb(227, 224, 224);
     color: #333;
     border: 1px solid #333;
@@ -409,11 +410,11 @@ select#adults {
         opacity: 0;
     }
     70% {
-    transform: translateY(800px);
+        transform: translateY(800px);
     }
     100% {
-    transform: translateY(730px);
-    opacity: 1;
+        transform: translateY(730px);
+        opacity: 1;
     }
 }
 
@@ -1399,7 +1400,7 @@ div.autocomplete ul li.selected {
 }
 
 .ArnSortContainer,
-.sort-wrapper{
+.sort-wrapper {
     display: none;
 }
 /* Search Container End */
@@ -1508,17 +1509,17 @@ legend {
 
 @keyframes amenityDrop {
     0% {
-      display: none;
-      opacity: 0;
+        display: none;
+        opacity: 0;
     }
     1% {
-      display: block;
-      opacity: 0;
+        display: block;
+        opacity: 0;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
+}
 
 .show-amenities {
     display: block !important;
@@ -1598,7 +1599,8 @@ legend {
     font-size: 17px;
 }
 
-.arnUnit + div, .arnCurrency + div {
+.arnUnit + div,
+.arnCurrency + div {
     font-weight: 500;
     font-size: 13px;
 }
@@ -2377,7 +2379,8 @@ legend {
         margin-right: 10px;
     }
 
-    .SearchHotels #arnToggleMapDiv, .SearchHotels .ArnSortContainer {
+    .SearchHotels #arnToggleMapDiv,
+    .SearchHotels .ArnSortContainer {
         display: block;
         text-align: right;
     }
@@ -2861,7 +2864,7 @@ legend {
     text-align: right;
 }
 
-.MemberNotAuthenticated.CheckOutForm .totalRow + .discount{
+.MemberNotAuthenticated.CheckOutForm .totalRow + .discount {
     display: none;
 }
 
@@ -3706,8 +3709,14 @@ body.HoldRoomsForm {
 .HoldRoomsForm .ArnShowRatesLink,
 .HoldRoomsForm .ArnReviewTab + a,
 .HoldRoomsForm .ArnContentButtonContainer,
-.GroupHoldForm .ArnShowRatesLink  {
+.GroupHoldForm .ArnShowRatesLink {
     display: none;
+}
+
+.GroupHoldForm p.bookRoomButton:hover,
+.GroupHoldForm p.bookRoomButton {
+    background: transparent;
+    border: none
 }
 
 /* Hold Room Page End */
@@ -4326,7 +4335,6 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 @media screen and (max-width: 960px) {
-
     .stay-22-banner {
         display: flex;
         align-items: center;
@@ -4355,9 +4363,7 @@ input[type='search']::-webkit-search-results-decoration {
     }
 }
 
-
 /* Stay 22 header button end */
-
 
 /* - - - - Covid-19 banner start - - - -  */
 
@@ -4431,7 +4437,6 @@ input[type='search']::-webkit-search-results-decoration {
 }
 /* - - - - Covid-19 banner end - - - -  */
 
-
 /* ----- CSS STYLES END -----*/
 
 /* ----- SASS STYLES START -----*/
@@ -4439,8 +4444,7 @@ input[type='search']::-webkit-search-results-decoration {
 // Date popup container start
 
 #theDatePrompt {
-
-    #datePromptContainer{
+    #datePromptContainer {
         padding: 20px 0;
 
         img {
@@ -4448,17 +4452,22 @@ input[type='search']::-webkit-search-results-decoration {
         }
     }
 
-    td.CheckIn, td.CheckOut, td.ArnRooms, td.ArnAdults {
+    td.CheckIn,
+    td.CheckOut,
+    td.ArnRooms,
+    td.ArnAdults {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
 
-        input, select {
+        input,
+        select {
             border: 1px solid #ccc;
         }
     }
 
-    .ArnChildren, .ArnAdults br {
+    .ArnChildren,
+    .ArnAdults br {
         display: none;
     }
 
@@ -4570,7 +4579,7 @@ input[type='search']::-webkit-search-results-decoration {
 
 .contact-float {
     position: fixed;
-    bottom:20px;
+    bottom: 20px;
     right: 20px;
     z-index: 100;
 

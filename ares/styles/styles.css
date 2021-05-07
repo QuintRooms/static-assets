@@ -162,7 +162,8 @@ header {
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
 a.ArnShowRatesLink,
-.WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton {
+.WBConfirmedBooking .submit,
+.GroupHoldForm .bookRoomButton {
   background: #fff;
   color: #333;
   border: 1px solid #333;
@@ -192,7 +193,8 @@ input#theConfirmationButton:hover,
 input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
 a.ArnShowRatesLink:hover,
-.WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
+.WBConfirmedBooking .submit:hover,
+.GroupHoldForm .bookRoomButton:hover {
   background: #e3e0e0;
   color: #333;
   border: 1px solid #333; }
@@ -1228,7 +1230,8 @@ legend {
 .arnPrice {
   font-size: 17px; }
 
-.arnUnit + div, .arnCurrency + div {
+.arnUnit + div,
+.arnCurrency + div {
   font-weight: 500;
   font-size: 13px; }
 
@@ -1841,7 +1844,8 @@ legend {
     position: relative;
     margin-top: 10px;
     margin-right: 10px; }
-  .SearchHotels #arnToggleMapDiv, .SearchHotels .ArnSortContainer {
+  .SearchHotels #arnToggleMapDiv,
+  .SearchHotels .ArnSortContainer {
     display: block;
     text-align: right; }
   .SearchHotels .ArnSortContainer {
@@ -2864,6 +2868,11 @@ body.HoldRoomsForm {
 .GroupHoldForm .ArnShowRatesLink {
   display: none; }
 
+.GroupHoldForm p.bookRoomButton:hover,
+.GroupHoldForm p.bookRoomButton {
+  background: transparent;
+  border: none; }
+
 /* Hold Room Page End */
 /* Date Prompt Start */
 #theDatePrompt {
@@ -3409,14 +3418,25 @@ input[type='search']::-webkit-search-results-decoration {
   #theDatePrompt #datePromptContainer img {
     width: 50%; }
 
-#theDatePrompt td.CheckIn, #theDatePrompt td.CheckOut, #theDatePrompt td.ArnRooms, #theDatePrompt td.ArnAdults {
+#theDatePrompt td.CheckIn,
+#theDatePrompt td.CheckOut,
+#theDatePrompt td.ArnRooms,
+#theDatePrompt td.ArnAdults {
   display: flex;
   flex-direction: column;
   align-items: flex-start; }
-  #theDatePrompt td.CheckIn input, #theDatePrompt td.CheckIn select, #theDatePrompt td.CheckOut input, #theDatePrompt td.CheckOut select, #theDatePrompt td.ArnRooms input, #theDatePrompt td.ArnRooms select, #theDatePrompt td.ArnAdults input, #theDatePrompt td.ArnAdults select {
+  #theDatePrompt td.CheckIn input,
+  #theDatePrompt td.CheckIn select,
+  #theDatePrompt td.CheckOut input,
+  #theDatePrompt td.CheckOut select,
+  #theDatePrompt td.ArnRooms input,
+  #theDatePrompt td.ArnRooms select,
+  #theDatePrompt td.ArnAdults input,
+  #theDatePrompt td.ArnAdults select {
     border: 1px solid #ccc; }
 
-#theDatePrompt .ArnChildren, #theDatePrompt .ArnAdults br {
+#theDatePrompt .ArnChildren,
+#theDatePrompt .ArnAdults br {
   display: none; }
 
 #theDatePrompt .CheckRates {

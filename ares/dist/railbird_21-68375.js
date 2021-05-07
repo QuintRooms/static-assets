@@ -311,7 +311,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && Y(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && D(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -333,7 +333,7 @@
                         n,
                         r,
                         o = e._v,
-                        i = D(e);
+                        i = Y(e);
                     if (
                         (i &&
                             ((t = S(function () {
@@ -343,17 +343,17 @@
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
                             })),
-                            (e._h = q || D(e) ? 2 : 1)),
+                            (e._h = q || Y(e) ? 2 : 1)),
                         (e._a = void 0),
                         i && t.e)
                     )
                         throw t.v;
                 });
             },
-            D = function (e) {
+            Y = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            Y = function (e) {
+            D = function (e) {
                 g.call(s, function () {
                     var t;
                     q ? k.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
@@ -2998,8 +2998,8 @@
             T = A.f,
             R = r.Symbol,
             O = r.JSON,
-            D = O && O.stringify,
-            Y = p('_hidden'),
+            Y = O && O.stringify,
+            D = p('_hidden'),
             j = p('toPrimitive'),
             I = {}.propertyIsEnumerable,
             H = l('symbol-registry'),
@@ -3047,7 +3047,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, Y) || P(e, Y, x(1, {})), (e[Y][t] = !0)), G(e, t, n))
+                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : P(e, t, n)
                 );
             },
@@ -3058,16 +3058,16 @@
             },
             Q = function (e) {
                 var t = I.call(this, (e = _(e, !0)));
-                return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, Y) && this[Y][e])) || t);
+                return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
             },
             K = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(B, t))) {
                     var n = E(e, t);
-                    return !n || !o(F, t) || (o(e, Y) && e[Y][t]) || (n.enumerable = !0), n;
+                    return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == Y || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -3080,7 +3080,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(B, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(B, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
                         };
                     return i && W && G(N, e, {configurable: !0, set: t}), V(e);
                 }).prototype,
@@ -3142,7 +3142,7 @@
                             (!U ||
                                 u(function () {
                                     var e = R();
-                                    return '[null]' != D([e]) || '{}' != D({a: e}) || '{}' != D(Object(e));
+                                    return '[null]' != Y([e]) || '{}' != Y({a: e}) || '{}' != Y(Object(e));
                                 })),
                     'JSON',
                     {
@@ -3155,7 +3155,7 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    D.apply(O, r)
+                                    Y.apply(O, r)
                                 );
                         },
                     }
@@ -4292,7 +4292,7 @@
                                 this.site_config &&
                                     e &&
                                     (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
-                                    '52342' !== this.site_config.site_id &&
+                                    '52342' !== this.site_id &&
                                         e.insertAdjacentHTML(
                                             'beforeend',
                                             '<link href="'
@@ -4742,7 +4742,7 @@
                                             (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== o.site_config.exclusive_rate_text)) &&
                                                 (function (e, t, n) {
                                                     if (document.querySelector('.SinglePropDetail')) {
-                                                        var r = e.querySelector('.RoomDescription');
+                                                        var r = e.querySelector('.ArnRateList tr td:first-child');
                                                         r.innerHTML = r.innerHTML.replace(
                                                             'Special Event Rate',
                                                             '<span id="exclusive-event-rate">'.concat(t, ' ').concat(n, '</span>')
@@ -7158,7 +7158,7 @@
                             value: function () {
                                 var e = this,
                                     t = document.querySelector('input#address-input'),
-                                    n = new google.maps.places.Autocomplete(t, {types: ['(cities)']});
+                                    n = new google.maps.places.Autocomplete(t);
                                 this.getFirstSuggestionOnPressOfEnter(t),
                                     google.maps.event.addListener(n, 'place_changed', function (t) {
                                         e.onPlaceChanged(n);
@@ -7702,7 +7702,7 @@
                     site_type: 'lodging',
                     algolia_app_id: 'plCZXR0GZ7J1',
                     algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-                    use_google_autocomplete: !1,
+                    use_google_autocomplete: !0,
                     distance_unit: 'useMiles',
                     lodging: {event_id: 48492, event_name: 'Railbird 2021', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
                     cug: {is_cug: !1, show_points: !1, allow_registration: !1, percent_off_text: 'off', show_percent_savings: !1},

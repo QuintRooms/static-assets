@@ -2008,7 +2008,7 @@ export default class BasePortal {
 
     async updatePropThumbToFeaturedImage() {
         await utilities.waitForSelectorInDOM('.pollingFinished');
-        if (this.page_name !== 'search-results') return;
+        if (this.page_name !== 'search-results' || document.querySelector('.GroupHoldForm')) return;
 
         async function getPropObject(prop) {
             try {

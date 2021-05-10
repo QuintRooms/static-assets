@@ -41,7 +41,7 @@ module.exports = () => {
             // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
             // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
             // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
-            'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
@@ -71,6 +71,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test

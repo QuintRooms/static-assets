@@ -41,7 +41,7 @@ module.exports = () => {
             // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
             // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
             // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
-            // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021

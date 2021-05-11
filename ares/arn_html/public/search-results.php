@@ -6,7 +6,7 @@
 
 <head>
     <title>austin, tx</title>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDColLOUX1Sid_vsTUKgy9EI3byMcy2Y8o&libraries=places"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDColLOUX1Sid_vsTUKgy9EI3byMcy2Y8o&libraries=places"></script> -->
     <meta name="description" content="Hotels in austin, tx and nearby cities">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
@@ -199,7 +199,9 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,500,700" rel="stylesheet">
     <link id="favicon" rel="shortcut icon" href="https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDColLOUX1Sid_vsTUKgy9EI3byMcy2Y8o&libraries=places"></script>
+    <!-- <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDColLOUX1Sid_vsTUKgy9EI3byMcy2Y8o&libraries=places">
+    </script> -->
 </head>
 
 <body onkeydown="onKeyDown(event)"
@@ -455,8 +457,8 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                 <div class="ArnQuadSearchContainer ArnPrimarySearchContainer">
                                     <div id="theSearchBox" class="ArnSearch">
                                         <div id="CitySearchContainer"
-                                            class="ArnIndividualSearchContainer ArnCitySearchContainer"><input id="address-input"
-                                                onchange="$('hotelName').setValue('')"
+                                            class="ArnIndividualSearchContainer ArnCitySearchContainer"><input
+                                                id="address-input" onchange="$('hotelName').setValue('')"
                                                 onblur="new Ajax.Request('#',{'parameters':['_s=DVDzt5wty523T0tH','_k=_CQKHXrw','siteId='+39624,'theme=standard','18',$('city').serialize()].join('&amp;')})"
                                                 value="austin, tx" name="19" type="text" class="text"
                                                 autocomplete="off">

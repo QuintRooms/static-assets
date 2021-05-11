@@ -14,9 +14,9 @@ class ChildPortal extends Resbeat {
 
 new ChildPortal();
 
-function updateRewardsText(updatedText) {
+async function updateRewardsText(updatedText) {
     if (document.querySelector('.MemberNotAuthenticated')) return;
-    utitlies.waitForTextInDOM('#rewards-link', 'RESBEAT Rewards');
+    await utitlies.waitForTextInDOM('#rewards-link', 'RESBEAT Rewards');
     const rewards_text = document.querySelector('#rewards-link');
     rewards_text.textContent = updatedText;
 }

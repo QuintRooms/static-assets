@@ -55,7 +55,7 @@ export default function siteConfig() {
         ads: {
             sidebar_ad: {
                 is_active: true,
-                image_url: `${env_path.path}/site_configs/${directory_name}/img/leftbanner.jpg?v1`,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/left_banner.jpg?v1`,
                 outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=06/16/2021&nights=5&siteid=64190',
             },
             between_property_ad: {

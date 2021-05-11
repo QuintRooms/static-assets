@@ -995,7 +995,7 @@
                                                 '<link href="'
                                                     .concat(f.path, '/site_configs/')
                                                     .concat(this.site_config.directory_name, '/styles/')
-                                                    .concat(this.site_config.site_id, '.css" rel="stylesheet">')
+                                                    .concat(this.site_config.site_id, '.css?v1" rel="stylesheet">')
                                             ));
                                 },
                             },

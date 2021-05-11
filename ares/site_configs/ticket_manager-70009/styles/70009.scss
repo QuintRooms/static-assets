@@ -1,10 +1,10 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
 $header_background: #fff;
-$logo_flex_position: center;
+$logo_flex_position: space-between;
 $logo_max_width: 300px;
 $background_color: #fff;
-$secondary_background_color: #fff;
+$secondary_background_color: #f0f0f0;
 $primary_color: #0668b0;
 $secondary_color: #F14A28;
 $primary_text_color: #fff;
@@ -20,3 +20,17 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
     @import '../../../styles/sass/config-styles/resbeat.config.scss';
+
+header {
+    border-bottom: 3px solid $primary_color !important;
+}
+
+.RootBody .search-messaging {
+    #user-name, h4 {
+        color: $primary_text_color !important;
+    }
+}
+
+#rewards-link, .points-earned, .total-points-earned {
+    display: none !important;
+}

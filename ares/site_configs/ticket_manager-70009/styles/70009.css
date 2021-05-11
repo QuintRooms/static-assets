@@ -476,8 +476,12 @@ header {
   border-bottom: 3px solid #0668b0 !important;
 }
 
-.RootBody .search-messaging #user-name {
+.RootBody .search-messaging #user-name, .RootBody .search-messaging h4 {
   color: #fff !important;
+}
+
+#rewards-link, .points-earned, .total-points-earned {
+  display: none !important;
 }
 
 /*# sourceMappingURL=70009.css.map*/

@@ -8981,46 +8981,18 @@
   \*******************************************************/
         /*! no static exports found */ function (e, t, n) {
             'use strict';
-            n(/*! core-js/modules/es6.promise */ './node_modules/core-js/modules/es6.promise.js'),
-                n(/*! regenerator-runtime/runtime */ './node_modules/regenerator-runtime/runtime.js'),
-                n(/*! core-js/modules/es7.symbol.async-iterator */ './node_modules/core-js/modules/es7.symbol.async-iterator.js'),
+            n(/*! core-js/modules/es7.symbol.async-iterator */ './node_modules/core-js/modules/es7.symbol.async-iterator.js'),
                 n(/*! core-js/modules/es6.symbol */ './node_modules/core-js/modules/es6.symbol.js'),
                 n(/*! core-js/modules/es6.regexp.to-string */ './node_modules/core-js/modules/es6.regexp.to-string.js'),
                 n(/*! core-js/modules/es6.object.to-string */ './node_modules/core-js/modules/es6.object.to-string.js'),
                 n(/*! core-js/modules/es6.reflect.construct */ './node_modules/core-js/modules/es6.reflect.construct.js'),
                 n(/*! core-js/modules/es6.reflect.get */ './node_modules/core-js/modules/es6.reflect.get.js');
-            var r = s(n(/*! ../../../js/resbeat */ './js/resbeat.js')),
-                o = s(n(/*! ./70009-config */ './site_configs/ticket_manager-70009/js/70009-config.js'));
-            function s(e) {
+            var r = o(n(/*! ../../../js/resbeat */ './js/resbeat.js'));
+            function o(e) {
                 return e && e.__esModule ? e : {default: e};
             }
-            function a(e, t, n, r, o, s, a) {
-                try {
-                    var i = e[s](a),
-                        c = i.value;
-                } catch (e) {
-                    return void n(e);
-                }
-                i.done ? t(c) : Promise.resolve(c).then(r, o);
-            }
-            function i(e) {
-                return function () {
-                    var t = this,
-                        n = arguments;
-                    return new Promise(function (r, o) {
-                        var s = e.apply(t, n);
-                        function i(e) {
-                            a(s, r, o, i, c, 'next', e);
-                        }
-                        function c(e) {
-                            a(s, r, o, i, c, 'throw', e);
-                        }
-                        i(void 0);
-                    });
-                };
-            }
-            function c(e) {
-                return (c =
+            function s(e) {
+                return (s =
                     'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
                         ? function (e) {
                               return typeof e;
@@ -9029,14 +9001,14 @@
                               return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                           })(e);
             }
-            function u(e, t) {
-                return (u =
+            function a(e, t) {
+                return (a =
                     Object.setPrototypeOf ||
                     function (e, t) {
                         return (e.__proto__ = t), e;
                     })(e, t);
             }
-            function l(e) {
+            function i(e) {
                 var t = (function () {
                     if ('undefined' == typeof Reflect || !Reflect.construct) return !1;
                     if (Reflect.construct.sham) return !1;
@@ -9049,28 +9021,28 @@
                 })();
                 return function () {
                     var n,
-                        r = p(e);
+                        r = d(e);
                     if (t) {
-                        var o = p(this).constructor;
+                        var o = d(this).constructor;
                         n = Reflect.construct(r, arguments, o);
                     } else n = r.apply(this, arguments);
-                    return d(this, n);
+                    return c(this, n);
                 };
             }
-            function d(e, t) {
-                return !t || ('object' !== c(t) && 'function' != typeof t) ? m(e) : t;
+            function c(e, t) {
+                return !t || ('object' !== s(t) && 'function' != typeof t) ? u(e) : t;
             }
-            function m(e) {
+            function u(e) {
                 if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                 return e;
             }
-            function f(e, t, n) {
-                return (f =
+            function l(e, t, n) {
+                return (l =
                     'undefined' != typeof Reflect && Reflect.get
                         ? Reflect.get
                         : function (e, t, n) {
                               var r = (function (e, t) {
-                                  for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = p(e)); );
+                                  for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = d(e)); );
                                   return e;
                               })(e, t);
                               if (r) {
@@ -9079,60 +9051,32 @@
                               }
                           })(e, t, n || e);
             }
-            function p(e) {
-                return (p = Object.setPrototypeOf
+            function d(e) {
+                return (d = Object.setPrototypeOf
                     ? Object.getPrototypeOf
                     : function (e) {
                           return e.__proto__ || Object.getPrototypeOf(e);
                       })(e);
             }
-            var h = new (s(n(/*! ../../../js/utilities */ './js/utilities.js')).default)(),
-                y = new o.default();
-            function g() {
-                return (g = i(
-                    regeneratorRuntime.mark(function e(t) {
-                        return regeneratorRuntime.wrap(function (e) {
-                            for (;;)
-                                switch ((e.prev = e.next)) {
-                                    case 0:
-                                        if (!document.querySelector('.MemberNotAuthenticated')) {
-                                            e.next = 2;
-                                            break;
-                                        }
-                                        return e.abrupt('return');
-                                    case 2:
-                                        return (e.next = 4), h.waitForTextInDOM('#rewards-link', 'RESBEAT Rewards');
-                                    case 4:
-                                        document.querySelector('#rewards-link').textContent = t;
-                                    case 6:
-                                    case 'end':
-                                        return e.stop();
-                                }
-                        }, e);
-                    })
-                )).apply(this, arguments);
-            }
+            var m = new (o(n(/*! ./70009-config */ './site_configs/ticket_manager-70009/js/70009-config.js')).default)();
             new ((function (e) {
                 !(function (e, t) {
                     if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
-                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && u(e, t);
+                    (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && a(e, t);
                 })(n, e);
-                var t = l(n);
+                var t = i(n);
                 function n() {
                     var e, r;
                     return (
                         (function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, n),
-                        f(((e = m((r = t.call(this, y)))), p(n.prototype)), 'init', e).call(e),
+                        l(((e = u((r = t.call(this, m)))), d(n.prototype)), 'init', e).call(e),
                         r
                     );
                 }
                 return n;
-            })(r.default))(),
-                (function (e) {
-                    g.apply(this, arguments);
-                })('TM Rewards');
+            })(r.default))();
         },
     './site_configs/ticket_manager-70009/styles/70009.scss':
         /*!*************************************************************!*\

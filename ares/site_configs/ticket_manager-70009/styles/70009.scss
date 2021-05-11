@@ -25,6 +25,12 @@ header {
     border-bottom: 3px solid $primary_color !important;
 }
 
-.RootBody .search-messaging #user-name {
-    color: $primary_text_color !important;
+.RootBody .search-messaging {
+    #user-name, h4 {
+        color: $primary_text_color !important;
+    }
+}
+
+#rewards-link, .points-earned, .total-points-earned {
+    display: none !important;
 }

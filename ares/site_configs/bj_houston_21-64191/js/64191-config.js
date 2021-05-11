@@ -56,7 +56,7 @@ export default function siteConfig() {
             sidebar_ad: {
                 is_active: true,
                 image_url: `${env_path.path}/site_configs/${directory_name}/img/leftbanner.jpg`,
-                outbound_url: 'https://www.grandcanyon.org/',
+                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=06/16/2021&nights=5&siteid=64190',
             },
             between_property_ad: {
                 is_active: false,

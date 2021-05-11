@@ -7743,7 +7743,7 @@
                     ads: {
                         sidebar_ad: {
                             is_active: !0,
-                            image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/leftbanner.jpg'),
+                            image_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/leftbanner.jpg?v1'),
                             outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=06/16/2021&nights=5&siteid=64190',
                         },
                         between_property_ad: {is_active: !1, image_url: '', outbound_url: ''},

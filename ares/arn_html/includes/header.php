@@ -82,7 +82,7 @@ $dotenv->load();
             if (typeof mapFn !== 'undefined') {
                 if (!isCallable(mapFn)) {
                     throw new TypeError(
-                    'Array.from: when provided, the second argument must be a function');
+                        'Array.from: when provided, the second argument must be a function');
                 }
 
                 if (arguments.length > 2) {
@@ -129,7 +129,7 @@ if (getenv('isCUG') == "true" && strpos($url, 'auth') == false) {
 
 <div id="h4h-styles">
     <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
-    <link rel="stylesheet" type="text/css" href="http://roomsteals.localhost/portal/css/portal.css">
+    <!-- <link rel="stylesheet" type="text/css" href="http://roomsteals.localhost/portal/css/portal.css"> -->
 </div>
 
 <?php

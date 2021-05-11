@@ -13,15 +13,15 @@ module.exports = () => {
             // 'austin_food_and_wine_20-60290': './src/60290.js', // Austin Food And Wine 2020
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
-            // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
+            'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
-            // 'bj_las_vegas_21-64190': './src/64190.js', // Barrett-Jackson Las Vegas 2021
+            'bj_las_vegas_21-64190': './src/64190.js', // Barrett-Jackson Las Vegas 2021
             // 'bj_northeast_20-60086': './src/60086.js', // Barrett-Jackson Northeast 2020
-            // 'bj_scottsdale_21-58513': './src/58513.js', // Barrett-Jackson Scottsdale 2021
-            // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
+            'bj_scottsdale_21-58513': './src/58513.js', // Barrett-Jackson Scottsdale 2021
+            'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
-            // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
+            'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
             // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'buku_21-56297': './src/56297.js', // Buku 2021
@@ -41,7 +41,7 @@ module.exports = () => {
             // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
             // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
             // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
-            'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
@@ -71,16 +71,19 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            // 'ticket_manager-70009': './src/70009.js', // ticket manager
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
         };
     }
 

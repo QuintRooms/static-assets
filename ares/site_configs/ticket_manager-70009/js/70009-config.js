@@ -27,7 +27,7 @@ export default function siteConfig() {
             is_cug: true,
             show_points: false,
             allow_registration: false,
-            percent_off_text: "BEAT 'EM BY",
+            percent_off_text: 'Savings',
             show_percent_savings: true,
         },
         exclusive_rate_text: '',

@@ -5345,7 +5345,7 @@
                                             '<link href="'
                                                 .concat(p.path, '/site_configs/')
                                                 .concat(this.site_config.directory_name, '/styles/')
-                                                .concat(this.site_config.site_id, '.css?v3" rel="stylesheet">')
+                                                .concat(this.site_config.site_id, '.css" rel="stylesheet">')
                                         ));
                             },
                         },
@@ -8483,7 +8483,7 @@
                     use_google_autocomplete: !0,
                     distance_unit: 'useMiles',
                     lodging: {event_id: '', event_name: '', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
-                    cug: {is_cug: !0, show_points: !1, allow_registration: !1, percent_off_text: "BEAT 'EM BY", show_percent_savings: !0},
+                    cug: {is_cug: !0, show_points: !1, allow_registration: !1, percent_off_text: 'Savings', show_percent_savings: !0},
                     exclusive_rate_text: '',
                     host_hotel_text: '',
                     partner_hotel_text: '',

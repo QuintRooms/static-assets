@@ -11,7 +11,7 @@
 
 /* Header */
 header {
-  justify-content: center;
+  justify-content: space-between;
   background: #fff;
 }
 
@@ -389,7 +389,7 @@ input[type=email].email-mask,
 .WBSupportForm textarea, .RootBody .ArnPrimarySearchContainer, .ArnSupportLinks, .SinglePropDetail .SimpleSearch input,
 .SinglePropDetail .SimpleSearch select, .totalsTable tr th,
 .totalsTable tr td, #theBookingPage .PaymentPolicies, .support-details, .SearchHotels .currencies-container {
-  background: #fff !important;
+  background: #f0f0f0 !important;
 }
 
 .SinglePropDetail .SimpleSearch, .config-container, #theSubmitButton:hover,
@@ -464,13 +464,20 @@ input[type=email].email-mask,
 }
 
 header {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 @media screen and (max-width: 800px) {
   .currencies-container {
     background: #fff;
   }
+}
+header {
+  border-bottom: 3px solid #0668b0 !important;
+}
+
+.RootBody .search-messaging #user-name {
+  color: #fff !important;
 }
 
 /*# sourceMappingURL=70009.css.map*/

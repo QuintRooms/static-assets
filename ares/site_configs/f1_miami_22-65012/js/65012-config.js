@@ -75,8 +75,8 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         has_custom_emails: true,
-        // has_group_booking_banner: true,
-        // group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Las%20Vegas',
+        has_group_booking_banner: true,
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Miami%20GP',
         uses_hybrid_compensation_model: true,
     };
 }

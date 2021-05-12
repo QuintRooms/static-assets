@@ -321,5 +321,101 @@ header {
     box-shadow: 0 0 0 20px #000;
   }
 }
+.lucid-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #000;
+}
+.lucid-banner .lucid-content {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  text-align: center;
+}
+.lucid-banner .lucid-content span {
+  color: #fff;
+  font-size: 16px;
+  margin-left: 30px;
+  font-weight: 600;
+}
+.lucid-banner .lucid-content #tablet {
+  display: none;
+}
+.lucid-banner .lucid-content #mobile {
+  display: none;
+}
+.lucid-banner .lucid-button {
+  background: #fff;
+  display: flex;
+  margin-right: 50px;
+  width: 150px;
+  height: 30px;
+  transition: all 0.3s linear;
+}
+.lucid-banner .lucid-button:hover {
+  background: #ccc;
+}
+.lucid-banner .lucid-button a {
+  text-decoration: none;
+  color: #e41e3d;
+  font-size: 13px;
+  font-weight: 700;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1080px) {
+  .lucid-banner .lucid-content {
+    display: flex;
+    align-items: center;
+    width: 75%;
+  }
+  .lucid-banner .lucid-content span {
+    font-size: 14px;
+    margin-left: 30px;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 960px) {
+  .lucid-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+  }
+  .lucid-banner .lucid-button {
+    width: 180px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .lucid-banner .lucid-content span {
+    font-size: 16px;
+  }
+  .lucid-banner .lucid-content #desktop {
+    display: none;
+  }
+  .lucid-banner .lucid-content #tablet {
+    display: inline;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lucid-banner .lucid-content #tablet {
+    display: none;
+  }
+  .lucid-banner .lucid-content #mobile {
+    display: inline;
+  }
+}
+@media screen and (max-width: 400px) {
+  .lucid-banner .lucid-content span {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+}
 
 /*# sourceMappingURL=60305.css.map*/

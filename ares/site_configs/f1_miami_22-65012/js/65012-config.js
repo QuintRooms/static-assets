@@ -18,7 +18,7 @@ export default function siteConfig() {
         currency: 'USD',
         distance_unit: 'useMiles',
         lodging: {
-            event_id: 11111,
+            event_id: 46260,
             event_name: 'Miami Grand Prix',
             event_dates: '',
             redirect_date: '',

@@ -78,13 +78,14 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees
+            // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'texas_book_festival-69571': './src/69571.js', // texas book_festival
         };
     }
 

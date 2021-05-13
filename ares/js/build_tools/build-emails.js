@@ -103,7 +103,6 @@ function buildSiteObject(siteConfig, siteStyles) {
     let logo;
     if (siteConfig.includes('email_logo_file_location')) {
         logo = extractValue(siteConfig, 'email_logo_file_location:', ',').split('img/');
-        console.log('LOGO: ', logo);
     } else {
         logo = extractValue(siteConfig, 'logo_file_location:', ',').split('img/');
     }

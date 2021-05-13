@@ -1,32 +1,31 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 68382;
-const directory_name = `railbird_21-${site_id}`;
+
+const site_id = 60305;
+const directory_name = `austin_food_and_wine_21-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
         affiliate_id: 16067,
-        master_id: 920,
+        master_id: 1816,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        use_google_autocomplete: true,
-        distance_unit: 'useMiles',
         lodging: {
-            event_id: 48492,
-            event_name: 'Railbird 2021',
-            event_dates: '',
+            event_id: 44058,
+            event_name: 'Austin Food & Wine Festival',
+            event_dates: '11/05/2021 - 11/08/2021',
             redirect_date: '',
             redirect_url: '',
-            is_lrg: false,
+            is_lrg: true,
         },
         cug: {
             is_cug: false,
             show_points: false,
-            allow_registration: false,
+            allow_registration: true,
             percent_off_text: 'off',
             show_percent_savings: false,
         },
@@ -43,10 +42,9 @@ export default function siteConfig() {
         show_date_prompt: false,
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-        email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo-black.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png?v2`,
-            logo_outbound_url: 'https://www.railbirdfest.com/',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            logo_outbound_url: 'https://www.austinfoodandwinefestival.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
@@ -62,11 +60,6 @@ export default function siteConfig() {
                 image_url: '',
                 outbound_url: '',
             },
-            confirmation_page_top: {
-                is_active: false,
-                image_url: '',
-                outbound_url: '',
-            },
             confirmation_page_bottom: {
                 is_active: false,
                 image_url: '',
@@ -77,18 +70,8 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
-        confirmation_email_from: 'Hotels for Hope',
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Railbird',
-        has_landing_page: false,
-        hide_search_on_landing_page: true,
-        landing_page_events: [
-            {
-                name: '',
-                display_date: '', // August 5-8, 2021
-                end_date: '', // M/D/YYYY
-                portal_url: '',
-            },
-        ],
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Austin%20Food%20and%20Wine',
+        confirmation_email_from: 'Hotels for Hope',
     };
 }

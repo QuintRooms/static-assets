@@ -1,19 +1,19 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #CD6C4C;
+$header_background: #fff;
 $logo_flex_position: center;
-$logo_max_width: 200px;
+$logo_max_width: 250px;
 $background_color: #fff;
-$primary_color: #313133;
-$secondary_color: #CD6C4C;
+$primary_color: #000;
+$secondary_color: #e41e3d;
 $primary_text_color: #fff;
-$secondary_text_color: #313133;
-$border_color: #313133;
+$secondary_text_color: #e41e3d;
+$border_color: #000;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #CD6C4C;
-$button_hover_border_color: #CD6C4C;
+$button_hover_text_color: #e41e3d;
+$button_hover_border_color: #e41e3d;
 $google_font_name: 'Montserrat';
-$site_name: 'moon_river_festival_21-68381';
+$site_name: 'austin_food_and_wine_21-60305';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
 

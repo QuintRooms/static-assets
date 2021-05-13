@@ -1,23 +1,23 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 68381;
-const directory_name = `moon_river_festival_21-${site_id}`;
+const site_id = 69571;
+const directory_name = `texas_book_festival-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: '',
-        master_id: 16067,
+        affiliate_id: '16549',
+        master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
-            event_name: 'Moon River Festival',
+            event_id: '49452',
+            event_name: 'Texas Book Festival',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -44,8 +44,8 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.moonriverfestival.com/',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.jpg`,
+            logo_outbound_url: 'https://www.texasbookfestival.org/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
@@ -77,9 +77,10 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
-        has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Moon%20River',
+        has_group_booking_banner: false,
+        group_booking_form_url: '',
         has_landing_page: false,
+        has_custom_emails: false,
         hide_search_on_landing_page: true,
         landing_page_events: [
             {

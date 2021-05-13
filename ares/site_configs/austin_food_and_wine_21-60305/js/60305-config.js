@@ -16,7 +16,7 @@ export default function siteConfig() {
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
             event_id: 44058,
-            event_name: 'Austin Food & Wine Festival',
+            event_name: 'Austin Food + Wine Festival',
             event_dates: '11/05/2021 - 11/08/2021',
             redirect_date: '',
             redirect_url: '',

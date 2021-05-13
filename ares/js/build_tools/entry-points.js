@@ -84,6 +84,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            // 'texas_book_festival-69571': './src/69571.js', // texas book_festival
         };
     }
 

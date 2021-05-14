@@ -57,10 +57,13 @@ module.exports = () => {
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
-            // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees
+            // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees 2020
+            // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
+            // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
             // 'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // Special Olympics Of Texas Summer Games San Antonio 2021
             // 'sotx_fall_classic_bocce_softball_21-68888': './src/68888.js', // sotx fall_classic_bocce_softball_21
             // 'sotx_fall_classic_golf_swimming_21-68887': './src/68887.js', // sotx fall_classic_golf_swimming_21
+            // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_20-60336': './src/60336.js', // Tortuga 2020
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
@@ -78,13 +81,13 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'texas_book_festival-69571': './src/69571.js', // texas book_festival
         };
     }
 

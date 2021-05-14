@@ -79,6 +79,7 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees
+            // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival
         };
 

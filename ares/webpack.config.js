@@ -10,8 +10,9 @@ module.exports = () => {
             const sites = EntryPoints();
             if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'develop') {
                 for (const site in sites) {
-                    if (site === 'f1_landing_page') return;
-                    build_emails(site);
+                    if (site !== 'f1_landing_page') {
+                        build_emails(site);
+                    }
                 }
             }
             return sites;

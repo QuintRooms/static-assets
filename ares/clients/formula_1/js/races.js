@@ -173,9 +173,9 @@ export default {
             book_url: 'https://bookrooms.formula1.com/group-event?id=45328&utm_source=Website&utm_medium=Index%20Page&utm_campaign=Canada%202021',
         },
         france: {
-            days: '25-27',
+            days: '18-20',
             month: 'Jun',
-            race_expiry: '2021-06-28',
+            race_expiry: '2021-06-21',
             sponsor: '',
             name: 'French Grand Prix',
             location: 'La Castellet, France ',

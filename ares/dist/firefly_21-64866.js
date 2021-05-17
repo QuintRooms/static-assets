@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 69));
+        n((n.s = 68));
 })([
     function (e, t, n) {
         var r = n(25)('wks'),
@@ -158,7 +158,7 @@
             o = n(9),
             i = n(8),
             a = n(18)('src'),
-            c = n(73),
+            c = n(72),
             s = ('' + c).split('toString');
         (n(11).inspectSource = function (e) {
             return c.call(e);
@@ -183,7 +183,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(76),
+        var r = n(75),
             o = n(15);
         e.exports = function (e) {
             return r(o(e));
@@ -262,15 +262,15 @@
             d = n(5),
             f = n(3),
             p = n(12),
-            h = n(86),
-            m = n(87),
-            y = n(60),
-            g = n(61).set,
-            v = n(91)(),
-            b = n(62),
-            S = n(92),
-            w = n(93),
-            _ = n(94),
+            h = n(85),
+            m = n(86),
+            y = n(59),
+            g = n(60).set,
+            v = n(90)(),
+            b = n(61),
+            S = n(91),
+            w = n(92),
+            _ = n(93),
             x = s.TypeError,
             k = s.process,
             A = k && k.versions,
@@ -279,7 +279,7 @@
             q = 'process' == l(k),
             C = function () {},
             E = (o = b.f),
-            T = !!(function () {
+            P = !!(function () {
                 try {
                     var e = L.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -288,7 +288,7 @@
                     return (q || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== M.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            P = function (e) {
+            T = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -313,7 +313,7 @@
                                         c
                                             ? (o || (2 == e._h && D(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -370,7 +370,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = P(e))
+                        (t = T(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -385,7 +385,7 @@
                     }
                 }
             };
-        T ||
+        P ||
             ((L = function (e) {
                 h(this, L, 'Promise', '_h'), p(e), r.call(this);
                 try {
@@ -396,7 +396,7 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(95)(L.prototype, {
+            }).prototype = n(94)(L.prototype, {
                 then: function (e, t) {
                     var n = E(y(this, L));
                     return (
@@ -420,17 +420,17 @@
             (b.f = E = function (e) {
                 return e === L || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !T, {Promise: L}),
+            d(d.G + d.W + d.F * !P, {Promise: L}),
             n(28)(L, 'Promise'),
-            n(96)('Promise'),
+            n(95)('Promise'),
             (a = n(11).Promise),
-            d(d.S + d.F * !T, 'Promise', {
+            d(d.S + d.F * !P, 'Promise', {
                 reject: function (e) {
                     var t = E(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !T), 'Promise', {
+            d(d.S + d.F * (c || !P), 'Promise', {
                 resolve: function (e) {
                     return _(c && this === a ? L : this, e);
                 },
@@ -439,8 +439,8 @@
                 d.S +
                     d.F *
                         !(
-                            T &&
-                            n(97)(function (e) {
+                            P &&
+                            n(96)(function (e) {
                                 L.all(e).catch(C);
                             })
                         ),
@@ -905,7 +905,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(100);
+        n(99);
         var r = n(10),
             o = n(9),
             i = n(7),
@@ -1389,7 +1389,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(79),
+            o = n(78),
             i = n(37),
             a = n(36)('IE_PROTO'),
             c = function () {},
@@ -1420,7 +1420,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(81);
+        n(80);
         var r = n(1),
             o = n(41),
             i = n(4),
@@ -1451,7 +1451,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(99)(!0);
+        var r = n(98)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
@@ -1492,7 +1492,7 @@
     function (e, t, n) {
         'use strict';
         var r = n(1),
-            o = n(102),
+            o = n(101),
             i = n(31);
         n(32)('search', 1, function (e, t, n, a) {
             return [
@@ -1547,7 +1547,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(63), n(40), n(66), n(46), n(67), n(22), n(16), n(24);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(62), n(40), n(65), n(46), n(66), n(22), n(16), n(24);
         var a = n(33),
             c = (function () {
                 function e() {
@@ -2246,11 +2246,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(64),
-            o = n(113),
+        var r = n(63),
+            o = n(112),
             i = n(23),
             a = n(13);
-        (e.exports = n(114)(
+        (e.exports = n(113)(
             Array,
             'Array',
             function (e, t) {
@@ -2515,7 +2515,7 @@
     function (e, t, n) {
         var r = n(13),
             o = n(20),
-            i = n(77);
+            i = n(76);
         e.exports = function (e) {
             return function (t, n, a) {
                 var c,
@@ -2591,116 +2591,6 @@
             function (e) {
                 return (e = o(e)), r(e, i) ? e[i] : 'function' == typeof e.constructor && e instanceof e.constructor ? e.constructor.prototype : e instanceof Object ? a : null;
             };
-    },
-    function (e, t) {
-        var n,
-            r,
-            o = (e.exports = {});
-        function i() {
-            throw new Error('setTimeout has not been defined');
-        }
-        function a() {
-            throw new Error('clearTimeout has not been defined');
-        }
-        function c(e) {
-            if (n === setTimeout) return setTimeout(e, 0);
-            if ((n === i || !n) && setTimeout) return (n = setTimeout), setTimeout(e, 0);
-            try {
-                return n(e, 0);
-            } catch (t) {
-                try {
-                    return n.call(null, e, 0);
-                } catch (t) {
-                    return n.call(this, e, 0);
-                }
-            }
-        }
-        !(function () {
-            try {
-                n = 'function' == typeof setTimeout ? setTimeout : i;
-            } catch (e) {
-                n = i;
-            }
-            try {
-                r = 'function' == typeof clearTimeout ? clearTimeout : a;
-            } catch (e) {
-                r = a;
-            }
-        })();
-        var s,
-            u = [],
-            l = !1,
-            d = -1;
-        function f() {
-            l && s && ((l = !1), s.length ? (u = s.concat(u)) : (d = -1), u.length && p());
-        }
-        function p() {
-            if (!l) {
-                var e = c(f);
-                l = !0;
-                for (var t = u.length; t; ) {
-                    for (s = u, u = []; ++d < t; ) s && s[d].run();
-                    (d = -1), (t = u.length);
-                }
-                (s = null),
-                    (l = !1),
-                    (function (e) {
-                        if (r === clearTimeout) return clearTimeout(e);
-                        if ((r === a || !r) && clearTimeout) return (r = clearTimeout), clearTimeout(e);
-                        try {
-                            r(e);
-                        } catch (t) {
-                            try {
-                                return r.call(null, e);
-                            } catch (t) {
-                                return r.call(this, e);
-                            }
-                        }
-                    })(e);
-            }
-        }
-        function h(e, t) {
-            (this.fun = e), (this.array = t);
-        }
-        function m() {}
-        (o.nextTick = function (e) {
-            var t = new Array(arguments.length - 1);
-            if (arguments.length > 1) for (var n = 1; n < arguments.length; n++) t[n - 1] = arguments[n];
-            u.push(new h(e, t)), 1 !== u.length || l || c(p);
-        }),
-            (h.prototype.run = function () {
-                this.fun.apply(null, this.array);
-            }),
-            (o.title = 'browser'),
-            (o.browser = !0),
-            (o.env = {}),
-            (o.argv = []),
-            (o.version = ''),
-            (o.versions = {}),
-            (o.on = m),
-            (o.addListener = m),
-            (o.once = m),
-            (o.off = m),
-            (o.removeListener = m),
-            (o.removeAllListeners = m),
-            (o.emit = m),
-            (o.prependListener = m),
-            (o.prependOnceListener = m),
-            (o.listeners = function (e) {
-                return [];
-            }),
-            (o.binding = function (e) {
-                throw new Error('process.binding is not supported');
-            }),
-            (o.cwd = function () {
-                return '/';
-            }),
-            (o.chdir = function (e) {
-                throw new Error('process.chdir is not supported');
-            }),
-            (o.umask = function () {
-                return 0;
-            });
     },
     function (e, t, n) {
         var r = n(1),
@@ -2960,7 +2850,7 @@
     function (e, t, n) {
         var r = n(29),
             o = n(19);
-        n(116)('keys', function () {
+        n(115)('keys', function () {
             return function (e) {
                 return o(r(e));
             };
@@ -2968,17 +2858,14 @@
     },
     function (e, t, n) {
         'use strict';
-        (function (e) {
-            Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0);
-            var n = e.env.domain;
-            t.default = function () {
-                return {path: 'https://static.'.concat(n, '/ares')};
-            };
-        }.call(this, n(59)));
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0);
+        t.default = function () {
+            return {path: 'https://static.'.concat('hotelsforhope.com', '/ares')};
+        };
     },
     function (e, t, n) {
         'use strict';
-        n(70), n(121);
+        n(69), n(120);
     },
     function (e, t, n) {
         'use strict';
@@ -2992,8 +2879,8 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        n(71), n(72), n(40), n(16), n(82), n(84);
-        var o = i(n(85));
+        n(70), n(71), n(40), n(16), n(81), n(83);
+        var o = i(n(84));
         function i(e) {
             return e && e.__esModule ? e : {default: e};
         }
@@ -3054,7 +2941,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var f = new (i(n(120)).default)();
+        var f = new (i(n(119)).default)();
         new ((function (e) {
             !(function (e, t) {
                 if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
@@ -3084,7 +2971,7 @@
             i = n(4),
             a = n(5),
             c = n(10),
-            s = n(74).KEY,
+            s = n(73).KEY,
             u = n(7),
             l = n(25),
             d = n(28),
@@ -3092,8 +2979,8 @@
             p = n(0),
             h = n(49),
             m = n(48),
-            y = n(75),
-            g = n(78),
+            y = n(74),
+            g = n(77),
             v = n(1),
             b = n(3),
             S = n(29),
@@ -3101,14 +2988,14 @@
             _ = n(35),
             x = n(26),
             k = n(39),
-            A = n(80),
+            A = n(79),
             M = n(56),
             L = n(53),
             q = n(6),
             C = n(19),
             E = M.f,
-            T = q.f,
-            P = A.f,
+            P = q.f,
+            T = A.f,
             R = r.Symbol,
             O = r.JSON,
             Y = O && O.stringify,
@@ -3128,9 +3015,9 @@
                     return (
                         7 !=
                         k(
-                            T({}, 'a', {
+                            P({}, 'a', {
                                 get: function () {
-                                    return T(this, 'a', {value: 7}).a;
+                                    return P(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -3138,9 +3025,9 @@
                 })
                     ? function (e, t, n) {
                           var r = E(N, t);
-                          r && delete N[t], T(e, t, n), r && e !== N && T(N, t, r);
+                          r && delete N[t], P(e, t, n), r && e !== N && P(N, t, r);
                       }
-                    : T,
+                    : P,
             V = function (e) {
                 var t = (F[e] = k(R.prototype));
                 return (t._k = e), t;
@@ -3160,8 +3047,8 @@
                     (t = _(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || T(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
-                        : T(e, t, n)
+                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
+                        : P(e, t, n)
                 );
             },
             J = function (e, t) {
@@ -3180,11 +3067,11 @@
                 }
             },
             X = function (e) {
-                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = P(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
+                for (var t, n = e === N, r = T(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
                 return i;
             };
         U ||
@@ -3397,7 +3284,7 @@
             a = n(1),
             c = n(3),
             s = n(7),
-            u = n(83),
+            u = n(82),
             l = (n(2).Reflect || {}).construct,
             d = s(function () {
                 function e() {}
@@ -3478,2403 +3365,2385 @@
     },
     function (e, t, n) {
         'use strict';
-        (function (e) {
-            Object.defineProperty(t, '__esModule', {value: !0}),
-                (t.default = void 0),
-                n(22),
-                n(98),
-                n(101),
-                n(40),
-                n(16),
-                n(44),
-                n(103),
-                n(63),
-                n(105),
-                n(106),
-                n(109),
-                n(24),
-                n(110),
-                n(111);
-            var r = s(n(45)),
-                o = s(n(117)),
-                i = s(n(118)),
-                a = s(n(68)),
-                c = s(n(119));
-            function s(e) {
-                return e && e.__esModule ? e : {default: e};
+        Object.defineProperty(t, '__esModule', {value: !0}),
+            (t.default = void 0),
+            n(22),
+            n(97),
+            n(100),
+            n(40),
+            n(16),
+            n(44),
+            n(102),
+            n(62),
+            n(104),
+            n(105),
+            n(108),
+            n(24),
+            n(109),
+            n(110);
+        var r = s(n(45)),
+            o = s(n(116)),
+            i = s(n(117)),
+            a = s(n(67)),
+            c = s(n(118));
+        function s(e) {
+            return e && e.__esModule ? e : {default: e};
+        }
+        function u(e, t, n, r, o, i, a) {
+            try {
+                var c = e[i](a),
+                    s = c.value;
+            } catch (e) {
+                return void n(e);
             }
-            function u(e, t, n, r, o, i, a) {
-                try {
-                    var c = e[i](a),
-                        s = c.value;
-                } catch (e) {
-                    return void n(e);
-                }
-                c.done ? t(s) : Promise.resolve(s).then(r, o);
-            }
-            function l(e) {
-                return function () {
-                    var t = this,
-                        n = arguments;
-                    return new Promise(function (r, o) {
-                        var i = e.apply(t, n);
-                        function a(e) {
-                            u(i, r, o, a, c, 'next', e);
-                        }
-                        function c(e) {
-                            u(i, r, o, a, c, 'throw', e);
-                        }
-                        a(void 0);
-                    });
-                };
-            }
-            function d(e, t) {
-                for (var n = 0; n < t.length; n++) {
-                    var r = t[n];
-                    (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
-                }
-            }
-            var f = e.env.domain,
-                p = new a.default(),
-                h = n(33),
-                m = n(47);
-            h.extend(m);
-            var y = new r.default(),
-                g = new i.default(),
-                v = (function () {
-                    function e(t) {
-                        !(function (e, t) {
-                            if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                        })(this, e),
-                            (this.site_id = ''),
-                            (this.page_name = y.getPageName()),
-                            (this.site_config = t),
-                            (this.currency = ''),
-                            (this.svg_arrow =
-                                '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'),
-                            (this.map_loaded = !1),
-                            (this.selected_currency = y.getMetaTagContent('currency') ? y.getMetaTagContent('currency') : 'USD');
+            c.done ? t(s) : Promise.resolve(s).then(r, o);
+        }
+        function l(e) {
+            return function () {
+                var t = this,
+                    n = arguments;
+                return new Promise(function (r, o) {
+                    var i = e.apply(t, n);
+                    function a(e) {
+                        u(i, r, o, a, c, 'next', e);
                     }
-                    var t, n, r, i, a, s, u, m, v, b, S, w, _, x;
-                    return (
-                        (t = e),
-                        (n = [
-                            {
-                                key: 'init',
-                                value: function () {
-                                    var e = this;
-                                    this.site_config || console.error('No site config found.'),
-                                        this.initializeARNRatesReadyEvent(),
-                                        y.ieForEachPolyfill(),
-                                        this.getSiteID().then(
-                                            (function () {
-                                                var t = l(
-                                                    regeneratorRuntime.mark(function t(n) {
-                                                        return regeneratorRuntime.wrap(function (t) {
-                                                            for (;;)
-                                                                switch ((t.prev = t.next)) {
-                                                                    case 0:
-                                                                        return (
-                                                                            y.getPageName(),
-                                                                            e.applyConfigStyles(),
-                                                                            e.setupDatePrompt(),
-                                                                            e.showLanguageFromCongif(),
-                                                                            e.showFilters(),
-                                                                            e.buildMobileMenu(),
+                    function c(e) {
+                        u(i, r, o, a, c, 'throw', e);
+                    }
+                    a(void 0);
+                });
+            };
+        }
+        function d(e, t) {
+            for (var n = 0; n < t.length; n++) {
+                var r = t[n];
+                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
+            }
+        }
+        var f = 'hotelsforhope.com',
+            p = new a.default(),
+            h = n(33),
+            m = n(47);
+        h.extend(m);
+        var y = new r.default(),
+            g = new i.default(),
+            v = (function () {
+                function e(t) {
+                    !(function (e, t) {
+                        if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
+                    })(this, e),
+                        (this.site_id = ''),
+                        (this.page_name = y.getPageName()),
+                        (this.site_config = t),
+                        (this.currency = ''),
+                        (this.svg_arrow =
+                            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'),
+                        (this.map_loaded = !1),
+                        (this.selected_currency = y.getMetaTagContent('currency') ? y.getMetaTagContent('currency') : 'USD');
+                }
+                var t, n, r, i, a, s, u, m, v, b, S, w, _, x;
+                return (
+                    (t = e),
+                    (n = [
+                        {
+                            key: 'init',
+                            value: function () {
+                                var e = this;
+                                this.site_config || console.error('No site config found.'),
+                                    this.initializeARNRatesReadyEvent(),
+                                    y.ieForEachPolyfill(),
+                                    this.getSiteID().then(
+                                        (function () {
+                                            var t = l(
+                                                regeneratorRuntime.mark(function t(n) {
+                                                    return regeneratorRuntime.wrap(function (t) {
+                                                        for (;;)
+                                                            switch ((t.prev = t.next)) {
+                                                                case 0:
+                                                                    return (
+                                                                        y.getPageName(),
+                                                                        e.applyConfigStyles(),
+                                                                        e.setupDatePrompt(),
+                                                                        e.showLanguageFromCongif(),
+                                                                        e.showFilters(),
+                                                                        e.buildMobileMenu(),
+                                                                        y.createHTML(
+                                                                            '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
+                                                                            'head',
+                                                                            'beforeEnd'
+                                                                        ),
+                                                                        (t.next = 9),
+                                                                        y.createHTML(
+                                                                            '<header><a class="logo" href="'
+                                                                                .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
+                                                                                .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
+                                                                            '.config-container',
+                                                                            'afterEnd'
+                                                                        )
+                                                                    );
+                                                                case 9:
+                                                                    'cug' === e.site_config.site_type &&
+                                                                        y.waitForSelectorInDOM('#AdminControlsContainer').then(
+                                                                            l(
+                                                                                regeneratorRuntime.mark(function e() {
+                                                                                    return regeneratorRuntime.wrap(function (e) {
+                                                                                        for (;;)
+                                                                                            switch ((e.prev = e.next)) {
+                                                                                                case 0:
+                                                                                                    y.appendToParent('#commands', 'header');
+                                                                                                case 1:
+                                                                                                case 'end':
+                                                                                                    return e.stop();
+                                                                                            }
+                                                                                    }, e);
+                                                                                })
+                                                                            )
+                                                                        ),
+                                                                        y.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
+                                                                        'property-detail' === e.page_name &&
+                                                                            (e.addImageSlideshow(),
+                                                                            e.updateAmenitiesLegendTag(),
+                                                                            y.updateHTML('.SinglePropDetail .Map a', 'Map'),
+                                                                            y.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
+                                                                            y.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
+                                                                            y.updateHTML('.SinglePropDetail .Details a', 'General Info'),
+                                                                            e.isPropByGateway(
+                                                                                e.site_config.exclusive_rate_text,
+                                                                                e.site_config.host_hotel_text,
+                                                                                e.site_config.partner_hotel_text,
+                                                                                e.site_config.lodging.event_name
+                                                                            ),
+                                                                            e.updatePropReviewsURLToUseAnchor(),
+                                                                            e.getTotalNights().then(function (t) {
+                                                                                e.getCurrency().then(function (n) {
+                                                                                    e.showFullStayAndNightlyRates(t, n);
+                                                                                });
+                                                                            }),
+                                                                            y.moveElementIntoExistingWrapper(
+                                                                                '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
+                                                                                '.SinglePropDetail .ArnPropAddress',
+                                                                                'afterEnd'
+                                                                            ),
+                                                                            y.moveElementIntoExistingWrapper(
+                                                                                'div.subHeaderContainer > div > a > span.translateMe',
+                                                                                '.SinglePropDetail .ArnLeftListContainer',
+                                                                                'afterBegin'
+                                                                            ),
+                                                                            e.showOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
+                                                                        'checkout' === e.page_name &&
+                                                                            ('52342' !== e.site_id &&
+                                                                                y.createModal(
+                                                                                    [document.querySelector('#theStayPolicies')],
+                                                                                    'Policies & Fees',
+                                                                                    'checkout',
+                                                                                    '#theConfirmationContainer',
+                                                                                    'afterBegin'
+                                                                                ),
+                                                                            y.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
+                                                                            y.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
+                                                                            y.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
+                                                                            y.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
+                                                                            y.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
+                                                                            y.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
+                                                                            y.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
+                                                                            y.updateHTML('#theCharges legend', 'Rate Info'),
+                                                                            y.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
+                                                                            y.updateHTML('#theHotel legend', 'Reservation Summary'),
+                                                                            e.setupReservationSummaryContainer(),
+                                                                            y.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
+                                                                            e.fixCheckoutInputTabOrder(),
+                                                                            y.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax')),
+                                                                        'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
+                                                                        'terms-conditions' === e.page_name && e.setCurrentYearOnElement('#year'),
+                                                                        document.querySelector('.RootBody') &&
+                                                                            (e.site_config.use_google_autocomplete
+                                                                                ? new o.default(e.site_config, e.page_name)
+                                                                                : g.init(e.site_config, e.page_name, y),
+                                                                            e.buildCurrencyDropdown(),
+                                                                            y.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             y.createHTML(
-                                                                                '<link id="favicon" rel="shortcut icon" href="'.concat(e.site_config.fav_icon_url, '">'),
-                                                                                'head',
+                                                                                '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
+                                                                                '.RootBody .ArnPrimarySearchContainer',
+                                                                                'beforeBegin'
+                                                                            ),
+                                                                            y.moveOrphanedElementsIntoNewWrapper(
+                                                                                [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
+                                                                                'root-search-container',
+                                                                                '.RootBody .ArnSearchContainerMainDiv',
+                                                                                'afterBegin'
+                                                                            ),
+                                                                            y.moveElementIntoExistingWrapper(
+                                                                                '.ArnSecondarySearchOuterContainer',
+                                                                                '.ArnPrimarySearchContainer',
                                                                                 'beforeEnd'
                                                                             ),
-                                                                            (t.next = 9),
-                                                                            y.createHTML(
-                                                                                '<header><a class="logo" href="'
-                                                                                    .concat(e.site_config.header.logo_outbound_url, '" target="_blank"><img src="')
-                                                                                    .concat(e.site_config.header.logo_file_location, '" alt="Logo"></a></header>'),
-                                                                                '.config-container',
-                                                                                'afterEnd'
+                                                                            y.selectCheckboxOnLabelClick('.ArnSearchField div')),
+                                                                        y.updateHTML('#thePassCodeAjax label', 'Promocode'),
+                                                                        y.updateHTML('#theUserNameAjax label', 'Username/Email'),
+                                                                        y.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
+                                                                        y.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
+                                                                        y.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
+                                                                        y.createHTML(
+                                                                            '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
+                                                                            '#theWBLoginFormBody .ForgotPasswordAction',
+                                                                            'afterEnd'
+                                                                        ),
+                                                                        'lrg-page' === e.page_name && e.replaceLRGForm(),
+                                                                        'search-results' === e.page_name &&
+                                                                            (e.site_config.use_google_autocomplete
+                                                                                ? new o.default(e.site_config, e.page_name)
+                                                                                : g.init(e.site_config, e.page_name, y),
+                                                                            e.showOriginalPrice('.ArnProperty', '.arnPrice')),
+                                                                        jQuery('#theBody').on(
+                                                                            'arnMapLoadedEvent',
+                                                                            l(
+                                                                                regeneratorRuntime.mark(function t() {
+                                                                                    return regeneratorRuntime.wrap(function (t) {
+                                                                                        for (;;)
+                                                                                            switch ((t.prev = t.next)) {
+                                                                                                case 0:
+                                                                                                    return (
+                                                                                                        (e.map_loaded = !0),
+                                                                                                        (t.next = 3),
+                                                                                                        y.waitForSelectorInDOM('.pollingFinished')
+                                                                                                    );
+                                                                                                case 3:
+                                                                                                    document.querySelector('.leaflet-control-scale-line') ||
+                                                                                                        L.control.scale().addTo(window.ArnMap),
+                                                                                                        e.useLogoForVenueMapMarker(),
+                                                                                                        e.highlightMapMarkersOnPropertyHover(),
+                                                                                                        e.changeContractedPropertyPinColor();
+                                                                                                case 7:
+                                                                                                case 'end':
+                                                                                                    return t.stop();
+                                                                                            }
+                                                                                    }, t);
+                                                                                })
                                                                             )
-                                                                        );
-                                                                    case 9:
-                                                                        'cug' === e.site_config.site_type &&
-                                                                            y.waitForSelectorInDOM('#AdminControlsContainer').then(
-                                                                                l(
-                                                                                    regeneratorRuntime.mark(function e() {
-                                                                                        return regeneratorRuntime.wrap(function (e) {
-                                                                                            for (;;)
-                                                                                                switch ((e.prev = e.next)) {
-                                                                                                    case 0:
-                                                                                                        y.appendToParent('#commands', 'header');
-                                                                                                    case 1:
-                                                                                                    case 'end':
-                                                                                                        return e.stop();
-                                                                                                }
-                                                                                        }, e);
-                                                                                    })
-                                                                                )
-                                                                            ),
-                                                                            y.updateAttribute('.ArnSupportLinks a', '_blank', 'target'),
-                                                                            'property-detail' === e.page_name &&
-                                                                                (e.addImageSlideshow(),
-                                                                                e.updateAmenitiesLegendTag(),
-                                                                                y.updateHTML('.SinglePropDetail .Map a', 'Map'),
-                                                                                y.updateHTML('.SinglePropDetail .Reviews a', 'Reviews'),
-                                                                                y.updateHTML('.SinglePropDetail .OptionsPricing a', 'Rooms'),
-                                                                                y.updateHTML('.SinglePropDetail .Details a', 'General Info'),
-                                                                                e.isPropByGateway(
-                                                                                    e.site_config.exclusive_rate_text,
-                                                                                    e.site_config.host_hotel_text,
-                                                                                    e.site_config.partner_hotel_text,
-                                                                                    e.site_config.lodging.event_name
-                                                                                ),
-                                                                                e.updatePropReviewsURLToUseAnchor(),
-                                                                                e.getTotalNights().then(function (t) {
-                                                                                    e.getCurrency().then(function (n) {
-                                                                                        e.showFullStayAndNightlyRates(t, n);
-                                                                                    });
-                                                                                }),
-                                                                                y.moveElementIntoExistingWrapper(
-                                                                                    '.SinglePropDetail .ArnTripAdvisorDetails.HasReviews',
-                                                                                    '.SinglePropDetail .ArnPropAddress',
-                                                                                    'afterEnd'
-                                                                                ),
-                                                                                y.moveElementIntoExistingWrapper(
-                                                                                    'div.subHeaderContainer > div > a > span.translateMe',
-                                                                                    '.SinglePropDetail .ArnLeftListContainer',
-                                                                                    'afterBegin'
-                                                                                ),
-                                                                                e.showOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
-                                                                            'checkout' === e.page_name &&
-                                                                                ('52342' !== e.site_id &&
-                                                                                    y.createModal(
-                                                                                        [document.querySelector('#theStayPolicies')],
-                                                                                        'Policies & Fees',
-                                                                                        'checkout',
-                                                                                        '#theConfirmationContainer',
-                                                                                        'afterBegin'
-                                                                                    ),
-                                                                                y.updateAttribute('#theEmailAddressAjax input', 'email', 'type'),
-                                                                                y.updateAttribute('.CheckOutForm #theCountryCode', 'numeric', 'inputmode'),
-                                                                                y.updateAttribute('.CheckOutForm #theAreaCode', 'numeric', 'inputmode'),
-                                                                                y.updateAttribute('.CheckOutForm #thePhoneNumber', 'numeric', 'inputmode'),
-                                                                                y.updateAttribute('.CheckOutForm #theCreditCardNumber', 'numeric', 'inputmode'),
-                                                                                y.updateAttribute('.CheckOutForm #theCvvCode', 'numeric', 'inputmode'),
-                                                                                y.appendToParent('#theMarketingOptInAjax', '#theConfirmCheckboxesAjax'),
-                                                                                y.updateHTML('#theCharges legend', 'Rate Info'),
-                                                                                y.updateHTML('.taxFeeRow th', '<span>Taxes:</span>'),
-                                                                                y.updateHTML('#theHotel legend', 'Reservation Summary'),
-                                                                                e.setupReservationSummaryContainer(),
-                                                                                y.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd'),
-                                                                                e.fixCheckoutInputTabOrder(),
-                                                                                y.selectCheckboxOnLabelClick(
-                                                                                    '.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax'
-                                                                                )),
-                                                                            'confirmation' === e.page_name && (e.implementAds(), e.addMessagingToConfirmationPage()),
-                                                                            'terms-conditions' === e.page_name && e.setCurrentYearOnElement('#year'),
-                                                                            document.querySelector('.RootBody') &&
-                                                                                (e.site_config.use_google_autocomplete
-                                                                                    ? new o.default(e.site_config, e.page_name)
-                                                                                    : g.init(e.site_config, e.page_name, y),
-                                                                                e.buildCurrencyDropdown(),
-                                                                                y.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
-                                                                                y.createHTML(
-                                                                                    '<h1>Start Your Search</h1><h3>From cozy budget hotels to upscale resorts, we have what you are looking for</h3>',
-                                                                                    '.RootBody .ArnPrimarySearchContainer',
-                                                                                    'beforeBegin'
-                                                                                ),
-                                                                                y.moveOrphanedElementsIntoNewWrapper(
-                                                                                    [document.querySelector('.RootBody .ArnLeftSearchContainer form')],
-                                                                                    'root-search-container',
-                                                                                    '.RootBody .ArnSearchContainerMainDiv',
-                                                                                    'afterBegin'
-                                                                                ),
-                                                                                y.moveElementIntoExistingWrapper(
-                                                                                    '.ArnSecondarySearchOuterContainer',
-                                                                                    '.ArnPrimarySearchContainer',
-                                                                                    'beforeEnd'
-                                                                                ),
-                                                                                y.selectCheckboxOnLabelClick('.ArnSearchField div')),
-                                                                            y.updateHTML('#thePassCodeAjax label', 'Promocode'),
-                                                                            y.updateHTML('#theUserNameAjax label', 'Username/Email'),
-                                                                            y.createHTML('<h1>Login</h1>', '#theWBLoginFormBody form', 'beforeBegin'),
-                                                                            y.createHTML('<h1>Register</h1>', '#theWBValidatedRegistrationFormBody form', 'beforeBegin'),
-                                                                            y.createHTML('<h1>Forgot Password?</h1>', '#theWBForgotPasswordFormBody form', 'beforeBegin'),
-                                                                            y.createHTML(
-                                                                                '<div class="redeem-promocode-container"><h2>Have a promocode?</h2></div>',
-                                                                                '#theWBLoginFormBody .ForgotPasswordAction',
-                                                                                'afterEnd'
-                                                                            ),
-                                                                            'lrg-page' === e.page_name && e.replaceLRGForm(),
-                                                                            'search-results' === e.page_name &&
-                                                                                (e.site_config.use_google_autocomplete
-                                                                                    ? new o.default(e.site_config, e.page_name)
-                                                                                    : g.init(e.site_config, e.page_name, y),
-                                                                                e.showOriginalPrice('.ArnProperty', '.arnPrice')),
-                                                                            jQuery('#theBody').on(
-                                                                                'arnMapLoadedEvent',
-                                                                                l(
-                                                                                    regeneratorRuntime.mark(function t() {
+                                                                        ),
+                                                                        jQuery(document).on(
+                                                                            'ratesReadyEvent',
+                                                                            l(
+                                                                                regeneratorRuntime.mark(function t() {
+                                                                                    return regeneratorRuntime.wrap(function (t) {
+                                                                                        for (;;)
+                                                                                            switch ((t.prev = t.next)) {
+                                                                                                case 0:
+                                                                                                    setTimeout(function () {
+                                                                                                        e.isPropByGateway(
+                                                                                                            e.site_config.exclusive_rate_text,
+                                                                                                            e.site_config.host_hotel_text,
+                                                                                                            e.site_config.partner_hotel_text,
+                                                                                                            e.site_config.lodging.event_name
+                                                                                                        ),
+                                                                                                            'property-detail' === e.page_name &&
+                                                                                                                'cug' === e.site_config.site_type.toLowerCase() &&
+                                                                                                                e.cugConfigs();
+                                                                                                    }, 1);
+                                                                                                case 1:
+                                                                                                case 'end':
+                                                                                                    return t.stop();
+                                                                                            }
+                                                                                    }, t);
+                                                                                })
+                                                                            )
+                                                                        ),
+                                                                        y.waitForSelectorInDOM('.pollingFinished').then(
+                                                                            (function () {
+                                                                                var t = l(
+                                                                                    regeneratorRuntime.mark(function t(n) {
                                                                                         return regeneratorRuntime.wrap(function (t) {
                                                                                             for (;;)
                                                                                                 switch ((t.prev = t.next)) {
                                                                                                     case 0:
-                                                                                                        return (
-                                                                                                            (e.map_loaded = !0),
-                                                                                                            (t.next = 3),
-                                                                                                            y.waitForSelectorInDOM('.pollingFinished')
-                                                                                                        );
+                                                                                                        if (
+                                                                                                            ('hold-rooms' === e.page_name &&
+                                                                                                                (e.moveReviewsIntoPropNameContainer(),
+                                                                                                                y.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
+                                                                                                            'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
+                                                                                                        ) {
+                                                                                                            t.next = 3;
+                                                                                                            break;
+                                                                                                        }
+                                                                                                        return t.abrupt('return');
                                                                                                     case 3:
+                                                                                                        return (
+                                                                                                            e.buildCurrencyDropdown(),
+                                                                                                            e.cugConfigs(),
+                                                                                                            e.implementAds(),
+                                                                                                            e.toggleMap(),
+                                                                                                            e.addLRGDetails(),
+                                                                                                            e.getTotalNights().then(function (t) {
+                                                                                                                e.getCurrency().then(function (n) {
+                                                                                                                    e.showFullStayAndNightlyRates(t, n);
+                                                                                                                });
+                                                                                                            }),
+                                                                                                            e.createStarIcons(),
+                                                                                                            e.addHRToProperties(),
+                                                                                                            e.showLoaderOnResultsUpdate(),
+                                                                                                            e.showSearchContainerOnMobile(),
+                                                                                                            e.moveFooterOutOfSearchContainer(),
+                                                                                                            e.moveReviewsIntoPropNameContainer(),
+                                                                                                            y.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
+                                                                                                            e.movePropClassBelowPropName(),
+                                                                                                            y.selectCheckboxOnLabelClick('.ArnSearchField div'),
+                                                                                                            y.updateHTML('#ShowHotelOnMap', 'Open Map'),
+                                                                                                            y.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
+                                                                                                            y.updateHTML('.lblRating', 'Stars'),
+                                                                                                            y.updateHTML('.lblCurrency', 'Currency'),
+                                                                                                            y.updateHTML('.lblAmenities', 'Amenities'),
+                                                                                                            y.updateHTML('.lblNearbyCities', 'Nearby Cities'),
+                                                                                                            y.updateHTML('.lblPropertyType', 'Property Type'),
+                                                                                                            y.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
+                                                                                                            y.updateHTML('.ArnSearchHeader', 'Update Search'),
+                                                                                                            y.moveElementIntoExistingWrapper(
+                                                                                                                '.ArnPropClass',
+                                                                                                                '.ArnPropName',
+                                                                                                                'beforeEnd'
+                                                                                                            ),
+                                                                                                            y.moveElementIntoExistingWrapper(
+                                                                                                                '#theOtherSubmitButton',
+                                                                                                                '.ArnSecondarySearchOuterContainer',
+                                                                                                                'beforeEnd'
+                                                                                                            ),
+                                                                                                            (t.next = 31),
+                                                                                                            y.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
+                                                                                                                y.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
+                                                                                                            })
+                                                                                                        );
+                                                                                                    case 31:
+                                                                                                        return (
+                                                                                                            (t.next = 33),
+                                                                                                            y.waitForSelectorInDOM('.ArnSortContainer').then(function () {
+                                                                                                                y.createWrapper(
+                                                                                                                    '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
+                                                                                                                    '.ArnSecondarySearchOuterContainer',
+                                                                                                                    'sort-wrapper',
+                                                                                                                    'afterBegin'
+                                                                                                                ).then(function () {
+                                                                                                                    e.createMobileSortAndFilter(),
+                                                                                                                        y.createHTML(
+                                                                                                                            '<h4>Sort</h4>',
+                                                                                                                            '.sort-wrapper',
+                                                                                                                            'afterBegin'
+                                                                                                                        ),
+                                                                                                                        y.matchMediaQuery('min-width: 1105px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
+                                                                                                                            ),
+                                                                                                                        y.matchMediaQuery('max-width: 800px') &&
+                                                                                                                            document.body.insertAdjacentHTML(
+                                                                                                                                'afterBegin',
+                                                                                                                                '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
+                                                                                                                            );
+                                                                                                                });
+                                                                                                            })
+                                                                                                        );
+                                                                                                    case 33:
+                                                                                                        if (!window.matchMedia('(min-width: 1105px)')) {
+                                                                                                            t.next = 41;
+                                                                                                            break;
+                                                                                                        }
+                                                                                                        return (t.next = 37), y.waitForSelectorInDOM('#ArnPropertyMap');
+                                                                                                    case 37:
                                                                                                         document.querySelector('.leaflet-control-scale-line') ||
                                                                                                             L.control.scale().addTo(window.ArnMap),
                                                                                                             e.useLogoForVenueMapMarker(),
                                                                                                             e.highlightMapMarkersOnPropertyHover(),
                                                                                                             e.changeContractedPropertyPinColor();
-                                                                                                    case 7:
+                                                                                                    case 41:
                                                                                                     case 'end':
                                                                                                         return t.stop();
                                                                                                 }
                                                                                         }, t);
                                                                                     })
-                                                                                )
-                                                                            ),
-                                                                            jQuery(document).on(
-                                                                                'ratesReadyEvent',
-                                                                                l(
-                                                                                    regeneratorRuntime.mark(function t() {
-                                                                                        return regeneratorRuntime.wrap(function (t) {
-                                                                                            for (;;)
-                                                                                                switch ((t.prev = t.next)) {
-                                                                                                    case 0:
-                                                                                                        setTimeout(function () {
-                                                                                                            e.isPropByGateway(
-                                                                                                                e.site_config.exclusive_rate_text,
-                                                                                                                e.site_config.host_hotel_text,
-                                                                                                                e.site_config.partner_hotel_text,
-                                                                                                                e.site_config.lodging.event_name
-                                                                                                            ),
-                                                                                                                'property-detail' === e.page_name &&
-                                                                                                                    'cug' === e.site_config.site_type.toLowerCase() &&
-                                                                                                                    e.cugConfigs();
-                                                                                                        }, 1);
-                                                                                                    case 1:
-                                                                                                    case 'end':
-                                                                                                        return t.stop();
-                                                                                                }
-                                                                                        }, t);
-                                                                                    })
-                                                                                )
-                                                                            ),
-                                                                            y.waitForSelectorInDOM('.pollingFinished').then(
-                                                                                (function () {
-                                                                                    var t = l(
-                                                                                        regeneratorRuntime.mark(function t(n) {
-                                                                                            return regeneratorRuntime.wrap(function (t) {
-                                                                                                for (;;)
-                                                                                                    switch ((t.prev = t.next)) {
-                                                                                                        case 0:
-                                                                                                            if (
-                                                                                                                ('hold-rooms' === e.page_name &&
-                                                                                                                    (e.moveReviewsIntoPropNameContainer(),
-                                                                                                                    y.addClass('ArnSearchContainerMainDiv', 'ArnSubPage')),
-                                                                                                                'search-results' === e.page_name && 'hold-rooms' !== e.page_name)
-                                                                                                            ) {
-                                                                                                                t.next = 3;
-                                                                                                                break;
-                                                                                                            }
-                                                                                                            return t.abrupt('return');
-                                                                                                        case 3:
-                                                                                                            return (
-                                                                                                                e.buildCurrencyDropdown(),
-                                                                                                                e.cugConfigs(),
-                                                                                                                e.implementAds(),
-                                                                                                                e.toggleMap(),
-                                                                                                                e.addLRGDetails(),
-                                                                                                                e.getTotalNights().then(function (t) {
-                                                                                                                    e.getCurrency().then(function (n) {
-                                                                                                                        e.showFullStayAndNightlyRates(t, n);
-                                                                                                                    });
-                                                                                                                }),
-                                                                                                                e.createStarIcons(),
-                                                                                                                e.addHRToProperties(),
-                                                                                                                e.showLoaderOnResultsUpdate(),
-                                                                                                                e.showSearchContainerOnMobile(),
-                                                                                                                e.moveFooterOutOfSearchContainer(),
-                                                                                                                e.moveReviewsIntoPropNameContainer(),
-                                                                                                                y.updateAttribute('.ArnShowRatesLink', '_blank', 'target'),
-                                                                                                                e.movePropClassBelowPropName(),
-                                                                                                                y.selectCheckboxOnLabelClick('.ArnSearchField div'),
-                                                                                                                y.updateHTML('#ShowHotelOnMap', 'Open Map'),
-                                                                                                                y.updateHTML('.ArnShowRatesLink', 'Book Rooms'),
-                                                                                                                y.updateHTML('.lblRating', 'Stars'),
-                                                                                                                y.updateHTML('.lblCurrency', 'Currency'),
-                                                                                                                y.updateHTML('.lblAmenities', 'Amenities'),
-                                                                                                                y.updateHTML('.lblNearbyCities', 'Nearby Cities'),
-                                                                                                                y.updateHTML('.lblPropertyType', 'Property Type'),
-                                                                                                                y.updateHTML('.ArnSortBy', '<div class="sort">Sort</div>'),
-                                                                                                                y.updateHTML('.ArnSearchHeader', 'Update Search'),
-                                                                                                                y.moveElementIntoExistingWrapper(
-                                                                                                                    '.ArnPropClass',
-                                                                                                                    '.ArnPropName',
-                                                                                                                    'beforeEnd'
-                                                                                                                ),
-                                                                                                                y.moveElementIntoExistingWrapper(
-                                                                                                                    '#theOtherSubmitButton',
-                                                                                                                    '.ArnSecondarySearchOuterContainer',
-                                                                                                                    'beforeEnd'
-                                                                                                                ),
-                                                                                                                (t.next = 31),
-                                                                                                                y.waitForSelectorInDOM('#pagerBottomAjax').then(function () {
-                                                                                                                    y.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
-                                                                                                                })
-                                                                                                            );
-                                                                                                        case 31:
-                                                                                                            return (
-                                                                                                                (t.next = 33),
-                                                                                                                y.waitForSelectorInDOM('.ArnSortContainer').then(function () {
-                                                                                                                    y.createWrapper(
-                                                                                                                        '.ArnSortByDealPercent, .ArnSortByDistance, .ArnSortByDealAmount, .ArnSortByAvailability, .ArnSortByPrice, .ArnSortByClass, .ArnSortByType',
-                                                                                                                        '.ArnSecondarySearchOuterContainer',
-                                                                                                                        'sort-wrapper',
-                                                                                                                        'afterBegin'
-                                                                                                                    ).then(function () {
-                                                                                                                        e.createMobileSortAndFilter(),
-                                                                                                                            y.createHTML(
-                                                                                                                                '<h4>Sort</h4>',
-                                                                                                                                '.sort-wrapper',
-                                                                                                                                'afterBegin'
-                                                                                                                            ),
-                                                                                                                            y.matchMediaQuery('min-width: 1105px') &&
-                                                                                                                                document.body.insertAdjacentHTML(
-                                                                                                                                    'afterBegin',
-                                                                                                                                    '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>'
-                                                                                                                                ),
-                                                                                                                            y.matchMediaQuery('max-width: 800px') &&
-                                                                                                                                document.body.insertAdjacentHTML(
-                                                                                                                                    'afterBegin',
-                                                                                                                                    '<style>.ArnSortContainer{display: flex !important; visibility: unset !important;}</style>'
-                                                                                                                                );
-                                                                                                                    });
-                                                                                                                })
-                                                                                                            );
-                                                                                                        case 33:
-                                                                                                            if (!window.matchMedia('(min-width: 1105px)')) {
-                                                                                                                t.next = 41;
-                                                                                                                break;
-                                                                                                            }
-                                                                                                            return (t.next = 37), y.waitForSelectorInDOM('#ArnPropertyMap');
-                                                                                                        case 37:
-                                                                                                            document.querySelector('.leaflet-control-scale-line') ||
-                                                                                                                L.control.scale().addTo(window.ArnMap),
-                                                                                                                e.useLogoForVenueMapMarker(),
-                                                                                                                e.highlightMapMarkersOnPropertyHover(),
-                                                                                                                e.changeContractedPropertyPinColor();
-                                                                                                        case 41:
-                                                                                                        case 'end':
-                                                                                                            return t.stop();
-                                                                                                    }
-                                                                                            }, t);
-                                                                                        })
-                                                                                    );
-                                                                                    return function (e) {
-                                                                                        return t.apply(this, arguments);
-                                                                                    };
-                                                                                })()
-                                                                            ),
-                                                                            e.applyDarkTheme(),
-                                                                            e.updatePropThumbToFeaturedImage(),
-                                                                            e.setInputToRequired('input#city'),
-                                                                            e.setInputToRequired('input#theCheckIn'),
-                                                                            e.resizeViewportForMapMobile(),
-                                                                            e.showCoronavirusInfoBanner(),
-                                                                            e.showCurrencySelect(),
-                                                                            e.positionPropReviews(),
-                                                                            e.insertPoweredByFooterLogo(),
-                                                                            e.updateConfirmationCheckBoxes(),
-                                                                            e.showMoreAmenities(),
-                                                                            e.appendMemberTokenForCug(),
-                                                                            e.hideRemainingRooms(),
-                                                                            e.replaceHTMLWithFile(''.concat(p.path, '/html/terms.html'), '.ArnSubPage.ArnTermsConditions'),
-                                                                            e.addLinkToLoginFromRegisterPage(),
-                                                                            e.setCheckDatesToReadOnlyOnMobile(),
-                                                                            e.updateSupportPageText(),
-                                                                            e.removeLrgFooterLink(),
-                                                                            e.hideBookButtonForNoAvailability(),
-                                                                            e.addGroupBookingBannerBelowHeader(
-                                                                                e.site_config.lodging.event_name,
-                                                                                e.site_config.group_booking_form_url
-                                                                            ),
-                                                                            e.applyHybridCompensationModelUpdates(),
-                                                                            document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
-                                                                    case 49:
-                                                                    case 'end':
-                                                                        return t.stop();
-                                                                }
-                                                        }, t);
-                                                    })
-                                                );
-                                                return function (e) {
-                                                    return t.apply(this, arguments);
-                                                };
-                                            })()
-                                        );
-                                },
-                            },
-                            {
-                                key: 'initializeARNRatesReadyEvent',
-                                value: function () {
-                                    function e() {
-                                        try {
-                                            setTimeout(function () {
-                                                jQuery(document).trigger('ratesReadyEvent');
-                                            }, 1);
-                                        } catch (e) {
-                                            console.log(e);
-                                        }
-                                    }
-                                    Ajax.Responders.register({onComplete: e}), e();
-                                },
-                            },
-                            {
-                                key: 'getSiteID',
-                                value:
-                                    ((x = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                if (((this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content')), this.site_id)) {
-                                                                    e.next = 3;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 3:
-                                                                return e.abrupt('return', this.site_id);
-                                                            case 4:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                this
+                                                                                );
+                                                                                return function (e) {
+                                                                                    return t.apply(this, arguments);
+                                                                                };
+                                                                            })()
+                                                                        ),
+                                                                        e.applyDarkTheme(),
+                                                                        e.updatePropThumbToFeaturedImage(),
+                                                                        e.setInputToRequired('input#city'),
+                                                                        e.setInputToRequired('input#theCheckIn'),
+                                                                        e.resizeViewportForMapMobile(),
+                                                                        e.showCoronavirusInfoBanner(),
+                                                                        e.showCurrencySelect(),
+                                                                        e.positionPropReviews(),
+                                                                        e.insertPoweredByFooterLogo(),
+                                                                        e.updateConfirmationCheckBoxes(),
+                                                                        e.showMoreAmenities(),
+                                                                        e.appendMemberTokenForCug(),
+                                                                        e.hideRemainingRooms(),
+                                                                        e.replaceHTMLWithFile(''.concat(p.path, '/html/terms.html'), '.ArnSubPage.ArnTermsConditions'),
+                                                                        e.addLinkToLoginFromRegisterPage(),
+                                                                        e.setCheckDatesToReadOnlyOnMobile(),
+                                                                        e.updateSupportPageText(),
+                                                                        e.removeLrgFooterLink(),
+                                                                        e.hideBookButtonForNoAvailability(),
+                                                                        e.addGroupBookingBannerBelowHeader(e.site_config.lodging.event_name, e.site_config.group_booking_form_url),
+                                                                        e.applyHybridCompensationModelUpdates(),
+                                                                        document.querySelector('.WBConfirmedBooking') && e.cancelConfirmUpdate();
+                                                                case 49:
+                                                                case 'end':
+                                                                    return t.stop();
+                                                            }
+                                                    }, t);
+                                                })
                                             );
-                                        })
-                                    )),
-                                    function () {
-                                        return x.apply(this, arguments);
-                                    }),
+                                            return function (e) {
+                                                return t.apply(this, arguments);
+                                            };
+                                        })()
+                                    );
                             },
-                            {
-                                key: 'getCurrency',
-                                value:
-                                    ((_ = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t;
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                if ((t = document.querySelector('meta[name="currency"]'))) {
-                                                                    e.next = 3;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 3:
-                                                                return (this.currency = t.getAttribute('content')), e.abrupt('return', this.currency);
-                                                            case 5:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                this
-                                            );
-                                        })
-                                    )),
-                                    function () {
-                                        return _.apply(this, arguments);
-                                    }),
-                            },
-                            {
-                                key: 'donationAmount',
-                                value: function () {
-                                    if (document.querySelector('.ConfirmationForm')) {
-                                        var e = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
-                                        document.querySelector('.topRoomFunding') &&
-                                            null !== e &&
-                                            (document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ '.concat(
-                                                2 * e,
-                                                ' donation</span> to <span>RoomFunding</span>.  And s at no cost to you.</p>'
-                                            ));
+                        },
+                        {
+                            key: 'initializeARNRatesReadyEvent',
+                            value: function () {
+                                function e() {
+                                    try {
+                                        setTimeout(function () {
+                                            jQuery(document).trigger('ratesReadyEvent');
+                                        }, 1);
+                                    } catch (e) {
+                                        console.log(e);
                                     }
-                                },
+                                }
+                                Ajax.Responders.register({onComplete: e}), e();
                             },
-                            {
-                                key: 'addPerNightToPrice',
-                                value: function (e, t) {
-                                    document.querySelector(e) &&
-                                        document.querySelectorAll(t).forEach(function (e) {
-                                            e.parentNode.querySelector('.perNight') || e.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
-                                        });
-                                },
-                            },
-                            {
-                                key: 'updateBookingFeeLanguage',
-                                value: function () {
-                                    if (document.querySelector('.CheckOutForm')) {
-                                        var e = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
-                                        e &&
-                                            (e.textContent.includes('4.95') || e.textContent.includes('5.00')) &&
-                                            e.textContent.includes('Hotels For Hope') &&
-                                            e.insertAdjacentHTML(
-                                                'beforeEnd',
-                                                ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>'
-                                            );
-                                    }
-                                },
-                            },
-                            {
-                                key: 'hidePropertyThumbnailArrowIfNoPropertyThumbnails',
-                                value: function () {
-                                    'search-results' !== !this.page_name &&
-                                        document.querySelectorAll('.ArnImageLink img').forEach(function (e) {
-                                            if (e && e.getAttribute('src').includes('no_image_300.gif')) {
-                                                var t = e.parentNode;
-                                                if (t) {
-                                                    t.classList.add('no-images');
-                                                    var n = t.previousSibling;
-                                                    n && n.classList.contains('ArnPropImageButtons') && (n.style.display = 'none');
-                                                }
-                                            }
-                                        });
-                                },
-                            },
-                            {
-                                key: 'createStarIcons',
-                                value: function () {
-                                    document.querySelectorAll('.ArnPropClass').forEach(function (e) {
-                                        var t = e.textContent.replace(/\D/g, ''),
-                                            n =
-                                                '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
-                                        '1' === t && (e.innerHTML = n),
-                                            '2' === t && (e.innerHTML = n.repeat(2)),
-                                            '3' === t && (e.innerHTML = n.repeat(3)),
-                                            '4' === t && (e.innerHTML = n.repeat(4)),
-                                            '5' === t && (e.innerHTML = n.repeat(5));
-                                    });
-                                },
-                            },
-                            {
-                                key: 'createMobileSortAndFilter',
-                                value: function () {
-                                    if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
-                                        y.updateHTML(
-                                            '.sort',
-                                            '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
-                                        ),
-                                            y.createHTML(
-                                                '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
-                                                '#searchForm',
-                                                'beforeEnd'
-                                            );
-                                        var e = document.querySelector('.ArnSortBy'),
-                                            t = document.querySelector('.sort-wrapper'),
-                                            n = document.querySelector('.ArnSecondarySearchOuterContainer'),
-                                            r = document.querySelector('.sort-filter-overlay');
-                                        e.removeEventListener('click', function () {}),
-                                            e.addEventListener('click', function () {
-                                                r.classList.toggle('show-sort-filter'),
-                                                    document.querySelector('.mobile-sort-container').insertAdjacentElement('beforeEnd', t),
-                                                    document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', n),
-                                                    (n.style.display = 'block'),
-                                                    (t.style.display = 'block'),
-                                                    document.body.classList.toggle('fixed');
-                                            }),
-                                            document.querySelector('.sort-filter-close').addEventListener('click', function () {
-                                                r.classList.toggle('show-sort-filter'), document.body.classList.toggle('fixed');
-                                            }),
-                                            document.querySelector('.sort-wrapper a').addEventListener('click', function (e) {
-                                                e.toElement.classList.toggle('active-filter');
-                                            }),
-                                            n.querySelectorAll('.ArnSearchField').forEach(function (e) {
-                                                e.classList.add('panel');
-                                            });
-                                    }
-                                },
-                            },
-                            {
-                                key: 'showSearchContainerOnMobile',
-                                value: function () {
-                                    var e,
-                                        t,
-                                        n,
-                                        r = new URL(window.location.href),
-                                        o = new URLSearchParams(r.search),
-                                        i = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
-                                        a = '',
-                                        c = '',
-                                        s = '',
-                                        u = document.querySelector('meta[name="checkIn"]'),
-                                        l = document.querySelector('meta[name="checkOut"]'),
-                                        d = document.querySelector('meta[name="numberOfAdults"]'),
-                                        f = document.querySelector('meta[name="SearchLocation"]'),
-                                        p = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
-                                    u &&
-                                        l &&
-                                        f &&
-                                        d &&
-                                        ((e = d.getAttribute('content')),
-                                        (a = f.getAttribute('content')),
-                                        (t = u.getAttribute('content')),
-                                        (n = l.getAttribute('content')),
-                                        (c = h(t)),
-                                        (s = h(n)),
-                                        (('cug' === this.site_config.site_type.toLowerCase() && null !== o.get('destination')) ||
-                                            ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
-                                            (a = o.get('destination')),
-                                        (null !== o.get('destination') && 'location' !== a) || (a = i.get('destination')),
-                                        y.createHTML(
-                                            '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
-                                                .concat(a, '</h3>\n                    <span>\n                        <span class="search-dates">')
-                                                .concat(c.format('MMMM D'), ' - ')
-                                                .concat(s.format('MMMM D'), '</span>\n                        <span class="adults-count">')
-                                                .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
-                                            '.SearchHotels .ArnPrimarySearchOuterContainer',
-                                            'beforeBegin'
-                                        ),
-                                        document.querySelector('.show-search-container').addEventListener('click', function () {
-                                            p.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
-                                        }));
-                                },
-                            },
-                            {
-                                key: 'buildMobileMenu',
-                                value:
-                                    ((w = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t, n, r;
-                                            return regeneratorRuntime.wrap(function (e) {
+                        },
+                        {
+                            key: 'getSiteID',
+                            value:
+                                ((x = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            if (((t = document.querySelector('#commands')), (n = document.querySelector('#AdminControlsContainer')), t || n)) {
-                                                                e.next = 4;
+                                                            if (((this.site_id = document.querySelector('meta[name="siteId"]').getAttribute('content')), this.site_id)) {
+                                                                e.next = 3;
                                                                 break;
                                                             }
                                                             return e.abrupt('return');
+                                                        case 3:
+                                                            return e.abrupt('return', this.site_id);
                                                         case 4:
-                                                            if (
-                                                                (n.insertAdjacentHTML(
-                                                                    'beforeEnd',
-                                                                    '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>'
-                                                                ),
-                                                                (r = document.querySelector('#hamburger')))
-                                                            ) {
-                                                                e.next = 8;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 8:
-                                                            return (
-                                                                r.addEventListener('click', function () {
-                                                                    r.classList.toggle('is-active'), t.classList.toggle('active');
-                                                                }),
-                                                                (e.next = 11),
-                                                                y.waitForSelectorInDOM('header')
-                                                            );
-                                                        case 11:
-                                                            document.querySelector('header').insertAdjacentElement('beforeend', n);
-                                                        case 12:
                                                         case 'end':
                                                             return e.stop();
                                                     }
-                                            }, e);
-                                        })
-                                    )),
-                                    function () {
-                                        return w.apply(this, arguments);
-                                    }),
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return x.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'getCurrency',
+                            value:
+                                ((_ = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if ((t = document.querySelector('meta[name="currency"]'))) {
+                                                                e.next = 3;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 3:
+                                                            return (this.currency = t.getAttribute('content')), e.abrupt('return', this.currency);
+                                                        case 5:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return _.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'donationAmount',
+                            value: function () {
+                                if (document.querySelector('.ConfirmationForm')) {
+                                    var e = document.querySelector('.numberOfNights th').textContent.split(' ')[0];
+                                    document.querySelector('.topRoomFunding') &&
+                                        null !== e &&
+                                        (document.querySelector('.topRoomFunding').innerHTML = '<p>Your reservation just generated an <span>$ '.concat(
+                                            2 * e,
+                                            ' donation</span> to <span>RoomFunding</span>.  And s at no cost to you.</p>'
+                                        ));
+                                }
                             },
-                            {
-                                key: 'showAdditionalPolicies',
-                                value: function () {
-                                    var e = document.querySelector('#theStayPolicies'),
-                                        t = e.querySelector('legend'),
-                                        n = e.offsetHeight,
-                                        r = document.querySelector('#theConfirmationPoliciesAjax');
-                                    window.matchMedia('(max-width:800px)').matches &&
-                                        document.querySelector('#theBookingPage') &&
-                                        (r.insertAdjacentElement('afterEnd', e),
-                                        y.moveOrphanedElementsIntoNewWrapper(
-                                            document.querySelectorAll('#theStayPolicies *'),
-                                            'policies-container',
-                                            '#theStayPolicies',
-                                            'beforeEnd'
-                                        ),
-                                        e.insertAdjacentElement('beforeBegin', t),
+                        },
+                        {
+                            key: 'addPerNightToPrice',
+                            value: function (e, t) {
+                                document.querySelector(e) &&
+                                    document.querySelectorAll(t).forEach(function (e) {
+                                        e.parentNode.querySelector('.perNight') || e.insertAdjacentHTML('afterEnd', '<span class="perNight translateMe">per night</span>');
+                                    });
+                            },
+                        },
+                        {
+                            key: 'updateBookingFeeLanguage',
+                            value: function () {
+                                if (document.querySelector('.CheckOutForm')) {
+                                    var e = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
+                                    e &&
+                                        (e.textContent.includes('4.95') || e.textContent.includes('5.00')) &&
+                                        e.textContent.includes('Hotels For Hope') &&
                                         e.insertAdjacentHTML(
                                             'beforeEnd',
-                                            '\n        <style>\n            #theStayPolicies {\n                height: 0;\n                display: none;\n            }\n            .show-policies{\n                height: '.concat(
-                                                n,
-                                                'px !important;\n                display: block !important;\n            }\n        </style>\n    '
-                                            )
-                                        ),
-                                        t.addEventListener('click', function () {
-                                            e.classList.toggle('show-policies');
-                                        }));
-                                },
+                                            ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>'
+                                        );
+                                }
                             },
-                            {
-                                key: 'updatePropReviewsURLToUseAnchor',
-                                value: function () {
-                                    var e = document.querySelector('.reviewCount a');
-                                    'property-detail' === this.page_name && e && e.setAttribute('href', '#thePropertyReviews');
-                                },
+                        },
+                        {
+                            key: 'hidePropertyThumbnailArrowIfNoPropertyThumbnails',
+                            value: function () {
+                                'search-results' !== !this.page_name &&
+                                    document.querySelectorAll('.ArnImageLink img').forEach(function (e) {
+                                        if (e && e.getAttribute('src').includes('no_image_300.gif')) {
+                                            var t = e.parentNode;
+                                            if (t) {
+                                                t.classList.add('no-images');
+                                                var n = t.previousSibling;
+                                                n && n.classList.contains('ArnPropImageButtons') && (n.style.display = 'none');
+                                            }
+                                        }
+                                    });
                             },
-                            {
-                                key: 'moveFooterOutOfSearchContainer',
-                                value: function () {
-                                    document.querySelector('.SearchHotels') &&
-                                        document.querySelector('.ArnSupportBottom') &&
-                                        document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'));
-                                },
+                        },
+                        {
+                            key: 'createStarIcons',
+                            value: function () {
+                                document.querySelectorAll('.ArnPropClass').forEach(function (e) {
+                                    var t = e.textContent.replace(/\D/g, ''),
+                                        n =
+                                            '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
+                                    '1' === t && (e.innerHTML = n),
+                                        '2' === t && (e.innerHTML = n.repeat(2)),
+                                        '3' === t && (e.innerHTML = n.repeat(3)),
+                                        '4' === t && (e.innerHTML = n.repeat(4)),
+                                        '5' === t && (e.innerHTML = n.repeat(5));
+                                });
                             },
-                            {
-                                key: 'moveReviewsIntoPropNameContainer',
-                                value: function () {
-                                    var e = document.querySelectorAll('.SearchHotels .ArnPropName');
-                                    document.querySelector('.SearchHotels') &&
-                                        document.querySelector('.ArnContainer') &&
-                                        e.forEach(function (e) {
-                                            e.insertAdjacentElement('beforeEnd', e.parentElement.querySelector('.ArnTripAdvisorDetails'));
+                        },
+                        {
+                            key: 'createMobileSortAndFilter',
+                            value: function () {
+                                if (window.matchMedia('(max-width:800px)').matches && document.querySelector('.SearchHotels')) {
+                                    y.updateHTML(
+                                        '.sort',
+                                        '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" class=""></path></svg> Sort &amp; Filter'
+                                    ),
+                                        y.createHTML(
+                                            '<div class="sort-filter-overlay"><div class="sort-filter-container"><div class="sort-filter-header"><h3>Sort &amp; Filter</h3><span class="sort-filter-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"/><polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"/></svg></span></div><div class="mobile-sort-container"></div><div class="mobile-filter-container"><h4>Filter</h4></div></div></div>',
+                                            '#searchForm',
+                                            'beforeEnd'
+                                        );
+                                    var e = document.querySelector('.ArnSortBy'),
+                                        t = document.querySelector('.sort-wrapper'),
+                                        n = document.querySelector('.ArnSecondarySearchOuterContainer'),
+                                        r = document.querySelector('.sort-filter-overlay');
+                                    e.removeEventListener('click', function () {}),
+                                        e.addEventListener('click', function () {
+                                            r.classList.toggle('show-sort-filter'),
+                                                document.querySelector('.mobile-sort-container').insertAdjacentElement('beforeEnd', t),
+                                                document.querySelector('.mobile-filter-container').insertAdjacentElement('beforeEnd', n),
+                                                (n.style.display = 'block'),
+                                                (t.style.display = 'block'),
+                                                document.body.classList.toggle('fixed');
+                                        }),
+                                        document.querySelector('.sort-filter-close').addEventListener('click', function () {
+                                            r.classList.toggle('show-sort-filter'), document.body.classList.toggle('fixed');
+                                        }),
+                                        document.querySelector('.sort-wrapper a').addEventListener('click', function (e) {
+                                            e.toElement.classList.toggle('active-filter');
+                                        }),
+                                        n.querySelectorAll('.ArnSearchField').forEach(function (e) {
+                                            e.classList.add('panel');
                                         });
-                                },
+                                }
                             },
-                            {
-                                key: 'toggleMap',
-                                value: function () {
-                                    var e = document.querySelector('#ArnPropertyMap'),
-                                        t = document.querySelector('#arnCloseAnchorId'),
-                                        n = document.querySelector('header'),
-                                        r = document.querySelector('.config-container'),
-                                        o = document.querySelector('.ArnToggleMap + .ArnToggleMap');
-                                    o && o.click(),
-                                        t &&
-                                            e &&
-                                            ((t.innerHTML =
-                                                '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>'),
-                                            t.addEventListener('click', function () {
-                                                if (
-                                                    (t.classList.toggle('closeMap'),
-                                                    e.classList.toggle('showMap'),
-                                                    document.body.classList.toggle('fixed'),
-                                                    n.classList.toggle('hideElement'),
-                                                    r.classList.toggle('hideElement'),
-                                                    t.classList.contains('closeMap'))
-                                                ) {
-                                                    t.querySelector('span').textContent = ' Close Map';
-                                                    var o = document.querySelector('.leaflet-control-container .leaflet-top.leaflet-right');
-                                                    if (!o) return;
-                                                    o.appendChild(t);
-                                                } else {
-                                                    var i = document.querySelector('#arnToggleMapDiv');
-                                                    if (!i) return;
-                                                    i.appendChild(t), (t.querySelector('span').innerHTML = ' Open Map');
+                        },
+                        {
+                            key: 'showSearchContainerOnMobile',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n,
+                                    r = new URL(window.location.href),
+                                    o = new URLSearchParams(r.search),
+                                    i = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
+                                    a = '',
+                                    c = '',
+                                    s = '',
+                                    u = document.querySelector('meta[name="checkIn"]'),
+                                    l = document.querySelector('meta[name="checkOut"]'),
+                                    d = document.querySelector('meta[name="numberOfAdults"]'),
+                                    f = document.querySelector('meta[name="SearchLocation"]'),
+                                    p = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+                                u &&
+                                    l &&
+                                    f &&
+                                    d &&
+                                    ((e = d.getAttribute('content')),
+                                    (a = f.getAttribute('content')),
+                                    (t = u.getAttribute('content')),
+                                    (n = l.getAttribute('content')),
+                                    (c = h(t)),
+                                    (s = h(n)),
+                                    (('cug' === this.site_config.site_type.toLowerCase() && null !== o.get('destination')) ||
+                                        ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
+                                        (a = o.get('destination')),
+                                    (null !== o.get('destination') && 'location' !== a) || (a = i.get('destination')),
+                                    y.createHTML(
+                                        '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
+                                            .concat(a, '</h3>\n                    <span>\n                        <span class="search-dates">')
+                                            .concat(c.format('MMMM D'), ' - ')
+                                            .concat(s.format('MMMM D'), '</span>\n                        <span class="adults-count">')
+                                            .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
+                                        '.SearchHotels .ArnPrimarySearchOuterContainer',
+                                        'beforeBegin'
+                                    ),
+                                    document.querySelector('.show-search-container').addEventListener('click', function () {
+                                        p.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'buildMobileMenu',
+                            value:
+                                ((w = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (((t = document.querySelector('#commands')), (n = document.querySelector('#AdminControlsContainer')), t || n)) {
+                                                            e.next = 4;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 4:
+                                                        if (
+                                                            (n.insertAdjacentHTML(
+                                                                'beforeEnd',
+                                                                '<div class="hamburger" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>'
+                                                            ),
+                                                            (r = document.querySelector('#hamburger')))
+                                                        ) {
+                                                            e.next = 8;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 8:
+                                                        return (
+                                                            r.addEventListener('click', function () {
+                                                                r.classList.toggle('is-active'), t.classList.toggle('active');
+                                                            }),
+                                                            (e.next = 11),
+                                                            y.waitForSelectorInDOM('header')
+                                                        );
+                                                    case 11:
+                                                        document.querySelector('header').insertAdjacentElement('beforeend', n);
+                                                    case 12:
+                                                    case 'end':
+                                                        return e.stop();
                                                 }
-                                            }));
-                                },
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return w.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'showAdditionalPolicies',
+                            value: function () {
+                                var e = document.querySelector('#theStayPolicies'),
+                                    t = e.querySelector('legend'),
+                                    n = e.offsetHeight,
+                                    r = document.querySelector('#theConfirmationPoliciesAjax');
+                                window.matchMedia('(max-width:800px)').matches &&
+                                    document.querySelector('#theBookingPage') &&
+                                    (r.insertAdjacentElement('afterEnd', e),
+                                    y.moveOrphanedElementsIntoNewWrapper(document.querySelectorAll('#theStayPolicies *'), 'policies-container', '#theStayPolicies', 'beforeEnd'),
+                                    e.insertAdjacentElement('beforeBegin', t),
+                                    e.insertAdjacentHTML(
+                                        'beforeEnd',
+                                        '\n        <style>\n            #theStayPolicies {\n                height: 0;\n                display: none;\n            }\n            .show-policies{\n                height: '.concat(
+                                            n,
+                                            'px !important;\n                display: block !important;\n            }\n        </style>\n    '
+                                        )
+                                    ),
+                                    t.addEventListener('click', function () {
+                                        e.classList.toggle('show-policies');
+                                    }));
                             },
-                            {
-                                key: 'accordion',
-                                value: function (e, t, n) {
-                                    if (document.querySelector(e)) {
-                                        var r = document.querySelector(e),
-                                            o = r.querySelector(n),
-                                            i = r.querySelector(t),
-                                            a = i.offsetHeight;
-                                        document
-                                            .querySelector(e)
-                                            .insertAdjacentHTML(
-                                                'beforeEnd',
-                                                '<style>\n            '
-                                                    .concat(t, '{\n                transform: translateY(-')
-                                                    .concat(
-                                                        a,
-                                                        'px);\n                pointer-events: none;\n                transition: all .75s ease;\n                height: 0;\n                position: relative;\n            }\n            .show-content{\n                transform: translateY(0) !important;\n                opacity: 1 !important;\n                pointer-events: initial !important;\n                height: '
-                                                    )
-                                                    .concat(a, 'px !important;\n            }\n        </style>\n        ')
-                                            ),
-                                            o.insertAdjacentHTML(
-                                                'beforeEnd',
-                                                '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'
-                                            ),
-                                            o.addEventListener('click', function () {
-                                                i.classList.toggle('show-content'), o.querySelector('svg').classList.toggle('flip-svg');
-                                            });
-                                    }
-                                },
+                        },
+                        {
+                            key: 'updatePropReviewsURLToUseAnchor',
+                            value: function () {
+                                var e = document.querySelector('.reviewCount a');
+                                'property-detail' === this.page_name && e && e.setAttribute('href', '#thePropertyReviews');
                             },
-                            {
-                                key: 'movePropClassBelowPropName',
-                                value: function () {
-                                    var e = document.querySelectorAll('.ArnContainer');
-                                    document.querySelector('.SearchHotels') &&
-                                        e.forEach(function (e) {
-                                            var t = e.querySelector('.ArnPropClass'),
-                                                n = e.querySelector('.ArnPropName');
-                                            e && t && n && n.insertAdjacentElement('beforeEnd', t);
-                                        });
-                                },
+                        },
+                        {
+                            key: 'moveFooterOutOfSearchContainer',
+                            value: function () {
+                                document.querySelector('.SearchHotels') &&
+                                    document.querySelector('.ArnSupportBottom') &&
+                                    document.body.insertAdjacentElement('beforeEnd', document.querySelector('.ArnSupportBottom'));
                             },
-                            {
-                                key: 'setupReservationSummaryContainer',
-                                value: function () {
-                                    var e,
-                                        t,
-                                        n,
-                                        r,
-                                        o = document.querySelector('.checkInRow td'),
-                                        i = document.querySelector('.checkOutRow td'),
-                                        a = document.querySelector('meta[name="currency"]');
-                                    o &&
-                                        i &&
-                                        a &&
-                                        ((t = o.textContent),
-                                        (r = i.textContent),
-                                        (e = h(t).format(this.site_config.dayjs_date_format)),
-                                        (n = h(r).format(this.site_config.dayjs_date_format)),
-                                        y.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
-                                        y.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
-                                },
-                            },
-                            {
-                                key: 'formatCheckoutForm',
-                                value: function () {
-                                    var e = document.querySelectorAll('.WBGuestFormFields'),
-                                        t = 0;
+                        },
+                        {
+                            key: 'moveReviewsIntoPropNameContainer',
+                            value: function () {
+                                var e = document.querySelectorAll('.SearchHotels .ArnPropName');
+                                document.querySelector('.SearchHotels') &&
+                                    document.querySelector('.ArnContainer') &&
                                     e.forEach(function (e) {
-                                        (t += 1),
-                                            y.moveElementIntoExistingWrapper(
-                                                '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
-                                                '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
-                                                'afterEnd'
-                                            ),
-                                            y.createWrapper(
-                                                '.RoomNumber-'
-                                                    .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
-                                                    .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
-                                                    .concat(t, ', #theCountryAjax')
-                                                    .concat(t),
-                                                '#theBillingAddressAjax'.concat(t),
-                                                'billing-details-container',
-                                                'afterEnd'
-                                            ),
-                                            y.createWrapper(
-                                                '.RoomNumber-'
-                                                    .concat(t, ' #theCreditCardBillingNameAjax')
-                                                    .concat(t, ',\n                .RoomNumber-')
-                                                    .concat(t, ' #theCardExpirationFieldsAjax,\n                .RoomNumber-')
-                                                    .concat(t, ' #theCardVerificationAjax'),
-                                                '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
-                                                'credit-card-details',
-                                                'afterEnd'
-                                            ),
-                                            y.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
-                                            y.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
-                                            y.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
-                                            t > 1 && y.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
-                                            y.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
-                                            y.updateHTML(
-                                                '.cardNumber label',
-                                                '<div class="creditcards"><img src="'.concat(
-                                                    p.path,
-                                                    '/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
-                                                )
-                                            );
-                                    }),
-                                        this.keepHeaderConsistentWhenSameAsLastGuestClicked(t);
-                                },
+                                        e.insertAdjacentElement('beforeEnd', e.parentElement.querySelector('.ArnTripAdvisorDetails'));
+                                    });
                             },
-                            {
-                                key: 'keepHeaderConsistentWhenSameAsLastGuestClicked',
-                                value: function (e) {
-                                    document.querySelector('#theCopyInfoAjax input') &&
-                                        document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
-                                            setTimeout(function () {
-                                                y.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
-                                                    e > 1 && y.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
-                                            }, 750);
-                                        });
-                                },
-                            },
-                            {
-                                key: 'applyConfigStyles',
-                                value: function () {
-                                    var e = document.querySelector('#h4h-styles');
-                                    this.site_config &&
+                        },
+                        {
+                            key: 'toggleMap',
+                            value: function () {
+                                var e = document.querySelector('#ArnPropertyMap'),
+                                    t = document.querySelector('#arnCloseAnchorId'),
+                                    n = document.querySelector('header'),
+                                    r = document.querySelector('.config-container'),
+                                    o = document.querySelector('.ArnToggleMap + .ArnToggleMap');
+                                o && o.click(),
+                                    t &&
                                         e &&
-                                        (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
-                                        '52342' !== this.site_id &&
-                                            e.insertAdjacentHTML(
-                                                'beforeend',
-                                                '<link href="'
-                                                    .concat(p.path, '/site_configs/')
-                                                    .concat(this.site_config.directory_name, '/styles/')
-                                                    .concat(this.site_config.site_id, '.css" rel="stylesheet">')
-                                            ));
-                                },
+                                        ((t.innerHTML =
+                                            '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map fa-w-18 fa-2x"><path fill="currentColor" d="M0 117.66v346.32c0 11.32 11.43 19.06 21.94 14.86L160 416V32L20.12 87.95A32.006 32.006 0 0 0 0 117.66zM192 416l192 64V96L192 32v384zM554.06 33.16L416 96v384l139.88-55.95A31.996 31.996 0 0 0 576 394.34V48.02c0-11.32-11.43-19.06-21.94-14.86z" class=""></path></svg><span> Open Map</span>'),
+                                        t.addEventListener('click', function () {
+                                            if (
+                                                (t.classList.toggle('closeMap'),
+                                                e.classList.toggle('showMap'),
+                                                document.body.classList.toggle('fixed'),
+                                                n.classList.toggle('hideElement'),
+                                                r.classList.toggle('hideElement'),
+                                                t.classList.contains('closeMap'))
+                                            ) {
+                                                t.querySelector('span').textContent = ' Close Map';
+                                                var o = document.querySelector('.leaflet-control-container .leaflet-top.leaflet-right');
+                                                if (!o) return;
+                                                o.appendChild(t);
+                                            } else {
+                                                var i = document.querySelector('#arnToggleMapDiv');
+                                                if (!i) return;
+                                                i.appendChild(t), (t.querySelector('span').innerHTML = ' Open Map');
+                                            }
+                                        }));
                             },
-                            {
-                                key: 'applyDarkTheme',
-                                value: function () {
-                                    'light' !== this.site_config.theme.toLowerCase() &&
-                                        document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(p.path, '/styles/dark.css" rel="stylesheet">'));
-                                },
-                            },
-                            {
-                                key: 'showLanguageFromCongif',
-                                value: function () {
-                                    var e,
-                                        t,
-                                        n,
-                                        r = this,
-                                        o = '',
-                                        i = '',
-                                        a = document.querySelector('#language'),
-                                        c = document.querySelector('.config-container'),
-                                        s = document.querySelector('meta[name="theme"]'),
-                                        u = document.querySelector('input#theCheckIn'),
-                                        l = document.querySelector('input#theCheckOut'),
-                                        d = new URLSearchParams(window.location.search);
-                                    function f(r, o) {
-                                        (e = h(u.value, r).format('M/D/YYYY')),
-                                            (t = h(l.value, r).format('M/D/YYYY')),
-                                            (n = h(t).diff(h(e), 'days')),
-                                            (e = h(u.value, r).format(o)),
-                                            (t = h(l.value, r).format(o));
-                                    }
-                                    this.site_config &&
-                                        c &&
-                                        s &&
-                                        a &&
-                                        (this.site_config.show_language_select
-                                            ? (document.querySelector('div#language-label').classList.add('config-label'),
-                                              (i = s.getAttribute('content')),
-                                              document.querySelector(".language-container div[value='".concat(i, "']")).classList.add('active-language'),
-                                              document.body.insertAdjacentElement('afterBegin', c),
-                                              c.insertAdjacentElement('afterBegin', a),
-                                              ((o = a.querySelector('#language-label')).querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML),
-                                              o.addEventListener('click', function () {
-                                                  a.querySelector('.language-container').classList.toggle('show-language-container'),
-                                                      window.document.documentMode || o.querySelector('svg').classList.toggle('flip-svg');
-                                              }),
-                                              a.querySelector('.language-container').addEventListener('click', function (t) {
-                                                  var o = document.getElementById(t.target.id).getAttribute('value');
-                                                  ('search-results' !== r.page_name && 'landing-page' !== r.page_name) ||
-                                                      o === i ||
-                                                      (d.set('theme', o),
-                                                      'standard' === o || o.includes('mandarin') || 'standard' !== i || 16980 === r.site_config.affilaite_id
-                                                          ? 'standard' !== o || 'standard' === i || i.includes('mandarin')
-                                                              ? 'standard' === o || o.includes('mandarin') || 'standard' === i || i.includes('mandarin')
-                                                                  ? o.includes('mandarin') && 'standard' !== i
-                                                                      ? f('D/M/YYYY', 'YYYY/M/D')
-                                                                      : o.includes('mandarin') && i.includes('mandarin')
-                                                                      ? f('YYYY/M/D', 'YYYY/M/D')
-                                                                      : o.includes('mandarin') && 'standard' === i
-                                                                      ? f('M/D/YYYY', 'YYYY/M/D')
-                                                                      : 'standard' === o && i.includes('mandarin')
-                                                                      ? f('YYYY/M/D', 'M/D/YYYY')
-                                                                      : 'standard' !== o && i.includes('mandarin')
-                                                                      ? f('YYYY/M/D', 'D/M/YYYY')
-                                                                      : 16980 === r.site_config.affilaite_id && f('D/M/YYYY', 'D/M/YYYY')
-                                                                  : f('D/M/YYYY', 'D/M/YYYY')
-                                                              : f('D/M/YYYY', 'M/D/YYYY')
-                                                          : f('M/D/YYYY', 'D/M/YYYY'),
-                                                      'search-results' === r.page_name && (d.set('nights', n), d.set('checkin', e)),
-                                                      (window.location.search = d.toString()));
-                                              }),
-                                              window.addEventListener('click', function (e) {
-                                                  if (document.querySelector('.show-language-container')) {
-                                                      if (
-                                                          e.target === document.querySelector('#language-label') ||
-                                                          e.target.parentNode === document.querySelector('.language-container')
-                                                      )
-                                                          return;
-                                                      if ((document.querySelector('.language-container').classList.toggle('show-language-container'), window.document.documentMode))
-                                                          return;
-                                                      o.querySelector('svg').classList.toggle('flip-svg');
-                                                  }
-                                              }))
-                                            : (a.style.display = 'none'));
-                                },
-                            },
-                            {
-                                key: 'buildCurrencyDropdown',
-                                value:
-                                    ((S = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t,
-                                                n,
-                                                r,
-                                                o,
-                                                i = this;
-                                            return regeneratorRuntime.wrap(function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            return (
-                                                                (t = function () {
-                                                                    fetch(''.concat(p.path, '/js/json/currencies.json'))
-                                                                        .then(function (e) {
-                                                                            if (!e.ok) throw e;
-                                                                            return e.json();
-                                                                        })
-                                                                        .then(function (e) {
-                                                                            n(e), r(), o();
-                                                                        })
-                                                                        .catch(function (e) {
-                                                                            console.error('Could not fetch currencies.json', e);
-                                                                        });
-                                                                }),
-                                                                (n = function (e) {
-                                                                    var t = document.createElement('div'),
-                                                                        n = document.createElement('div'),
-                                                                        r = '\n            <h4>Top Currencies</h4>\n            <div class="top-currencies">\n                <span id="AUD"><strong>'
-                                                                            .concat(e.AUD.code, '</strong> - ')
-                                                                            .concat(e.AUD.name, '</span>\n                <span id="CAD"><strong>')
-                                                                            .concat(e.CAD.code, '</strong> - ')
-                                                                            .concat(e.CAD.name, '</span>\n                <span id="EUR"><strong>')
-                                                                            .concat(e.EUR.code, '</strong> - ')
-                                                                            .concat(e.EUR.name, '</span>\n                <span id="MXN"><strong>')
-                                                                            .concat(e.MXN.code, '</strong> - ')
-                                                                            .concat(e.MXN.name, '</span>\n                <span id="GBP"><strong>')
-                                                                            .concat(e.GBP.code, '</strong> - ')
-                                                                            .concat(e.GBP.name, '</span>\n                <span id="USD"><strong>')
-                                                                            .concat(e.USD.code, '</strong> - ')
-                                                                            .concat(e.USD.name, '</span>\n            </div>\n            <h4>All Currencies</h4>\n            ');
-                                                                    for (var o in (t.insertAdjacentHTML('afterBegin', r),
-                                                                    t.classList.add('currency-content'),
-                                                                    n.classList.add('all-currencies'),
-                                                                    e))
-                                                                        n.insertAdjacentHTML(
-                                                                            'beforeEnd',
-                                                                            '<span id="'.concat(o, '"><strong>').concat(o, '</strong> - ').concat(e[o].name, '</span>')
-                                                                        );
-                                                                    t.insertAdjacentElement('beforeEnd', n),
-                                                                        y.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
-                                                                }),
-                                                                (r = function () {
-                                                                    var e = new URLSearchParams(window.location.search),
-                                                                        t = document.querySelector('.dropdown');
-                                                                    t &&
-                                                                        t.addEventListener('click', function (t) {
-                                                                            console.log(t),
-                                                                                console.log('after event listener'),
-                                                                                (i.selected_currency = t.target.id),
-                                                                                console.log(i.selected_currency),
-                                                                                i.selected_currency &&
-                                                                                    (console.log('after early return: !this.selected_currency'),
-                                                                                    document.querySelector('.active-currency').classList.remove('active-currency'),
-                                                                                    document.querySelector('#'.concat(t.target.id)).classList.add('active-currency'),
-                                                                                    (document.querySelector('#currency-label span').textContent = document.querySelector(
-                                                                                        '.active-currency'
-                                                                                    ).textContent),
-                                                                                    'search-results' === i.page_name &&
-                                                                                        (e.set('currency', i.selected_currency), (window.location.search = e.toString())));
-                                                                        });
-                                                                }),
-                                                                (o = function () {
-                                                                    var e,
-                                                                        t = document.querySelector('meta[name="currency"]');
-                                                                    if (t) {
-                                                                        var n = /\((.*)\)/;
-                                                                        (e = t.content.match(n) ? t.content.match(n)[1] : y.getMetaTagContent('currency')),
-                                                                            (i.selected_currency = e),
-                                                                            document.querySelector('#'.concat(e)).classList.add('active-currency'),
-                                                                            (document.querySelector('#currency-label span').textContent = document.querySelector(
-                                                                                '.active-currency'
-                                                                            ).textContent);
-                                                                    }
-                                                                }),
-                                                                (e.next = 6),
-                                                                t()
-                                                            );
-                                                        case 6:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            }, e);
-                                        })
-                                    )),
-                                    function () {
-                                        return S.apply(this, arguments);
-                                    }),
-                            },
-                            {
-                                key: 'setupDatePrompt',
-                                value: function () {
-                                    var e = document.querySelector('#theDatePrompt');
-                                    e &&
-                                        e
-                                            .querySelector('#datePromptContainer')
-                                            .insertAdjacentHTML('afterBegin', '<img src="'.concat(this.site_config.header.logo_file_location, '" alt="Logo">'));
-                                },
-                            },
-                            {
-                                key: 'highlightMapMarkersOnPropertyHover',
-                                value: function () {
-                                    var e,
-                                        t,
-                                        n = document.querySelectorAll('.ArnContainer');
-                                    document.querySelector('#currentPropertyPage') &&
-                                        n.forEach(function (n) {
-                                            n.addEventListener('mouseenter', function (r) {
-                                                (t = n.parentElement.querySelector('.propId')) &&
-                                                    ((e = t.textContent), window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOn(e));
-                                            }),
-                                                n.addEventListener('mouseleave', function (t) {
-                                                    window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOff(e);
-                                                });
+                        },
+                        {
+                            key: 'accordion',
+                            value: function (e, t, n) {
+                                if (document.querySelector(e)) {
+                                    var r = document.querySelector(e),
+                                        o = r.querySelector(n),
+                                        i = r.querySelector(t),
+                                        a = i.offsetHeight;
+                                    document
+                                        .querySelector(e)
+                                        .insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<style>\n            '
+                                                .concat(t, '{\n                transform: translateY(-')
+                                                .concat(
+                                                    a,
+                                                    'px);\n                pointer-events: none;\n                transition: all .75s ease;\n                height: 0;\n                position: relative;\n            }\n            .show-content{\n                transform: translateY(0) !important;\n                opacity: 1 !important;\n                pointer-events: initial !important;\n                height: '
+                                                )
+                                                .concat(a, 'px !important;\n            }\n        </style>\n        ')
+                                        ),
+                                        o.insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 80" xml:space="preserve"><polyline fill="none" stroke="#333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline></svg>'
+                                        ),
+                                        o.addEventListener('click', function () {
+                                            i.classList.toggle('show-content'), o.querySelector('svg').classList.toggle('flip-svg');
                                         });
-                                },
+                                }
                             },
-                            {
-                                key: 'showFullStayAndNightlyRates',
-                                value: function (e, t) {
-                                    return new Promise(function (t) {
-                                        var n,
+                        },
+                        {
+                            key: 'movePropClassBelowPropName',
+                            value: function () {
+                                var e = document.querySelectorAll('.ArnContainer');
+                                document.querySelector('.SearchHotels') &&
+                                    e.forEach(function (e) {
+                                        var t = e.querySelector('.ArnPropClass'),
+                                            n = e.querySelector('.ArnPropName');
+                                        e && t && n && n.insertAdjacentElement('beforeEnd', t);
+                                    });
+                            },
+                        },
+                        {
+                            key: 'setupReservationSummaryContainer',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n,
+                                    r,
+                                    o = document.querySelector('.checkInRow td'),
+                                    i = document.querySelector('.checkOutRow td'),
+                                    a = document.querySelector('meta[name="currency"]');
+                                o &&
+                                    i &&
+                                    a &&
+                                    ((t = o.textContent),
+                                    (r = i.textContent),
+                                    (e = h(t).format(this.site_config.dayjs_date_format)),
+                                    (n = h(r).format(this.site_config.dayjs_date_format)),
+                                    y.createHTML('<span class="date-container">'.concat(e, ' - ').concat(n), '#theHotelAddress', 'beforeBegin'),
+                                    y.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd'));
+                            },
+                        },
+                        {
+                            key: 'formatCheckoutForm',
+                            value: function () {
+                                var e = document.querySelectorAll('.WBGuestFormFields'),
+                                    t = 0;
+                                e.forEach(function (e) {
+                                    (t += 1),
+                                        y.moveElementIntoExistingWrapper(
+                                            '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardBillingNameAjax').concat(t - 1),
+                                            '#theBookingPage td.GuestForms > fieldset:nth-child('.concat(t, ') #theCreditCardNumberAjax'),
+                                            'afterEnd'
+                                        ),
+                                        y.createWrapper(
+                                            '.RoomNumber-'
+                                                .concat(t, ' .guestCityZip > table > tbody > tr > td > div, .RoomNumber-')
+                                                .concat(t, ' .guestCityZip > table > tbody > tr >td:nth-child(2) > div, #theStateAjax')
+                                                .concat(t, ', #theCountryAjax')
+                                                .concat(t),
+                                            '#theBillingAddressAjax'.concat(t),
+                                            'billing-details-container',
+                                            'afterEnd'
+                                        ),
+                                        y.createWrapper(
+                                            '.RoomNumber-'
+                                                .concat(t, ' #theCreditCardBillingNameAjax')
+                                                .concat(t, ',\n                .RoomNumber-')
+                                                .concat(t, ' #theCardExpirationFieldsAjax,\n                .RoomNumber-')
+                                                .concat(t, ' #theCardVerificationAjax'),
+                                            '.RoomNumber-'.concat(t, ' #theCreditCardNumberAjax'),
+                                            'credit-card-details',
+                                            'afterEnd'
+                                        ),
+                                        y.updateHTML('#theCreditCardBillingNameAjax'.concat(t - 1, ' label'), "Cardholder's Name"),
+                                        y.updateHTML('#theBillingAddressAjax'.concat(t - 1, ' label'), 'Billing Address'),
+                                        y.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info'),
+                                        t > 1 && y.updateHTML('.RoomNumber-'.concat(t, ' > legend'), 'Billing Info - Room '.concat(t)),
+                                        y.createHTML('<legend>Credit Card Info</legend>', '.RoomNumber-'.concat(t, ' .guestBillingAddress'), 'beforeBegin'),
+                                        y.updateHTML(
+                                            '.cardNumber label',
+                                            '<div class="creditcards"><img src="'.concat(
+                                                p.path,
+                                                '/images/credit_cards/credit_cards.png" alt="Credit Cards"></div><label>Credit Card Number</label>'
+                                            )
+                                        );
+                                }),
+                                    this.keepHeaderConsistentWhenSameAsLastGuestClicked(t);
+                            },
+                        },
+                        {
+                            key: 'keepHeaderConsistentWhenSameAsLastGuestClicked',
+                            value: function (e) {
+                                document.querySelector('#theCopyInfoAjax input') &&
+                                    document.querySelector('#theCopyInfoAjax input').addEventListener('click', function () {
+                                        setTimeout(function () {
+                                            y.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info'),
+                                                e > 1 && y.updateHTML('.RoomNumber-'.concat(e, ' > legend'), 'Billing Info - Room '.concat(e));
+                                        }, 750);
+                                    });
+                            },
+                        },
+                        {
+                            key: 'applyConfigStyles',
+                            value: function () {
+                                var e = document.querySelector('#h4h-styles');
+                                this.site_config &&
+                                    e &&
+                                    (y.createHTML('<link href="'.concat(this.site_config.google_font_url, '" rel="stylesheet">'), 'head', 'beforeEnd'),
+                                    '52342' !== this.site_id &&
+                                        e.insertAdjacentHTML(
+                                            'beforeend',
+                                            '<link href="'
+                                                .concat(p.path, '/site_configs/')
+                                                .concat(this.site_config.directory_name, '/styles/')
+                                                .concat(this.site_config.site_id, '.css" rel="stylesheet">')
+                                        ));
+                            },
+                        },
+                        {
+                            key: 'applyDarkTheme',
+                            value: function () {
+                                'light' !== this.site_config.theme.toLowerCase() &&
+                                    document.querySelector('#h4h-styles').insertAdjacentHTML('beforeend', '<link href="'.concat(p.path, '/styles/dark.css" rel="stylesheet">'));
+                            },
+                        },
+                        {
+                            key: 'showLanguageFromCongif',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n,
+                                    r = this,
+                                    o = '',
+                                    i = '',
+                                    a = document.querySelector('#language'),
+                                    c = document.querySelector('.config-container'),
+                                    s = document.querySelector('meta[name="theme"]'),
+                                    u = document.querySelector('input#theCheckIn'),
+                                    l = document.querySelector('input#theCheckOut'),
+                                    d = new URLSearchParams(window.location.search);
+                                function f(r, o) {
+                                    (e = h(u.value, r).format('M/D/YYYY')),
+                                        (t = h(l.value, r).format('M/D/YYYY')),
+                                        (n = h(t).diff(h(e), 'days')),
+                                        (e = h(u.value, r).format(o)),
+                                        (t = h(l.value, r).format(o));
+                                }
+                                this.site_config &&
+                                    c &&
+                                    s &&
+                                    a &&
+                                    (this.site_config.show_language_select
+                                        ? (document.querySelector('div#language-label').classList.add('config-label'),
+                                          (i = s.getAttribute('content')),
+                                          document.querySelector(".language-container div[value='".concat(i, "']")).classList.add('active-language'),
+                                          document.body.insertAdjacentElement('afterBegin', c),
+                                          c.insertAdjacentElement('afterBegin', a),
+                                          ((o = a.querySelector('#language-label')).querySelector('span').innerHTML = document.querySelector('.active-language').innerHTML),
+                                          o.addEventListener('click', function () {
+                                              a.querySelector('.language-container').classList.toggle('show-language-container'),
+                                                  window.document.documentMode || o.querySelector('svg').classList.toggle('flip-svg');
+                                          }),
+                                          a.querySelector('.language-container').addEventListener('click', function (t) {
+                                              var o = document.getElementById(t.target.id).getAttribute('value');
+                                              ('search-results' !== r.page_name && 'landing-page' !== r.page_name) ||
+                                                  o === i ||
+                                                  (d.set('theme', o),
+                                                  'standard' === o || o.includes('mandarin') || 'standard' !== i || 16980 === r.site_config.affilaite_id
+                                                      ? 'standard' !== o || 'standard' === i || i.includes('mandarin')
+                                                          ? 'standard' === o || o.includes('mandarin') || 'standard' === i || i.includes('mandarin')
+                                                              ? o.includes('mandarin') && 'standard' !== i
+                                                                  ? f('D/M/YYYY', 'YYYY/M/D')
+                                                                  : o.includes('mandarin') && i.includes('mandarin')
+                                                                  ? f('YYYY/M/D', 'YYYY/M/D')
+                                                                  : o.includes('mandarin') && 'standard' === i
+                                                                  ? f('M/D/YYYY', 'YYYY/M/D')
+                                                                  : 'standard' === o && i.includes('mandarin')
+                                                                  ? f('YYYY/M/D', 'M/D/YYYY')
+                                                                  : 'standard' !== o && i.includes('mandarin')
+                                                                  ? f('YYYY/M/D', 'D/M/YYYY')
+                                                                  : 16980 === r.site_config.affilaite_id && f('D/M/YYYY', 'D/M/YYYY')
+                                                              : f('D/M/YYYY', 'D/M/YYYY')
+                                                          : f('D/M/YYYY', 'M/D/YYYY')
+                                                      : f('M/D/YYYY', 'D/M/YYYY'),
+                                                  'search-results' === r.page_name && (d.set('nights', n), d.set('checkin', e)),
+                                                  (window.location.search = d.toString()));
+                                          }),
+                                          window.addEventListener('click', function (e) {
+                                              if (document.querySelector('.show-language-container')) {
+                                                  if (
+                                                      e.target === document.querySelector('#language-label') ||
+                                                      e.target.parentNode === document.querySelector('.language-container')
+                                                  )
+                                                      return;
+                                                  if ((document.querySelector('.language-container').classList.toggle('show-language-container'), window.document.documentMode))
+                                                      return;
+                                                  o.querySelector('svg').classList.toggle('flip-svg');
+                                              }
+                                          }))
+                                        : (a.style.display = 'none'));
+                            },
+                        },
+                        {
+                            key: 'buildCurrencyDropdown',
+                            value:
+                                ((S = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t,
+                                            n,
                                             r,
                                             o,
-                                            i,
-                                            a = y.getMetaTagContent('showFullTotals');
-                                        a ||
-                                            (document.querySelector('.SearchHotels') &&
-                                                (document.querySelectorAll('.ArnContainer').forEach(function (t) {
-                                                    (n = t.querySelector('.arnPrice')),
-                                                        (r = t.querySelector('.arnPrice .arnUnit')) &&
-                                                            n &&
-                                                            ((o = parseFloat(r.textContent) * e),
-                                                            (i = o.toFixed(2)),
-                                                            r &&
-                                                                (n.insertAdjacentHTML(
-                                                                    'beforeEnd',
-                                                                    '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
-                                                                ),
-                                                                1 === e && (t.querySelector('.full-stay').style.display = 'none')));
-                                                }),
-                                                document.body.insertAdjacentHTML(
-                                                    'beforeEnd',
-                                                    '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
-                                                )),
-                                            document.querySelector('.SinglePropDetail') &&
-                                                (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
-                                                    (r = t.querySelector('strong')),
-                                                        (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
+                                            i = this;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        return (
+                                                            (t = function () {
+                                                                fetch(''.concat(p.path, '/js/json/currencies.json'))
+                                                                    .then(function (e) {
+                                                                        if (!e.ok) throw e;
+                                                                        return e.json();
+                                                                    })
+                                                                    .then(function (e) {
+                                                                        n(e), r(), o();
+                                                                    })
+                                                                    .catch(function (e) {
+                                                                        console.error('Could not fetch currencies.json', e);
+                                                                    });
+                                                            }),
+                                                            (n = function (e) {
+                                                                var t = document.createElement('div'),
+                                                                    n = document.createElement('div'),
+                                                                    r = '\n            <h4>Top Currencies</h4>\n            <div class="top-currencies">\n                <span id="AUD"><strong>'
+                                                                        .concat(e.AUD.code, '</strong> - ')
+                                                                        .concat(e.AUD.name, '</span>\n                <span id="CAD"><strong>')
+                                                                        .concat(e.CAD.code, '</strong> - ')
+                                                                        .concat(e.CAD.name, '</span>\n                <span id="EUR"><strong>')
+                                                                        .concat(e.EUR.code, '</strong> - ')
+                                                                        .concat(e.EUR.name, '</span>\n                <span id="MXN"><strong>')
+                                                                        .concat(e.MXN.code, '</strong> - ')
+                                                                        .concat(e.MXN.name, '</span>\n                <span id="GBP"><strong>')
+                                                                        .concat(e.GBP.code, '</strong> - ')
+                                                                        .concat(e.GBP.name, '</span>\n                <span id="USD"><strong>')
+                                                                        .concat(e.USD.code, '</strong> - ')
+                                                                        .concat(e.USD.name, '</span>\n            </div>\n            <h4>All Currencies</h4>\n            ');
+                                                                for (var o in (t.insertAdjacentHTML('afterBegin', r),
+                                                                t.classList.add('currency-content'),
+                                                                n.classList.add('all-currencies'),
+                                                                e))
+                                                                    n.insertAdjacentHTML(
+                                                                        'beforeEnd',
+                                                                        '<span id="'.concat(o, '"><strong>').concat(o, '</strong> - ').concat(e[o].name, '</span>')
+                                                                    );
+                                                                t.insertAdjacentElement('beforeEnd', n),
+                                                                    y.createDropdownMenu('#currency-label', t, '.currency-content', '.dropdown');
+                                                            }),
+                                                            (r = function () {
+                                                                var e = new URLSearchParams(window.location.search),
+                                                                    t = document.querySelector('.dropdown');
+                                                                t &&
+                                                                    t.addEventListener('click', function (t) {
+                                                                        console.log(t),
+                                                                            console.log('after event listener'),
+                                                                            (i.selected_currency = t.target.id),
+                                                                            console.log(i.selected_currency),
+                                                                            i.selected_currency &&
+                                                                                (console.log('after early return: !this.selected_currency'),
+                                                                                document.querySelector('.active-currency').classList.remove('active-currency'),
+                                                                                document.querySelector('#'.concat(t.target.id)).classList.add('active-currency'),
+                                                                                (document.querySelector('#currency-label span').textContent = document.querySelector(
+                                                                                    '.active-currency'
+                                                                                ).textContent),
+                                                                                'search-results' === i.page_name &&
+                                                                                    (e.set('currency', i.selected_currency), (window.location.search = e.toString())));
+                                                                    });
+                                                            }),
+                                                            (o = function () {
+                                                                var e,
+                                                                    t = document.querySelector('meta[name="currency"]');
+                                                                if (t) {
+                                                                    var n = /\((.*)\)/;
+                                                                    (e = t.content.match(n) ? t.content.match(n)[1] : y.getMetaTagContent('currency')),
+                                                                        (i.selected_currency = e),
+                                                                        document.querySelector('#'.concat(e)).classList.add('active-currency'),
+                                                                        (document.querySelector('#currency-label span').textContent = document.querySelector(
+                                                                            '.active-currency'
+                                                                        ).textContent);
+                                                                }
+                                                            }),
+                                                            (e.next = 6),
+                                                            t()
+                                                        );
+                                                    case 6:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return S.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'setupDatePrompt',
+                            value: function () {
+                                var e = document.querySelector('#theDatePrompt');
+                                e &&
+                                    e
+                                        .querySelector('#datePromptContainer')
+                                        .insertAdjacentHTML('afterBegin', '<img src="'.concat(this.site_config.header.logo_file_location, '" alt="Logo">'));
+                            },
+                        },
+                        {
+                            key: 'highlightMapMarkersOnPropertyHover',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n = document.querySelectorAll('.ArnContainer');
+                                document.querySelector('#currentPropertyPage') &&
+                                    n.forEach(function (n) {
+                                        n.addEventListener('mouseenter', function (r) {
+                                            (t = n.parentElement.querySelector('.propId')) &&
+                                                ((e = t.textContent), window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOn(e));
+                                        }),
+                                            n.addEventListener('mouseleave', function (t) {
+                                                window.ArnMapDispatcher && ArnMapDispatcher.eventPropertyHighlightOff(e);
+                                            });
+                                    });
+                            },
+                        },
+                        {
+                            key: 'showFullStayAndNightlyRates',
+                            value: function (e, t) {
+                                return new Promise(function (t) {
+                                    var n,
+                                        r,
+                                        o,
+                                        i,
+                                        a = y.getMetaTagContent('showFullTotals');
+                                    a ||
+                                        (document.querySelector('.SearchHotels') &&
+                                            (document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                (n = t.querySelector('.arnPrice')),
+                                                    (r = t.querySelector('.arnPrice .arnUnit')) &&
+                                                        n &&
+                                                        ((o = parseFloat(r.textContent) * e),
+                                                        (i = o.toFixed(2)),
                                                         r &&
-                                                            o &&
-                                                            (i = o.toFixed(2)) &&
-                                                            (r.insertAdjacentHTML(
+                                                            (n.insertAdjacentHTML(
                                                                 'beforeEnd',
                                                                 '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
                                                             ),
-                                                            1 === e && (t.querySelector('.full-stay').style.display = 'none'));
-                                                }),
-                                                document.body.insertAdjacentHTML(
-                                                    'beforeEnd',
-                                                    '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
-                                                ))),
-                                            a &&
-                                                (document.querySelector('.SearchHotels') &&
-                                                    document.querySelectorAll('.ArnContainer').forEach(function (t) {
-                                                        (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
-                                                            (o = t.querySelector('.arnPrice .arnUnit')),
-                                                            r &&
-                                                                o &&
-                                                                ((r.style.display = 'block'),
-                                                                (o.style.fontSize = '13px'),
-                                                                (t.querySelector('.arnCurrency').style.display = 'none'),
-                                                                r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
-                                                                o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
-                                                                1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
-                                                    }),
-                                                document.querySelector('.SinglePropDetail') &&
-                                                    document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
-                                                        (r = t.querySelector('.averageNightly')),
-                                                            (o = t.querySelector('strong')),
-                                                            r &&
-                                                                o &&
-                                                                ((r.style.display = 'block'),
-                                                                r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
-                                                                (o.textContent = o.textContent.replace(/[^\d.-]/g, '')),
-                                                                o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
-                                                                1 === e && (t.querySelector('strong').style.display = 'none'));
-                                                    }));
-                                    });
-                                },
-                            },
-                            {
-                                key: 'getTotalNights',
-                                value:
-                                    ((b = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t, n, r, o, i;
-                                            return regeneratorRuntime.wrap(function (e) {
-                                                for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                        case 0:
-                                                            if (
-                                                                ((t = document.querySelector('meta[name="checkIn"]')),
-                                                                (n = document.querySelector('meta[name="checkOut"]')),
-                                                                t && n)
-                                                            ) {
-                                                                e.next = 4;
-                                                                break;
-                                                            }
-                                                            return e.abrupt('return');
-                                                        case 4:
-                                                            return (
-                                                                (r = new Date(t.getAttribute('content'))),
-                                                                (o = new Date(n.getAttribute('content'))),
-                                                                (i = (o.getTime() - r.getTime()) / 864e5),
-                                                                e.abrupt('return', i)
-                                                            );
-                                                        case 8:
-                                                        case 'end':
-                                                            return e.stop();
-                                                    }
-                                            }, e);
-                                        })
-                                    )),
-                                    function () {
-                                        return b.apply(this, arguments);
-                                    }),
-                            },
-                            {
-                                key: 'getNightlyRateForMapMarkers',
-                                value: function (e, t) {
-                                    var n, r;
-                                    document.querySelectorAll('.arnMapMarkerSpan').forEach(function (o) {
-                                        (n = o.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')),
-                                            (r = parseFloat(n / e).toFixed(0)),
-                                            (o.textContent = 'USD' === t ? '$'.concat(r) : ''.concat(r, ' ').concat(t));
-                                    });
-                                },
-                            },
-                            {
-                                key: 'addTitleToProperties',
-                                value: function () {
-                                    var e,
-                                        t,
-                                        n = document.querySelectorAll('.ArnContainer');
-                                    document.querySelector('.SearchHotels') &&
-                                        n.forEach(function (n) {
-                                            (t = n.querySelector('.ArnPropNameLink')), (e = t.querySelector('span').textContent), t.setAttribute('title', e);
-                                        });
-                                },
-                            },
-                            {
-                                key: 'showLoaderOnResultsUpdate',
-                                value: function () {
-                                    var e = this,
-                                        t = document.querySelector('#searching'),
-                                        n = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
-                                    document.querySelector('.SearchHotels') &&
-                                        n.forEach(function (n) {
-                                            n.addEventListener('click', function () {
-                                                'cug' !== e.site_config.site_type.toLowerCase() || '' !== document.querySelector('input#address-input').value
-                                                    ? '' !== document.querySelector('input#theCheckIn').value
-                                                        ? (t.style.display = 'block')
-                                                        : e.style_validation_fields('input#theCheckIn')
-                                                    : e.style_validation_fields('input#address-input');
-                                            });
-                                        });
-                                },
-                            },
-                            {
-                                key: 'changeContractedPropertyPinColor',
-                                value: function () {
-                                    var e = document.querySelectorAll('.ArnProperty'),
-                                        t = document.querySelectorAll('.arnMapMarker');
-                                    if (e) {
-                                        var n = [],
-                                            r = [];
-                                        e.forEach(function (e) {
-                                            e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? n.push(!0) : n.push(!1);
-                                        }),
-                                            n.forEach(function (e, t) {
-                                                e && r.push(t);
+                                                            1 === e && (t.querySelector('.full-stay').style.display = 'none')));
                                             }),
-                                            r.forEach(function (e) {
-                                                t[e].classList.add('contracted-pin');
-                                            });
-                                    }
-                                },
-                            },
-                            {
-                                key: 'setMapMarkerSize',
-                                value: function () {
-                                    var e = document.querySelector('meta[name="currency"]'),
-                                        t = document.querySelectorAll('.arnMapMarker');
-                                    e &&
-                                        t &&
-                                        'USD' !== e.getAttribute('content') &&
-                                        t.forEach(function (e) {
-                                            e.style.width = '85px';
-                                        });
-                                },
-                            },
-                            {
-                                key: 'useLogoForVenueMapMarker',
-                                value: function () {
-                                    var e = this,
-                                        t = document.querySelectorAll('.arn-green-marker-icon');
-                                    this.site_config &&
-                                        t.forEach(function (t) {
-                                            t.setAttribute('src', ''.concat(e.site_config.map_marker_image_url));
-                                        });
-                                },
-                            },
-                            {
-                                key: 'addHRToProperties',
-                                value: function () {
-                                    var e = document.querySelectorAll('.ArnProperty');
-                                    e &&
-                                        e.forEach(function (e) {
-                                            e.insertAdjacentHTML('beforeEnd', '<hr class="prop-hr">');
-                                        });
-                                },
-                            },
-                            {
-                                key: 'isPropByGateway',
-                                value: function (e, t, n, r) {
-                                    var o = this;
-                                    function i(e, t) {
-                                        t.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', '<div class="custom-tag">'.concat(e, ' </div>'));
-                                    }
-                                    document.querySelector('.exclusive-rate') ||
-                                        ('search-results' === this.page_name &&
-                                            document.querySelectorAll('div.ArnProperty').forEach(function (r) {
-                                                var a, c;
-                                                r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
-                                                    r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
-                                                    (r.classList.contains('S16') || r.classList.contains('S20') || (r.classList.contains('S33') && '' !== e)) &&
-                                                        ((a = e),
-                                                        (c = r),
-                                                        '' !== o.site_config.exclusive_rate_text &&
-                                                            c
-                                                                .querySelector('div.ArnPropThumb')
-                                                                .insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
-                                            }),
-                                        'property-detail' === this.page_name &&
-                                            document.querySelectorAll('div.rateRow').forEach(function (t) {
-                                                (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== o.site_config.exclusive_rate_text)) &&
-                                                    (function (e, t, n) {
-                                                        if (document.querySelector('.SinglePropDetail')) {
-                                                            var r = e.querySelector('.ArnRateList tr td:first-child');
-                                                            r.innerHTML = r.innerHTML.replace(
-                                                                'Special Event Rate',
-                                                                '<span id="exclusive-event-rate">'.concat(t, ' ').concat(n, '</span>')
-                                                            );
-                                                        }
-                                                    })(t, r, e);
-                                            }));
-                                },
-                            },
-                            {
-                                key: 'addLRGDetails',
-                                value: function () {
-                                    var e = this;
-                                    if ('lodging' === this.site_config.site_type && this.site_config.lodging.is_lrg) {
-                                        var t = document.querySelectorAll('.S16, .S20');
-                                        t &&
-                                            t.forEach(function (t) {
-                                                t.querySelector('.arnPrice') &&
-                                                    t
-                                                        .querySelector('.arnPrice')
-                                                        .insertAdjacentHTML(
-                                                            'afterEnd',
-                                                            '\n                <a href="https://events.'
-                                                                .concat(f, '/v6/low-rate-guarantee?siteid=')
-                                                                .concat(
-                                                                    e.site_id,
-                                                                    '&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>\n            '
-                                                                )
-                                                        );
-                                            });
-                                    }
-                                },
-                            },
-                            {
-                                key: 'replaceLRGForm',
-                                value:
-                                    ((v = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t;
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                if ('lodging' === this.site_config.site_type || this.site_config.is_lrg) {
-                                                                    e.next = 2;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 2:
-                                                                return (
-                                                                    (e.prev = 2),
-                                                                    (e.next = 5),
-                                                                    fetch('https://'.concat(f, '/components/lrg-form/lrg-form.html')).then(function (e) {
-                                                                        return e.text();
-                                                                    })
-                                                                );
-                                                            case 5:
-                                                                (t = e.sent), (document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = t), (e.next = 12);
-                                                                break;
-                                                            case 9:
-                                                                (e.prev = 9), (e.t0 = e.catch(2)), console.error(e.t0);
-                                                            case 12:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                this,
-                                                [[2, 9]]
-                                            );
-                                        })
-                                    )),
-                                    function () {
-                                        return v.apply(this, arguments);
-                                    }),
-                            },
-                            {
-                                key: 'addImageSlideshow',
-                                value: function () {
-                                    document.querySelector('#thePropertyImages').style.display = 'none';
-                                    var e,
-                                        t,
-                                        n = document.querySelector('meta[name="aPropertyId"]').content,
-                                        r = 0;
-                                    function o(e) {
-                                        if (e && 'Featured Image' !== e[0].ImageCaption)
-                                            return (
-                                                e.sort(function (e, t) {
-                                                    return 'Featured Image' === e.ImageCaption ? -1 : 'Featured Image' === t.ImageCaption ? 1 : 0;
-                                                }),
-                                                e
-                                            );
-                                    }
-                                    function i() {
-                                        return a.apply(this, arguments);
-                                    }
-                                    function a() {
-                                        return (a = l(
-                                            regeneratorRuntime.mark(function e() {
-                                                var t;
-                                                return regeneratorRuntime.wrap(
-                                                    function (e) {
-                                                        for (;;)
-                                                            switch ((e.prev = e.next)) {
-                                                                case 0:
-                                                                    return (
-                                                                        (e.prev = 0),
-                                                                        (e.next = 3),
-                                                                        fetch('https://api.hotelsforhope.com/arn/properties/'.concat(n)).then(function (e) {
-                                                                            return e.json();
-                                                                        })
-                                                                    );
-                                                                case 3:
-                                                                    return (
-                                                                        o((t = e.sent).Images),
-                                                                        e.abrupt(
-                                                                            'return',
-                                                                            t.Images.map(function (e) {
-                                                                                return e.ImagePath.replace(/_300/, '_804480');
-                                                                            })
-                                                                        )
-                                                                    );
-                                                                case 8:
-                                                                    (e.prev = 8), (e.t0 = e.catch(0)), console.log(e.t0);
-                                                                case 11:
-                                                                case 'end':
-                                                                    return e.stop();
-                                                            }
-                                                    },
-                                                    e,
-                                                    null,
-                                                    [[0, 8]]
-                                                );
-                                            })
-                                        )).apply(this, arguments);
-                                    }
-                                    function c() {
-                                        t = document.querySelectorAll('.carousel-slide img');
-                                        for (var n = 0 === r ? r : r + 2; n < r + 5; n += 1) {
-                                            if (n === e.length) return;
-                                            document.querySelector('.carousel-slide').insertAdjacentHTML(
-                                                'beforeend',
-                                                '<div class="image-wrapper">\n                        <div class ="image-number">'
-                                                    .concat(n + 1, '/')
-                                                    .concat(e.length, '</div>\n                        <img src=')
-                                                    .concat(e[n], '>\n                    </div>')
-                                            );
-                                        }
-                                    }
-                                    function s() {
-                                        return u.apply(this, arguments);
-                                    }
-                                    function u() {
-                                        return (u = l(
-                                            regeneratorRuntime.mark(function t() {
-                                                return regeneratorRuntime.wrap(function (t) {
-                                                    for (;;)
-                                                        switch ((t.prev = t.next)) {
-                                                            case 0:
-                                                                return (t.next = 2), i();
-                                                            case 2:
-                                                                (e = t.sent),
-                                                                    document
-                                                                        .querySelector('.ArnPropName')
-                                                                        .insertAdjacentHTML(
-                                                                            'afterend',
-                                                                            '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
-                                                                        ),
-                                                                    c();
-                                                            case 5:
-                                                            case 'end':
-                                                                return t.stop();
-                                                        }
-                                                }, t);
-                                            })
-                                        )).apply(this, arguments);
-                                    }
-                                    function d(t, n) {
-                                        (r > 1 && r < e.length - 2) ||
-                                            ((t.style.display = 'block'),
-                                            (n.style.display = 'block'),
-                                            0 === r && (n.style.display = 'none'),
-                                            r + 1 === e.length && (t.style.display = 'none'));
-                                    }
-                                    function f() {
-                                        return (f = l(
-                                            regeneratorRuntime.mark(function e() {
-                                                var n, o, i;
-                                                return regeneratorRuntime.wrap(function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                return (e.next = 2), s();
-                                                            case 2:
-                                                                (n = document.querySelector('.carousel-slide')),
-                                                                    (o = document.querySelector('#previousBtn')),
-                                                                    d((i = document.querySelector('#nextBtn')), o),
-                                                                    i.addEventListener('click', function () {
-                                                                        if (((t = document.querySelectorAll('.carousel-slide img')), r !== t.length - 1)) {
-                                                                            (r += 1), d(i, o);
-                                                                            var e = t[r].clientWidth;
-                                                                            (n.style.transform = 'translateX(-'.concat(e * r, 'px)')), r === t.length - 2 && c();
-                                                                        }
-                                                                    }),
-                                                                    o.addEventListener('click', function () {
-                                                                        if (!(r <= 0)) {
-                                                                            (r -= 1), d(i, o);
-                                                                            var e = t[r].clientWidth;
-                                                                            n.style.transform = 'translateX(-'.concat(e * r, 'px)');
-                                                                        }
-                                                                    });
-                                                            case 8:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                }, e);
-                                            })
-                                        )).apply(this, arguments);
-                                    }
-                                    !(function () {
-                                        f.apply(this, arguments);
-                                    })();
-                                },
-                            },
-                            {
-                                key: 'addSocialMetaTags',
-                                value: function (e, t) {
-                                    'cug' !== this.site_config.site_type &&
-                                        'confirmation' === this.page_name &&
-                                        this.site_config.has_social_sharing &&
-                                        document.head.insertAdjacentHTML(
-                                            'beforeend',
-                                            '<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">\n            <meta property="og:type" content="website" >\n            <meta property="og:title" content="'
-                                                .concat(e, '" >\n            <meta property="og:description" content="I just booked my room for ')
-                                                .concat(e, ' through Hotels4Hope and donated to charity!" >\n            <meta property="og:image" content="https://events.')
-                                                .concat(f, '/group-event?id=')
-                                                .concat(t, '">')
-                                        );
-                                },
-                            },
-                            {
-                                key: 'addSocialMediaShareButtons',
-                                value: function (e, t) {
-                                    if ('cug' !== this.site_config.site_type && 'confirmation' === this.page_name && this.site_config.has_social_sharing) {
-                                        var n = document.querySelector('#theReservationFormContainer tbody'),
-                                            r = document.createElement('script');
-                                        r.setAttribute('src', 'https://platform.twitter.com/widgets.js'),
-                                            r.setAttribute('async', !0),
-                                            document.head.appendChild(r),
-                                            n.insertAdjacentHTML(
-                                                'afterbegin',
-                                                '<div class="social-share-buttons-container">\n                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D'
-                                                    .concat(
-                                                        t,
-                                                        '&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>\n\n                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for '
-                                                    )
-                                                    .concat(e, ' through Hotels4Hope and donated to charity!" data-url="https://events.')
-                                                    .concat(f, '/group-event?id=')
-                                                    .concat(t, '" data-via="Hotels4Hope" data-show-count="false">Tweet</a>\n                </div>')
-                                            );
-                                    }
-                                },
-                            },
-                            {
-                                key: 'style_validation_fields',
-                                value: function (e) {
-                                    var t = document.querySelector(e);
-                                    '' === t.value && t.classList.add('invalidated');
-                                },
-                            },
-                            {
-                                key: 'setInputToRequired',
-                                value: function (e) {
-                                    document.querySelector(e) && (document.querySelector(e).required = !0);
-                                },
-                            },
-                            {
-                                key: 'resizeViewportForMapMobile',
-                                value: function () {
-                                    if ('search-results' === this.page_name || window.matchMedia('(max-width:800px)').matches) {
-                                        var e = 0.01 * window.innerHeight;
-                                        document.documentElement.style.setProperty('--vh', ''.concat(e, 'px')),
-                                            window.addEventListener('resize', function () {
-                                                (e = 0.01 * window.innerHeight), document.documentElement.style.setProperty('--vh', ''.concat(e, 'px'));
-                                            });
-                                    }
-                                },
-                            },
-                            {
-                                key: 'implementAds',
-                                value: function () {
-                                    if (this.site_config.ads && !window.matchMedia('(max-width:800px)').matches) {
-                                        var e = this.site_config.ads;
-                                        if (
-                                            ('search-results' === this.page_name &&
-                                                (document.querySelector('.ArnSecondarySearchOuterContainer') &&
-                                                    e.sidebar_ad.is_active &&
-                                                    document
-                                                        .querySelector('.ArnSecondarySearchOuterContainer')
-                                                        .insertAdjacentHTML(
-                                                            'afterEnd',
-                                                            '\n                <a class="sidebar-ad" href="'
-                                                                .concat(e.sidebar_ad.outbound_url, '" target="_blank">\n                    <img src="')
-                                                                .concat(e.sidebar_ad.image_url, '" alt="Advertisement">\n                </a>\n            ')
+                                            document.body.insertAdjacentHTML(
+                                                'beforeEnd',
+                                                '<style>.arnCurrency,.arnUnit{font-size: 17px;}.arnCurrency + div{font-weight:500;}</style>'
+                                            )),
+                                        document.querySelector('.SinglePropDetail') &&
+                                            (document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                (r = t.querySelector('strong')),
+                                                    (o = parseFloat(r.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')) * e),
+                                                    r &&
+                                                        o &&
+                                                        (i = o.toFixed(2)) &&
+                                                        (r.insertAdjacentHTML(
+                                                            'beforeEnd',
+                                                            '<div>per night</div><div class="full-stay">'.concat(i, ' for ').concat(e, ' nights </div>')
                                                         ),
-                                                document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') &&
-                                                    e.between_property_ad.is_active &&
-                                                    document
-                                                        .querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')
-                                                        .insertAdjacentHTML(
-                                                            'afterEnd',
-                                                            '\n                <a class="between-property-ad" href="'
-                                                                .concat(e.between_property_ad.outbound_url, '" target="_blank">\n                    <img src="')
-                                                                .concat(
-                                                                    e.between_property_ad.image_url,
-                                                                    '" alt="Advertisement">\n                </a>\n                <hr class="prop-hr">\n            '
-                                                                )
-                                                        )),
-                                            'confirmation' === this.page_name)
-                                        ) {
-                                            if (!document.querySelector('.GuestForms') || !e.confirmation_page_bottom.is_active) return;
-                                            document
-                                                .querySelector('.GuestForms')
-                                                .insertAdjacentHTML(
-                                                    'beforeEnd',
-                                                    '\n                <a class="confirmation-bottom-ad" href="'
-                                                        .concat(e.confirmation_page_bottom.outbound_url, '" target="_blank">\n                    <img src="')
-                                                        .concat(e.confirmation_page_bottom.image_url, '" alt="Advertisement">\n                </a>\n            ')
-                                                );
-                                        }
-                                    }
-                                },
-                            },
-                            {
-                                key: 'cugConfigs',
-                                value: function () {
-                                    var e,
-                                        t = this.site_config;
-                                    'cug' === t.site_type.toLowerCase() &&
-                                        ((e = document.querySelectorAll('.percentSavings')) &&
-                                            !t.cug.show_percent_savings &&
-                                            e.forEach(function (e) {
-                                                e.insertAdjacentHTML('beforeEnd', ' Today');
+                                                        1 === e && (t.querySelector('.full-stay').style.display = 'none'));
                                             }),
-                                        (function () {
-                                            if (t.cug.show_percent_savings) {
-                                                var e = document.querySelector('.ArnSortByDealPercent');
-                                                e && (e.style.display = 'block');
-                                            }
-                                        })(),
-                                        (function () {
-                                            if (!t.cug.show_percent_savings) {
-                                                var e = '';
-                                                document.querySelector('.SearchHotels') && (e = document.querySelectorAll('.ArnProperty')),
-                                                    document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnNightlyRate')),
-                                                    e &&
-                                                        e.forEach(function (e) {
-                                                            var t = e.querySelector('div.percentSavings');
-                                                            if (t && ((t.style.display = 'block'), document.querySelector('.SearchHotels'))) {
-                                                                var n = e.querySelector('.ArnRateCell'),
-                                                                    r = e.querySelector('.ArnRateButton');
-                                                                window.matchMedia('(min-width: 600px)').matches
-                                                                    ? n.insertAdjacentElement('afterBegin', t)
-                                                                    : r.insertAdjacentElement('afterBegin', t);
-                                                            }
-                                                        });
-                                            }
-                                        })());
-                                },
+                                            document.body.insertAdjacentHTML(
+                                                'beforeEnd',
+                                                '<style>.ArnNightlyRate strong{font-size: 17px !important;}.ArnNightlyRate strong div:first-child{font-weight:500;margin-bottom:4px;}.ArnNightlyRate strong div{font-size:13px;}</style>'
+                                            ))),
+                                        a &&
+                                            (document.querySelector('.SearchHotels') &&
+                                                document.querySelectorAll('.ArnContainer').forEach(function (t) {
+                                                    (r = t.querySelector('.ArnRateCell .ArnPriceCell .averageNightly')),
+                                                        (o = t.querySelector('.arnPrice .arnUnit')),
+                                                        r &&
+                                                            o &&
+                                                            ((r.style.display = 'block'),
+                                                            (o.style.fontSize = '13px'),
+                                                            (t.querySelector('.arnCurrency').style.display = 'none'),
+                                                            r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('.arnPrice').style.display = 'none'));
+                                                }),
+                                            document.querySelector('.SinglePropDetail') &&
+                                                document.querySelectorAll('.ArnNightlyRate').forEach(function (t) {
+                                                    (r = t.querySelector('.averageNightly')),
+                                                        (o = t.querySelector('strong')),
+                                                        r &&
+                                                            o &&
+                                                            ((r.style.display = 'block'),
+                                                            r.insertAdjacentHTML('afterEnd', '<div>per night</div>'),
+                                                            (o.textContent = o.textContent.replace(/[^\d.-]/g, '')),
+                                                            o.insertAdjacentHTML('beforeEnd', '<span> for '.concat(e, ' nights </span>')),
+                                                            1 === e && (t.querySelector('strong').style.display = 'none'));
+                                                }));
+                                });
                             },
-                            {
-                                key: 'showFilters',
-                                value: function () {
-                                    this.site_config.show_stars &&
-                                        document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>'),
-                                        this.site_config.show_property_type &&
-                                            document.body.insertAdjacentHTML('beforeEnd', '<style> #PropertyTypesContainer{display:block !important;}</style>');
-                                },
+                        },
+                        {
+                            key: 'getTotalNights',
+                            value:
+                                ((b = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r, o, i;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (((t = document.querySelector('meta[name="checkIn"]')), (n = document.querySelector('meta[name="checkOut"]')), t && n)) {
+                                                            e.next = 4;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 4:
+                                                        return (
+                                                            (r = new Date(t.getAttribute('content'))),
+                                                            (o = new Date(n.getAttribute('content'))),
+                                                            (i = (o.getTime() - r.getTime()) / 864e5),
+                                                            e.abrupt('return', i)
+                                                        );
+                                                    case 8:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function () {
+                                    return b.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'getNightlyRateForMapMarkers',
+                            value: function (e, t) {
+                                var n, r;
+                                document.querySelectorAll('.arnMapMarkerSpan').forEach(function (o) {
+                                    (n = o.textContent.replace(/[^0-9.]/g, '').replace(/[\r\n]+/gm, '')),
+                                        (r = parseFloat(n / e).toFixed(0)),
+                                        (o.textContent = 'USD' === t ? '$'.concat(r) : ''.concat(r, ' ').concat(t));
+                                });
                             },
-                            {
-                                key: 'showCoronavirusInfoBanner',
-                                value: function () {
-                                    '52342' !== this.site_id &&
-                                        'closed' !== localStorage.getItem('covidAlertBanner') &&
-                                        (document.body.insertAdjacentHTML(
-                                            'afterBegin',
-                                            '\n            <div class="info-banner">\n                <div class="message-content">\n                    <h1>Book with Confidence:</h1>\n                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">\n                        <h1>COVID-19 Update</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">\n                        <h1>Cleaning Policies</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                </div>\n                <button class="close-banner-button close-alert">X</button>\n            </div>\n        '
-                                        ),
-                                        document.querySelector('.close-banner-button').addEventListener('click', function (e) {
-                                            (document.querySelector('.info-banner').style.display = 'none'), window.localStorage.setItem('covidAlertBanner', 'closed');
-                                        }));
-                                },
+                        },
+                        {
+                            key: 'addTitleToProperties',
+                            value: function () {
+                                var e,
+                                    t,
+                                    n = document.querySelectorAll('.ArnContainer');
+                                document.querySelector('.SearchHotels') &&
+                                    n.forEach(function (n) {
+                                        (t = n.querySelector('.ArnPropNameLink')), (e = t.querySelector('span').textContent), t.setAttribute('title', e);
+                                    });
                             },
-                            {
-                                key: 'showCurrencySelect',
-                                value: function () {
-                                    if (!this.site_config.show_currency_select) {
-                                        var e = document.querySelector('.config-container'),
-                                            t = document.querySelector('.currencies-container');
-                                        this.site_config.show_currency_select || this.site_config.show_language_select
-                                            ? this.site_config.show_currency_select || (t.style.display = 'none')
-                                            : (e.style.display = 'none');
-                                    }
-                                },
-                            },
-                            {
-                                key: 'positionPropReviews',
-                                value: function () {
-                                    if ('property-detail' === this.page_name && this.site_config.reviews_before_info && null !== document.querySelector('.PropertyReviews')) {
-                                        var e = document.querySelector('.PropertyReviews');
-                                        document.querySelector('.GeneralInfo').insertAdjacentElement('beforebegin', e);
-                                    }
-                                },
-                            },
-                            {
-                                key: 'insertPoweredByFooterLogo',
-                                value: function () {
-                                    document
-                                        .querySelector('.ArnSupportBottom')
-                                        .insertAdjacentHTML(
-                                            'beforeend',
-                                            '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="'.concat(
-                                                p.path,
-                                                '/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
-                                            )
-                                        );
-                                },
-                            },
-                            {
-                                key: 'updateConfirmationCheckBoxes',
-                                value: function () {
-                                    'checkout' === this.page_name &&
-                                        '52342' !== this.site_id &&
-                                        ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                        (document.querySelector(
-                                            'span.confirmationAgreement'
-                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.'
-                                            .concat(f, '/v6/terms-and-conditions?&siteId=')
-                                            .concat(this.site_id, '&theme=standard">Terms & Conditions</a> found on this website.')),
-                                        y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
-                                        y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
-                                        document.querySelector('#policies-fees').addEventListener('click', function () {
-                                            document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
-                                        }),
-                                        document.querySelector('span.open-modal').addEventListener('click', function () {
-                                            document.body.classList.toggle('hide');
-                                        }),
-                                        document.querySelector('span.close-modal').addEventListener('click', function () {
-                                            document.body.classList.toggle('hide');
-                                        }));
-                                },
-                            },
-                            {
-                                key: 'addMessagingToConfirmationPage',
-                                value: function () {
-                                    if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
-                                        var e = window.arnCustomerEmailAddress,
-                                            t = this.site_config.confirmation_email_from;
-                                        (null != t && '' !== t) || (t = 'reservations@'.concat(f));
-                                        var n = document.querySelector('.supportInfo');
-                                        e &&
-                                            n &&
-                                            n.insertAdjacentHTML(
-                                                'afterEnd',
-                                                '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@'
-                                                    .concat(f, '"><strong>')
-                                                    .concat(t, '</strong></a> at <strong>')
-                                                    .concat(e, '</strong> shortly.</p>\n            </div>\n            ')
-                                            );
-                                    }
-                                },
-                            },
-                            {
-                                key: 'fixCheckoutInputTabOrder',
-                                value: function () {
-                                    var e = document.querySelector('#theReservationForm'),
-                                        t = document.querySelector('meta[name="numberOfRooms"]');
-                                    if (e && t) {
-                                        var n = t.content;
-                                        e.querySelectorAll('input, select, textarea').forEach(function (e, t) {
-                                            e && (0 === t ? e.setAttribute('tabindex', 1) : e.setAttribute('tabIndex', t));
+                        },
+                        {
+                            key: 'showLoaderOnResultsUpdate',
+                            value: function () {
+                                var e = this,
+                                    t = document.querySelector('#searching'),
+                                    n = document.querySelectorAll('#theSubmitButton', '#theOtherSubmitButton');
+                                document.querySelector('.SearchHotels') &&
+                                    n.forEach(function (n) {
+                                        n.addEventListener('click', function () {
+                                            'cug' !== e.site_config.site_type.toLowerCase() || '' !== document.querySelector('input#address-input').value
+                                                ? '' !== document.querySelector('input#theCheckIn').value
+                                                    ? (t.style.display = 'block')
+                                                    : e.style_validation_fields('input#theCheckIn')
+                                                : e.style_validation_fields('input#address-input');
                                         });
-                                        for (var r = 1; r <= n; r += 1) {
-                                            var o = document.querySelector('#theCity'.concat(r)),
-                                                i = document.querySelector('#theZipCode'.concat(r)),
-                                                a = document.querySelector('#theStateAjax'.concat(r, ' select')),
-                                                c = document.querySelector('#theCountryAjax'.concat(r, ' select')),
-                                                s = document.querySelector('#theCreditCardBillingNameAjax'.concat(r, ' input')),
-                                                u = document.querySelector('.RoomNumber-'.concat(r, ' #theCvvCode')),
-                                                l = document.querySelector('.RoomNumber-'.concat(r, ' .cardMonth')),
-                                                d = document.querySelector('.RoomNumber-'.concat(r, ' .cardYear'));
-                                            if (!(o && i && a && c && s && u && l && d)) return;
-                                            var f = o.tabIndex,
-                                                p = a.tabIndex,
-                                                h = i.tabIndex,
-                                                m = c.tabIndex,
-                                                y = s.tabIndex,
-                                                g = u.tabIndex,
-                                                v = l.tabIndex,
-                                                b = d.tabIndex;
-                                            o.setAttribute('tabIndex', h),
-                                                a.setAttribute('tabIndex', f),
-                                                i.setAttribute('tabIndex', m),
-                                                c.setAttribute('tabIndex', p),
-                                                s.setAttribute('tabIndex', g),
-                                                u.setAttribute('tabIndex', v),
-                                                l.setAttribute('tabIndex', b),
-                                                d.setAttribute('tabIndex', y);
-                                        }
-                                    }
-                                },
+                                    });
                             },
-                            {
-                                key: 'showMoreAmenities',
-                                value: function () {
-                                    if ('property-detail' === this.page_name) {
-                                        var e,
-                                            t = document.querySelector('.ArnAmenityContainer');
-                                        !document.querySelector('#show-more-or-less') &&
-                                            document.querySelector('.PropertyAmenities li') &&
-                                            (t.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>'),
-                                            (e = document.querySelector('span#show-more-or-less')),
-                                            document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities'),
-                                            e.addEventListener('click', function () {
-                                                document.querySelector('span.show-more')
-                                                    ? (document.querySelectorAll('.ArnAmenityContainer td:not(.show-amenities)').forEach(function (e) {
-                                                          e.classList.toggle('show-amenities');
-                                                      }),
-                                                      (e.textContent = 'Show Less Amenities'),
-                                                      e.classList.toggle('show-more'),
-                                                      e.classList.toggle('show-less'))
-                                                    : document.querySelector('span.show-less') &&
-                                                      (document.querySelectorAll('.ArnAmenityContainer td:not(:first-child)').forEach(function (e) {
-                                                          e.classList.toggle('show-amenities');
-                                                      }),
-                                                      (e.textContent = 'Show More Amenities'),
-                                                      e.classList.toggle('show-less'),
-                                                      e.classList.toggle('show-more'));
-                                            }));
-                                    }
-                                },
-                            },
-                            {
-                                key: 'hideRemainingRooms',
-                                value: function () {
-                                    if ('property-detail' === this.page_name && document.querySelector('div.roomCount')) {
-                                        var e = document.querySelectorAll('table.ArnRateList'),
-                                            t = window.matchMedia('(max-width: 560px)');
-                                        e.forEach(function (e) {
-                                            if (e.querySelector('.roomCount strong') || e.classList.contains('SB16') || e.classList.contains('SB20')) {
-                                                var n = parseFloat(e.querySelector('.roomCount strong').textContent);
-                                                n < 6 && (e.querySelector('.roomCount').style.display = 'block'),
-                                                    e.classList.contains('SB16') &&
-                                                        (e.classList.contains('SB20') || t.matches) &&
-                                                        ((n < 6 && e.classList.contains('SB16')) || e.classList.contains('SB20')) &&
-                                                        (e.querySelector('.bookRoomCell').style.gridTemplateRows = '3fr .5fr .25fr');
-                                            }
+                        },
+                        {
+                            key: 'changeContractedPropertyPinColor',
+                            value: function () {
+                                var e = document.querySelectorAll('.ArnProperty'),
+                                    t = document.querySelectorAll('.arnMapMarker');
+                                if (e) {
+                                    var n = [],
+                                        r = [];
+                                    e.forEach(function (e) {
+                                        e.classList.contains('S16') || e.classList.contains('S20') || e.classList.contains('S33') ? n.push(!0) : n.push(!1);
+                                    }),
+                                        n.forEach(function (e, t) {
+                                            e && r.push(t);
+                                        }),
+                                        r.forEach(function (e) {
+                                            t[e].classList.add('contracted-pin');
                                         });
-                                    }
-                                },
+                                }
                             },
-                            {
-                                key: 'replaceHTMLWithFile',
-                                value:
-                                    ((m = l(
-                                        regeneratorRuntime.mark(function e(t, n) {
-                                            var r, o;
-                                            return regeneratorRuntime.wrap(function (e) {
+                        },
+                        {
+                            key: 'setMapMarkerSize',
+                            value: function () {
+                                var e = document.querySelector('meta[name="currency"]'),
+                                    t = document.querySelectorAll('.arnMapMarker');
+                                e &&
+                                    t &&
+                                    'USD' !== e.getAttribute('content') &&
+                                    t.forEach(function (e) {
+                                        e.style.width = '85px';
+                                    });
+                            },
+                        },
+                        {
+                            key: 'useLogoForVenueMapMarker',
+                            value: function () {
+                                var e = this,
+                                    t = document.querySelectorAll('.arn-green-marker-icon');
+                                this.site_config &&
+                                    t.forEach(function (t) {
+                                        t.setAttribute('src', ''.concat(e.site_config.map_marker_image_url));
+                                    });
+                            },
+                        },
+                        {
+                            key: 'addHRToProperties',
+                            value: function () {
+                                var e = document.querySelectorAll('.ArnProperty');
+                                e &&
+                                    e.forEach(function (e) {
+                                        e.insertAdjacentHTML('beforeEnd', '<hr class="prop-hr">');
+                                    });
+                            },
+                        },
+                        {
+                            key: 'isPropByGateway',
+                            value: function (e, t, n, r) {
+                                var o = this;
+                                function i(e, t) {
+                                    t.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', '<div class="custom-tag">'.concat(e, ' </div>'));
+                                }
+                                document.querySelector('.exclusive-rate') ||
+                                    ('search-results' === this.page_name &&
+                                        document.querySelectorAll('div.ArnProperty').forEach(function (r) {
+                                            var a, c;
+                                            r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
+                                                r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
+                                                (r.classList.contains('S16') || r.classList.contains('S20') || (r.classList.contains('S33') && '' !== e)) &&
+                                                    ((a = e),
+                                                    (c = r),
+                                                    '' !== o.site_config.exclusive_rate_text &&
+                                                        c.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
+                                        }),
+                                    'property-detail' === this.page_name &&
+                                        document.querySelectorAll('div.rateRow').forEach(function (t) {
+                                            (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== o.site_config.exclusive_rate_text)) &&
+                                                (function (e, t, n) {
+                                                    if (document.querySelector('.SinglePropDetail')) {
+                                                        var r = e.querySelector('.ArnRateList tr td:first-child');
+                                                        r.innerHTML = r.innerHTML.replace(
+                                                            'Special Event Rate',
+                                                            '<span id="exclusive-event-rate">'.concat(t, ' ').concat(n, '</span>')
+                                                        );
+                                                    }
+                                                })(t, r, e);
+                                        }));
+                            },
+                        },
+                        {
+                            key: 'addLRGDetails',
+                            value: function () {
+                                var e = this;
+                                if ('lodging' === this.site_config.site_type && this.site_config.lodging.is_lrg) {
+                                    var t = document.querySelectorAll('.S16, .S20');
+                                    t &&
+                                        t.forEach(function (t) {
+                                            t.querySelector('.arnPrice') &&
+                                                t
+                                                    .querySelector('.arnPrice')
+                                                    .insertAdjacentHTML(
+                                                        'afterEnd',
+                                                        '\n                <a href="https://events.'
+                                                            .concat(f, '/v6/low-rate-guarantee?siteid=')
+                                                            .concat(
+                                                                e.site_id,
+                                                                '&amp;theme=standard" target="_blank" class="lowest-rate-link">Lowest Rate. <span>Guaranteed.</span></a>\n            '
+                                                            )
+                                                    );
+                                        });
+                                }
+                            },
+                        },
+                        {
+                            key: 'replaceLRGForm',
+                            value:
+                                ((v = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
                                                 for (;;)
                                                     switch ((e.prev = e.next)) {
                                                         case 0:
-                                                            if (document.querySelector(n)) {
+                                                            if ('lodging' === this.site_config.site_type || this.site_config.is_lrg) {
                                                                 e.next = 2;
                                                                 break;
                                                             }
                                                             return e.abrupt('return');
                                                         case 2:
-                                                            return (r = document.querySelector(n)), (e.next = 5), y.fetchHTMLFromFile(t);
+                                                            return (
+                                                                (e.prev = 2),
+                                                                (e.next = 5),
+                                                                fetch('https://'.concat(f, '/components/lrg-form/lrg-form.html')).then(function (e) {
+                                                                    return e.text();
+                                                                })
+                                                            );
                                                         case 5:
-                                                            (o = e.sent), (r.innerHTML = o);
-                                                        case 7:
+                                                            (t = e.sent), (document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = t), (e.next = 12);
+                                                            break;
+                                                        case 9:
+                                                            (e.prev = 9), (e.t0 = e.catch(2)), console.error(e.t0);
+                                                        case 12:
                                                         case 'end':
                                                             return e.stop();
                                                     }
-                                            }, e);
-                                        })
-                                    )),
-                                    function (e, t) {
-                                        return m.apply(this, arguments);
-                                    }),
-                            },
-                            {
-                                key: 'appendMemberTokenForCug',
-                                value:
-                                    ((u = l(
+                                            },
+                                            e,
+                                            this,
+                                            [[2, 9]]
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return v.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'addImageSlideshow',
+                            value: function () {
+                                document.querySelector('#thePropertyImages').style.display = 'none';
+                                var e,
+                                    t,
+                                    n = document.querySelector('meta[name="aPropertyId"]').content,
+                                    r = 0;
+                                function o(e) {
+                                    if (e && 'Featured Image' !== e[0].ImageCaption)
+                                        return (
+                                            e.sort(function (e, t) {
+                                                return 'Featured Image' === e.ImageCaption ? -1 : 'Featured Image' === t.ImageCaption ? 1 : 0;
+                                            }),
+                                            e
+                                        );
+                                }
+                                function i() {
+                                    return a.apply(this, arguments);
+                                }
+                                function a() {
+                                    return (a = l(
                                         regeneratorRuntime.mark(function e() {
-                                            var t, n, r, o;
+                                            var t;
                                             return regeneratorRuntime.wrap(
                                                 function (e) {
                                                     for (;;)
                                                         switch ((e.prev = e.next)) {
                                                             case 0:
-                                                                if (
-                                                                    'cug' === this.site_config.site_type.toLowerCase() &&
-                                                                    '52342' !== this.site_id &&
-                                                                    this.site_config.is_resbeat_client &&
-                                                                    '63711' !== this.site_id &&
-                                                                    '63710' !== this.site_id &&
-                                                                    '63712' !== this.site_id
-                                                                ) {
-                                                                    e.next = 2;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 2:
-                                                                return (t = this.site_config.header.logo_outbound_url), (e.next = 5), y.waitForSelectorInDOM('.logo');
-                                                            case 5:
-                                                                if (document.querySelector('meta[name="memberToken"]')) {
-                                                                    e.next = 7;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 7:
-                                                                (n = document.querySelector('meta[name="memberToken"]').content),
-                                                                    (r = document.querySelector('.logo')),
-                                                                    (o = ''),
-                                                                    (o =
-                                                                        '/' === t.slice(-1)
-                                                                            ? ''.concat(t, 'v6?siteId=').concat(this.site_id, '&memberToken=').concat(n)
-                                                                            : '.com' === t.slice(-4)
-                                                                            ? ''.concat(t, '/v6?siteId=').concat(this.site_id, '&memberToken=').concat(n)
-                                                                            : ''.concat(t, '&memberToken=').concat(n)),
-                                                                    r.setAttribute('href', o);
-                                                            case 12:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                this
-                                            );
-                                        })
-                                    )),
-                                    function () {
-                                        return u.apply(this, arguments);
-                                    }),
-                            },
-                            {
-                                key: 'addLinkToLoginFromRegisterPage',
-                                value: function () {
-                                    if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
-                                        var e = document.querySelector('.WBValidatedRegistrationFormActions'),
-                                            t = window.location.href.replace('register', 'login');
-                                        e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
-                                    }
-                                },
-                            },
-                            {
-                                key: 'setCheckDatesToReadOnlyOnMobile',
-                                value:
-                                    ((s = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t, n;
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                if (y.matchMediaQuery('max-width: 800px')) {
-                                                                    e.next = 2;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 2:
-                                                                return (e.next = 4), y.waitForSelectorInDOM('#theCheckIn');
-                                                            case 4:
-                                                                if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
-                                                                    e.next = 11;
-                                                                    break;
-                                                                }
-                                                                if (((t = document.querySelector('#theCheckIn')), (n = document.querySelector('#theCheckOut')), t && n)) {
-                                                                    e.next = 9;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 9:
-                                                                t.setAttribute('readonly', !0), n.setAttribute('readonly', !0);
+                                                                return (
+                                                                    (e.prev = 0),
+                                                                    (e.next = 3),
+                                                                    fetch('https://api.hotelsforhope.com/arn/properties/'.concat(n)).then(function (e) {
+                                                                        return e.json();
+                                                                    })
+                                                                );
+                                                            case 3:
+                                                                return (
+                                                                    o((t = e.sent).Images),
+                                                                    e.abrupt(
+                                                                        'return',
+                                                                        t.Images.map(function (e) {
+                                                                            return e.ImagePath.replace(/_300/, '_804480');
+                                                                        })
+                                                                    )
+                                                                );
+                                                            case 8:
+                                                                (e.prev = 8), (e.t0 = e.catch(0)), console.log(e.t0);
                                                             case 11:
                                                             case 'end':
                                                                 return e.stop();
                                                         }
                                                 },
                                                 e,
-                                                this
+                                                null,
+                                                [[0, 8]]
                                             );
                                         })
-                                    )),
-                                    function () {
-                                        return s.apply(this, arguments);
-                                    }),
-                            },
-                            {
-                                key: 'updateAmenitiesLegendTag',
-                                value: function () {
-                                    'property-detail' === this.page_name && (document.querySelector('#thePropertyAmenities legend').outerHTML = '<span>Property Amenities</span>');
-                                },
-                            },
-                            {
-                                key: 'cancelConfirmUpdate',
-                                value: function () {
-                                    document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
-                                },
-                            },
-                            {
-                                key: 'showOriginalPrice',
-                                value:
-                                    ((a = l(
-                                        regeneratorRuntime.mark(function e(t, n) {
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                if (!this.site_config.is_resbeat_client) {
-                                                                    e.next = 2;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 2:
-                                                                return (e.next = 4), y.waitForSelectorInDOM('.pollingFinished');
-                                                            case 4:
-                                                                document.querySelectorAll(t).forEach(function (e) {
-                                                                    if (e.querySelector('div.originalPrice')) {
-                                                                        var t = '52342' === document.querySelector('meta[name="siteId"]').getAttribute('content') ? 3 : 5;
-                                                                        if (parseFloat(e.querySelector('.originalPrice').getAttribute('percent')) < t)
-                                                                            e.querySelector('.originalPrice').style.display = 'none';
-                                                                        else if (e.querySelector('.averageNightly')) {
-                                                                            var r,
-                                                                                o = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
-                                                                                i = o.get('nights');
-                                                                            e.querySelector('.averageNightly').insertAdjacentElement(
-                                                                                'beforebegin',
-                                                                                e.querySelector('div.originalPrice')
-                                                                            );
-                                                                            var a = e.querySelector('.originalPrice').textContent;
-                                                                            a.includes('$') ? ((r = a[0]), (a = a.replace('$', ''))) : (r = a.slice(a.length - 3, a.length)),
-                                                                                (a = parseFloat(a) / parseFloat(i)),
-                                                                                (e.querySelector('.originalPrice').textContent =
-                                                                                    'USD' === o.get('currency') || '$' === document.querySelector('.arnCurrency').textContent
-                                                                                        ? ''.concat(r).concat(a.toFixed(2))
-                                                                                        : ''.concat(a.toFixed(2), ' ').concat(r));
-                                                                        } else e.querySelector(n).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                    )).apply(this, arguments);
+                                }
+                                function c() {
+                                    t = document.querySelectorAll('.carousel-slide img');
+                                    for (var n = 0 === r ? r : r + 2; n < r + 5; n += 1) {
+                                        if (n === e.length) return;
+                                        document.querySelector('.carousel-slide').insertAdjacentHTML(
+                                            'beforeend',
+                                            '<div class="image-wrapper">\n                        <div class ="image-number">'
+                                                .concat(n + 1, '/')
+                                                .concat(e.length, '</div>\n                        <img src=')
+                                                .concat(e[n], '>\n                    </div>')
+                                        );
+                                    }
+                                }
+                                function s() {
+                                    return u.apply(this, arguments);
+                                }
+                                function u() {
+                                    return (u = l(
+                                        regeneratorRuntime.mark(function t() {
+                                            return regeneratorRuntime.wrap(function (t) {
+                                                for (;;)
+                                                    switch ((t.prev = t.next)) {
+                                                        case 0:
+                                                            return (t.next = 2), i();
+                                                        case 2:
+                                                            (e = t.sent),
+                                                                document
+                                                                    .querySelector('.ArnPropName')
+                                                                    .insertAdjacentHTML(
+                                                                        'afterend',
+                                                                        '<div class="carousel-container">\n                    <div class="carousel-slide">\n                    </div>\n                    <a id="previousBtn">&#10094;</a>\n                    <a id="nextBtn">&#10095;</a>\n                </div>'
+                                                                    ),
+                                                                c();
+                                                        case 5:
+                                                        case 'end':
+                                                            return t.stop();
+                                                    }
+                                            }, t);
+                                        })
+                                    )).apply(this, arguments);
+                                }
+                                function d(t, n) {
+                                    (r > 1 && r < e.length - 2) ||
+                                        ((t.style.display = 'block'),
+                                        (n.style.display = 'block'),
+                                        0 === r && (n.style.display = 'none'),
+                                        r + 1 === e.length && (t.style.display = 'none'));
+                                }
+                                function f() {
+                                    return (f = l(
+                                        regeneratorRuntime.mark(function e() {
+                                            var n, o, i;
+                                            return regeneratorRuntime.wrap(function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), s();
+                                                        case 2:
+                                                            (n = document.querySelector('.carousel-slide')),
+                                                                (o = document.querySelector('#previousBtn')),
+                                                                d((i = document.querySelector('#nextBtn')), o),
+                                                                i.addEventListener('click', function () {
+                                                                    if (((t = document.querySelectorAll('.carousel-slide img')), r !== t.length - 1)) {
+                                                                        (r += 1), d(i, o);
+                                                                        var e = t[r].clientWidth;
+                                                                        (n.style.transform = 'translateX(-'.concat(e * r, 'px)')), r === t.length - 2 && c();
+                                                                    }
+                                                                }),
+                                                                o.addEventListener('click', function () {
+                                                                    if (!(r <= 0)) {
+                                                                        (r -= 1), d(i, o);
+                                                                        var e = t[r].clientWidth;
+                                                                        n.style.transform = 'translateX(-'.concat(e * r, 'px)');
                                                                     }
                                                                 });
-                                                            case 5:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                this
-                                            );
+                                                        case 8:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            }, e);
                                         })
-                                    )),
-                                    function (e, t) {
-                                        return a.apply(this, arguments);
-                                    }),
+                                    )).apply(this, arguments);
+                                }
+                                !(function () {
+                                    f.apply(this, arguments);
+                                })();
                             },
-                            {
-                                key: 'updateSupportPageText',
-                                value: function () {
-                                    this.site_config.is_resbeat_client ||
-                                        (document.querySelector('.WBSupportForm') &&
-                                            (document.querySelector('.ArnSupportChatTable p').textContent =
-                                                'If you would like to speak with a representative, please call + 1 512-691-9555'));
-                                },
+                        },
+                        {
+                            key: 'addSocialMetaTags',
+                            value: function (e, t) {
+                                'cug' !== this.site_config.site_type &&
+                                    'confirmation' === this.page_name &&
+                                    this.site_config.has_social_sharing &&
+                                    document.head.insertAdjacentHTML(
+                                        'beforeend',
+                                        '<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">\n            <meta property="og:type" content="website" >\n            <meta property="og:title" content="'
+                                            .concat(e, '" >\n            <meta property="og:description" content="I just booked my room for ')
+                                            .concat(e, ' through Hotels4Hope and donated to charity!" >\n            <meta property="og:image" content="https://events.')
+                                            .concat(f, '/group-event?id=')
+                                            .concat(t, '">')
+                                    );
                             },
-                            {
-                                key: 'removeLrgFooterLink',
-                                value: function () {
-                                    this.site_config.lodging.is_lrg ||
-                                        this.site_config.is_resbeat_client ||
-                                        ((document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none'),
-                                        (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
-                                },
+                        },
+                        {
+                            key: 'addSocialMediaShareButtons',
+                            value: function (e, t) {
+                                if ('cug' !== this.site_config.site_type && 'confirmation' === this.page_name && this.site_config.has_social_sharing) {
+                                    var n = document.querySelector('#theReservationFormContainer tbody'),
+                                        r = document.createElement('script');
+                                    r.setAttribute('src', 'https://platform.twitter.com/widgets.js'),
+                                        r.setAttribute('async', !0),
+                                        document.head.appendChild(r),
+                                        n.insertAdjacentHTML(
+                                            'afterbegin',
+                                            '<div class="social-share-buttons-container">\n                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fevents.hotelsforhope.com%2Fgroup-event%3Fid%3D'
+                                                .concat(
+                                                    t,
+                                                    '&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>\n\n                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just booked my room for '
+                                                )
+                                                .concat(e, ' through Hotels4Hope and donated to charity!" data-url="https://events.')
+                                                .concat(f, '/group-event?id=')
+                                                .concat(t, '" data-via="Hotels4Hope" data-show-count="false">Tweet</a>\n                </div>')
+                                        );
+                                }
                             },
-                            {
-                                key: 'hideBookButtonForNoAvailability',
-                                value: function () {
-                                    document.querySelector('.SearchHotels') &&
-                                        document.querySelectorAll('.ArnProperty').forEach(function (e) {
-                                            e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
+                        },
+                        {
+                            key: 'style_validation_fields',
+                            value: function (e) {
+                                var t = document.querySelector(e);
+                                '' === t.value && t.classList.add('invalidated');
+                            },
+                        },
+                        {
+                            key: 'setInputToRequired',
+                            value: function (e) {
+                                document.querySelector(e) && (document.querySelector(e).required = !0);
+                            },
+                        },
+                        {
+                            key: 'resizeViewportForMapMobile',
+                            value: function () {
+                                if ('search-results' === this.page_name || window.matchMedia('(max-width:800px)').matches) {
+                                    var e = 0.01 * window.innerHeight;
+                                    document.documentElement.style.setProperty('--vh', ''.concat(e, 'px')),
+                                        window.addEventListener('resize', function () {
+                                            (e = 0.01 * window.innerHeight), document.documentElement.style.setProperty('--vh', ''.concat(e, 'px'));
                                         });
-                                },
+                                }
                             },
-                            {
-                                key: 'updatePropThumbToFeaturedImage',
-                                value:
-                                    ((i = l(
-                                        regeneratorRuntime.mark(function e() {
-                                            var t, n, r;
-                                            return regeneratorRuntime.wrap(
-                                                function (e) {
-                                                    for (;;)
-                                                        switch ((e.prev = e.next)) {
-                                                            case 0:
-                                                                return (
-                                                                    (r = function (e) {
-                                                                        for (var t, n = 0; n <= e.Images.length - 1; n += 1)
-                                                                            if ('Featured Image' === e.Images[n].ImageCaption) {
-                                                                                t = e.Images[n].ImagePath;
-                                                                                break;
-                                                                            }
-                                                                        return t;
-                                                                    }),
-                                                                    (n = function () {
-                                                                        return (n = l(
-                                                                            regeneratorRuntime.mark(function e(t) {
-                                                                                var n, r;
-                                                                                return regeneratorRuntime.wrap(
-                                                                                    function (e) {
-                                                                                        for (;;)
-                                                                                            switch ((e.prev = e.next)) {
-                                                                                                case 0:
-                                                                                                    return (
-                                                                                                        (e.prev = 0),
-                                                                                                        (e.next = 3),
-                                                                                                        fetch(
-                                                                                                            'https://api.hotelsforhope.com/arn/properties/'.concat(
-                                                                                                                t.querySelector('.propId').textContent
-                                                                                                            )
-                                                                                                        )
-                                                                                                    );
-                                                                                                case 3:
-                                                                                                    if (!((n = e.sent).status >= 400 && n.status < 600)) {
-                                                                                                        e.next = 6;
-                                                                                                        break;
-                                                                                                    }
-                                                                                                    throw new Error('Bad response from server');
-                                                                                                case 6:
-                                                                                                    return (e.next = 8), n.json();
-                                                                                                case 8:
-                                                                                                    return (r = e.sent), e.abrupt('return', r);
-                                                                                                case 12:
-                                                                                                    (e.prev = 12), (e.t0 = e.catch(0)), console.error(e.t0);
-                                                                                                case 15:
-                                                                                                case 'end':
-                                                                                                    return e.stop();
-                                                                                            }
-                                                                                    },
-                                                                                    e,
-                                                                                    null,
-                                                                                    [[0, 12]]
-                                                                                );
-                                                                            })
-                                                                        )).apply(this, arguments);
-                                                                    }),
-                                                                    (t = function (e) {
-                                                                        return n.apply(this, arguments);
-                                                                    }),
-                                                                    (e.next = 5),
-                                                                    y.waitForSelectorInDOM('.pollingFinished')
-                                                                );
-                                                            case 5:
-                                                                if ('search-results' === this.page_name && !document.querySelector('.GroupHoldForm')) {
-                                                                    e.next = 7;
-                                                                    break;
-                                                                }
-                                                                return e.abrupt('return');
-                                                            case 7:
-                                                                document.querySelectorAll('.ArnProperty').forEach(function (e, n) {
-                                                                    t(e).then(function (t) {
-                                                                        var n = r(t),
-                                                                            o = e.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
-                                                                        n &&
-                                                                            n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
-                                                                            (e.querySelector('.ArnPropThumb .ArnImageLink img').src = n);
-                                                                    });
-                                                                });
-                                                            case 9:
-                                                            case 'end':
-                                                                return e.stop();
-                                                        }
-                                                },
-                                                e,
-                                                this
+                        },
+                        {
+                            key: 'implementAds',
+                            value: function () {
+                                if (this.site_config.ads && !window.matchMedia('(max-width:800px)').matches) {
+                                    var e = this.site_config.ads;
+                                    if (
+                                        ('search-results' === this.page_name &&
+                                            (document.querySelector('.ArnSecondarySearchOuterContainer') &&
+                                                e.sidebar_ad.is_active &&
+                                                document
+                                                    .querySelector('.ArnSecondarySearchOuterContainer')
+                                                    .insertAdjacentHTML(
+                                                        'afterEnd',
+                                                        '\n                <a class="sidebar-ad" href="'
+                                                            .concat(e.sidebar_ad.outbound_url, '" target="_blank">\n                    <img src="')
+                                                            .concat(e.sidebar_ad.image_url, '" alt="Advertisement">\n                </a>\n            ')
+                                                    ),
+                                            document.querySelector('#currentPropertyPage .ArnProperty:nth-child(2)') &&
+                                                e.between_property_ad.is_active &&
+                                                document
+                                                    .querySelector('#currentPropertyPage .ArnProperty:nth-child(2)')
+                                                    .insertAdjacentHTML(
+                                                        'afterEnd',
+                                                        '\n                <a class="between-property-ad" href="'
+                                                            .concat(e.between_property_ad.outbound_url, '" target="_blank">\n                    <img src="')
+                                                            .concat(
+                                                                e.between_property_ad.image_url,
+                                                                '" alt="Advertisement">\n                </a>\n                <hr class="prop-hr">\n            '
+                                                            )
+                                                    )),
+                                        'confirmation' === this.page_name)
+                                    ) {
+                                        if (!document.querySelector('.GuestForms') || !e.confirmation_page_bottom.is_active) return;
+                                        document
+                                            .querySelector('.GuestForms')
+                                            .insertAdjacentHTML(
+                                                'beforeEnd',
+                                                '\n                <a class="confirmation-bottom-ad" href="'
+                                                    .concat(e.confirmation_page_bottom.outbound_url, '" target="_blank">\n                    <img src="')
+                                                    .concat(e.confirmation_page_bottom.image_url, '" alt="Advertisement">\n                </a>\n            ')
                                             );
-                                        })
-                                    )),
-                                    function () {
-                                        return i.apply(this, arguments);
-                                    }),
+                                    }
+                                }
                             },
-                            {
-                                key: 'addGroupBookingBannerBelowHeader',
-                                value: function (e, t) {
-                                    this.site_config.has_group_booking_banner && '' !== this.site_config.group_booking_form_url && (0, c.default)(e, t);
-                                },
-                            },
-                            {
-                                key: 'shouldSiteRedirect',
-                                value: function (e, t, n) {
-                                    e && t && 'landing-page' === n && 'search-results' === n && 'property-detail' === n && y.checkForPastDate(e) && (window.location.href = t);
-                                },
-                            },
-                            {
-                                key: 'reportUserData',
-                                value: function (e, t) {
-                                    if ('landing-page' === e && 'search-results' === e && 'property-detail' === e) {
-                                        var n = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
-                                            r = {
-                                                referral_url: document.referrer,
-                                                user_agent: window.navigator.userAgent,
-                                                site: ''.concat(document.title, ' - ').concat(document.querySelector('meta[name="siteId"]').getAttribute('content')),
-                                                theme: document.querySelector('meta[name="theme"]').getAttribute('content'),
-                                                current_page: this.page_name,
-                                                destination: null,
-                                                trip_dates: null,
-                                                adults: null,
-                                                rooms: null,
-                                                email: null,
-                                                user_id: null,
-                                                user_name: null,
-                                                amenities: null,
-                                                stars: null,
-                                                property_types: null,
-                                                currency: null,
-                                                nights: null,
-                                                optional_hotel_name: null,
-                                                property: null,
-                                                rate_data: null,
-                                            };
-                                        for (var o in (('search-results' !== e && 'property-detail' !== e) ||
-                                            ((r.destination = document.getElementById('address-input').value),
-                                            (r.trip_dates = ''.concat(document.getElementById('theCheckIn').value, ' - ').concat(document.getElementById('theCheckOut').value)),
-                                            (r.adults = document.querySelector('meta[name="numberOfAdults"]').getAttribute('content')),
-                                            (r.rooms = document.querySelector('meta[name="numberOfRooms"]').getAttribute('content')),
-                                            (r.amenities = n.get('amenities')),
-                                            (r.stars = n.get('propertyclasses')),
-                                            (r.property_types = n.get('propertytypes')),
-                                            (r.currency = n.get('currency')),
-                                            (r.nights = n.get('nights')),
-                                            (r.optional_hotel_name = n.get('hotelname'))),
-                                        'property-detail' === e &&
-                                            ((r.property = document.querySelector('.ArnPropNameLink span').textContent),
-                                            (r.rate_data = document.querySelector('.ArnNightlyRate strong').textContent)),
-                                        'cug' === t.toLowerCase() &&
-                                            ((r.email = document.querySelector('meta[name="email"]').getAttribute('content')),
-                                            (r.user_id = document.querySelector('meta[name="userId"]').getAttribute('content')),
-                                            (r.user_name = ''
-                                                .concat(document.querySelector('meta[name="firstName"]').getAttribute('content'), ' ')
-                                                .concat(document.querySelector('meta[name="lastName"]').getAttribute('content')))),
-                                        r)) {
-                                            if (r[o]) return;
-                                            delete r[o];
+                        },
+                        {
+                            key: 'cugConfigs',
+                            value: function () {
+                                var e,
+                                    t = this.site_config;
+                                'cug' === t.site_type.toLowerCase() &&
+                                    ((e = document.querySelectorAll('.percentSavings')) &&
+                                        !t.cug.show_percent_savings &&
+                                        e.forEach(function (e) {
+                                            e.insertAdjacentHTML('beforeEnd', ' Today');
+                                        }),
+                                    (function () {
+                                        if (t.cug.show_percent_savings) {
+                                            var e = document.querySelector('.ArnSortByDealPercent');
+                                            e && (e.style.display = 'block');
                                         }
-                                        console.log(r);
+                                    })(),
+                                    (function () {
+                                        if (!t.cug.show_percent_savings) {
+                                            var e = '';
+                                            document.querySelector('.SearchHotels') && (e = document.querySelectorAll('.ArnProperty')),
+                                                document.querySelector('.SinglePropDetail') && (e = document.querySelectorAll('.ArnNightlyRate')),
+                                                e &&
+                                                    e.forEach(function (e) {
+                                                        var t = e.querySelector('div.percentSavings');
+                                                        if (t && ((t.style.display = 'block'), document.querySelector('.SearchHotels'))) {
+                                                            var n = e.querySelector('.ArnRateCell'),
+                                                                r = e.querySelector('.ArnRateButton');
+                                                            window.matchMedia('(min-width: 600px)').matches
+                                                                ? n.insertAdjacentElement('afterBegin', t)
+                                                                : r.insertAdjacentElement('afterBegin', t);
+                                                        }
+                                                    });
+                                        }
+                                    })());
+                            },
+                        },
+                        {
+                            key: 'showFilters',
+                            value: function () {
+                                this.site_config.show_stars &&
+                                    document.body.insertAdjacentHTML('beforeEnd', '<style>.ArnPropClass, #PropertyClassesContainer{display:block !important;}</style>'),
+                                    this.site_config.show_property_type &&
+                                        document.body.insertAdjacentHTML('beforeEnd', '<style> #PropertyTypesContainer{display:block !important;}</style>');
+                            },
+                        },
+                        {
+                            key: 'showCoronavirusInfoBanner',
+                            value: function () {
+                                '52342' !== this.site_id &&
+                                    'closed' !== localStorage.getItem('covidAlertBanner') &&
+                                    (document.body.insertAdjacentHTML(
+                                        'afterBegin',
+                                        '\n            <div class="info-banner">\n                <div class="message-content">\n                    <h1>Book with Confidence:</h1>\n                    <a class="details-link" href="https://www.hotelsforhope.com/covid19/" target="_blank">\n                        <h1>COVID-19 Update</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                    <a style="margin-left: 12px;" class="details-link" href="https://www.hotelsforhope.com/covid-19-hotel-cleaning-policies/" target="_blank">\n                        <h1>Cleaning Policies</h1>\n                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x" width="18px">\n                            <path fill="currentColor" d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48zM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6z" class="">\n                            </path>\n                        </svg>\n                    </a>\n                </div>\n                <button class="close-banner-button close-alert">X</button>\n            </div>\n        '
+                                    ),
+                                    document.querySelector('.close-banner-button').addEventListener('click', function (e) {
+                                        (document.querySelector('.info-banner').style.display = 'none'), window.localStorage.setItem('covidAlertBanner', 'closed');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'showCurrencySelect',
+                            value: function () {
+                                if (!this.site_config.show_currency_select) {
+                                    var e = document.querySelector('.config-container'),
+                                        t = document.querySelector('.currencies-container');
+                                    this.site_config.show_currency_select || this.site_config.show_language_select
+                                        ? this.site_config.show_currency_select || (t.style.display = 'none')
+                                        : (e.style.display = 'none');
+                                }
+                            },
+                        },
+                        {
+                            key: 'positionPropReviews',
+                            value: function () {
+                                if ('property-detail' === this.page_name && this.site_config.reviews_before_info && null !== document.querySelector('.PropertyReviews')) {
+                                    var e = document.querySelector('.PropertyReviews');
+                                    document.querySelector('.GeneralInfo').insertAdjacentElement('beforebegin', e);
+                                }
+                            },
+                        },
+                        {
+                            key: 'insertPoweredByFooterLogo',
+                            value: function () {
+                                document
+                                    .querySelector('.ArnSupportBottom')
+                                    .insertAdjacentHTML(
+                                        'beforeend',
+                                        '<div class="pb-container">\n            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="'.concat(
+                                            p.path,
+                                            '/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>\n            </div>'
+                                        )
+                                    );
+                            },
+                        },
+                        {
+                            key: 'updateConfirmationCheckBoxes',
+                            value: function () {
+                                'checkout' === this.page_name &&
+                                    '52342' !== this.site_id &&
+                                    ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
+                                    (document.querySelector(
+                                        'span.confirmationAgreement'
+                                    ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.'
+                                        .concat(f, '/v6/terms-and-conditions?&siteId=')
+                                        .concat(this.site_id, '&theme=standard">Terms & Conditions</a> found on this website.')),
+                                    y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
+                                    y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
+                                    document.querySelector('#policies-fees').addEventListener('click', function () {
+                                        document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
+                                    }),
+                                    document.querySelector('span.open-modal').addEventListener('click', function () {
+                                        document.body.classList.toggle('hide');
+                                    }),
+                                    document.querySelector('span.close-modal').addEventListener('click', function () {
+                                        document.body.classList.toggle('hide');
+                                    }));
+                            },
+                        },
+                        {
+                            key: 'addMessagingToConfirmationPage',
+                            value: function () {
+                                if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
+                                    var e = window.arnCustomerEmailAddress,
+                                        t = this.site_config.confirmation_email_from;
+                                    (null != t && '' !== t) || (t = 'reservations@'.concat(f));
+                                    var n = document.querySelector('.supportInfo');
+                                    e &&
+                                        n &&
+                                        n.insertAdjacentHTML(
+                                            'afterEnd',
+                                            '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@'
+                                                .concat(f, '"><strong>')
+                                                .concat(t, '</strong></a> at <strong>')
+                                                .concat(e, '</strong> shortly.</p>\n            </div>\n            ')
+                                        );
+                                }
+                            },
+                        },
+                        {
+                            key: 'fixCheckoutInputTabOrder',
+                            value: function () {
+                                var e = document.querySelector('#theReservationForm'),
+                                    t = document.querySelector('meta[name="numberOfRooms"]');
+                                if (e && t) {
+                                    var n = t.content;
+                                    e.querySelectorAll('input, select, textarea').forEach(function (e, t) {
+                                        e && (0 === t ? e.setAttribute('tabindex', 1) : e.setAttribute('tabIndex', t));
+                                    });
+                                    for (var r = 1; r <= n; r += 1) {
+                                        var o = document.querySelector('#theCity'.concat(r)),
+                                            i = document.querySelector('#theZipCode'.concat(r)),
+                                            a = document.querySelector('#theStateAjax'.concat(r, ' select')),
+                                            c = document.querySelector('#theCountryAjax'.concat(r, ' select')),
+                                            s = document.querySelector('#theCreditCardBillingNameAjax'.concat(r, ' input')),
+                                            u = document.querySelector('.RoomNumber-'.concat(r, ' #theCvvCode')),
+                                            l = document.querySelector('.RoomNumber-'.concat(r, ' .cardMonth')),
+                                            d = document.querySelector('.RoomNumber-'.concat(r, ' .cardYear'));
+                                        if (!(o && i && a && c && s && u && l && d)) return;
+                                        var f = o.tabIndex,
+                                            p = a.tabIndex,
+                                            h = i.tabIndex,
+                                            m = c.tabIndex,
+                                            y = s.tabIndex,
+                                            g = u.tabIndex,
+                                            v = l.tabIndex,
+                                            b = d.tabIndex;
+                                        o.setAttribute('tabIndex', h),
+                                            a.setAttribute('tabIndex', f),
+                                            i.setAttribute('tabIndex', m),
+                                            c.setAttribute('tabIndex', p),
+                                            s.setAttribute('tabIndex', g),
+                                            u.setAttribute('tabIndex', v),
+                                            l.setAttribute('tabIndex', b),
+                                            d.setAttribute('tabIndex', y);
                                     }
-                                },
+                                }
                             },
-                            {
-                                key: 'setCurrentYearOnElement',
-                                value: function (e) {
-                                    e && document.querySelector(e) && (document.querySelector(e).textContent = new Date().getFullYear());
-                                },
+                        },
+                        {
+                            key: 'showMoreAmenities',
+                            value: function () {
+                                if ('property-detail' === this.page_name) {
+                                    var e,
+                                        t = document.querySelector('.ArnAmenityContainer');
+                                    !document.querySelector('#show-more-or-less') &&
+                                        document.querySelector('.PropertyAmenities li') &&
+                                        (t.insertAdjacentHTML('beforeend', '<span id="show-more-or-less" class="show-more">Show More Amenities</span>'),
+                                        (e = document.querySelector('span#show-more-or-less')),
+                                        document.querySelector('.ArnAmenityContainer td').classList.add('show-amenities'),
+                                        e.addEventListener('click', function () {
+                                            document.querySelector('span.show-more')
+                                                ? (document.querySelectorAll('.ArnAmenityContainer td:not(.show-amenities)').forEach(function (e) {
+                                                      e.classList.toggle('show-amenities');
+                                                  }),
+                                                  (e.textContent = 'Show Less Amenities'),
+                                                  e.classList.toggle('show-more'),
+                                                  e.classList.toggle('show-less'))
+                                                : document.querySelector('span.show-less') &&
+                                                  (document.querySelectorAll('.ArnAmenityContainer td:not(:first-child)').forEach(function (e) {
+                                                      e.classList.toggle('show-amenities');
+                                                  }),
+                                                  (e.textContent = 'Show More Amenities'),
+                                                  e.classList.toggle('show-less'),
+                                                  e.classList.toggle('show-more'));
+                                        }));
+                                }
                             },
-                            {
-                                key: 'applyHybridCompensationModelUpdates',
-                                value: function () {
-                                    this.site_config.uses_hybrid_compensation_model &&
-                                        'checkout' === this.page_name &&
-                                        (y.replaceSpecificText('.dueNowRow th', /(^|)Due(?=\s|$)/gi, 'Deposit Due'),
-                                        y.replaceSpecificText('.balanceDueRow th', /(^|)Balance(?=\s|$)/gi, 'Future Balance'),
-                                        y.replaceSpecificText('#theConfirmationPoliciesAjax h4:first-child', /(^|)Balance(?=\s|$)/gi, 'Future Balance'));
-                                },
+                        },
+                        {
+                            key: 'hideRemainingRooms',
+                            value: function () {
+                                if ('property-detail' === this.page_name && document.querySelector('div.roomCount')) {
+                                    var e = document.querySelectorAll('table.ArnRateList'),
+                                        t = window.matchMedia('(max-width: 560px)');
+                                    e.forEach(function (e) {
+                                        if (e.querySelector('.roomCount strong') || e.classList.contains('SB16') || e.classList.contains('SB20')) {
+                                            var n = parseFloat(e.querySelector('.roomCount strong').textContent);
+                                            n < 6 && (e.querySelector('.roomCount').style.display = 'block'),
+                                                e.classList.contains('SB16') &&
+                                                    (e.classList.contains('SB20') || t.matches) &&
+                                                    ((n < 6 && e.classList.contains('SB16')) || e.classList.contains('SB20')) &&
+                                                    (e.querySelector('.bookRoomCell').style.gridTemplateRows = '3fr .5fr .25fr');
+                                        }
+                                    });
+                                }
                             },
-                            {
-                                key: 'addSupportWidget',
-                                value: function () {
-                                    var e = document.querySelector('.supportLink').href;
-                                    if (e) {
-                                        var t = window.matchMedia('(max-width: 1100px)'),
-                                            n = '<div class="contact-float">\n        <a href="'
-                                                .concat(e, '" target="_blank" class="floating-support-icon"><img src="')
-                                                .concat(p.path, '/emails/icons/phone.png"/></a>\n    </div>');
-                                        t.matches &&
-                                            (n = '<div class="contact-float">\n            <a href="'.concat(
-                                                e,
-                                                '" target="_blank" class="floating-support-icon">Contact Us</a>\n        </div>'
-                                            )),
-                                            document.body.insertAdjacentHTML('beforeend', n);
+                        },
+                        {
+                            key: 'replaceHTMLWithFile',
+                            value:
+                                ((m = l(
+                                    regeneratorRuntime.mark(function e(t, n) {
+                                        var r, o;
+                                        return regeneratorRuntime.wrap(function (e) {
+                                            for (;;)
+                                                switch ((e.prev = e.next)) {
+                                                    case 0:
+                                                        if (document.querySelector(n)) {
+                                                            e.next = 2;
+                                                            break;
+                                                        }
+                                                        return e.abrupt('return');
+                                                    case 2:
+                                                        return (r = document.querySelector(n)), (e.next = 5), y.fetchHTMLFromFile(t);
+                                                    case 5:
+                                                        (o = e.sent), (r.innerHTML = o);
+                                                    case 7:
+                                                    case 'end':
+                                                        return e.stop();
+                                                }
+                                        }, e);
+                                    })
+                                )),
+                                function (e, t) {
+                                    return m.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'appendMemberTokenForCug',
+                            value:
+                                ((u = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r, o;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (
+                                                                'cug' === this.site_config.site_type.toLowerCase() &&
+                                                                '52342' !== this.site_id &&
+                                                                this.site_config.is_resbeat_client &&
+                                                                '63711' !== this.site_id &&
+                                                                '63710' !== this.site_id &&
+                                                                '63712' !== this.site_id
+                                                            ) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (t = this.site_config.header.logo_outbound_url), (e.next = 5), y.waitForSelectorInDOM('.logo');
+                                                        case 5:
+                                                            if (document.querySelector('meta[name="memberToken"]')) {
+                                                                e.next = 7;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 7:
+                                                            (n = document.querySelector('meta[name="memberToken"]').content),
+                                                                (r = document.querySelector('.logo')),
+                                                                (o = ''),
+                                                                (o =
+                                                                    '/' === t.slice(-1)
+                                                                        ? ''.concat(t, 'v6?siteId=').concat(this.site_id, '&memberToken=').concat(n)
+                                                                        : '.com' === t.slice(-4)
+                                                                        ? ''.concat(t, '/v6?siteId=').concat(this.site_id, '&memberToken=').concat(n)
+                                                                        : ''.concat(t, '&memberToken=').concat(n)),
+                                                                r.setAttribute('href', o);
+                                                        case 12:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return u.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'addLinkToLoginFromRegisterPage',
+                            value: function () {
+                                if ('cug' === this.site_config.site_type.toLowerCase() && 'cug-registration' === this.page_name) {
+                                    var e = document.querySelector('.WBValidatedRegistrationFormActions'),
+                                        t = window.location.href.replace('register', 'login');
+                                    e && e.insertAdjacentHTML('afterEnd', '\n            <a class="return-to-login" href="'.concat(t, '">Return to Login</a>\n        '));
+                                }
+                            },
+                        },
+                        {
+                            key: 'setCheckDatesToReadOnlyOnMobile',
+                            value:
+                                ((s = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (y.matchMediaQuery('max-width: 800px')) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), y.waitForSelectorInDOM('#theCheckIn');
+                                                        case 4:
+                                                            if ('search-results' !== this.page_name && 'landing-page' !== this.page_name) {
+                                                                e.next = 11;
+                                                                break;
+                                                            }
+                                                            if (((t = document.querySelector('#theCheckIn')), (n = document.querySelector('#theCheckOut')), t && n)) {
+                                                                e.next = 9;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 9:
+                                                            t.setAttribute('readonly', !0), n.setAttribute('readonly', !0);
+                                                        case 11:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return s.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'updateAmenitiesLegendTag',
+                            value: function () {
+                                'property-detail' === this.page_name && (document.querySelector('#thePropertyAmenities legend').outerHTML = '<span>Property Amenities</span>');
+                            },
+                        },
+                        {
+                            key: 'cancelConfirmUpdate',
+                            value: function () {
+                                document.querySelector('.WBConfirmedBooking') && (document.querySelector('.dialog-button-cancel a').textContent = 'Go Back');
+                            },
+                        },
+                        {
+                            key: 'showOriginalPrice',
+                            value:
+                                ((a = l(
+                                    regeneratorRuntime.mark(function e(t, n) {
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            if (!this.site_config.is_resbeat_client) {
+                                                                e.next = 2;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 2:
+                                                            return (e.next = 4), y.waitForSelectorInDOM('.pollingFinished');
+                                                        case 4:
+                                                            document.querySelectorAll(t).forEach(function (e) {
+                                                                if (e.querySelector('div.originalPrice')) {
+                                                                    var t = '52342' === document.querySelector('meta[name="siteId"]').getAttribute('content') ? 3 : 5;
+                                                                    if (parseFloat(e.querySelector('.originalPrice').getAttribute('percent')) < t)
+                                                                        e.querySelector('.originalPrice').style.display = 'none';
+                                                                    else if (e.querySelector('.averageNightly')) {
+                                                                        var r,
+                                                                            o = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
+                                                                            i = o.get('nights');
+                                                                        e.querySelector('.averageNightly').insertAdjacentElement(
+                                                                            'beforebegin',
+                                                                            e.querySelector('div.originalPrice')
+                                                                        );
+                                                                        var a = e.querySelector('.originalPrice').textContent;
+                                                                        a.includes('$') ? ((r = a[0]), (a = a.replace('$', ''))) : (r = a.slice(a.length - 3, a.length)),
+                                                                            (a = parseFloat(a) / parseFloat(i)),
+                                                                            (e.querySelector('.originalPrice').textContent =
+                                                                                'USD' === o.get('currency') || '$' === document.querySelector('.arnCurrency').textContent
+                                                                                    ? ''.concat(r).concat(a.toFixed(2))
+                                                                                    : ''.concat(a.toFixed(2), ' ').concat(r));
+                                                                    } else e.querySelector(n).insertAdjacentElement('afterbegin', e.querySelector('div.originalPrice'));
+                                                                }
+                                                            });
+                                                        case 5:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function (e, t) {
+                                    return a.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'updateSupportPageText',
+                            value: function () {
+                                this.site_config.is_resbeat_client ||
+                                    (document.querySelector('.WBSupportForm') &&
+                                        (document.querySelector('.ArnSupportChatTable p').textContent =
+                                            'If you would like to speak with a representative, please call + 1 512-691-9555'));
+                            },
+                        },
+                        {
+                            key: 'removeLrgFooterLink',
+                            value: function () {
+                                this.site_config.lodging.is_lrg ||
+                                    this.site_config.is_resbeat_client ||
+                                    ((document.querySelector('.ArnSupportBottom .lowRateLink').style.display = 'none'),
+                                    (document.querySelector('.ArnSupportBottom .dvd').style.display = 'none'));
+                            },
+                        },
+                        {
+                            key: 'hideBookButtonForNoAvailability',
+                            value: function () {
+                                document.querySelector('.SearchHotels') &&
+                                    document.querySelectorAll('.ArnProperty').forEach(function (e) {
+                                        e.querySelector('.ArnLimitedAvail') && (e.querySelector('.ArnRateButton').style.display = 'none');
+                                    });
+                            },
+                        },
+                        {
+                            key: 'updatePropThumbToFeaturedImage',
+                            value:
+                                ((i = l(
+                                    regeneratorRuntime.mark(function e() {
+                                        var t, n, r;
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (
+                                                                (r = function (e) {
+                                                                    for (var t, n = 0; n <= e.Images.length - 1; n += 1)
+                                                                        if ('Featured Image' === e.Images[n].ImageCaption) {
+                                                                            t = e.Images[n].ImagePath;
+                                                                            break;
+                                                                        }
+                                                                    return t;
+                                                                }),
+                                                                (n = function () {
+                                                                    return (n = l(
+                                                                        regeneratorRuntime.mark(function e(t) {
+                                                                            var n, r;
+                                                                            return regeneratorRuntime.wrap(
+                                                                                function (e) {
+                                                                                    for (;;)
+                                                                                        switch ((e.prev = e.next)) {
+                                                                                            case 0:
+                                                                                                return (
+                                                                                                    (e.prev = 0),
+                                                                                                    (e.next = 3),
+                                                                                                    fetch(
+                                                                                                        'https://api.hotelsforhope.com/arn/properties/'.concat(
+                                                                                                            t.querySelector('.propId').textContent
+                                                                                                        )
+                                                                                                    )
+                                                                                                );
+                                                                                            case 3:
+                                                                                                if (!((n = e.sent).status >= 400 && n.status < 600)) {
+                                                                                                    e.next = 6;
+                                                                                                    break;
+                                                                                                }
+                                                                                                throw new Error('Bad response from server');
+                                                                                            case 6:
+                                                                                                return (e.next = 8), n.json();
+                                                                                            case 8:
+                                                                                                return (r = e.sent), e.abrupt('return', r);
+                                                                                            case 12:
+                                                                                                (e.prev = 12), (e.t0 = e.catch(0)), console.error(e.t0);
+                                                                                            case 15:
+                                                                                            case 'end':
+                                                                                                return e.stop();
+                                                                                        }
+                                                                                },
+                                                                                e,
+                                                                                null,
+                                                                                [[0, 12]]
+                                                                            );
+                                                                        })
+                                                                    )).apply(this, arguments);
+                                                                }),
+                                                                (t = function (e) {
+                                                                    return n.apply(this, arguments);
+                                                                }),
+                                                                (e.next = 5),
+                                                                y.waitForSelectorInDOM('.pollingFinished')
+                                                            );
+                                                        case 5:
+                                                            if ('search-results' === this.page_name && !document.querySelector('.GroupHoldForm')) {
+                                                                e.next = 7;
+                                                                break;
+                                                            }
+                                                            return e.abrupt('return');
+                                                        case 7:
+                                                            document.querySelectorAll('.ArnProperty').forEach(function (e, n) {
+                                                                t(e).then(function (t) {
+                                                                    var n = r(t),
+                                                                        o = e.querySelector('.ArnPropThumb .ArnImageLink img').getAttribute('src');
+                                                                    n &&
+                                                                        n.substr(n.lastIndexOf('.com/') + 5) !== o.substr(o.lastIndexOf('.com/') + 5) &&
+                                                                        (e.querySelector('.ArnPropThumb .ArnImageLink img').src = n);
+                                                                });
+                                                            });
+                                                        case 9:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
+                                    })
+                                )),
+                                function () {
+                                    return i.apply(this, arguments);
+                                }),
+                        },
+                        {
+                            key: 'addGroupBookingBannerBelowHeader',
+                            value: function (e, t) {
+                                this.site_config.has_group_booking_banner && '' !== this.site_config.group_booking_form_url && (0, c.default)(e, t);
+                            },
+                        },
+                        {
+                            key: 'shouldSiteRedirect',
+                            value: function (e, t, n) {
+                                e && t && 'landing-page' === n && 'search-results' === n && 'property-detail' === n && y.checkForPastDate(e) && (window.location.href = t);
+                            },
+                        },
+                        {
+                            key: 'reportUserData',
+                            value: function (e, t) {
+                                if ('landing-page' === e && 'search-results' === e && 'property-detail' === e) {
+                                    var n = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
+                                        r = {
+                                            referral_url: document.referrer,
+                                            user_agent: window.navigator.userAgent,
+                                            site: ''.concat(document.title, ' - ').concat(document.querySelector('meta[name="siteId"]').getAttribute('content')),
+                                            theme: document.querySelector('meta[name="theme"]').getAttribute('content'),
+                                            current_page: this.page_name,
+                                            destination: null,
+                                            trip_dates: null,
+                                            adults: null,
+                                            rooms: null,
+                                            email: null,
+                                            user_id: null,
+                                            user_name: null,
+                                            amenities: null,
+                                            stars: null,
+                                            property_types: null,
+                                            currency: null,
+                                            nights: null,
+                                            optional_hotel_name: null,
+                                            property: null,
+                                            rate_data: null,
+                                        };
+                                    for (var o in (('search-results' !== e && 'property-detail' !== e) ||
+                                        ((r.destination = document.getElementById('address-input').value),
+                                        (r.trip_dates = ''.concat(document.getElementById('theCheckIn').value, ' - ').concat(document.getElementById('theCheckOut').value)),
+                                        (r.adults = document.querySelector('meta[name="numberOfAdults"]').getAttribute('content')),
+                                        (r.rooms = document.querySelector('meta[name="numberOfRooms"]').getAttribute('content')),
+                                        (r.amenities = n.get('amenities')),
+                                        (r.stars = n.get('propertyclasses')),
+                                        (r.property_types = n.get('propertytypes')),
+                                        (r.currency = n.get('currency')),
+                                        (r.nights = n.get('nights')),
+                                        (r.optional_hotel_name = n.get('hotelname'))),
+                                    'property-detail' === e &&
+                                        ((r.property = document.querySelector('.ArnPropNameLink span').textContent),
+                                        (r.rate_data = document.querySelector('.ArnNightlyRate strong').textContent)),
+                                    'cug' === t.toLowerCase() &&
+                                        ((r.email = document.querySelector('meta[name="email"]').getAttribute('content')),
+                                        (r.user_id = document.querySelector('meta[name="userId"]').getAttribute('content')),
+                                        (r.user_name = ''
+                                            .concat(document.querySelector('meta[name="firstName"]').getAttribute('content'), ' ')
+                                            .concat(document.querySelector('meta[name="lastName"]').getAttribute('content')))),
+                                    r)) {
+                                        if (r[o]) return;
+                                        delete r[o];
                                     }
-                                },
+                                    console.log(r);
+                                }
                             },
-                        ]) && d(t.prototype, n),
-                        r && d(t, r),
-                        e
-                    );
-                })();
-            t.default = v;
-        }.call(this, n(59)));
+                        },
+                        {
+                            key: 'setCurrentYearOnElement',
+                            value: function (e) {
+                                e && document.querySelector(e) && (document.querySelector(e).textContent = new Date().getFullYear());
+                            },
+                        },
+                        {
+                            key: 'applyHybridCompensationModelUpdates',
+                            value: function () {
+                                this.site_config.uses_hybrid_compensation_model &&
+                                    'checkout' === this.page_name &&
+                                    (y.replaceSpecificText('.dueNowRow th', /(^|)Due(?=\s|$)/gi, 'Deposit Due'),
+                                    y.replaceSpecificText('.balanceDueRow th', /(^|)Balance(?=\s|$)/gi, 'Future Balance'),
+                                    y.replaceSpecificText('#theConfirmationPoliciesAjax h4:first-child', /(^|)Balance(?=\s|$)/gi, 'Future Balance'));
+                            },
+                        },
+                        {
+                            key: 'addSupportWidget',
+                            value: function () {
+                                var e = document.querySelector('.supportLink').href;
+                                if (e) {
+                                    var t = window.matchMedia('(max-width: 1100px)'),
+                                        n = '<div class="contact-float">\n        <a href="'
+                                            .concat(e, '" target="_blank" class="floating-support-icon"><img src="')
+                                            .concat(p.path, '/emails/icons/phone.png"/></a>\n    </div>');
+                                    t.matches &&
+                                        (n = '<div class="contact-float">\n            <a href="'.concat(
+                                            e,
+                                            '" target="_blank" class="floating-support-icon">Contact Us</a>\n        </div>'
+                                        )),
+                                        document.body.insertAdjacentHTML('beforeend', n);
+                                }
+                            },
+                        },
+                    ]) && d(t.prototype, n),
+                    r && d(t, r),
+                    e
+                );
+            })();
+        t.default = v;
     },
     function (e, t) {
         e.exports = function (e, t, n, r) {
@@ -5884,11 +5753,11 @@
     },
     function (e, t, n) {
         var r = n(27),
-            o = n(88),
-            i = n(89),
+            o = n(87),
+            i = n(88),
             a = n(1),
             c = n(20),
-            s = n(90),
+            s = n(89),
             u = {},
             l = {};
         ((t = e.exports = function (e, t, n, d, f) {
@@ -5939,7 +5808,7 @@
     },
     function (e, t, n) {
         var r = n(2),
-            o = n(61).set,
+            o = n(60).set,
             i = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             c = r.Promise,
@@ -6004,7 +5873,7 @@
     function (e, t, n) {
         var r = n(1),
             o = n(3),
-            i = n(62);
+            i = n(61);
         e.exports = function (e, t) {
             if ((r(e), o(t) && t.constructor === e)) return t;
             var n = i.f(e);
@@ -6151,7 +6020,7 @@
     },
     function (e, t, n) {
         var r = n(5);
-        r(r.P, 'String', {repeat: n(104)});
+        r(r.P, 'String', {repeat: n(103)});
     },
     function (e, t, n) {
         'use strict';
@@ -6175,20 +6044,20 @@
                 return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
             },
         }),
-            n(64)('includes');
+            n(63)('includes');
     },
     function (e, t, n) {
         'use strict';
         var r = n(5),
-            o = n(107);
-        r(r.P + r.F * n(108)('includes'), 'String', {
+            o = n(106);
+        r(r.P + r.F * n(107)('includes'), 'String', {
             includes: function (e) {
                 return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
             },
         });
     },
     function (e, t, n) {
-        var r = n(65),
+        var r = n(64),
             o = n(15);
         e.exports = function (e, t, n) {
             if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
@@ -6211,9 +6080,9 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(65),
+        var r = n(64),
             o = n(1),
-            i = n(60),
+            i = n(59),
             a = n(42),
             c = n(20),
             s = n(31),
@@ -7018,7 +6887,7 @@
                         }
                     }
                 })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
-        }.call(this, n(112)));
+        }.call(this, n(111)));
     },
     function (e, t) {
         var n;
@@ -7044,7 +6913,7 @@
             i = n(10),
             a = n(9),
             c = n(23),
-            s = n(115),
+            s = n(114),
             u = n(28),
             l = n(58),
             d = n(0)('iterator'),
@@ -7497,7 +7366,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        n(22), Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(24), n(66), n(46), n(16), n(67), n(44);
+        n(22), Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(24), n(65), n(46), n(16), n(66), n(44);
         var a = n(33),
             c = n(47);
         a.extend(c);
@@ -7872,7 +7741,7 @@
                     landing_page_events: [{name: '', display_date: '', end_date: '', portal_url: ''}],
                 };
             });
-        var o = new ((r = n(68)) && r.__esModule ? r : {default: r}).default(),
+        var o = new ((r = n(67)) && r.__esModule ? r : {default: r}).default(),
             i = 'firefly_21-'.concat(64866);
     },
     function (e, t, n) {},

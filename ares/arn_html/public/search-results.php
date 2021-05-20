@@ -245,7 +245,19 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         });
         /*]]>*/
     </script>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
+    <?php
+    // include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php';
+     ?>
+    <?php
+    // include '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/header.php';
+    ?>
+    <?php
+        $root_path = '';
+        if ($_SERVER['DOCUMENT_ROOT'] == 'opt/lampp/htdocs/static-assets') {
+            $root_path = '/' ;
+        }
+        include $root_path . $_SERVER['DOCUMENT_ROOT'] . 'ares/arn_html/includes/header.php';
+    ?>
     <div class="subHeaderContainer">
         <div class="subHeader"><a href="https://events.hotelsforhope.com/v6" class="refineLink"><span
                     class="refine"><img
@@ -3357,14 +3369,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="24" amount="$60.04">$253.93
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">193.89</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">581.67 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate404784"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;685"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3401,7 +3410,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale DBL.DX-KG 220510409 DBL.KG-SU 220568805 220510414 SUI.AS-KG 220510408 S40 S34 S52 220510407 220568807 DBL.B1-DX BB0 220510416 DBL.2Q-DX S4 S2A S61 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 220510406 220568806"
                                     id="theArnProperty4014" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3489,13 +3497,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="23" amount="$58.81">$261.01
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">202.20</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">606.60 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate4014" class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;696"
-                                                    target="_blank"
+                                                    href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3532,7 +3538,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale RA1 S35 221407993 DBL.ST 14147;4;28 201555596 BB1 S34 S52 S62 PG2 S51 S61 ArnEnoughNightlyRooms ArnEnoughAvailableRooms ROO.DX-KG S4 201555590"
                                     id="theArnProperty1147513" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3620,14 +3625,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="9" amount="$57.42">$674.11
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">616.69</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">1850.07 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate1147513"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;707"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3664,7 +3666,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale 5195;10;64 DBL.2D-1 219950995 231940675 DBL.2B-DX S52 S61 DBL.CV-KG 31502;4;88 4494;10;88 S51 DBL.KG-2 S35 ArnEnoughNightlyRooms ArnEnoughAvailableRooms DBL.2B-CV 219950996 DBL.DX-KG DBL.KG 231940676 4494;10;64 S40 S34 S62"
                                     id="theArnProperty754470" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3748,14 +3749,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="32" amount="$33.19">$106.09
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">72.90</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">218.70 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate754470"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;718"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3792,7 +3790,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView OnSale S62 DBL.KG 487218 487237 S51 ROO.ST S61 S4 487208 ROO.2D-NM DBL.KG-NM ArnEnoughNightlyRooms ArnEnoughAvailableRooms DBT.2D S34 200815402 06ZA 487232 S40 S52"
                                     id="theArnProperty276159" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3875,14 +3872,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="25" amount="$24.14">$98.59
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">74.45</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">223.35 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate276159"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;729"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3919,7 +3913,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale QUA.2D DBL.KG S61 S52 DBL.2D DBL.ST-2 350582 DBL.H6 DBL.2D-1 S51 ROO.PI-1 350581 DBL.KG-3 214219100 ROO.PI S34 DBL.2B ArnEnoughNightlyRooms ArnEnoughAvailableRooms S40"
                                     id="theArnProperty215242" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3999,14 +3992,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="24" amount="$23.63">$100.01
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">76.38</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">229.14 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate215242"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;740"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4043,7 +4033,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView OnSale DBL.KG-PI S40 DBL.PI-QN SUI.BL SUI.KG S34 201849301 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 201140530 DBL.DX-KG DBL.AS-RE 201849304 SUI.QN 20669;4;25 S52 S61 201849298 SUI.ST-1 SUI.RE S35 S51 201849302 201849297 DBL.AS-6 DBL.AS-QN DBL.AS-KG"
                                     id="theArnProperty351284" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4127,14 +4116,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="21" amount="$21.33">$102.20
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">80.87</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">242.61 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate351284"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;751"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4171,7 +4157,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale ROO.2D DBL.KG S61 QUA.2D ROO.DX-KG 213010482 213010485 S51 S52 DBL.KG-PI ArnEnoughNightlyRooms ArnEnoughAvailableRooms S40 213010480 S34 DBL.KG-1 DBL.DX-KG ROO.KG-PI"
                                     id="theArnProperty240245" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4255,14 +4240,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="20" amount="$17.65">$92.68
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">75.03</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">225.09 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate240245"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;762"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4299,7 +4281,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale 202249306 DBL.2Q-NM 150708 150709 S61 S52 ROO.PI ArnEnoughNightlyRooms ArnEnoughAvailableRooms DBL.NM-QN 210029710 210028327 DBL.KG-NM ROO.NM DBL.BL DBL.KG DBT.2B 150710 S34 S40 210028326 ROO.NM-QN"
                                     id="theArnProperty174348" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4382,14 +4363,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="12" amount="$10.00">$86.35
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">76.35</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">229.05 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate174348"
-                                                    class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;773"
-                                                    target="_blank"
+                                                    class="ArnShowRatesLink" href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4426,7 +4404,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale 279047 DBL.CV-DX S40 S41 SUI.B1-KG S4 DBL.QN S61 210903266 DBL.2D 44710 271747 S31 EQX ROO.KG-1 LV5 S62 J0R S34 ROO.ST 01001 DBL.QN-1 EZS S51 200188166 ROO.KG JSU.KG ROO.ST-11 DBL.KG ArnEnoughNightlyRooms ArnEnoughAvailableRooms"
                                     id="theArnProperty16800" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4510,13 +4487,11 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="originalPrice" percent="9" amount="$9.07">$106.26
                                                         </div><span class="arnCurrency">$</span><span
                                                             class="arnUnit">97.19</span>
-                                                        <div>per night</div>
                                                         <div class="full-stay">291.57 for 3 nights </div>
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate16800" class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;784"
-                                                    target="_blank"
+                                                    href="property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4553,7 +4528,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div id="pagerBottomAjax">
                                     <div class="bottomPager ArnPagerContainer">
@@ -4656,6 +4630,8 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         style="width:0px; height:0px; display:none; visibility:hidden"></iframe>
 
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; ?>
+
+
 </body>
 
 </html>

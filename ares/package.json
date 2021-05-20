@@ -8,6 +8,7 @@
     "local": "cross-env NODE_ENV=local webpack --mode none",
     "dev": "npm run compile-css && cross-env NODE_ENV=develop webpack --mode development",
     "prod": "npm run compile-css && node js/build_tools/production-checklist.js && cross-env NODE_ENV=production webpack --mode production && node js/build_tools/generate-email-configs.js",
+    "watch": "cross-env NODE_ENV=local webpack --mode none --watch",
     "email": "node js/build_tools/generate-email-configs.js",
     "compile-css": "npm run compile-styles && npm run compile-resbeat && npm run compile-dark",
     "compile-styles": "node-sass ./styles/sass/base-styles/styles.scss ./styles/styles.css",

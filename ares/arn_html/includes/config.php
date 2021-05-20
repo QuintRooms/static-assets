@@ -6,4 +6,3 @@
 
 	$dist_file = getenv('directory_name') . '-' . getenv('site_id');
 ?>
-

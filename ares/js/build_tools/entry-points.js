@@ -35,7 +35,7 @@ module.exports = () => {
             // 'f1_miami_22-65012': './src/65012.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
-            'firefly_21-64866': './src/64866.js', // firefly 21
+            // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
@@ -88,6 +88,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'ares_derek-70011': './src/70011.js', // ares derek
         };
     }
 

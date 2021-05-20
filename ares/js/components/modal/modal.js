@@ -11,6 +11,30 @@ export default class Modal {
         this.button_text = button_text;
     }
 
+    init() {
+        this.insertModalContainer();
+        this.setModalTitle(this.modal_title);
+        const modal_container = document.querySelector('.modal-container');
+        modal_container.classList.add('is-visible');
+        modal_container.id = this.modal_id;
+
+        this.closeModal();
+    }
+
+    insertModalContainer() {
+        document.body.insertAdjacentHTML('beforeend', `<div class='modal-container'>
+        <button id='x-button' class='button-close-modal'>x</button>
+        <div id='modal-title'></div>
+        <div class='modal-body-container'></div>
+        </div>`);
+    }
+
+    setModalTitle() {
+        if (this.modal_title) {
+            document.querySelector('#modal-title').appendChild(this.modal_title);
+        }
+    }
+    
     setModalTitle() {
         if (this.modal_title) {
             document.querySelector('#modal-title').appendChild(this.modal_title);
@@ -28,7 +52,7 @@ export default class Modal {
               event.target.matches('.button-close-modal') ||
               !event.target.closest('.modal-container')
             ) {
-              modal_container.classList.remove('is-visible');
+              modal_container.classList.toggle('is-visible');
             }
         });
     }
@@ -39,14 +63,21 @@ export default class Modal {
             if (
                 event.target.matches('.button-open-modal')
             ) {
-                modal_container.classList.add('is-visible');
+                modal_container.classList.toggle('is-visible');
                 this.closeModal();
             }
         });
     }
 
     setModalTrigger() {
-        document.querySelector('.modal-body-container').insertAdjacentHTML(`beforeEnd, <div>${this.modal_body}</div>`);
+        const modal_triggers = document.querySelectorAll(`.${this.modal_id}-trigger`);
+        modal_triggers.addEventListener('click', (event) => {
+                if (
+                    event.target.matches(`.${this.modal_id}-trigger`)
+                ) {
+                    modal_container.classList.add
+                }
+        })
     }
 
     // createExitButton() {
@@ -55,12 +86,5 @@ export default class Modal {
     //     }
     // }
 
-    init() {
-        this.setModalTitle(this.modal_title);
-        const modal_container = document.querySelector('.modal-container');
-        modal_container.classList.add('is-visible');
-        modal_container.id = this.modal_id;
-
-        this.closeModal();
-    }
+   
 }

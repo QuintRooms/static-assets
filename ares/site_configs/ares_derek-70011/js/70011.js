@@ -1,6 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './70011-config';
-import Modal from '../../../js/components/modal/script';
+import Modal from '../../../js/components/modal/modal';
 
 const site_config = new SiteConfig();
 const test_modal = new Modal('test_modal', html_str, 'test-modal', 'Got it!');

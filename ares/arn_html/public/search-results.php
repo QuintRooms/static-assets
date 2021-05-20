@@ -2,7 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="yui3-js-enabled"
     id="yui_3_18_1_1_1586277558089_151">
 <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
+<?php 
+        $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
+        if($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs'){
+            $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
+        }
+        include $config;
+        
+    ?>
 
 <head>
     <title>austin, tx</title>
@@ -245,7 +252,9 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         });
         /*]]>*/
     </script>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
+
+    <?php include getenv('includes_path') . 'header.php'; ?>
+
     <div class="subHeaderContainer">
         <div class="subHeader"><a href="https://events.hotelsforhope.com/v6" class="refineLink"><span
                     class="refine"><img
@@ -3363,7 +3372,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate404784"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;685"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -3493,8 +3502,9 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="full-stay">606.60 for 3 nights </div>
                                                     </span>
                                                 </span></div>
-                                            <div class="ArnRateButton"><a id="theShowRate4014" class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;696"
+                                            <div class="ArnRateButton"><a id="theShowRate4014" 
+                                                    class="ArnShowRatesLink"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -3626,7 +3636,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate1147513"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;707"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -3754,7 +3764,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate754470"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;718"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -3881,7 +3891,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate276159"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;729"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -4005,7 +4015,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate215242"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;740"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -4133,7 +4143,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate351284"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;751"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -4261,7 +4271,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate240245"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;762"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -4388,7 +4398,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate174348"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;773"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -4514,8 +4524,9 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                         <div class="full-stay">291.57 for 3 nights </div>
                                                     </span>
                                                 </span></div>
-                                            <div class="ArnRateButton"><a id="theShowRate16800" class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;784"
+                                            <div class="ArnRateButton"><a id="theShowRate16800" 
+                                                    class="ArnShowRatesLink"
+                                                    href="property-page.php"
                                                     target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
@@ -4655,7 +4666,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         src="https://cdn.iubenda.com/cs/bridge/iframe_bridge-1.1.0.html?origin=https%3A%2F%2Fevents.hotelsforhope.com%2Fv6%2Fsearch%2Fcity&amp;meth=%22compact%22"
         style="width:0px; height:0px; display:none; visibility:hidden"></iframe>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; ?>
+        <?php include getenv('includes_path') . 'footer.php'; ?>
 </body>
 
 </html>

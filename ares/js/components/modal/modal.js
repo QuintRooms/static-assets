@@ -2,6 +2,31 @@ import Utilities from '../../utilities';
 
 const utilities = new Utilities();
 
+const modal_styles_str = `
+    #modal-container {
+        background: white;
+        border-radius: 6px;
+        box-sizing: border-box;
+        width: 300px;
+        max-height: 90%;
+        padding: 15px;
+        flex-direction: column;
+        position: relative;
+        align-self: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 990;
+        transform: translate(-50%, -50%);
+
+    }
+    #x-button {
+        position: absolute;
+        margin-right: 4px;
+        margin-top: 4px;
+    }
+`;
+
 export default class Modal {
     constructor(modal_title, modal_body, modal_id, button_text) {
         this.init();
@@ -9,32 +34,36 @@ export default class Modal {
         this.modal_body = modal_body;
         this.moald_id = modal_id;
         this.button_text = button_text;
+        this.modal_container = document.querySelector('.modal-container');
     }
 
     init() {
         this.insertModalContainer();
         this.setModalTitle(this.modal_title);
-        const modal_container = document.querySelector('.modal-container');
-        modal_container.classList.add('is-visible');
-        modal_container.id = this.modal_id;
+        this.setModalBody(this.modal_body);
+        this.modal_container.classList.add('is-visible');
+        this.modal_container.id = this.modal_id;
 
-        this.closeModal();
+        // this.closeModal();
     }
 
     insertModalContainer() {
-        document.body.insertAdjacentHTML('beforeend', `<div class='modal-container'>
-        <button id='x-button' class='button-close-modal'>x</button>
-        <div id='modal-title'></div>
-        <div class='modal-body-container'></div>
-        </div>`);
+        document.body.insertAdjacentHTML(
+            'beforeend',
+            `
+            <div class='overlay'>fart</div>
+            <div class='modal-container id=${this.modal_id}'>
+                <button id='x-button' class='button-close-modal'>x</button>
+                <div id='modal-title'>${this.modal_title}</div>
+                <div class='modal-body-container'>${this.modal_body}</div>
+            </div>
+            <style>
+                ${modal_styles_str}
+            </style>
+        `
+        );
     }
 
-    setModalTitle() {
-        if (this.modal_title) {
-            document.querySelector('#modal-title').appendChild(this.modal_title);
-        }
-    }
-    
     setModalTitle() {
         if (this.modal_title) {
             document.querySelector('#modal-title').appendChild(this.modal_title);
@@ -46,25 +75,9 @@ export default class Modal {
     }
 
     closeModal() {
-        const modal_container = document.querySelector('.modal-container');
         document.addEventListener('click', (event) => {
-            if (
-              event.target.matches('.button-close-modal') ||
-              !event.target.closest('.modal-container')
-            ) {
-              modal_container.classList.toggle('is-visible');
-            }
-        });
-    }
-    
-    openModal() {
-        const modal_container = document.querySelector('.modal-container');
-        document.parent.addEventListener('click', (event) => {
-            if (
-                event.target.matches('.button-open-modal')
-            ) {
-                modal_container.classList.toggle('is-visible');
-                this.closeModal();
+            if (event.target.matches('.button-close-modal') || !event.target.closest('.modal-container')) {
+                this.modal_container.classList.toggle('is-visible');
             }
         });
     }
@@ -72,12 +85,10 @@ export default class Modal {
     setModalTrigger() {
         const modal_triggers = document.querySelectorAll(`.${this.modal_id}-trigger`);
         modal_triggers.addEventListener('click', (event) => {
-                if (
-                    event.target.matches(`.${this.modal_id}-trigger`)
-                ) {
-                    modal_container.classList.add
-                }
-        })
+            if (event.target.matches(`.${this.modal_id}-trigger`)) {
+                this.modal_container.classList.toggle('is-visible');
+            }
+        });
     }
 
     // createExitButton() {

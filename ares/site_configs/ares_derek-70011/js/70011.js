@@ -2,8 +2,13 @@ import BasePortal from '../../../js/build';
 import SiteConfig from './70011-config';
 import Modal from '../../../js/components/modal/modal';
 
+const html_str = `
+<h4>Test</h4>
+<p>this is only a test</p>
+`;
+
 const site_config = new SiteConfig();
-const test_modal = new Modal('test_modal', html_str, 'test-modal', 'Got it!');
+const test_modal = new Modal('TEST MODAL', html_str, 'test-modal', 'Got it!');
 class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
@@ -78,15 +83,10 @@ class ChildPortal extends BasePortal {
 //     }
 // };
 
-const html_str = `
-<h4>Test</h4>
-<p>this is only a test</p>
-`;
-
 const useIconStarsFromNodes = async () => {
     // const star_boxes = await document.querySelectorAll('.lbl5stars', '.lbl4stars', '.lbl3stars', '.lbl2stars', '.lbl1stars');
     const star_boxes = document.querySelector('.V5StarsBox').parentElement.children;
-    star_boxes_arr = Array.from(star_boxes);
+    const star_boxes_arr = Array.from(star_boxes);
     star_boxes_arr.shift();
     const star_svg =
         '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
@@ -101,6 +101,6 @@ const useIconStarsFromNodes = async () => {
 
 useIconStarsFromNodes();
 
-test_modal.init();
+// test_modal.init();
 
 new ChildPortal();

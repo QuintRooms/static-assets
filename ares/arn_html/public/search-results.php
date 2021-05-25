@@ -3,12 +3,12 @@
     id="yui_3_18_1_1_1586277558089_151">
 <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
 <?php 
+        echo $_SERVER['DOCUMENT_ROOT'];
         $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
         if($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs'){
             $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
         }
         include $config;
-        
     ?>
 
 <head>

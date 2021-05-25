@@ -21,7 +21,7 @@ export default function siteConfig() {
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
-            is_lrg: false,
+            is_lrg: true,
         },
         cug: {
             is_cug: false,

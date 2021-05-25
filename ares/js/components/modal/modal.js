@@ -78,7 +78,7 @@ export default class Modal {
         const modal_state = this.outer_modal.classList;
         const overlay_state = this.overlay.classList;
         const modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
-        console.log('modal_triggers inside toggleModal', modal_triggers)
+        console.log('modal_triggers inside toggleModal', modal_triggers);
 
         if (modal_state.contains('hide')) {
             modal_state.remove('hide');

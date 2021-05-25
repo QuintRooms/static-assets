@@ -9,41 +9,15 @@ const html_str = `
 const modal_id = 'test-modal';
 
 const site_config = new SiteConfig();
-<<<<<<< Updated upstream
-const test_modal = new Modal('TEST MODAL', html_str, modal_id, 'originalPrice');
-=======
 const test_modal = new Modal('TEST MODAL', html_str, modal_id, '.originalPrice');
->>>>>>> Stashed changes
 
 class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
         super.init();
 
-<<<<<<< Updated upstream
-        this.createTriggerElement();
         this.useIconStarsFromNodes();
         test_modal.init();
-=======
-        this.useIconStarsFromNodes();
-        test_modal.init();
-    }
-
-    async useIconStarsFromNodes() {
-        // const star_boxes = await document.querySelectorAll('.lbl5stars', '.lbl4stars', '.lbl3stars', '.lbl2stars', '.lbl1stars');
-        const star_boxes = document.querySelector('.V5StarsBox').parentElement.children;
-        const star_boxes_arr = Array.from(star_boxes);
-        star_boxes_arr.shift();
-        const star_svg =
-            '<svg height="21" width="20" class="star rating" data-rating="1"><polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill: #faaf18"/></svg>';
-
-        star_boxes_arr.forEach((star_box) => {
-            const star_box_divs = star_box.children;
-            const star_div = star_box_divs[star_box_divs.length - 1];
-            const star_num = star_div.textContent.replace(/\D/g, '');
-            star_div.innerHTML = star_svg.repeat(star_num);
-        });
->>>>>>> Stashed changes
     }
 
     async useIconStarsFromNodes() {

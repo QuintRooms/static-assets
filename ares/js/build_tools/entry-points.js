@@ -33,7 +33,7 @@ module.exports = () => {
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-65012': './src/65012.js', // Formula 1 Miami Grand Prix 2022
-            'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
+            // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'firefly_21-64866': './src/64866.js', // firefly 21
@@ -80,11 +80,11 @@ module.exports = () => {
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
+            // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
+            // 'packers_experiences_retail-61430': './src/61430.js', // Music Midtown Production 2021
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
-            // 'packers_experiences_retail-61430': './src/61430.js', // Music Midtown Production 2021
         };
 
         // local environment

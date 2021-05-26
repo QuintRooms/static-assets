@@ -8199,23 +8199,28 @@
                                     o,
                                     a = document.querySelector('input#theCheckIn').value,
                                     c = document.querySelector('input#theCheckOut').value;
-                                return 52342 === n ||
+                                return (
+                                    console.log('event name: ', this.site_config.lodging.event_name),
+                                    52342 === n ||
                                     ('standard' === e && 16980 !== t) ||
                                     ('F1 United States Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('Miami Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e)
-                                    ? ((r = s(a, 'M/D/YYYY').format('M/D/YYYY')),
-                                      (i = s(c, 'M/D/YYYY').format('M/D/YYYY')),
-                                      {check_in_value: r, nights: (o = s(i).diff(s(r), 'days'))})
-                                    : 'mandarin' === e || 'tw_mandarin' === e
-                                    ? ((r = s(a, 'YYYY/M/D').format('YYYY/M/D')),
-                                      (i = s(c, 'YYYY/M/D').format('YYYY/M/D')),
-                                      {check_in_value: r, nights: (o = s(i).diff(s(r), 'days'))})
-                                    : ((r = s(a, 'D/M/YYYY').format('M/D/YYYY')),
-                                      (i = s(c, 'D/M/YYYY').format('M/D/YYYY')),
-                                      (o = s(i).diff(s(r), 'days')),
-                                      (r = s(a, 'D/M/YYYY').format('D/M/YYYY')),
-                                      (i = s(c, 'D/M/YYYY').format('D/M/YYYY')),
-                                      {check_in_value: r, nights: o});
+                                        ? (console.log('should get here'),
+                                          (r = s(a, 'M/D/YYYY').format('M/D/YYYY')),
+                                          (i = s(c, 'M/D/YYYY').format('M/D/YYYY')),
+                                          {check_in_value: r, nights: (o = s(i).diff(s(r), 'days'))})
+                                        : 'mandarin' === e || 'tw_mandarin' === e
+                                        ? ((r = s(a, 'YYYY/M/D').format('YYYY/M/D')),
+                                          (i = s(c, 'YYYY/M/D').format('YYYY/M/D')),
+                                          {check_in_value: r, nights: (o = s(i).diff(s(r), 'days'))})
+                                        : (console.log('should not get here'),
+                                          (r = s(a, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (i = s(c, 'D/M/YYYY').format('M/D/YYYY')),
+                                          (o = s(i).diff(s(r), 'days')),
+                                          (r = s(a, 'D/M/YYYY').format('D/M/YYYY')),
+                                          (i = s(c, 'D/M/YYYY').format('D/M/YYYY')),
+                                          {check_in_value: r, nights: o})
+                                );
                             },
                         },
                         {
@@ -8648,7 +8653,7 @@
                     use_google_autocomplete: !0,
                     currency: 'USD',
                     distance_unit: 'useMiles',
-                    lodging: {event_id: 11111, event_name: 'F1 United States Grand Prix', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
+                    lodging: {event_id: 45310, event_name: 'F1 United States Grand Prix', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
                     cug: {is_cug: !1, show_points: !1, allow_registration: !0, percent_off_text: 'off', show_percent_savings: !1},
                     exclusive_rate_text: 'Exclusive Rate',
                     host_hotel_text: 'Host Hotel',
@@ -8665,7 +8670,7 @@
                     fav_icon_url: ''.concat(i.path, '/clients/formula_1/images/favicon.png'),
                     header: {
                         logo_file_location: ''.concat(i.path, '/clients/formula_1/images/logo.png'),
-                        logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
+                        logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=65006&theme=standard',
                     },
                     map_marker_image_url: ''.concat(i.path, '/clients/formula_1/images/favicon.png'),
                     theme: 'light',

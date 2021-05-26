@@ -291,7 +291,6 @@ export default class Autocomplete {
         let check_in_value;
         let check_out_value;
         let nights;
-
         // TODO needs refactor.
         if (
             site === 52342 ||

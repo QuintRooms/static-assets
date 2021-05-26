@@ -3289,14 +3289,15 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax404784','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','677'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax404784" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;678"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/404784/946546320_300.jpg"
                                                     id="yui_3_18_1_1_1616895288712_166"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax404784"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;679"><span
-                                                    itemprop="name">Conrad New York Downtown</span></a><br>
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Conrad New York
+                                                    Downtown</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
                                                     itemprop="streetAddress">102 North End Avenue</span> <span
@@ -3305,13 +3306,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10282</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor404784"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;680#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor404784"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;681#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor404784"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;682#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;683">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.6 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -3319,7 +3320,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor404784"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;684#reviews">4198
+                                                        href="/ares/arn_html/public/property-page.php#reviews">4198
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
@@ -3363,8 +3364,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate404784"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;685"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3373,8 +3373,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;686"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -3401,7 +3400,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale DBL.DX-KG 220510409 DBL.KG-SU 220568805 220510414 SUI.AS-KG 220510408 S40 S34 S52 220510407 220568807 DBL.B1-DX BB0 220510416 DBL.2Q-DX S4 S2A S61 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 220510406 220568806"
                                     id="theArnProperty4014" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3422,13 +3420,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax4014','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','688'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax4014" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;689"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/4014/1093607268_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax4014"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;690"><span
-                                                    itemprop="name">Mr. C Seaport</span></a><br>
+                                                href="/ares/arn_html/public/property-page.php"><span itemprop="name">Mr.
+                                                    C
+                                                    Seaport</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
                                                     itemprop="streetAddress">33 Peck Slip</span> <span
@@ -3437,13 +3436,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10038</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor4014"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;691#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor4014"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;692#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor4014"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;693#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;694">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.4 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -3451,7 +3450,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-true-4.gif">
                                                 <div class="reviewCount"><a id="theArnAnchor4014"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;695#reviews">966
+                                                        href="/ares/arn_html/public/property-page.php#reviews">966
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
@@ -3494,8 +3493,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate4014" class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;696"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3504,8 +3502,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;697"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -3532,7 +3529,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale RA1 S35 221407993 DBL.ST 14147;4;28 201555596 BB1 S34 S52 S62 PG2 S51 S61 ArnEnoughNightlyRooms ArnEnoughAvailableRooms ROO.DX-KG S4 201555590"
                                     id="theArnProperty1147513" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3553,13 +3549,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax1147513','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','699'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax1147513" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;700"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/1147513/110691520_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax1147513"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;701"><span
-                                                    itemprop="name">Four Seasons Hotel New York Downtown</span></a><br>
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Four Seasons Hotel New
+                                                    York Downtown</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
                                                     itemprop="streetAddress">27 Barclay St</span> <span
@@ -3568,13 +3565,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10007</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor1147513"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;702#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor1147513"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;703#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor1147513"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;704#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;705">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.2 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -3582,7 +3579,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor1147513"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;706#reviews">665
+                                                        href="/ares/arn_html/public/property-page.php#reviews">665
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
@@ -3626,8 +3623,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate1147513"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;707"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3636,8 +3632,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;708"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -3664,7 +3659,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale 5195;10;64 DBL.2D-1 219950995 231940675 DBL.2B-DX S52 S61 DBL.CV-KG 31502;4;88 4494;10;88 S51 DBL.KG-2 S35 ArnEnoughNightlyRooms ArnEnoughAvailableRooms DBL.2B-CV 219950996 DBL.DX-KG DBL.KG 231940676 4494;10;64 S40 S34 S62"
                                     id="theArnProperty754470" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3685,13 +3679,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax754470','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','710'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax754470" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;711"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/754470/122907996_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax754470"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;712"><span
-                                                    itemprop="name">Hotel 50 Bowery, part of JdV by Hyatt</span></a><br>
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Hotel 50 Bowery, part of
+                                                    JdV by Hyatt</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
                                                     itemprop="streetAddress">50 Bowery, East Village</span> <span
@@ -3700,13 +3695,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10013</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor754470"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;713#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor754470"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;714#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor754470"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;715#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;716">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.6 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -3714,7 +3709,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor754470"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;717#reviews">1529
+                                                        href="/ares/arn_html/public/property-page.php#reviews">1529
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
@@ -3754,8 +3749,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate754470"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;718"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3764,8 +3758,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;719"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -3792,7 +3785,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView OnSale S62 DBL.KG 487218 487237 S51 ROO.ST S61 S4 487208 ROO.2D-NM DBL.KG-NM ArnEnoughNightlyRooms ArnEnoughAvailableRooms DBT.2D S34 200815402 06ZA 487232 S40 S52"
                                     id="theArnProperty276159" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3813,13 +3805,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax276159','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','721'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax276159" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;722"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/276159/947004205_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax276159"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;723"><span
-                                                    itemprop="name">Holiday Inn Express New York City- Wall
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Holiday Inn Express New
+                                                    York City- Wall
                                                     Street</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
@@ -3829,13 +3822,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10005</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor276159"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;724#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor276159"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;725#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor276159"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;726#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;727">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.5 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -3845,7 +3838,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor276159"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;728#reviews">628
+                                                        href="/ares/arn_html/public/property-page.php#reviews">628
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
@@ -3881,8 +3874,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate276159"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;729"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -3891,8 +3883,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;730"><img
-                                                    class="On"
+                                                href="/ares/arn_html/public/property-page.php"><img class="On"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_on.png?15474+12457"
                                                     title="Complimentary Breakfast"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -3919,7 +3910,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale QUA.2D DBL.KG S61 S52 DBL.2D DBL.ST-2 350582 DBL.H6 DBL.2D-1 S51 ROO.PI-1 350581 DBL.KG-3 214219100 ROO.PI S34 DBL.2B ArnEnoughNightlyRooms ArnEnoughAvailableRooms S40"
                                     id="theArnProperty215242" itemscope="" itemtype="http://schema.org/Hotel"
@@ -3940,13 +3930,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax215242','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','732'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax215242" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;733"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/215242/946578980_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax215242"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;734"><span
-                                                    itemprop="name">Hilton Garden Inn Tribeca</span></a><br>
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Hilton Garden Inn
+                                                    Tribeca</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
                                                     itemprop="streetAddress">39 Avenue of the Americas</span> <span
@@ -3955,13 +3946,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10013</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor215242"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;735#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor215242"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;736#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor215242"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;737#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;738">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.6 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -3969,7 +3960,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor215242"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;739#reviews">1716
+                                                        href="/ares/arn_html/public/property-page.php#reviews">1716
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
@@ -4005,8 +3996,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate215242"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;740"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4015,8 +4005,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;741"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -4043,7 +4032,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView OnSale DBL.KG-PI S40 DBL.PI-QN SUI.BL SUI.KG S34 201849301 ArnEnoughNightlyRooms ArnEnoughAvailableRooms 201140530 DBL.DX-KG DBL.AS-RE 201849304 SUI.QN 20669;4;25 S52 S61 201849298 SUI.ST-1 SUI.RE S35 S51 201849302 201849297 DBL.AS-6 DBL.AS-QN DBL.AS-KG"
                                     id="theArnProperty351284" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4064,12 +4052,12 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax351284','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','743'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax351284" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;744"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/351284/946940712_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax351284"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;745"><span
+                                                href="/ares/arn_html/public/property-page.php"><span
                                                     itemprop="name">NoMo SoHo</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
@@ -4079,13 +4067,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10013</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor351284"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;746#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor351284"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;747#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor351284"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;748#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;749">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.6 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -4093,7 +4081,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor351284"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;750#reviews">1702
+                                                        href="/ares/arn_html/public/property-page.php#reviews">1702
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
@@ -4133,8 +4121,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate351284"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;751"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4143,8 +4130,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;752"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -4171,7 +4157,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale ROO.2D DBL.KG S61 QUA.2D ROO.DX-KG 213010482 213010485 S51 S52 DBL.KG-PI ArnEnoughNightlyRooms ArnEnoughAvailableRooms S40 213010480 S34 DBL.KG-1 DBL.DX-KG ROO.KG-PI"
                                     id="theArnProperty240245" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4192,13 +4177,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax240245','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','754'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax240245" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;755"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/240245/946422697_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax240245"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;756"><span
-                                                    itemprop="name">Gild Hall, A Thompson Hotel</span></a><br>
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Gild Hall, A Thompson
+                                                    Hotel</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
                                                     itemprop="streetAddress">15 Gold Street</span> <span
@@ -4207,13 +4193,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10038</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor240245"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;757#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor240245"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;758#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor240245"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;759#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;760">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.3 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -4221,7 +4207,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor240245"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;761#reviews">2226
+                                                        href="/ares/arn_html/public/property-page.php#reviews">2226
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.5</div>
                                             </div>
@@ -4261,8 +4247,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate240245"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;762"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4271,8 +4256,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;763"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -4299,7 +4283,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale 202249306 DBL.2Q-NM 150708 150709 S61 S52 ROO.PI ArnEnoughNightlyRooms ArnEnoughAvailableRooms DBL.NM-QN 210029710 210028327 DBL.KG-NM ROO.NM DBL.BL DBL.KG DBT.2B 150710 S34 S40 210028326 ROO.NM-QN"
                                     id="theArnProperty174348" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4320,13 +4303,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax174348','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','765'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax174348" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;766"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/174348/1066233922_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax174348"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;767"><span
-                                                    itemprop="name">Hampton Inn Manhattan-Seaport-Financial
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Hampton Inn
+                                                    Manhattan-Seaport-Financial
                                                     District</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
@@ -4336,13 +4320,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10038</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor174348"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;768#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor174348"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;769#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor174348"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;770#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;771">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.3 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -4352,7 +4336,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor174348"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;772#reviews">1288
+                                                        href="/ares/arn_html/public/property-page.php#reviews">1288
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
@@ -4388,8 +4372,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate174348"
                                                     class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;773"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4398,8 +4381,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;774"><img
-                                                    class="On"
+                                                href="/ares/arn_html/public/property-page.php"><img class="On"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_on.png?15474+12457"
                                                     title="Complimentary Breakfast"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -4426,7 +4408,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div class="ArnProperty WBSimplePropertyView Refundable OnSale 279047 DBL.CV-DX S40 S41 SUI.B1-KG S4 DBL.QN S61 210903266 DBL.2D 44710 271747 S31 EQX ROO.KG-1 LV5 S62 J0R S34 ROO.ST 01001 DBL.QN-1 EZS S51 200188166 ROO.KG JSU.KG ROO.ST-11 DBL.KG ArnEnoughNightlyRooms ArnEnoughAvailableRooms"
                                     id="theArnProperty16800" itemscope="" itemtype="http://schema.org/Hotel"
@@ -4447,13 +4428,14 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     onclick="new Ajax.Updater('thePropImageAjax16800','https://hotels.roomsteals.com/v6/search/longLat',{'evalScripts':true,'parameters':['_s=-iZ1dIpclmm18ty_','_k=qd3wDnVC','siteId='+52342,'theme=redesign','776'].join('&amp;')})"
                                                     href="javascript:void(0)"><span>Previous</span></a></div><a
                                                 id="thePropImageAjax16800" class="ArnImageLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;777"><img
-                                                    alt="" onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
+                                                href="/ares/arn_html/public/property-page.php"><img alt=""
+                                                    onerror="this.src='/appSkins/64/v6/images/no_image_300.gif'"
                                                     src="//s3.amazonaws.com/media.travsrv.com/16800/1065805025_300.jpg"></a>
                                         </div>
                                         <div class="ArnPropName" id="thePropNameAjax16800"><a class="ArnPropNameLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;778"><span
-                                                    itemprop="name">Millennium Hilton New York Downtown</span></a><br>
+                                                href="/ares/arn_html/public/property-page.php"><span
+                                                    itemprop="name">Millennium Hilton New
+                                                    York Downtown</span></a><br>
                                             <div class="ArnPropAddress" itemprop="address" itemscope=""
                                                 itemtype="http://schema.org/PostalAddress"><span
                                                     itemprop="streetAddress">55 Church Street</span> <span
@@ -4462,13 +4444,13 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     itemprop="postalCode">10007</span></div>
                                             <div class="ArnPropDescription">
                                                 <div class="detailsOrNearbyLabel"><a id="theArnAnchor16800"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;779#details">Details</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#details">Details</a>|<a
                                                         id="theArnAnchor16800"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;780#images">Photos</a>|<a
+                                                        href="/ares/arn_html/public/property-page.php#images">Photos</a>|<a
                                                         id="theArnAnchor16800"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;781#map">Map
+                                                        href="/ares/arn_html/public/property-page.php#map">Map
                                                         It</a> or <a class="propertiesNearbyLink"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;782">Properties
+                                                        href="/ares/arn_html/public/property-page.php">Properties
                                                         Nearby</a></div><span class="distanceLabel">0.3 <span
                                                         class="units">miles from</span> location</span>
                                             </div>
@@ -4476,7 +4458,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="display:none"><img alt=""
                                                     src="//www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-39958-4.png">
                                                 <div class="reviewCount"><a id="theArnAnchor16800"
-                                                        href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;783#reviews">5477
+                                                        href="/ares/arn_html/public/property-page.php#reviews">5477
                                                         User Reviews</a></div>
                                                 <div class="ratingCount">4.0</div>
                                             </div>
@@ -4515,8 +4497,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                     </span>
                                                 </span></div>
                                             <div class="ArnRateButton"><a id="theShowRate16800" class="ArnShowRatesLink"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;784"
-                                                    target="_blank"
+                                                    href="/ares/arn_html/public/property-page.php" target="_blank"
                                                     web-developer-inline-style="cursor:hand;cursor:pointer;">Book
                                                     Rooms</a></div>
                                         </div>
@@ -4525,8 +4506,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         <div class="ArnIconContainer"><img alt=""
                                                 src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/spacer.gif"><a
                                                 class="ArnAmenityLink"
-                                                href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;785"><img
-                                                    class="Off"
+                                                href="/ares/arn_html/public/property-page.php"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/breakfast_off.png?15474+12457"
                                                     title="Complimentary Breakfast Not Available"><img class="Off"
                                                     src="//media.travsrv.com/appSkins/52342/v6/themes/redesign/images/amenities/cocktails_off.png?15474+12457"
@@ -4553,7 +4533,6 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                                 web-developer-inline-style="cursor:hand;cursor:pointer;"></div>
                                         </div>
                                     </div>
-                                    <hr class="prop-hr">
                                 </div>
                                 <div id="pagerBottomAjax">
                                     <div class="bottomPager ArnPagerContainer">
@@ -4562,17 +4541,17 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                         </div>
                                         <div class="ArnPages">
                                             <div id="batch">&lt;&lt;&nbsp;1&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;786">2</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;787">3</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;788">4</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;789">5</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;790">6</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;791">7</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;792">8</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;793">9</a>&nbsp;<a
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;794">10</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">2</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">3</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">4</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">5</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">6</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">7</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">8</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">9</a>&nbsp;<a
+                                                    href="/ares/arn_html/public/property-page.php">10</a>&nbsp;<a
                                                     accesskey="n"
-                                                    href="https://hotels.roomsteals.com/v6/search/longLat?_s=-iZ1dIpclmm18ty_&amp;_k=qd3wDnVC&amp;siteId=52342&amp;theme=redesign&amp;795">&gt;&gt;</a>
+                                                    href="/ares/arn_html/public/property-page.php">&gt;&gt;</a>
                                             </div>
                                         </div>
                                     </div>

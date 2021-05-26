@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 139));
+        n((n.s = 143));
 })([
     function (e, t, n) {
         var r = n(29)('wks'),
@@ -234,7 +234,7 @@
             C = 'process' == l(x),
             L = function () {},
             P = (i = _.f),
-            M = !!(function () {
+            R = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -243,7 +243,7 @@
                     return (C || 'function' == typeof PromiseRejectionEvent) && e.then(L) instanceof t && 0 !== q.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            R = function (e) {
+            M = function (e) {
                 var t;
                 return !(!h(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -268,7 +268,7 @@
                                         s
                                             ? (i || (2 == e._h && j(e), (e._h = 1)),
                                               !0 === s ? (n = r) : (l && l.enter(), (n = s(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(k('Promise-chain cycle')) : (o = R(n)) ? o.call(n, c, u) : c(n))
+                                              n === t.promise ? u(k('Promise-chain cycle')) : (o = M(n)) ? o.call(n, c, u) : c(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -325,7 +325,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw k("Promise can't be resolved itself");
-                        (t = R(e))
+                        (t = M(e))
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -340,7 +340,7 @@
                     }
                 }
             };
-        M ||
+        R ||
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), f(e), r.call(this);
                 try {
@@ -375,17 +375,17 @@
             (_.f = P = function (e) {
                 return e === E || e === a ? new o(e) : i(e);
             })),
-            d(d.G + d.W + d.F * !M, {Promise: E}),
+            d(d.G + d.W + d.F * !R, {Promise: E}),
             n(32)(E, 'Promise'),
             n(106)('Promise'),
             (a = n(13).Promise),
-            d(d.S + d.F * !M, 'Promise', {
+            d(d.S + d.F * !R, 'Promise', {
                 reject: function (e) {
                     var t = P(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (s || !M), 'Promise', {
+            d(d.S + d.F * (s || !R), 'Promise', {
                 resolve: function (e) {
                     return S(s && this === a ? E : this, e);
                 },
@@ -394,7 +394,7 @@
                 d.S +
                     d.F *
                         !(
-                            M &&
+                            R &&
                             n(107)(function (e) {
                                 E.all(e).catch(L);
                             })
@@ -4028,8 +4028,8 @@
             C = n(6),
             L = n(23),
             P = q.f,
-            M = C.f,
-            R = A.f,
+            R = C.f,
+            M = A.f,
             T = r.Symbol,
             O = r.JSON,
             I = O && O.stringify,
@@ -4049,9 +4049,9 @@
                     return (
                         7 !=
                         x(
-                            M({}, 'a', {
+                            R({}, 'a', {
                                 get: function () {
-                                    return M(this, 'a', {value: 7}).a;
+                                    return R(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -4059,9 +4059,9 @@
                 })
                     ? function (e, t, n) {
                           var r = P(N, t);
-                          r && delete N[t], M(e, t, n), r && e !== N && M(N, t, r);
+                          r && delete N[t], R(e, t, n), r && e !== N && R(N, t, r);
                       }
-                    : M,
+                    : R,
             z = function (e) {
                 var t = (H[e] = x(T.prototype));
                 return (t._k = e), t;
@@ -4081,8 +4081,8 @@
                     (t = S(t, !0)),
                     g(n),
                     i(H, t)
-                        ? (n.enumerable ? (i(e, j) && e[j][t] && (e[j][t] = !1), (n = x(n, {enumerable: k(0, !1)}))) : (i(e, j) || M(e, j, k(1, {})), (e[j][t] = !0)), W(e, t, n))
-                        : M(e, t, n)
+                        ? (n.enumerable ? (i(e, j) && e[j][t] && (e[j][t] = !1), (n = x(n, {enumerable: k(0, !1)}))) : (i(e, j) || R(e, j, k(1, {})), (e[j][t] = !0)), W(e, t, n))
+                        : R(e, t, n)
                 );
             },
             Q = function (e, t) {
@@ -4101,11 +4101,11 @@
                 }
             },
             X = function (e) {
-                for (var t, n = R(w(e)), r = [], o = 0; n.length > o; ) i(H, (t = n[o++])) || t == j || t == c || r.push(t);
+                for (var t, n = M(w(e)), r = [], o = 0; n.length > o; ) i(H, (t = n[o++])) || t == j || t == c || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = R(n ? B : w(e)), o = [], a = 0; r.length > a; ) !i(H, (t = r[a++])) || (n && !i(N, t)) || o.push(H[t]);
+                for (var t, n = e === N, r = M(n ? B : w(e)), o = [], a = 0; r.length > a; ) !i(H, (t = r[a++])) || (n && !i(N, t)) || o.push(H[t]);
                 return o;
             };
         U ||
@@ -10148,9 +10148,13 @@
             }.call(void 0)),
             (e.exports = r);
     },
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
-        n(140), n(142);
+        n(144), n(146);
     },
     function (e, t, n) {
         'use strict';
@@ -10166,7 +10170,7 @@
         }
         n(81), n(82), n(46), n(11), n(92), n(94);
         var i = c(n(95)),
-            o = c(n(141)),
+            o = c(n(145)),
             a = c(n(125)),
             s = c(n(126));
         function c(e) {
@@ -10256,7 +10260,7 @@
         Object.defineProperty(t, '__esModule', {value: !0}),
             (t.default = function () {
                 return {
-                    site_id: 65012,
+                    site_id: 65006,
                     directory_name: o,
                     affiliate_id: 16980,
                     master_id: 920,
@@ -10266,13 +10270,13 @@
                     use_google_autocomplete: !0,
                     currency: 'USD',
                     distance_unit: 'useMiles',
-                    lodging: {event_id: 46260, event_name: 'Miami Grand Prix', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
+                    lodging: {event_id: 11111, event_name: 'F1 United States Grand Prix', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
                     cug: {is_cug: !1, show_points: !1, allow_registration: !0, percent_off_text: 'off', show_percent_savings: !1},
                     exclusive_rate_text: 'Exclusive Rate',
                     host_hotel_text: 'Host Hotel',
                     partner_hotel_text: 'Partner Hotel',
                     show_tax_inclusive_rates: !0,
-                    dayjs_date_format: 'M/D/YYYY',
+                    dayjs_date_format: 'D/M/YYYY',
                     reviews_before_info: !0,
                     show_stars: !1,
                     show_property_type: !1,
@@ -10282,8 +10286,7 @@
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(i.path, '/clients/formula_1/images/favicon.png'),
                     header: {
-                        logo_file_location: ''.concat(i.path, '/site_configs/').concat(o, '/img/logo.png'),
-                        email_logo_file_location: ''.concat(i.path, '/site_configs/').concat(o, '/img/email-logo.jpg'),
+                        logo_file_location: ''.concat(i.path, '/clients/formula_1/images/logo.png'),
                         logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
                     },
                     map_marker_image_url: ''.concat(i.path, '/clients/formula_1/images/favicon.png'),
@@ -10297,14 +10300,10 @@
                     root_page_header_text: 'Start Your Search',
                     root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
                     is_resbeat_client: !1,
-                    has_custom_emails: !0,
-                    has_group_booking_banner: !0,
-                    group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Miami%20GP',
-                    uses_hybrid_compensation_model: !0,
                 };
             });
         var i = new ((r = n(52)) && r.__esModule ? r : {default: r}).default(),
-            o = 'f1_miami_22-'.concat(65012);
+            o = 'f1_template-'.concat(65006);
     },
     function (e, t, n) {},
 ]);

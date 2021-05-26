@@ -2,8 +2,8 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 
-const site_id = 65012;
-const directory_name = `f1_miami_22-${site_id}`;
+const site_id = 65006;
+const directory_name = `f1_template-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -18,8 +18,8 @@ export default function siteConfig() {
         currency: 'USD',
         distance_unit: 'useMiles',
         lodging: {
-            event_id: 46260,
-            event_name: 'Miami Grand Prix',
+            event_id: 11111,
+            event_name: 'F1 United States Grand Prix',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -36,7 +36,7 @@ export default function siteConfig() {
         host_hotel_text: 'Host Hotel',
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: true,
-        dayjs_date_format: 'M/D/YYYY',
+        dayjs_date_format: 'D/M/YYYY',
         reviews_before_info: true,
         show_stars: false,
         show_property_type: false,
@@ -46,8 +46,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.jpg`,
+            logo_file_location: `${env_path.path}/clients/formula_1/images/logo.png`,
             logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
         },
         map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
@@ -74,9 +73,5 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
-        has_custom_emails: true,
-        has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Miami%20GP',
-        uses_hybrid_compensation_model: true,
     };
 }

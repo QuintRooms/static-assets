@@ -82,7 +82,8 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
+            // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
+            // 'packers_experiences_retail-61430': './src/61430.js', // Music Midtown Production 2021
         };
 
         // local environment

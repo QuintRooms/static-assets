@@ -1,14 +1,14 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 70011;
-const directory_name = `ares_derek-${site_id}`;
+const site_id = 61430;
+const directory_name = `packers_experiences_retail-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: '',
+        affiliate_id: 16999,
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: '',
+            event_name: 'Packers Experiences',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -36,7 +36,7 @@ export default function siteConfig() {
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
-        show_stars: true,
+        show_stars: false,
         show_property_type: false,
         show_language_select: false,
         show_currency_select: false,
@@ -77,7 +77,7 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
-        has_group_booking_banner: false,
+        has_group_booking_banner: true,
         group_booking_form_url: '',
         has_landing_page: false,
         has_custom_emails: false,

@@ -1,14 +1,14 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 70011;
-const directory_name = `ares_derek-${site_id}`;
+const site_id = 70013;
+const directory_name = `music_midtown_21-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: '',
+        affiliate_id: 16067,
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
@@ -16,12 +16,12 @@ export default function siteConfig() {
         use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
-            event_name: '',
+            event_id: 50031,
+            event_name: 'Music Midtown',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
-            is_lrg: false,
+            is_lrg: true,
         },
         cug: {
             is_cug: false,
@@ -36,7 +36,7 @@ export default function siteConfig() {
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
-        show_stars: true,
+        show_stars: false,
         show_property_type: false,
         show_language_select: false,
         show_currency_select: false,
@@ -44,7 +44,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.svg`,
             logo_outbound_url: 'http://www..com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
@@ -77,7 +77,7 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
-        has_group_booking_banner: false,
+        has_group_booking_banner: true,
         group_booking_form_url: '',
         has_landing_page: false,
         has_custom_emails: false,

@@ -86,9 +86,9 @@ module.exports = () => {
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
-            // 'ares_derek-70011': './src/70011.js', // ares derek
+            'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            'music_midtown_21-70013': './src/70013.js', // music midtown_21
+            // 'music_midtown_21-70013': './src/70013.js', // music midtown_21
         };
     }
 

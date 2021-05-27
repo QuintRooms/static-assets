@@ -9,7 +9,7 @@ const html_str = `
 const modal_id = 'test-modal';
 
 const site_config = new SiteConfig();
-const test_modal = new Modal('Test Modal', html_str, modal_id, '.originalPrice');
+const test_modal = new Modal('Test Modal', html_str, modal_id, '.originalPrice', 'Got it!');
 
 class ChildPortal extends BasePortal {
     constructor() {

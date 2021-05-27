@@ -3,12 +3,14 @@ import Utilities from '../../utilities';
 const utilities = new Utilities();
 
 const modal_styles_str = `
-    .outer-modal {
+
+.outer-modal {
         background: white;
-        border-radius: 6px;
+        border-radius: 18px;
         box-sizing: border-box;
         width: 600px;
-        max-height: 90%;
+        max-height: 75%;
+        overflow: hidden;
         padding: 15px;
         flex-direction: column;
         align-self: center;
@@ -17,7 +19,7 @@ const modal_styles_str = `
         left: 50%;
         z-index: 995;
         transform: translate(-50%, -50%);
-           display: none;
+        display: none;
     }
 
     .overlay {
@@ -28,7 +30,7 @@ const modal_styles_str = `
         height: 100%;
         z-index: 995;
         background: rgba(0,0,0,0.40);
-           display: none;
+        display: none;
     }
 
     #x-button {
@@ -68,19 +70,51 @@ const modal_styles_str = `
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    .modal-confirm-btn-container {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        width: inherit;
+        border-radius: inherit;
+        height: 60px;
+        border:none;
+        background: inherit;
+    }
+
+    .modal-confirm-btn {
+        
+        align-self: center;
+        margin: 16px;
+        padding: 8px;
+        min-width: 120px;
+        font-weight: bold;
+        color: #fff;
+        background: $primary_color;
+        height: 36px;
+        border-radius: 18px;
+        border: none;
+        &:hover {
+            border: 3px solid $primary_color;
+            color: $primary_color;
+            background: #fff;
+        }
+    }
 `;
 
 export default class Modal {
-    constructor(modal_title, modal_body, modal_id, modal_trigger_selector) {
+    constructor(modal_title, modal_body, modal_id, modal_trigger_selector, exitButtonText) {
         this.modal_title = modal_title;
         this.modal_body = modal_body;
         this.modal_id = modal_id;
         this.modal_trigger_selector = modal_trigger_selector;
+        this.exitButtonText = exitButtonText;
         this.init();
         this.outer_modal = document.querySelector('.outer-modal');
         this.overlay = document.querySelector('.overlay');
         this.modal_triggers = '';
-        this.modal_closers = document.querySelector(`.button-close-modal`);
+        this.modal_closers = '';
+        this.createExitButton();
     }
 
     init() {
@@ -93,44 +127,41 @@ export default class Modal {
     async setVars() {
         await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
         this.modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
+        this.modal_closers = document.querySelector(`.button-close-modal`);
     }
 
     async openListeners() {
         await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
-        const modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
-        modal_triggers.addEventListener('click', this.showModal);
+        this.modal_triggers.addEventListener('click', this.showModal);
     }
 
     closeListeners() {
-        const modal_closers = document.querySelector('.button-close-modal');
-        modal_closers.addEventListener('click', this.hideModal);
-        console.log('inside eventlistener');
         document.addEventListener('click', (event) => {
-            console.log('inside second event listener');
-            console.log(this.hideModal);
-            if (!event.target.closest('.outer-modal')) {
-                this.hideModal();
-            }
+            if (event.target.closest('.overlay')) this.hideOverlay();
         });
+        this.modal_closers.addEventListener('click', this.hideModal);
     }
 
     showModal = () => {
-        const modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
-        const modal_closers = document.querySelector('.button-close-modal');
-
         this.outer_modal.style.display = 'block';
         this.overlay.style.display = 'block';
-        modal_triggers.removeEventListener('click', this.showModal);
+        this.modal_triggers.removeEventListener('click', this.showModal);
         this.closeListeners();
     };
 
     hideModal = () => {
-        const modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
-        const modal_closers = document.querySelector('.button-close-modal');
-
         this.outer_modal.style.display = 'none';
         this.overlay.style.display = 'none';
-        modal_closers.removeEventListener('click', this.hideModal);
+        this.modal_closers.removeEventListener('click', this.hideModal);
+        this.openListeners();
+    };
+
+    hideOverlay = () => {
+        this.outer_modal.style.display = 'none';
+        this.overlay.style.display = 'none';
+        document.removeEventListener('click', (event) => {
+            if (event.target.closest('.overlay')) this.hideOverlay();
+        });
         this.openListeners();
     };
 
@@ -142,7 +173,7 @@ export default class Modal {
             <div class='outer-modal' id=${this.modal_id}>
                 <button id='x-button' class='button-close-modal upper-right'>x</button>
                 <div id='modal-title'>${this.modal_title}</div>
-                <hr class="solid">
+                <hr class='solid'>
                 <div class='modal-body-container'>${this.modal_body}</div>
             </div>
             <style>
@@ -160,17 +191,34 @@ export default class Modal {
         const modal_trigger_setter = document.querySelector('#HotelNameContainer');
         modal_trigger_setter.classList.add(`${this.modal_id}-trigger`);
     }
+
+    createExitButton() {
+        if (this.exitButtonText) {
+            // const lower_hr = document.createElement('hr');
+            // lower_hr.classList.add('solid');
+            // this.outer_modal.appendChild(lower_hr);
+
+            const modal_confirm_btn_container = document.createElement('div');
+            const modal_confirm_btn = document.createElement('button');
+
+            modal_confirm_btn_container.classList.add('modal-confirm-btn-container');
+            modal_confirm_btn.classList.add('button-close-modal', 'modal-confirm-btn');
+            modal_confirm_btn_container.appendChild(modal_confirm_btn);
+            this.outer_modal.appendChild(modal_confirm_btn_container);
+            modal_confirm_btn.innerHTML = this.exitButtonText;
+        }
+    }
 }
 
-    // async initiateOpenModal() {
-    //     console.log('inside initiateopenModal');
-    //     await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
-    //     const modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
-    //     console.log('modal_triggers inside inititateOpenModal', modal_triggers);
+// async initiateOpenModal() {
+//     console.log('inside initiateopenModal');
+//     await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
+//     const modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
+//     console.log('modal_triggers inside inititateOpenModal', modal_triggers);
 
-    //     modal_triggers.addEventListener('click', this.openModal);
-    //     console.log('initiateOpenModal executed');
-    // }
+//     modal_triggers.addEventListener('click', this.openModal);
+//     console.log('initiateOpenModal executed');
+// }
 
 
 // const modal_styles_str = `

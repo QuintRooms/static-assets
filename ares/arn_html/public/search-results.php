@@ -2,7 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="yui3-js-enabled"
     id="yui_3_18_1_1_1586277558089_151">
 <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
+<?php
+    $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
+    if($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs'){
+        $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
+    }
+    include $config;
+?>
 
 <head>
     <title>austin, tx</title>
@@ -245,7 +251,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         });
         /*]]>*/
     </script>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
+    <?php include getenv('includes_path') . 'header.php'; ?>
     <div class="subHeaderContainer">
         <div class="subHeader"><a href="https://events.hotelsforhope.com/v6" class="refineLink"><span
                     class="refine"><img
@@ -4634,7 +4640,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         src="https://cdn.iubenda.com/cs/bridge/iframe_bridge-1.1.0.html?origin=https%3A%2F%2Fevents.hotelsforhope.com%2Fv6%2Fsearch%2Fcity&amp;meth=%22compact%22"
         style="width:0px; height:0px; display:none; visibility:hidden"></iframe>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; ?>
+     <?php include getenv('includes_path') . 'footer.php'; ?>
 </body>
 
 </html>

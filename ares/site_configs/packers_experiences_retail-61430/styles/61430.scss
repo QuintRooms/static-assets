@@ -4,17 +4,42 @@ $header_background: #06342d;
 $logo_flex_position: center;
 $logo_max_width: 300px;
 $background_color: #fff;
-$primary_color: #fcb214;
-$secondary_color: #06342d;
+$primary_color: #06342d;
+$secondary_color: #fcb214;
 $primary_text_color: #fff;
-$secondary_text_color: #fcb214;
+$secondary_text_color: #06342d;
 $border_color: #06342d;
-$button_hover_background_color: #fff;
-$button_hover_text_color: #fcb214;
-$button_hover_border_color: #fcb214;
+$button_hover_background_color: #fcb214;
+$button_hover_text_color: #06342d;
+$button_hover_border_color: #06342d;
 $google_font_name: 'Montserrat';
 $site_name: 'packers_experiences_retail-61430';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat center center / cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
+
+.ArnRateButton .ArnShowRatesLink  {
+  border-width: 2px;
+  background: #fcb214;
+  color: #06342d;
+  border-color: #fcb214;
+  font-weight: bold;
+  &:hover{
+    border-width: 2px;
+    border-color: #06342d;
+  }
+}
+
+#theOtherSubmitButton {
+  &:hover {
+     border-color: #fcb214;
+  }
+}
+
+.arn-leaflet-reset-button {
+    border-color: #06342d;
+    &:hover {
+     border-color: #fcb214;
+  }
+}

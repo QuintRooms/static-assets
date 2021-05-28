@@ -103,7 +103,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 }
 
 span.exclusive-rate {
-  background: #1f391e;
+  background: #6cb948;
   color: #fff;
 }
 
@@ -142,7 +142,7 @@ span.exclusive-rate {
 }
 
 .percentSavings {
-  color: #1f391e;
+  color: #6cb948;
 }
 
 input#theSubmitButton,
@@ -153,7 +153,7 @@ input#theConfirmationButton,
 a.ArnShowRatesLink, .WBConfirmedBooking .submit {
   background: #f86242;
   color: #fff;
-  border: 1px solid #1f391e;
+  border: 1px solid #6cb948;
 }
 
 .CheckRates input.submit,
@@ -210,24 +210,24 @@ a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .boo
   }
 }
 header {
-  border-bottom: 3px solid #1f391e;
+  border-bottom: 3px solid #6cb948;
 }
 
 .arnMapMarker.contracted-pin,
 .arnMapMarker.contracted-pin.highlight {
   border: 1px solid #fff;
-  background: #1f391e;
+  background: #6cb948;
   color: #fff;
 }
 
 .arnMapMarker.contracted-pin:hover {
-  border: 1px solid #1f391e;
+  border: 1px solid #6cb948;
   background: #fff;
-  color: #1f391e;
+  color: #6cb948;
 }
 
 .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
-  border-top-color: #1f391e;
+  border-top-color: #6cb948;
 }
 
 #theOtherSubmitButton,
@@ -237,11 +237,11 @@ header {
 .bookRoom,
 .sort,
 .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
-  border: 1px solid #1f391e;
+  border: 1px solid #6cb948;
 }
 
 .holdRoom {
-  border: 1px solid #1f391e;
+  border: 1px solid #6cb948;
 }
 
 @media screen and (max-width: 1105px) {
@@ -258,7 +258,7 @@ header {
 .active-page {
   background: #f86242 !important;
   color: #fff !important;
-  border: 1px solid #1f391e !important;
+  border: 1px solid #6cb948 !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day-selected {
@@ -271,7 +271,7 @@ header {
 }
 
 .yui3-skin-sam .yui3-calendar-content {
-  border-color: #1f391e !important;
+  border-color: #6cb948 !important;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarker {

@@ -58,7 +58,7 @@
     }
 
     hr .solid{
-        border-top: 3px solid orangered;
+        border-top: 3px solid black;
     }
 
     .modal-body-container {
@@ -85,13 +85,13 @@
         min-width: 180px;
         font-weight: bold;
         color: #fff;
-        background: orangered;
+        background: black;
         height: 36px;
         border-radius: 18px;
         border: none;
         &:hover {
-            border: 3px solid orangered;
-            color: orangered;
+            border: 3px solid black;
+            color: black;
             background: #fff;
         }
     }

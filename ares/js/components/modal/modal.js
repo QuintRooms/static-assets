@@ -4,7 +4,7 @@ const utilities = new Utilities();
 
 const modal_styles_str = `
 
-.outer-modal {
+        .outer-modal {
         background: white;
         border-radius: 18px;
         box-sizing: border-box;
@@ -63,7 +63,7 @@ const modal_styles_str = `
     }
 
     hr .solid{
-        border-top: 3px solid $primary_color;
+        border-top: 4px solid #5dc3ac;
     }
 
     .modal-body-container {
@@ -87,18 +87,19 @@ const modal_styles_str = `
         align-self: center;
         margin: 16px;
         padding: 8px;
-        min-width: 120px;
+        min-width: 180px;
         font-weight: bold;
         color: #fff;
-        background: $primary_color;
+        background: #5dc3ac;
         height: 36px;
         border-radius: 18px;
         border: none;
-        &:hover {
-            border: 3px solid $primary_color;
-            color: $primary_color;
-            background: #fff;
-        }
+    }
+
+    .modal-confirm-btn:hover {
+        border: 3px solid #5dc3ac;
+        color: #5dc3ac;
+        background: #fff;
     }
 `;
 
@@ -109,29 +110,35 @@ export default class Modal {
         this.modal_id = modal_id;
         this.modal_trigger_selector = modal_trigger_selector;
         this.exitButtonText = exitButtonText;
-        this.init();
-        this.outer_modal = document.querySelector('.outer-modal');
-        this.overlay = document.querySelector('.overlay');
+        this.outer_modal = '';
+        this.overlay = '';
         this.modal_triggers = '';
         this.modal_closers = '';
-        this.createExitButton();
     }
 
     init() {
         this.setModalTriggers();
         this.insertModalContainer();
-        this.setVars();
-        this.openListeners();
+        console.log('inside init');
+        this.createExitButton();
+        this.setVars().then((data) => {
+            console.log(data);
+            this.openListeners();
+        });
     }
 
     async setVars() {
         await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
         this.modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
-        this.modal_closers = document.querySelector(`.button-close-modal`);
+        this.outer_modal = document.querySelector('.outer-modal');
+        this.modal_closers = document.querySelectorAll(`.button-close-modal`);
+        console.log(this.modal_closers);
+        this.overlay = document.querySelector('.overlay');
+        return {};
     }
 
-    async openListeners() {
-        await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
+    openListeners() {
+        // await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
         this.modal_triggers.addEventListener('click', this.showModal);
     }
 
@@ -139,7 +146,9 @@ export default class Modal {
         document.addEventListener('click', (event) => {
             if (event.target.closest('.overlay')) this.hideOverlay();
         });
-        this.modal_closers.addEventListener('click', this.hideModal);
+        this.modal_closers.forEach((closer) => {
+            closer.addEventListener('click', this.hideModal);
+        });
     }
 
     showModal = () => {
@@ -152,7 +161,9 @@ export default class Modal {
     hideModal = () => {
         this.outer_modal.style.display = 'none';
         this.overlay.style.display = 'none';
-        this.modal_closers.removeEventListener('click', this.hideModal);
+        this.modal_closers.forEach((closer) => {
+            closer.removeEventListener('click', this.hideModal);
+        });
         this.openListeners();
     };
 
@@ -187,24 +198,28 @@ export default class Modal {
     }
 
     async setModalTriggers() {
-        await utilities.waitForSelectorInDOM('#HotelNameContainer');
-        const modal_trigger_setter = document.querySelector('#HotelNameContainer');
+        await utilities.waitForSelectorInDOM(this.modal_trigger_selector);
+        const modal_trigger_setter = document.querySelector(this.modal_trigger_selector);
         modal_trigger_setter.classList.add(`${this.modal_id}-trigger`);
     }
 
     createExitButton() {
+        const outer_modal = document.querySelector('.outer-modal');
+        console.log('createExitButton');
         if (this.exitButtonText) {
             // const lower_hr = document.createElement('hr');
             // lower_hr.classList.add('solid');
             // this.outer_modal.appendChild(lower_hr);
+            console.log('createExitButton this.outer_modal type:', typeof this.outer_modal);
 
             const modal_confirm_btn_container = document.createElement('div');
             const modal_confirm_btn = document.createElement('button');
 
             modal_confirm_btn_container.classList.add('modal-confirm-btn-container');
-            modal_confirm_btn.classList.add('button-close-modal', 'modal-confirm-btn');
+            modal_confirm_btn.classList.add('button-close-modal');
+            modal_confirm_btn.classList.add('modal-confirm-btn');
             modal_confirm_btn_container.appendChild(modal_confirm_btn);
-            this.outer_modal.appendChild(modal_confirm_btn_container);
+            outer_modal.appendChild(modal_confirm_btn_container);
             modal_confirm_btn.innerHTML = this.exitButtonText;
         }
     }
@@ -444,9 +459,6 @@ export default class Modal {
     //         this.toggleModalVisibility();
     //     });
     // }
-
-    // createExitButton() {
-    //     if (this.button_text)  {
 
     //     }
     // }

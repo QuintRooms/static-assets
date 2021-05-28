@@ -103,7 +103,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 }
 
 span.exclusive-rate {
-  background: #6cb948;
+  background: #1f391e;
   color: #fff;
 }
 
@@ -142,7 +142,7 @@ span.exclusive-rate {
 }
 
 .percentSavings {
-  color: #6cb948;
+  color: #1f391e;
 }
 
 input#theSubmitButton,
@@ -153,7 +153,7 @@ input#theConfirmationButton,
 a.ArnShowRatesLink, .WBConfirmedBooking .submit {
   background: #f86242;
   color: #fff;
-  border: 1px solid #6cb948;
+  border: 1px solid #1f391e;
 }
 
 .CheckRates input.submit,
@@ -210,24 +210,24 @@ a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .boo
   }
 }
 header {
-  border-bottom: 3px solid #6cb948;
+  border-bottom: 3px solid #1f391e;
 }
 
 .arnMapMarker.contracted-pin,
 .arnMapMarker.contracted-pin.highlight {
   border: 1px solid #fff;
-  background: #6cb948;
+  background: #1f391e;
   color: #fff;
 }
 
 .arnMapMarker.contracted-pin:hover {
-  border: 1px solid #6cb948;
+  border: 1px solid #1f391e;
   background: #fff;
-  color: #6cb948;
+  color: #1f391e;
 }
 
 .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
-  border-top-color: #6cb948;
+  border-top-color: #1f391e;
 }
 
 #theOtherSubmitButton,
@@ -237,11 +237,11 @@ header {
 .bookRoom,
 .sort,
 .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
-  border: 1px solid #6cb948;
+  border: 1px solid #1f391e;
 }
 
 .holdRoom {
-  border: 1px solid #6cb948;
+  border: 1px solid #1f391e;
 }
 
 @media screen and (max-width: 1105px) {
@@ -258,7 +258,7 @@ header {
 .active-page {
   background: #f86242 !important;
   color: #fff !important;
-  border: 1px solid #6cb948 !important;
+  border: 1px solid #1f391e !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day-selected {
@@ -271,7 +271,7 @@ header {
 }
 
 .yui3-skin-sam .yui3-calendar-content {
-  border-color: #6cb948 !important;
+  border-color: #1f391e !important;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarker {
@@ -320,6 +320,9 @@ header {
   to {
     box-shadow: 0 0 0 20px #f86242;
   }
+}
+header {
+  border-bottom: 3px solid #6cb948;
 }
 
 /*# sourceMappingURL=70013.css.map*/

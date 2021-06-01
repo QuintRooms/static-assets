@@ -132,13 +132,11 @@ export default class Modal {
         this.modal_triggers = document.querySelector(`.${this.modal_id}-trigger`);
         this.outer_modal = document.querySelector('.outer-modal');
         this.modal_closers = document.querySelectorAll(`.button-close-modal`);
-        console.log(this.modal_closers);
         this.overlay = document.querySelector('.overlay');
         return {};
     }
 
     openListeners() {
-        // await utilities.waitForSelectorInDOM(`.${this.modal_id}-trigger`);
         this.modal_triggers.addEventListener('click', this.showModal);
     }
 
@@ -205,7 +203,6 @@ export default class Modal {
 
     createExitButton() {
         const outer_modal = document.querySelector('.outer-modal');
-        console.log('createExitButton');
         if (this.exitButtonText) {
             // const lower_hr = document.createElement('hr');
             // lower_hr.classList.add('solid');

@@ -1,0 +1,33 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #48a8a5;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #48a8a5;
+$secondary_color: #db614a;
+$primary_text_color: #fff;
+$secondary_text_color: #db614a;
+$border_color: #48a8a5;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #48a8a5;
+$button_hover_border_color: #48a8a5;
+$google_font_name: 'Montserrat';
+$site_name: 'sea_hear_now_21-70014';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.logo img {
+  width: 250px;
+}
+
+.lucid-banner {
+  background-color: #67ce9c;
+}
+
+#lucid-link {
+  color: #67ce9c;
+}

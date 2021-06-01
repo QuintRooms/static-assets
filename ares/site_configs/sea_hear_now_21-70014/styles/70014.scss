@@ -7,7 +7,7 @@ $background_color: #fff;
 $primary_color: #48a8a5;
 $secondary_color: #db614a;
 $primary_text_color: #fff;
-$secondary_text_color: #db614a;
+$secondary_text_color: #48a8a5;
 $border_color: #48a8a5;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #48a8a5;
@@ -25,9 +25,21 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 }
 
 .lucid-banner {
-  background-color: #67ce9c;
+  background-color: #db614a;
 }
 
 #lucid-link {
-  color: #67ce9c;
+  color: #db614a;
+}
+
+.ArnRateButton .ArnShowRatesLink  {
+  // border-width: 2px;
+  background: #db614a;
+  border-color: #db614a;
+  font-weight: bold;
+  &:hover{
+    border-width: 2px;
+    border-color: #db614a;
+    color: #db614a;
+  }
 }

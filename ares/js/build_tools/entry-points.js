@@ -88,6 +88,7 @@ module.exports = () => {
         entry_points = {
             'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
+            'sea_hear_now_21-70014': './src/70014.js', // sea hear_now_21
             // 'music_midtown_21-70013': './src/70013.js', // music midtown_21
         };
     }

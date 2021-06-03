@@ -52,7 +52,7 @@ module.exports = () => {
             // 'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
-            'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
+            // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
             // 'railbird_21-68382': './src/68382.js', // railbird 21
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
@@ -85,12 +85,14 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+ 
         };
     }
 

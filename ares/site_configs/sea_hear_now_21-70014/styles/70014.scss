@@ -21,7 +21,9 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
 .logo img {
-  width: 250px;
+  width: 200px;
+  margin-top:-15px;
+  margin-bottom:-15px;
 }
 
 .lucid-banner {

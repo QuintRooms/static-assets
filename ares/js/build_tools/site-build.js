@@ -28,7 +28,8 @@ function updateEnv() {
     const env_data = `environment=local
 site_id=${site_id}
 directory_name=${site_name}
-isCUG=false`;
+isCUG=false
+domain=hotelsforhope.com`;
     const resbeat_env = `environment=local
 site_id=${site_id}
 directory_name=${site_name}

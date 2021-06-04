@@ -60,6 +60,7 @@ module.exports = () => {
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
+            // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
             // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees 2020
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
@@ -81,18 +82,18 @@ module.exports = () => {
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'packers_experiences_retail-61430': './src/61430.js', // Music Midtown Production 2021
+            // 'packers_experiences_retail-61430': './src/61430.js', // Packers Experiences Retail 2021
+            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
+            // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
- 
         };
     }
 

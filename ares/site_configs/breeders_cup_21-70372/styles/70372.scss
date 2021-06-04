@@ -1,0 +1,20 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: flex-start;
+$logo_max_width: 400px;
+$background_color: #fff;
+$primary_color: #512b6d;
+$secondary_color: #cba052;
+$primary_text_color: #fff;
+$secondary_text_color: #512b6d;
+$border_color: #512b6d;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #cba052;
+$button_hover_border_color: #cba052;
+$google_font_name: 'Montserrat';
+$site_name: 'breeders_cup_20-59788';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';

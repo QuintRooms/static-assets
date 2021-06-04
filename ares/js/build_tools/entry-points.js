@@ -53,6 +53,7 @@ module.exports = () => {
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
+            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_21-68382': './src/68382.js', // railbird 21
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
@@ -86,7 +87,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
+            // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
         };
 
         // local environment

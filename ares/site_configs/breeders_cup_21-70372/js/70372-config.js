@@ -17,7 +17,7 @@ export default function siteConfig() {
         lodging: {
             event_id: 50149,
             event_name: "Breeders' Cup",
-            event_dates: '',
+            event_dates: '11/05/2021 - 11/06/2021',
             redirect_date: '',
             redirect_url: '',
             is_lrg: false,
@@ -72,7 +72,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
         has_group_booking_banner: true,
-        group_booking_form_url: '',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Breeders',
         has_landing_page: false,
         has_custom_emails: false,
         hide_search_on_landing_page: true,

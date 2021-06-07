@@ -17,7 +17,7 @@ export default function siteConfig() {
         lodging: {
             event_id: 50149,
             event_name: "Breeders' Cup",
-            event_dates: '11/05/2021 - 11/06/2021',
+            event_dates: '',
             redirect_date: '',
             redirect_url: '',
             is_lrg: false,

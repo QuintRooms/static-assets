@@ -16,7 +16,7 @@ export default function siteConfig() {
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
             event_id: 50149,
-            event_name: "Breeder's Cup",
+            event_name: "Breeders' Cup",
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

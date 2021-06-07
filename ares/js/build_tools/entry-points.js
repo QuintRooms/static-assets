@@ -24,6 +24,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
+            // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
@@ -53,6 +54,7 @@ module.exports = () => {
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Production 2021
+            // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_21-68382': './src/68382.js', // railbird 21
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
@@ -83,11 +85,9 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'packers_experiences_retail-61430': './src/61430.js', // Packers Experiences Retail 2021
-            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
         };
 
         // local environment

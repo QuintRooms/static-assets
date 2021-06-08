@@ -84,7 +84,7 @@ module.exports = () => {
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'packers_experiences_retail-61430': './src/61430.js', // Packers Experiences Retail 2021
+            'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop

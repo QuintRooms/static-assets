@@ -112,7 +112,7 @@ span.exclusive-rate {
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    color: #FE5055;
+    color: #0c474c;
   }
 }
 @media screen and (max-width: 800px) {
@@ -138,7 +138,7 @@ span.exclusive-rate {
 .receiptLink,
 .returnResultsInfo a,
 .supportInfo a, .SinglePropDetail #show-more-or-less {
-  color: #FE5055;
+  color: #0c474c;
 }
 
 .percentSavings {
@@ -206,7 +206,7 @@ a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .boo
 
 @media screen and (max-width: 800px) {
   #theBookingPage legend#policies-legend {
-    color: #FE5055;
+    color: #0c474c;
   }
 }
 header {
@@ -360,7 +360,7 @@ header {
 }
 .lucid-banner .lucid-button a {
   text-decoration: none;
-  color: #FE5055;
+  color: #0c474c;
   font-size: 13px;
   font-weight: 700;
   width: 100%;
@@ -418,7 +418,7 @@ header {
   }
 }
 .ArnTripAdvisorDetails.HasReviews .ratingCount {
-  background: #FE5055;
+  background: #0c474c;
 }
 
 div .ArnShowRatesLink {
@@ -429,6 +429,19 @@ div .ArnShowRatesLink {
 div .ArnShowRatesLink:hover {
   border-width: 2px;
   border-color: #FE5055;
+  color: #FE5055;
+}
+
+.logo img {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.lucid-banner {
+  background-color: #FE5055;
+}
+
+#lucid-link {
   color: #FE5055;
 }
 

@@ -7,7 +7,7 @@ $background_color: #fff;
 $primary_color: #000000;
 $secondary_color: #FE5055;
 $primary_text_color: #fff;
-$secondary_text_color: #FE5055;
+$secondary_text_color: #0c474c;
 $border_color: #000000;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #000000;
@@ -21,7 +21,7 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
 .ArnTripAdvisorDetails.HasReviews .ratingCount {
-  background: #FE5055;
+  background: #0c474c;
 }
 
 div .ArnShowRatesLink  {
@@ -34,4 +34,17 @@ div .ArnShowRatesLink  {
     border-color: #FE5055;
     color: #FE5055;
   }
+}
+
+.logo img {
+  margin-top:-10px;
+  margin-bottom:-10px;
+}
+
+.lucid-banner {
+  background-color: #FE5055;
+}
+
+#lucid-link {
+  color: #FE5055;
 }

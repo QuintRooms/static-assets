@@ -15,7 +15,7 @@ export default function siteConfig() {
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
-            event_id: '',
+            event_id: 50214,
             event_name: 'Voodoo Music + Arts Experience',
             event_dates: '',
             redirect_date: '',

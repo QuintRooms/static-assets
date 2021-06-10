@@ -95,6 +95,8 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
+            // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
         };
     }
 

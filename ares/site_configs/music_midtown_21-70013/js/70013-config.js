@@ -78,7 +78,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Hotels for Hope',
         has_group_booking_banner: true,
-        group_booking_form_url: '',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Music%20Midtown',
         has_landing_page: false,
         has_custom_emails: false,
         hide_search_on_landing_page: true,

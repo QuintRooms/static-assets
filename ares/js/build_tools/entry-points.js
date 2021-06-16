@@ -77,6 +77,8 @@ module.exports = () => {
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'voodoo_21-60792': './src/60792.js', // Voodoo Festival 2021
+            // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
+            // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
         };
 
         // develop environment
@@ -95,8 +97,6 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
-            // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
         };
     }
 

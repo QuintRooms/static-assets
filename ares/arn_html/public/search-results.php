@@ -4,7 +4,7 @@
 <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
 <?php
     $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
-    if($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs'){
+    if ($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs') {
         $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
     }
     include $config;
@@ -16,7 +16,8 @@
     <meta name="description" content="Hotels in austin, tx and nearby cities">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
-    <meta name="originalParams" content="type=hotellist&amp;city=Austin, TX">
+    <meta name="originalParams"
+        content="longitude=-87.61893300000000&nights=4&type=geo&map=&cid=FOM&useMiles=&latitude=41.87257200000000&utm_source=internal&checkin=7/29/2021&propertytypes=Hotel,Motel,Resort,Hostel,Ext. Stay,Boutique,Weekly Rentals&siteid=60827&groupid=44026&properties=x16404,x16521,x642874,x34049,x20578,x1364838,x483180,x607674,x35487,x258974,x230052,x3327060&currency=USD&locationlabel=Grant Park&radius=12">
     <meta content="IE=EmulateIE11" http-equiv="X-UA-Compatible">
     <meta content="standard" name="theme">
     <meta content="en_US" name="locale">
@@ -4640,7 +4641,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         src="https://cdn.iubenda.com/cs/bridge/iframe_bridge-1.1.0.html?origin=https%3A%2F%2Fevents.hotelsforhope.com%2Fv6%2Fsearch%2Fcity&amp;meth=%22compact%22"
         style="width:0px; height:0px; display:none; visibility:hidden"></iframe>
 
-     <?php include getenv('includes_path') . 'footer.php'; ?>
+    <?php include getenv('includes_path') . 'footer.php'; ?>
 </body>
 
 </html>

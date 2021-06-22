@@ -4269,8 +4269,8 @@ input[type='search']::-webkit-search-results-decoration {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
     margin-bottom: 20px;
+    padding: .75rem;
 }
 
 .banner-content {
@@ -4281,12 +4281,14 @@ input[type='search']::-webkit-search-results-decoration {
 
 .banner-content a {
     max-width: 130px;
+    width: 100%;
     margin-left: 40px;
+
 }
 
 .banner-content img {
     width: 100%;
-    padding: 10px;
+    filter: brightness(0) invert(1);
 }
 
 .banner-content span {
@@ -4300,8 +4302,7 @@ input[type='search']::-webkit-search-results-decoration {
     background: #fff;
     display: flex;
     margin-right: 50px;
-    width: 150px;
-    height: 30px;
+    text-align: center;
 }
 
 .custom-button a {
@@ -4313,6 +4314,7 @@ input[type='search']::-webkit-search-results-decoration {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 4px 12px;
 }
 
 .custom-button a:hover {
@@ -4323,7 +4325,7 @@ input[type='search']::-webkit-search-results-decoration {
     .banner-content {
         display: flex;
         align-items: center;
-        width: 75%;
+        width: 60%;
     }
 
     .banner-content span {
@@ -4339,7 +4341,6 @@ input[type='search']::-webkit-search-results-decoration {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 50px;
     }
 
     .banner-content span {
@@ -4351,15 +4352,26 @@ input[type='search']::-webkit-search-results-decoration {
     }
 
     .custom-button {
-        width: 180px;
-        height: 30px;
         margin-right: 10px;
     }
 }
 
 @media screen and (max-width: 400px) {
+    .stay-22-banner{
+        flex-direction: column;
+    }
+
+    .banner-content{
+        justify-content: center;
+    }
+
     .banner-content a {
-        margin-left: 10px;
+        margin-left: 0;
+    }
+
+    .custom-button{
+        margin-right: 0;
+        margin-top: 8px;
     }
 }
 

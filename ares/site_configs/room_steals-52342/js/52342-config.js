@@ -46,7 +46,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `https://roomsteals.com/favicon-32x32.png`,
         header: {
-            logo_file_location: `https://roomsteals.com/images/logo/Logo_Dark.svg`,
+            logo_file_location: `https://roomsteals.com/img/logo/Logo_Dark.svg`,
             logo_outbound_url: 'https://roomsteals.com/home/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,

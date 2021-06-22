@@ -49,7 +49,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: 'https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png',
         header: {
-            logo_file_location: 'https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://hotelsforhope.com',
         },
         map_marker_image_url: 'https://static.hotelsforhope.com/portals/images/h4h-fav.ico',

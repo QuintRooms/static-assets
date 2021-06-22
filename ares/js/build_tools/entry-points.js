@@ -51,10 +51,11 @@ module.exports = () => {
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
-            // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
+            'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
+            // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_21-68382': './src/68382.js', // railbird 21
@@ -91,7 +92,6 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
         };
 
         // local environment
@@ -103,3 +103,5 @@ module.exports = () => {
 
     return entry_points;
 };
+
+//OLD PORTALS

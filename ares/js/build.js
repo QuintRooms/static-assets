@@ -503,7 +503,7 @@ export default class BasePortal {
         }
 
         if (search_params.get('destination') === null || location_text === 'location') {
-            location_text = original_params.get('destination');
+            location_text = original_params.get('locationlabel').toString();
         }
 
         utilities.createHTML(

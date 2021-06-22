@@ -496,13 +496,13 @@ export default class BasePortal {
         check_out_date = dayjs(check_out_text);
 
         if (
-            (this.site_config.site_type.toLowerCase() === 'cug' && search_params.get('destination') !== null) ||
-            (this.site_config.site_type.toLowerCase() === 'retail' && search_params.get('destination') !== null)
+            (this.site_config.site_type.toLowerCase() === 'cug' && original_params.get('destination') !== null) ||
+            (this.site_config.site_type.toLowerCase() === 'retail' && original_params.get('destination') !== null)
         ) {
-            location_text = search_params.get('destination');
+            location_text = original_params.get('destination');
         }
 
-        if (this.site_config.site_type.toLowerCase() === 'lodging' && (search_params.get('destination') === null || location_text === 'location')) {
+        if (this.site_config.site_type.toLowerCase() === 'lodging' && (original_params.get('destination') === null || location_text === 'location')) {
             location_text = original_params.get('locationlabel').toString();
         }
 

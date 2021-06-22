@@ -51,7 +51,6 @@ module.exports = () => {
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
-            // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
@@ -89,9 +88,10 @@ module.exports = () => {
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
-            // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
-            // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
-            // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
+            'resbeat_test-62011': './src/62011.js', // Resbeat Test
+            'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
         };
 
         // local environment

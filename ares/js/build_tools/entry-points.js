@@ -39,15 +39,15 @@ module.exports = () => {
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'firefly_21-64866': './src/64866.js', // firefly 21
-            'governors_ball_21-70366': './src/70366.js', // governors ball_21
+            // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
-            'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
+            // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
             // 'hof_enshrinement_friends_fam_21-66018': './src/66018.js', // hof enshrinement_friends_fam_21
             // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
             // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
             // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
-            'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
@@ -57,8 +57,8 @@ module.exports = () => {
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
-            // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
-            'railbird_21-68382': './src/68382.js', // railbird 21
+            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
+            // 'railbird_21-68382': './src/68382.js', // railbird 21
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test

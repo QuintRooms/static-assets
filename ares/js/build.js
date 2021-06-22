@@ -502,7 +502,7 @@ export default class BasePortal {
             location_text = search_params.get('destination');
         }
 
-        if (search_params.get('destination') === null || location_text === 'location') {
+        if (this.site_config.site_type.toLowerCase() === 'lodging' && (search_params.get('destination') === null || location_text === 'location')) {
             location_text = original_params.get('locationlabel').toString();
         }
 

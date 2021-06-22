@@ -15,7 +15,7 @@ module.exports = () => {
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
-            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
             // 'bj_las_vegas_21-64190': './src/64190.js', // Barrett-Jackson Las Vegas 2021
             // 'bj_northeast_20-60086': './src/60086.js', // Barrett-Jackson Northeast 2020
@@ -92,7 +92,8 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+
         };
 
         // local environment

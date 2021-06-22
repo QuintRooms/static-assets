@@ -93,17 +93,17 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
-
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'governors_ball_21-70366': './src/70366.js', // governors ball_21
         };
     }
 
     return entry_points;
 };
 
-//OLD PORTALS
+// OLD PORTALS

@@ -44,16 +44,18 @@ class ChildPortal extends BasePortal {
 
         const source = search_params.get('utm_source');
         const medium = search_params.get('utm_medium');
+        const campaign = search_params.get('utm_campaign');
+
         const check_in = search_params.get('checkin');
 
         if (check_in === '10/1/2021') weekend_btns[0].style.display = 'none';
         if (check_in === '10/8/2021') weekend_btns[1].style.display = 'none';
 
-        if (source === null || medium === null) return;
+        if (source === null || medium === null || campaign === null) return;
 
         weekend_btns.forEach((e) => {
             const href = e.getAttribute('href');
-            e.href = `${href}&utm_source=${source}&utm_medium=${medium}`;
+            e.href = `${href}&utm_campaign=${campaign}&utm_source=${source}&utm_medium=${medium}`;
         });
 
         // returning a value for testing purposes only

@@ -3011,8 +3011,8 @@
             N = Object.prototype,
             U = 'function' == typeof R && !!L.f,
             $ = r.QObject,
-            W = !$ || !$.prototype || !$.prototype.findChild,
-            G =
+            G = !$ || !$.prototype || !$.prototype.findChild,
+            W =
                 i &&
                 u(function () {
                     return (
@@ -3050,7 +3050,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, Y) || P(e, Y, x(1, {})), (e[Y][t] = !0)), G(e, t, n))
+                        ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, Y) || P(e, Y, x(1, {})), (e[Y][t] = !0)), W(e, t, n))
                         : P(e, t, n)
                 );
             },
@@ -3083,9 +3083,9 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(B, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(B, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), W(this, e, x(1, n));
                         };
-                    return i && W && G(N, e, {configurable: !0, set: t}), V(e);
+                    return i && G && W(N, e, {configurable: !0, set: t}), V(e);
                 }).prototype,
                 'toString',
                 function () {
@@ -3114,10 +3114,10 @@
                 for (var t in H) if (H[t] === e) return t;
             },
             useSetter: function () {
-                W = !0;
+                G = !0;
             },
             useSimple: function () {
-                W = !1;
+                G = !1;
             },
         }),
             a(a.S + a.F * !U, 'Object', {
@@ -7798,12 +7798,13 @@
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     if (!document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) {
-                                        e.next = 5;
+                                        e.next = 6;
                                         break;
                                     }
                                     return (e.next = 3), s.waitForSelectorInDOM('header');
                                 case 3:
-                                    (n = document.querySelector('span[itemprop="addressLocality"]').textContent),
+                                    (null !== (n = s.getMetaTagContent('SearchLocation')) && '' !== n) ||
+                                        (n = document.querySelector('span[itemprop="addressLocality"]').textContent),
                                         document
                                             .querySelector('header')
                                             .insertAdjacentHTML(
@@ -7812,18 +7813,18 @@
                                                     .concat(t, '" target="_blank">\n                        <img src="')
                                                     .concat(
                                                         c.path,
-                                                        '/images/vrbo_logo.png" alt="VRBO logo">\n                    </a>\n                    <span>Want a rental near '
+                                                        '/images/vrbo_logo.png" alt="VRBO logo">\n                    </a>\n                    <span>Looking for a rental? Check out the options near '
                                                     )
                                                     .concat(
                                                         n,
-                                                        '?</span>\n                </div>\n                <div class="custom-button">\n                    <a id="custom-link" target="_blank" href="'
+                                                        '!</span>\n                </div>\n                <div class="custom-button">\n                    <a id="custom-link" target="_blank" href="'
                                                     )
                                                     .concat(
                                                         t,
-                                                        '">Search VRBO Options</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                        '">Book Vrbo</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
                                                     )
                                             );
-                                case 5:
+                                case 6:
                                 case 'end':
                                     return e.stop();
                             }

@@ -12,7 +12,12 @@ const utilities = new Utilities();
 export default async function addStay22Banner(link) {
     if (document.querySelector('.RootBody') || document.querySelector('.SearchHotels')) {
         await utilities.waitForSelectorInDOM('header');
-        const destination = document.querySelector('span[itemprop="addressLocality"]').textContent;
+
+        let destination = document.querySelector('span[itemprop="SearchLocation"]').textContent;
+
+        if (destination === null || destination === '') {
+            destination = document.querySelector('span[itemprop="addressLocality"]').textContent;
+        }
 
         document.querySelector('header').insertAdjacentHTML(
             'afterend',

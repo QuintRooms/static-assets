@@ -22,10 +22,10 @@ export default async function addStay22Banner(link) {
                     <a class="airbnb-logo" href="${link}" target="_blank">
                         <img src="${env_path.path}/images/vrbo_logo.png" alt="VRBO logo">
                     </a>
-                    <span>Want a rental near ${destination}?</span>
+                    <span>Looking for a rental? Check out the options near ${destination}!</span>
                 </div>
                 <div class="custom-button">
-                    <a id="custom-link" target="_blank" href="${link}">Search VRBO Options</a>
+                    <a id="custom-link" target="_blank" href="${link}">Book Vrbo</a>
                 </div>
             </div>
             <style>

@@ -15,7 +15,7 @@ module.exports = () => {
             // 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
-            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
             // 'bj_las_vegas_21-64190': './src/64190.js', // Barrett-Jackson Las Vegas 2021
             // 'bj_northeast_20-60086': './src/60086.js', // Barrett-Jackson Northeast 2020
@@ -39,7 +39,7 @@ module.exports = () => {
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'firefly_21-64866': './src/64866.js', // firefly 21
-            // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
+            'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
@@ -93,14 +93,12 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
-
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'governors_ball_21-70366': './src/70366.js', // governors ball_21
         };
     }
 

@@ -7803,12 +7803,13 @@
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     if (!document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) {
-                                        e.next = 5;
+                                        e.next = 6;
                                         break;
                                     }
                                     return (e.next = 3), s.waitForSelectorInDOM('header');
                                 case 3:
-                                    (n = document.querySelector('span[itemprop="addressLocality"]').textContent),
+                                    (null !== (n = document.querySelector('span[itemprop="SearchLocation"]').textContent) && '' !== n) ||
+                                        (n = document.querySelector('span[itemprop="addressLocality"]').textContent),
                                         document
                                             .querySelector('header')
                                             .insertAdjacentHTML(
@@ -7828,7 +7829,7 @@
                                                         '">Book Vrbo</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
                                                     )
                                             );
-                                case 5:
+                                case 6:
                                 case 'end':
                                     return e.stop();
                             }

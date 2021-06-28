@@ -22,7 +22,7 @@ const sites = {
     },
     60278: {
         client_name: 'Ares Child',
-        site_url: 'https://events.hotelsforhope.com/v6/',
+        site_url: 'https://events.quintrooms.com/v6/',
         primary_color: '#5dc3ac',
         secondary_color: '',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60278/img/logo.png',
@@ -30,7 +30,7 @@ const sites = {
     },
     60279: {
         client_name: 'Ares Child',
-        site_url: 'https://events.hotelsforhope.com/v6/',
+        site_url: 'https://events.quintrooms.com/v6/',
         primary_color: '#5dc3ac',
         secondary_color: '',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/ares_child-60279/img/logo.png',
@@ -38,7 +38,7 @@ const sites = {
     },
     62011: {
         client_name: 'RESBEAT Test',
-        site_url: 'https://events.hotelsforhope.com/v6/',
+        site_url: 'https://events.quintrooms.com/v6/',
         primary_color: '#215853',
         secondary_color: '#e2ad37',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
@@ -46,7 +46,15 @@ const sites = {
     },
     62725: {
         client_name: 'RESBEAT Points Demo',
-        site_url: 'https://events.hotelsforhope.com/v6/',
+        site_url: 'https://events.quintrooms.com/v6/',
+        primary_color: '#215853',
+        secondary_color: '#e2ad37',
+        logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
+        uses_points: true,
+    },
+    62686: {
+        client_name: 'RESBEAT Service Squad Demo',
+        site_url: 'https://events.quintrooms.com/v6/',
         primary_color: '#215853',
         secondary_color: '#e2ad37',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/resbeat_test-62011/img/logo.png',
@@ -54,7 +62,7 @@ const sites = {
     },
     63710: {
         client_name: 'Pro Football Hall of Fame Gold Jackets Club',
-        site_url: 'https://events.hotelsforhope.com/v6/',
+        site_url: 'https://events.quintrooms.com/v6/',
         primary_color: '#122854',
         secondary_color: '#da2128',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_cug-63710/img/logo.png',
@@ -62,7 +70,7 @@ const sites = {
     },
     63711: {
         client_name: 'Pro Football Hall of Fame Travel Club',
-        site_url: 'https://events.hotelsforhope.com/v6/',
+        site_url: 'https://events.quintrooms.com/v6/',
         primary_color: '#122854',
         secondary_color: '#da2128',
         logo_url: 'https://dev-static.hotelsforhope.com/ares/site_configs/hof_points_cug-63711/img/logo.png',

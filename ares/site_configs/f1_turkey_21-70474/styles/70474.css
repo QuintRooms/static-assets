@@ -470,11 +470,11 @@ legend,
   display: none;
 }
 
-#lightbox {
+body #lightbox {
   display: none;
 }
 
-#overlay {
+body #overlay {
   display: none;
 }
 

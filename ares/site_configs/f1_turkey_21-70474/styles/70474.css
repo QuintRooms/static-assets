@@ -470,4 +470,12 @@ legend,
   display: none;
 }
 
+#lightbox {
+  display: none;
+}
+
+#overlay {
+  display: none;
+}
+
 /*# sourceMappingURL=70474.css.map*/

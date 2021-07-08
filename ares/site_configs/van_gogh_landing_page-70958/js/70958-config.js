@@ -2,7 +2,7 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 const site_id = 70958;
-const directory_name = `bj_landing_page-${site_id}`;
+const directory_name = `van_gogh_landing_page-${site_id}`;
 
 export default function siteConfig() {
     return {

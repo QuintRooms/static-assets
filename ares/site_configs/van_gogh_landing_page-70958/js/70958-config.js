@@ -84,13 +84,13 @@ export default function siteConfig() {
             {
                 name: '2021 Exhibit Phoenix',
                 display_date: 'April 08 - 10, 2021',
-                end_date: '04/12/2021', // M/D/YYYY
+                end_date: '10/04/2021', // M/D/YYYY
                 portal_url: `http://events.${process.env.domain}/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021`,
             },
             {
                 name: '2021 Las Vegas Auction',
                 display_date: 'June 17 - 19, 2021',
-                end_date: '06/22/2021', // M/D/YYYY
+                end_date: '10/04/2021', // M/D/YYYY
                 portal_url: `https://events.${process.env.domain}/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021`,
             },
         ],

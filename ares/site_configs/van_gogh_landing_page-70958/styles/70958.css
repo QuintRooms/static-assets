@@ -322,11 +322,15 @@ header {
   }
 }
 .event-1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/bj_landing_page-58196/img/vegas/crowd.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/bj_landing_page-58196/img/dallas/dallas_01.jpg);
 }
 
 .event-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/bj_landing_page-58196/img/scottsdale/banner2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/bj_landing_page-58196/img/los_angeles/la_01.jpg);
+}
+
+.event-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/bj_landing_page-58196/img/phoenix/phx_01.jpg);
 }
 
 .ArnSupportBottom .searchLink, .ArnSupportBottom .dvd:first-of-type, .ArnSupportBottom .dvd:nth-of-type(2) {

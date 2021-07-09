@@ -28,13 +28,10 @@ class ChildPortal extends BasePortal {
         const check_out_input = document.querySelector('#theDatePrompt #theQuickCheckOut');
         const current_day = dayjs().format('MM/DD/YYYY');
 
-        console.log('check-in-input & check-out-input', check_in_input, check_out_input);
-        console.log(`dayjs().format('MM/DD/YYYY')`, dayjs().format('MM/DD/YYYY'));
-
         if (!check_in_input || !check_out_input) return;
 
         if (check_in_input < current_day) {
-            check_in_input.setAttribute('value', dayjs().format('MM/DD/YYYY'));
+            check_in_input.setAttribute('value', current_day);
             check_out_input.setAttribute('value', dayjs().add(3, 'day').format('MM/DD/YYYY'));
         }
     }

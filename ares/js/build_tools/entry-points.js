@@ -100,6 +100,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };
     }
 

@@ -37,10 +37,10 @@ class ChildPortal extends BasePortal {
             check_in_input.setAttribute('value', current_day);
             check_out_input.setAttribute('value', dayjs().add(3, 'day').format('MM/DD/YYYY'));
         }
+
+        const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
+        date_prompt_image[0].src = `${env_path.path}/site_configs/van_gogh_phoenix-71012/img/logo_b.png`;
     }
 }
-
-const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
-date_prompt_image[0].src = `${env_path.path}/site_configs/van_gogh_phoenix-71012/img/logo_b.png`;
 
 new ChildPortal();

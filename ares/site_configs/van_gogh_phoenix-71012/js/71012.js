@@ -40,7 +40,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-const date_prompt_image = document.querySelectorAll('#datePromptContainer img');
-date_prompt_image.src = `${env_path.path}/site_configs/van_gogh_phoenix-71012/img/logo_b.png`;
+const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
+date_prompt_image[0].src = `${env_path.path}/site_configs/van_gogh_phoenix-71012/img/logo_b.png`;
 
 new ChildPortal();

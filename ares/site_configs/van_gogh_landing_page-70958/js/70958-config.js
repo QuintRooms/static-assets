@@ -86,16 +86,20 @@ export default function siteConfig() {
                 name: 'Van Gogh Immersive Exhibit Phoenix',
                 display_date: '08/26/21 - 11/28/21',
                 end_date: '11/29/2021', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021`,
+                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71012&longitude=-111.9257&latitude=33.4987&promptForCheckIn&checkin=08/26/2021&nights=3&map&locationlabel=Immersive+Van+Gogh+Exhibition&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique`,
             },
             {
                 name: 'Van Gogh Immersive Exhibit Los Angeles',
                 display_date: '07/31/21 - 01/02/22',
                 end_date: '01/03/2022', // M/D/YYYY
-                portal_url: `https://events.${process.env.domain}/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021`,
+                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71013&longitude=-118.3291&latitude=34.0979&promptForCheckIn&checkin=07/31/2021&nights=3&map&locationlabel=Immersive+Van+Gogh+Exhibition&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique`,
             },
         ],
     };
 }
 
 //https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71011&longitude=-96.79271539517177&latitude=32.77849689607953&radius=100&checkin=10/02/2021&nights=1&map&locationlabel=Immersive+Van+Gogh+Exhibition&cid=GROUP-EVENT-EMAIL&pageSize=15&useMiles&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique
+
+//Los angeles 34.097911067634115, -118.32911800238742
+
+//phoenix 33.49876268214399, -111.9257317288929

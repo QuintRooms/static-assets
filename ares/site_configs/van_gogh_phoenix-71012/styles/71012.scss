@@ -1,0 +1,110 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #000;
+$logo_flex_position: center;
+$logo_max_width: 250px;
+$background_color: #fff;
+$secondary_background_color: #000;
+$primary_color: #000;
+$secondary_color: #000;
+$primary_text_color: #fff;
+$secondary_text_color: #000;
+$border_color: #000;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #f8c03d;
+$button_hover_border_color: #f8c03d;
+$google_font_name: 'Montserrat';
+$site_name: 'van_gogh_phoenix-71012';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink  {
+  border-width: 2px;
+  background: #fcb214;
+  color: #000;
+  border-color: #fcb214;
+  font-weight: bold;
+  &:hover{
+    background: #fff;
+    border-width: 2px;
+    color: #fcb214;
+    border-color: #fcb214;
+  }
+}
+
+.lucid-banner .lucid-button {
+  background: #fcb214;
+  border: 2px solid #000;
+  &:hover{
+    background: #fff;
+    border-width: 2px;
+    color: #fcb214;
+    border-color: #fcb214;
+  }
+}
+
+#lucid-link {
+  color: #000;
+}
+
+.lucid-banner {
+  background: #fcb214;
+}
+
+.lucid-content #desktop {
+  color: #000;
+}
+
+
+//------------------------------------------------------
+
+//DARK ALTERNATE
+
+// @import '../../../styles/sass/sass-functions/func.scss';
+
+// $header_background: #000;
+// $logo_flex_position: center;
+// $logo_max_width: 250px;
+// $background_color: #000;
+// $secondary_background_color: '';
+// $primary_color: #000;
+// $secondary_color: #000;
+// $primary_text_color: #fff;
+// $secondary_text_color: #fff;
+// $border_color: #000;
+// $button_hover_background_color: #fff;
+// $button_hover_text_color: #f8c03d;
+// $button_hover_border_color: #f8c03d;
+// $google_font_name: 'Montserrat';
+// $site_name: 'hof_canton-62681';
+// $path: set-path($env);
+// $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+// @import '../../../styles/sass/config-styles/base-styles.config.scss';
+// @import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+// .ArnRateButton .ArnShowRatesLink  {
+//   border-width: 2px;
+//   background: #fcb214;
+//   color: #000;
+//   border-color: #fcb214;
+//   font-weight: bold;
+//   &:hover{
+//     background: #fff;
+//     border-width: 2px;
+//     color: #fcb214;
+//     border-color: #fcb214;
+//   }
+// }
+
+// #lucid-link {
+//   color: #000;
+// }
+
+// .lucid-banner {
+//   background: #fcb214;
+// }
+

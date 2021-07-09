@@ -30,10 +30,9 @@ class ChildPortal extends BasePortal {
 
         if (!check_in_input || !check_out_input) return;
 
-        if (check_in_input > current_day) {
-            console.log('Date comparison works');
-            // check_in_input.setAttribute('value', current_day);
-            // check_out_input.setAttribute('value', dayjs().add(3, 'day').format('MM/DD/YYYY'));
+        if (check_in_input < current_day) {
+            check_in_input.setAttribute('value', current_day);
+            check_out_input.setAttribute('value', dayjs().add(3, 'day').format('MM/DD/YYYY'));
         }
     }
 }

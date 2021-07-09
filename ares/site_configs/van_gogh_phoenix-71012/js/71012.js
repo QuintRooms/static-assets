@@ -1,6 +1,9 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './71012-config';
 import Utilities from '../../../js/utilities';
+import Path from '../../../js/build_tools/path';
+
+const env_path = new Path();
 
 const dayjs = require('dayjs');
 
@@ -36,5 +39,8 @@ class ChildPortal extends BasePortal {
         }
     }
 }
+
+const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
+date_prompt_image.src = `${env_path.path}/site_configs/van_gogh_phoenix-71012/img/logo_b.png`;
 
 new ChildPortal();

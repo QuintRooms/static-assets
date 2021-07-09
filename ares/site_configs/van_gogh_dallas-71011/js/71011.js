@@ -27,6 +27,9 @@ class ChildPortal extends BasePortal {
         const check_in_input = document.querySelector('#theDatePrompt #theQuickCheckIn');
         const check_out_input = document.querySelector('#theDatePrompt #theQuickCheckOut');
 
+        console.log('check-in-input & check-out-input', check_in_input, check_out_input);
+        console.log(`dayjs().format('MM/DD/YYYY')`, dayjs().format('MM/DD/YYYY'));
+
         if (!check_in_input || !check_out_input) return;
 
         check_in_input.setAttribute('value', dayjs().format('MM/DD/YYYY'));

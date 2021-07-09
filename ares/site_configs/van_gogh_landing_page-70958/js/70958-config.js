@@ -77,19 +77,19 @@ export default function siteConfig() {
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: 'Immersive Exhibit Dallas',
-                display_date: '08/0721 - 10/03/21',
+                name: 'Van Gogh Immersive Exhibit Dallas',
+                display_date: '08/07/21 - 10/03/21',
                 end_date: '10/04/2021', // M/D/YYYY
-                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71011&longitude=-96.7927&latitude=32.7784&checkin=10/02/2021&nights=1&map&locationlabel=Immersive+Van+Gogh+Exhibition&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique`,
+                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71011&longitude=-96.7927&latitude=32.7784&promptForCheckIn&checkin=08/07/2021&nights=3&map&locationlabel=Immersive+Van+Gogh+Exhibition&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique`,
             },
             {
-                name: 'Immersive Exhibit Phoenix',
+                name: 'Van Gogh Immersive Exhibit Phoenix',
                 display_date: '08/26/21 - 11/28/21',
                 end_date: '11/29/2021', // M/D/YYYY
                 portal_url: `http://events.${process.env.domain}/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021`,
             },
             {
-                name: 'Immersive Exhibit Los Angeles',
+                name: 'Van Gogh Immersive Exhibit Los Angeles',
                 display_date: '07/31/21 - 01/02/22',
                 end_date: '01/03/2022', // M/D/YYYY
                 portal_url: `https://events.${process.env.domain}/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021`,

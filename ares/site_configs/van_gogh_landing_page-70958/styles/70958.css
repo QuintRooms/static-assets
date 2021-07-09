@@ -322,15 +322,15 @@ header {
   }
 }
 .event-1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/van_gogh_landing_page-70958/img/dallas/dallas_01.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/van_gogh_landing_page-70958/img/dallas/dallas.jpg);
 }
 
 .event-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/van_gogh_landing_page-70958/img/los_angeles/la_01.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/van_gogh_landing_page-70958/img/los_angeles/la.jpg);
 }
 
 .event-3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/van_gogh_landing_page-70958/img/phoenix/phx_01.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/van_gogh_landing_page-70958/img/phoenix/phoenix.jpg);
 }
 
 .ArnSupportBottom .searchLink, .ArnSupportBottom .dvd:first-of-type, .ArnSupportBottom .dvd:nth-of-type(2) {

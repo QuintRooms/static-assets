@@ -513,7 +513,7 @@ export default class Utilities {
     }
 
     /**
-     *@description Updates property thumbnail images on the search results page when images are poor. 
+     *@description Updates property thumbnail images on the search results page when images are poor.
      *@param array - takes an array of objects that each contain the property ID to change the image on and the url of the image it should change to.
      *@example utilities.replacePropThumbImage({
                 prop_id: '663849',
@@ -529,5 +529,13 @@ export default class Utilities {
             const property_thumb = document.querySelector(`#theArnProperty${obj.prop_id} .ArnPropThumb img`);
             property_thumb.setAttribute('src', obj.image_url);
         });
+    }
+
+    getUrlParameter(param) {
+        const params = new URLSearchParams(window.location.search);
+
+        if (!param || !params) return;
+
+        return params.get(param);
     }
 }

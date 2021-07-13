@@ -77,22 +77,22 @@ export default function siteConfig() {
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
+                name: 'Van Gogh Immersive Exhibit Los Angeles',
+                display_date: '07/31/21 - 01/02/22',
+                end_date: '01/03/2022', // M/D/YYYY
+                portal_url: `https://events.quintrooms.com/group-event?id=50670&utm_campaign=Van%20Gogh%20LA&promptForCheckIn`,
+            },
+            {
                 name: 'Van Gogh Immersive Exhibit Dallas',
                 display_date: '08/07/21 - 10/03/21',
                 end_date: '10/04/2021', // M/D/YYYY
-                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71011&longitude=-96.7927&latitude=32.7784&checkin=8/7/2021&nights=3&map&locationlabel=Immersive+Van+Gogh+Exhibition&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique`,
+                portal_url: `https://events.quintrooms.com/group-event?id=50666&utm_campaign=Van%20Gogh%20Dallas&promptForCheckIn`,
             },
             {
                 name: 'Van Gogh Immersive Exhibit Phoenix',
                 display_date: '08/26/21 - 11/28/21',
                 end_date: '11/29/2021', // M/D/YYYY
-                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71012&longitude=-111.9257&latitude=33.4987&checkin=8/26/2021&nights=3&map&locationlabel=Immersive+Van+Gogh+Exhibition&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique`,
-            },
-            {
-                name: 'Van Gogh Immersive Exhibit Los Angeles',
-                display_date: '07/31/21 - 01/02/22',
-                end_date: '01/03/2022', // M/D/YYYY
-                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71013&longitude=-118.3291&latitude=34.0979&checkin=7/31/2021&nights=3&map&locationlabel=Immersive+Van+Gogh+Exhibition&propertytypes=Hotel,Motel,Resort,Hostel,Ext.%20Stay,Boutique`,
+                portal_url: `https://events.quintrooms.com/group-event?id=50668&utm_campaign=Van%20Gogh%20Phoenix&promptForCheckIn`,
             },
         ],
     };

@@ -74,6 +74,6 @@ export default function siteConfig() {
         is_resbeat_client: false,
         has_group_booking_banner: true,
         group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Van%20Gogh%20Phoenix',
-
+        email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo_b.png`,
     };
 }

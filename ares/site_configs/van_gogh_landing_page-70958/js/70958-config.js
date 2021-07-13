@@ -86,13 +86,13 @@ export default function siteConfig() {
                 name: 'Van Gogh Immersive Exhibit Dallas',
                 display_date: '08/07/21 - 10/03/21',
                 end_date: '10/04/2021', // M/D/YYYY
-                portal_url: `https://events.quintrooms.com/group-event?id=50666&utm_campaign=Van%20Gogh%20Dallas&promptForCheckIn`,
+                portal_url: `https://events.quintrooms.com/group-event?id=50666&utm_campaign=Van%20Gogh%20Dallas`,
             },
             {
                 name: 'Van Gogh Immersive Exhibit Phoenix',
                 display_date: '08/26/21 - 11/28/21',
                 end_date: '11/29/2021', // M/D/YYYY
-                portal_url: `https://events.quintrooms.com/group-event?id=50668&utm_campaign=Van%20Gogh%20Phoenix&promptForCheckIn`,
+                portal_url: `https://events.quintrooms.com/group-event?id=50668&utm_campaign=Van%20Gogh%20Phoenix`,
             },
         ],
     };

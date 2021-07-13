@@ -80,7 +80,7 @@ export default function siteConfig() {
                 name: 'Van Gogh Immersive Exhibit Los Angeles',
                 display_date: '07/31/21 - 01/02/22',
                 end_date: '01/03/2022', // M/D/YYYY
-                portal_url: `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=71013&longitude=-118.32911800000000&latitude=34.09773340000000&radius=100&checkin=7/31/2021&nights=3&map&locationlabel=Immersive+Van+Gogh+Exhibit&cid=GROUP-EVENT-EMAIL&promptForCheckIn&pageSize=10&useMiles&utm_campaign=Van%20Gogh%20LA`,
+                portal_url: `https://events.quintrooms.com/group-event?id=50670`,
             },
             {
                 name: 'Van Gogh Immersive Exhibit Dallas',

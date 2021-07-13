@@ -28,10 +28,13 @@ class ChildPortal extends BasePortal {
     }
 
     async getReferenceId() {
-        return fetch('https://club-seacret.cdn.prismic.io/api/v2', {
-            method: 'GET',
-            redirect: 'follow',
-        })
+        return fetch(
+            'https://club-seacret.cdn.prismic.io/api/v2?access_token=MC5ZT2NaZlJFQUFDOEFMNzU4.Yu-_ve-_ve-_ve-_vSpTKk7vv73vv71RFj15NyMgCu-_ve-_vRPvv73vv73vv71ZVO-_ve-_vUpf77-9#format=json',
+            {
+                method: 'GET',
+                redirect: 'follow',
+            }
+        )
             .then((response) => response.json())
             .then((result) => {
                 this.ref = result.refs[0].ref;
@@ -77,6 +80,7 @@ class ChildPortal extends BasePortal {
     }
 
     insertTripDetailsIntoHtml() {
+        // for testing purposes until the actual html is live
         document.body.insertAdjacentHTML(
             'afterBegin',
             `

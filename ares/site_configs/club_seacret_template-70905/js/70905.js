@@ -43,6 +43,7 @@ class ChildPortal extends BasePortal {
     }
 
     async fetchTrips() {
+
         return fetch(
             `https://club-seacret.cdn.prismic.io/api/v2/documents/search?ref=${this.ref}&access_token=MC5ZT2NaZlJFQUFDOEFMNzU4.Yu-_ve-_ve-_ve-_vSpTKk7vv73vv71RFj15NyMgCu-_ve-_vRPvv73vv73vv71ZVO-_ve-_vUpf77-9#format=json`,
             {
@@ -65,7 +66,53 @@ class ChildPortal extends BasePortal {
         const promise = utilities.fetchHTMLFromFile(`https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/html/seacret.html`);
 
         promise.then((html) => {
-            document.querySelector('#property-html').innerHTML = html;
+            // document.querySelector('#property-html').innerHTML = html;
+            document.body.insertAdjacentHTML(
+                'afterBegin',
+                `   <div class='seacret-header'>
+                        <div class='navbar'>
+                            <div class='logo'>
+                            </div>
+                            <div class='language-select'></div>
+                        </div>
+                        <div class='hero-container'></div>
+                    </div>
+
+                    <article class='body-article'>
+
+                        <section class='itinerary-section'>
+                            <h3 class='section-title' id='itinerary-section-title'>ITINERARY</h3>
+                            <div class='itinerary-list'></div>
+                        </section>
+
+                        <section class='trips-section'>
+                        <h3 class='section-title' id='trips-section-title'>TRIPS</h3>
+                            <div class='trip-item'>
+                            <div class='item-text-container'>
+                                <div class="trip-mobile-container">
+                                <div class='trip-item-name'>King Room:</div>
+                                <div class="trip-price-mobile">$1,500</div>
+                                </div>
+                                <p class='trip-item-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna commodo diam amet, accumsan vel. Laoreet dui dolor vitae ante dictum egestas suscipit sapien pellentesque. Ipsum libero varius donec lectus faucibus velit. Quam mi consequat vel, habitasse aliquam proin orci sit.</p>
+                            </div>
+                            <div class='trip-price-cta-container'>
+                                <div class='trip-price-desktop'>$1,500</div>
+                                <div class='trip-ctas'>
+                                <button class='book-button'>BOOK TRIP</button>
+                                <button class='hold-button'>HOLD TRIP</button>
+                                </div>
+                            </div>
+                            </div>
+                        </section>
+
+                    </article>
+
+                    <article class='bottom-carousel-article'>
+                        <div class='carousel-container'>
+                        </div>
+                    </article>
+                `
+            );
         });
     }
 
@@ -80,47 +127,53 @@ class ChildPortal extends BasePortal {
     }
 
     async insertTripDetailsIntoHtml() {
-        //document. returns 'null'
-        utilities.waitForSelectorInDOM('#itinerary-section-title');
-        const itinerary_title = document.getElementById('#itinerary-section-title');
+
+        await utilities.waitForSelectorInDOM('#itinerary-section-title');
+        const itinerary_title = document.getElementById('itinerary-section-title');
         console.log(itinerary_title);
 
-        //document.bpdy also returns 'undefined'
-        const trips_section = document.body.querySelector('.trips-section');
+        const trips_section = document.body.querySelector('.trip-item-description');
         console.log(trips_section);
 
-        //this.document. gives 'undefined'
-        // const trip_item = this.document.querySelector('.trip-item');
-        // console.log(trip_item);
-
-        //document.body works...
-        document.body.insertAdjacentHTML(
+        document.querySelector('.hero-container').insertAdjacentHTML(
             'afterBegin',
             `
-        <div class="trips">
-            <div class="trip">
-                <div id="trip-name"></div>
-                <div id="trip-date"></div>
-                <div id="itinerary"></div>
+            <div class='title-date-container'>
+                <h1 class='trip-title'>${this.trip.data.trip_name[0].text}</h1>
+                <h2 class='trip-date'>${this.trip.data.start_date} - ${this.trip.data.end_date}</h2>
             </div>
-        </div>
         `
         );
 
-        if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary')) return;
+        // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-section-title')) return;
 
-        document.querySelector('#trip-name').innerHTML = this.trip.data.trip_name[0].text;
-        document.querySelector('#trip-date').innerHTML = `${this.trip.data.start_date} - ${this.trip.data.end_date}`;
-
-        this.trip.data.itinerary.forEach((i) => {
-            document.querySelector('#itinerary').insertAdjacentHTML(
-                'beforeEnd',
+        this.trip.data.itinerary.reverse().forEach((i) => {
+            document.querySelector('.itinerary-list').insertAdjacentHTML(
+                'afterBegin',
                 `
-                <div>
-                    <span class="day">${i.day[0].text}</span>
-                    <span class="description">${i.description[0].text}</span>
+                <div class='itinerary-item'>
+                    <div class='itinerary-text'>
+                        <span class="itinerary-day">${i.day[0].text}</span>
+                        <span class="itinerary-description">${i.description[0].text}</span>
+                    </div>
+                    <hr class='itinerary-separator'>
                 </div>
-            `
+                `
+            );
+        });
+
+        this.trip.data.itinerary.reverse().forEach((i) => {
+            document.querySelector('.itinerary-list').insertAdjacentHTML(
+                'afterBegin',
+                `
+                <div class='itinerary-item'>
+                    <div class='itinerary-text'>
+                        <span class="itinerary-day">${i.day[0].text}</span>
+                        <span class="itinerary-description">${i.description[0].text}</span>
+                    </div>
+                    <hr class='itinerary-separator'>
+                </div>
+                `
             );
         });
     }

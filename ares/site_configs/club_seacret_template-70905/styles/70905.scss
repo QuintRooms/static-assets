@@ -12,8 +12,8 @@ $border_color: #B61A20;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #B61A20;
 $button_hover_border_color: #B61A20;
-$google_font_name: 'Montserrat';
-$site_name: 'arizona_bike_week_21-64812';
+$google_font_name: 'Roboto', sans-serif;
+$site_name: 'club_seacret_template-70905';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
 
@@ -42,7 +42,7 @@ h2 {
   margin: 0;
 }
 
-header {
+.seacret-header {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -136,6 +136,7 @@ header {
 .itinerary-text {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .itinerary-day {

@@ -72,7 +72,7 @@ header {
       rgb(255, 255, 255, 0.0) 55%,
       rgba(255, 255, 255, .9)
     ),
-    url('./img/banner.jpg');
+    $banner_image;
   background-size: cover;
   width: 100%px;
   height: 500px;
@@ -279,7 +279,7 @@ button {
       rgb(255, 255, 255, 0.0) 10%,
       rgba(255, 255, 255, .9)
     ),
-    url('./img/banner.jpg');
+    $banner_image;
   background-size: cover;
   height: auto;
   min-height: 200px;

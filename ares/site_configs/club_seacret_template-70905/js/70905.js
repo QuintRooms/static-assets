@@ -62,10 +62,10 @@ class ChildPortal extends BasePortal {
         document.body.insertAdjacentHTML('afterBegin', '<div id="property-html"></div>');
 
         // url below is an example of how you could use this method
-        const promise = utilities.fetchHTMLFromFile(`https://static.hotelsforhope.com/ares/html/css-grid.html`);
+        const promise = utilities.fetchHTMLFromFile(`https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/html/seacret.html`);
 
         promise.then((html) => {
-            // document.querySelector('#property-html').innerHTML = html;
+            document.querySelector('#property-html').innerHTML = html;
         });
     }
 
@@ -79,8 +79,21 @@ class ChildPortal extends BasePortal {
         return this.trip;
     }
 
-    insertTripDetailsIntoHtml() {
-        // for testing purposes until the actual html is live
+    async insertTripDetailsIntoHtml() {
+        //document. returns 'null'
+        utilities.waitForSelectorInDOM('#itinerary-section-title');
+        const itinerary_title = document.getElementById('#itinerary-section-title');
+        console.log(itinerary_title);
+
+        //document.bpdy also returns 'undefined'
+        const trips_section = document.body.querySelector('.trips-section');
+        console.log(trips_section);
+
+        //this.document. gives 'undefined'
+        // const trip_item = this.document.querySelector('.trip-item');
+        // console.log(trip_item);
+
+        //document.body works...
         document.body.insertAdjacentHTML(
             'afterBegin',
             `

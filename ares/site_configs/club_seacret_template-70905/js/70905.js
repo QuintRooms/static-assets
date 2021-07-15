@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import BasePortal from '../../../js/build';
 import SiteConfig from './70905-config';
 import Utilities from '../../../js/utilities';
@@ -87,22 +88,8 @@ class ChildPortal extends BasePortal {
 
                         <section class='trips-section'>
                         <h3 class='section-title' id='trips-section-title'>TRIPS</h3>
-                            <div class='trip-item'>
-                            <div class='item-text-container'>
-                                <div class="trip-mobile-container">
-                                <div class='trip-item-name'>King Room:</div>
-                                <div class="trip-price-mobile">$1,500</div>
-                                </div>
-                                <p class='trip-item-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna commodo diam amet, accumsan vel. Laoreet dui dolor vitae ante dictum egestas suscipit sapien pellentesque. Ipsum libero varius donec lectus faucibus velit. Quam mi consequat vel, habitasse aliquam proin orci sit.</p>
-                            </div>
-                            <div class='trip-price-cta-container'>
-                                <div class='trip-price-desktop'>$1,500</div>
-                                <div class='trip-ctas'>
-                                <button class='book-button'>BOOK TRIP</button>
-                                <button class='hold-button'>HOLD TRIP</button>
-                                </div>
-                            </div>
-                            </div>
+                        <div class='trips-list'>
+                        </div>
                         </section>
 
                     </article>
@@ -127,13 +114,15 @@ class ChildPortal extends BasePortal {
 
     async insertTripDetailsIntoHtml() {
         await utilities.waitForSelectorInDOM('#itinerary-section-title');
+        const start_date = dayjs(this.trip.data.start_date).format('DD/MM/YYYY');
+        const end_date = dayjs(this.trip.data.end_date).format('DD/MM/YYYY');
 
         document.querySelector('.hero-container').insertAdjacentHTML(
             'afterBegin',
             `
             <div class='title-date-container'>
                 <h1 class='trip-title'>${this.trip.data.trip_name[0].text}</h1>
-                <h2 class='trip-date'>${this.trip.data.start_date} - ${this.trip.data.end_date}</h2>
+                <h2 class='trip-date'>${start_date} - ${end_date}</h2>
             </div>
         `
         );
@@ -141,6 +130,7 @@ class ChildPortal extends BasePortal {
         // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-section-title')) return;
 
         this.trip.data.itinerary.forEach((i) => {
+
             document.querySelector('.itinerary-list').insertAdjacentHTML(
                 'beforeEnd',
                 `
@@ -149,7 +139,38 @@ class ChildPortal extends BasePortal {
                         <span class="itinerary-description">${i.description[0].text}</span>
                     </div>
                     <hr class='itinerary-separator'>
+                `
+            );
+        });
 
+        const room_array = document.querySelectorAll('#standardAvail .rateRow');
+
+        room_array.forEach((i) => {
+            const text_array = i.innerText.split(/-(.+)/);
+            const room_title = text_array[0];
+            const room_description = text_array[1];
+            const full_rate_string = i.querySelector('.full-stay').innerText;
+            const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
+
+            document.querySelector('.trips-list').insertAdjacentHTML(
+                'afterBegin',
+                `
+                <div class='trip-item'>
+                    <div class='item-text-container'>
+                        <div class="trip-mobile-container">
+                        <div class='trip-item-name'>${room_title}</div>
+                        <div class="trip-price-mobile">$${trip_rate}</div>
+                        </div>
+                        <p class='trip-item-description'>${room_description}</p>
+                    </div>
+                    <div class='trip-price-cta-container'>
+                        <div class='trip-price-desktop'>$${trip_rate}</div>
+                        <div class='trip-ctas'>
+                            <button class='book-button'>BOOK TRIP</button>
+                            <button class='hold-button'>HOLD TRIP</button>
+                        </div>
+                    </div>
+                </div>
                 `
             );
         });

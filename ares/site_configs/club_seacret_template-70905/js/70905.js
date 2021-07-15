@@ -25,6 +25,7 @@ class ChildPortal extends BasePortal {
         await this.fetchPropertyHtml();
         this.getTrip();
         this.insertTripDetailsIntoHtml();
+        this.restyleCarousel();
     }
 
     async getReferenceId() {
@@ -43,7 +44,6 @@ class ChildPortal extends BasePortal {
     }
 
     async fetchTrips() {
-
         return fetch(
             `https://club-seacret.cdn.prismic.io/api/v2/documents/search?ref=${this.ref}&access_token=MC5ZT2NaZlJFQUFDOEFMNzU4.Yu-_ve-_ve-_ve-_vSpTKk7vv73vv71RFj15NyMgCu-_ve-_vRPvv73vv73vv71ZVO-_ve-_vUpf77-9#format=json`,
             {
@@ -61,7 +61,7 @@ class ChildPortal extends BasePortal {
 
     async fetchPropertyHtml() {
         document.body.insertAdjacentHTML('afterBegin', '<div id="property-html"></div>');
-
+        console.log(document.querySelector('#property-html'));
         // url below is an example of how you could use this method
         const promise = utilities.fetchHTMLFromFile(`https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/html/seacret.html`);
 
@@ -108,8 +108,7 @@ class ChildPortal extends BasePortal {
                     </article>
 
                     <article class='bottom-carousel-article'>
-                        <div class='carousel-container'>
-                        </div>
+
                     </article>
                 `
             );
@@ -127,13 +126,7 @@ class ChildPortal extends BasePortal {
     }
 
     async insertTripDetailsIntoHtml() {
-
         await utilities.waitForSelectorInDOM('#itinerary-section-title');
-        const itinerary_title = document.getElementById('itinerary-section-title');
-        console.log(itinerary_title);
-
-        const trips_section = document.body.querySelector('.trip-item-description');
-        console.log(trips_section);
 
         document.querySelector('.hero-container').insertAdjacentHTML(
             'afterBegin',
@@ -147,35 +140,30 @@ class ChildPortal extends BasePortal {
 
         // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-section-title')) return;
 
-        this.trip.data.itinerary.reverse().forEach((i) => {
+        this.trip.data.itinerary.forEach((i) => {
             document.querySelector('.itinerary-list').insertAdjacentHTML(
-                'afterBegin',
+                'beforeEnd',
                 `
-                <div class='itinerary-item'>
-                    <div class='itinerary-text'>
+                    <div class='itinerary-item'>
                         <span class="itinerary-day">${i.day[0].text}</span>
                         <span class="itinerary-description">${i.description[0].text}</span>
                     </div>
                     <hr class='itinerary-separator'>
-                </div>
-                `
-            );
-        });
 
-        this.trip.data.itinerary.reverse().forEach((i) => {
-            document.querySelector('.itinerary-list').insertAdjacentHTML(
-                'afterBegin',
-                `
-                <div class='itinerary-item'>
-                    <div class='itinerary-text'>
-                        <span class="itinerary-day">${i.day[0].text}</span>
-                        <span class="itinerary-description">${i.description[0].text}</span>
-                    </div>
-                    <hr class='itinerary-separator'>
-                </div>
                 `
             );
         });
+    }
+
+    async restyleCarousel() {
+        await utilities.waitForSelectorInDOM('.carousel-container');
+
+        const carousel = document.querySelector('.carousel-container');
+        const bottom_carousel = document.querySelector('.bottom-carousel-article');
+
+        if (!carousel || !bottom_carousel) return;
+
+        bottom_carousel.insertAdjacentElement('afterBegin', carousel);
     }
 }
 

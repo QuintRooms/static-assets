@@ -119,6 +119,7 @@ class ChildPortal extends BasePortal {
             `
             <div class='title-date-container'>
                 <h1 class='trip-title'>${this.trip.data.trip_name[0].text}</h1>
+                <h2 class='trip-location'>${this.trip.data.property_name[0].text} - ${this.trip.data.trip_location[0].text}</h2>
                 <h2 class='trip-date'>${start_date} - ${end_date}</h2>
             </div>
         `
@@ -186,9 +187,11 @@ class ChildPortal extends BasePortal {
             }
 
             const price_cta_container = document.querySelector('.trip-price-cta-container');
-            const cancellation_policy = i.querySelector('.ArnRateCancelAnchor');
-            cancellation_policy.classList.add('cancellation-policy');
-            price_cta_container.appendChild(cancellation_policy);
+            const cancellation_policy_container = i.querySelector('.ArnRateCancelPolicyContainer');
+            const cancellation_policy_link = i.querySelector('.ArnRateCancelAnchor');
+            cancellation_policy_link.classList.add('cancellation-policy');
+            price_cta_container.appendChild(cancellation_policy_link);
+            price_cta_container.appendChild(cancellation_policy_container);
         });
     }
 

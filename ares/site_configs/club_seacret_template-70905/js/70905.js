@@ -111,8 +111,8 @@ class ChildPortal extends BasePortal {
 
     async insertTripDetailsIntoHtml() {
         await utilities.waitForSelectorInDOM('#itinerary-section-title');
-        const start_date = dayjs(this.trip.data.start_date).format('DD/MM/YYYY');
-        const end_date = dayjs(this.trip.data.end_date).format('DD/MM/YYYY');
+        const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
+        const end_date = dayjs(this.trip.data.end_date).format('MM/DD/YYYY');
 
         document.querySelector('.hero-container').insertAdjacentHTML(
             'afterBegin',
@@ -154,10 +154,8 @@ class ChildPortal extends BasePortal {
                 `
                 <div class='trip-item'>
                     <div class='trip-text-container'>
-                        <div class="trip-mobile-container">
-                            <div class='trip-item-name'>${room_title}</div>
-                            <div class="trip-price-mobile">$${trip_rate}</div>
-                        </div>
+                        <div class='trip-item-name'>${room_title}</div>
+                        <div class="trip-price-mobile">$${trip_rate}</div>
                         <p class='trip-item-description'>${room_description}</p>
                     </div>
                     <div class='trip-price-cta-container'>
@@ -183,12 +181,13 @@ class ChildPortal extends BasePortal {
                 original_hold_cta.classList.remove('holdRoom');
                 original_hold_cta.classList.add('hold-button');
                 original_hold_cta.classList.add('new-cta');
-                original_book_cta.innerText = 'HOLD TRIP';
+                original_hold_cta.innerText = 'HOLD TRIP';
                 cta_container.appendChild(original_hold_cta);
             }
 
             const price_cta_container = document.querySelector('.trip-price-cta-container');
             const cancellation_policy = i.querySelector('.ArnRateCancelAnchor');
+            cancellation_policy.classList.add('cancellation-policy');
             price_cta_container.appendChild(cancellation_policy);
         });
     }

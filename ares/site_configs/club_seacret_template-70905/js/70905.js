@@ -73,6 +73,7 @@ class ChildPortal extends BasePortal {
                 `   <div class='seacret-header'>
                         <div class='navbar'>
                             <div class='logo'>
+                                <img src="../img/logo.png" alt="seacret logo">
                             </div>
                             <div class='language-select'></div>
                         </div>
@@ -130,7 +131,6 @@ class ChildPortal extends BasePortal {
         // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-section-title')) return;
 
         this.trip.data.itinerary.forEach((i) => {
-
             document.querySelector('.itinerary-list').insertAdjacentHTML(
                 'beforeEnd',
                 `
@@ -151,28 +151,46 @@ class ChildPortal extends BasePortal {
             const room_description = text_array[1];
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
+            // const trip_link = i.querySelector('.bookRoom').getAttribute('href');
+            
 
             document.querySelector('.trips-list').insertAdjacentHTML(
                 'afterBegin',
                 `
                 <div class='trip-item'>
-                    <div class='item-text-container'>
+                    <div class='trip-text-container'>
                         <div class="trip-mobile-container">
-                        <div class='trip-item-name'>${room_title}</div>
-                        <div class="trip-price-mobile">$${trip_rate}</div>
+                            <div class='trip-item-name'>${room_title}</div>
+                            <div class="trip-price-mobile">$${trip_rate}</div>
                         </div>
                         <p class='trip-item-description'>${room_description}</p>
                     </div>
                     <div class='trip-price-cta-container'>
                         <div class='trip-price-desktop'>$${trip_rate}</div>
                         <div class='trip-ctas'>
-                            <button class='book-button'>BOOK TRIP</button>
-                            <button class='hold-button'>HOLD TRIP</button>
                         </div>
                     </div>
                 </div>
                 `
             );
+
+            const cta_container = document.querySelector('.trip-ctas');
+            const original_book_cta = i.querySelector('.bookRoom');
+            original_book_cta.classList.remove('bookRoom');
+            original_book_cta.classList.add('book-button');
+            original_book_cta.classList.add('new-cta');
+            original_book_cta.innerText = 'BOOK TRIP';
+            cta_container.appendChild(original_book_cta);
+
+            const original_hold_cta = i.querySelector('.holdRoom');
+
+            if (original_hold_cta) {
+                original_hold_cta.classList.remove('holdRoom');
+                original_hold_cta.classList.add('hold-button');
+                original_hold_cta.classList.add('new-cta');
+                original_book_cta.innerText = 'HOLD TRIP';
+                cta_container.appendChild(original_hold_cta);
+            }
         });
     }
 

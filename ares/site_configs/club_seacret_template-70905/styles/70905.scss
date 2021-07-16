@@ -64,7 +64,7 @@ h2 {
 }
 
 .logo img {
-    max-height: 16px;
+    max-height: 30%;
 }
 
 .hero-container {
@@ -148,8 +148,16 @@ h2 {
     box-shadow: 0px 4px 4px 0px #0000000d;
     border-radius: 10px;
     margin: 35px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // align-items: center;
+    grid-gap: 1rem;
+    // grid-template-rows: repeat(2, 1fr);
+}
+
+.trip-text-container {
+    display: grid;
+    grid-column: 1/6;
 }
 
 .trip-item-name {
@@ -164,12 +172,38 @@ h2 {
     margin: 0px;
 }
 
+.trip-price-cta-container {
+    display: grid;
+    grid-column: 6/7;
+    justify-items: end;
+    width: 100%;
+}
+
+.trip-ctas {
+    display:grid;
+    justify-items: end;
+    width: 100%;
+}
+
 hr {
     border-top: 1px solid #7a9a9e7a;
 }
 
+.new-cta {
+    width: 90%;
+    height: 42px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    margin: 10px;
+    font-weight: 900;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 42px;
+}
+
 button {
-    width: 120px;
     height: 42px;
     border-radius: 6px;
     border: none;
@@ -192,7 +226,8 @@ button {
     font-size: 34px;
     font-weight: 900;
     color: #7a9a9e;
-    margin: 10px 0px 20px 20px;
+    margin: 10px 10px 5px 0;
+    // grid-column: 4/6;
 }
 
 .trip-price-mobile {
@@ -249,18 +284,19 @@ button {
     top: 125px;
 }
 
-@media screen and (max-width: 1200px) {
-  .itinerary-day{
+@media only screen and (max-width: 1300px) {
+
+.itinerary-day{
     grid-column: 1/6;
     grid-row: 1/2
   }
-  .itinerary-description{
+
+.itinerary-description{
     grid-column: 1/6;
     grid-row: 2/3;
   }
-}
 
-@media only screen and (max-width: 600px) {
+
     .hero-container {
         background: linear-gradient(rgb(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), $banner_image;
         background-size: cover;
@@ -288,13 +324,6 @@ button {
         margin: 0;
     }
 
-    /* .title-date-container {
-  position: absolute;
-  bottom: auto;
-  top: 12px;
-  margin: 0;
-} */
-
     .body-article {
         flex-direction: column;
     }
@@ -303,18 +332,33 @@ button {
         width: 100%;
     }
 
-    .trips-section {
-        width: 100%;
-    }
-
-    .trip-item {
-        border: 1px solid #3276b140;
-        box-shadow: 0px 4px 4px 0px #0000000d;
-        border-radius: 10px;
-        margin: 35px;
+    .itinerary-text {
         display: flex;
         flex-direction: column;
     }
+
+    .itinerary-day {
+        width: 100%;
+        font-size: 24px;
+    }
+
+     .trips-section {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 800px) {
+
+        .trip-item {
+        display:flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        grid-gap: none;
+    }
+
+//         .trip-item {
+//     grid-template-columns: 1fr;
+//     grid-template-rows: repeat(4, 1fr);
+// }
 
     .trip-item-name {
         font-size: 24px;
@@ -323,13 +367,38 @@ button {
 
     .trip-mobile-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-end;
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 10px;
     }
+
+
+    .trip-price-desktop {
+        display: none;
+    }
+
+
+    .trip-price-mobile {
+        // display: block;
+        font-size: 24px;
+        font-weight: 900;
+        color: #7a9a9e;
+        margin: 0;
+        margin-left: 10px;
+        grid-row: 2;
+    }
+
+    // .trip-item-name {
+    //     font-size: 24px;
+    //     padding: 0;
+    //     grid-row: 1/2;
+    // }
+
+    // .trip-item-description {
+    //    grid-row: 2/3; 
+    // }
 
     .trip-price-mobile {
         display: block;
@@ -337,42 +406,42 @@ button {
         font-weight: 900;
         color: #7a9a9e;
         margin: 0;
-        margin-left: 10px;
+        margin-top: 10px;
     }
 
-    .itinerary-text {
+    .trip-price-cta-container {
         display: flex;
-        flex-direction: column;
-    }
-
-    .trip-price-desktop {
-        display: none;
-    }
-
-    .itinerary-day {
-        width: 100%;
-        font-size: 24px;
+        justify-content: flex-start;
+        margin: 0;
     }
 
     .trip-ctas {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 45% auto 45%;
+        width: 100%;
+
         margin-bottom: 12px;
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 10px;
     }
 
+   
+
     .book-button {
         background: #3276b1;
+        grid-column: 1;
         margin: 0;
+        width: 100%;
     }
 
     .hold-button {
         background: #3276b1b6;
         margin: 0;
+        width: 100%;
+         grid-column: 3;
+    }
+
     }
 }
 

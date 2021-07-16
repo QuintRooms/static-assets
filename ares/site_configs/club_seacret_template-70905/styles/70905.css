@@ -334,13 +334,11 @@ h1 {
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 4px;
-  margin: 0px 0px 10px 0px;
 }
 
 h2 {
   font-size: 36px;
   font-weight: 300;
-  margin: 0;
 }
 
 header {
@@ -389,6 +387,15 @@ header {
 .trip-title {
   margin-left: 35px;
   margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+.trip-location {
+  margin-top: 0px;
+  margin-left: 35px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  margin-bottom: 0px;
 }
 
 .trip-mobile-container {
@@ -398,6 +405,7 @@ header {
 .trip-date {
   margin-left: 35px;
   margin-bottom: 12px;
+  margin-top: 15px;
 }
 
 .body-article {
@@ -452,6 +460,7 @@ header {
 .trip-text-container {
   display: grid;
   grid-column: 1/6;
+  padding-right: 1rem;
 }
 
 .trip-item-name {
@@ -465,7 +474,6 @@ header {
   padding: 10px;
   padding-top: 0;
   margin: 0px;
-  margin-top: -2.5rem;
 }
 
 .trip-price-cta-container {
@@ -670,16 +678,6 @@ button {
 
   .trip-item-name {
     font-size: 24px;
-    padding: 0;
-  }
-
-  .trip-mobile-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
   }
 
   .trip-price-desktop {
@@ -691,8 +689,7 @@ button {
     font-weight: 900;
     color: #7a9a9e;
     margin: 0;
-    margin-left: 10px;
-    grid-row: 2;
+    padding: 10px;
   }
 
   .trip-price-mobile {

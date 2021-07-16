@@ -47,7 +47,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 .yui3-skin-sam .yui3-calendar-day:hover,
 .sort-wrapper .active,
 .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner {
-  background: #b61a20;
+  background: #7a9a9e;
 }
 
 @media screen and (max-width: 1105px) {
@@ -55,12 +55,12 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    border: 1px solid #b61a20;
+    border: 1px solid #7a9a9e;
   }
 
   .closeMap {
     border: 1px solid #fff !important;
-    background-color: #b61a20 !important;
+    background-color: #7a9a9e !important;
     color: #fff !important;
   }
 }
@@ -74,7 +74,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 .sort-wrapper a:before,
 .sort-wrapper a.active-filter:before,
 .sort {
-    background: #b61a20;
+    background: #7a9a9e;
   }
 }
 #searching,
@@ -100,11 +100,11 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 }
 
 .custom-button a, .WBForgotPasswordFormActions input:hover {
-  color: #b61a20;
+  color: #7a9a9e;
 }
 
 span.exclusive-rate {
-  background: #ea802b;
+  background: #7a9a9e;
   color: #fff;
 }
 
@@ -113,7 +113,7 @@ span.exclusive-rate {
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    color: #b61a20;
+    color: #7a9a9e;
   }
 }
 @media screen and (max-width: 800px) {
@@ -139,11 +139,11 @@ span.exclusive-rate {
 .receiptLink,
 .returnResultsInfo a,
 .supportInfo a, .SinglePropDetail #show-more-or-less {
-  color: #b61a20;
+  color: #7a9a9e;
 }
 
 .percentSavings {
-  color: #ea802b;
+  color: #7a9a9e;
 }
 
 input#theSubmitButton,
@@ -152,16 +152,16 @@ input#theSubmitButton,
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
 a.ArnShowRatesLink, .WBConfirmedBooking .submit {
-  background: #b61a20;
+  background: #7a9a9e;
   color: #fff;
-  border: 1px solid #b61a20;
+  border: 1px solid #7a9a9e;
 }
 
 .CheckRates input.submit,
 .CheckRates input.submit,
 .CheckRates input.submit,
 #lightbox, #lightbox .dialog-button-ok input:hover {
-  background: #b61a20;
+  background: #7a9a9e;
   color: #fff;
 }
 
@@ -185,50 +185,50 @@ input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
 a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
   background: #fff;
-  color: #b61a20;
-  border: 1px solid #b61a20;
+  color: #3276b1;
+  border: 1px solid #3276b1;
 }
 
 .CheckRates input.submit:hover,
 .CheckRates input.submit:focus,
 .CheckRates input.submit:active {
   background: #fff;
-  color: #b61a20;
+  color: #3276b1;
 }
 
 .SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
-  color: #b61a20;
-  border-color: #b61a20;
+  color: #7a9a9e;
+  border-color: #7a9a9e;
 }
 
 .SinglePropDetail #moreRatesLink:hover {
-  background-color: #b61a20;
+  background-color: #7a9a9e;
 }
 
 @media screen and (max-width: 800px) {
   #theBookingPage legend#policies-legend {
-    color: #b61a20;
+    color: #7a9a9e;
   }
 }
 header {
-  border-bottom: 3px solid #b61a20;
+  border-bottom: 3px solid #7a9a9e;
 }
 
 .arnMapMarker.contracted-pin,
 .arnMapMarker.contracted-pin.highlight {
   border: 1px solid #fff;
-  background: #ea802b;
+  background: #7a9a9e;
   color: #fff;
 }
 
 .arnMapMarker.contracted-pin:hover {
-  border: 1px solid #ea802b;
+  border: 1px solid #7a9a9e;
   background: #fff;
-  color: #ea802b;
+  color: #7a9a9e;
 }
 
 .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
-  border-top-color: #ea802b;
+  border-top-color: #7a9a9e;
 }
 
 #theOtherSubmitButton,
@@ -238,59 +238,59 @@ header {
 .bookRoom,
 .sort,
 .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
-  border: 1px solid #b61a20;
+  border: 1px solid #7a9a9e;
 }
 
 .holdRoom {
-  border: 1px solid #b61a20;
+  border: 1px solid #7a9a9e;
 }
 
 @media screen and (max-width: 1105px) {
   #arnCloseAnchorId,
 .sort {
-    border: 1px solid #b61a20;
+    border: 1px solid #7a9a9e;
   }
 }
 @media screen and (max-width: 800px) {
   .sort-wrapper a:before {
-    border: 2px solid #b61a20;
+    border: 2px solid #7a9a9e;
   }
 }
 .active-page {
-  background: #b61a20 !important;
+  background: #7a9a9e !important;
   color: #fff !important;
-  border: 1px solid #b61a20 !important;
+  border: 1px solid #7a9a9e !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day-selected {
-  background-color: #b61a20 !important;
+  background-color: #7a9a9e !important;
   color: #fff !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day:hover {
-  background-color: #b61a20 !important;
+  background-color: #7a9a9e !important;
 }
 
 .yui3-skin-sam .yui3-calendar-content {
-  border-color: #b61a20 !important;
+  border-color: #7a9a9e !important;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarker {
-  background: #b61a20;
+  background: #7a9a9e;
   border-color: #fff;
   color: #fff;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarkerTriangle {
-  border-top-color: #b61a20;
+  border-top-color: #7a9a9e;
 }
 
 .MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
-  border-top-color: #b61a20;
+  border-top-color: #7a9a9e;
 }
 
 .contact-float a {
-  background-color: #b61a20;
+  background-color: #7a9a9e;
   color: #fff;
 }
 
@@ -304,22 +304,22 @@ header {
 }
 @-webkit-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #b61a20;
+    box-shadow: 0 0 0 20px #7a9a9e;
   }
 }
 @-moz-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #b61a20;
+    box-shadow: 0 0 0 20px #7a9a9e;
   }
 }
 @-ms-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #b61a20;
+    box-shadow: 0 0 0 20px #7a9a9e;
   }
 }
 @keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #b61a20;
+    box-shadow: 0 0 0 20px #7a9a9e;
   }
 }
 body {
@@ -511,11 +511,25 @@ button {
 .book-button {
   background: #3276b1;
   margin: 10px 10px 5px 20px;
+  border: 2px solid #3276b1;
+  transition: 0.3s;
+}
+.book-button:hover {
+  border: 2px solid #3276b1;
+  background: #fff;
+  color: #3276b1;
 }
 
 .hold-button {
   background: #3276b1b6;
   margin: 5px 10px 10px 20px;
+  border: 2px solid #3276b1b6;
+  transition: 0.3s;
+}
+.hold-button:hover {
+  border: 2px solid #3276b1b6;
+  background: #fff;
+  color: #3276b1b6;
 }
 
 .trip-price-desktop {

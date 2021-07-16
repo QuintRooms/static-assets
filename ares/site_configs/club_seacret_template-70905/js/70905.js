@@ -24,7 +24,7 @@ class ChildPortal extends BasePortal {
         await this.getReferenceId();
         await this.fetchTrips();
         await this.fetchPropertyHtml();
-        this.getTrip();
+        await this.getTrip();
         this.insertTripDetailsIntoHtml();
         this.restyleCarousel();
     }
@@ -68,13 +68,9 @@ class ChildPortal extends BasePortal {
 
         promise.then((html) => {
             // document.querySelector('#property-html').innerHTML = html;
-            document.body.insertAdjacentHTML(
-                'afterBegin',
+            document.querySelector('header').insertAdjacentHTML(
+                'afterEnd',
                 `   <div class='seacret-header'>
-                        <div class='navbar'>
-                            <div class='logo'>
-                                <img src="../img/logo.png" alt="seacret logo">
-                            </div>
                             <div class='language-select'></div>
                         </div>
                         <div class='hero-container'></div>
@@ -103,7 +99,7 @@ class ChildPortal extends BasePortal {
         });
     }
 
-    getTrip() {
+    async getTrip() {
         const trip_id = utilities.getUrlParameter('tripId');
 
         this.trip = this.trips.results.find((obj) => {
@@ -152,7 +148,6 @@ class ChildPortal extends BasePortal {
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
             // const trip_link = i.querySelector('.bookRoom').getAttribute('href');
-            
 
             document.querySelector('.trips-list').insertAdjacentHTML(
                 'afterBegin',
@@ -191,6 +186,10 @@ class ChildPortal extends BasePortal {
                 original_book_cta.innerText = 'HOLD TRIP';
                 cta_container.appendChild(original_hold_cta);
             }
+
+            const price_cta_container = document.querySelector('.trip-price-cta-container');
+            const cancellation_policy = i.querySelector('.ArnRateCancelAnchor');
+            price_cta_container.appendChild(cancellation_policy);
         });
     }
 

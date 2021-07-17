@@ -322,6 +322,10 @@ header {
     box-shadow: 0 0 0 20px #7a9a9e;
   }
 }
+.hide {
+  display: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -345,24 +349,10 @@ header {
   border-bottom: none;
 }
 
-.seacret-header {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar {
-  height: 42px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 20% auto 20%;
-}
-
 .hero-container {
   background: linear-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
   background-size: cover;
-  width: 100% px;
+  width: 100%;
   height: 500px;
   margin: 0;
   padding: 0;
@@ -378,24 +368,29 @@ header {
   position: relative;
   background-size: cover;
 } */
-/* .title-date-container {
+/* .hero-text-container {
   position: absolute;
   bottom: 12px;
-  left: 35px;
+  left: 2.3rem;
   margin: 0;
 } */
+.location-date-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .trip-title {
-  margin-left: 35px;
+  margin-left: 2.3rem;
   margin-top: 12px;
   margin-bottom: 0px;
 }
 
-.trip-location {
-  margin-top: 0px;
-  margin-left: 35px;
+.event-text-separators {
+  margin-top: 15px;
+  margin-left: 2.3rem;
   font-weight: 500;
   letter-spacing: 4px;
-  margin-bottom: 0px;
+  margin-bottom: 12px;
 }
 
 .trip-mobile-container {
@@ -403,7 +398,13 @@ header {
 }
 
 .trip-date {
-  margin-left: 35px;
+  margin-left: 2.3rem;
+  margin-bottom: 12px;
+  margin-top: 15px;
+}
+
+.trip-location {
+  margin-left: 2.3rem;
   margin-bottom: 12px;
   margin-top: 15px;
 }
@@ -417,24 +418,25 @@ header {
   width: 50vw;
 }
 
-.trips-section {
-  width: 50vw;
-}
-
 .section-title {
   margin-top: 14px;
-  margin-left: 35px;
+  margin-left: 2.3rem;
   font-weight: 500;
   font-size: 36px;
   color: #7a9a9e;
 }
 
 .itinerary-item {
+  margin: 2.3rem;
+  margin-top: 0;
+}
+
+.itinerary-text {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  align-items: center;
+  grid-template-columns: minmax(90px, 120px) auto;
+  align-items: start;
   grid-gap: 1rem;
-  margin: 35px;
+  margin-bottom: 2.3rem;
 }
 
 .itinerary-day {
@@ -444,41 +446,51 @@ header {
 }
 
 .itinerary-description {
-  grid-column: 2/9;
+  grid-column: 2;
+  line-height: 1.5rem;
+}
+
+hr {
+  border-top: 1px solid #7a9a9e7a;
+  margin-bottom: 2.3rem;
+}
+
+.trips-section {
+  width: 50vw;
 }
 
 .trip-item {
   border: 1px solid #3276b140;
   box-shadow: 0px 4px 4px 0px #0000000d;
-  border-radius: 10px;
-  margin: 35px;
+  border-radius: 1rem;
+  margin: 2.3rem;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: auto 200px;
   grid-gap: 1rem;
 }
 
 .trip-text-container {
   display: grid;
-  grid-column: 1/6;
+  grid-column: 1;
   padding-right: 1rem;
 }
 
 .trip-item-name {
   font-size: 24px;
   font-weight: 500;
-  padding: 10px 0 0 10px;
+  padding: 1rem 0 0 1rem;
 }
 
 .trip-item-description {
   font-size: 18px;
-  padding: 10px;
+  padding: 1rem;
   padding-top: 0;
   margin: 0px;
 }
 
 .trip-price-cta-container {
   display: grid;
-  grid-column: 6/7;
+  grid-column: 2;
   justify-items: end;
   width: 100%;
 }
@@ -489,17 +501,13 @@ header {
   width: 100%;
 }
 
-hr {
-  border-top: 1px solid #7a9a9e7a;
-}
-
 .new-cta {
   width: 90%;
   height: 42px;
   border-radius: 6px;
   border: none;
   color: #fff;
-  margin: 10px;
+  margin: 1rem;
   font-weight: 900;
   text-decoration: none;
   text-align: center;
@@ -512,13 +520,13 @@ button {
   border-radius: 6px;
   border: none;
   color: #fff;
-  margin: 10px;
+  margin: 1rem;
   font-weight: 900;
 }
 
 .book-button {
   background: #3276b1;
-  margin: 10px 10px 5px 20px;
+  margin: 1rem 1rem 5px 20px;
   border: 2px solid #3276b1;
   transition: 0.3s;
 }
@@ -530,7 +538,7 @@ button {
 
 .hold-button {
   background: #719ec8;
-  margin: 5px 10px 10px 20px;
+  margin: 5px 1rem 1rem 20px;
   border: 2px solid #719ec8;
   transition: 0.3s;
 }
@@ -542,14 +550,14 @@ button {
 
 .cancellation-policy {
   place-self: center;
-  margin: 10px;
+  margin: 1rem;
 }
 
 .trip-price-desktop {
   font-size: 34px;
   font-weight: 900;
   color: #7a9a9e;
-  margin: 10px 10px 5px 0;
+  margin: 1rem 1rem 5px 0;
 }
 
 .trip-price-mobile {
@@ -610,7 +618,7 @@ button {
 @media only screen and (max-width: 1300px) {
   .logo img {
     padding: 0;
-    margin: 10px;
+    margin: 1rem;
   }
 
   .itinerary-day {
@@ -637,7 +645,7 @@ button {
     font-size: 36px;
     font-weight: 500;
     letter-spacing: 4px;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 1rem 0px;
   }
 
   h2 {
@@ -669,6 +677,25 @@ button {
   }
 }
 @media only screen and (max-width: 1300px) and (max-width: 800px) {
+  .location-date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-text-separators {
+    display: none;
+  }
+
+  .trip-date {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .trip-location {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
   .trip-item {
     display: flex;
     flex-direction: column;
@@ -689,7 +716,7 @@ button {
     font-weight: 900;
     color: #7a9a9e;
     margin: 0;
-    padding: 10px;
+    padding: 1rem;
   }
 
   .trip-price-mobile {
@@ -698,7 +725,7 @@ button {
     font-weight: 900;
     color: #7a9a9e;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 1rem;
   }
 
   .trip-price-cta-container {
@@ -713,9 +740,9 @@ button {
     grid-template-columns: 45% auto 45%;
     width: inherit;
     margin-bottom: 12px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
   }
 
   .book-button {

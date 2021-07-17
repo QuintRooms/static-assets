@@ -27,6 +27,7 @@ class ChildPortal extends BasePortal {
         await this.getTrip();
         this.insertTripDetailsIntoHtml();
         this.restyleCarousel();
+        this.hideArnElements();
     }
 
     async getReferenceId() {
@@ -109,6 +110,14 @@ class ChildPortal extends BasePortal {
         return this.trip;
     }
 
+    hideArnElements() {
+        utilities.waitForSelectorInDOM('.ArnRightListContainer');
+        const arn_right_container = document.querySelector('.ArnRightListContainer');
+        const arn_left_container = document.querySelector('.ArnLeftListContainer');
+        arn_right_container.classList.add('hide');
+        arn_left_container.classList.add('hide');
+    }
+
     async insertTripDetailsIntoHtml() {
         await utilities.waitForSelectorInDOM('#itinerary-section-title');
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
@@ -117,10 +126,15 @@ class ChildPortal extends BasePortal {
         document.querySelector('.hero-container').insertAdjacentHTML(
             'afterBegin',
             `
-            <div class='title-date-container'>
+            <div class='hero-text-container'>
                 <h1 class='trip-title'>${this.trip.data.trip_name[0].text}</h1>
-                <h2 class='trip-location'>${this.trip.data.property_name[0].text} - ${this.trip.data.trip_location[0].text}</h2>
-                <h2 class='trip-date'>${start_date} - ${end_date}</h2>
+                <div class='location-date-container'>
+                    <h2 class='trip-location'>${this.trip.data.property_name[0].text}</h2> 
+                    <h2 class='event-text-separators'> | </h2>
+                    <h2 class='trip-location'>${this.trip.data.trip_location[0].text}</h2>
+                    <h2 class='event-text-separators'> | </h2>
+                    <h2 class='trip-date'>${start_date} - ${end_date}</h2>
+                </div>
             </div>
         `
         );
@@ -132,10 +146,12 @@ class ChildPortal extends BasePortal {
                 'beforeEnd',
                 `
                     <div class='itinerary-item'>
-                        <span class="itinerary-day">${i.day[0].text}</span>
-                        <span class="itinerary-description">${i.description[0].text}</span>
+                        <div class='itinerary-text'>
+                            <span class="itinerary-day">${i.day[0].text}</span>
+                            <span class="itinerary-description">${i.description[0].text}</span>
+                        </div>
+                        <hr class='itinerary-separator'>
                     </div>
-                    <hr class='itinerary-separator'>
                 `
             );
         });
@@ -188,6 +204,7 @@ class ChildPortal extends BasePortal {
 
             const price_cta_container = document.querySelector('.trip-price-cta-container');
             const cancellation_policy_container = i.querySelector('.ArnRateCancelPolicyContainer');
+            console.log(cancellation_policy_container);
             const cancellation_policy_link = i.querySelector('.ArnRateCancelAnchor');
             cancellation_policy_link.classList.add('cancellation-policy');
             price_cta_container.appendChild(cancellation_policy_link);

@@ -229,9 +229,8 @@ hr {
 .trip-ctas {
     display:grid;
     justify-items: end;
-    width: 100%;
+    width: inherit;
 }
-
 
 .new-cta {
     width: 90%;
@@ -501,12 +500,8 @@ button {
     .trip-ctas {
         display: grid;
         grid-template-columns: 45% auto 45%;
-        width: inherit;
 
-        margin-bottom: 12px;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        margin-top: 1rem;
+        padding: 1rem;
     }
 
     .book-button {

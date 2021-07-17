@@ -63,7 +63,7 @@ class ChildPortal extends BasePortal {
 
     async fetchPropertyHtml() {
         document.body.insertAdjacentHTML('afterBegin', '<div id="property-html"></div>');
-        console.log(document.querySelector('#property-html'));
+        // console.log(document.querySelector('#property-html'));
         // url below is an example of how you could use this method
         const promise = utilities.fetchHTMLFromFile(`https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/html/seacret.html`);
 
@@ -161,6 +161,7 @@ class ChildPortal extends BasePortal {
         room_array.forEach((i) => {
             const text_array = i.innerText.split(/-(.+)/);
             const room_title = text_array[0];
+            console.log('room text_array', text_array);
             const room_description = text_array[1];
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
@@ -204,7 +205,7 @@ class ChildPortal extends BasePortal {
 
             const price_cta_container = document.querySelector('.trip-price-cta-container');
             const cancellation_policy_container = i.querySelector('.ArnRateCancelPolicyContainer');
-            console.log(cancellation_policy_container);
+            // console.log(cancellation_policy_container);
             const cancellation_policy_link = i.querySelector('.ArnRateCancelAnchor');
             cancellation_policy_link.classList.add('cancellation-policy');
             price_cta_container.appendChild(cancellation_policy_link);

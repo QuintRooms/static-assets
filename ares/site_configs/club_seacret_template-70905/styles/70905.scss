@@ -45,8 +45,14 @@ h2 {
 }
 
 header {
+    border-bottom: 2px solid #7a9a9e;
+}
+
+.SinglePropDetail header {
     border-bottom: none;
 }
+
+
 
 .hero-container {
     background: linear-gradient(rgb(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), $banner_image;
@@ -506,7 +512,7 @@ input#theConfirmationButton, .WBConfirmedBooking .submit {
      height: 42px;
      border-radius: 6px;
      font-weight: 900;
-     text-transform: capitalize;
+     text-transform: uppercase;
       border: 2px solid #3276b1;
     transition: 0.3s;
     &:hover {
@@ -568,16 +574,21 @@ input#theConfirmationButton, .WBConfirmedBooking .submit {
 }
 
 .HoldRoomsForm .submit {
-         background: #3276b1;
-     height: 42px;
-     border-radius: 6px;
-     font-weight: 900;
-     text-transform: capitalize;
-      border: 2px solid #3276b1;
+    background: #3276b1;
+    height: 42px;
+    border-radius: 6px;
+    font-weight: 900;
+    text-transform: capitalize;
+    border: 2px solid #3276b1;
+    text-transform: uppercase;
     transition: 0.3s;
     &:hover {
         border: 2px solid #3276b1;
         background: #fff;
         color: #3276b1;
     }
+}
+
+.HoldRoomsForm .ArnProperty {
+    max-width: 1600px;
 }

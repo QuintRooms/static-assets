@@ -844,10 +844,6 @@ input#theConfirmationButton:hover, .WBConfirmedBooking .submit:hover {
   width: 100%;
 }
 
-.ArnRateCell {
-  display: none;
-}
-
 .SearchHotels .ArnPropName {
   width: 100%;
 }

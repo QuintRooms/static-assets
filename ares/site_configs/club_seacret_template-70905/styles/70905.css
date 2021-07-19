@@ -364,16 +364,6 @@ header {
   justify-content: flex-end;
 }
 
-/* .hero-container img {
-  position: relative;
-  background-size: cover;
-} */
-/* .hero-text-container {
-  position: absolute;
-  bottom: 12px;
-  left: 2.3rem;
-  margin: 0;
-} */
 .location-date-container {
   display: flex;
   flex-direction: row;
@@ -784,6 +774,97 @@ button {
   .carousel-slide .image-wrapper img {
     max-width: 500px;
   }
+}
+/* Checkout Page */
+#theAjaxPaymentPolicies {
+  border: 1px solid #7a9a9e;
+  box-shadow: 0px 4px 4px 0px #0000000d;
+  border-radius: 1rem;
+}
+
+.insuranceAgreement {
+  display: none;
+}
+
+input#theConfirmationButton, .WBConfirmedBooking .submit {
+  background: #3276b1;
+  height: 42px;
+  border-radius: 6px;
+  font-weight: 900;
+  text-transform: capitalize;
+  border: 2px solid #3276b1;
+  transition: 0.3s;
+}
+input#theConfirmationButton:hover, .WBConfirmedBooking .submit:hover {
+  border: 2px solid #3276b1;
+  background: #fff;
+  color: #3276b1;
+}
+
+#theBookingPage legend {
+  font-weight: 500;
+  font-size: 30px;
+  color: #7a9a9e;
+  line-height: 1.2;
+}
+
+#theAjaxPaymentPolicies legend {
+  font-weight: 500;
+  line-height: 1.1;
+  color: #333;
+  font-size: 20px;
+}
+
+.ArnPrimarySearchContainer {
+  display: none;
+}
+
+.ArnSearchHeader {
+  display: none;
+}
+
+.ArnRoomsOnHold h2 {
+  font-weight: 500;
+  font-size: 30px;
+  color: #7a9a9e;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 1300px) {
+  .ArnRoomsOnHold h2 {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .ArnRoomsOnHold h2 {
+    margin-top: 0;
+  }
+}
+.SearchHotels .ArnContainer {
+  width: 100%;
+}
+
+.ArnRateCell {
+  display: none;
+}
+
+.SearchHotels .ArnPropName {
+  width: 100%;
+}
+
+.HoldRoomsForm .submit {
+  background: #3276b1;
+  height: 42px;
+  border-radius: 6px;
+  font-weight: 900;
+  text-transform: capitalize;
+  border: 2px solid #3276b1;
+  transition: 0.3s;
+}
+.HoldRoomsForm .submit:hover {
+  border: 2px solid #3276b1;
+  background: #fff;
+  color: #3276b1;
 }
 
 /*# sourceMappingURL=70905.css.map*/

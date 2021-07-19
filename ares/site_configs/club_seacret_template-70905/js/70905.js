@@ -28,6 +28,7 @@ class ChildPortal extends BasePortal {
         this.insertTripDetailsIntoHtml();
         this.restyleCarousel();
         this.hideArnElements();
+        this.updateCheckoutInterface();
     }
 
     async getReferenceId() {
@@ -162,10 +163,10 @@ class ChildPortal extends BasePortal {
         room_array.forEach((i) => {
             // const text_string = i.innerText;
             // console.log(text_string);
-            const text_array = i.innerText.split(/-(.+)/);
+            const text_array = i.innerText.split(/:.+/);
             const room_title = text_array[1].slice(10);
             console.log('room text_array', text_array);
-            const room_description = text_array[3].slice(31);
+            const room_description = text_array[2];
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
             // const trip_link = i.querySelector('.bookRoom').getAttribute('href');
@@ -225,6 +226,13 @@ class ChildPortal extends BasePortal {
         if (!carousel || !bottom_carousel) return;
 
         bottom_carousel.insertAdjacentElement('afterBegin', carousel);
+    }
+
+    async updateCheckoutInterface() {
+        await utilities.waitForSelectorInDOM('.resConfirmationButton');
+        const submit_button = document.querySelectorAll('input#theConfirmationButton, .WBConfirmedBooking .submit');
+        console.log('submit button in updateCheckoutInterface', submit_button);
+        submit_button[0].value = 'CONFIRM RESERVATIONS';
     }
 }
 

@@ -48,30 +48,6 @@ header {
     border-bottom: none;
 }
 
-// .seacret-header {
-//     display: flex;
-//     flex-direction: column;
-//     margin: 0;
-//     padding: 0;
-// }
-
-// .navbar {
-//     height: 42px;
-//     width: 100%;
-//     display: grid;
-//     grid-template-columns: 20% auto 20%;
-// }
-
-// .logo {
-//     align-self: center;
-//     justify-self: center;
-//     grid-column: 2;
-// }
-
-// .logo img {
-//     max-height: 30%;
-// }
-
 .hero-container {
     background: linear-gradient(rgb(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), $banner_image;
     background-size: cover;
@@ -86,18 +62,6 @@ header {
     flex-direction: column;
     justify-content: flex-end;
 }
-
-/* .hero-container img {
-  position: relative;
-  background-size: cover;
-} */
-
-/* .hero-text-container {
-  position: absolute;
-  bottom: 12px;
-  left: 2.3rem;
-  margin: 0;
-} */
 
 .location-date-container {
     display: flex;
@@ -152,10 +116,6 @@ header {
 }
 
 .itinerary-item {
-    // display: grid;
-    // grid-template-columns: minmax(90px, 120px) auto;
-    // align-items: start;
-    // grid-gap: 1rem;
     margin: 2.3rem;
     margin-top: 0;
 }
@@ -437,24 +397,9 @@ button {
         grid-gap: none;
     }
 
-//         .trip-item {
-//     grid-template-columns: 1fr;
-//     grid-template-rows: repeat(4, 1fr);
-// }
-
     .trip-item-name {
         font-size: 24px;
     }
-
-    // .trip-mobile-container {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: flex-start;
-    //     margin-left: 1rem;
-    //     margin-right: 1rem;
-    //     margin-top: 1rem;
-    // }
-
 
     .trip-price-desktop {
         display: none;
@@ -470,16 +415,6 @@ button {
         padding: 1rem;
         // grid-row: 2;
     }
-
-    // .trip-item-name {
-    //     font-size: 24px;
-    //     padding: 0;
-    //     grid-row: 1/2;
-    // }
-
-    // .trip-item-description {
-    //    grid-row: 2/3; 
-    // }
 
     .trip-price-mobile {
         display: block;
@@ -551,5 +486,102 @@ button {
         .carousel-slide .image-wrapper img {
             max-width: 500px;
         }
+    }
+}
+
+/* Checkout Page */
+
+#theAjaxPaymentPolicies {
+    border: 1px solid #7a9a9e;
+    box-shadow: 0px 4px 4px 0px #0000000d;
+    border-radius: 1rem;
+}
+
+.insuranceAgreement {
+    display: none;
+}
+
+input#theConfirmationButton, .WBConfirmedBooking .submit {
+     background: #3276b1;
+     height: 42px;
+     border-radius: 6px;
+     font-weight: 900;
+     text-transform: capitalize;
+      border: 2px solid #3276b1;
+    transition: 0.3s;
+    &:hover {
+        border: 2px solid #3276b1;
+        background: #fff;
+        color: #3276b1;
+    }
+}
+
+#theBookingPage legend {
+    font-weight: 500;
+    font-size: 30px;
+    color: #7a9a9e;
+    line-height: 1.2;
+}
+
+#theAjaxPaymentPolicies legend {
+    font-weight: 500;
+    line-height: 1.1;
+    color: #333;
+    font-size: 20px;
+}
+
+//HOLD ROOMS
+
+.ArnPrimarySearchContainer {
+    display: none;
+}
+
+.ArnSearchHeader {
+    display: none;
+}
+
+.ArnRoomsOnHold h2 {
+    font-weight: 500;
+    font-size: 30px;
+    color: #7a9a9e;
+    line-height: 1.2;
+}
+
+@media screen and (max-width: 1300px) {
+    .ArnRoomsOnHold h2 {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ArnRoomsOnHold h2 {
+        margin-top: 0;
+    }
+}
+
+.SearchHotels .ArnContainer {
+    width: 100%;
+}
+
+.ArnRateCell {
+    display: none;
+}
+
+.SearchHotels .ArnPropName {
+    width: 100%;
+}
+
+.HoldRoomsForm .submit {
+         background: #3276b1;
+     height: 42px;
+     border-radius: 6px;
+     font-weight: 900;
+     text-transform: capitalize;
+      border: 2px solid #3276b1;
+    transition: 0.3s;
+    &:hover {
+        border: 2px solid #3276b1;
+        background: #fff;
+        color: #3276b1;
     }
 }

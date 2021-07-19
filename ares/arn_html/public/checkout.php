@@ -1,6 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
+<?php
+    $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
+    if ($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs') {
+        $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
+    }
+    include $config;
+?>
 
 <head>
     <title>InterContinental Stephen F. Austin</title>
@@ -189,7 +195,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         /*]]>*/
     </script>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
+    <?php include getenv('includes_path') . 'header.php'; ?>
 
     <div class="subHeaderContainer">
         <div class="subHeader"><a href="/v6" class="refineLink"><span class="refine"><img
@@ -1423,7 +1429,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         Event.observe(window, "resize", resizeIt); /*]]>*/
     </script>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; ?>
+    <?php include getenv('includes_path') . 'footer.php'; ?>
 
     <script>
     </script>

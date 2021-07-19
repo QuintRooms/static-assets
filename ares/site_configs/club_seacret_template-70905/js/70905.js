@@ -163,10 +163,10 @@ class ChildPortal extends BasePortal {
         room_array.forEach((i) => {
             // const text_string = i.innerText;
             // console.log(text_string);
-            const text_array = i.innerText.split(/:.+/);
-            const room_title = text_array[1].slice(10);
+            const text_array = i.innerText.split(/:(.+)/);
+            const room_title = text_array[0].slice(10);
             console.log('room text_array', text_array);
-            const room_description = text_array[2];
+            const room_description = text_array[1];
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
             // const trip_link = i.querySelector('.bookRoom').getAttribute('href');

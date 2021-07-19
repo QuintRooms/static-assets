@@ -164,7 +164,7 @@ class ChildPortal extends BasePortal {
             const text_string = i.innerText;
             console.log(text_string);
             const text_array = i.innerText.split(':');
-            const room_title = text_array[0].slice(10);
+            const room_title = text_array[0].slice(21);
             console.log('room text_array', text_array);
             const room_description = text_array[1];
             const full_rate_string = i.querySelector('.full-stay').innerText;

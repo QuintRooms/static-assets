@@ -80,15 +80,21 @@ class ChildPortal extends BasePortal {
 
                     <article class='body-article'>
 
-                        <section class='itinerary-section'>
-                            <h3 class='section-title' id='itinerary-section-title'>ITINERARY</h3>
-                            <div class='itinerary-list'></div>
+                        <section class='left-section'>
+                            <div class='itinerary-container'>
+                                <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>
+                                <div class='itinerary-list'></div>
+                            </div>
+                            <div class='inclusions-container'>
+                                <h3 class='section-title' id='inclusions-container-title'>INCLUSIONS</h3>
+                                <div class='inclusions-list'></div>
+                            </div>
                         </section>
 
                         <section class='trips-section'>
-                        <h3 class='section-title' id='trips-section-title'>TRIPS</h3>
-                        <div class='trips-list'>
-                        </div>
+                            <h3 class='section-title' id='trips-section-title'>TRIPS</h3>
+                            <div class='trips-list'>
+                            </div>
                         </section>
 
                     </article>
@@ -120,12 +126,12 @@ class ChildPortal extends BasePortal {
     }
 
     async insertTripDetailsIntoHtml() {
-        //Await load and format dates
-        await utilities.waitForSelectorInDOM('#itinerary-section-title');
+        // Await load and format dates
+        await utilities.waitForSelectorInDOM('.bottom-carousel-article');
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
         const end_date = dayjs(this.trip.data.end_date).format('MM/DD/YYYY');
 
-        //Create hero container with title, location, dates
+        // Create hero container with title, location, dates
         document.querySelector('.hero-container').insertAdjacentHTML(
             'afterBegin',
             `
@@ -142,9 +148,9 @@ class ChildPortal extends BasePortal {
         `
         );
 
-        // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-section-title')) return;
+        // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-container-title')) return;
         
-        //Create and populate itinerary container from CMS object
+        // Create and populate itinerary container from CMS object
         this.trip.data.itinerary.forEach((i) => {
             document.querySelector('.itinerary-list').insertAdjacentHTML(
                 'beforeEnd',
@@ -160,11 +166,22 @@ class ChildPortal extends BasePortal {
             );
         });
 
+        // Create and populate Inclusions container from CMS object
+        this.trip.data.inclusions.forEach((i) => {
+            document.querySelector('.inclusions-list').insertAdjacentHTML(
+                'beforeEnd',
+                `   <div class=inclusion-item>
+                        <div class='inclusion-bullet'></div>
+                        <div class='inclusion-text'>${i.text}</div>
+                    </div>
+                `
+            );
+        });
+
         // Pull existing property rooms from DOM and use them to create new room containers
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
 
         room_array.forEach((i) => {
-            
 
             // Insert new rooms container skeleton
             document.querySelector('.trips-list').insertAdjacentHTML(
@@ -237,11 +254,11 @@ class ChildPortal extends BasePortal {
             const text_array = i.innerText.split(':');
             console.log('room text_array', text_array);
             const room_title_container = document.querySelector('.trip-item-name');
-            let room_title = text_array[0].trim();
+            const room_title = text_array[0].trim();
             const room_description_container = document.querySelector('.trip-item-description');
             // console.log(room_description_container);
             const room_description_splitter = i.innerText.indexOf(':') + 1;
-            let room_description = i.innerText.slice(room_description_splitter).trim();
+            const room_description = i.innerText.slice(room_description_splitter).trim();
             // console.log(typeof room_description);
 
             // Check that room description contains correct elements to format

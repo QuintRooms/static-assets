@@ -46,7 +46,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/clients/formula_1/img/logo.png`,
+            logo_file_location: `${env_path.path}/clients/formula_1/images/logo.png`,
             logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=65006&theme=standard',
         },
         map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,

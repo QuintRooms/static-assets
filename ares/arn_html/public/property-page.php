@@ -1528,7 +1528,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Traditional Room - Traditional Room 1 Queen Bed
+                                                        11/9/2020</div>Traditional Room 1 Queen Bed : 
                                                     Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">
@@ -1574,7 +1574,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Traditional Room - Traditional Room 1 King Bed
+                                                        11/9/2020</div>Traditional Room 1 King Bed : 
                                                     Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">
@@ -1619,7 +1619,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Traditional Room, 1 King Bed - Traditional Room,
+                                                        11/9/2020</div>1 King Bed - Traditional Room :
                                                     1 King Bed 1 King Bed Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">
@@ -1663,7 +1663,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Deluxe Room, 1 Queen Bed - Deluxe Room, 1 Queen
+                                                        11/9/2020</div>1 Queen Bed - Deluxe Room : 1 Queen
                                                     Bed 1 Queen Bed Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">

@@ -1,0 +1,594 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: center;
+$logo_max_width: 200px;
+$background_color: #fff;
+$primary_color: #7a9a9e;
+$secondary_color: #7a9a9e;
+$primary_text_color: #fff;
+$secondary_text_color: #7a9a9e;
+$border_color: #7a9a9e;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #3276b1;
+$button_hover_border_color: #3276b1;
+$google_font_name: 'Roboto', sans-serif;
+$site_name: 'club_seacret_template-70905';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.hide {
+    display: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+header {
+    border-bottom: 2px solid #7a9a9e;
+}
+
+.SinglePropDetail header {
+    border-bottom: none;
+}
+
+
+
+.hero-container {
+    background: linear-gradient(rgb(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), $banner_image;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: left;
+    border-bottom: 4px solid #7a9a9e;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.location-date-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.trip-title {
+    margin-left: 2.3rem;
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+.event-text-separators {
+    margin-top: 15px;
+    margin-left: 2.3rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.trip-mobile-container {
+    margin: 0;
+}
+
+.trip-date {
+    margin-left: 2.3rem;
+    margin-bottom: 12px;
+    margin-top: 15px;
+}
+
+.trip-location {
+    margin-left: 2.3rem;
+    margin-bottom: 12px;
+    margin-top: 15px;
+}
+
+.body-article {
+    display: flex;
+    flex-direction: row;
+}
+
+.itinerary-section {
+    width: 50vw;
+}
+
+.section-title {
+    margin-top: 14px;
+    margin-left: 2.3rem;
+    font-weight: 500;
+    font-size: 36px;
+    color: #7a9a9e;
+}
+
+.itinerary-item {
+    margin: 2.3rem;
+    margin-top: 0;
+}
+
+.itinerary-text {
+    display: grid;
+    grid-template-columns: minmax(90px, 120px) auto;
+    align-items: start;
+    grid-gap: 1rem;
+    margin-bottom: 2.3rem;
+}
+
+.itinerary-day {
+    font-size: 30px;
+    font-weight: 500;
+    grid-column: 1;
+}
+
+.itinerary-description {
+    grid-column: 2;
+    line-height: 1.5rem;
+}
+
+hr {
+    border-top: 1px solid #7a9a9e7a;
+    margin-bottom: 2.3rem;
+}
+
+.trips-section {
+    width: 50vw;
+}
+
+.trip-item {
+    border: 1px solid #3276b140;
+    box-shadow: 0px 4px 4px 0px #0000000d;
+    border-radius: 1rem;
+    margin: 2.3rem;
+    display: grid;
+    grid-template-columns: auto 200px;
+    // align-items: center;
+    grid-gap: 1rem;
+    // grid-template-rows: repeat(2, 1fr);
+}
+
+.trip-text-container {
+    display: grid;
+    grid-column: 1;
+    padding-right: 1rem;
+}
+
+.trip-item-name {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 1rem 0 0 1rem;
+}
+
+.trip-item-description {
+    font-size: 18px;
+    padding: 1rem;
+    padding-top: 0;
+    margin: 0px;
+}
+
+.trip-price-cta-container {
+    display: grid;
+    grid-column: 2;
+    justify-items: end;
+    width: 100%;
+}
+
+.trip-ctas {
+    display:grid;
+    justify-items: end;
+    width: inherit;
+}
+
+.new-cta {
+    width: 90%;
+    height: 42px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    margin: 1rem;
+    font-weight: 900;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 42px;
+}
+
+button {
+    height: 42px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    margin: 1rem;
+    font-weight: 900;
+}
+
+.book-button {
+    background: #3276b1;
+    margin: 1rem 1rem 5px 20px;
+    border: 2px solid #3276b1;
+    transition: 0.3s;
+    &:hover {
+        border: 2px solid #3276b1;
+        background: #fff;
+        color: #3276b1;
+    }
+}
+
+.hold-button {
+    background: #719ec8;
+    margin: 5px 1rem 1rem 20px;
+    border: 2px solid #719ec8;
+    transition: 0.3s;
+    &:hover {
+        border: 2px solid #719ec8;
+        background: #fff;
+        color: #719ec8;
+    }
+}
+
+.cancellation-policy {
+    place-self: center;
+    margin: 1rem;
+}
+
+.trip-price-desktop {
+    font-size: 34px;
+    font-weight: 900;
+    color: #7a9a9e;
+    margin: 1rem 1rem 5px 0;
+    // grid-column: 4/6;
+}
+
+.trip-price-mobile {
+    display: none;
+}
+
+.ArnSupportLinks {
+    width: 100%;
+    padding: 24px 0;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    z-index: 9;
+    position: relative;
+    text-decoration: none;
+}
+
+.ArnSupportLinks a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.pb-container {
+    padding-top: 24px;
+}
+
+.pb-container img {
+    width: 150px;
+    cursor: pointer;
+}
+
+.gg-chevron-right {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 50px;
+    height: 50px;
+    border: 20px solid transparent;
+    border-radius: 100px;
+}
+.gg-chevron-right::after {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-bottom: 15px solid;
+    border-right: 15px solid;
+    transform: rotate(-45deg);
+    left: 300px;
+    top: 125px;
+}
+
+@media only screen and (max-width: 1300px) {
+
+.logo img {
+    padding: 0;
+    margin: 1rem;
+}
+
+.itinerary-day{
+    grid-column: 1/6;
+    grid-row: 1/2
+  }
+
+.itinerary-description{
+    grid-column: 1/7;
+    grid-row: 2/3;
+  }
+
+
+    .hero-container {
+        background: linear-gradient(rgb(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), $banner_image;
+        background-size: cover;
+        height: auto;
+        min-height: 200px;
+        /* position: relative; */
+        /* float: left; */
+        border-bottom: 4px solid #7a9a9e;
+    }
+
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        margin: 0px 0px 1rem 0px;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    .body-article {
+        flex-direction: column;
+    }
+
+    .itinerary-section {
+        width: 100%;
+    }
+
+    .itinerary-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .itinerary-day {
+        width: 100%;
+        font-size: 24px;
+    }
+
+     .trips-section {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 800px) {
+
+    .location-date-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-text-separators {
+        display: none;
+    }
+
+    .trip-date {
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .trip-location {
+        margin-top: .5rem;
+        margin-bottom: 0;
+    }
+
+    .trip-item {
+        display:flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        grid-gap: none;
+    }
+
+    .trip-item-name {
+        font-size: 24px;
+    }
+
+    .trip-price-desktop {
+        display: none;
+    }
+
+
+    .trip-price-mobile {
+        // display: block;
+        font-size: 24px;
+        font-weight: 900;
+        color: #7a9a9e;
+        margin: 0;
+        padding: 1rem;
+        // grid-row: 2;
+    }
+
+    .trip-price-mobile {
+        display: block;
+        font-size: 24px;
+        font-weight: 900;
+        color: #7a9a9e;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+    .trip-price-cta-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .trip-ctas {
+        display: grid;
+        grid-template-columns: 45% auto 45%;
+
+        padding: 1rem;
+    }
+
+    .book-button {
+        background: #3276b1;
+        grid-column: 1;
+        margin: 0;
+        width: 100%;
+    }
+
+    .hold-button {
+        background: #3276b1b6;
+        margin: 0;
+        width: 100%;
+         grid-column: 3;
+    }
+
+    }
+}
+
+/* Carousel */
+.carousel-container {
+    max-width: none;
+}
+
+.carousel-slide {
+    display: flex;
+}
+
+.image-number {
+    display: none;
+}
+
+.carousel-slide .image-wrapper img {
+    max-width: calc(33vw - 2rem);
+    height: 250px;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .carousel-slide .image-wrapper img {
+        max-width: calc(50vw - 2rem);
+    }
+
+    @media screen and (max-width: 500px) {
+        .carousel-slide .image-wrapper img {
+            max-width: 500px;
+        }
+    }
+}
+
+/* Checkout Page */
+
+#theAjaxPaymentPolicies {
+    border: 1px solid #7a9a9e;
+    box-shadow: 0px 4px 4px 0px #0000000d;
+    border-radius: 1rem;
+}
+
+.insuranceAgreement {
+    display: none;
+}
+
+input#theConfirmationButton, .WBConfirmedBooking .submit {
+     background: #3276b1;
+     height: 42px;
+     border-radius: 6px;
+     font-weight: 900;
+     text-transform: uppercase;
+      border: 2px solid #3276b1;
+    transition: 0.3s;
+    &:hover {
+        border: 2px solid #3276b1;
+        background: #fff;
+        color: #3276b1;
+    }
+}
+
+#theBookingPage legend {
+    font-weight: 500;
+    font-size: 30px;
+    color: #7a9a9e;
+    line-height: 1.2;
+}
+
+#theAjaxPaymentPolicies legend {
+    font-weight: 500;
+    line-height: 1.1;
+    color: #333;
+    font-size: 20px;
+}
+
+//HOLD ROOMS
+
+.ArnPrimarySearchContainer {
+    display: none;
+}
+
+.ArnSearchHeader {
+    display: none;
+}
+
+.ArnRoomsOnHold h2 {
+    font-weight: 500;
+    font-size: 30px;
+    color: #7a9a9e;
+    line-height: 1.2;
+}
+
+@media screen and (max-width: 1300px) {
+    .ArnRoomsOnHold h2 {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ArnRoomsOnHold h2 {
+        margin-top: 0;
+    }
+}
+
+.SearchHotels .ArnContainer {
+    width: 100%;
+}
+
+.SearchHotels .ArnPropName {
+    width: 100%;
+}
+
+.HoldRoomsForm .submit {
+    background: #3276b1;
+    height: 42px;
+    border-radius: 6px;
+    font-weight: 900;
+    text-transform: capitalize;
+    border: 2px solid #3276b1;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &:hover {
+        border: 2px solid #3276b1;
+        background: #fff;
+        color: #3276b1;
+    }
+}
+
+.HoldRoomsForm .ArnProperty {
+    max-width: 1600px;
+}

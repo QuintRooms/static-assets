@@ -408,8 +408,44 @@ header {
   flex-direction: row;
 }
 
-.itinerary-section {
+.left-section {
   width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.itinerary-container {
+  width: 100%;
+}
+
+.inclusions-container {
+  width: 100%;
+}
+
+.inclusions-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.inclusion-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  align-items: center;
+}
+
+.inclusion-bullet {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #7a9a9e;
+  border-radius: 1.5rem;
+}
+
+.inclusion-text {
+  margin-left: 2rem;
+  font-size: 18px;
 }
 
 .section-title {
@@ -652,7 +688,7 @@ button {
     flex-direction: column;
   }
 
-  .itinerary-section {
+  .itinerary-container {
     width: 100%;
   }
 

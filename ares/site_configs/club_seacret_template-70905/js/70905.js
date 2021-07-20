@@ -25,7 +25,6 @@ class ChildPortal extends BasePortal {
         await this.fetchTrips();
         await this.fetchPropertyHtml();
         await this.getTrip();
-        this.removeDomElements();
         this.insertTripDetailsIntoHtml();
         this.restyleCarousel();
         this.hideArnElements();
@@ -112,10 +111,6 @@ class ChildPortal extends BasePortal {
         return this.trip;
     }
 
-    removeDomElements() {
-        
-    }
-
     hideArnElements() {
         utilities.waitForSelectorInDOM('.ArnRightListContainer');
         const arn_right_container = document.querySelector('.ArnRightListContainer');
@@ -165,38 +160,19 @@ class ChildPortal extends BasePortal {
             );
         });
 
-
-        //Pull existing property rooms from DOM and use them to create new room containers
+        // Pull existing property rooms from DOM and use them to create new room containers
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
 
         room_array.forEach((i) => {
-            console.log(i);
-            const text_string = i.innerText;
-            console.log(text_string);
-            const text_array = i.innerText.split('/:(.+)/');
-            let room_title = text_array[0];
-            console.log('room text_array', text_array);
-            const full_rate_string = i.querySelector('.full-stay').innerText;
-            const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
+            
 
-            //Check that room description contains correct elements to format
-            //if not include entire original string
-            try {
-                if (!text_string.includes(':') || !room_title || !room_description) {
-                    room_title = '';
-                    room_description = text_array;
-                }
-            } catch (error) {
-                console.error('Error inside room_title and room_description verification: ', error);
-            }
-
-            //Insert new rooms container skeleton
+            // Insert new rooms container skeleton
             document.querySelector('.trips-list').insertAdjacentHTML(
                 'afterBegin',
                 `
                 <div class='trip-item'>
                     <div class='trip-text-container'>
-                        <div class='trip-item-name'>${room_title}</div>
+                        <div class='trip-item-name'></div>
                         <div class="trip-price-mobile">$</div>
                         <p class='trip-item-description'></p>
                     </div>
@@ -209,13 +185,15 @@ class ChildPortal extends BasePortal {
                 `
             );
 
-            //Insert price into new containers before removing unwanted divs from DOM
+            // Insert price into new containers before removing unwanted divs from DOM
+            const full_rate_string = i.querySelector('.full-stay').innerText;
+            const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
             const mobile_price_container = document.querySelector('.trip-price-mobile');
             const desktop_price_container = document.querySelector('.trip-price-desktop');
             mobile_price_container.innerText = `$${trip_rate}`;
             desktop_price_container.innerText = `$${trip_rate}`;
 
-            //Move CTAs to new rooms container and format
+            // Move CTAs to new rooms container and format
             const cta_container = document.querySelector('.trip-ctas');
             const original_book_cta = i.querySelector('.bookRoom');
             original_book_cta.classList.remove('bookRoom');
@@ -234,16 +212,15 @@ class ChildPortal extends BasePortal {
                 cta_container.appendChild(original_hold_cta);
             }
 
-            //Move Cancellation policy and alert contianer to new rooms containers
+            // Move Cancellation policy and alert contianer to new rooms containers
             const price_cta_container = document.querySelector('.trip-price-cta-container');
             const cancellation_policy_container = i.querySelector('.ArnRateCancelPolicyContainer');
-            // console.log(cancellation_policy_container);
             const cancellation_policy_link = i.querySelector('.ArnRateCancelAnchor');
             cancellation_policy_link.classList.add('cancellation-policy');
             price_cta_container.appendChild(cancellation_policy_link);
             price_cta_container.appendChild(cancellation_policy_container);
 
-            //Remove Unwanted original DOM elements from being included in room descriptions
+            // Remove Unwanted original DOM elements from being included in room descriptions
             const per_date_rates = i.querySelector('.ArnRateFromTo');
             const per_night_rates = i.querySelector('.ArnNightlyRate');
             const per_day_rates = i.querySelector('.RateCalendarPopupAnchor');
@@ -254,10 +231,32 @@ class ChildPortal extends BasePortal {
             per_day_rates.remove();
             calendar_popup.remove();
 
-            //Insert trip-item-description
+            // Grab trip item title and description divs and content to fill them with
+            const text_string = i.innerText;
+            console.log(text_string);
+            const text_array = i.innerText.split(':');
+            console.log('room text_array', text_array);
+            const room_title_container = document.querySelector('.trip-item-name');
+            let room_title = text_array[0].trim();
             const room_description_container = document.querySelector('.trip-item-description');
-            const room_description = i.innerText.split('/:(.+)/')[1];
-            room_description_container.innerText(room_description);
+            // console.log(room_description_container);
+            const room_description_splitter = i.innerText.indexOf(':') + 1;
+            let room_description = i.innerText.slice(room_description_splitter).trim();
+            // console.log(typeof room_description);
+
+            // Check that room description contains correct elements to format
+            // if not include entire original string
+            try {
+                if (!text_string.includes(':') || !room_title || !room_description) {
+                    room_description_container.innerText = text_string.trim();
+                    return;
+                }
+            } catch (error) {
+                console.error('Error inside room_title and room_description verification: ', error);
+            }
+
+            room_description_container.innerText = room_description;
+            room_title_container.innerText = room_title;
         });
     }
 
@@ -277,6 +276,7 @@ class ChildPortal extends BasePortal {
         const submit_button = document.querySelectorAll('input#theConfirmationButton, .WBConfirmedBooking .submit');
         console.log('submit button in updateCheckoutInterface', submit_button);
         submit_button[0].value = 'CONFIRM RESERVATIONS';
+
     }
 }
 

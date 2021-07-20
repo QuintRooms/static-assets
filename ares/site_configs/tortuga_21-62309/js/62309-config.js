@@ -78,6 +78,6 @@ export default function siteConfig() {
         root_page_header_text: '',
         root_page_subheader_text: '',
         is_resbeat_client: false,
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
     };
 }

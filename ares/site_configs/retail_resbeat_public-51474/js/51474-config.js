@@ -73,7 +73,7 @@ export default function siteConfig() {
         root_page_header_text: 'WELCOME TO RES<b>BEAT</b>',
         root_page_subheader_text: 'START YOUR SEARCH OF 600K+ HOTELS WORLDWIDE',
         is_resbeat_client: false,
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
         has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [

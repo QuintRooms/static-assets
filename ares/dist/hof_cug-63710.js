@@ -8716,7 +8716,7 @@
                     root_page_header_text: 'START YOUR <b>SEARCH</b>',
                     root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
                     is_resbeat_client: !0,
-                    confirmation_email_from: 'Hotels for Hope',
+                    confirmation_email_from: 'Quint Rooms',
                     has_landing_page: !1,
                     hide_search_on_landing_page: !0,
                     landing_page_events: [{name: '', display_date: '', end_date: '', portal_url: ''}],

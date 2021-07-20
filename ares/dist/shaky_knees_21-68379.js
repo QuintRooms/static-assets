@@ -3154,12 +3154,12 @@
                         : P(e, t, n)
                 );
             },
-            J = function (e, t) {
+            Q = function (e, t) {
                 v(e);
                 for (var n, r = y((t = w(t))), o = 0, i = r.length; i > o; ) Z(e, (n = r[o++]), t[n]);
                 return e;
             },
-            Q = function (e) {
+            J = function (e) {
                 var t = I.call(this, (e = _(e, !0)));
                 return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, Y) && this[Y][e])) || t);
             },
@@ -3195,9 +3195,9 @@
             (M.f = K),
             (q.f = Z),
             (n(62).f = A.f = X),
-            (n(46).f = Q),
+            (n(46).f = J),
             (L.f = ee),
-            i && !n(23) && c(N, 'propertyIsEnumerable', Q, !0),
+            i && !n(23) && c(N, 'propertyIsEnumerable', J, !0),
             (h.f = function (e) {
                 return V(p(e));
             })),
@@ -3222,10 +3222,10 @@
         }),
             a(a.S + a.F * !U, 'Object', {
                 create: function (e, t) {
-                    return void 0 === t ? x(e) : J(x(e), t);
+                    return void 0 === t ? x(e) : Q(x(e), t);
                 },
                 defineProperty: Z,
-                defineProperties: J,
+                defineProperties: Q,
                 getOwnPropertyDescriptor: K,
                 getOwnPropertyNames: X,
                 getOwnPropertySymbols: ee,
@@ -8062,7 +8062,7 @@
                     root_page_header_text: 'Start Your Search',
                     root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
                     is_resbeat_client: !1,
-                    confirmation_email_from: 'Hotels for Hope',
+                    confirmation_email_from: 'Quint Rooms',
                     has_group_booking_banner: !0,
                     group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Shaky%20Knees',
                 };

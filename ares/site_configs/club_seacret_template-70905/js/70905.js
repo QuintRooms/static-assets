@@ -173,7 +173,7 @@ class ChildPortal extends BasePortal {
             console.log(i);
             const text_string = i.innerText;
             console.log(text_string);
-            const text_array = i.innerText.split(':');
+            const text_array = i.innerText.split('/:(.+)/');
             let room_title = text_array[0];
             console.log('room text_array', text_array);
             const full_rate_string = i.querySelector('.full-stay').innerText;
@@ -256,7 +256,7 @@ class ChildPortal extends BasePortal {
 
             //Insert trip-item-description
             const room_description_container = document.querySelector('.trip-item-description');
-            const room_description = i.innerText.split(':')[1];
+            const room_description = i.innerText.split('/:(.+)/')[1];
             room_description_container.innerText(room_description);
         });
     }

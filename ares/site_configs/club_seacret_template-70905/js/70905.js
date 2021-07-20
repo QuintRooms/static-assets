@@ -25,6 +25,7 @@ class ChildPortal extends BasePortal {
         await this.fetchTrips();
         await this.fetchPropertyHtml();
         await this.getTrip();
+        this.removeDomElements();
         this.insertTripDetailsIntoHtml();
         this.restyleCarousel();
         this.hideArnElements();
@@ -111,6 +112,10 @@ class ChildPortal extends BasePortal {
         return this.trip;
     }
 
+    removeDomElements() {
+        
+    }
+
     hideArnElements() {
         utilities.waitForSelectorInDOM('.ArnRightListContainer');
         const arn_right_container = document.querySelector('.ArnRightListContainer');
@@ -120,10 +125,12 @@ class ChildPortal extends BasePortal {
     }
 
     async insertTripDetailsIntoHtml() {
+        //Await load and format dates
         await utilities.waitForSelectorInDOM('#itinerary-section-title');
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
         const end_date = dayjs(this.trip.data.end_date).format('MM/DD/YYYY');
 
+        //Create hero container with title, location, dates
         document.querySelector('.hero-container').insertAdjacentHTML(
             'afterBegin',
             `
@@ -141,7 +148,8 @@ class ChildPortal extends BasePortal {
         );
 
         // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-section-title')) return;
-
+        
+        //Create and populate itinerary container from CMS object
         this.trip.data.itinerary.forEach((i) => {
             document.querySelector('.itinerary-list').insertAdjacentHTML(
                 'beforeEnd',
@@ -157,31 +165,43 @@ class ChildPortal extends BasePortal {
             );
         });
 
+
+        //Pull existing property rooms from DOM and use them to create new room containers
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
-        // console.log('room_array', room_array);
 
         room_array.forEach((i) => {
+            console.log(i);
             const text_string = i.innerText;
             console.log(text_string);
             const text_array = i.innerText.split(':');
-            const room_title = text_array[0].slice(21);
+            let room_title = text_array[0];
             console.log('room text_array', text_array);
-            const room_description = text_array[1];
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
-            // const trip_link = i.querySelector('.bookRoom').getAttribute('href');
 
+            //Check that room description contains correct elements to format
+            //if not include entire original string
+            try {
+                if (!text_string.includes(':') || !room_title || !room_description) {
+                    room_title = '';
+                    room_description = text_array;
+                }
+            } catch (error) {
+                console.error('Error inside room_title and room_description verification: ', error);
+            }
+
+            //Insert new rooms container skeleton
             document.querySelector('.trips-list').insertAdjacentHTML(
                 'afterBegin',
                 `
                 <div class='trip-item'>
                     <div class='trip-text-container'>
                         <div class='trip-item-name'>${room_title}</div>
-                        <div class="trip-price-mobile">$${trip_rate}</div>
-                        <p class='trip-item-description'>${room_description}</p>
+                        <div class="trip-price-mobile">$</div>
+                        <p class='trip-item-description'></p>
                     </div>
                     <div class='trip-price-cta-container'>
-                        <div class='trip-price-desktop'>$${trip_rate}</div>
+                        <div class='trip-price-desktop'>$</div>
                         <div class='trip-ctas'>
                         </div>
                     </div>
@@ -189,6 +209,13 @@ class ChildPortal extends BasePortal {
                 `
             );
 
+            //Insert price into new containers before removing unwanted divs from DOM
+            const mobile_price_container = document.querySelector('.trip-price-mobile');
+            const desktop_price_container = document.querySelector('.trip-price-desktop');
+            mobile_price_container.innerText = `$${trip_rate}`;
+            desktop_price_container.innerText = `$${trip_rate}`;
+
+            //Move CTAs to new rooms container and format
             const cta_container = document.querySelector('.trip-ctas');
             const original_book_cta = i.querySelector('.bookRoom');
             original_book_cta.classList.remove('bookRoom');
@@ -207,6 +234,7 @@ class ChildPortal extends BasePortal {
                 cta_container.appendChild(original_hold_cta);
             }
 
+            //Move Cancellation policy and alert contianer to new rooms containers
             const price_cta_container = document.querySelector('.trip-price-cta-container');
             const cancellation_policy_container = i.querySelector('.ArnRateCancelPolicyContainer');
             // console.log(cancellation_policy_container);
@@ -214,6 +242,22 @@ class ChildPortal extends BasePortal {
             cancellation_policy_link.classList.add('cancellation-policy');
             price_cta_container.appendChild(cancellation_policy_link);
             price_cta_container.appendChild(cancellation_policy_container);
+
+            //Remove Unwanted original DOM elements from being included in room descriptions
+            const per_date_rates = i.querySelector('.ArnRateFromTo');
+            const per_night_rates = i.querySelector('.ArnNightlyRate');
+            const per_day_rates = i.querySelector('.RateCalendarPopupAnchor');
+            const calendar_popup = i.querySelector('.RateCalendarPopupContainer');
+
+            per_date_rates.remove();
+            per_night_rates.remove();
+            per_day_rates.remove();
+            calendar_popup.remove();
+
+            //Insert trip-item-description
+            const room_description_container = document.querySelector('.trip-item-description');
+            const room_description = i.innerText.split(':')[1];
+            room_description_container.innerText(room_description);
         });
     }
 

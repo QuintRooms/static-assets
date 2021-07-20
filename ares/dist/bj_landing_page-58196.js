@@ -330,7 +330,7 @@
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
-            H = function (e) {
+            I = function (e) {
                 var t,
                     n = this;
                 if (!n._d) {
@@ -341,7 +341,7 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(H, r, 1), u(j, r, 1));
+                                      t.call(e, u(I, r, 1), u(j, r, 1));
                                   } catch (e) {
                                       j.call(r, e);
                                   }
@@ -356,7 +356,7 @@
             ((L = function (e) {
                 h(this, L, 'Promise', '_h'), p(e), r.call(this);
                 try {
-                    e(u(H, this, 1), u(j, this, 1));
+                    e(u(I, this, 1), u(j, this, 1));
                 } catch (e) {
                     j.call(this, e);
                 }
@@ -382,7 +382,7 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(H, e, 1)), (this.reject = u(j, e, 1));
+                (this.promise = e), (this.resolve = u(I, e, 1)), (this.reject = u(j, e, 1));
             }),
             (b.f = E = function (e) {
                 return e === L || e === a ? new i(e) : o(e);
@@ -3104,8 +3104,8 @@
             D = O && O.stringify,
             Y = p('_hidden'),
             j = p('toPrimitive'),
-            H = {}.propertyIsEnumerable,
-            I = l('symbol-registry'),
+            I = {}.propertyIsEnumerable,
+            H = l('symbol-registry'),
             F = l('symbols'),
             B = l('op-symbols'),
             N = Object.prototype,
@@ -3160,7 +3160,7 @@
                 return e;
             },
             Q = function (e) {
-                var t = H.call(this, (e = _(e, !0)));
+                var t = I.call(this, (e = _(e, !0)));
                 return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, Y) && this[Y][e])) || t);
             },
             K = function (e, t) {
@@ -3207,11 +3207,11 @@
         for (var re = C(p.store), oe = 0; re.length > oe; ) m(re[oe++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
-                return o(I, (e += '')) ? I[e] : (I[e] = R(e));
+                return o(H, (e += '')) ? H[e] : (H[e] = R(e));
             },
             keyFor: function (e) {
                 if (!z(e)) throw TypeError(e + ' is not a symbol!');
-                for (var t in I) if (I[t] === e) return t;
+                for (var t in H) if (H[t] === e) return t;
             },
             useSetter: function () {
                 G = !0;
@@ -8051,7 +8051,7 @@
                     root_page_header_text: 'Start Your Search',
                     root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
                     is_resbeat_client: !1,
-                    confirmation_email_from: 'Hotels for Hope',
+                    confirmation_email_from: 'Quint Rooms',
                     has_landing_page: !0,
                     hide_search_on_landing_page: !0,
                     landing_page_events: [

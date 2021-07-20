@@ -70,6 +70,6 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
     };
 }

@@ -7851,7 +7851,7 @@
                     root_page_header_text: 'Start Your Search',
                     root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
                     is_resbeat_client: !1,
-                    confirmation_email_from: 'Hotels for Hope',
+                    confirmation_email_from: 'Quint Rooms',
                 };
             });
         var o = new ((r = n(48)) && r.__esModule ? r : {default: r}).default(),

@@ -9012,7 +9012,7 @@
                     root_page_header_text: 'WELCOME TO RES<b>BEAT</b>',
                     root_page_subheader_text: 'START YOUR SEARCH OF 600K+ HOTELS WORLDWIDE',
                     is_resbeat_client: !1,
-                    confirmation_email_from: 'Hotels for Hope',
+                    confirmation_email_from: 'Quint Rooms',
                     has_landing_page: !1,
                     hide_search_on_landing_page: !0,
                     landing_page_events: [{name: '', display_date: '', end_date: '', portal_url: ''}],

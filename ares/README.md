@@ -9,7 +9,7 @@
 7. [Webpack](#Webpack)
 8. [Testing](#Testing)
 9. [Build a Portal](#Build-a-Portal)
- 
+
 # Ares Portal Configuration Keys
 
 Documented below are the configuration keys for the Ares portal build system. Each config will enable or disable certain features within a portal.
@@ -38,7 +38,7 @@ Documented below are the configuration keys for the Ares portal build system. Ea
 17. [Search Page Header Text](#heading=h.2wk6kclacn79)
 18. [Custom Emails](#Custom-Emails)
 
- 
+
 
 
 ### **Autocomplete**
@@ -52,7 +52,7 @@ algolia_api_key: '123445',
 ```
 
 
-Ares autocomplete is migrating to use Google Places autocomplete as of April 2021. 
+Ares autocomplete is migrating to use Google Places autocomplete as of April 2021.
 
 If a portal has the key “use_google_autocomplete: true”, it will use Google instead of the default that is Algolia.
 
@@ -157,7 +157,7 @@ This boolean will switch between the reviews section on the property page being 
 
 ### **Property Filtering**
 
-(Boolean) 
+(Boolean)
 
 ```
 show_stars: false,
@@ -245,7 +245,7 @@ theme: 'light',['dark']
 ```
 
 
-We have built in two options for a portals’ theme: light and dark. Light is the most common, dark will swap the background to be black with white text where appropriate. 
+We have built in two options for a portals’ theme: light and dark. Light is the most common, dark will swap the background to be black with white text where appropriate.
 
 See an example of a dark theme [here](https://book.hofhotels.com/group-event?id=46202&utm_source=internal).
 
@@ -295,7 +295,7 @@ Simply sets the font for the portal.
 ### **Hybrid Compensation model**
 
 (Boolean)
-Having the Hybrid Compensation Model set to true changes the text in two places on the checkout page. 
+Having the Hybrid Compensation Model set to true changes the text in two places on the checkout page.
 
 See an example on [this](https://bookrooms.formula1.com/group-event?id=46260&utm_source=internal) portal (on the Checkout page)
 
@@ -333,7 +333,7 @@ has_custom_emails: true,
 
         is_resbeat_client: false,
 
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
 
 ### **Email Logo**
 
@@ -357,7 +357,7 @@ Email_logo_file_location: ‘path’
 3. [Popup](#Popup)
 4. [Property Image Replacement](#Property-Image-Replacement)
 
-        
+
 
 
 ### **Group Booking Banner**
@@ -427,7 +427,7 @@ popUp(
 ```
 
 
-   
+
 
 The popup will display a message on load of a portal, it is used to switch between two weekends of an event. For example ACL weekend 1 & 2.
 
@@ -576,11 +576,11 @@ As a site is built and developed, it should be moved to the list of Production e
 Path.js sets the path for asset paths (as described in [entry-points](#entry-points)) depending on the `process.env.NODE_ENV` (our `NODE_ENV` is set based on which script from `package.json` is run - `npm run local/dev/prod`)
 ### **site-build.js**
 
-The `site-build.js` script will create all necessary files for a new site. Simply type: 
+The `site-build.js` script will create all necessary files for a new site. Simply type:
 ```
 npm run build-site
 ```
-into the command line and answer the questions. 
+into the command line and answer the questions.
 
 # Styles
 
@@ -594,7 +594,7 @@ into the command line and answer the questions.
 5. [Site Specific Styles](#Site-Specific-Styles) ([site_id].scss)
 
 ### **Sass/Scss**
-All styles written in the Ares repo should be written in SCSS. 
+All styles written in the Ares repo should be written in SCSS.
 
 [Sass or Scss](https://sass-lang.com/guide) is a CSS extension that allos us to use variables, functions and nesting to make it quicker and easier to write styles. All styles written in Scss end up as CSS when a build is run. For Example, when adding colors to a site's `.scss` file, you won't see any CSS files within the `site_name/styles` directory. When the build is run, the Scss is compiled into CSS and eventually injected into the DOM on load of the page.
 
@@ -647,7 +647,7 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 ```
 There's a few things going on here, so let's start with the `$env`. The current environment is passed as a sass variable to our stylesheets when they are run through webpack (when running a build, `npm run local/dev/prod`). So when `npm run dev` is run, `$env` will equal `'develop'`.
 
-Now in the `12345.scss` file we can see we have a few variables defined: 
+Now in the `12345.scss` file we can see we have a few variables defined:
 - $site_name
 - $path
 - $banner_image
@@ -676,7 +676,7 @@ Webpack bundles all our code for each site together, into one convenient file (d
 ```
 # Testing
 
-A test file can be created for any JavaScript file within Ares using [Jest](https://jestjs.io/docs/getting-started). For a good example of some Jest unit tests against an Ares file, see the `autocomplete` directory located: `ares/js/components/autocomplete`. 
+A test file can be created for any JavaScript file within Ares using [Jest](https://jestjs.io/docs/getting-started). For a good example of some Jest unit tests against an Ares file, see the `autocomplete` directory located: `ares/js/components/autocomplete`.
 
 For a file you wish to also write tests for, create another file next to the file being tested and name it `[name].test.js`, import the file you want to test at the top, then write your unit tests.
 
@@ -695,7 +695,7 @@ Listed below are the steps that need to be taken when building a new portal. Man
 3. When happy with the site locally, go to [entry-points.js](#entry-points.js) (located `ares/js/build_tools/entry-points.js`), cut and paste the line for the site and move it up to the `develop` environment object.
 4. Now, in the command line, run `npm run dev`. This will do multiple things, it will compile the site's `.scss` files into `.css`, it will build an HTML confirmation email using the colors and logo from the scss file, and it will create a `dist` (compiled code) file in `ares/dist`.
 5. You're ready to push to the dev server! Stage and commit the code, write a descriptive commit message and push.
-6. The code and all assets for the new site is now on the QuintRooms dev server - `https://dev-static.quintrooms/ares`, the compiled file that Webpack created can be found using this path: `https://dev-static.quintrooms/ares/dist/[site_name]-[site_id].js`. Therefore this is the url we need to the Skin Editor for our site inside the `footer.html` file like so: 
+6. The code and all assets for the new site is now on the QuintRooms dev server - `https://dev-static.quintrooms/ares`, the compiled file that Webpack created can be found using this path: `https://dev-static.quintrooms/ares/dist/[site_name]-[site_id].js`. Therefore this is the url we need to the Skin Editor for our site inside the `footer.html` file like so:
 
 ```
 <script async src="https://dev-static.quintrooms/ares/dist/[site_name]-[site_id].js"></script>

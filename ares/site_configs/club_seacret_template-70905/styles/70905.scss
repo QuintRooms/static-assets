@@ -194,10 +194,11 @@ header {
     // background: #7a9a9e;
     background: #333;
     border-radius: .6rem;
+    padding: .25rem;
 }
 
 .inclusion-text {
-    margin-left: 1.25rem;
+    padding-left: 1.25rem;
     font-size: 16px;
 }
 
@@ -207,6 +208,10 @@ header {
     font-weight: 500;
     font-size: 36px;
     color: #7a9a9e;
+}
+
+.itinerary-list {
+    width: 100%;
 }
 
 .itinerary-item {
@@ -404,20 +409,14 @@ button {
 
 @media only screen and (max-width: 1300px) {
 
+.left-section {
+    width: 100%;
+}
+
 .logo img {
     padding: 0;
     margin: 1rem;
 }
-
-.itinerary-day{
-    grid-column: 1/2;
-    grid-row: 1/2
-  }
-
-.itinerary-description{
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
 
 .inclusions-container {
 display: flex;
@@ -462,7 +461,19 @@ h2 {
 .itinerary-text {
     display: flex;
     flex-direction: column;
-}
+    grid-template-columns: none;
+} 
+
+.itinerary-day{
+    display: flex;
+    grid-column: none;
+  }
+
+.itinerary-description{
+    display: flex;
+    grid-column: none;
+  }
+
 
 .itinerary-day {
     width: 100%;

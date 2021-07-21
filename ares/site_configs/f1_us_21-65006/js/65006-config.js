@@ -47,7 +47,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/clients/formula_1/images/logo.png`,
-            logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=65006&theme=standard',
+            logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
         },
         map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         theme: 'light',

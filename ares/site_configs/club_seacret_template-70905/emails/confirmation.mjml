@@ -118,12 +118,16 @@
         <mj-text align="center" color="#666" margin-top="10px">
           <p>\{{TripStartDate}} - \{{TripEndDate}}</p>
         </mj-text>
-        <mj-raw padding-bottom="10px" color="#666">
-            <p>\{{Itinerary}}</p>
+        <mj-raw>
+            <mj-text padding-bottom="10px" color="#666">
+                <p>\{{Itinerary}}</p>
+            </mj-text>
         </mj-raw>
         <mj-divider border-width="2px" padding-top="10px" padding-bottom="10px" border-style="solid" border-color="#fff" />
-        <mj-raw padding-bottom="10px" color="#666">
-           <p>\{{Inclusions}}</p>
+        <mj-raw>
+            <mj-text padding-bottom="10px" color="#666">
+                <p>\{{Inclusions}}</p>
+            </mj-text>
         </mj-raw>
       </mj-column>
       <mj-column width="100%" padding-top="20px">

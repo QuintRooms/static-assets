@@ -465,12 +465,6 @@ header {
   grid-column: 1;
 }
 
-#inclusions-intro {
-  font-size: 14px;
-  align-self: end;
-  grid-column: 2;
-}
-
 .inclusions-list {
   grid-column: 2;
   display: flex;

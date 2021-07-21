@@ -1,2 +1,973 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
-*,.taxFeeRow td,.discount td,.totalRow td,.balanceDueRow td,.dueNowRow td,.guestNameFields td,.total-points-earned td{font-family:"Roboto",sans-serif,"Helvetica"}header{justify-content:center;background:#fff}.RootBody{background:linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(https://static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover}.logo img{max-width:200px}body,#thePropertyAmenities span,.WBRateGuaranteeForm2 .zsFormClass,#lightbox .window,.WBConfirmedBooking .informMessage{background-color:#fff}#searching h2:after,#theConfirmationButton,.ArnPrimarySearchContainer,.ArnShowRatesLink,.ArnTripAdvisorDetails.HasReviews .ratingCount,.CreateAnAccountAction,.RootBody #theOtherSubmitButton,.SimpleSearch,.WBForgotPasswordFormActions .submit,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.arn-leaflet-reset-button,.bookRoom,.HoldRoomsForm .submit,#datePromptContainer+.SimpleSearch .CheckRates .submit,.yui3-skin-sam .yui3-calendar-day:hover,.sort-wrapper .active,.sort-wrapper a:hover,#lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover,.WBConfirmedBooking .submit,.GroupHoldForm .bookRoomButton,.stay-22-banner{background:#7a9a9e}@media screen and (max-width: 1105px){#arnCloseAnchorId,#arnCloseAnchorId:active,#arnCloseAnchorId:focus,#arnCloseAnchorId:hover{border:1px solid #7a9a9e}.closeMap{border:1px solid #fff !important;background-color:#7a9a9e !important;color:#fff !important}}@media screen and (max-width: 800px){#commands a:active,#commands a:focus,#commands a:hover,#commands button:active,#commands button:focus,#commands button:hover,.sort-wrapper a:before,.sort-wrapper a.active-filter:before,.sort{background:#7a9a9e}}#searching,#theConfirmationButton,.HoldRoomsForm .submit,.ArnPrimarySearchContainer,.ArnShowRatesLink,.ArnTripAdvisorDetails.HasReviews .ratingCount,.SinglePropDetail .CheckRates .submit,.CreateAnAccountAction,.RootBody #theOtherSubmitButton,.SearchHotels #theSubmitButton,.SimpleSearch,.WBForgotPasswordFormActions .submit,.WBLoginFormActions .submit,.WBValidatedRegistrationFormActions .submit,.arnMapPopup .rate,#datePromptContainer+.SimpleSearch .CheckRates .submit,.bookRoom,.sort-wrapper .active,.sort-wrapper a:hover,#lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover,.WBConfirmedBooking .submit,.GroupHoldForm .bookRoomButton{color:#fff}.custom-button a,.WBForgotPasswordFormActions input:hover{color:#7a9a9e}span.exclusive-rate{background:#7a9a9e;color:#fff}@media screen and (max-width: 1105px){#arnCloseAnchorId,#arnCloseAnchorId:active,#arnCloseAnchorId:focus,#arnCloseAnchorId:hover{color:#7a9a9e}}@media screen and (max-width: 800px){#commands a:active,#commands a:focus,#commands a:hover,#commands button:active,#commands button:focus,#commands button:hover,.sort,.SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton{color:#fff}}.holdRoom,.reviewCount a,#theAdditionalEmailsLink a,.SinglePropDetail .ArnRateCancelAnchor,.open-modal,.lowest-rate-link,.SinglePropDetail .RateCalendarPopupAnchor,.ArnContentContainer legend,#theRoomsOnHold h2,.confirmation-messaging a,.receiptLink,.returnResultsInfo a,.supportInfo a,.SinglePropDetail #show-more-or-less{color:#7a9a9e}.percentSavings{color:#7a9a9e}input#theSubmitButton,#theOtherSubmitButton,.bookRoom,.arn-leaflet-reset-button,input#theConfirmationButton,a.ArnShowRatesLink,.WBConfirmedBooking .submit{background:#7a9a9e;color:#fff;border:1px solid #7a9a9e}.CheckRates input.submit,.CheckRates input.submit,.CheckRates input.submit,#lightbox,#lightbox .dialog-button-ok input:hover{background:#7a9a9e;color:#fff}input#theSubmitButton:hover,input#theSubmitButton:focus,input#theSubmitButton:active,#theOtherSubmitButton:hover,#theOtherSubmitButton:focus,#theOtherSubmitButton:active,.RootBody #theOtherSubmitButton:hover,.RootBody #theOtherSubmitButton:focus,.RootBody #theOtherSubmitButton:active,.bookRoom:hover,.bookRoom:focus,.bookRoom:active,.arn-leaflet-reset-button:hover,.arn-leaflet-reset-button:focus,.arn-leaflet-reset-button:active,input#theConfirmationButton:hover,input#theConfirmationButton:focus,input#theConfirmationButton:active,a.ArnShowRatesLink:hover,.WBConfirmedBooking .submit:hover,.GroupHoldForm .bookRoomButton:hover{background:#fff;color:#3276b1;border:1px solid #3276b1}.CheckRates input.submit:hover,.CheckRates input.submit:focus,.CheckRates input.submit:active{background:#fff;color:#3276b1}.SinglePropDetail #moreRatesLink,#lightbox .dialog-button-ok input{color:#7a9a9e;border-color:#7a9a9e}.SinglePropDetail #moreRatesLink:hover{background-color:#7a9a9e}@media screen and (max-width: 800px){#theBookingPage legend#policies-legend{color:#7a9a9e}}header{border-bottom:3px solid #7a9a9e}.arnMapMarker.contracted-pin,.arnMapMarker.contracted-pin.highlight{border:1px solid #fff;background:#7a9a9e;color:#fff}.arnMapMarker.contracted-pin:hover{border:1px solid #7a9a9e;background:#fff;color:#7a9a9e}.arnMapMarker.contracted-pin .arnMapMarkerTriangle{border-top-color:#7a9a9e}#theOtherSubmitButton,.ArnSecondarySearchOuterContainer select,.ArnShowRatesLink,.RootBody #theOtherSubmitButton,.bookRoom,.sort,.HoldRoomsForm .submit,#lightbox .WBChangePasswordFormActions .ChangePasswordAction,.custom-button a{border:1px solid #7a9a9e}.holdRoom{border:1px solid #7a9a9e}@media screen and (max-width: 1105px){#arnCloseAnchorId,.sort{border:1px solid #7a9a9e}}@media screen and (max-width: 800px){.sort-wrapper a:before{border:2px solid #7a9a9e}}.active-page{background:#7a9a9e !important;color:#fff !important;border:1px solid #7a9a9e !important}.yui3-skin-sam .yui3-calendar-day-selected{background-color:#7a9a9e !important;color:#fff !important}.yui3-skin-sam .yui3-calendar-day:hover{background-color:#7a9a9e !important}.yui3-skin-sam .yui3-calendar-content{border-color:#7a9a9e !important}.MemberAuthenticated .SearchHotels .arnMapMarker{background:#7a9a9e;border-color:#fff;color:#fff}.MemberAuthenticated .SearchHotels .arnMapMarkerTriangle{border-top-color:#7a9a9e}.MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle{border-top-color:#7a9a9e}.contact-float a{background-color:#7a9a9e;color:#fff}@media screen and (min-width: 1100px){.contact-float a:hover{-webkit-animation:pulse 1.25s infinite linear;-moz-animation:pulse 1.25s infinite linear;-ms-animation:pulse 1.25s infinite linear;animation:pulse 1.25s infinite linear}}@-webkit-keyframes pulse{to{box-shadow:0 0 0 20px #7a9a9e}}@-moz-keyframes pulse{to{box-shadow:0 0 0 20px #7a9a9e}}@-ms-keyframes pulse{to{box-shadow:0 0 0 20px #7a9a9e}}@keyframes pulse{to{box-shadow:0 0 0 20px #7a9a9e}}.hide{display:none}body{font-family:"Roboto",sans-serif;margin:0;padding:0;display:flex;flex-direction:column}h1{font-size:48px;font-weight:500;letter-spacing:4px}h2{font-size:36px;font-weight:300}header{border-bottom:2px solid #7a9a9e}.SinglePropDetail header{border-bottom:none}.hero-container{background:linear-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)),linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(https://static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;background-size:cover;width:100%;height:500px;margin:0;padding:0;position:relative;float:left;border-bottom:4px solid #7a9a9e;display:flex;flex-direction:column;justify-content:flex-end}.location-date-container{display:flex;flex-direction:row}.trip-title{margin-left:2.3rem;margin-top:12px;margin-bottom:0px}.event-text-separators{margin-top:15px;margin-left:2.3rem;font-weight:500;letter-spacing:4px;margin-bottom:12px}.trip-mobile-container{margin:0}.trip-date{margin-left:2.3rem;margin-bottom:12px;margin-top:15px}.trip-location{margin-left:2.3rem;margin-bottom:12px;margin-top:15px}.body-article{display:flex;flex-direction:row}.left-section{width:50vw;display:flex;flex-direction:column}.itinerary-container{width:100%}.inclusions-container{width:100%}.inclusions-list{display:flex;flex-direction:column}.inclusion-item{display:flex;flex-direction:row;width:100%;margin-bottom:1.5rem;margin-left:2rem;align-items:center}.inclusion-bullet{width:1.5rem;height:1.5rem;background:#7a9a9e;border-radius:1.5rem}.inclusion-text{margin-left:2rem;font-size:18px}.section-title{margin-top:14px;margin-left:2.3rem;font-weight:500;font-size:36px;color:#7a9a9e}.itinerary-item{margin:2.3rem;margin-top:0}.itinerary-text{display:grid;grid-template-columns:minmax(90px, 120px) auto;align-items:start;grid-gap:1rem;margin-bottom:2.3rem}.itinerary-day{font-size:30px;font-weight:500;grid-column:1}.itinerary-description{grid-column:2;line-height:1.5rem}hr{border-top:1px solid #7a9a9e7a;margin-bottom:2.3rem}.trips-section{width:50vw}.trip-item{border:1px solid #3276b140;box-shadow:0px 4px 4px 0px #0000000d;border-radius:1rem;margin:2.3rem;display:grid;grid-template-columns:auto 200px;grid-gap:1rem}.trip-text-container{display:grid;grid-column:1;padding-right:1rem}.trip-item-name{font-size:24px;font-weight:500;padding:1rem 0 0 1rem}.trip-item-description{font-size:18px;padding:1rem;padding-top:0;margin:0px}.trip-price-cta-container{display:grid;grid-column:2;justify-items:end;width:100%}.trip-ctas{display:grid;justify-items:end;width:inherit}.new-cta{width:90%;height:42px;border-radius:6px;border:none;color:#fff;margin:1rem;font-weight:900;text-decoration:none;text-align:center;vertical-align:middle;line-height:42px}button{height:42px;border-radius:6px;border:none;color:#fff;margin:1rem;font-weight:900}.book-button{background:#3276b1;margin:1rem 1rem 5px 20px;border:2px solid #3276b1;transition:.3s}.book-button:hover{border:2px solid #3276b1;background:#fff;color:#3276b1}.hold-button{background:#719ec8;margin:5px 1rem 1rem 20px;border:2px solid #719ec8;transition:.3s}.hold-button:hover{border:2px solid #719ec8;background:#fff;color:#719ec8}.cancellation-policy{place-self:center;margin:1rem}.trip-price-desktop{font-size:34px;font-weight:900;color:#7a9a9e;margin:1rem 1rem 5px 0}.trip-price-mobile{display:none}.ArnSupportLinks{width:100%;padding:24px 0;margin:24px auto 0 auto;text-align:center;background:#333;color:#fff;z-index:9;position:relative;text-decoration:none}.ArnSupportLinks a{color:#fff;text-decoration:none}.pb-container{padding-top:24px}.pb-container img{width:150px;cursor:pointer}.gg-chevron-right{box-sizing:border-box;position:absolute;display:block;transform:scale(var(--ggs, 1));width:50px;height:50px;border:20px solid transparent;border-radius:100px}.gg-chevron-right::after{content:"";display:block;box-sizing:border-box;position:absolute;width:50px;height:50px;border-bottom:15px solid;border-right:15px solid;transform:rotate(-45deg);left:300px;top:125px}@media only screen and (max-width: 1300px){.logo img{padding:0;margin:1rem}.itinerary-day{grid-column:1/6;grid-row:1/2}.itinerary-description{grid-column:1/7;grid-row:2/3}.hero-container{background:linear-gradient(rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)),linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url(https://static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;background-size:cover;height:auto;min-height:200px;border-bottom:4px solid #7a9a9e}h1{font-size:36px;font-weight:500;letter-spacing:4px;margin:0px 0px 1rem 0px}h2{font-size:24px;font-weight:300;margin:0}.body-article{flex-direction:column}.itinerary-container{width:100%}.itinerary-text{display:flex;flex-direction:column}.itinerary-day{width:100%;font-size:24px}.trips-section{width:100%}}@media only screen and (max-width: 1300px)and (max-width: 800px){.location-date-container{display:flex;flex-direction:column}.event-text-separators{display:none}.trip-date{margin-top:.5rem;margin-bottom:1rem}.trip-location{margin-top:.5rem;margin-bottom:0}.trip-item{display:flex;flex-direction:column;grid-template-columns:none;grid-gap:none}.trip-item-name{font-size:24px}.trip-price-desktop{display:none}.trip-price-mobile{font-size:24px;font-weight:900;color:#7a9a9e;margin:0;padding:1rem}.trip-price-mobile{display:block;font-size:24px;font-weight:900;color:#7a9a9e;margin:0;margin-top:1rem}.trip-price-cta-container{display:flex;flex-direction:column;justify-content:flex-start;margin:0}.trip-ctas{display:grid;grid-template-columns:45% auto 45%;padding:1rem}.book-button{background:#3276b1;grid-column:1;margin:0;width:100%}.hold-button{background:#3276b1b6;margin:0;width:100%;grid-column:3}}.carousel-container{max-width:none}.carousel-slide{display:flex}.image-number{display:none}.carousel-slide .image-wrapper img{max-width:calc(33vw - 2rem);height:250px;margin:1rem;border-radius:1rem}@media screen and (max-width: 1000px){.carousel-slide .image-wrapper img{max-width:calc(50vw - 2rem)}}@media screen and (max-width: 1000px)and (max-width: 500px){.carousel-slide .image-wrapper img{max-width:500px}}#theAjaxPaymentPolicies{border:1px solid #7a9a9e;box-shadow:0px 4px 4px 0px #0000000d;border-radius:1rem}.insuranceAgreement{display:none}input#theConfirmationButton,.WBConfirmedBooking .submit{background:#3276b1;height:42px;border-radius:6px;font-weight:900;text-transform:uppercase;border:2px solid #3276b1;transition:.3s}input#theConfirmationButton:hover,.WBConfirmedBooking .submit:hover{border:2px solid #3276b1;background:#fff;color:#3276b1}#theBookingPage legend{font-weight:500;font-size:30px;color:#7a9a9e;line-height:1.2}#theAjaxPaymentPolicies legend{font-weight:500;line-height:1.1;color:#333;font-size:20px}.ArnPrimarySearchContainer{display:none}.ArnSearchHeader{display:none}.ArnRoomsOnHold h2{font-weight:500;font-size:30px;color:#7a9a9e;line-height:1.2}@media screen and (max-width: 1300px){.ArnRoomsOnHold h2{margin-top:1rem}}@media screen and (max-width: 600px){.ArnRoomsOnHold h2{margin-top:0}}.SearchHotels .ArnContainer{width:100%}.SearchHotels .ArnPropName{width:100%}.HoldRoomsForm .submit{background:#3276b1;height:42px;border-radius:6px;font-weight:900;text-transform:capitalize;border:2px solid #3276b1;text-transform:uppercase;transition:.3s}.HoldRoomsForm .submit:hover{border:2px solid #3276b1;background:#fff;color:#3276b1}.HoldRoomsForm .ArnProperty{max-width:1600px}
+*,
+.taxFeeRow td,
+.discount td,
+.totalRow td,
+.balanceDueRow td,
+.dueNowRow td,
+.guestNameFields td,
+.total-points-earned td {
+  font-family: "Roboto", sans-serif, "Helvetica";
+}
+
+/* Header */
+header {
+  justify-content: center;
+  background: #fff;
+}
+
+.RootBody {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
+}
+
+.logo img {
+  max-width: 200px;
+}
+
+body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
+  background-color: #fff;
+}
+
+/* Primary Background Color */
+#searching h2:after,
+#theConfirmationButton,
+.ArnPrimarySearchContainer,
+.ArnShowRatesLink,
+.ArnTripAdvisorDetails.HasReviews .ratingCount,
+.CreateAnAccountAction,
+.RootBody #theOtherSubmitButton,
+.SimpleSearch,
+.WBForgotPasswordFormActions .submit,
+.WBLoginFormActions .submit,
+.WBValidatedRegistrationFormActions .submit,
+.arn-leaflet-reset-button,
+.bookRoom,
+.HoldRoomsForm .submit,
+#datePromptContainer + .SimpleSearch .CheckRates .submit,
+.yui3-skin-sam .yui3-calendar-day:hover,
+.sort-wrapper .active,
+.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner {
+  background: #7a9a9e;
+}
+
+@media screen and (max-width: 1105px) {
+  #arnCloseAnchorId,
+#arnCloseAnchorId:active,
+#arnCloseAnchorId:focus,
+#arnCloseAnchorId:hover {
+    border: 1px solid #7a9a9e;
+  }
+
+  .closeMap {
+    border: 1px solid #fff !important;
+    background-color: #7a9a9e !important;
+    color: #fff !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  #commands a:active,
+#commands a:focus,
+#commands a:hover,
+#commands button:active,
+#commands button:focus,
+#commands button:hover,
+.sort-wrapper a:before,
+.sort-wrapper a.active-filter:before,
+.sort {
+    background: #7a9a9e;
+  }
+}
+#searching,
+#theConfirmationButton,
+.HoldRoomsForm .submit,
+.ArnPrimarySearchContainer,
+.ArnShowRatesLink,
+.ArnTripAdvisorDetails.HasReviews .ratingCount,
+.SinglePropDetail .CheckRates .submit,
+.CreateAnAccountAction,
+.RootBody #theOtherSubmitButton,
+.SearchHotels #theSubmitButton,
+.SimpleSearch,
+.WBForgotPasswordFormActions .submit,
+.WBLoginFormActions .submit,
+.WBValidatedRegistrationFormActions .submit,
+.arnMapPopup .rate,
+#datePromptContainer + .SimpleSearch .CheckRates .submit,
+.bookRoom,
+.sort-wrapper .active,
+.sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton {
+  color: #fff;
+}
+
+.custom-button a, .WBForgotPasswordFormActions input:hover {
+  color: #7a9a9e;
+}
+
+span.exclusive-rate {
+  background: #7a9a9e;
+  color: #fff;
+}
+
+@media screen and (max-width: 1105px) {
+  #arnCloseAnchorId,
+#arnCloseAnchorId:active,
+#arnCloseAnchorId:focus,
+#arnCloseAnchorId:hover {
+    color: #7a9a9e;
+  }
+}
+@media screen and (max-width: 800px) {
+  #commands a:active,
+#commands a:focus,
+#commands a:hover,
+#commands button:active,
+#commands button:focus,
+#commands button:hover,
+.sort, .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+    color: #fff;
+  }
+}
+.holdRoom,
+.reviewCount a,
+#theAdditionalEmailsLink a,
+.SinglePropDetail .ArnRateCancelAnchor,
+.open-modal,
+.lowest-rate-link,
+.SinglePropDetail .RateCalendarPopupAnchor,
+.ArnContentContainer legend, #theRoomsOnHold h2,
+.confirmation-messaging a,
+.receiptLink,
+.returnResultsInfo a,
+.supportInfo a, .SinglePropDetail #show-more-or-less {
+  color: #7a9a9e;
+}
+
+.percentSavings {
+  color: #7a9a9e;
+}
+
+input#theSubmitButton,
+#theOtherSubmitButton,
+.bookRoom,
+.arn-leaflet-reset-button,
+input#theConfirmationButton,
+a.ArnShowRatesLink, .WBConfirmedBooking .submit {
+  background: #7a9a9e;
+  color: #fff;
+  border: 1px solid #7a9a9e;
+}
+
+.CheckRates input.submit,
+.CheckRates input.submit,
+.CheckRates input.submit,
+#lightbox, #lightbox .dialog-button-ok input:hover {
+  background: #7a9a9e;
+  color: #fff;
+}
+
+input#theSubmitButton:hover,
+input#theSubmitButton:focus,
+input#theSubmitButton:active,
+#theOtherSubmitButton:hover,
+#theOtherSubmitButton:focus,
+#theOtherSubmitButton:active,
+.RootBody #theOtherSubmitButton:hover,
+.RootBody #theOtherSubmitButton:focus,
+.RootBody #theOtherSubmitButton:active,
+.bookRoom:hover,
+.bookRoom:focus,
+.bookRoom:active,
+.arn-leaflet-reset-button:hover,
+.arn-leaflet-reset-button:focus,
+.arn-leaflet-reset-button:active,
+input#theConfirmationButton:hover,
+input#theConfirmationButton:focus,
+input#theConfirmationButton:active,
+a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
+  background: #fff;
+  color: #3276b1;
+  border: 1px solid #3276b1;
+}
+
+.CheckRates input.submit:hover,
+.CheckRates input.submit:focus,
+.CheckRates input.submit:active {
+  background: #fff;
+  color: #3276b1;
+}
+
+.SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
+  color: #7a9a9e;
+  border-color: #7a9a9e;
+}
+
+.SinglePropDetail #moreRatesLink:hover {
+  background-color: #7a9a9e;
+}
+
+@media screen and (max-width: 800px) {
+  #theBookingPage legend#policies-legend {
+    color: #7a9a9e;
+  }
+}
+header {
+  border-bottom: 3px solid #7a9a9e;
+}
+
+.arnMapMarker.contracted-pin,
+.arnMapMarker.contracted-pin.highlight {
+  border: 1px solid #fff;
+  background: #7a9a9e;
+  color: #fff;
+}
+
+.arnMapMarker.contracted-pin:hover {
+  border: 1px solid #7a9a9e;
+  background: #fff;
+  color: #7a9a9e;
+}
+
+.arnMapMarker.contracted-pin .arnMapMarkerTriangle {
+  border-top-color: #7a9a9e;
+}
+
+#theOtherSubmitButton,
+.ArnSecondarySearchOuterContainer select,
+.ArnShowRatesLink,
+.RootBody #theOtherSubmitButton,
+.bookRoom,
+.sort,
+.HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
+  border: 1px solid #7a9a9e;
+}
+
+.holdRoom {
+  border: 1px solid #7a9a9e;
+}
+
+@media screen and (max-width: 1105px) {
+  #arnCloseAnchorId,
+.sort {
+    border: 1px solid #7a9a9e;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sort-wrapper a:before {
+    border: 2px solid #7a9a9e;
+  }
+}
+.active-page {
+  background: #7a9a9e !important;
+  color: #fff !important;
+  border: 1px solid #7a9a9e !important;
+}
+
+.yui3-skin-sam .yui3-calendar-day-selected {
+  background-color: #7a9a9e !important;
+  color: #fff !important;
+}
+
+.yui3-skin-sam .yui3-calendar-day:hover {
+  background-color: #7a9a9e !important;
+}
+
+.yui3-skin-sam .yui3-calendar-content {
+  border-color: #7a9a9e !important;
+}
+
+.MemberAuthenticated .SearchHotels .arnMapMarker {
+  background: #7a9a9e;
+  border-color: #fff;
+  color: #fff;
+}
+
+.MemberAuthenticated .SearchHotels .arnMapMarkerTriangle {
+  border-top-color: #7a9a9e;
+}
+
+.MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
+  border-top-color: #7a9a9e;
+}
+
+.contact-float a {
+  background-color: #7a9a9e;
+  color: #fff;
+}
+
+@media screen and (min-width: 1100px) {
+  .contact-float a:hover {
+    -webkit-animation: pulse 1.25s infinite linear;
+    -moz-animation: pulse 1.25s infinite linear;
+    -ms-animation: pulse 1.25s infinite linear;
+    animation: pulse 1.25s infinite linear;
+  }
+}
+@-webkit-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #7a9a9e;
+  }
+}
+@-moz-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #7a9a9e;
+  }
+}
+@-ms-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #7a9a9e;
+  }
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #7a9a9e;
+  }
+}
+.hide {
+  display: none;
+}
+
+#theRateSummaryInfo {
+  display: none;
+}
+
+#theRateTotals .discount {
+  display: none;
+}
+
+.HoldRoomsForm .ArnNightlyRateCal, .ArnNightlyRateCal + p {
+  display: none;
+}
+
+.HoldRoomsForm .ArnLeftListContainer {
+  display: none;
+}
+
+.SinglePropDetail .ArnLeftListContainer {
+  display: none;
+}
+
+.SinglePropDetail .ArnRightListContainer {
+  display: none;
+}
+
+.discountRow .discount {
+  display: block;
+  visibility: visible;
+}
+
+.hide-table {
+  visibility: collapse;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+header {
+  border-bottom: 2px solid #7a9a9e;
+}
+
+.SinglePropDetail header {
+  border-bottom: none;
+}
+
+.hero-container {
+  background: linear-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  float: left;
+  border-bottom: 4px solid #7a9a9e;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.location-date-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.trip-title {
+  margin-left: 2.3rem;
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+.event-text-separators {
+  margin-top: 15px;
+  margin-left: 2.3rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.trip-mobile-container {
+  margin: 0;
+}
+
+.trip-date {
+  margin-left: 2.3rem;
+  margin-bottom: 12px;
+  margin-top: 15px;
+}
+
+.trip-location {
+  margin-left: 2.3rem;
+  margin-bottom: 12px;
+  margin-top: 15px;
+}
+
+.body-article {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-section {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.itinerary-container {
+  width: 100%;
+}
+
+.inclusions-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 130px auto;
+  align-items: start;
+  grid-gap: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+#inclusions-container-title {
+  grid-column: 1;
+}
+
+.inclusions-list {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.inclusion-item {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+.inclusion-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #333;
+  border-radius: 0.6rem;
+  padding: 0.25rem;
+}
+
+.inclusion-text {
+  padding-left: 1.25rem;
+  font-size: 16px;
+}
+
+.section-title {
+  margin-top: 14px;
+  margin-left: 2.3rem;
+  font-weight: 500;
+  font-size: 36px;
+  color: #7a9a9e;
+}
+
+.itinerary-list {
+  width: 100%;
+}
+
+.itinerary-item {
+  margin: 2.3rem;
+  margin-top: 0;
+}
+
+.itinerary-text {
+  display: grid;
+  grid-template-columns: 130px auto;
+  align-items: start;
+  grid-gap: 1rem;
+  margin-bottom: 2.3rem;
+}
+
+.itinerary-day {
+  font-size: 26px;
+  font-weight: 500;
+  grid-column: 1;
+}
+
+.itinerary-description {
+  grid-column: 2;
+  line-height: 1.75rem;
+  font-size: 16px;
+}
+
+hr {
+  border-top: 1px solid #7a9a9e7a;
+  margin-bottom: 2.3rem;
+}
+
+.trips-section {
+  width: 50vw;
+}
+
+.trip-item {
+  border: 1px solid #3276b140;
+  box-shadow: 0px 4px 4px 0px #0000000d;
+  border-radius: 1rem;
+  margin: 2.3rem;
+  display: grid;
+  grid-template-columns: auto 200px;
+  grid-gap: 1rem;
+}
+
+.trip-text-container {
+  display: grid;
+  grid-column: 1;
+  padding-right: 1rem;
+}
+
+.trip-item-name {
+  font-size: 24px;
+  font-weight: 500;
+  padding: 1rem 0 0 1rem;
+}
+
+.trip-item-description {
+  padding: 1rem;
+  margin: 0px;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.trip-price-cta-container {
+  display: grid;
+  grid-column: 2;
+  justify-items: end;
+  width: 100%;
+}
+
+.trip-ctas {
+  display: grid;
+  justify-items: end;
+  width: inherit;
+}
+
+.new-cta {
+  width: 90%;
+  height: 42px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  font-weight: 900;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 42px;
+}
+
+button {
+  height: 42px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  font-weight: 900;
+}
+
+.book-button {
+  background: #3276b1;
+  margin: 1rem 1rem 5px 20px;
+  border: 2px solid #3276b1;
+  transition: 0.3s;
+}
+.book-button:hover {
+  border: 2px solid #3276b1;
+  background: #fff;
+  color: #3276b1;
+}
+
+.hold-button {
+  background: #719ec8;
+  margin: 5px 1rem 1rem 20px;
+  border: 2px solid #719ec8;
+  transition: 0.3s;
+}
+.hold-button:hover {
+  border: 2px solid #719ec8;
+  background: #fff;
+  color: #719ec8;
+}
+
+.cancellation-policy {
+  place-self: center;
+  margin: 1rem;
+}
+
+.trip-price-desktop {
+  font-size: 34px;
+  font-weight: 900;
+  color: #7a9a9e;
+  margin: 1rem 1rem 5px 0;
+}
+
+.trip-price-mobile {
+  display: none;
+}
+
+.ArnSupportLinks {
+  width: 100%;
+  padding: 24px 0;
+  margin: 24px auto 0 auto;
+  text-align: center;
+  background: #333;
+  color: #fff;
+  z-index: 9;
+  position: relative;
+  text-decoration: none;
+}
+
+.ArnSupportLinks a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.pb-container {
+  padding-top: 24px;
+}
+
+.pb-container img {
+  width: 150px;
+  cursor: pointer;
+}
+
+.gg-chevron-right {
+  box-sizing: border-box;
+  position: absolute;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 50px;
+  height: 50px;
+  border: 20px solid transparent;
+  border-radius: 100px;
+}
+
+.gg-chevron-right::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-bottom: 15px solid;
+  border-right: 15px solid;
+  transform: rotate(-45deg);
+  left: 300px;
+  top: 125px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .left-section {
+    width: 100%;
+  }
+
+  .logo img {
+    padding: 0;
+    margin: 1rem;
+  }
+
+  .inclusions-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inclusions-text {
+    font-size: 14px;
+  }
+
+  .hero-container {
+    background: linear-gradient(rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
+    background-size: cover;
+    height: auto;
+    min-height: 200px;
+    /* position: relative; */
+    /* float: left; */
+    border-bottom: 4px solid #7a9a9e;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin: 0px 0px 1rem 0px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .body-article {
+    flex-direction: column;
+  }
+
+  .itinerary-container {
+    width: 100%;
+  }
+
+  .itinerary-text {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+  }
+
+  .itinerary-day {
+    display: flex;
+    grid-column: none;
+  }
+
+  .itinerary-description {
+    display: flex;
+    grid-column: none;
+  }
+
+  .itinerary-day {
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .trips-section {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1300px) and (max-width: 800px) {
+  .location-date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-text-separators {
+    display: none;
+  }
+
+  .trip-date {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .trip-location {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .trip-item {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-gap: none;
+  }
+
+  .trip-item-name {
+    font-size: 24px;
+  }
+
+  .trip-price-desktop {
+    display: none;
+  }
+
+  .trip-price-mobile {
+    font-size: 24px;
+    font-weight: 900;
+    color: #7a9a9e;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .trip-price-mobile {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    color: #7a9a9e;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .trip-price-cta-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .trip-ctas {
+    display: grid;
+    grid-template-columns: 45% auto 45%;
+    padding: 1rem;
+  }
+
+  .book-button {
+    background: #3276b1;
+    grid-column: 1;
+    margin: 0;
+    width: 100%;
+  }
+
+  .hold-button {
+    background: #3276b1b6;
+    margin: 0;
+    width: 100%;
+    grid-column: 3;
+  }
+}
+/* Carousel */
+.carousel-container {
+  max-width: none;
+}
+
+.carousel-slide {
+  display: flex;
+}
+
+.image-number {
+  display: none;
+}
+
+.carousel-slide .image-wrapper img {
+  max-width: calc(33vw - 2rem);
+  height: 250px;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .carousel-slide .image-wrapper img {
+    max-width: calc(50vw - 2rem);
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 500px) {
+  .carousel-slide .image-wrapper img {
+    max-width: 500px;
+  }
+}
+/* Checkout Page */
+#theAjaxPaymentPolicies {
+  border: 1px solid #7a9a9e;
+  box-shadow: 0px 4px 4px 0px #0000000d;
+  border-radius: 1rem;
+}
+
+.insuranceAgreement {
+  display: none;
+}
+
+input#theConfirmationButton, .WBConfirmedBooking .submit {
+  background: #3276b1;
+  height: 42px;
+  border-radius: 6px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px solid #3276b1;
+  transition: 0.3s;
+}
+input#theConfirmationButton:hover, .WBConfirmedBooking .submit:hover {
+  border: 2px solid #3276b1;
+  background: #fff;
+  color: #3276b1;
+}
+
+#theBookingPage legend {
+  font-weight: 500;
+  font-size: 30px;
+  color: #7a9a9e;
+  line-height: 1.2;
+}
+
+#theAjaxPaymentPolicies legend {
+  font-weight: 500;
+  line-height: 1.1;
+  color: #333;
+  font-size: 20px;
+}
+
+.ArnPrimarySearchContainer {
+  display: none;
+}
+
+.ArnSearchHeader {
+  display: none;
+}
+
+.ArnRoomsOnHold h2 {
+  font-weight: 500;
+  font-size: 30px;
+  color: #7a9a9e;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 1300px) {
+  .ArnRoomsOnHold h2 {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .ArnRoomsOnHold h2 {
+    margin-top: 0;
+  }
+}
+.SearchHotels .ArnContainer {
+  width: 100%;
+}
+
+.SearchHotels .ArnPropName {
+  width: 100%;
+}
+
+.HoldRoomsForm .submit {
+  background: #3276b1;
+  height: 42px;
+  border-radius: 6px;
+  font-weight: 900;
+  text-transform: capitalize;
+  border: 2px solid #3276b1;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.HoldRoomsForm .submit:hover {
+  border: 2px solid #3276b1;
+  background: #fff;
+  color: #3276b1;
+}
+
+.HoldRoomsForm .ArnProperty {
+  max-width: 1600px;
+}
+
+/*# sourceMappingURL=70905.css.map*/

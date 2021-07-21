@@ -23,6 +23,40 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 .hide {
     display: none;
+
+}
+
+#theRateSummaryInfo {
+    display: none;
+}
+
+#theRateTotals .discount {
+    display: none;
+}
+
+.HoldRoomsForm .ArnNightlyRateCal, .ArnNightlyRateCal + p { 
+    display: none;
+}
+
+.HoldRoomsForm .ArnLeftListContainer {
+    display: none;
+}
+
+.SinglePropDetail .ArnLeftListContainer {
+    display: none;
+}
+
+.SinglePropDetail .ArnRightListContainer {
+    display: none;
+}
+
+.discountRow .discount {
+    display: block;
+    visibility: visible;
+}
+
+.hide-table {
+    visibility: collapse
 }
 
 body {
@@ -121,9 +155,28 @@ header {
 
 .inclusions-container {
     width: 100%;
+    display: grid;
+    grid-template-columns: 150px auto;
+    align-items: start;
+    grid-gap: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+#inclusions-container-title {
+    grid-column: 1;
+}
+
+#inclusions-intro {
+    font-size: 14px;
+    // font-weight: 500;
+    // text-decoration: underline;
+    align-self: end;
+    grid-column: 2;
 }
 
 .inclusions-list {
+    grid-column: 2;
     display: flex;
     flex-direction: column;
 }
@@ -131,22 +184,20 @@ header {
 .inclusion-item {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    margin-left: 2rem;
+    padding-top: 1rem;
     align-items: center;
 }
 
 .inclusion-bullet {
-    width: 1.5rem;
-    height: 1.5rem;
-    background: #7a9a9e;
-    border-radius: 1.5rem;
+    width: .5rem;
+    height: .5rem;
+    // background: #7a9a9e;
+    background: #333;
+    border-radius: .6rem;
 }
 
 .inclusion-text {
-    margin-left: 2rem;
-    font-size: 18px;
+    margin-left: 1.25rem;
 }
 
 .section-title {
@@ -164,7 +215,7 @@ header {
 
 .itinerary-text {
     display: grid;
-    grid-template-columns: minmax(90px, 120px) auto;
+    grid-template-columns: 150px auto;
     align-items: start;
     grid-gap: 1rem;
     margin-bottom: 2.3rem;
@@ -356,146 +407,150 @@ button {
 }
 
 .itinerary-day{
-    grid-column: 1/6;
+    grid-column: 1/2;
     grid-row: 1/2
   }
 
 .itinerary-description{
-    grid-column: 1/7;
+    grid-column: 1/2;
     grid-row: 2/3;
   }
 
+.inclusions-container {
+display: flex;
+flex-direction: column;
+}
 
-    .hero-container {
-        background: linear-gradient(rgb(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), $banner_image;
-        background-size: cover;
-        height: auto;
-        min-height: 200px;
-        /* position: relative; */
-        /* float: left; */
-        border-bottom: 4px solid #7a9a9e;
-    }
+.hero-container {
+    background: linear-gradient(rgb(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), $banner_image;
+    background-size: cover;
+    height: auto;
+    min-height: 200px;
+    /* position: relative; */
+    /* float: left; */
+    border-bottom: 4px solid #7a9a9e;
+}
 
-    h1 {
-        font-size: 36px;
-        font-weight: 500;
-        letter-spacing: 4px;
-        margin: 0px 0px 1rem 0px;
-    }
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin: 0px 0px 1rem 0px;
+}
 
-    h2 {
-        font-size: 24px;
-        font-weight: 300;
-        margin: 0;
-    }
+h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+}
 
-    .body-article {
-        flex-direction: column;
-    }
+.body-article {
+    flex-direction: column;
+}
 
-    .itinerary-container {
-        width: 100%;
-    }
+.itinerary-container {
+    width: 100%;
+}
 
-    .itinerary-text {
-        display: flex;
-        flex-direction: column;
-    }
+.itinerary-text {
+    display: flex;
+    flex-direction: column;
+}
 
-    .itinerary-day {
-        width: 100%;
-        font-size: 24px;
-    }
+.itinerary-day {
+    width: 100%;
+    font-size: 24px;
+}
 
-     .trips-section {
-        width: 100%;
-    }
+    .trips-section {
+    width: 100%;
+}
 
-    @media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
 
-    .location-date-container {
-        display: flex;
-        flex-direction: column;
-    }
+.location-date-container {
+    display: flex;
+    flex-direction: column;
+}
 
-    .event-text-separators {
-        display: none;
-    }
+.event-text-separators {
+    display: none;
+}
 
-    .trip-date {
-        margin-top: .5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .trip-location {
-        margin-top: .5rem;
-        margin-bottom: 0;
-    }
+.trip-date {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
 
-    .trip-item {
-        display:flex;
-        flex-direction: column;
-        grid-template-columns: none;
-        grid-gap: none;
-    }
+.trip-location {
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
 
-    .trip-item-name {
-        font-size: 24px;
-    }
+.trip-item {
+    display:flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-gap: none;
+}
 
-    .trip-price-desktop {
-        display: none;
-    }
+.trip-item-name {
+    font-size: 24px;
+}
+
+.trip-price-desktop {
+    display: none;
+}
 
 
-    .trip-price-mobile {
-        // display: block;
-        font-size: 24px;
-        font-weight: 900;
-        color: #7a9a9e;
-        margin: 0;
-        padding: 1rem;
-        // grid-row: 2;
-    }
+.trip-price-mobile {
+    // display: block;
+    font-size: 24px;
+    font-weight: 900;
+    color: #7a9a9e;
+    margin: 0;
+    padding: 1rem;
+    // grid-row: 2;
+}
 
-    .trip-price-mobile {
-        display: block;
-        font-size: 24px;
-        font-weight: 900;
-        color: #7a9a9e;
-        margin: 0;
-        margin-top: 1rem;
-    }
+.trip-price-mobile {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    color: #7a9a9e;
+    margin: 0;
+    margin-top: 1rem;
+}
 
-    .trip-price-cta-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin: 0;
-    }
+.trip-price-cta-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+}
 
-    .trip-ctas {
-        display: grid;
-        grid-template-columns: 45% auto 45%;
+.trip-ctas {
+    display: grid;
+    grid-template-columns: 45% auto 45%;
 
-        padding: 1rem;
-    }
+    padding: 1rem;
+}
 
-    .book-button {
-        background: #3276b1;
-        grid-column: 1;
-        margin: 0;
-        width: 100%;
-    }
+.book-button {
+    background: #3276b1;
+    grid-column: 1;
+    margin: 0;
+    width: 100%;
+}
 
-    .hold-button {
-        background: #3276b1b6;
-        margin: 0;
-        width: 100%;
-         grid-column: 3;
-    }
+.hold-button {
+    background: #3276b1b6;
+    margin: 0;
+    width: 100%;
+        grid-column: 3;
+}
 
-    }
+}
 }
 
 /* Carousel */

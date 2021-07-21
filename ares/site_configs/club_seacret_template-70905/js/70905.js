@@ -19,16 +19,17 @@ class ChildPortal extends BasePortal {
     }
 
     async init() {
-        if (!document.querySelector('.SinglePropDetail')) return;
-
-        await this.getReferenceId();
-        await this.fetchTrips();
-        await this.fetchPropertyHtml();
-        await this.getTrip();
-        this.insertTripDetailsIntoHtml();
-        this.restyleCarousel();
-        this.hideArnElements();
-        this.updateCheckoutInterface();
+        if (document.querySelector('.SinglePropDetail')) {
+            await this.getReferenceId();
+            await this.fetchTrips();
+            await this.fetchPropertyHtml();
+            await this.getTrip();
+            this.insertTripDetailsIntoHtml();
+            this.restyleCarousel();
+        }
+        if (document.querySelector('#theReservationForm')) {
+            this.updateCheckoutInterface();
+        }
     }
 
     async getReferenceId() {
@@ -86,7 +87,8 @@ class ChildPortal extends BasePortal {
                                 <div class='itinerary-list'></div>
                             </div>
                             <div class='inclusions-container'>
-                                <h3 class='section-title' id='inclusions-container-title'>INCLUSIONS</h3>
+                                <div class='itinerary-day' id='inclusions-container-title'>Includes</div>
+                                
                                 <div class='inclusions-list'></div>
                             </div>
                         </section>
@@ -117,14 +119,6 @@ class ChildPortal extends BasePortal {
         return this.trip;
     }
 
-    hideArnElements() {
-        utilities.waitForSelectorInDOM('.ArnRightListContainer');
-        const arn_right_container = document.querySelector('.ArnRightListContainer');
-        const arn_left_container = document.querySelector('.ArnLeftListContainer');
-        arn_right_container.classList.add('hide');
-        arn_left_container.classList.add('hide');
-    }
-
     async insertTripDetailsIntoHtml() {
         // Await load and format dates
         await utilities.waitForSelectorInDOM('.bottom-carousel-article');
@@ -149,7 +143,7 @@ class ChildPortal extends BasePortal {
         );
 
         // if (!document.querySelector('#trip-name') || !document.querySelector('#trip-date') || !document.querySelector('#itinerary-container-title')) return;
-        
+
         // Create and populate itinerary container from CMS object
         this.trip.data.itinerary.forEach((i) => {
             document.querySelector('.itinerary-list').insertAdjacentHTML(
@@ -171,8 +165,8 @@ class ChildPortal extends BasePortal {
             document.querySelector('.inclusions-list').insertAdjacentHTML(
                 'beforeEnd',
                 `   <div class=inclusion-item>
-                        <div class='inclusion-bullet'></div>
-                        <div class='inclusion-text'>${i.text}</div>
+                            <div class='inclusion-bullet'></div>
+                            <div class='inclusion-text'>${i.text}</div>
                     </div>
                 `
             );
@@ -289,11 +283,32 @@ class ChildPortal extends BasePortal {
     }
 
     async updateCheckoutInterface() {
-        await utilities.waitForSelectorInDOM('.resConfirmationButton');
-        const submit_button = document.querySelectorAll('input#theConfirmationButton, .WBConfirmedBooking .submit');
-        console.log('submit button in updateCheckoutInterface', submit_button);
-        submit_button[0].value = 'CONFIRM RESERVATIONS';
+        console.log('before await in updatecheckoutinterface');
+        await utilities.waitForSelectorInDOM('.discountRow');
 
+        const subtotal = document.querySelectorAll('.discountRow .discount')[0].innerText;
+        const tbody_ref = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0];
+        console.log('tbody_ref: ', tbody_ref);
+        const subtotal_row = document.createElement('tr');
+        subtotal_row.className = '';
+        subtotal_row.style = '';
+
+        subtotal_row.innerHTML = `
+                <th nowrap="nowrap"><span>Subtotal:</span></th>
+                <td>${subtotal}</td>
+            `;
+
+        tbody_ref.insertAdjacentElement('afterbegin', subtotal_row);
+
+        // tbody_ref.insertAdjacentElement(
+        //     'afterBegin',
+        //     `
+        //     <tr class="taxFeeRow">
+        //         <th nowrap="nowrap"><span>Subtotal:</span></th>
+        //         <td>${subtotal}</td>
+        //     </tr>
+        //     `
+        // );
     }
 }
 

@@ -326,6 +326,39 @@ header {
   display: none;
 }
 
+#theRateSummaryInfo {
+  display: none;
+}
+
+#theRateTotals .discount {
+  display: none;
+}
+
+.HoldRoomsForm .ArnNightlyRateCal, .ArnNightlyRateCal + p {
+  display: none;
+}
+
+.HoldRoomsForm .ArnLeftListContainer {
+  display: none;
+}
+
+.SinglePropDetail .ArnLeftListContainer {
+  display: none;
+}
+
+.SinglePropDetail .ArnRightListContainer {
+  display: none;
+}
+
+.discountRow .discount {
+  display: block;
+  visibility: visible;
+}
+
+.hide-table {
+  visibility: collapse;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -420,9 +453,26 @@ header {
 
 .inclusions-container {
   width: 100%;
+  display: grid;
+  grid-template-columns: 150px auto;
+  align-items: start;
+  grid-gap: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+#inclusions-container-title {
+  grid-column: 1;
+}
+
+#inclusions-intro {
+  font-size: 14px;
+  align-self: end;
+  grid-column: 2;
 }
 
 .inclusions-list {
+  grid-column: 2;
   display: flex;
   flex-direction: column;
 }
@@ -430,22 +480,19 @@ header {
 .inclusion-item {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  margin-left: 2rem;
+  padding-top: 1rem;
   align-items: center;
 }
 
 .inclusion-bullet {
-  width: 1.5rem;
-  height: 1.5rem;
-  background: #7a9a9e;
-  border-radius: 1.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #333;
+  border-radius: 0.6rem;
 }
 
 .inclusion-text {
-  margin-left: 2rem;
-  font-size: 18px;
+  margin-left: 1.25rem;
 }
 
 .section-title {
@@ -463,7 +510,7 @@ header {
 
 .itinerary-text {
   display: grid;
-  grid-template-columns: minmax(90px, 120px) auto;
+  grid-template-columns: 150px auto;
   align-items: start;
   grid-gap: 1rem;
   margin-bottom: 2.3rem;
@@ -652,13 +699,18 @@ button {
   }
 
   .itinerary-day {
-    grid-column: 1/6;
+    grid-column: 1/2;
     grid-row: 1/2;
   }
 
   .itinerary-description {
-    grid-column: 1/7;
+    grid-column: 1/2;
     grid-row: 2/3;
+  }
+
+  .inclusions-container {
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-container {

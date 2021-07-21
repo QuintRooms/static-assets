@@ -119,7 +119,7 @@
           <p>\{{TripStartDate}} - \{{TripEndDate}}</p>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-            <p>\{{Itinerary}}</p>
+            <p>\{{{Itinerary}}}</p>
         </mj-text>
 
         <mj-divider border-width="2px" padding-top="10px" padding-bottom="10px" border-style="solid" border-color="#fff" />

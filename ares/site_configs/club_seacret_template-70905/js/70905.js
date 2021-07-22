@@ -87,8 +87,8 @@ class ChildPortal extends BasePortal {
                                 <div class='itinerary-list'></div>
                             </div>
                             <div class='inclusions-container'>
-                                <div class='itinerary-day' id='inclusions-container-title'>Includes</div>
-                                
+                                <h3 class='section-title' id='inclusions-container-title'>EXCLUSIVE</h3>
+                                <div id='inclusions-intro'>This trip includes:</div>
                                 <div class='inclusions-list'></div>
                             </div>
                         </section>

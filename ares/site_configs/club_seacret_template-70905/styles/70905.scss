@@ -427,6 +427,10 @@ display: flex;
 flex-direction: column;
 }
 
+.inclusions-text {
+font-size: 14px;
+}
+
 .hero-container {
     background: linear-gradient(rgb(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), $banner_image;
     background-size: cover;

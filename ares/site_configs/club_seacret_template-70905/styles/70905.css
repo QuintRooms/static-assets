@@ -720,6 +720,10 @@ button {
     flex-direction: column;
   }
 
+  .inclusions-text {
+    font-size: 14px;
+  }
+
   .hero-container {
     background: linear-gradient(rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
     background-size: cover;

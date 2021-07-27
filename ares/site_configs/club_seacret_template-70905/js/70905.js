@@ -7,13 +7,15 @@ const Honeybadger = require('@honeybadger-io/js');
 
 Honeybadger.configure({
     apiKey: process.env.HONEYBADGER_API_KEY,
-    environment: 'production',
+    environment: 'development',
 });
-
-// Honeybadger.notify('Hello from HoneyBadger');
 
 const site_config = new SiteConfig();
 const utilities = new Utilities();
+
+Honeybadger.setContext({
+    user_email: utilities.getMetaTagContent('email'),
+});
 
 class ChildPortal extends BasePortal {
     constructor() {
@@ -36,6 +38,7 @@ class ChildPortal extends BasePortal {
             this.insertTripDetailsIntoHtml();
             this.restyleCarousel();
         }
+
         if (document.querySelector('#theReservationForm')) {
             this.updateCheckoutInterface();
         }
@@ -119,14 +122,22 @@ class ChildPortal extends BasePortal {
     }
 
     async getTrip() {
+        const trip_id = utilities.getUrlParameter('tripId');
+
         try {
-            const trip_id = utilities.getUrlParameter('tripId');
             this.trip = this.trips.results.find((obj) => {
                 return obj.id === trip_id;
             });
             return this.trip;
         } catch (error) {
             console.error('Error in getTrip(): ', error);
+
+            Honeybadger.notify('Could not get trip from the Prismic API.', {
+                params: {
+                    trip_id,
+                    trip: this.trip,
+                },
+            });
         }
     }
 
@@ -142,7 +153,12 @@ class ChildPortal extends BasePortal {
             !this.trip.data.end_date
         ) {
             window.alert('Sorry, but we cannot find this trip. Please contact support.');
-            return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.');
+
+            return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
+                params: {
+                    trip: this.trip,
+                },
+            });
         }
 
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
@@ -162,13 +178,23 @@ class ChildPortal extends BasePortal {
                     <h2 class='trip-date'>${start_date} - ${end_date}</h2>
                 </div>
             </div>
+            <style>
+                .hero-container{
+                    background: linear-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.trip.data.trip_image.url}) no-repeat center center /cover
+                }
+            </style>
         `
         );
 
         // Create and populate itinerary container from CMS object
         if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {
             window.alert('Sorry, but we cannot find these trip details. Please contact support.');
-            return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.');
+
+            return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.', {
+                params: {
+                    trip: this.trip,
+                },
+            });
         }
         this.trip.data.itinerary.forEach((i) => {
             document.querySelector('.itinerary-list').insertAdjacentHTML(
@@ -200,6 +226,7 @@ class ChildPortal extends BasePortal {
         // Pull existing property rooms from DOM and use them to create new room containers
         if (!document.querySelectorAll('#standardAvail .rateRow')) {
             window.alert('Sorry, but we cannot find rooms for this trip. Please contact support.');
+
             return Honeybadger.notify('ARN property rooms array from DOM is not found.');
         }
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
@@ -227,6 +254,7 @@ class ChildPortal extends BasePortal {
             // Insert price into new containers before removing unwanted divs from DOM
             if (!i.querySelector('.full-stay')?.innerText) {
                 window.alert('Sorry, but we cannot find prices for this trip. Please contact support.');
+
                 return Honeybadger.notify('ARN Full-stay price for trip is not found.');
             }
 
@@ -234,6 +262,7 @@ class ChildPortal extends BasePortal {
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
             const mobile_price_container = document.querySelector('.trip-price-mobile');
             const desktop_price_container = document.querySelector('.trip-price-desktop');
+
             mobile_price_container.innerText = `$${trip_rate}`;
             desktop_price_container.innerText = `$${trip_rate}`;
 
@@ -245,18 +274,22 @@ class ChildPortal extends BasePortal {
 
             const cta_container = document.querySelector('.trip-ctas');
             const original_book_cta = i.querySelector('.bookRoom');
+
             original_book_cta.classList.remove('bookRoom');
             original_book_cta.classList.add('book-button');
             original_book_cta.classList.add('new-cta');
             original_book_cta.innerText = 'BOOK TRIP';
+
             cta_container.appendChild(original_book_cta);
 
             const original_hold_cta = i.querySelector('.holdRoom');
+
             if (original_hold_cta) {
                 original_hold_cta.classList.remove('holdRoom');
                 original_hold_cta.classList.add('hold-button');
                 original_hold_cta.classList.add('new-cta');
                 original_hold_cta.innerText = 'HOLD TRIP';
+
                 cta_container.appendChild(original_hold_cta);
             }
 
@@ -268,6 +301,7 @@ class ChildPortal extends BasePortal {
             const price_cta_container = document.querySelector('.trip-price-cta-container');
             const cancellation_policy_container = i.querySelector('.ArnRateCancelPolicyContainer');
             const cancellation_policy_link = i.querySelector('.ArnRateCancelAnchor');
+
             cancellation_policy_link.classList.add('cancellation-policy');
             price_cta_container.appendChild(cancellation_policy_link);
             price_cta_container.appendChild(cancellation_policy_container);
@@ -288,6 +322,7 @@ class ChildPortal extends BasePortal {
                 // window.alert('Sorry, there was an error with the trip description. If you need further information, please contact support.');
                 Honeybadger.notify('Room description, Room description colon, room description name, or Room description text is not found');
             }
+
             const text_string = i.innerText;
             const text_array = i.innerText.split(':');
             const room_title_container = document.querySelector('.trip-item-name');
@@ -330,8 +365,11 @@ class ChildPortal extends BasePortal {
 
         const subtotal = document.querySelectorAll('.discountRow .discount')[0].innerText;
         const tbody_ref = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0];
+
         console.log('tbody_ref: ', tbody_ref);
+
         const subtotal_row = document.createElement('tr');
+
         subtotal_row.className = '';
         subtotal_row.style = '';
 

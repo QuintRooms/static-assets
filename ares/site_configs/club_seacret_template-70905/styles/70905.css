@@ -17,7 +17,7 @@ header {
 }
 
 .RootBody {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
+  background: #fff;
 }
 
 .logo img {
@@ -387,7 +387,7 @@ header {
 }
 
 .hero-container {
-  background: linear-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), #fff;
   background-size: cover;
   width: 100%;
   height: 500px;
@@ -725,7 +725,7 @@ button {
   }
 
   .hero-container {
-    background: linear-gradient(rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/img/banner.jpg) no-repeat center center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), #fff;
     background-size: cover;
     height: auto;
     min-height: 200px;
@@ -980,6 +980,11 @@ input#theConfirmationButton:hover, .WBConfirmedBooking .submit:hover {
 
 .HoldRoomsForm .ArnProperty {
   max-width: 1600px;
+}
+
+/* Hide ARN Things */
+.ArnRateFromTo, .ArnNightlyRate, .RateCalendarPopupAnchor, .RateCalendarPopupContainer {
+  display: none !important;
 }
 
 /*# sourceMappingURL=70905.css.map*/

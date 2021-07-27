@@ -15,7 +15,7 @@ $button_hover_border_color: #3276b1;
 $google_font_name: 'Roboto', sans-serif;
 $site_name: 'club_seacret_template-70905';
 $path: set-path($env);
-$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+$banner_image: #fff;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
@@ -34,7 +34,7 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
     display: none;
 }
 
-.HoldRoomsForm .ArnNightlyRateCal, .ArnNightlyRateCal + p { 
+.HoldRoomsForm .ArnNightlyRateCal, .ArnNightlyRateCal + p {
     display: none;
 }
 
@@ -466,7 +466,7 @@ h2 {
     display: flex;
     flex-direction: column;
     grid-template-columns: none;
-} 
+}
 
 .itinerary-day{
     display: flex;
@@ -704,4 +704,10 @@ input#theConfirmationButton, .WBConfirmedBooking .submit {
 
 .HoldRoomsForm .ArnProperty {
     max-width: 1600px;
+}
+
+/* Hide ARN Things */
+
+.ArnRateFromTo, .ArnNightlyRate, .RateCalendarPopupAnchor, .RateCalendarPopupContainer {
+    display: none !important;
 }

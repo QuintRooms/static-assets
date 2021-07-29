@@ -4450,8 +4450,8 @@
                     return t.host && t.protocol ? (t.protocol === n.protocol && t.host === n.host ? t.pathname : t.protocol + '://' + t.host + t.pathname) : t.pathname;
                 }
                 var L,
-                    C,
-                    T = (function () {
+                    T,
+                    C = (function () {
                         var e = !0;
                         if ((window.atob || (e = !1), window.ErrorEvent))
                             try {
@@ -4572,7 +4572,7 @@
                                     var o = this;
                                     r.___hb = function () {
                                         var e = o.config.enableUncaught;
-                                        if (!t.catch && !T && e) return r.apply(this, arguments);
+                                        if (!t.catch && !C && e) return r.apply(this, arguments);
                                         try {
                                             return r.apply(this, arguments);
                                         } catch (e) {
@@ -4605,10 +4605,10 @@
                     );
                 })(k))({
                     __plugins: [
-                        (void 0 === C && (C = window),
+                        (void 0 === T && (T = window),
                         {
                             load: function (e) {
-                                y(C, 'onerror', function (t) {
+                                y(T, 'onerror', function (t) {
                                     var n = function (t, n, r, o, s) {
                                         if ((e.logger.debug('window.onerror callback invoked', arguments), P > 0))
                                             return e.logger.debug('Ignoring window.onerror (error likely reported earlier)', arguments), void (P -= 1);
@@ -6816,7 +6816,7 @@
                 M = 'process' == l(x),
                 q = function () {},
                 L = (o = _.f),
-                C = !!(function () {
+                T = !!(function () {
                     try {
                         var e = E.resolve(1),
                             t = ((e.constructor = {})[n(/*! ./_wks */ './node_modules/core-js/modules/_wks.js')('species')] = function (e) {
@@ -6825,7 +6825,7 @@
                         return (M || 'function' == typeof PromiseRejectionEvent) && e.then(q) instanceof t && 0 !== A.indexOf('6.6') && -1 === b.indexOf('Chrome/66');
                     } catch (e) {}
                 })(),
-                T = function (e) {
+                C = function (e) {
                     var t;
                     return !(!m(e) || 'function' != typeof (t = e.then)) && t;
                 },
@@ -6850,7 +6850,7 @@
                                             a
                                                 ? (o || (2 == e._h && D(e), (e._h = 1)),
                                                   !0 === a ? (n = r) : (l && l.enter(), (n = a(r)), l && (l.exit(), (i = !0))),
-                                                  n === t.promise ? u(S('Promise-chain cycle')) : (s = T(n)) ? s.call(n, c, u) : c(n))
+                                                  n === t.promise ? u(S('Promise-chain cycle')) : (s = C(n)) ? s.call(n, c, u) : c(n))
                                                 : u(r);
                                         } catch (e) {
                                             l && !i && l.exit(), u(e);
@@ -6907,7 +6907,7 @@
                         (n._d = !0), (n = n._w || n);
                         try {
                             if (n === e) throw S("Promise can't be resolved itself");
-                            (t = T(e))
+                            (t = C(e))
                                 ? v(function () {
                                       var r = {_w: n, _d: !1};
                                       try {
@@ -6922,7 +6922,7 @@
                         }
                     }
                 };
-            C ||
+            T ||
                 ((E = function (e) {
                     p(this, E, 'Promise', '_h'), f(e), r.call(this);
                     try {
@@ -6957,17 +6957,17 @@
                 (_.f = L = function (e) {
                     return e === E || e === i ? new s(e) : o(e);
                 })),
-                d(d.G + d.W + d.F * !C, {Promise: E}),
+                d(d.G + d.W + d.F * !T, {Promise: E}),
                 n(/*! ./_set-to-string-tag */ './node_modules/core-js/modules/_set-to-string-tag.js')(E, 'Promise'),
                 n(/*! ./_set-species */ './node_modules/core-js/modules/_set-species.js')('Promise'),
                 (i = n(/*! ./_core */ './node_modules/core-js/modules/_core.js').Promise),
-                d(d.S + d.F * !C, 'Promise', {
+                d(d.S + d.F * !T, 'Promise', {
                     reject: function (e) {
                         var t = L(this);
                         return (0, t.reject)(e), t.promise;
                     },
                 }),
-                d(d.S + d.F * (a || !C), 'Promise', {
+                d(d.S + d.F * (a || !T), 'Promise', {
                     resolve: function (e) {
                         return w(a && this === i ? E : this, e);
                     },
@@ -6976,7 +6976,7 @@
                     d.S +
                         d.F *
                             !(
-                                C &&
+                                T &&
                                 n(/*! ./_iter-detect */ './node_modules/core-js/modules/_iter-detect.js')(function (e) {
                                     E.all(e).catch(q);
                                 })
@@ -7437,8 +7437,8 @@
                 M = n(/*! ./_object-dp */ './node_modules/core-js/modules/_object-dp.js'),
                 q = n(/*! ./_object-keys */ './node_modules/core-js/modules/_object-keys.js'),
                 L = A.f,
-                C = M.f,
-                T = k.f,
+                T = M.f,
+                C = k.f,
                 P = r.Symbol,
                 R = r.JSON,
                 O = R && R.stringify,
@@ -7458,9 +7458,9 @@
                         return (
                             7 !=
                             x(
-                                C({}, 'a', {
+                                T({}, 'a', {
                                     get: function () {
-                                        return C(this, 'a', {value: 7}).a;
+                                        return T(this, 'a', {value: 7}).a;
                                     },
                                 })
                             ).a
@@ -7468,9 +7468,9 @@
                     })
                         ? function (e, t, n) {
                               var r = L(N, t);
-                              r && delete N[t], C(e, t, n), r && e !== N && C(N, t, r);
+                              r && delete N[t], T(e, t, n), r && e !== N && T(N, t, r);
                           }
-                        : C,
+                        : T,
                 V = function (e) {
                     var t = (F[e] = x(P.prototype));
                     return (t._k = e), t;
@@ -7490,9 +7490,9 @@
                         (t = w(t, !0)),
                         v(n),
                         o(F, t)
-                            ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = x(n, {enumerable: S(0, !1)}))) : (o(e, D) || C(e, D, S(1, {})), (e[D][t] = !0)),
+                            ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = x(n, {enumerable: S(0, !1)}))) : (o(e, D) || T(e, D, S(1, {})), (e[D][t] = !0)),
                               G(e, t, n))
-                            : C(e, t, n)
+                            : T(e, t, n)
                     );
                 },
                 K = function (e, t) {
@@ -7500,22 +7500,22 @@
                     for (var n, r = y((t = b(t))), o = 0, s = r.length; s > o; ) Z(e, (n = r[o++]), t[n]);
                     return e;
                 },
-                X = function (e) {
+                J = function (e) {
                     var t = Y.call(this, (e = w(e, !0)));
                     return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
                 },
-                J = function (e, t) {
+                X = function (e, t) {
                     if (((e = b(e)), (t = w(t, !0)), e !== N || !o(F, t) || o(B, t))) {
                         var n = L(e, t);
                         return !n || !o(F, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                     }
                 },
                 Q = function (e) {
-                    for (var t, n = T(b(e)), r = [], s = 0; n.length > s; ) o(F, (t = n[s++])) || t == D || t == c || r.push(t);
+                    for (var t, n = C(b(e)), r = [], s = 0; n.length > s; ) o(F, (t = n[s++])) || t == D || t == c || r.push(t);
                     return r;
                 },
                 ee = function (e) {
-                    for (var t, n = e === N, r = T(n ? B : b(e)), s = [], i = 0; r.length > i; ) !o(F, (t = r[i++])) || (n && !o(N, t)) || s.push(F[t]);
+                    for (var t, n = e === N, r = C(n ? B : b(e)), s = [], i = 0; r.length > i; ) !o(F, (t = r[i++])) || (n && !o(N, t)) || s.push(F[t]);
                     return s;
                 };
             U ||
@@ -7533,12 +7533,12 @@
                         return this._k;
                     }
                 ),
-                (A.f = J),
+                (A.f = X),
                 (M.f = Z),
                 (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = Q),
-                (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = X),
+                (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = J),
                 (E.f = ee),
-                s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', X, !0),
+                s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', J, !0),
                 (p.f = function (e) {
                     return V(f(e));
                 })),
@@ -7567,7 +7567,7 @@
                     },
                     defineProperty: Z,
                     defineProperties: K,
-                    getOwnPropertyDescriptor: J,
+                    getOwnPropertyDescriptor: X,
                     getOwnPropertyNames: Q,
                     getOwnPropertySymbols: ee,
                 });
@@ -9534,7 +9534,7 @@
                     !(function (e, t) {
                         if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');
                         (e.prototype = Object.create(t && t.prototype, {constructor: {value: e, writable: !0, configurable: !0}})), t && m(e, t);
-                    })(x, e);
+                    })(k, e);
                     var t,
                         n,
                         o,
@@ -9546,14 +9546,15 @@
                         p,
                         b,
                         w,
-                        S = f(x);
-                    function x() {
+                        S,
+                        x = f(k);
+                    function k() {
                         var e, t;
                         return (
                             (function (e, t) {
                                 if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
-                            })(this, x),
-                            y(((e = h((t = S.call(this, _)))), g(x.prototype)), 'init', e).call(e),
+                            })(this, k),
+                            y(((e = h((t = x.call(this, _)))), g(k.prototype)), 'init', e).call(e),
                             t.init(),
                             (t.ref = ''),
                             (t.trips = {}),
@@ -9562,12 +9563,12 @@
                         );
                     }
                     return (
-                        (t = x),
+                        (t = k),
                         (n = [
                             {
                                 key: 'init',
                                 value:
-                                    ((w = l(
+                                    ((S = l(
                                         regeneratorRuntime.mark(function e() {
                                             return regeneratorRuntime.wrap(
                                                 function (e) {
@@ -9588,7 +9589,8 @@
                                                             case 9:
                                                                 this.insertTripDetailsIntoHtml(), this.restyleCarousel();
                                                             case 11:
-                                                                document.querySelector('#theReservationForm') && this.updateCheckoutInterface();
+                                                                document.querySelector('#theReservationForm') &&
+                                                                    (this.updateCheckoutInterface(), this.updateTripDetailsInputValue());
                                                             case 12:
                                                             case 'end':
                                                                 return e.stop();
@@ -9600,13 +9602,13 @@
                                         })
                                     )),
                                     function () {
-                                        return w.apply(this, arguments);
+                                        return S.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'getReferenceId',
                                 value:
-                                    ((b = l(
+                                    ((w = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t = this;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -9637,13 +9639,13 @@
                                         })
                                     )),
                                     function () {
-                                        return b.apply(this, arguments);
+                                        return w.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'fetchTrips',
                                 value:
-                                    ((p = l(
+                                    ((b = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t = this;
                                             return regeneratorRuntime.wrap(
@@ -9681,13 +9683,13 @@
                                         })
                                     )),
                                     function () {
-                                        return p.apply(this, arguments);
+                                        return b.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'fetchPropertyHtml',
                                 value:
-                                    ((u = l(
+                                    ((p = l(
                                         regeneratorRuntime.mark(function e() {
                                             return regeneratorRuntime.wrap(function (e) {
                                                 for (;;)
@@ -9714,13 +9716,13 @@
                                         })
                                     )),
                                     function () {
-                                        return u.apply(this, arguments);
+                                        return p.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'getTrip',
                                 value:
-                                    ((c = l(
+                                    ((u = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t;
                                             return regeneratorRuntime.wrap(
@@ -9734,32 +9736,33 @@
                                                                     (this.trip = this.trips.results.find(function (e) {
                                                                         return e.id === t;
                                                                     })),
+                                                                    localStorage.setItem('trip_details', JSON.stringify(this.trip)),
                                                                     e.abrupt('return', this.trip)
                                                                 );
-                                                            case 6:
-                                                                (e.prev = 6),
+                                                            case 7:
+                                                                (e.prev = 7),
                                                                     (e.t0 = e.catch(1)),
                                                                     console.error('Error in getTrip(): ', e.t0),
                                                                     v.notify('Could not get trip from the Prismic API.', {params: {trip_id: t, trip: this.trip}});
-                                                            case 10:
+                                                            case 11:
                                                             case 'end':
                                                                 return e.stop();
                                                         }
                                                 },
                                                 e,
                                                 this,
-                                                [[1, 6]]
+                                                [[1, 7]]
                                             );
                                         })
                                     )),
                                     function () {
-                                        return c.apply(this, arguments);
+                                        return u.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'insertTripDetailsIntoHtml',
                                 value:
-                                    ((a = l(
+                                    ((c = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, o, s, i, a, c, u, l, d, m, f, p, h, y;
                                             return regeneratorRuntime.wrap(
@@ -9984,13 +9987,13 @@
                                         })
                                     )),
                                     function () {
-                                        return a.apply(this, arguments);
+                                        return c.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'restyleCarousel',
                                 value:
-                                    ((i = l(
+                                    ((a = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -10018,13 +10021,13 @@
                                         })
                                     )),
                                     function () {
-                                        return i.apply(this, arguments);
+                                        return a.apply(this, arguments);
                                     }),
                             },
                             {
                                 key: 'updateCheckoutInterface',
                                 value:
-                                    ((s = l(
+                                    ((i = l(
                                         regeneratorRuntime.mark(function e() {
                                             var t, n, r;
                                             return regeneratorRuntime.wrap(function (e) {
@@ -10051,12 +10054,57 @@
                                         })
                                     )),
                                     function () {
+                                        return i.apply(this, arguments);
+                                    }),
+                            },
+                            {
+                                key: 'getTripDetailsFromLocalStorage',
+                                value: function () {
+                                    var e = localStorage.getItem('trip_details');
+                                    if (e) return JSON.parse(e);
+                                },
+                            },
+                            {
+                                key: 'updateTripDetailsInputValue',
+                                value:
+                                    ((s = l(
+                                        regeneratorRuntime.mark(function e() {
+                                            var t, n;
+                                            return regeneratorRuntime.wrap(
+                                                function (e) {
+                                                    for (;;)
+                                                        switch ((e.prev = e.next)) {
+                                                            case 0:
+                                                                return (e.next = 2), this.getTripDetailsFromLocalStorage();
+                                                            case 2:
+                                                                if (!(t = e.sent)) {
+                                                                    e.next = 8;
+                                                                    break;
+                                                                }
+                                                                if ((n = document.querySelector('#theTripDetailsAjax textarea'))) {
+                                                                    e.next = 7;
+                                                                    break;
+                                                                }
+                                                                return e.abrupt('return');
+                                                            case 7:
+                                                                n.textContent = t;
+                                                            case 8:
+                                                            case 'end':
+                                                                return e.stop();
+                                                        }
+                                                },
+                                                e,
+                                                this
+                                            );
+                                        })
+                                    )),
+                                    function () {
                                         return s.apply(this, arguments);
                                     }),
                             },
                         ]) && d(t.prototype, n),
                         o && d(t, o),
-                        x
+                        k
                     );
                 })(o.default))();
         },

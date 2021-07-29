@@ -41,6 +41,7 @@ class ChildPortal extends BasePortal {
 
         if (document.querySelector('#theReservationForm')) {
             this.updateCheckoutInterface();
+            this.updateTripDetailsInputValue();
         }
     }
 
@@ -128,6 +129,9 @@ class ChildPortal extends BasePortal {
             this.trip = this.trips.results.find((obj) => {
                 return obj.id === trip_id;
             });
+
+            localStorage.setItem('trip_details', JSON.stringify(this.trip));
+
             return this.trip;
         } catch (error) {
             console.error('Error in getTrip(): ', error);
@@ -389,6 +393,26 @@ class ChildPortal extends BasePortal {
         //     </tr>
         //     `
         // );
+    }
+
+    getTripDetailsFromLocalStorage() {
+        const trip_details = localStorage.getItem('trip_details');
+
+        if (!trip_details) return;
+
+        return JSON.parse(trip_details);
+    }
+
+    async updateTripDetailsInputValue() {
+        const trip_details = await this.getTripDetailsFromLocalStorage();
+
+        if (trip_details) {
+            const trip_details_input = document.querySelector('#theTripDetailsAjax textarea');
+
+            if (!trip_details_input) return;
+
+            trip_details_input.textContent = trip_details;
+        }
     }
 }
 

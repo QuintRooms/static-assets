@@ -7495,12 +7495,12 @@
                             : T(e, t, n)
                     );
                 },
-                K = function (e, t) {
+                J = function (e, t) {
                     v(e);
                     for (var n, r = y((t = b(t))), o = 0, s = r.length; s > o; ) Z(e, (n = r[o++]), t[n]);
                     return e;
                 },
-                J = function (e) {
+                K = function (e) {
                     var t = Y.call(this, (e = w(e, !0)));
                     return !(this === N && o(F, e) && !o(B, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, D) && this[D][e])) || t);
                 },
@@ -7536,9 +7536,9 @@
                 (A.f = X),
                 (M.f = Z),
                 (n(/*! ./_object-gopn */ './node_modules/core-js/modules/_object-gopn.js').f = k.f = Q),
-                (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = J),
+                (n(/*! ./_object-pie */ './node_modules/core-js/modules/_object-pie.js').f = K),
                 (E.f = ee),
-                s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', J, !0),
+                s && !n(/*! ./_library */ './node_modules/core-js/modules/_library.js') && a(N, 'propertyIsEnumerable', K, !0),
                 (p.f = function (e) {
                     return V(f(e));
                 })),
@@ -7563,10 +7563,10 @@
             }),
                 i(i.S + i.F * !U, 'Object', {
                     create: function (e, t) {
-                        return void 0 === t ? x(e) : K(x(e), t);
+                        return void 0 === t ? x(e) : J(x(e), t);
                     },
                     defineProperty: Z,
-                    defineProperties: K,
+                    defineProperties: J,
                     getOwnPropertyDescriptor: X,
                     getOwnPropertyNames: Q,
                     getOwnPropertySymbols: ee,
@@ -10077,18 +10077,20 @@
                                                             case 0:
                                                                 return (e.next = 2), this.getTripDetailsFromLocalStorage();
                                                             case 2:
-                                                                if (!(t = e.sent)) {
-                                                                    e.next = 8;
-                                                                    break;
-                                                                }
-                                                                if ((n = document.querySelector('#theTripDetailsAjax textarea'))) {
-                                                                    e.next = 7;
+                                                                if ((t = e.sent)) {
+                                                                    e.next = 5;
                                                                     break;
                                                                 }
                                                                 return e.abrupt('return');
-                                                            case 7:
-                                                                n.textContent = t;
+                                                            case 5:
+                                                                if ((n = document.querySelector('#theTripDetailsAjax textarea'))) {
+                                                                    e.next = 8;
+                                                                    break;
+                                                                }
+                                                                return e.abrupt('return');
                                                             case 8:
+                                                                n.textContent = JSON.stringify(t);
+                                                            case 9:
                                                             case 'end':
                                                                 return e.stop();
                                                         }

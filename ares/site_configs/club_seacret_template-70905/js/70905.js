@@ -200,6 +200,7 @@ class ChildPortal extends BasePortal {
                 },
             });
         }
+
         this.trip.data.itinerary.forEach((i) => {
             document.querySelector('.itinerary-list').insertAdjacentHTML(
                 'beforeEnd',
@@ -406,13 +407,13 @@ class ChildPortal extends BasePortal {
     async updateTripDetailsInputValue() {
         const trip_details = await this.getTripDetailsFromLocalStorage();
 
-        if (trip_details) {
-            const trip_details_input = document.querySelector('#theTripDetailsAjax textarea');
+        if (!trip_details) return;
 
-            if (!trip_details_input) return;
+        const trip_details_input = document.querySelector('#theTripDetailsAjax textarea');
 
-            trip_details_input.textContent = trip_details;
-        }
+        if (!trip_details_input) return;
+
+        trip_details_input.textContent = JSON.stringify(trip_details);
     }
 }
 

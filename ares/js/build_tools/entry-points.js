@@ -24,18 +24,25 @@ module.exports = () => {
             // 'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
+            // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            // 'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
+            // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-65012': './src/65012.js', // Formula 1 Miami Grand Prix 2022
+            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
+            // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
             // 'firefly_21-64866': './src/64866.js', // firefly 21
+            // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
@@ -47,10 +54,13 @@ module.exports = () => {
             // 'housing_template-60265': './src/60265.js', // Housing Template
             // 'innings_21-60093': './src/60093.js', // Innings Fest 2021
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
-            // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
+            // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
+            // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
+            // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
+            // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_21-68382': './src/68382.js', // railbird 21
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
@@ -58,6 +68,7 @@ module.exports = () => {
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
+            // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
             // 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees 2020
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
@@ -70,6 +81,8 @@ module.exports = () => {
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'voodoo_21-60792': './src/60792.js', // Voodoo Festival 2021
+            // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
+            // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
         };
 
         // develop environment
@@ -81,6 +94,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };
 
         // local environment
@@ -88,10 +102,11 @@ module.exports = () => {
         entry_points = {
             'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            'sea_hear_now_21-70014': './src/70014.js', // sea hear_now_21
-            // 'music_midtown_21-70013': './src/70013.js', // music midtown_21
+            'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };
     }
 
     return entry_points;
 };
+
+// OLD PORTALS

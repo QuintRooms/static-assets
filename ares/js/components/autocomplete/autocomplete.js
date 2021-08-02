@@ -291,30 +291,34 @@ export default class Autocomplete {
         let check_in_value;
         let check_out_value;
         let nights;
-
         // TODO needs refactor.
-
         if (
             site === 52342 ||
             (theme === 'standard' && affiliate !== 16980) ||
-            (document.querySelector('span[itemprop="addressLocality"]').textContent === 'Austin' && affiliate === 16980 && theme === 'standard')
+            (this.site_config.lodging.event_name === 'F1 United States Grand Prix' && affiliate === 16980 && theme === 'standard') ||
+            (this.site_config.lodging.event_name === 'Miami Grand Prix' && affiliate === 16980 && theme === 'standard')
         ) {
             check_in_value = dayjs(date_in, 'M/D/YYYY').format('M/D/YYYY');
             check_out_value = dayjs(date_out, 'M/D/YYYY').format('M/D/YYYY');
             nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
             return {check_in_value, nights};
         }
+
         if (theme === 'mandarin' || theme === 'tw_mandarin') {
             check_in_value = dayjs(date_in, 'YYYY/M/D').format('YYYY/M/D');
             check_out_value = dayjs(date_out, 'YYYY/M/D').format('YYYY/M/D');
             nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
+
             return {check_in_value, nights};
         }
+
         check_in_value = dayjs(date_in, 'D/M/YYYY').format('M/D/YYYY');
         check_out_value = dayjs(date_out, 'D/M/YYYY').format('M/D/YYYY');
         nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');
         check_in_value = dayjs(date_in, 'D/M/YYYY').format('D/M/YYYY');
         check_out_value = dayjs(date_out, 'D/M/YYYY').format('D/M/YYYY');
+
         return {check_in_value, nights};
     }
 

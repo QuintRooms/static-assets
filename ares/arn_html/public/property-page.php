@@ -1,13 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<?php 
-        $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
-        if($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs'){
-            $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
-        }
-        include $config;
-        
-    ?>
+<?php
+    $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
+    if ($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs') {
+        $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
+    }
+    include $config;
+?>
 
 <head>
     <title>InterContinental Stephen F. Austin</title>
@@ -206,10 +205,10 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
         });
         /*]]>*/
     </script>
+    <?php include getenv('includes_path') . 'header.php'; ?>
     <?php 
     // include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; 
     ?>
-    <?php include getenv('includes_path') . 'header.php'; ?>
     <div class="subHeaderContainer">
         <div class="subHeader"><a href="/v6" class="refineLink"><span class="refine"><img
                         src="https://media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/search.png"
@@ -1529,7 +1528,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Traditional Room - Traditional Room 1 Queen Bed
+                                                        11/9/2020</div>Traditional Room 1 Queen Bed : 
                                                     Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">
@@ -1575,7 +1574,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Traditional Room - Traditional Room 1 King Bed
+                                                        11/9/2020</div>Traditional Room 1 King Bed : 
                                                     Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">
@@ -1620,7 +1619,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Traditional Room, 1 King Bed - Traditional Room,
+                                                        11/9/2020</div>1 King Bed - Traditional Room :
                                                     1 King Bed 1 King Bed Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">
@@ -1664,7 +1663,7 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
                                             <tr>
                                                 <td class="RoomDescription" valign="top">
                                                     <div style="display:none" class="ArnRateFromTo">11/6/2020 -
-                                                        11/9/2020</div>Deluxe Room, 1 Queen Bed - Deluxe Room, 1 Queen
+                                                        11/9/2020</div>1 Queen Bed - Deluxe Room : 1 Queen
                                                     Bed 1 Queen Bed Breakfast for 2. Rate for 2 people per room
                                                 </td>
                                                 <td valign="top" align="right" rowspan="2" class="bookRoomCell">
@@ -1806,11 +1805,9 @@ Booking Engine by Alliance Reservations Network http://www.alliancereservations.
             </tr>
         </table>
     </div>
+    <?php include getenv('includes_path') . 'footer.php'; ?>
     <?php 
     // include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; 
-    ?>
-    <?php 
-    include getenv('includes_path') . 'footer.php'; 
     ?>
     <script>
     </script>

@@ -114,7 +114,7 @@
     function (e, t, n) {
         var r = n(1),
             o = n(50),
-            i = n(35),
+            i = n(36),
             a = Object.defineProperty;
         t.f = n(4)
             ? Object.defineProperty
@@ -228,7 +228,7 @@
     },
     function (e, t, n) {
         var r = n(51),
-            o = n(37);
+            o = n(38);
         e.exports =
             Object.keys ||
             function (e) {
@@ -911,7 +911,7 @@
             i = n(7),
             a = n(15),
             c = n(0),
-            s = n(43),
+            s = n(44),
             u = c('species'),
             l = !i(function () {
                 var e = /./;
@@ -982,6 +982,31 @@
                     );
             }
         };
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(1),
+            o = n(101),
+            i = n(31);
+        n(32)('search', 1, function (e, t, n, a) {
+            return [
+                function (n) {
+                    var r = e(this),
+                        o = null == n ? void 0 : n[t];
+                    return void 0 !== o ? o.call(n, r) : new RegExp(n)[t](String(r));
+                },
+                function (e) {
+                    var t = a(n, e, this);
+                    if (t.done) return t.value;
+                    var c = r(e),
+                        s = String(this),
+                        u = c.lastIndex;
+                    o(u, 0) || (c.lastIndex = 0);
+                    var l = i(c, s);
+                    return o(c.lastIndex, u) || (c.lastIndex = u), null === l ? -1 : l.index;
+                },
+            ];
+        });
     },
     function (e, t, n) {
         e.exports = (function () {
@@ -1390,12 +1415,12 @@
     function (e, t, n) {
         var r = n(1),
             o = n(78),
-            i = n(37),
-            a = n(36)('IE_PROTO'),
+            i = n(38),
+            a = n(37)('IE_PROTO'),
             c = function () {},
             s = function () {
                 var e,
-                    t = n(34)('iframe'),
+                    t = n(35)('iframe'),
                     r = i.length;
                 for (
                     t.style.display = 'none',
@@ -1422,7 +1447,7 @@
         'use strict';
         n(80);
         var r = n(1),
-            o = n(41),
+            o = n(42),
             i = n(4),
             a = /./.toString,
             c = function (e) {
@@ -1460,7 +1485,7 @@
         'use strict';
         var r,
             o,
-            i = n(41),
+            i = n(42),
             a = RegExp.prototype.exec,
             c = String.prototype.replace,
             s = a,
@@ -1488,31 +1513,6 @@
                 );
             }),
             (e.exports = s);
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(1),
-            o = n(101),
-            i = n(31);
-        n(32)('search', 1, function (e, t, n, a) {
-            return [
-                function (n) {
-                    var r = e(this),
-                        o = null == n ? void 0 : n[t];
-                    return void 0 !== o ? o.call(n, r) : new RegExp(n)[t](String(r));
-                },
-                function (e) {
-                    var t = a(n, e, this);
-                    if (t.done) return t.value;
-                    var c = r(e),
-                        s = String(this),
-                        u = c.lastIndex;
-                    o(u, 0) || (c.lastIndex = 0);
-                    var l = i(c, s);
-                    return o(c.lastIndex, u) || (c.lastIndex = u), null === l ? -1 : l.index;
-                },
-            ];
-        });
     },
     function (e, t, n) {
         'use strict';
@@ -1547,8 +1547,8 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(62), n(40), n(65), n(46), n(66), n(22), n(16), n(24);
-        var a = n(33),
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(33), n(62), n(41), n(65), n(46), n(66), n(22), n(16), n(24);
+        var a = n(34),
             c = (function () {
                 function e() {
                     !(function (e, t) {
@@ -2237,6 +2237,13 @@
                                     );
                             },
                         },
+                        {
+                            key: 'getUrlParameter',
+                            value: function (e) {
+                                var t = new URLSearchParams(window.location.search);
+                                if (e && t) return t.get(e);
+                            },
+                        },
                     ]) && i(t.prototype, n),
                     r && i(t, r),
                     e
@@ -2489,7 +2496,7 @@
             !n(7)(function () {
                 return (
                     7 !=
-                    Object.defineProperty(n(34)('div'), 'a', {
+                    Object.defineProperty(n(35)('div'), 'a', {
                         get: function () {
                             return 7;
                         },
@@ -2501,7 +2508,7 @@
         var r = n(8),
             o = n(13),
             i = n(52)(!1),
-            a = n(36)('IE_PROTO');
+            a = n(37)('IE_PROTO');
         e.exports = function (e, t) {
             var n,
                 c = o(e),
@@ -2538,7 +2545,7 @@
     },
     function (e, t, n) {
         var r = n(51),
-            o = n(37).concat('length', 'prototype');
+            o = n(38).concat('length', 'prototype');
         t.f =
             Object.getOwnPropertyNames ||
             function (e) {
@@ -2546,10 +2553,10 @@
             };
     },
     function (e, t, n) {
-        var r = n(38),
+        var r = n(39),
             o = n(26),
             i = n(13),
-            a = n(35),
+            a = n(36),
             c = n(8),
             s = n(50),
             u = Object.getOwnPropertyDescriptor;
@@ -2584,7 +2591,7 @@
     function (e, t, n) {
         var r = n(8),
             o = n(29),
-            i = n(36)('IE_PROTO'),
+            i = n(37)('IE_PROTO'),
             a = Object.prototype;
         e.exports =
             Object.getPrototypeOf ||
@@ -2609,7 +2616,7 @@
             a = n(27),
             c = n(57),
             s = n(54),
-            u = n(34),
+            u = n(35),
             l = n(2),
             d = l.process,
             f = l.setImmediate,
@@ -2691,7 +2698,7 @@
             o = n(29),
             i = n(20),
             a = n(21),
-            c = n(42),
+            c = n(43),
             s = n(31),
             u = Math.max,
             l = Math.min,
@@ -2869,7 +2876,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(70), n(71), n(40), n(16), n(81), n(83);
+        n(70), n(71), n(41), n(16), n(81), n(83);
         var r = o(n(84));
         function o(e) {
             return e && e.__esModule ? e : {default: e};
@@ -2985,9 +2992,9 @@
             S = n(3),
             b = n(29),
             w = n(13),
-            _ = n(35),
+            _ = n(36),
             x = n(26),
-            k = n(39),
+            k = n(40),
             A = n(79),
             M = n(56),
             L = n(53),
@@ -3092,7 +3099,7 @@
             (M.f = K),
             (q.f = Z),
             (n(55).f = A.f = X),
-            (n(38).f = J),
+            (n(39).f = J),
             (L.f = ee),
             i && !n(17) && c(N, 'propertyIsEnumerable', J, !0),
             (h.f = function (e) {
@@ -3213,7 +3220,7 @@
     function (e, t, n) {
         var r = n(19),
             o = n(53),
-            i = n(38);
+            i = n(39);
         e.exports = function (e) {
             var t = r(e),
                 n = o.f;
@@ -3275,11 +3282,11 @@
         };
     },
     function (e, t, n) {
-        n(4) && 'g' != /./g.flags && n(6).f(RegExp.prototype, 'flags', {configurable: !0, get: n(41)});
+        n(4) && 'g' != /./g.flags && n(6).f(RegExp.prototype, 'flags', {configurable: !0, get: n(42)});
     },
     function (e, t, n) {
         var r = n(5),
-            o = n(39),
+            o = n(40),
             i = n(12),
             a = n(1),
             c = n(3),
@@ -3370,9 +3377,9 @@
             n(22),
             n(97),
             n(100),
-            n(40),
+            n(33),
+            n(41),
             n(16),
-            n(44),
             n(102),
             n(62),
             n(104),
@@ -3422,7 +3429,7 @@
         }
         var f = 'hotelsforhope.com',
             p = new a.default(),
-            h = n(33),
+            h = n(34),
             m = n(47);
         h.extend(m);
         var y = new r.default(),
@@ -3511,7 +3518,8 @@
                                                                                 e.site_config.exclusive_rate_text,
                                                                                 e.site_config.host_hotel_text,
                                                                                 e.site_config.partner_hotel_text,
-                                                                                e.site_config.lodging.event_name
+                                                                                e.site_config.lodging.event_name,
+                                                                                e.site_config.sponsor_hotel_text
                                                                             ),
                                                                             e.updatePropReviewsURLToUseAnchor(),
                                                                             e.getTotalNights().then(function (t) {
@@ -3531,6 +3539,7 @@
                                                                             ),
                                                                             e.showOriginalPrice('.rateRow', '.ArnNightlyRate strong')),
                                                                         'checkout' === e.page_name &&
+                                                                            document.querySelector('#theReservationForm') &&
                                                                             ('52342' !== e.site_id &&
                                                                                 y.createModal(
                                                                                     [document.querySelector('#theStayPolicies')],
@@ -3634,7 +3643,8 @@
                                                                                                             e.site_config.exclusive_rate_text,
                                                                                                             e.site_config.host_hotel_text,
                                                                                                             e.site_config.partner_hotel_text,
-                                                                                                            e.site_config.lodging.event_name
+                                                                                                            e.site_config.lodging.event_name,
+                                                                                                            e.site_config.sponsor_hotel_text
                                                                                                         ),
                                                                                                             'property-detail' === e.page_name &&
                                                                                                                 'cug' === e.site_config.site_type.toLowerCase() &&
@@ -3991,42 +4001,42 @@
                                 var e,
                                     t,
                                     n,
-                                    r = new URL(window.location.href),
-                                    o = new URLSearchParams(r.search),
-                                    i = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
+                                    r = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content),
+                                    o = '',
+                                    i = '',
                                     a = '',
-                                    c = '',
-                                    s = '',
-                                    u = document.querySelector('meta[name="checkIn"]'),
-                                    l = document.querySelector('meta[name="checkOut"]'),
-                                    d = document.querySelector('meta[name="numberOfAdults"]'),
-                                    f = document.querySelector('meta[name="SearchLocation"]'),
-                                    p = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
-                                u &&
+                                    c = document.querySelector('meta[name="checkIn"]'),
+                                    s = document.querySelector('meta[name="checkOut"]'),
+                                    u = document.querySelector('meta[name="numberOfAdults"]'),
+                                    l = document.querySelector('meta[name="SearchLocation"]'),
+                                    d = document.querySelector('.SearchHotels .ArnPrimarySearchContainer');
+                                c &&
+                                    s &&
                                     l &&
-                                    f &&
-                                    d &&
-                                    ((e = d.getAttribute('content')),
-                                    (a = f.getAttribute('content')),
-                                    (t = u.getAttribute('content')),
-                                    (n = l.getAttribute('content')),
-                                    (c = h(t)),
-                                    (s = h(n)),
-                                    (('cug' === this.site_config.site_type.toLowerCase() && null !== o.get('destination')) ||
-                                        ('retail' === this.site_config.site_type.toLowerCase() && null !== o.get('destination'))) &&
-                                        (a = o.get('destination')),
-                                    (null !== o.get('destination') && 'location' !== a) || (a = i.get('destination')),
+                                    u &&
+                                    ((e = u.getAttribute('content')),
+                                    (o = l.getAttribute('content')),
+                                    (t = c.getAttribute('content')),
+                                    (n = s.getAttribute('content')),
+                                    (i = h(t)),
+                                    (a = h(n)),
+                                    (('cug' === this.site_config.site_type.toLowerCase() && null !== r.get('destination')) ||
+                                        ('retail' === this.site_config.site_type.toLowerCase() && null !== r.get('destination'))) &&
+                                        (o = r.get('destination')),
+                                    'lodging' !== this.site_config.site_type.toLowerCase() ||
+                                        (null !== r.get('destination') && 'location' !== o) ||
+                                        (o = r.get('locationlabel').toString()),
                                     y.createHTML(
                                         '\n            <div class="show-search-container">\n                <span class="search-close">\n                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">\n                        <polyline stroke="#333" fill="transparent" points="1 1,6.5 6.5,12 1"></polyline>\n                        <polyline stroke="#333" fill="transparent" points="1 12,6.5 6.5,12 12"></polyline>\n                    </svg>\n                </span>\n                <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">\n                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>\n                </svg>\n                <div class="search-info">\n                    <h3>'
-                                            .concat(a, '</h3>\n                    <span>\n                        <span class="search-dates">')
-                                            .concat(c.format('MMMM D'), ' - ')
-                                            .concat(s.format('MMMM D'), '</span>\n                        <span class="adults-count">')
+                                            .concat(o, '</h3>\n                    <span>\n                        <span class="search-dates">')
+                                            .concat(i.format('MMMM D'), ' - ')
+                                            .concat(a.format('MMMM D'), '</span>\n                        <span class="adults-count">')
                                             .concat(e, ' guests</span>\n                    </span>\n                </div>\n            </div>'),
                                         '.SearchHotels .ArnPrimarySearchOuterContainer',
                                         'beforeBegin'
                                     ),
                                     document.querySelector('.show-search-container').addEventListener('click', function () {
-                                        p.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
+                                        d.classList.toggle('show-search'), document.querySelector('.search-close').classList.toggle('show-search-close');
                                     }));
                             },
                         },
@@ -4720,29 +4730,30 @@
                         },
                         {
                             key: 'isPropByGateway',
-                            value: function (e, t, n, r) {
-                                var o = this;
-                                function i(e, t) {
+                            value: function (e, t, n, r, o) {
+                                var i = this;
+                                function a(e, t) {
                                     t.querySelector('div.ArnPropThumb').insertAdjacentHTML('beforeend', '<div class="custom-tag">'.concat(e, ' </div>'));
                                 }
                                 document.querySelector('.exclusive-rate') ||
                                     ('search-results' === this.page_name &&
                                         document.querySelectorAll('div.ArnProperty').forEach(function (r) {
-                                            var a, c;
-                                            r.classList.contains('ArnPropertyTierTwo') && '' !== n && i(n, r),
-                                                r.classList.contains('ArnPropertyTierThree') && '' !== t && i(t, r),
+                                            var c, s;
+                                            r.classList.contains('ArnPropertyTierOne') && '' !== o && void 0 !== o && a(o, r),
+                                                r.classList.contains('ArnPropertyTierTwo') && '' !== n && void 0 !== n && a(n, r),
+                                                r.classList.contains('ArnPropertyTierThree') && '' !== t && void 0 !== t && a(t, r),
                                                 (r.classList.contains('S16') || r.classList.contains('S20') || (r.classList.contains('S33') && '' !== e)) &&
-                                                    ((a = e),
-                                                    (c = r),
-                                                    '' !== o.site_config.exclusive_rate_text &&
-                                                        c.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(a, '</span>')));
+                                                    ((c = e),
+                                                    (s = r),
+                                                    '' !== i.site_config.exclusive_rate_text &&
+                                                        s.querySelector('div.ArnPropThumb').insertAdjacentHTML('afterbegin', '<span class="exclusive-rate">'.concat(c, '</span>')));
                                         }),
                                     'property-detail' === this.page_name &&
                                         document.querySelectorAll('div.rateRow').forEach(function (t) {
-                                            (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== o.site_config.exclusive_rate_text)) &&
+                                            (t.querySelector('table.SB16') || (t.querySelector('table.SB20') && '' !== i.site_config.exclusive_rate_text)) &&
                                                 (function (e, t, n) {
                                                     if (document.querySelector('.SinglePropDetail')) {
-                                                        var r = e.querySelector('.RoomDescription');
+                                                        var r = e.querySelector('.ArnRateList tr td:first-child');
                                                         r.innerHTML = r.innerHTML.replace(
                                                             'Special Event Rate',
                                                             '<span id="exclusive-event-rate">'.concat(t, ' ').concat(n, '</span>')
@@ -5175,25 +5186,26 @@
                         {
                             key: 'updateConfirmationCheckBoxes',
                             value: function () {
-                                'checkout' === this.page_name &&
-                                    '52342' !== this.site_id &&
-                                    ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                    (document.querySelector(
-                                        'span.confirmationAgreement'
-                                    ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.'
-                                        .concat(f, '/v6/terms-and-conditions?&siteId=')
-                                        .concat(this.site_id, '&theme=standard">Terms & Conditions</a> found on this website.')),
-                                    y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
-                                    y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
-                                    document.querySelector('#policies-fees').addEventListener('click', function () {
-                                        document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
-                                    }),
-                                    document.querySelector('span.open-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('hide');
-                                    }),
-                                    document.querySelector('span.close-modal').addEventListener('click', function () {
-                                        document.body.classList.toggle('hide');
-                                    }));
+                                ('checkout' !== this.page_name && !document.querySelector('.open-modal')) ||
+                                    '52342' === this.site_id ||
+                                    (document.querySelector('.open-modal') &&
+                                        ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
+                                        (document.querySelector(
+                                            'span.confirmationAgreement'
+                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.'
+                                            .concat(f, '/v6/terms-and-conditions?&siteId=')
+                                            .concat(this.site_id, '&theme=standard">Terms & Conditions</a> found on this website.')),
+                                        y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
+                                        y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
+                                        document.querySelector('#policies-fees').addEventListener('click', function () {
+                                            document.querySelector('div.modal-overlay').classList.toggle('show-modal'), document.body.classList.toggle('hide');
+                                        }),
+                                        document.querySelector('span.open-modal').addEventListener('click', function () {
+                                            document.body.classList.toggle('hide');
+                                        }),
+                                        document.querySelector('span.close-modal').addEventListener('click', function () {
+                                            document.body.classList.toggle('hide');
+                                        })));
                             },
                         },
                         {
@@ -5608,7 +5620,7 @@
                                                                 y.waitForSelectorInDOM('.pollingFinished')
                                                             );
                                                         case 5:
-                                                            if ('search-results' === this.page_name) {
+                                                            if ('search-results' === this.page_name && !document.querySelector('.GroupHoldForm')) {
                                                                 e.next = 7;
                                                                 break;
                                                             }
@@ -5939,7 +5951,7 @@
         'use strict';
         var r = n(1),
             o = n(20),
-            i = n(42),
+            i = n(43),
             a = n(31);
         n(32)('match', 1, function (e, t, n, c) {
             return [
@@ -5991,7 +6003,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(43);
+        var r = n(44);
         n(5)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
     },
     function (e, t, n) {
@@ -6083,10 +6095,10 @@
         var r = n(64),
             o = n(1),
             i = n(59),
-            a = n(42),
+            a = n(43),
             c = n(20),
             s = n(31),
-            u = n(43),
+            u = n(44),
             l = n(7),
             d = Math.min,
             f = [].push,
@@ -6968,7 +6980,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(39),
+        var r = n(40),
             o = n(26),
             i = n(28),
             a = {};
@@ -7000,7 +7012,7 @@
     },
     function (e, t, n) {
         'use strict';
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(22), n(16), n(44), n(24);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(22), n(16), n(33), n(24);
         var r,
             o = (r = n(45)) && r.__esModule ? r : {default: r};
         function i(e, t, n, r, o, i, a) {
@@ -7018,7 +7030,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        var c = n(33),
+        var c = n(34),
             s = n(47);
         c.extend(s);
         var u = new o.default(),
@@ -7259,7 +7271,8 @@
                                     s = document.querySelector('input#theCheckOut').value;
                                 return 52342 === n ||
                                     ('standard' === e && 16980 !== t) ||
-                                    ('Austin' === document.querySelector('span[itemprop="addressLocality"]').textContent && 16980 === t && 'standard' === e)
+                                    ('F1 United States Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
+                                    ('Miami Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e)
                                     ? ((r = c(a, 'M/D/YYYY').format('M/D/YYYY')),
                                       (o = c(s, 'M/D/YYYY').format('M/D/YYYY')),
                                       {check_in_value: r, nights: (i = c(o).diff(c(r), 'days'))})
@@ -7366,8 +7379,8 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(22), n(24), n(65), n(46), n(16), n(66), n(44);
-        var a = n(33),
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(22), n(24), n(65), n(46), n(16), n(66), n(33);
+        var a = n(34),
             c = n(47);
         a.extend(c);
         var s = (function () {

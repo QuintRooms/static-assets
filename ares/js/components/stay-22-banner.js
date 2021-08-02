@@ -12,7 +12,11 @@ const utilities = new Utilities();
 export default async function addStay22Banner(link) {
     if (document.querySelector('.RootBody') || document.querySelector('.SearchHotels')) {
         await utilities.waitForSelectorInDOM('header');
-        const destination = document.querySelector('span[itemprop="addressLocality"]').textContent;
+        let destination = utilities.getMetaTagContent('SearchLocation');
+
+        if (destination === null || destination === '') {
+            destination = document.querySelector('span[itemprop="addressLocality"]').textContent;
+        }
 
         document.querySelector('header').insertAdjacentHTML(
             'afterend',
@@ -20,12 +24,12 @@ export default async function addStay22Banner(link) {
             <div class="stay-22-banner">
                 <div class="banner-content">
                     <a class="airbnb-logo" href="${link}" target="_blank">
-                        <img src="${env_path.path}/images/airbnb_logo_white.png" alt="airbnb logo">
+                        <img src="${env_path.path}/images/vrbo_logo.png" alt="VRBO logo">
                     </a>
-                    <span>Looking for an Airbnb rental? Check out the options in ${destination}!</span>
+                    <span>Looking for a rental? Check out the options near ${destination}!</span>
                 </div>
                 <div class="custom-button">
-                    <a id="custom-link" target="_blank" href="${link}">Book an Airbnb</a>
+                    <a id="custom-link" target="_blank" href="${link}">Book Vrbo</a>
                 </div>
             </div>
             <style>

@@ -14,7 +14,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        use_google_autocomplete: false,
+        use_google_autocomplete: true,
         currency: 'USD',
         distance_unit: 'useMiles',
         lodging: {
@@ -36,7 +36,7 @@ export default function siteConfig() {
         host_hotel_text: 'Host Hotel',
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: true,
-        dayjs_date_format: 'D/M/YYYY',
+        dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: false,
         show_property_type: false,

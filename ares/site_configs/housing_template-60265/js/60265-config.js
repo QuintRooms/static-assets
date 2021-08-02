@@ -49,7 +49,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: 'https://www.hotelsforhope.com/wp-content/uploads/2017/02/favicon.png',
         header: {
-            logo_file_location: 'https://www.hotelsforhope.com/wp-content/uploads/2016/04/logo-purple-small.png',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://hotelsforhope.com',
         },
         map_marker_image_url: 'https://static.hotelsforhope.com/portals/images/h4h-fav.ico',
@@ -81,7 +81,7 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
         has_group_booking_banner: false,
         group_booking_form_url: '',
         has_landing_page: false,

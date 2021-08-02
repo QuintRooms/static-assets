@@ -72,6 +72,6 @@ export default function siteConfig() {
         is_resbeat_client: false,
         has_group_booking_banner: true,
         group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Austin%20Food%20and%20Wine',
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
     };
 }

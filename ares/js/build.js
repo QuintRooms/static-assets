@@ -73,7 +73,8 @@ export default class BasePortal {
                     this.site_config.exclusive_rate_text,
                     this.site_config.host_hotel_text,
                     this.site_config.partner_hotel_text,
-                    this.site_config.lodging.event_name
+                    this.site_config.lodging.event_name,
+                    this.site_config.sponsor_hotel_text
                 );
 
                 this.updatePropReviewsURLToUseAnchor();
@@ -91,7 +92,7 @@ export default class BasePortal {
             }
 
             // checkout page methods
-            if (this.page_name === 'checkout') {
+            if (this.page_name === 'checkout' && document.querySelector('#theReservationForm')) {
                 if (this.site_id !== '52342') {
                     utilities.createModal([document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
                 }
@@ -186,7 +187,8 @@ export default class BasePortal {
                         this.site_config.exclusive_rate_text,
                         this.site_config.host_hotel_text,
                         this.site_config.partner_hotel_text,
-                        this.site_config.lodging.event_name
+                        this.site_config.lodging.event_name,
+                        this.site_config.sponsor_hotel_text
                     );
                     if (this.page_name === 'property-detail' && this.site_config.site_type.toLowerCase() === 'cug') {
                         this.cugConfigs();
@@ -468,8 +470,6 @@ export default class BasePortal {
     }
 
     showSearchContainerOnMobile() {
-        const params = new URL(window.location.href);
-        const search_params = new URLSearchParams(params.search);
         const original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content);
 
         let adults_text = '';
@@ -496,14 +496,14 @@ export default class BasePortal {
         check_out_date = dayjs(check_out_text);
 
         if (
-            (this.site_config.site_type.toLowerCase() === 'cug' && search_params.get('destination') !== null) ||
-            (this.site_config.site_type.toLowerCase() === 'retail' && search_params.get('destination') !== null)
+            (this.site_config.site_type.toLowerCase() === 'cug' && original_params.get('destination') !== null) ||
+            (this.site_config.site_type.toLowerCase() === 'retail' && original_params.get('destination') !== null)
         ) {
-            location_text = search_params.get('destination');
+            location_text = original_params.get('destination');
         }
 
-        if (search_params.get('destination') === null || location_text === 'location') {
-            location_text = original_params.get('destination');
+        if (this.site_config.site_type.toLowerCase() === 'lodging' && (original_params.get('destination') === null || location_text === 'location')) {
+            location_text = original_params.get('locationlabel').toString();
         }
 
         utilities.createHTML(
@@ -1273,7 +1273,7 @@ export default class BasePortal {
      @param string takes the text for the host hotel custom tag text
      @param string takes the text for the partner hotel custom tag text
      */
-    isPropByGateway(exclusiveRateText, hostHotelText, partnerHotelText, eventName) {
+    isPropByGateway(exclusiveRateText, hostHotelText, partnerHotelText, eventName, sponsorHotelText) {
         if (document.querySelector('.exclusive-rate')) return;
         /**
         *@description adds a sash to a property
@@ -1310,10 +1310,13 @@ export default class BasePortal {
         if (this.page_name === 'search-results') {
             const props = document.querySelectorAll('div.ArnProperty');
             props.forEach((el) => {
-                if (el.classList.contains('ArnPropertyTierTwo') && partnerHotelText !== '') {
+                if (el.classList.contains('ArnPropertyTierOne') && sponsorHotelText !== '' && sponsorHotelText !== undefined) {
+                    addCustomTag(sponsorHotelText, el);
+                }
+                if (el.classList.contains('ArnPropertyTierTwo') && partnerHotelText !== '' && partnerHotelText !== undefined) {
                     addCustomTag(partnerHotelText, el);
                 }
-                if (el.classList.contains('ArnPropertyTierThree') && hostHotelText !== '') {
+                if (el.classList.contains('ArnPropertyTierThree') && hostHotelText !== '' && hostHotelText !== undefined) {
                     addCustomTag(hostHotelText, el);
                 }
                 if (el.classList.contains('S16') || el.classList.contains('S20') || (el.classList.contains('S33') && exclusiveRateText !== '')) {
@@ -1707,9 +1710,14 @@ export default class BasePortal {
     }
 
     updateConfirmationCheckBoxes() {
-        if (this.page_name !== 'checkout' || this.site_id === '52342') return;
+        if ((this.page_name !== 'checkout' && !document.querySelector('.open-modal')) || this.site_id === '52342') return;
 
-        document.querySelector('.open-modal').textContent = 'Policies & Fees';
+        if (document.querySelector('.open-modal')) {
+            document.querySelector('.open-modal').textContent = 'Policies & Fees';
+        } else {
+            return;
+        }
+
         document.querySelector(
             'span.confirmationAgreement'
         ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;

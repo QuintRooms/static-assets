@@ -1,6 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; ?>
+<?php 
+// include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php'; 
+?>
+<?php
+    $config = $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/config.php';
+    if ($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs') {
+        $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
+    }
+    include $config;
+?>
 
 <head>
     <title>Ares Child</title>
@@ -209,7 +218,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('config', 'UA-21296367-2');
 </script>
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; ?>
+    <?php 
+    // include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/header.php'; 
+    ?>
+    <?php include getenv('includes_path') . 'header.php'; ?>
     <div class="subHeaderContainer">
         <div class="subHeader"><a href="/v6" class="refineLink"><span class="refine"><img
                         src="//media.travsrv.com/appSkins/64/v6/themes/global/skins/brownstone/images/icons/search.png"
@@ -1791,7 +1803,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </tr>
         </table>
     </div><span style="display:none;">customize with searchPageBottom.html in theme directory</span>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; ?>
+    <?php 
+    // include $_SERVER['DOCUMENT_ROOT'] . '/ares/arn_html/includes/footer.php'; 
+    ?>
+    <?php include getenv('includes_path') . 'footer.php'; ?>
 
     <script type="text/javascript">
         /*<![CDATA[*/

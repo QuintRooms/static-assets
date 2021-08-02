@@ -32,6 +32,7 @@ export default function siteConfig() {
         exclusive_rate_text: 'Exclusive Rates',
         host_hotel_text: 'Host Hotel',
         partner_hotel_text: 'Partner Hotel',
+        sponsor_hotel_text: 'Sponsor Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
@@ -72,6 +73,6 @@ export default function siteConfig() {
         is_resbeat_client: false,
         has_group_booking_banner: true,
         group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Lollapalooza',
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
     };
 }

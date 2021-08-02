@@ -1,6 +1,8 @@
 import Utilities from '../../utilities';
+import logo from './logo.png';
 
 const utilities = new Utilities();
+
 
 const modal_styles_str = `
 
@@ -32,6 +34,13 @@ const modal_styles_str = `
     z-index: 995;
     background: rgba(0,0,0,0.90);
     display: none;
+}
+
+#seacret-modal-adults-logo img {
+    top: 50%;
+    left: 50%;
+    max-width: 200px;
+    padding: 15px;
 }
 
 #modal-title {
@@ -116,11 +125,9 @@ export default class ModalSeacret {
 
     init() {
         this.insertModalContainer();
-        this.setVars();
-        this.checkAdultsParam();
-        // .then((data) => {
-        //     this.showModal();
-        // });
+        this.setVars().then((data) => {
+            this.checkAdultsParam();
+        });
     }
 
     async setVars() {
@@ -139,7 +146,7 @@ export default class ModalSeacret {
         const check_adults_param = (params) => {
             for (let key of params.keys()) {
                 if (key === 'adults') {
-                    console.log('adults param exists');
+                    return true;
                 }
             }
         };
@@ -147,7 +154,6 @@ export default class ModalSeacret {
     }
 
     showModal = () => {
-        let current_url = new URL(window.location.href);
         this.seacret_modal_adults.style.display = 'block';
         this.overlay.style.display = 'block';
         console.log('inside ShowModal');
@@ -157,6 +163,7 @@ export default class ModalSeacret {
             console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
             console.log('typeof this.adults_input.value', typeof input_value);
             if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
+                let current_url = new URL(window.location.href);
                 this.hideOverlay();
                 this.hideModal();
                 console.log(current_url);
@@ -194,7 +201,7 @@ export default class ModalSeacret {
             <div class='overlay'></div>
             <div class='seacret-modal-adults' id=${this.modal_id}>
                 <div id='seacret-modal-adults-logo'>
-                    <img>
+                    <img src=${logo} alt='logo'>
                 </div>
                 <hr class='solid'>
                 <div class='modal-body-container'>
@@ -205,7 +212,7 @@ export default class ModalSeacret {
                         There is a maximum of 4 adults allowed per trip purchase.
                     </div>
                     <input type='number' min='1' step='1' max='4' class='seacret-form-input' id='number-adults-input'></input>
-                    <button class='seacret-confirm-btn' id='number-adults-btn'></button>
+                    <button class='seacret-confirm-btn' id='number-adults-btn'>SEE TRIP</button>
                 </div>
             </div>
             <style>

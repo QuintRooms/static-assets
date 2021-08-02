@@ -424,13 +424,7 @@ header {
   margin: 0;
 }
 
-.trip-date {
-  margin-left: 2.3rem;
-  margin-bottom: 12px;
-  margin-top: 15px;
-}
-
-.trip-location {
+.trip-data-el {
   margin-left: 2.3rem;
   margin-bottom: 12px;
   margin-top: 15px;
@@ -638,6 +632,32 @@ button {
   color: #719ec8;
 }
 
+#number-adults-btn {
+  background: #3276b1;
+  margin: 1rem 1rem 5px 20px;
+  border: 2px solid #3276b1;
+  transition: 0.3s;
+  min-width: 6rem;
+}
+#number-adults-btn:hover {
+  border: 2px solid #3276b1;
+  background: #fff;
+  color: #3276b1;
+}
+
+#change-adults-btn {
+  background: #7a9a9e;
+  border: 2px solid #7a9a9e;
+  transition: 0.3s;
+  min-width: 6rem;
+  align-self: center;
+}
+#change-adults-btn:hover {
+  border: 2px solid #7a9a9e;
+  background: #fff;
+  color: #7a9a9e;
+}
+
 .cancellation-policy {
   place-self: center;
   margin: 1rem;
@@ -790,14 +810,9 @@ button {
     display: none;
   }
 
-  .trip-date {
+  .trip-data-el {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-  }
-
-  .trip-location {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
   }
 
   .trip-item {

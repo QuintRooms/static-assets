@@ -20,7 +20,7 @@ const modal_styles_str = `
     left: 50%;
     z-index: 995;
     transform: translate(-50%, -50%);
-    display: block;
+    display: none;
 }
 
 .overlay {
@@ -31,7 +31,7 @@ const modal_styles_str = `
     height: 100%;
     z-index: 995;
     background: rgba(0,0,0,0.90);
-    display: block;
+    display: none;
 }
 
 #modal-title {
@@ -116,9 +116,11 @@ export default class ModalSeacret {
 
     init() {
         this.insertModalContainer();
-        this.setVars().then((data) => {
-            this.showModal();
-        });
+        this.setVars();
+        this.checkAdultsParam();
+        // .then((data) => {
+        //     this.showModal();
+        // });
     }
 
     async setVars() {
@@ -130,7 +132,21 @@ export default class ModalSeacret {
         // return {};
     }
 
-    showModal() {
+    checkAdultsParam() {
+       let current_url = new URL(window.location.href);
+        let current_params = current_url.searchParams;
+        console.log(current_params);
+        const check_adults_param = (params) => {
+            for (let key of params.keys()) {
+                if (key === 'adults') {
+                    console.log('adults param exists');
+                }
+            }
+        };
+        if (!check_adults_param(current_params)) this.showModal();
+    }
+
+    showModal = () => {
         let current_url = new URL(window.location.href);
         this.seacret_modal_adults.style.display = 'block';
         this.overlay.style.display = 'block';
@@ -146,17 +162,12 @@ export default class ModalSeacret {
                 console.log(current_url);
                 current_url.searchParams.set('adults', input_value);
                 console.log(current_url);
-                // let current_params = new URLSearchParams(window.location.search);
-                // console.log(current_params)
-                // let updated_params = current_params.set('adults', input_value);
-                // console.log(updated_params);
-                // return updated_params;
                 window.location.href = current_url;
             } else {
                 document.querySelector('#max-limit-alert').style.visibility = 'visible';
             }
         });
-    }
+    };
 
     hideModal = () => {
         this.seacret_modal_adults.style.display = 'none';

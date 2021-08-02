@@ -2,16 +2,22 @@ import dayjs from 'dayjs';
 import BasePortal from '../../../js/build';
 import SiteConfig from './70905-config';
 import Utilities from '../../../js/utilities';
+import ModalSeacret from '../../../js/components/modal_seacret/modal_seacret';
 
 const Honeybadger = require('@honeybadger-io/js');
+
 
 Honeybadger.configure({
     apiKey: process.env.HONEYBADGER_API_KEY,
     environment: 'development',
 });
 
+const modal_id = 'test-modal';
+
 const site_config = new SiteConfig();
 const utilities = new Utilities();
+const test_modal = new ModalSeacret(modal_id);
+
 
 Honeybadger.setContext({
     user_email: utilities.getMetaTagContent('email'),
@@ -27,6 +33,7 @@ class ChildPortal extends BasePortal {
         this.ref = '';
         this.trips = {};
         this.trip = {};
+        test_modal.init();
     }
 
     async init() {
@@ -167,6 +174,10 @@ class ChildPortal extends BasePortal {
 
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
         const end_date = dayjs(this.trip.data.end_date).format('MM/DD/YYYY');
+        let current_url = new URL(window.location.href);
+        let current_params = current_url.searchParams;
+        let number_of_adults = current_params.get('adults');
+        console.log('number_of_adults', number_of_adults);
 
         // Create hero container with title, location, dates
         document.querySelector('.hero-container').insertAdjacentHTML(
@@ -175,11 +186,14 @@ class ChildPortal extends BasePortal {
             <div class='hero-text-container'>
                 <h1 class='trip-title'>${this.trip.data.trip_name[0].text}</h1>
                 <div class='location-date-container'>
-                    <h2 class='trip-location'>${this.trip.data.property_name[0].text}</h2>
+                    <h2 class='trip-data-el' id='trip-location'>${this.trip.data.property_name[0].text}</h2>
                     <h2 class='event-text-separators'> | </h2>
-                    <h2 class='trip-location'>${this.trip.data.trip_location[0].text}</h2>
+                    <h2 class='trip-data-el' id='trip-location'>${this.trip.data.trip_location[0].text}</h2>
                     <h2 class='event-text-separators'> | </h2>
-                    <h2 class='trip-date'>${start_date} - ${end_date}</h2>
+                    <h2 class='trip-data-el' id='trip-date'>${start_date} - ${end_date}</h2>
+                    <h2 class='event-text-separators'> | </h2>
+                    <h2 class='trip-data-el' id='trip-adults-number'>${number_of_adults} Adults</h2>
+                    <button id='change-adults-btn'>CHANGE</button>
                 </div>
             </div>
             <style>

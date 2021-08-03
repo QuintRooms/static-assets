@@ -101,14 +101,14 @@ class ChildPortal extends BasePortal {
                     <article class='body-article'>
 
                         <section class='left-section'>
-                            <div class='itinerary-container'>
-                                <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>
-                                <div class='itinerary-list'></div>
-                            </div>
                             <div class='inclusions-container'>
                                 <h3 class='section-title' id='inclusions-container-title'>EXCLUSIVE</h3>
                                 <div id='inclusions-intro'>This trip includes:</div>
                                 <div class='inclusions-list'></div>
+                            </div>
+                            <div class='itinerary-container'>
+                                <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>
+                                <div class='itinerary-list'></div>
                             </div>
                         </section>
 

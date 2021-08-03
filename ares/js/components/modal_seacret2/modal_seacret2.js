@@ -114,9 +114,9 @@ hr .solid{
 `;
 
 export default class ModalSeacret {
-    constructor(modal_id, modal_trigger_selector) {
+    constructor(modal_id) {
         this.modal_id = modal_id;
-        this.modal_trigger_selector = modal_trigger_selector;
+        // this.modal_trigger_selector = modal_trigger_selector;
         // this.seacret_modal_adults = '';
         // this.overlay = '';
         // this.modal_triggers = '';
@@ -136,11 +136,13 @@ export default class ModalSeacret {
         this.modal_submit_btn = document.querySelector(`#number-adults-btn`);
         this.overlay = document.querySelector('.overlay');
         this.adults_input = document.getElementById('number-adults-input');
+        this.modal_triggers = document.getElementById('change-adults-btn');
+        console.log('modal_triggers:', this.modal_triggers);
         // return {};
     }
 
     checkAdultsParam() {
-       let current_url = new URL(window.location.href);
+        let current_url = new URL(window.location.href);
         let current_params = current_url.searchParams;
         console.log(current_params);
         const check_adults_param = (params) => {
@@ -150,44 +152,43 @@ export default class ModalSeacret {
                 }
             }
         };
-        if (!check_adults_param(current_params)) this.showModal();
+        if (!check_adults_param(current_params)) {
+            this.showModal();
+        } else this.openListeners();
     }
 
     showModal = () => {
         this.seacret_modal_adults.style.display = 'block';
         this.overlay.style.display = 'block';
-        console.log('inside ShowModal');
-        this.modal_submit_btn.addEventListener('click', (event) => {
-            event.preventDefault();
-            const input_value = Number(this.adults_input.value);
-            console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
-            console.log('typeof this.adults_input.value', typeof input_value);
-            if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
-                let current_url = new URL(window.location.href);
-                this.hideOverlay();
-                this.hideModal();
-                console.log(current_url);
-                current_url.searchParams.set('adults', input_value);
-                console.log(current_url);
-                window.location.href = current_url;
-            } else {
-                document.querySelector('#max-limit-alert').style.visibility = 'visible';
-            }
-        });
+        // console.log('inside ShowModal');
+        this.closeListeners();
     };
 
-    hideModal = () => {
-        this.seacret_modal_adults.style.display = 'none';
-        this.overlay.style.display = 'none';
+    closeListeners() {
+        this.modal_triggers.removeEventListener('click', this.showModal);
+        this.modal_submit_btn.addEventListener('click', this.hideModal);
+    }
+
+    openListeners() {
         this.modal_submit_btn.removeEventListener('click', this.hideModal);
-    };
+        this.modal_triggers.addEventListener('click', this.showModal);
+    }
 
-    hideOverlay = () => {
-        this.seacret_modal_adults.style.display = 'none';
-        this.overlay.style.display = 'none';
-        document.removeEventListener('click', (event) => {
-            if (event.target.closest('.overlay')) this.hideOverlay();
-        });
+    hideModal = (event) => {
+        event.preventDefault();
+        const input_value = Number(this.adults_input.value);
+
+        // console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
+        // console.log('typeof this.adults_input.value', typeof input_value);
+        if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
+            let current_url = new URL(window.location.href);
+            this.seacret_modal_adults.style.display = 'none';
+            this.overlay.style.display = 'none';
+            current_url.searchParams.set('adults', input_value);
+            window.location.href = current_url;
+        } else {
+            document.querySelector('#max-limit-alert').style.visibility = 'visible';
+        }
     };
 
     insertModalContainer() {

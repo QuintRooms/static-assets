@@ -202,20 +202,23 @@ class ChildPortal extends BasePortal {
             `
             <div class='hero-text-container'>
                 <h1 class='trip-title'>${this.trip.data.trip_name[0].text}</h1>
+                <h2 class='trip-data-el' id='trip-property'>${this.trip.data.property_name[0].text}</h2>
                 <div class='location-date-container'>
-                    <h2 class='trip-data-el' id='trip-location'>${this.trip.data.property_name[0].text}</h2>
-                    <h2 class='event-text-separators'> | </h2>
                     <h2 class='trip-data-el' id='trip-location'>${this.trip.data.trip_location[0].text}</h2>
                     <h2 class='event-text-separators'> | </h2>
                     <h2 class='trip-data-el' id='trip-date'>${start_date} - ${end_date}</h2>
                     <h2 class='event-text-separators'> | </h2>
-                    <h2 class='trip-data-el' id='trip-adults-number'>${number_of_adults} Adults</h2>
-                    <button id='change-adults-btn'>CHANGE</button>
+                    <div id='adults-elements-outer-container'>
+                        <div id='adults-elements-container'>
+                            <h2 class='trip-data-el' id='trip-adults-number'>${number_of_adults} Adults</h2>
+                            <button id='change-adults-btn'>UPDATE</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <style>
                 .hero-container{
-                    background: linear-gradient(rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${this.trip.data.trip_image.url}) no-repeat center center /cover
+                    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9) 80%), url(${this.trip.data.trip_image.url}) no-repeat center center /cover
                 }
             </style>
         `

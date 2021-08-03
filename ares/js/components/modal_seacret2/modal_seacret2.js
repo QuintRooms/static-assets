@@ -114,8 +114,9 @@ hr .solid{
 `;
 
 export default class ModalSeacret {
-    constructor(modal_id) {
+    constructor(modal_id, modal_trigger_selector) {
         this.modal_id = modal_id;
+        this.modal_trigger_selector = modal_trigger_selector;
         // this.seacret_modal_adults = '';
         // this.overlay = '';
         // this.modal_triggers = '';

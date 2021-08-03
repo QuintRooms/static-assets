@@ -35,23 +35,25 @@ const modal_styles_str = `
     display: none;
 }
 
+#seacret-modal-adults-logo {
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+}
+
 #seacret-modal-adults-logo img {
+    grid-column: 2;
+    justify-self: center;
     top: 50%;
     left: 50%;
     max-width: 200px;
     padding: 15px;
 }
 
-#modal-title {
-    margin-top: 8px;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-}
-
 #number-adults-input {
     width: 3rem;
     height: 3rem;
+    font-size: 24px;
+    text-align: center;
 }
 
 hr .solid{
@@ -67,7 +69,7 @@ hr .solid{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     padding-top: 1rem;
 }
@@ -79,21 +81,33 @@ hr .solid{
     padding-bottom: 1.5rem;
 }
 
-.seacret-alert {
-    color: red;
-}
-
 #max-limit-alert {
-    font-size: 14px;
+    font-size: 12px;
     visibility: hidden;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    background: red;
+    color: white;
+    height: height: 3rem;
+    margin: 1rem;
+    transition: 1s;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    text-align: center;
+    padding: .6rem;
 }
 
 .modal-body-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 @media screen and (max-width: 768px) {
@@ -187,7 +201,11 @@ export default class ModalSeacret {
             current_url.searchParams.set('adults', input_value);
             window.location.href = current_url;
         } else {
-            document.querySelector('#max-limit-alert').style.visibility = 'visible';
+            const limit_alert = document.querySelector('#max-limit-alert');
+            limit_alert.style.visibility = 'visible';
+            setTimeout(() => {
+                limit_alert.style.visibility = 'hidden';
+            }, 3000);
         }
     };
 
@@ -205,10 +223,12 @@ export default class ModalSeacret {
                     <div class='modal-body-text'>
                         How many adults (ages 18+) will attend this trip?
                     </div>
-                    <div class='seacret-alert' id='max-limit-alert'>
-                        There is a maximum of 4 adults allowed per trip purchase.
+                    <div id='limit-alert-container'>
+                        <div class='seacret-alert' id='max-limit-alert'>
+                            Only 1-4 adults allowed per trip purchase.
+                        </div>
                     </div>
-                    <input type='number' min='1' step='1' max='4' class='seacret-form-input' id='number-adults-input'></input>
+                    <input type='number' min='1' step='1' max='4' class='seacret-form-input' id='number-adults-input' value='2'></input>
                     <button class='seacret-confirm-btn' id='number-adults-btn'>SEE TRIP</button>
                 </div>
             </div>

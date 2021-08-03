@@ -220,6 +220,12 @@ class ChildPortal extends BasePortal {
                 .hero-container{
                     background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9) 80%), url(${this.trip.data.trip_image.url}) no-repeat center center /cover
                 }
+
+                @media only screen and (max-width: 800px) {
+                .hero-container{
+                    background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.9) 65%), url(${this.trip.data.trip_image.url}) no-repeat center center /cover
+                }
+                }
             </style>
         `
         );
@@ -247,20 +253,34 @@ class ChildPortal extends BasePortal {
             });
         }
 
-        this.trip.data.itinerary.forEach((i) => {
-            document.querySelector('.itinerary-list').insertAdjacentHTML(
+        for (let i = 0; i < this.trip.data.itinerary.length; i++) {
+            if (i === this.trip.data.itinerary.length - 1) {
+                document.querySelector('.itinerary-list').insertAdjacentHTML(
                 'beforeEnd',
                 `
                     <div class='itinerary-item'>
                         <div class='itinerary-text'>
-                            <span class="itinerary-day">${i.day[0].text}</span>
-                            <span class="itinerary-description">${i.description[0].text}</span>
+                            <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
+                            <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
+                        </div>
+                    </div>
+                `
+                );
+            } else {
+                document.querySelector('.itinerary-list').insertAdjacentHTML(
+                'beforeEnd',
+                `
+                    <div class='itinerary-item'>
+                        <div class='itinerary-text'>
+                            <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
+                            <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
                         </div>
                         <hr class='itinerary-separator'>
                     </div>
                 `
-            );
-        });
+                );
+            }
+        }
 
         // Create and populate Inclusions container from CMS object
         this.trip.data.inclusions.forEach((i) => {

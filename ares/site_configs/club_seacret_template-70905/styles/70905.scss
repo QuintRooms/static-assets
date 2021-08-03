@@ -12,7 +12,7 @@ $border_color: #7a9a9e;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #3276b1;
 $button_hover_border_color: #3276b1;
-$google_font_name: 'Roboto', sans-serif;
+$google_font_name: 'RivieraNights-Light';
 $site_name: 'club_seacret_template-70905';
 $path: set-path($env);
 $banner_image: #fff;
@@ -21,9 +21,28 @@ $banner_image: #fff;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@font-face {
+    font-family: 'RivieraNights-Light';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Light.otf');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RivieraNights-Regular';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Regular.otf');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RivieraNights-Medium';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Medium.otf');
+    font-style: normal;
+}
+
+// * {
+//     border: 1px solid red;
+// }
+
 .hide {
     display: none;
-
 }
 
 #theRateSummaryInfo {
@@ -60,7 +79,7 @@ $banner_image: #fff;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'RivieraNights-Light';
     margin: 0;
     padding: 0;
     display: flex;
@@ -111,6 +130,7 @@ header {
 }
 
 .trip-title {
+    font-family: 'RivieraNights-Medium';
     margin-left: 2.3rem;
     margin-top: 12px;
     margin-bottom: 0px;
@@ -119,6 +139,7 @@ header {
 
 
 .event-text-separators {
+    font-family: 'RivieraNights-Medium';
     margin-top: 0;
     margin-left: 2.3rem;
     font-weight: 500;
@@ -160,7 +181,7 @@ header {
 }
 
 .inclusions-container {
-    width: 100%;
+    // width: 100%;
     display: grid;
     grid-template-columns: 130px auto;
     align-items: start;
@@ -170,6 +191,7 @@ header {
 }
 
 #inclusions-container-title {
+    font-family: 'RivieraNights-Regular';
     width: 100%;
     margin-left: 0;
     grid-column: 1/3;
@@ -197,6 +219,7 @@ header {
     flex-direction: row;
     padding-top: 1rem;
     align-items: center;
+    overflow-wrap: normal;
 }
 
 .inclusion-bullet {
@@ -211,9 +234,12 @@ header {
 .inclusion-text {
     padding-left: 1.25rem;
     font-size: 16px;
+    overflow-wrap: normal;
+
 }
 
 .section-title {
+    font-family: 'RivieraNights-Regular';
     margin-top: 14px;
     margin-left: 2.3rem;
     font-weight: 500;
@@ -553,6 +579,10 @@ h2 {
 
 $logo_max_width: 175px;
 
+.logo img {
+    max-width: $logo_max_width;
+}
+
 .hero-container {
 background: linear-gradient(rgb(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.9) 30%), $banner_image;
 background-size: cover;
@@ -562,13 +592,23 @@ background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+#trip-adults-number {
+    margin-bottom: 0px;
 }
 
 .event-text-separators {
     display: none;
 }
 
+.section-title {
+    font-size: 32px;
+}
+
 .trip-data-el {
+    // font-family: 'RivieraNights-Regular';
     margin-bottom: 1rem;
     font-size: 18px;
     font-weight: 400;

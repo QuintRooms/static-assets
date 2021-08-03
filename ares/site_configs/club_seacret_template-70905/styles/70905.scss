@@ -352,15 +352,16 @@ button {
 }
 
 #change-adults-btn {
-    background: #7a9a9e;
-    border: 2px solid #7a9a9e;
+    background: #000;
+    border: 2px solid #000;
     transition: 0.3s;
     min-width: 6rem;
     align-self: center;
+    font-size: 14px;
     &:hover {
-        border: 2px solid #7a9a9e;
+        border: 2px solid #000;
         background: #fff;
-        color: #7a9a9e;
+        color: #000;
     }
 }
 

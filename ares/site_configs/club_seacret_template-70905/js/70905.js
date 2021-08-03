@@ -2,10 +2,9 @@ import dayjs from 'dayjs';
 import BasePortal from '../../../js/build';
 import SiteConfig from './70905-config';
 import Utilities from '../../../js/utilities';
-import ModalSeacret from '../../../js/components/modal_seacret/modal_seacret';
+import ModalSeacret from '../../../js/components/modal_seacret2/modal_seacret2';
 
 const Honeybadger = require('@honeybadger-io/js');
-
 
 Honeybadger.configure({
     apiKey: process.env.HONEYBADGER_API_KEY,
@@ -16,8 +15,7 @@ const modal_id = 'test-modal';
 
 const site_config = new SiteConfig();
 const utilities = new Utilities();
-const test_modal = new ModalSeacret(modal_id);
-
+const modal_adults = new ModalSeacret(modal_id);
 
 Honeybadger.setContext({
     user_email: utilities.getMetaTagContent('email'),
@@ -33,7 +31,6 @@ class ChildPortal extends BasePortal {
         this.ref = '';
         this.trips = {};
         this.trip = {};
-        test_modal.init();
     }
 
     async init() {
@@ -42,8 +39,10 @@ class ChildPortal extends BasePortal {
             await this.fetchTrips();
             await this.fetchPropertyHtml();
             await this.getTrip();
-            this.insertTripDetailsIntoHtml();
+            await this.insertTripDetailsIntoHtml();
+            this.addChangeAdultsButtonListener();
             this.restyleCarousel();
+            modal_adults.init();
         }
 
         if (document.querySelector('#theReservationForm')) {
@@ -152,6 +151,24 @@ class ChildPortal extends BasePortal {
         }
     }
 
+    addChangeAdultsButtonListener() {
+        utilities.waitForSelectorInDOM('.change-adults-btn');
+        const change_adults_button = document.getElementById('change-adults-btn');
+        const seacret_modal_adults = document.querySelector('.seacret-modal-adults');
+        const overlay = document.querySelector('.overlay');
+        console.log('change_adults_button', change_adults_button);
+        console.log('seacret_modal_adults', seacret_modal_adults);
+        console.log('overlay', overlay);
+
+        change_adults_button.addEventListener('click', (event) => {
+            event.preventDefault();
+            seacret_modal_adults.style.display = 'block';
+            overlay.style.display = 'block';
+            
+            console.log('CHANGE ADULTS BUTTON CLICKED');
+        });
+    }
+
     async insertTripDetailsIntoHtml() {
         // Await load and format dates
         await utilities.waitForSelectorInDOM('.bottom-carousel-article');
@@ -203,6 +220,18 @@ class ChildPortal extends BasePortal {
             </style>
         `
         );
+
+        // const change_adults_button = document.getElementById('change-adults-btn');
+        // console.log(change_adults_button);
+        // const seacret_modal_adults = document.querySelector('.seacret-modal-adults');
+        // const overlay = document.querySelector('.overlay');
+
+        // change_adults_button.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     seacret_modal_adults.style.display = 'block';
+        //     overlay.style.display = 'block';
+        //     console.log('CHANGE ADULTS BUTTON CLICKED');
+        // });
 
         // Create and populate itinerary container from CMS object
         if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {

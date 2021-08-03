@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url(https://www.dropbox.com/sh/cep75kj7fkviv1b/AAA9We2Q6Io7dq8WjfBRlOJFa/RIVIERA/RivieraNights-Light.otf?dl=0);
+@import url(https://www.dropbox.com/sh/cep75kj7fkviv1b/AABitL0vb-QhPq-s1yHBBhxVa/RIVIERA/RivieraNights-Regular.otf?dl=0);
+@import url(https://www.dropbox.com/sh/cep75kj7fkviv1b/AABUslZNu6y6jIDdSWK_xz0na/RIVIERA/RivieraNights-Medium.otf?dl=0);
 *,
 .taxFeeRow td,
 .discount td,
@@ -491,6 +494,7 @@ header {
   flex-direction: row;
   padding-top: 1rem;
   align-items: center;
+  overflow-wrap: normal;
 }
 
 .inclusion-bullet {
@@ -504,6 +508,7 @@ header {
 .inclusion-text {
   padding-left: 1.25rem;
   font-size: 16px;
+  overflow-wrap: normal;
 }
 
 .section-title {
@@ -848,10 +853,19 @@ button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  #trip-adults-number {
+    margin-bottom: 0px;
   }
 
   .event-text-separators {
     display: none;
+  }
+
+  .section-title {
+    font-size: 32px;
   }
 
   .trip-data-el {

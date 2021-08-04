@@ -2,18 +2,24 @@ import dayjs from 'dayjs';
 import BasePortal from '../../../js/build';
 import SiteConfig from './70905-config';
 import Utilities from '../../../js/utilities';
+import ModalSeacret from '../../../js/components/modal_seacret2/modal_seacret2';
 
 const Honeybadger = require('@honeybadger-io/js');
 
 Honeybadger.configure({
     apiKey: process.env.HONEYBADGER_API_KEY,
-    environment: 'production',
+    environment: 'development',
 });
 
-// Honeybadger.notify('Hello from HoneyBadger');
+const modal_id = 'test-modal';
 
 const site_config = new SiteConfig();
 const utilities = new Utilities();
+const modal_adults = new ModalSeacret(modal_id);
+
+Honeybadger.setContext({
+    user_email: utilities.getMetaTagContent('email'),
+});
 
 class ChildPortal extends BasePortal {
     constructor() {
@@ -33,11 +39,15 @@ class ChildPortal extends BasePortal {
             await this.fetchTrips();
             await this.fetchPropertyHtml();
             await this.getTrip();
-            this.insertTripDetailsIntoHtml();
+            await this.insertTripDetailsIntoHtml();
+            this.addChangeAdultsButtonListener();
             this.restyleCarousel();
+            modal_adults.init();
         }
+
         if (document.querySelector('#theReservationForm')) {
             this.updateCheckoutInterface();
+            this.updateTripDetailsInputValue();
         }
     }
 
@@ -91,14 +101,14 @@ class ChildPortal extends BasePortal {
                     <article class='body-article'>
 
                         <section class='left-section'>
-                            <div class='itinerary-container'>
-                                <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>
-                                <div class='itinerary-list'></div>
-                            </div>
                             <div class='inclusions-container'>
                                 <h3 class='section-title' id='inclusions-container-title'>EXCLUSIVE</h3>
                                 <div id='inclusions-intro'>This trip includes:</div>
                                 <div class='inclusions-list'></div>
+                            </div>
+                            <div class='itinerary-container'>
+                                <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>
+                                <div class='itinerary-list'></div>
                             </div>
                         </section>
 
@@ -119,15 +129,43 @@ class ChildPortal extends BasePortal {
     }
 
     async getTrip() {
+        const trip_id = utilities.getUrlParameter('tripId');
+
         try {
-            const trip_id = utilities.getUrlParameter('tripId');
             this.trip = this.trips.results.find((obj) => {
                 return obj.id === trip_id;
             });
+
+            localStorage.setItem('trip_details', JSON.stringify(this.trip));
+
             return this.trip;
         } catch (error) {
             console.error('Error in getTrip(): ', error);
+
+            Honeybadger.notify('Could not get trip from the Prismic API.', {
+                params: {
+                    trip_id,
+                    trip: this.trip,
+                },
+            });
         }
+    }
+
+    addChangeAdultsButtonListener() {
+        utilities.waitForSelectorInDOM('.change-adults-btn');
+        const change_adults_button = document.getElementById('change-adults-btn');
+        const seacret_modal_adults = document.querySelector('.seacret-modal-adults');
+        const overlay = document.querySelector('.overlay');
+        console.log('change_adults_button', change_adults_button);
+        console.log('seacret_modal_adults', seacret_modal_adults);
+        console.log('overlay', overlay);
+
+        change_adults_button.addEventListener('click', (event) => {
+            event.preventDefault();
+            seacret_modal_adults.style.display = 'block';
+            overlay.style.display = 'block';
+            console.log('CHANGE ADULTS BUTTON CLICKED');
+        });
     }
 
     async insertTripDetailsIntoHtml() {
@@ -142,11 +180,20 @@ class ChildPortal extends BasePortal {
             !this.trip.data.end_date
         ) {
             window.alert('Sorry, but we cannot find this trip. Please contact support.');
-            return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.');
+
+            return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
+                params: {
+                    trip: this.trip,
+                },
+            });
         }
 
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
         const end_date = dayjs(this.trip.data.end_date).format('MM/DD/YYYY');
+        let current_url = new URL(window.location.href);
+        let current_params = current_url.searchParams;
+        let number_of_adults = current_params.get('adults');
+        console.log('number_of_adults', number_of_adults);
 
         // Create hero container with title, location, dates
         document.querySelector('.hero-container').insertAdjacentHTML(
@@ -154,36 +201,85 @@ class ChildPortal extends BasePortal {
             `
             <div class='hero-text-container'>
                 <h1 class='trip-title'>${this.trip.data.trip_name[0].text}</h1>
+                <h2 class='trip-data-el' id='trip-property'>${this.trip.data.property_name[0].text}</h2>
                 <div class='location-date-container'>
-                    <h2 class='trip-location'>${this.trip.data.property_name[0].text}</h2>
+                    <h2 class='trip-data-el' id='trip-location'>${this.trip.data.trip_location[0].text}</h2>
                     <h2 class='event-text-separators'> | </h2>
-                    <h2 class='trip-location'>${this.trip.data.trip_location[0].text}</h2>
+                    <h2 class='trip-data-el' id='trip-date'>${start_date} - ${end_date}</h2>
                     <h2 class='event-text-separators'> | </h2>
-                    <h2 class='trip-date'>${start_date} - ${end_date}</h2>
+                    <div id='adults-elements-outer-container'>
+                        <div id='adults-elements-container'>
+                            <h2 class='trip-data-el' id='trip-adults-number'>${number_of_adults} Adults</h2>
+                            <button id='change-adults-btn'>UPDATE</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <style>
+                .hero-container{
+                    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9) 80%), url(${this.trip.data.trip_image.url}) no-repeat center center /cover
+                }
+
+                @media only screen and (max-width: 800px) {
+                .hero-container{
+                    background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.9) 65%), url(${this.trip.data.trip_image.url}) no-repeat center center /cover
+                }
+                }
+            </style>
         `
         );
+
+        // const change_adults_button = document.getElementById('change-adults-btn');
+        // console.log(change_adults_button);
+        // const seacret_modal_adults = document.querySelector('.seacret-modal-adults');
+        // const overlay = document.querySelector('.overlay');
+
+        // change_adults_button.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     seacret_modal_adults.style.display = 'block';
+        //     overlay.style.display = 'block';
+        //     console.log('CHANGE ADULTS BUTTON CLICKED');
+        // });
 
         // Create and populate itinerary container from CMS object
         if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {
             window.alert('Sorry, but we cannot find these trip details. Please contact support.');
-            return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.');
+
+            return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.', {
+                params: {
+                    trip: this.trip,
+                },
+            });
         }
-        this.trip.data.itinerary.forEach((i) => {
-            document.querySelector('.itinerary-list').insertAdjacentHTML(
+
+        for (let i = 0; i < this.trip.data.itinerary.length; i++) {
+            if (i === this.trip.data.itinerary.length - 1) {
+                document.querySelector('.itinerary-list').insertAdjacentHTML(
                 'beforeEnd',
                 `
                     <div class='itinerary-item'>
                         <div class='itinerary-text'>
-                            <span class="itinerary-day">${i.day[0].text}</span>
-                            <span class="itinerary-description">${i.description[0].text}</span>
+                            <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
+                            <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
+                        </div>
+                    </div>
+                `
+                );
+            } else {
+                document.querySelector('.itinerary-list').insertAdjacentHTML(
+                'beforeEnd',
+                `
+                    <div class='itinerary-item'>
+                        <div class='itinerary-text'>
+                            <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
+                            <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
                         </div>
                         <hr class='itinerary-separator'>
                     </div>
                 `
-            );
-        });
+                );
+            }
+        }
 
         // Create and populate Inclusions container from CMS object
         this.trip.data.inclusions.forEach((i) => {
@@ -200,6 +296,7 @@ class ChildPortal extends BasePortal {
         // Pull existing property rooms from DOM and use them to create new room containers
         if (!document.querySelectorAll('#standardAvail .rateRow')) {
             window.alert('Sorry, but we cannot find rooms for this trip. Please contact support.');
+
             return Honeybadger.notify('ARN property rooms array from DOM is not found.');
         }
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
@@ -227,6 +324,7 @@ class ChildPortal extends BasePortal {
             // Insert price into new containers before removing unwanted divs from DOM
             if (!i.querySelector('.full-stay')?.innerText) {
                 window.alert('Sorry, but we cannot find prices for this trip. Please contact support.');
+
                 return Honeybadger.notify('ARN Full-stay price for trip is not found.');
             }
 
@@ -234,6 +332,7 @@ class ChildPortal extends BasePortal {
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
             const mobile_price_container = document.querySelector('.trip-price-mobile');
             const desktop_price_container = document.querySelector('.trip-price-desktop');
+
             mobile_price_container.innerText = `$${trip_rate}`;
             desktop_price_container.innerText = `$${trip_rate}`;
 
@@ -245,18 +344,22 @@ class ChildPortal extends BasePortal {
 
             const cta_container = document.querySelector('.trip-ctas');
             const original_book_cta = i.querySelector('.bookRoom');
+
             original_book_cta.classList.remove('bookRoom');
             original_book_cta.classList.add('book-button');
             original_book_cta.classList.add('new-cta');
             original_book_cta.innerText = 'BOOK TRIP';
+
             cta_container.appendChild(original_book_cta);
 
             const original_hold_cta = i.querySelector('.holdRoom');
+
             if (original_hold_cta) {
                 original_hold_cta.classList.remove('holdRoom');
                 original_hold_cta.classList.add('hold-button');
                 original_hold_cta.classList.add('new-cta');
                 original_hold_cta.innerText = 'HOLD TRIP';
+
                 cta_container.appendChild(original_hold_cta);
             }
 
@@ -268,6 +371,7 @@ class ChildPortal extends BasePortal {
             const price_cta_container = document.querySelector('.trip-price-cta-container');
             const cancellation_policy_container = i.querySelector('.ArnRateCancelPolicyContainer');
             const cancellation_policy_link = i.querySelector('.ArnRateCancelAnchor');
+
             cancellation_policy_link.classList.add('cancellation-policy');
             price_cta_container.appendChild(cancellation_policy_link);
             price_cta_container.appendChild(cancellation_policy_container);
@@ -288,6 +392,7 @@ class ChildPortal extends BasePortal {
                 // window.alert('Sorry, there was an error with the trip description. If you need further information, please contact support.');
                 Honeybadger.notify('Room description, Room description colon, room description name, or Room description text is not found');
             }
+
             const text_string = i.innerText;
             const text_array = i.innerText.split(':');
             const room_title_container = document.querySelector('.trip-item-name');
@@ -330,8 +435,11 @@ class ChildPortal extends BasePortal {
 
         const subtotal = document.querySelectorAll('.discountRow .discount')[0].innerText;
         const tbody_ref = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0];
+
         console.log('tbody_ref: ', tbody_ref);
+
         const subtotal_row = document.createElement('tr');
+
         subtotal_row.className = '';
         subtotal_row.style = '';
 
@@ -351,6 +459,26 @@ class ChildPortal extends BasePortal {
         //     </tr>
         //     `
         // );
+    }
+
+    getTripDetailsFromLocalStorage() {
+        const trip_details = localStorage.getItem('trip_details');
+
+        if (!trip_details) return;
+
+        return JSON.parse(trip_details);
+    }
+
+    async updateTripDetailsInputValue() {
+        const trip_details = await this.getTripDetailsFromLocalStorage();
+
+        if (!trip_details) return;
+
+        const trip_details_input = document.querySelector('#theTripDetailsAjax textarea');
+
+        if (!trip_details_input) return;
+
+        trip_details_input.textContent = JSON.stringify(trip_details);
     }
 }
 

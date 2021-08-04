@@ -90,7 +90,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
@@ -101,6 +100,7 @@ module.exports = () => {
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
+            'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
             'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };

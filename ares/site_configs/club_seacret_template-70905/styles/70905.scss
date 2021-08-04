@@ -369,7 +369,7 @@ button {
 
 .book-button {
     font-family: 'RivieraNights-Medium';
-    background: #b9a37a;
+    background: #33401c;
     margin: 1rem 1rem 5px 20px;
     border: 2px solid #b9a37a;
     transition: 0.3s;
@@ -382,14 +382,14 @@ button {
 
 .hold-button {
     font-family: 'RivieraNights-Medium';
-    background: #f6e8d9;
+    background: #9daf8a;
     margin: 5px 1rem 1rem 20px;
-    border: 2px solid #f6e8d9;
+    border: 2px solid #b9a37a;
     transition: 0.3s;
     &:hover {
-        border: 2px solid #f6e8d9;
+        border: 2px solid #b9a37a;
         background: #fff;
-        color: #f6e8d9;
+        color: #b9a37a;
     }
 }
 
@@ -428,6 +428,8 @@ button {
     transition: 0.3s;
     min-width: 6rem;
     align-self: center;
+    text-align: center;
+    vertical-align: middle;
     font-size: 14px;
     color: #242526;
     &:hover {
@@ -447,7 +449,7 @@ button {
     font-family: 'RivieraNights-Regular';
     font-size: 34px;
     font-weight: 900;
-    color: #33401c9c;
+    color: #9daf8a;
     margin: 1rem 1rem 5px 0;
     // grid-column: 4/6;
 }
@@ -650,7 +652,7 @@ background-size: cover;
     display: block;
     font-size: 24px;
     font-weight: 900;
-    color: #33401c9c;
+    color: #9daf8a;
     margin: 0;
     margin-top: 1rem;
     padding: 1rem;

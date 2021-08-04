@@ -47,7 +47,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 .yui3-skin-sam .yui3-calendar-day:hover,
 .sort-wrapper .active,
 .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner {
-  background: #7a9a9e;
+  background: #33401c9c;
 }
 
 @media screen and (max-width: 1105px) {
@@ -55,12 +55,12 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    border: 1px solid #7a9a9e;
+    border: 1px solid #33401c9c;
   }
 
   .closeMap {
     border: 1px solid #fff !important;
-    background-color: #7a9a9e !important;
+    background-color: #33401c9c !important;
     color: #fff !important;
   }
 }
@@ -74,7 +74,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 .sort-wrapper a:before,
 .sort-wrapper a.active-filter:before,
 .sort {
-    background: #7a9a9e;
+    background: #33401c9c;
   }
 }
 #searching,
@@ -100,11 +100,11 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 }
 
 .custom-button a, .WBForgotPasswordFormActions input:hover {
-  color: #7a9a9e;
+  color: #33401c9c;
 }
 
 span.exclusive-rate {
-  background: #7a9a9e;
+  background: #33401c9c;
   color: #fff;
 }
 
@@ -113,7 +113,7 @@ span.exclusive-rate {
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    color: #7a9a9e;
+    color: #33401c9c;
   }
 }
 @media screen and (max-width: 800px) {
@@ -139,11 +139,11 @@ span.exclusive-rate {
 .receiptLink,
 .returnResultsInfo a,
 .supportInfo a, .SinglePropDetail #show-more-or-less {
-  color: #7a9a9e;
+  color: #33401c9c;
 }
 
 .percentSavings {
-  color: #7a9a9e;
+  color: #33401c9c;
 }
 
 input#theSubmitButton,
@@ -152,16 +152,16 @@ input#theSubmitButton,
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
 a.ArnShowRatesLink, .WBConfirmedBooking .submit {
-  background: #7a9a9e;
+  background: #33401c9c;
   color: #fff;
-  border: 1px solid #7a9a9e;
+  border: 1px solid #33401c9c;
 }
 
 .CheckRates input.submit,
 .CheckRates input.submit,
 .CheckRates input.submit,
 #lightbox, #lightbox .dialog-button-ok input:hover {
-  background: #7a9a9e;
+  background: #33401c9c;
   color: #fff;
 }
 
@@ -185,50 +185,50 @@ input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
 a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
   background: #fff;
-  color: #3276b1;
-  border: 1px solid #3276b1;
+  color: #33401c;
+  border: 1px solid #33401c;
 }
 
 .CheckRates input.submit:hover,
 .CheckRates input.submit:focus,
 .CheckRates input.submit:active {
   background: #fff;
-  color: #3276b1;
+  color: #33401c;
 }
 
 .SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
-  color: #7a9a9e;
-  border-color: #7a9a9e;
+  color: #33401c9c;
+  border-color: #33401c9c;
 }
 
 .SinglePropDetail #moreRatesLink:hover {
-  background-color: #7a9a9e;
+  background-color: #33401c9c;
 }
 
 @media screen and (max-width: 800px) {
   #theBookingPage legend#policies-legend {
-    color: #7a9a9e;
+    color: #33401c9c;
   }
 }
 header {
-  border-bottom: 3px solid #7a9a9e;
+  border-bottom: 3px solid #33401c9c;
 }
 
 .arnMapMarker.contracted-pin,
 .arnMapMarker.contracted-pin.highlight {
   border: 1px solid #fff;
-  background: #7a9a9e;
+  background: #33401c9c;
   color: #fff;
 }
 
 .arnMapMarker.contracted-pin:hover {
-  border: 1px solid #7a9a9e;
+  border: 1px solid #33401c9c;
   background: #fff;
-  color: #7a9a9e;
+  color: #33401c9c;
 }
 
 .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
-  border-top-color: #7a9a9e;
+  border-top-color: #33401c9c;
 }
 
 #theOtherSubmitButton,
@@ -238,59 +238,59 @@ header {
 .bookRoom,
 .sort,
 .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
-  border: 1px solid #7a9a9e;
+  border: 1px solid #33401c9c;
 }
 
 .holdRoom {
-  border: 1px solid #7a9a9e;
+  border: 1px solid #33401c9c;
 }
 
 @media screen and (max-width: 1105px) {
   #arnCloseAnchorId,
 .sort {
-    border: 1px solid #7a9a9e;
+    border: 1px solid #33401c9c;
   }
 }
 @media screen and (max-width: 800px) {
   .sort-wrapper a:before {
-    border: 2px solid #7a9a9e;
+    border: 2px solid #33401c9c;
   }
 }
 .active-page {
-  background: #7a9a9e !important;
+  background: #33401c9c !important;
   color: #fff !important;
-  border: 1px solid #7a9a9e !important;
+  border: 1px solid #33401c9c !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day-selected {
-  background-color: #7a9a9e !important;
+  background-color: #33401c9c !important;
   color: #fff !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day:hover {
-  background-color: #7a9a9e !important;
+  background-color: #33401c9c !important;
 }
 
 .yui3-skin-sam .yui3-calendar-content {
-  border-color: #7a9a9e !important;
+  border-color: #33401c9c !important;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarker {
-  background: #7a9a9e;
+  background: #33401c9c;
   border-color: #fff;
   color: #fff;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarkerTriangle {
-  border-top-color: #7a9a9e;
+  border-top-color: #33401c9c;
 }
 
 .MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
-  border-top-color: #7a9a9e;
+  border-top-color: #33401c9c;
 }
 
 .contact-float a {
-  background-color: #7a9a9e;
+  background-color: #33401c9c;
   color: #fff;
 }
 
@@ -304,22 +304,22 @@ header {
 }
 @-webkit-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #7a9a9e;
+    box-shadow: 0 0 0 20px #33401c9c;
   }
 }
 @-moz-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #7a9a9e;
+    box-shadow: 0 0 0 20px #33401c9c;
   }
 }
 @-ms-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #7a9a9e;
+    box-shadow: 0 0 0 20px #33401c9c;
   }
 }
 @keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #7a9a9e;
+    box-shadow: 0 0 0 20px #33401c9c;
   }
 }
 @font-face {
@@ -337,6 +337,10 @@ header {
   src: url("https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Medium.otf");
   font-style: normal;
 }
+.ArnSupportLinks .ArnSupportBottom {
+  background: #33401c;
+}
+
 .hide {
   display: none;
 }
@@ -376,6 +380,7 @@ header {
 
 body {
   font-family: "RivieraNights-Light";
+  color: #242526;
   margin: 0;
   padding: 0;
   display: flex;
@@ -383,18 +388,20 @@ body {
 }
 
 h1 {
+  color: #242526;
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 4px;
 }
 
 h2 {
+  color: #242526;
   font-size: 36px;
   font-weight: 300;
 }
 
 header {
-  border-bottom: 2px solid #7a9a9e;
+  border-bottom: 2px solid #33401c9c;
 }
 
 .SinglePropDetail header {
@@ -409,7 +416,7 @@ header {
   padding: 0;
   position: relative;
   float: left;
-  border-bottom: 4px solid #7a9a9e;
+  border-bottom: 4px solid #33401c9c;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -481,7 +488,7 @@ header {
 }
 
 #inclusions-container-title {
-  font-family: "RivieraNights-Regular";
+  font-family: "RivieraNights-Medium";
   width: 100%;
   margin-left: 0;
   grid-column: 1/3;
@@ -526,12 +533,12 @@ header {
 }
 
 .section-title {
-  font-family: "RivieraNights-Regular";
+  font-family: "RivieraNights-Medium";
   margin-top: 14px;
   margin-left: 2.3rem;
   font-weight: 500;
   font-size: 36px;
-  color: #7a9a9e;
+  color: #33401c9c;
 }
 
 .itinerary-list {
@@ -552,6 +559,7 @@ header {
 }
 
 .itinerary-day {
+  font-family: "RivieraNights-Regular";
   font-size: 26px;
   font-weight: 500;
   grid-column: 1;
@@ -564,7 +572,7 @@ header {
 }
 
 hr {
-  border-top: 1px solid #7a9a9e7a;
+  border-top: 1px solid #ebede1;
   margin-bottom: 2.3rem;
 }
 
@@ -574,7 +582,7 @@ hr {
 }
 
 .trip-item {
-  border: 1px solid #3276b140;
+  border: 1px solid #33401c40;
   box-shadow: 0px 4px 4px 0px #0000000d;
   border-radius: 1rem;
   margin: 2.3rem;
@@ -590,6 +598,7 @@ hr {
 }
 
 .trip-item-name {
+  font-family: "RivieraNights-Regular";
   font-size: 24px;
   font-weight: 500;
   padding: 1rem 0 0 1rem;
@@ -630,36 +639,39 @@ hr {
 }
 
 button {
+  font-weight: 900;
+  font-family: "RivieraNights-Medium";
   height: 42px;
   border-radius: 6px;
   border: none;
   color: #fff;
   margin: 1rem;
-  font-weight: 900;
 }
 
 .book-button {
-  background: #3276b1;
+  font-family: "RivieraNights-Medium";
+  background: #b9a37a;
   margin: 1rem 1rem 5px 20px;
-  border: 2px solid #3276b1;
+  border: 2px solid #b9a37a;
   transition: 0.3s;
 }
 .book-button:hover {
-  border: 2px solid #3276b1;
+  border: 2px solid #b9a37a;
   background: #fff;
-  color: #3276b1;
+  color: #b9a37a;
 }
 
 .hold-button {
-  background: #719ec8;
+  font-family: "RivieraNights-Medium";
+  background: #f6e8d9;
   margin: 5px 1rem 1rem 20px;
-  border: 2px solid #719ec8;
+  border: 2px solid #f6e8d9;
   transition: 0.3s;
 }
 .hold-button:hover {
-  border: 2px solid #719ec8;
+  border: 2px solid #f6e8d9;
   background: #fff;
-  color: #719ec8;
+  color: #f6e8d9;
 }
 
 #adults-elements-outer-container {
@@ -675,32 +687,35 @@ button {
 }
 
 #number-adults-btn {
-  background: #3276b1;
+  background: #33401c;
   margin: 3rem 1rem 1rem 1rem;
-  border: 2px solid #3276b1;
+  border: 2px solid #33401c;
   transition: 0.3s;
   min-width: 8rem;
+  font-family: "RivieraNights-Medium";
 }
 #number-adults-btn:hover {
-  border: 2px solid #3276b1;
+  border: 2px solid #33401c;
   background: #fff;
-  color: #3276b1;
+  color: #33401c;
   cursor: pointer;
 }
 
 #change-adults-btn {
+  font-family: "RivieraNights-Medium";
   margin-top: 0;
-  background: #000;
-  border: 2px solid #000;
+  background: rgba(255, 255, 255, 0.6);
+  border: 3px solid #242526;
   transition: 0.3s;
   min-width: 6rem;
   align-self: center;
   font-size: 14px;
+  color: #242526;
 }
 #change-adults-btn:hover {
-  border: 2px solid #000;
-  background: #fff;
-  color: #000;
+  border: 3px solid #242526;
+  background: #242526;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -710,9 +725,10 @@ button {
 }
 
 .trip-price-desktop {
+  font-family: "RivieraNights-Regular";
   font-size: 34px;
   font-weight: 900;
-  color: #7a9a9e;
+  color: #33401c9c;
   margin: 1rem 1rem 5px 0;
 }
 
@@ -796,7 +812,7 @@ button {
     height: 500px;
     /* position: relative; */
     /* float: left; */
-    border-bottom: 4px solid #7a9a9e;
+    border-bottom: 4px solid #33401c9c;
   }
 
   h1 {
@@ -842,16 +858,13 @@ button {
   .itinerary-day {
     display: flex;
     grid-column: none;
+    width: 100%;
+    font-size: 24px;
   }
 
   .itinerary-description {
     display: flex;
     grid-column: none;
-  }
-
-  .itinerary-day {
-    width: 100%;
-    font-size: 24px;
   }
 
   .trips-section {
@@ -909,20 +922,14 @@ button {
   }
 
   .trip-price-mobile {
-    font-size: 24px;
-    font-weight: 900;
-    color: #7a9a9e;
-    margin: 0;
-    padding: 1rem;
-  }
-
-  .trip-price-mobile {
+    font-family: "RivieraNights-Regular";
     display: block;
     font-size: 24px;
     font-weight: 900;
-    color: #7a9a9e;
+    color: #33401c9c;
     margin: 0;
     margin-top: 1rem;
+    padding: 1rem;
   }
 
   .trip-price-cta-container {
@@ -939,14 +946,13 @@ button {
   }
 
   .book-button {
-    background: #3276b1;
+    background: #33401c;
     grid-column: 1;
     margin: 0;
     width: 100%;
   }
 
   .hold-button {
-    background: #3276b1b6;
     margin: 0;
     width: 100%;
     grid-column: 3;
@@ -990,7 +996,7 @@ button {
 }
 /* Checkout Page */
 #theAjaxPaymentPolicies {
-  border: 1px solid #7a9a9e;
+  border: 1px solid #33401c9c;
   box-shadow: 0px 4px 4px 0px #0000000d;
   border-radius: 1rem;
 }
@@ -1000,24 +1006,24 @@ button {
 }
 
 input#theConfirmationButton, .WBConfirmedBooking .submit {
-  background: #3276b1;
+  background: #33401c;
   height: 42px;
   border-radius: 6px;
   font-weight: 900;
   text-transform: uppercase;
-  border: 2px solid #3276b1;
+  border: 2px solid #33401c;
   transition: 0.3s;
 }
 input#theConfirmationButton:hover, .WBConfirmedBooking .submit:hover {
-  border: 2px solid #3276b1;
+  border: 2px solid #33401c;
   background: #fff;
-  color: #3276b1;
+  color: #33401c;
 }
 
 #theBookingPage legend {
   font-weight: 500;
   font-size: 30px;
-  color: #7a9a9e;
+  color: #33401c9c;
   line-height: 1.2;
 }
 
@@ -1039,7 +1045,7 @@ input#theConfirmationButton:hover, .WBConfirmedBooking .submit:hover {
 .ArnRoomsOnHold h2 {
   font-weight: 500;
   font-size: 30px;
-  color: #7a9a9e;
+  color: #33401c9c;
   line-height: 1.2;
 }
 
@@ -1062,19 +1068,19 @@ input#theConfirmationButton:hover, .WBConfirmedBooking .submit:hover {
 }
 
 .HoldRoomsForm .submit {
-  background: #3276b1;
+  background: #33401c;
   height: 42px;
   border-radius: 6px;
   font-weight: 900;
   text-transform: capitalize;
-  border: 2px solid #3276b1;
+  border: 2px solid #33401c;
   text-transform: uppercase;
   transition: 0.3s;
 }
 .HoldRoomsForm .submit:hover {
-  border: 2px solid #3276b1;
+  border: 2px solid #33401c;
   background: #fff;
-  color: #3276b1;
+  color: #33401c;
 }
 
 .HoldRoomsForm .ArnProperty {

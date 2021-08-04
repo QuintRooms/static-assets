@@ -87,7 +87,7 @@ $banner_image: #fff;
 }
 
 body {
-    font-family: 'RivieraNights-Light';
+    font-family: 'RivieraNights-Light', 'Roboto', sans-serif;
     color: #242526;
     margin: 0;
     padding: 0;
@@ -141,7 +141,7 @@ header {
 }
 
 .trip-title {
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     margin-left: 2.3rem;
     margin-top: 12px;
     margin-bottom: 0px;
@@ -150,7 +150,7 @@ header {
 
 
 .event-text-separators {
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     margin-top: 0;
     margin-left: 2.3rem;
     font-weight: 500;
@@ -202,7 +202,7 @@ header {
 }
 
 #inclusions-container-title {
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     width: 100%;
     margin-left: 0;
     grid-column: 1/3;
@@ -250,7 +250,7 @@ header {
 }
 
 .section-title {
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     margin-top: 14px;
     margin-left: 2.3rem;
     font-weight: 500;
@@ -276,7 +276,7 @@ header {
 }
 
 .itinerary-day {
-    font-family: 'RivieraNights-Regular';
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
     font-size: 26px;
     font-weight: 500;
     grid-column: 1;
@@ -317,7 +317,7 @@ hr {
 }
 
 .trip-item-name {
-    font-family: 'RivieraNights-Regular';
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 500;
     padding: 1rem 0 0 1rem;
@@ -359,7 +359,7 @@ hr {
 
 button {
     font-weight: 900;
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     height: 42px;
     border-radius: 6px;
     border: none;
@@ -368,7 +368,7 @@ button {
 }
 
 .book-button {
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     background: #33401c;
     margin: 1rem 1rem 5px 20px;
     border: 2px solid #b9a37a;
@@ -381,7 +381,7 @@ button {
 }
 
 .hold-button {
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     background: #9daf8a;
     margin: 5px 1rem 1rem 20px;
     border: 2px solid #b9a37a;
@@ -411,7 +411,7 @@ button {
     border: 2px solid #33401c;
     transition: 0.3s;
     min-width: 8rem;
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     &:hover {
         border: 2px solid #33401c;
         background: #fff;
@@ -421,7 +421,7 @@ button {
 }
 
 #change-adults-btn {
-    font-family: 'RivieraNights-Medium';
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     margin-top: 0;
     background: rgba(255, 255, 255, 0.6);
     border: 3px solid #242526;
@@ -446,7 +446,7 @@ button {
 }
 
 .trip-price-desktop {
-    font-family: 'RivieraNights-Regular';
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
     font-size: 34px;
     font-weight: 900;
     color: #9daf8a;
@@ -648,7 +648,7 @@ background-size: cover;
 }
 
 .trip-price-mobile {
-    font-family: 'RivieraNights-Regular';
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
     display: block;
     font-size: 24px;
     font-weight: 900;

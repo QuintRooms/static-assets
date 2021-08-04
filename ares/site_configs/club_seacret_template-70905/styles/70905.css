@@ -322,21 +322,6 @@ header {
     box-shadow: 0 0 0 20px #33401c9c;
   }
 }
-@font-face {
-  font-family: "RivieraNights-Light";
-  src: url("https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Light.otf");
-  font-style: normal;
-}
-@font-face {
-  font-family: "RivieraNights-Regular";
-  src: url("https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Regular.otf");
-  font-style: normal;
-}
-@font-face {
-  font-family: "RivieraNights-Medium";
-  src: url("https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Medium.otf");
-  font-style: normal;
-}
 .ArnSupportLinks .ArnSupportBottom {
   background: #33401c;
 }

@@ -100,7 +100,7 @@ module.exports = () => {
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
-            'ares_derek-70011': './src/70011.js', // ares derek
+            // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
             'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };

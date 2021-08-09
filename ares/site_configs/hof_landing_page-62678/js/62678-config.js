@@ -76,7 +76,7 @@ export default function siteConfig() {
         landing_page_events: [
             {
                 is_city_search_header_link: false,
-                name: 'Hall of Fame HBCU Classic',
+                name: '',
                 display_date: 'September 5th, 2021', // September 5-8, 2021
                 end_date: '9/5/2021', // M/D/YYYY
                 portal_url: 'https://events.hotelsforhope.com/group-event?id=49131&utm_campaign=Pro%20Football%20HOF%HBCU',

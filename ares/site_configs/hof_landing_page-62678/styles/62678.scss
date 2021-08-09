@@ -16,7 +16,7 @@ $google_font_name: 'Oswald';
 $site_name: 'hof_landing_page-62678';
 $path: set-path($env);
 $banner_image: #fff;
-$bg-images: url(#{$path}/site_configs/#{$site_name}/img/player.jpg), url(#{$path}/site_configs/#{$site_name}/img/classic.jpg), url(#{$path}/site_configs/#{$site_name}/img/gold-jacket.jpg);
+$bg-images: url(#{$path}/site_configs/#{$site_name}/img/classic.jpg);
 $header-images: url(#{$path}/site_configs/#{$site_name}/img/pitch.jpg);
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';

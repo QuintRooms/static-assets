@@ -1,8 +1,8 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 62678;
-const directory_name = `hof_landing_page-${site_id}`;
+const site_id = 62682;
+const directory_name = `hof_hbcu_classic_21-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -10,7 +10,7 @@ export default function siteConfig() {
         directory_name,
         affiliate_id: 17464,
         master_id: 920,
-        site_type: 'event-landing-page',
+        site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         currency: 'USD',
@@ -18,9 +18,11 @@ export default function siteConfig() {
         map_size: '12',
         radius: '50',
         lodging: {
-            event_id: 42991,
-            event_name: 'Pro Football Hall of Fame',
-            event_dates: '08/05/2021 - 08/08/2021',
+            event_id: 49131,
+            event_name: 'Pro Football Hall of Fame HBCU Classic 2021',
+            event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {
@@ -47,10 +49,9 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.profootballhof.com/',
         },
-
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'dark',
-        google_font_url: '//fonts.googleapis.com/css?family=Oswald:100,500,700',
+        google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
                 is_active: false,
@@ -68,26 +69,5 @@ export default function siteConfig() {
                 outbound_url: '',
             },
         },
-        root_page_header_text: 'Start Your Search',
-        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
-        is_resbeat_client: false,
-        confirmation_email_from: 'Quint Rooms',
-        has_landing_page: true,
-        landing_page_events: [
-            {
-                is_city_search_header_link: false,
-                name: 'Hall of Fame HBCU Classic',
-                display_date: 'September 5th, 2021', // September 5-8, 2021
-                end_date: '9/5/2021', // M/D/YYYY
-                portal_url: 'https://events.hotelsforhope.com/group-event?id=49131&utm_campaign=Pro%20Football%20HOF%HBCU',
-            },
-            {
-                is_city_search_header_link: true,
-                name: 'Search Canton, OH',
-                display_date: '', // August 5-8, 2021
-                end_date: '', // M/D/YYYY
-                portal_url: 'https://book.hofhotels.com/group-event?id=44347&utm_campaign=Pro%20Football%20HOF%20Canton%202021',
-            },
-        ],
     };
 }

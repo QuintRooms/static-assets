@@ -1358,7 +1358,7 @@ export default class BasePortal {
         if (this.site_config.site_type !== 'lodging' && !this.site_config.is_lrg) return;
 
         try {
-            const html = await fetch(`https://${domain}/components/lrg-form/lrg-form.html`).then((response) => response.text());
+            const html = await fetch(`https://static.${domain}/components/lrg-form/lrg-form.html`).then((response) => response.text());
 
             document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = html;
         } catch (error) {

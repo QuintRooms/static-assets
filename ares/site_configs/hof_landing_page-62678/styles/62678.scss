@@ -31,7 +31,12 @@ $header-images: url(#{$path}/site_configs/#{$site_name}/img/pitch.jpg);
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), $secondary_color;
 }
 
+.events {
+    min-width: 300px;
+}
+
 //For HBCU Classic ONLY -- delete after Sept.5 2021
 .event-1 {
-    justify-content: flex-end;    
+    justify-content: flex-end;
 }
+

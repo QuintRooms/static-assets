@@ -35,7 +35,6 @@ module.exports = () => {
             // 'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            // 'f1_miami_22-65012': './src/65012.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
@@ -44,6 +43,7 @@ module.exports = () => {
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
+            // 'hof_hbcu_classic_21-62682': './src/62682.js', // Hall Of Fame HBCU Classic
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
             // 'hof_enshrinement_friends_fam_21-66018': './src/66018.js', // hof enshrinement_friends_fam_21
@@ -80,6 +80,9 @@ module.exports = () => {
             // 'tortuga_20-60336': './src/60336.js', // Tortuga 2020
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
+            // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
+            // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
+            // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
             // 'voodoo_21-60792': './src/60792.js', // Voodoo Festival 2021
             // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
             // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
@@ -90,11 +93,11 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
+            // 'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };
 
         // local environment
@@ -102,7 +105,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
+            // 'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };
     }
 

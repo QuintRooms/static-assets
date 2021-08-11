@@ -33,10 +33,8 @@ class ChildPortal extends BasePortal {
 
         if (!check_in_input || !check_out_input) return;
 
-        if (check_in_input < current_day) {
-            check_in_input.setAttribute('value', current_day);
-            check_out_input.setAttribute('value', dayjs().add(3, 'day').format('MM/DD/YYYY'));
-        }
+        check_in_input.setAttribute('value', current_day);
+        check_out_input.setAttribute('value', dayjs().add(3, 'day').format('MM/DD/YYYY'));
 
         const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
         date_prompt_image[0].src = `${env_path.path}/site_configs/van_gogh_dallas-71011/img/logo_b.png`;

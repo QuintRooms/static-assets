@@ -33,9 +33,12 @@ class ChildPortal extends BasePortal {
 
         if (!check_in_input || !check_out_input) return;
 
-        if (check_in_input < current_day) {
+        if (!current_day < '08/26/21') {
             check_in_input.setAttribute('value', current_day);
             check_out_input.setAttribute('value', dayjs().add(3, 'day').format('MM/DD/YYYY'));
+        } else {
+            check_in_input.setAttribute('value', '08/26/21');
+            check_out_input.setAttribute('value', '08/29/21');
         }
 
         const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');

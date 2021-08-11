@@ -4,14 +4,14 @@ $header_background: #000;
 $logo_flex_position: space-between;
 $logo_max_width: 300px;
 $background_color: #fff;
-$primary_color: #e10600;
-$secondary_color: #333;
+$primary_color: #008E97;
+$secondary_color: #008E97;
 $primary_text_color: #fff;
-$secondary_text_color: #333;
-$border_color: #e10600;
+$secondary_text_color: #008E97;
+$border_color: #FC4C02;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #e10600;
-$button_hover_border_color: #e10600;
+$button_hover_text_color: #FC4C02;
+$button_hover_border_color: #FC4C02;
 $google_font_name: 'Titillium Web';
 $header_font_name: 'F1-Regular';
 $site_name: 'f1_miami_22-60295';
@@ -24,4 +24,17 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/cl
 
 #tickets li:nth-child(2), #tickets li:nth-child(1), #races-contact li:first-child {
     display: none;
+}
+
+.ArnRateButton .ArnShowRatesLink  {
+  border-width: 2px;
+  background: #FC4C02;
+  border-color: #FC4C02;
+  font-weight: bold;
+  &:hover{
+    background: #fff;
+    border-width: 2px;
+    color: #FC4C02;
+    border-color: #FC4C02;
+  }
 }

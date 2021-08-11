@@ -83,6 +83,7 @@ module.exports = () => {
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
             // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
+            // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             // 'voodoo_21-60792': './src/60792.js', // Voodoo Festival 2021
             // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
             // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022

@@ -8,15 +8,15 @@ $primary_color: #008E97;
 $secondary_color: #EA6FAA;
 $primary_text_color: #fff;
 $secondary_text_color: #008E97;
-$border_color: #FC4C02;
+$border_color: #008E97;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #FC4C02;
-$button_hover_border_color: #FC4C02;
+$button_hover_text_color: #008E97;
+$button_hover_border_color: #008E97;
 $google_font_name: 'Titillium Web';
 $header_font_name: 'F1-Regular';
 $site_name: 'f1_miami_22-60295';
 $path: set-path($env);
-$banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/clients/formula_1/images/f1-bg-1.jpg) no-repeat center center /cover;
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../styles/sass/f1.scss';
@@ -28,13 +28,13 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/cl
 
 .ArnRateButton .ArnShowRatesLink  {
   border-width: 2px;
-  background: #FC4C02;
-  border-color: #FC4C02;
+  background: #008E97;
+  border-color: #008E97;
   font-weight: bold;
   &:hover{
     background: #fff;
     border-width: 2px;
-    color: #FC4C02;
-    border-color: #FC4C02;
+    color: #008E97;
+    border-color: #008E97;
   }
 }

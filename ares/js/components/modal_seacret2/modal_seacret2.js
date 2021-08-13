@@ -50,10 +50,16 @@ const modal_styles_str = `
 }
 
 #number-adults-input {
-    width: 3rem;
-    height: 3rem;
-    font-size: 24px;
+    font-size: 21px;
     text-align: center;
+    padding: 2px 6px;
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+}
+
+.seacret-confirm-btn{
+    line-height: 3;
 }
 
 hr .solid{
@@ -69,7 +75,7 @@ hr .solid{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 20px;
+    font-size: 21px;
     text-align: center;
     padding-top: 1rem;
 }
@@ -88,7 +94,6 @@ hr .solid{
     padding-bottom: 1rem;
     background: red;
     color: white;
-    height: height: 3rem;
     margin: 1rem;
     transition: 1s;
     border-radius: 6px;
@@ -104,26 +109,22 @@ hr .solid{
     align-items: center;
 }
 
-// input[type=number]::-webkit-inner-spin-button, 
-// input[type=number]::-webkit-outer-spin-button { 
-//   -webkit-appearance: none; 
-//   margin: 0; 
-// }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 @media screen and (max-width: 768px) {
-
     .seacret-modal-adults {
         width: 75vw;
     }
-
 }
 
 @media screen and (max-width: 320px) {
-
     .modal-confirm-btn {
         min-width: 120px;
-}
-
+    }
 }
 `;
 
@@ -156,11 +157,11 @@ export default class ModalSeacret {
     }
 
     checkAdultsParam() {
-        let current_url = new URL(window.location.href);
-        let current_params = current_url.searchParams;
+        const current_url = new URL(window.location.href);
+        const current_params = current_url.searchParams;
         console.log(current_params);
         const check_adults_param = (params) => {
-            for (let key of params.keys()) {
+            for (const key of params.keys()) {
                 if (key === 'adults') {
                     return true;
                 }
@@ -195,7 +196,7 @@ export default class ModalSeacret {
         // console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
         // console.log('typeof this.adults_input.value', typeof input_value);
         if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
-            let current_url = new URL(window.location.href);
+            const current_url = new URL(window.location.href);
             this.seacret_modal_adults.style.display = 'none';
             this.overlay.style.display = 'none';
             current_url.searchParams.set('adults', input_value);
@@ -213,23 +214,23 @@ export default class ModalSeacret {
         document.body.insertAdjacentHTML(
             'beforeend',
             `
-            <div class='overlay'></div>
-            <div class='seacret-modal-adults' id=${this.modal_id}>
-                <div id='seacret-modal-adults-logo'>
-                    <img src=${logo} alt='logo'>
+            <div class="overlay"></div>
+            <div class="seacret-modal-adults" id=${this.modal_id}>
+                <div id="seacret-modal-adults-logo">
+                    <img src=${logo} alt="logo">
                 </div>
-                <hr class='solid'>
-                <div class='modal-body-container'>
-                    <div class='modal-body-text'>
+                <hr class="solid">
+                <div class="modal-body-container">
+                    <div class="modal-body-text">
                         How many adults (ages 18+) will attend this trip?
                     </div>
-                    <div id='limit-alert-container'>
-                        <div class='seacret-alert' id='max-limit-alert'>
+                    <input type="number" min="1" step="1" max="4" class="seacret-form-input" id="number-adults-input" value="2"></input>
+                    <div id="limit-alert-container">
+                        <div class="seacret-alert" id="max-limit-alert">
                             Only 1-4 adults allowed per trip purchase.
                         </div>
                     </div>
-                    <input type='number' min='1' step='1' max='4' class='seacret-form-input' id='number-adults-input' value='2'></input>
-                    <button class='seacret-confirm-btn' id='number-adults-btn'>SEE TRIP</button>
+                    <button class="seacret-confirm-btn" id="number-adults-btn">SEE TRIP</button>
                 </div>
             </div>
             <style>

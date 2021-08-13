@@ -631,11 +631,11 @@ button {
             font-weight: 400;
         }
 
-        .location-date-container h2{
+        .location-date-container h2 {
             font-size: 18px;
         }
 
-        #trip-property{
+        #trip-property {
             font-size: 21px;
         }
 
@@ -742,6 +742,10 @@ button {
 }
 
 /* Checkout Page */
+
+#theRateTotals td {
+    font-family: 'RivieraNights-Light', 'Helvetica';
+}
 
 #theAjaxPaymentPolicies {
     border: 1px solid #33401c9c;

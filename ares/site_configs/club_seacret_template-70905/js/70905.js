@@ -438,13 +438,12 @@ class ChildPortal extends BasePortal {
     }
 
     async updateCheckoutInterface() {
-        console.log('before await in updatecheckoutinterface');
         await utilities.waitForSelectorInDOM('.discountRow');
+
+        this.addPricePerGuestToCheckout();
 
         const subtotal = document.querySelectorAll('.discountRow .discount')[0].innerText;
         const tbody_ref = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0];
-
-        console.log('tbody_ref: ', tbody_ref);
 
         const subtotal_row = document.createElement('tr');
 
@@ -467,6 +466,24 @@ class ChildPortal extends BasePortal {
         //     </tr>
         //     `
         // );
+    }
+
+    addPricePerGuestToCheckout() {
+        const currency = utilities.getMetaTagContent('currency');
+        const total = utilities.getMetaTagContent(`dueNow${currency}`);
+        const guests = utilities.getMetaTagContent('numberOfAdults');
+        const due_now_container = document.querySelector('.dueNowRow td');
+
+        if (!total || !guests || !due_now_container) return;
+
+        const price_per_guest = (total / guests).toFixed(2).toLocaleString();
+
+        due_now_container.insertAdjacentHTML(
+            'beforeEnd',
+            `
+            <div class="price-per-guest">(${price_per_guest} ${currency} / guest)</div>
+        `
+        );
     }
 
     getTripDetailsFromLocalStorage() {

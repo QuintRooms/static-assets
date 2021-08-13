@@ -476,7 +476,7 @@ class ChildPortal extends BasePortal {
 
         if (!total || !guests || !due_now_container) return;
 
-        const price_per_guest = (total / guests).toFixed(2).toLocaleString();
+        const price_per_guest = (total / guests).toFixed(2);
 
         due_now_container.insertAdjacentHTML(
             'beforeEnd',

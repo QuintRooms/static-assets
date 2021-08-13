@@ -1025,6 +1025,9 @@ button {
 #theRateTotals td {
   font-family: "RivieraNights-Light", "Helvetica";
 }
+#theRateTotals td .price-per-guest {
+  margin-top: 2px;
+}
 
 #theAjaxPaymentPolicies {
   border: 1px solid #33401c9c;

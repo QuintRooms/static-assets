@@ -698,32 +698,49 @@
                                 ((a = d(
                                     regeneratorRuntime.mark(function e() {
                                         var t, n, r;
-                                        return regeneratorRuntime.wrap(function (e) {
-                                            for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                    case 0:
-                                                        return console.log('before await in updatecheckoutinterface'), (e.next = 3), S.waitForSelectorInDOM('.discountRow');
-                                                    case 3:
-                                                        (t = document.querySelectorAll('.discountRow .discount')[0].innerText),
-                                                            (n = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0]),
-                                                            console.log('tbody_ref: ', n),
-                                                            ((r = document.createElement('tr')).className = ''),
-                                                            (r.style = ''),
-                                                            (r.innerHTML = '\n                <th nowrap="nowrap"><span>Subtotal:</span></th>\n                <td>'.concat(
-                                                                t,
-                                                                '</td>\n            '
-                                                            )),
-                                                            n.insertAdjacentElement('afterbegin', r);
-                                                    case 11:
-                                                    case 'end':
-                                                        return e.stop();
-                                                }
-                                        }, e);
+                                        return regeneratorRuntime.wrap(
+                                            function (e) {
+                                                for (;;)
+                                                    switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                            return (e.next = 2), S.waitForSelectorInDOM('.discountRow');
+                                                        case 2:
+                                                            this.addPricePerGuestToCheckout(),
+                                                                (t = document.querySelectorAll('.discountRow .discount')[0].innerText),
+                                                                (n = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0]),
+                                                                ((r = document.createElement('tr')).className = ''),
+                                                                (r.style = ''),
+                                                                (r.innerHTML = '\n                <th nowrap="nowrap"><span>Subtotal:</span></th>\n                <td>'.concat(
+                                                                    t,
+                                                                    '</td>\n            '
+                                                                )),
+                                                                n.insertAdjacentElement('afterbegin', r);
+                                                        case 10:
+                                                        case 'end':
+                                                            return e.stop();
+                                                    }
+                                            },
+                                            e,
+                                            this
+                                        );
                                     })
                                 )),
                                 function () {
                                     return a.apply(this, arguments);
                                 }),
+                        },
+                        {
+                            key: 'addPricePerGuestToCheckout',
+                            value: function () {
+                                var e = S.getMetaTagContent('currency'),
+                                    t = S.getMetaTagContent('dueNow'.concat(e)),
+                                    n = S.getMetaTagContent('numberOfAdults'),
+                                    r = document.querySelector('.dueNowRow td');
+                                if (t && n && r) {
+                                    var o = (t / n).toFixed(2).toLocaleString();
+                                    r.insertAdjacentHTML('beforeEnd', '\n            <div class="price-per-guest">('.concat(o, ' ').concat(e, ' / guest)</div>\n        '));
+                                }
+                            },
                         },
                         {
                             key: 'getTripDetailsFromLocalStorage',
@@ -955,8 +972,8 @@
             H = l('op-symbols'),
             N = Object.prototype,
             U = 'function' == typeof R && !!M.f,
-            V = r.QObject,
-            G = !V || !V.prototype || !V.prototype.findChild,
+            G = r.QObject,
+            V = !G || !G.prototype || !G.prototype.findChild,
             W =
                 i &&
                 u(function () {
@@ -1030,7 +1047,7 @@
                         t = function (n) {
                             this === N && t.call(H, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), W(this, e, x(1, n));
                         };
-                    return i && G && W(N, e, {configurable: !0, set: t}), z(e);
+                    return i && V && W(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
                 'toString',
                 function () {
@@ -1059,10 +1076,10 @@
                 for (var t in B) if (B[t] === e) return t;
             },
             useSetter: function () {
-                G = !0;
+                V = !0;
             },
             useSimple: function () {
-                G = !1;
+                V = !1;
             },
         }),
             a(a.S + a.F * !U, 'Object', {

@@ -139,11 +139,11 @@ export default class ModalSeacret {
     }
 
     checkAdultsParam() {
-       let current_url = new URL(window.location.href);
-        let current_params = current_url.searchParams;
+        const current_url = new URL(window.location.href);
+        const current_params = current_url.searchParams;
         console.log(current_params);
         const check_adults_param = (params) => {
-            for (let key of params.keys()) {
+            for (const key of params.keys()) {
                 if (key === 'adults') {
                     return true;
                 }
@@ -162,7 +162,7 @@ export default class ModalSeacret {
             console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
             console.log('typeof this.adults_input.value', typeof input_value);
             if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
-                let current_url = new URL(window.location.href);
+                const current_url = new URL(window.location.href);
                 this.hideOverlay();
                 this.hideModal();
                 console.log(current_url);

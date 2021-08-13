@@ -156,15 +156,15 @@ class ChildPortal extends BasePortal {
         const change_adults_button = document.getElementById('change-adults-btn');
         const seacret_modal_adults = document.querySelector('.seacret-modal-adults');
         const overlay = document.querySelector('.overlay');
-        console.log('change_adults_button', change_adults_button);
-        console.log('seacret_modal_adults', seacret_modal_adults);
-        console.log('overlay', overlay);
+        // console.log('change_adults_button', change_adults_button);
+        // console.log('seacret_modal_adults', seacret_modal_adults);
+        // console.log('overlay', overlay);
 
         change_adults_button.addEventListener('click', (event) => {
             event.preventDefault();
             seacret_modal_adults.style.display = 'block';
             overlay.style.display = 'block';
-            console.log('CHANGE ADULTS BUTTON CLICKED');
+            // console.log('CHANGE ADULTS BUTTON CLICKED');
         });
     }
 
@@ -190,10 +190,10 @@ class ChildPortal extends BasePortal {
 
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
         const end_date = dayjs(this.trip.data.end_date).format('MM/DD/YYYY');
-        let current_url = new URL(window.location.href);
-        let current_params = current_url.searchParams;
-        let number_of_adults = current_params.get('adults');
-        console.log('number_of_adults', number_of_adults);
+        const current_url = new URL(window.location.href);
+        const current_params = current_url.searchParams;
+        const number_of_adults = current_params.get('adults');
+        // console.log('number_of_adults', number_of_adults);
 
         // Create hero container with title, location, dates
         document.querySelector('.hero-container').insertAdjacentHTML(
@@ -252,11 +252,11 @@ class ChildPortal extends BasePortal {
             });
         }
 
-        for (let i = 0; i < this.trip.data.itinerary.length; i++) {
+        for (let i = 0; i < this.trip.data.itinerary.length; i += 1) {
             if (i === this.trip.data.itinerary.length - 1) {
                 document.querySelector('.itinerary-list').insertAdjacentHTML(
-                'beforeEnd',
-                `
+                    'beforeEnd',
+                    `
                     <div class='itinerary-item'>
                         <div class='itinerary-text'>
                             <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
@@ -267,8 +267,8 @@ class ChildPortal extends BasePortal {
                 );
             } else {
                 document.querySelector('.itinerary-list').insertAdjacentHTML(
-                'beforeEnd',
-                `
+                    'beforeEnd',
+                    `
                     <div class='itinerary-item'>
                         <div class='itinerary-text'>
                             <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
@@ -310,10 +310,12 @@ class ChildPortal extends BasePortal {
                     <div class='trip-text-container'>
                         <div class='trip-item-name'></div>
                         <div class="trip-price-mobile">$</div>
+                        <div class="price-per-guest-mobile">$</div>
                         <p class='trip-item-description'></p>
                     </div>
                     <div class='trip-price-cta-container'>
                         <div class='trip-price-desktop'>$</div>
+                        <div class="price-per-guest-desktop">$</div>
                         <div class='trip-ctas'>
                         </div>
                     </div>
@@ -330,11 +332,17 @@ class ChildPortal extends BasePortal {
 
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
+            const rate_per_guest = (Number(full_rate_string.split(' ')[0]) / number_of_adults).toFixed(2).toLocaleString();
+
             const mobile_price_container = document.querySelector('.trip-price-mobile');
+            const mobile_price_per_guest_container = document.querySelector('.price-per-guest-mobile');
             const desktop_price_container = document.querySelector('.trip-price-desktop');
+            const desktop_price_per_guest_container = document.querySelector('.price-per-guest-desktop');
 
             mobile_price_container.innerText = `$${trip_rate}`;
+            mobile_price_per_guest_container.innerText = `$${rate_per_guest} / guest`;
             desktop_price_container.innerText = `$${trip_rate}`;
+            desktop_price_per_guest_container.innerText = `$${rate_per_guest} / guest`;
 
             // Move CTAs to new rooms container and format
             if (!i.querySelector('.bookRoom')?.innerText) {

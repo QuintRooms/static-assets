@@ -221,7 +221,6 @@ export default class ModalSeacret {
                 </div>
                 <hr class="solid">
                 <div class="modal-body-container">
-                    <h1>Adults</h1>
                     <div class="modal-body-text">
                         How many adults (ages 18+) will attend this trip?
                     </div>

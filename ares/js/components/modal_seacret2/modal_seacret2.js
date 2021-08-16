@@ -5,115 +5,7 @@ const utilities = new Utilities();
 
 const modal_styles_str = `
 
-.seacret-modal-adults {
-    background: white;
-    border-radius: 18px;
-    box-sizing: border-box;
-    width: 600px;
-    max-height: 75%;
-    overflow: hidden;
-    padding: 15px;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 995;
-    transform: translate(-50%, -50%);
-    display: none;
-}
 
-.overlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 995;
-    background: rgba(0,0,0,0.90);
-    display: none;
-}
-
-#seacret-modal-adults-logo {
-    display: grid;
-    grid-template-columns: 10% auto 10%;
-}
-
-#seacret-modal-adults-logo img {
-    grid-column: 2;
-    justify-self: center;
-    top: 50%;
-    left: 50%;
-    max-width: 200px;
-    padding: 15px;
-}
-
-#number-adults-input {
-    font-size: 21px;
-    text-align: center;
-    padding: 2px 6px;
-    background: #f7f7f7;
-    border: 1px solid #ccc;
-    margin-top: 1rem;
-}
-
-.seacret-confirm-btn{
-    line-height: 3;
-}
-
-hr .solid{
-    border-top: 4px solid #5dc3ac;
-}
-
-.modal-body-container {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.modal-body-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 21px;
-    text-align: center;
-    padding-top: 1rem;
-}
-
-#max-adults-text {
-    font-size: 14px;
-    text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
-}
-
-#max-limit-alert {
-    font-size: 12px;
-    visibility: hidden;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background: red;
-    color: white;
-    margin: 1rem;
-    transition: 1s;
-    border-radius: 6px;
-    font-weight: bold;
-    letter-spacing: .1rem;
-    text-align: center;
-    padding: .6rem;
-}
-
-.modal-body-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
 @media screen and (max-width: 768px) {
     .seacret-modal-adults {
@@ -221,6 +113,9 @@ export default class ModalSeacret {
                 </div>
                 <hr class="solid">
                 <div class="modal-body-container">
+                    <div class="modal-sub-title">
+                        WELCOME TO YOUR ESCAPE!
+                    </div>
                     <div class="modal-body-text">
                         How many adults (ages 18+) will attend this trip?
                     </div>

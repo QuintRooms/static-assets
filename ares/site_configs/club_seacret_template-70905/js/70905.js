@@ -164,7 +164,7 @@ class ChildPortal extends BasePortal {
             event.preventDefault();
             seacret_modal_adults.style.display = 'block';
             overlay.style.display = 'block';
-            // console.log('CHANGE ADULTS BUTTON CLICKED');
+            console.log('CHANGE ADULTS BUTTON CLICKED');
         });
     }
 
@@ -467,6 +467,10 @@ class ChildPortal extends BasePortal {
         //     `
         // );
     }
+
+    addCheckInToUrl() {}
+
+    addNightsToUrl() {}
 
     addPricePerGuestToCheckout() {
         const currency = utilities.getMetaTagContent('currency');

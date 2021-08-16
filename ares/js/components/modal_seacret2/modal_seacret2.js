@@ -4,20 +4,17 @@ import logo from './logo.png';
 const utilities = new Utilities();
 
 const modal_styles_str = `
-
-
-
-@media screen and (max-width: 768px) {
-    .seacret-modal-adults {
-        width: 75vw;
+    @media screen and (max-width: 768px) {
+        .seacret-modal-adults {
+            width: 75vw;
+        }
     }
-}
 
-@media screen and (max-width: 320px) {
-    .modal-confirm-btn {
-        min-width: 120px;
+    @media screen and (max-width: 320px) {
+        .modal-confirm-btn {
+            min-width: 120px;
+        }
     }
-}
 `;
 
 export default class ModalSeacret {
@@ -81,10 +78,19 @@ export default class ModalSeacret {
         this.modal_triggers.addEventListener('click', this.showModal);
     }
 
+    getTripFromLocalStorage() {
+        const trip_details = localStorage.getItem('trip_details');
+        if (!trip_details) return;
+
+        return JSON.parse(trip_details);
+    }
+
     hideModal = (event) => {
         event.preventDefault();
         const input_value = Number(this.adults_input.value);
+        const trip_details = this.getTripFromLocalStorage();
 
+        console.log(trip_details);
         // console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
         // console.log('typeof this.adults_input.value', typeof input_value);
         if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
@@ -92,6 +98,8 @@ export default class ModalSeacret {
             this.seacret_modal_adults.style.display = 'none';
             this.overlay.style.display = 'none';
             current_url.searchParams.set('adults', input_value);
+            current_url.searchParams.set('checkin', trip_details.data.start_date);
+            current_url.searchParams.set('nights', utilities.calculateNights());
             window.location.href = current_url;
         } else {
             const limit_alert = document.querySelector('#max-limit-alert');

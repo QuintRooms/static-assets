@@ -88,10 +88,13 @@ export default class ModalSeacret {
 
     hideModal = (event) => {
         event.preventDefault();
+
         const input_value = Number(this.adults_input.value);
         const trip_details = this.getTripFromLocalStorage();
-        const nights = dayjs(trip_details.data.start_date_out_value).diff(dayjs(trip_details.data.end_date), 'days');
-
+        const start_date = dayjs(trip_details.data.start_date).format('MM/DD/YYYY');
+        const end_date = dayjs(trip_details.data.end_date).format('MM/DD/YYYY');
+        const nights = dayjs(end_date).diff(dayjs(start_date), 'days');
+        console.log(nights);
         // console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
         // console.log('typeof this.adults_input.value', typeof input_value);
         if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
@@ -99,7 +102,7 @@ export default class ModalSeacret {
             this.seacret_modal_adults.style.display = 'none';
             this.overlay.style.display = 'none';
             current_url.searchParams.set('adults', input_value);
-            current_url.searchParams.set('checkin', trip_details.data.start_date);
+            current_url.searchParams.set('checkin', start_date);
             current_url.searchParams.set('nights', nights);
             window.location.href = current_url;
         } else {

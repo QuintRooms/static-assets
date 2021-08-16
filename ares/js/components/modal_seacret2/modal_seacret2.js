@@ -2,6 +2,7 @@ import Utilities from '../../utilities';
 import logo from './logo.png';
 
 const utilities = new Utilities();
+const dayjs = require('dayjs');
 
 const modal_styles_str = `
     @media screen and (max-width: 768px) {
@@ -89,8 +90,8 @@ export default class ModalSeacret {
         event.preventDefault();
         const input_value = Number(this.adults_input.value);
         const trip_details = this.getTripFromLocalStorage();
+        const nights = dayjs(trip_details.data.start_date_out_value).diff(dayjs(trip_details.data.end_date), 'days');
 
-        console.log(trip_details);
         // console.log('Number.isInteger(input_value)', Number.isInteger(input_value), input_value > 0, input_value < 5);
         // console.log('typeof this.adults_input.value', typeof input_value);
         if (Number.isInteger(input_value) && input_value > 0 && input_value < 5) {
@@ -99,7 +100,7 @@ export default class ModalSeacret {
             this.overlay.style.display = 'none';
             current_url.searchParams.set('adults', input_value);
             current_url.searchParams.set('checkin', trip_details.data.start_date);
-            current_url.searchParams.set('nights', utilities.calculateNights());
+            current_url.searchParams.set('nights', nights);
             window.location.href = current_url;
         } else {
             const limit_alert = document.querySelector('#max-limit-alert');

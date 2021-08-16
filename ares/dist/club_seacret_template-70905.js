@@ -280,7 +280,7 @@
                                         l = t.domain;
                                     try {
                                         c
-                                            ? (o || (2 == e._h && I(e), (e._h = 1)),
+                                            ? (o || (2 == e._h && Y(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
@@ -322,13 +322,13 @@
             j = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            I = function (e) {
+            Y = function (e) {
                 g.call(s, function () {
                     var t;
                     L ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
-            Y = function (e) {
+            I = function (e) {
                 var t = this;
                 t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
             },
@@ -343,14 +343,14 @@
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
-                                      t.call(e, u(D, r, 1), u(Y, r, 1));
+                                      t.call(e, u(D, r, 1), u(I, r, 1));
                                   } catch (e) {
-                                      Y.call(r, e);
+                                      I.call(r, e);
                                   }
                               })
                             : ((n._v = e), (n._s = 1), R(n, !1));
                     } catch (e) {
-                        Y.call({_w: n, _d: !1}, e);
+                        I.call({_w: n, _d: !1}, e);
                     }
                 }
             };
@@ -358,9 +358,9 @@
             ((M = function (e) {
                 h(this, M, 'Promise', '_h'), p(e), r.call(this);
                 try {
-                    e(u(D, this, 1), u(Y, this, 1));
+                    e(u(D, this, 1), u(I, this, 1));
                 } catch (e) {
-                    Y.call(this, e);
+                    I.call(this, e);
                 }
             }),
             ((r = function (e) {
@@ -384,7 +384,7 @@
             })),
             (i = function () {
                 var e = new r();
-                (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(Y, e, 1));
+                (this.promise = e), (this.resolve = u(D, e, 1)), (this.reject = u(I, e, 1));
             }),
             (b.f = T = function (e) {
                 return e === M || e === a ? new i(e) : o(e);
@@ -2635,8 +2635,8 @@
             R = r.Symbol,
             O = r.JSON,
             j = O && O.stringify,
-            I = p('_hidden'),
-            Y = p('toPrimitive'),
+            Y = p('_hidden'),
+            I = p('toPrimitive'),
             D = {}.propertyIsEnumerable,
             B = l('symbol-registry'),
             F = l('symbols'),
@@ -2683,7 +2683,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, I) && e[I][t] && (e[I][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, I) || C(e, I, x(1, {})), (e[I][t] = !0)), W(e, t, n))
+                        ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, Y) || C(e, Y, x(1, {})), (e[Y][t] = !0)), W(e, t, n))
                         : C(e, t, n)
                 );
             },
@@ -2694,16 +2694,16 @@
             },
             J = function (e) {
                 var t = D.call(this, (e = _(e, !0)));
-                return !(this === N && o(F, e) && !o(H, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, I) && this[I][e])) || t);
+                return !(this === N && o(F, e) && !o(H, e)) && (!(t || !o(this, e) || !o(F, e) || (o(this, Y) && this[Y][e])) || t);
             },
             K = function (e, t) {
                 if (((e = S(e)), (t = _(t, !0)), e !== N || !o(F, t) || o(H, t))) {
                     var n = T(e, t);
-                    return !n || !o(F, t) || (o(e, I) && e[I][t]) || (n.enumerable = !0), n;
+                    return !n || !o(F, t) || (o(e, Y) && e[Y][t]) || (n.enumerable = !0), n;
                 }
             },
             $ = function (e) {
-                for (var t, n = P(S(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == I || t == s || r.push(t);
+                for (var t, n = P(S(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == Y || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -2716,7 +2716,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(H, n), o(this, I) && o(this[I], e) && (this[I][e] = !1), W(this, e, x(1, n));
+                            this === N && t.call(H, n), o(this, Y) && o(this[Y], e) && (this[Y][e] = !1), W(this, e, x(1, n));
                         };
                     return i && V && W(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -2796,7 +2796,7 @@
                         },
                     }
                 ),
-            R.prototype[Y] || n(10)(R.prototype, Y, R.prototype.valueOf),
+            R.prototype[I] || n(10)(R.prototype, I, R.prototype.valueOf),
             d(R, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
@@ -8696,20 +8696,22 @@
                             e.preventDefault();
                             var t = Number(n.adults_input.value),
                                 r = n.getTripFromLocalStorage(),
-                                o = d(r.data.start_date_out_value).diff(d(r.data.end_date), 'days');
-                            if (Number.isInteger(t) && t > 0 && t < 5) {
-                                var i = new URL(window.location.href);
+                                o = d(r.data.start_date).format('MM/DD/YYYY'),
+                                i = d(r.data.end_date).format('MM/DD/YYYY'),
+                                a = d(i).diff(d(o), 'days');
+                            if ((console.log(a), Number.isInteger(t) && t > 0 && t < 5)) {
+                                var c = new URL(window.location.href);
                                 (n.seacret_modal_adults.style.display = 'none'),
                                     (n.overlay.style.display = 'none'),
-                                    i.searchParams.set('adults', t),
-                                    i.searchParams.set('checkin', r.data.start_date),
-                                    i.searchParams.set('nights', o),
-                                    (window.location.href = i);
+                                    c.searchParams.set('adults', t),
+                                    c.searchParams.set('checkin', o),
+                                    c.searchParams.set('nights', a),
+                                    (window.location.href = c);
                             } else {
-                                var a = document.querySelector('#max-limit-alert');
-                                (a.style.visibility = 'visible'),
+                                var s = document.querySelector('#max-limit-alert');
+                                (s.style.visibility = 'visible'),
                                     setTimeout(function () {
-                                        a.style.visibility = 'hidden';
+                                        s.style.visibility = 'hidden';
                                     }, 3e3);
                             }
                         }),

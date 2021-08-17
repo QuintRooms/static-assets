@@ -343,6 +343,7 @@ class ChildPortal extends BasePortal {
             // Insert price into new containers before removing unwanted divs from DOM
             if (!i.querySelector('.full-stay')?.innerText) {
                 window.alert('Sorry, but we cannot find prices for this trip. Please contact support.');
+                window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
                 return Honeybadger.notify('ARN Full-stay price for trip is not found.');
             }

@@ -209,7 +209,7 @@ class ChildPortal extends BasePortal {
                     <h2 class='event-text-separators'> | </h2>
                     <div id='adults-elements-outer-container'>
                         <div id='adults-elements-container'>
-                            <h2 class='trip-data-el' id='trip-adults-number'>${number_of_adults} Adults</h2>
+                            <h2 class='trip-data-el' id='trip-adults-number'>${number_of_adults} Travelers</h2>
                             <button id='change-adults-btn'>UPDATE</button>
                         </div>
                     </div>

@@ -129,12 +129,12 @@ export default class ModalSeacret {
                         WELCOME TO YOUR ESCAPE!
                     </div>
                     <div class="modal-body-text">
-                        How many adults (ages 18+) will attend this trip?
+                    How many total travelers will be joining you on your escape?
                     </div>
                     <input type="number" min="1" step="1" max="4" class="seacret-form-input" id="number-adults-input" value="2"></input>
                     <div id="limit-alert-container">
                         <div class="seacret-alert" id="max-limit-alert">
-                            Only 1-4 adults allowed per trip purchase.
+                            Only 1-4 travelers allowed per trip purchase.
                         </div>
                     </div>
                     <button class="seacret-confirm-btn" id="number-adults-btn">SEE TRIP</button>

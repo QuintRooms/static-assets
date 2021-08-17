@@ -4090,6 +4090,7 @@
                                                             return (e.next = 2), S.waitForSelectorInDOM('.discountRow');
                                                         case 2:
                                                             this.addPricePerGuestToCheckout(),
+                                                                this.moveLocationOfCustomFieldsOnCheckout(),
                                                                 (t = document.querySelectorAll('.discountRow .discount')[0].innerText),
                                                                 (n = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0]),
                                                                 ((r = document.createElement('tr')).className = ''),
@@ -4099,7 +4100,7 @@
                                                                     '</td>\n            '
                                                                 )),
                                                                 n.insertAdjacentElement('afterbegin', r);
-                                                        case 10:
+                                                        case 11:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -4113,8 +4114,6 @@
                                     return a.apply(this, arguments);
                                 }),
                         },
-                        {key: 'addCheckInToUrl', value: function () {}},
-                        {key: 'addNightsToUrl', value: function () {}},
                         {
                             key: 'addPricePerGuestToCheckout',
                             value: function () {
@@ -4174,6 +4173,17 @@
                                 function () {
                                     return i.apply(this, arguments);
                                 }),
+                        },
+                        {
+                            key: 'moveLocationOfCustomFieldsOnCheckout',
+                            value: function () {
+                                var e = document.querySelector('#thePreferredRoomTypeAjax'),
+                                    t = document.querySelector('#theRoomTypeConsentAjax');
+                                e &&
+                                    t &&
+                                    (document.querySelector('#theSpecialRequestsAjax').insertAdjacentElement('afterEnd', e),
+                                    document.querySelector('#theConfirmCheckboxesAjax').insertAdjacentElement('beforeEnd', t));
+                            },
                         },
                     ]) && f(t.prototype, n),
                     o && f(t, o),

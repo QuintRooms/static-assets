@@ -441,6 +441,7 @@ class ChildPortal extends BasePortal {
         await utilities.waitForSelectorInDOM('.discountRow');
 
         this.addPricePerGuestToCheckout();
+        this.moveLocationOfCustomFieldsOnCheckout();
 
         const subtotal = document.querySelectorAll('.discountRow .discount')[0].innerText;
         const tbody_ref = document.getElementById('theRateTotals').getElementsByTagName('tbody')[0];
@@ -467,10 +468,6 @@ class ChildPortal extends BasePortal {
         //     `
         // );
     }
-
-    addCheckInToUrl() {}
-
-    addNightsToUrl() {}
 
     addPricePerGuestToCheckout() {
         const currency = utilities.getMetaTagContent('currency');
@@ -508,6 +505,16 @@ class ChildPortal extends BasePortal {
         if (!trip_details_input) return;
 
         trip_details_input.textContent = JSON.stringify(trip_details);
+    }
+
+    moveLocationOfCustomFieldsOnCheckout() {
+        const preferred_room_input = document.querySelector('#thePreferredRoomTypeAjax');
+        const room_type_consent_input = document.querySelector('#theRoomTypeConsentAjax');
+
+        if (!preferred_room_input || !room_type_consent_input) return;
+
+        document.querySelector('#theSpecialRequestsAjax').insertAdjacentElement('afterEnd', preferred_room_input);
+        document.querySelector('#theConfirmCheckboxesAjax').insertAdjacentElement('beforeEnd', room_type_consent_input);
     }
 }
 

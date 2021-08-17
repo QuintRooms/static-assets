@@ -306,7 +306,10 @@ class ChildPortal extends BasePortal {
                 'afterBegin',
                 `
                 <div class='no-trips-alert'>
-                    <p>Sorry, but all trips have been booked. Please contact customer service for more information.</p>
+                    <p>
+                        Sorry, but all trips have been booked.<br>
+                        Please contact customer service for more information.
+                    </p>
                 </div>
                 `
             )

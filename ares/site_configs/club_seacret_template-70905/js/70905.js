@@ -180,6 +180,7 @@ class ChildPortal extends BasePortal {
             !this.trip.data.end_date
         ) {
             window.alert('Sorry, but we cannot find this trip. Please contact support.');
+            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
             return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
                 params: {

@@ -743,11 +743,31 @@ button {
 }
 
 /* Checkout Page */
+.DSFormFields,
+#thePreferredRoomTypeAjax {
+    display: block;
+}
+
+#theRoomTypeConsentAjax {
+    display: flex;
+
+    input {
+        width: initial;
+    }
+
+    label {
+        font-weight: 600;
+    }
+}
+
+#theTripDetailsAjax {
+    display: none;
+}
 
 #theRateTotals td {
     font-family: 'RivieraNights-Light', 'Helvetica';
 
-    .price-per-guest{
+    .price-per-guest {
         margin-top: 2px;
     }
 }
@@ -886,10 +906,9 @@ input#theConfirmationButton,
     width: 100%;
     height: 100%;
     z-index: 995;
-    background: rgba(0,0,0,0.90);
+    background: rgba(0, 0, 0, 0.9);
     display: none;
 }
-
 
 #number-adults-input {
     font-size: 21px;
@@ -900,13 +919,11 @@ input#theConfirmationButton,
     margin-top: 2rem;
 }
 
-.seacret-confirm-btn{
+.seacret-confirm-btn {
     line-height: 3;
 }
 
-
-
-hr .solid{
+hr .solid {
     border-top: 4px solid #5dc3ac;
 }
 
@@ -933,9 +950,9 @@ hr .solid{
     transition: 1s;
     border-radius: 6px;
     font-weight: bold;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     text-align: center;
-    padding: .6rem;
+    padding: 0.6rem;
 }
 
 .modal-body-container {
@@ -944,10 +961,10 @@ hr .solid{
     align-items: center;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .modal-sub-title {
@@ -960,7 +977,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .modal-body-text {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;

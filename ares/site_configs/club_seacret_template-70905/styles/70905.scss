@@ -485,9 +485,14 @@ button {
 
 .no-trips-alert {
     font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    padding: 1rem 0 0 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 2rem
+}
+
+.no-trips-alert p {
+    margin: 0;
+    padding: 0;
 }
 
 .gg-chevron-right {

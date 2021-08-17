@@ -301,6 +301,17 @@ class ChildPortal extends BasePortal {
         }
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
 
+        if (room_array.length === 0) {
+            document.querySelector('.trips-list').insertAdjacentHTML(
+                'afterBegin',
+                `
+                <div class='no-trips-alert'>
+                    <p>Sorry, but all trips have been booked. Please contact customer service for more information.</p>
+                </div>
+                `
+            )
+        };
+
         room_array.forEach((i) => {
             // Insert new rooms container skeleton
             document.querySelector('.trips-list').insertAdjacentHTML(

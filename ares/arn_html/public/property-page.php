@@ -5,6 +5,9 @@
     if ($_SERVER['DOCUMENT_ROOT'] == '/opt/lampp/htdocs') {
         $config = '/opt/lampp/htdocs/static-assets/ares/arn_html/includes/config.php';
     }
+    if ($_SERVER['DOCUMENT_ROOT'] == '/Applications/XAMPP/xamppfiles/htdocs') {
+        $config = '/Applications/XAMPP/xamppfiles/htdocs/static-assets/ares/arn_html/includes/config.php';
+    }
     include $config;
 ?>
 

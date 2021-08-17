@@ -2,17 +2,17 @@
 
 $header_background: #fff;
 $logo_flex_position: center;
-$logo_max_width: 200px;
+$logo_max_width: 250px;
 $background_color: #fff;
-$primary_color: #7a9a9e;
-$secondary_color: #7a9a9e;
+$primary_color: #33401c9c;
+$secondary_color: #33401c9c;
 $primary_text_color: #fff;
-$secondary_text_color: #7a9a9e;
-$border_color: #7a9a9e;
+$secondary_text_color: #33401c9c;
+$border_color: #33401c9c;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #3276b1;
-$button_hover_border_color: #3276b1;
-$google_font_name: 'Roboto', sans-serif;
+$button_hover_text_color: #33401c;
+$button_hover_border_color: #33401c;
+$google_font_name: 'RivieraNights-Light';
 $site_name: 'club_seacret_template-70905';
 $path: set-path($env);
 $banner_image: #fff;
@@ -21,9 +21,30 @@ $banner_image: #fff;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.hide {
-    display: none;
+@font-face {
+    font-family: 'RivieraNights-Light';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Light.otf');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RivieraNights-Regular';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Regular.otf');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RivieraNights-Medium';
+    src: url('https://dev-static.hotelsforhope.com/ares/site_configs/club_seacret_template-70905/fonts/RivieraNights-Medium.otf');
+    font-style: normal;
+}
 
+// * {
+//     border: 1px solid red;
+// }
+
+//60% green #33401c9c;
+
+.ArnSupportLinks .ArnSupportBottom {
+    background: #33401c;
 }
 
 #theRateSummaryInfo {
@@ -34,7 +55,8 @@ $banner_image: #fff;
     display: none;
 }
 
-.HoldRoomsForm .ArnNightlyRateCal, .ArnNightlyRateCal + p {
+.HoldRoomsForm .ArnNightlyRateCal,
+.ArnNightlyRateCal + p {
     display: none;
 }
 
@@ -56,11 +78,12 @@ $banner_image: #fff;
 }
 
 .hide-table {
-    visibility: collapse
+    visibility: collapse;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'RivieraNights-Light', 'Roboto', sans-serif;
+    color: #242526;
     margin: 0;
     padding: 0;
     display: flex;
@@ -68,74 +91,80 @@ body {
 }
 
 h1 {
+    color: #242526;
     font-size: 48px;
     font-weight: 500;
     letter-spacing: 4px;
 }
 
 h2 {
-    font-size: 36px;
+    color: #242526;
+    font-size: 32px;
     font-weight: 300;
 }
 
+.location-date-container h2 {
+    font-size: 21px;
+}
+
 header {
-    border-bottom: 2px solid #7a9a9e;
+    border-bottom: 2px solid #33401c9c;
 }
 
 .SinglePropDetail header {
     border-bottom: none;
 }
 
-
-
 .hero-container {
-    background: linear-gradient(rgb(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.9)), $banner_image;
+    // background: linear-gradient(rgb(255, 255, 255, 0), rgba(255, 255, 255, 1) 40%), $banner_image;
     background-size: cover;
     width: 100%;
-    height: 500px;
+    height: 650px;
     margin: 0;
     padding: 0;
     position: relative;
     float: left;
-    border-bottom: 4px solid #7a9a9e;
+    border-bottom: 4px solid #33401c9c;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
+.hero-text-container {
+    margin-left: 2.3rem;
+}
+
 .location-date-container {
     display: flex;
     flex-direction: row;
+    margin-bottom: 0.8rem;
+    align-items: center;
 }
 
 .trip-title {
-    margin-left: 2.3rem;
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     margin-top: 12px;
     margin-bottom: 0px;
 }
 
 .event-text-separators {
-    margin-top: 15px;
-    margin-left: 2.3rem;
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
+    margin: 0 1rem 12px 1rem;
     font-weight: 500;
     letter-spacing: 4px;
-    margin-bottom: 12px;
 }
 
 .trip-mobile-container {
     margin: 0;
 }
 
-.trip-date {
-    margin-left: 2.3rem;
+.trip-data-el {
     margin-bottom: 12px;
-    margin-top: 15px;
+    margin-top: 0;
 }
 
-.trip-location {
-    margin-left: 2.3rem;
-    margin-bottom: 12px;
-    margin-top: 15px;
+#trip-property {
+    margin-top: 1rem;
 }
 
 .body-article {
@@ -147,28 +176,31 @@ header {
     width: 50vw;
     display: flex;
     flex-direction: column;
+    margin-top: 1.5rem;
 }
 
 .itinerary-container {
     width: 100%;
+    margin-top: 14px;
 }
 
 .inclusions-container {
-    width: 100%;
+    // width: 100%;
     display: grid;
     grid-template-columns: 130px auto;
     align-items: start;
     grid-gap: 1rem;
-    margin-left: 2rem;
+    margin-left: 2.3rem;
     margin-bottom: 2rem;
 }
 
 #inclusions-container-title {
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     width: 100%;
     margin-left: 0;
     grid-column: 1/3;
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 14px;
 }
 
 #inclusions-intro {
@@ -177,7 +209,7 @@ header {
     // text-decoration: underline;
     align-self: end;
     grid-column: 2;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .inclusions-list {
@@ -191,28 +223,31 @@ header {
     flex-direction: row;
     padding-top: 1rem;
     align-items: center;
+    overflow-wrap: normal;
 }
 
 .inclusion-bullet {
-    width: .5rem;
-    height: .5rem;
-    // background: #7a9a9e;
+    width: 0.5rem;
+    height: 0.5rem;
+    // background: #33401c9c;
     background: #333;
-    border-radius: .6rem;
-    padding: .25rem;
+    border-radius: 0.6rem;
+    padding: 0.25rem;
 }
 
 .inclusion-text {
     padding-left: 1.25rem;
     font-size: 16px;
+    overflow-wrap: normal;
 }
 
 .section-title {
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     margin-top: 14px;
     margin-left: 2.3rem;
     font-weight: 500;
     font-size: 36px;
-    color: #7a9a9e;
+    color: #33401c9c;
 }
 
 .itinerary-list {
@@ -233,6 +268,7 @@ header {
 }
 
 .itinerary-day {
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
     font-size: 26px;
     font-weight: 500;
     grid-column: 1;
@@ -245,16 +281,17 @@ header {
 }
 
 hr {
-    border-top: 1px solid #7a9a9e7a;
+    border-top: 1px solid #ebede1;
     margin-bottom: 2.3rem;
 }
 
 .trips-section {
     width: 50vw;
+    margin-top: 1.5rem;
 }
 
 .trip-item {
-    border: 1px solid #3276b140;
+    border: 1px solid #33401c40;
     box-shadow: 0px 4px 4px 0px #0000000d;
     border-radius: 1rem;
     margin: 2.3rem;
@@ -272,6 +309,7 @@ hr {
 }
 
 .trip-item-name {
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 500;
     padding: 1rem 0 0 1rem;
@@ -292,7 +330,7 @@ hr {
 }
 
 .trip-ctas {
-    display:grid;
+    display: grid;
     justify-items: end;
     width: inherit;
 }
@@ -312,35 +350,87 @@ hr {
 }
 
 button {
+    font-weight: 900;
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
     height: 42px;
     border-radius: 6px;
     border: none;
     color: #fff;
     margin: 1rem;
-    font-weight: 900;
 }
 
 .book-button {
-    background: #3276b1;
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
+    background: #33401c;
     margin: 1rem 1rem 5px 20px;
-    border: 2px solid #3276b1;
+    border: 2px solid #b9a37a;
     transition: 0.3s;
     &:hover {
-        border: 2px solid #3276b1;
+        border: 2px solid #b9a37a;
         background: #fff;
-        color: #3276b1;
+        color: #b9a37a;
     }
 }
 
 .hold-button {
-    background: #719ec8;
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
+    background: #9daf8a;
     margin: 5px 1rem 1rem 20px;
-    border: 2px solid #719ec8;
+    border: 2px solid #b9a37a;
     transition: 0.3s;
     &:hover {
-        border: 2px solid #719ec8;
+        border: 2px solid #b9a37a;
         background: #fff;
-        color: #719ec8;
+        color: #b9a37a;
+    }
+}
+
+#adults-elements-outer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+#adults-elements-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#number-adults-btn {
+    background: #33401c;
+    margin: 0;
+    margin-bottom: 1rem;
+    border: 2px solid #33401c;
+    transition: 0.3s;
+    min-width: 8rem;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
+    &:hover {
+        border: 2px solid #33401c;
+        background: #fff;
+        color: #33401c;
+        cursor: pointer;
+    }
+}
+
+#change-adults-btn {
+    font-family: 'RivieraNights-Medium', 'Roboto', sans-serif;
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border: 3px solid #242526;
+    transition: 0.3s;
+    align-self: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1rem;
+    color: #242526;
+    &:hover {
+        border: 3px solid #242526;
+        background: #242526;
+        color: #fff;
+        cursor: pointer;
     }
 }
 
@@ -350,14 +440,20 @@ button {
 }
 
 .trip-price-desktop {
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
     font-size: 34px;
     font-weight: 900;
-    color: #7a9a9e;
+    color: #9daf8a;
     margin: 1rem 1rem 5px 0;
     // grid-column: 4/6;
 }
 
-.trip-price-mobile {
+.price-per-guest-desktop {
+    margin-right: 1rem;
+}
+
+.trip-price-mobile,
+.price-per-guest-mobile {
     display: none;
 }
 
@@ -412,167 +508,202 @@ button {
 }
 
 @media only screen and (max-width: 1300px) {
+    .left-section {
+        width: 100%;
+    }
 
-.left-section {
-    width: 100%;
-}
+    .logo img {
+        padding: 0;
+        margin: 1rem;
+    }
 
-.logo img {
-    padding: 0;
-    margin: 1rem;
-}
+    .inclusions-container {
+        display: flex;
+        flex-direction: column;
+    }
 
-.inclusions-container {
-display: flex;
-flex-direction: column;
-}
+    .inclusions-text {
+        font-size: 14px;
+    }
 
-.inclusions-text {
-font-size: 14px;
-}
+    .hero-container {
+        background: linear-gradient(rgb(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), $banner_image;
+        background-size: cover;
+        height: 500px;
+        /* position: relative; */
+        /* float: left; */
+        border-bottom: 4px solid #33401c9c;
+    }
 
-.hero-container {
-    background: linear-gradient(rgb(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.9)), $banner_image;
-    background-size: cover;
-    height: auto;
-    min-height: 200px;
-    /* position: relative; */
-    /* float: left; */
-    border-bottom: 4px solid #7a9a9e;
-}
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        margin: 0px 0px 1rem 0px;
+    }
 
-h1 {
-    font-size: 36px;
-    font-weight: 500;
-    letter-spacing: 4px;
-    margin: 0px 0px 1rem 0px;
-}
+    h2 {
+        font-size: 24px;
+        font-weight: 300;
+        margin: 0;
+    }
 
-h2 {
-    font-size: 24px;
-    font-weight: 300;
-    margin: 0;
-}
+    .body-article {
+        flex-direction: column;
+    }
 
-.body-article {
-    flex-direction: column;
-}
+    .location-date-container {
+        margin-bottom: 0.5rem;
+    }
 
-.itinerary-container {
-    width: 100%;
-}
+    .trip-data-el {
+        margin-bottom: 0;
+    }
 
-.itinerary-text {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: none;
-}
+    #change-adults-btn {
+        height: 36px;
+        margin-bottom: 0;
+    }
 
-.itinerary-day{
-    display: flex;
-    grid-column: none;
-  }
+    .event-text-separators {
+        margin-bottom: 0;
+    }
 
-.itinerary-description{
-    display: flex;
-    grid-column: none;
-  }
+    .itinerary-text {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+    }
 
+    .itinerary-day {
+        display: flex;
+        grid-column: none;
+        width: 100%;
+        font-size: 24px;
+    }
 
-.itinerary-day {
-    width: 100%;
-    font-size: 24px;
-}
+    .itinerary-description {
+        display: flex;
+        grid-column: none;
+    }
 
     .trips-section {
-    width: 100%;
-}
+        width: 100%;
+    }
 
-@media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 800px) {
+        $logo_max_width: 175px;
 
-.location-date-container {
-    display: flex;
-    flex-direction: column;
-}
+        .logo img {
+            max-width: $logo_max_width;
+        }
 
-.event-text-separators {
-    display: none;
-}
+        .hero-container {
+            background: linear-gradient(rgb(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.9) 30%), $banner_image;
+            background-size: cover;
+        }
 
-.trip-date {
-    margin-top: .5rem;
-    margin-bottom: 1rem;
-}
+        .location-date-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
 
-.trip-location {
-    margin-top: .5rem;
-    margin-bottom: 0;
-}
+        #trip-adults-number {
+            margin-bottom: 0px;
+        }
 
-.trip-item {
-    display:flex;
-    flex-direction: column;
-    grid-template-columns: none;
-    grid-gap: none;
-}
+        .event-text-separators {
+            display: none;
+        }
 
-.trip-item-name {
-    font-size: 24px;
-}
+        .section-title {
+            font-size: 32px;
+        }
 
-.trip-price-desktop {
-    display: none;
-}
+        .trip-data-el {
+            // font-family: 'RivieraNights-Regular';
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
 
+        .location-date-container h2 {
+            font-size: 18px;
+        }
 
-.trip-price-mobile {
-    // display: block;
-    font-size: 24px;
-    font-weight: 900;
-    color: #7a9a9e;
-    margin: 0;
-    padding: 1rem;
-    // grid-row: 2;
-}
+        #trip-property {
+            font-size: 21px;
+        }
 
-.trip-price-mobile {
-    display: block;
-    font-size: 24px;
-    font-weight: 900;
-    color: #7a9a9e;
-    margin: 0;
-    margin-top: 1rem;
-}
+        .trip-item {
+            display: flex;
+            flex-direction: column;
+            grid-template-columns: none;
+            grid-gap: none;
+        }
 
-.trip-price-cta-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 0;
-}
+        .trip-item-name {
+            font-size: 24px;
+        }
 
-.trip-ctas {
-    display: grid;
-    grid-template-columns: 45% auto 45%;
+        .trip-price-desktop {
+            display: none;
+        }
 
-    padding: 1rem;
-}
+        .price-per-guest-desktop {
+            display: none;
+        }
 
-.book-button {
-    background: #3276b1;
-    grid-column: 1;
-    margin: 0;
-    width: 100%;
-}
+        .trip-price-mobile {
+            font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
+            display: block;
+            font-size: 24px;
+            font-weight: 900;
+            color: #9daf8a;
+            margin: 0;
+            margin-top: 1rem;
+            padding: 1rem;
+        }
 
-.hold-button {
-    background: #3276b1b6;
-    margin: 0;
-    width: 100%;
-        grid-column: 3;
-}
+        .price-per-guest-mobile {
+            padding-left: 1rem;
+            display: block;
+        }
 
-}
+        .trip-price-cta-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0;
+        }
+
+        .trip-ctas {
+            display: grid;
+            grid-template-columns: 45% auto 45%;
+
+            padding: 1rem;
+        }
+
+        .book-button {
+            background: #33401c;
+            grid-column: 1;
+            margin: 0;
+            width: 100%;
+        }
+
+        .hold-button {
+            margin: 0;
+            width: 100%;
+            grid-column: 3;
+        }
+
+        #change-adults-btn {
+            height: 32px;
+            margin-bottom: 0;
+            font-size: 11;
+        }
+    }
 }
 
 /* Carousel */
@@ -595,7 +726,6 @@ h2 {
     border-radius: 1rem;
 }
 
-
 @media screen and (max-width: 1000px) {
     .carousel-slide .image-wrapper img {
         max-width: calc(50vw - 2rem);
@@ -609,9 +739,37 @@ h2 {
 }
 
 /* Checkout Page */
+.DSFormFields,
+#thePreferredRoomTypeAjax {
+    display: block;
+}
+
+#theRoomTypeConsentAjax {
+    display: flex;
+
+    input {
+        width: initial;
+    }
+
+    label {
+        font-weight: 600;
+    }
+}
+
+#theTripDetailsAjax {
+    display: none;
+}
+
+#theRateTotals td {
+    font-family: 'RivieraNights-Light', 'Helvetica';
+
+    .price-per-guest {
+        margin-top: 2px;
+    }
+}
 
 #theAjaxPaymentPolicies {
-    border: 1px solid #7a9a9e;
+    border: 1px solid #33401c9c;
     box-shadow: 0px 4px 4px 0px #0000000d;
     border-radius: 1rem;
 }
@@ -620,25 +778,26 @@ h2 {
     display: none;
 }
 
-input#theConfirmationButton, .WBConfirmedBooking .submit {
-     background: #3276b1;
-     height: 42px;
-     border-radius: 6px;
-     font-weight: 900;
-     text-transform: uppercase;
-      border: 2px solid #3276b1;
+input#theConfirmationButton,
+.WBConfirmedBooking .submit {
+    background: #33401c;
+    height: 42px;
+    border-radius: 6px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 2px solid #33401c;
     transition: 0.3s;
     &:hover {
-        border: 2px solid #3276b1;
+        border: 2px solid #33401c;
         background: #fff;
-        color: #3276b1;
+        color: #33401c;
     }
 }
 
 #theBookingPage legend {
     font-weight: 500;
     font-size: 30px;
-    color: #7a9a9e;
+    color: #33401c9c;
     line-height: 1.2;
 }
 
@@ -662,7 +821,7 @@ input#theConfirmationButton, .WBConfirmedBooking .submit {
 .ArnRoomsOnHold h2 {
     font-weight: 500;
     font-size: 30px;
-    color: #7a9a9e;
+    color: #33401c9c;
     line-height: 1.2;
 }
 
@@ -687,18 +846,18 @@ input#theConfirmationButton, .WBConfirmedBooking .submit {
 }
 
 .HoldRoomsForm .submit {
-    background: #3276b1;
+    background: #33401c;
     height: 42px;
     border-radius: 6px;
     font-weight: 900;
     text-transform: capitalize;
-    border: 2px solid #3276b1;
+    border: 2px solid #33401c;
     text-transform: uppercase;
     transition: 0.3s;
     &:hover {
-        border: 2px solid #3276b1;
+        border: 2px solid #33401c;
         background: #fff;
-        color: #3276b1;
+        color: #33401c;
     }
 }
 
@@ -708,6 +867,131 @@ input#theConfirmationButton, .WBConfirmedBooking .submit {
 
 /* Hide ARN Things */
 
-.ArnRateFromTo, .ArnNightlyRate, .RateCalendarPopupAnchor, .RateCalendarPopupContainer {
+.ArnRateFromTo,
+.ArnNightlyRate,
+.RateCalendarPopupAnchor,
+.RateCalendarPopupContainer {
     display: none !important;
+}
+
+/* Number of Adults Modal */
+
+.seacret-modal-adults {
+    background: white;
+    border-radius: 18px;
+    box-sizing: border-box;
+    width: 600px;
+    max-height: 75%;
+    overflow: hidden;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 995;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 995;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+}
+
+#number-adults-input {
+    font-size: 21px;
+    text-align: center;
+    padding: 2px 6px;
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    margin-top: 2rem;
+}
+
+.seacret-confirm-btn {
+    line-height: 3;
+}
+
+hr .solid {
+    border-top: 4px solid #5dc3ac;
+}
+
+.modal-body-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#max-adults-text {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+#max-limit-alert {
+    font-size: 12px;
+    visibility: hidden;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: red;
+    color: white;
+    margin: 1rem;
+    transition: 1s;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    padding: 0.6rem;
+}
+
+.modal-body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.modal-sub-title {
+    margin-top: 2rem;
+    font-size: 20px;
+    letter-spacing: 3px;
+    // color: #b9a37a;
+    font-weight: 900;
+    text-align: center;
+}
+
+.modal-body-text {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 1rem;
+    letter-spacing: 1px;
+}
+
+#seacret-modal-adults-logo {
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+}
+#seacret-modal-adults-logo img {
+    grid-column: 2;
+    justify-self: center;
+    top: 50%;
+    left: 50%;
+    max-width: 250px;
+    padding: 15px;
 }

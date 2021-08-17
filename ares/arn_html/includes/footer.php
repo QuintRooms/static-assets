@@ -17,3 +17,4 @@
 <!-- <script async src="http://roomsteals.localhost/portal/js/portal.js"></script> -->
 
 <script async id="arn_scripts_include" src="//media.travsrv.com/appSkins/51820/v6/themes/standard/scripts/scripts.min.js?%version%"></script>
+<script> console.log('this works') </script>

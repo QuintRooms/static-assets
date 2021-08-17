@@ -92,7 +92,7 @@ export default class BasePortal {
             }
 
             // checkout page methods
-            if (this.page_name === 'checkout') {
+            if (this.page_name === 'checkout' && document.querySelector('#theReservationForm')) {
                 if (this.site_id !== '52342') {
                     utilities.createModal([document.querySelector('#theStayPolicies')], 'Policies & Fees', 'checkout', '#theConfirmationContainer', 'afterBegin');
                 }
@@ -1358,7 +1358,7 @@ export default class BasePortal {
         if (this.site_config.site_type !== 'lodging' && !this.site_config.is_lrg) return;
 
         try {
-            const html = await fetch(`https://${domain}/components/lrg-form/lrg-form.html`).then((response) => response.text());
+            const html = await fetch(`https://static.${domain}/components/lrg-form/lrg-form.html`).then((response) => response.text());
 
             document.querySelector('#theWBRateGuaranteeForm2Body').innerHTML = html;
         } catch (error) {
@@ -1710,9 +1710,14 @@ export default class BasePortal {
     }
 
     updateConfirmationCheckBoxes() {
-        if (this.page_name !== 'checkout' || this.site_id === '52342') return;
+        if ((this.page_name !== 'checkout' && !document.querySelector('.open-modal')) || this.site_id === '52342') return;
 
-        document.querySelector('.open-modal').textContent = 'Policies & Fees';
+        if (document.querySelector('.open-modal')) {
+            document.querySelector('.open-modal').textContent = 'Policies & Fees';
+        } else {
+            return;
+        }
+
         document.querySelector(
             'span.confirmationAgreement'
         ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;

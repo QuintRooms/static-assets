@@ -11,6 +11,7 @@ export default function siteConfig() {
         affiliate_id: 17560,
         master_id: 920,
         site_type: 'event-landing-page',
+        use_google_autocomplete: true,
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         currency: 'USD',
@@ -71,27 +72,27 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
-        confirmation_email_from: 'Hotels for Hope',
+        confirmation_email_from: 'Quint Rooms',
         has_landing_page: true,
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: '2021 Exhibit Dallas',
-                display_date: 'August 07 - October 03, 2021',
-                end_date: '10/04/2021', // M/D/YYYY
-                portal_url: `https://events.${process.env.domain}/group-event?id=46530&utm_campaign=Barrett-Jackson%20Scottsdale%202021%20Rescheduled`,
+                name: 'Van Gogh Immersive Exhibit Los Angeles',
+                display_date: '07/31/21 - 01/02/22',
+                end_date: '01/03/2022', // M/D/YYYY
+                portal_url: `https://events.quintrooms.com/group-event?id=50670&utm_campaign=Van%20Gogh%20LA`,
             },
             {
-                name: '2021 Exhibit Phoenix',
-                display_date: 'April 08 - 10, 2021',
+                name: 'Van Gogh Immersive Exhibit Dallas',
+                display_date: '08/07/21 - 10/03/21',
                 end_date: '10/04/2021', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=44704&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202021`,
+                portal_url: `https://events.quintrooms.com/group-event?id=50666&utm_campaign=Van%20Gogh%20Dallas`,
             },
             {
-                name: '2021 Las Vegas Auction',
-                display_date: 'June 17 - 19, 2021',
-                end_date: '10/04/2021', // M/D/YYYY
-                portal_url: `https://events.${process.env.domain}/group-event?id=47795&utm_campaign=Barrett-Jackson%20Las%20Vegas%202021`,
+                name: 'Van Gogh Immersive Exhibit Phoenix',
+                display_date: '08/26/21 - 11/28/21',
+                end_date: '11/29/2021', // M/D/YYYY
+                portal_url: `https://events.quintrooms.com/group-event?id=50668&utm_campaign=Van%20Gogh%20Phoenix`,
             },
         ],
     };

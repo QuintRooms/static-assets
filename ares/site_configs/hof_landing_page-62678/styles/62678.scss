@@ -16,7 +16,7 @@ $google_font_name: 'Oswald';
 $site_name: 'hof_landing_page-62678';
 $path: set-path($env);
 $banner_image: #fff;
-$bg-images: url(#{$path}/site_configs/#{$site_name}/img/player.jpg), url(#{$path}/site_configs/#{$site_name}/img/classic.jpg), url(#{$path}/site_configs/#{$site_name}/img/gold-jacket.jpg);
+$bg-images: url(#{$path}/site_configs/#{$site_name}/img/classic.jpg);
 $header-images: url(#{$path}/site_configs/#{$site_name}/img/pitch.jpg);
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
@@ -31,6 +31,13 @@ $header-images: url(#{$path}/site_configs/#{$site_name}/img/pitch.jpg);
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), $secondary_color;
 }
 
-.event-2 .event-details {
-    margin-top: 60px;
+.events {
+    min-width: 300px;
 }
+
+//For HBCU Classic ONLY -- delete after Sept.5 2021
+.event-1 {
+    justify-content: flex-end;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)),url(https://static.hotelsforhope.com/ares/site_configs/hof_landing_page-62678/img/classic.jpg);
+}
+

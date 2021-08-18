@@ -483,6 +483,13 @@ button {
     cursor: pointer;
 }
 
+.no-trips-alert p {
+    font-family: 'RivieraNights-Regular', 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 2.3rem;
+}
+
 .gg-chevron-right {
     box-sizing: border-box;
     position: absolute;
@@ -884,7 +891,7 @@ input#theConfirmationButton,
     background: white;
     border-radius: 18px;
     box-sizing: border-box;
-    width: 600px;
+    width: 650px;
     max-height: 75%;
     overflow: hidden;
     padding: 15px;

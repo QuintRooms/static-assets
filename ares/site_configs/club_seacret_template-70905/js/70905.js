@@ -315,8 +315,8 @@ class ChildPortal extends BasePortal {
                     </p>
                 </div>
                 `
-            )
-        };
+            );
+        }
 
         room_array.forEach((i) => {
             // Insert new rooms container skeleton

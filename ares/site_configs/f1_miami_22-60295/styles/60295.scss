@@ -2,7 +2,7 @@
 
 $header_background: #000;
 $logo_flex_position: center;
-$logo_max_width: 250px;
+$logo_max_width: 300px;
 $background_color: #fff;
 $primary_color: #008E97;
 $secondary_color: #FC4C02;
@@ -30,7 +30,7 @@ header {
   background-image: url(#{$path}/site_configs/#{$site_name}/img/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 60%;
+  background-position: center 45%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;

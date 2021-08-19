@@ -20,7 +20,7 @@ header {
 }
 
 .logo img {
-  max-width: 250px;
+  max-width: 300px;
 }
 
 body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
@@ -474,7 +474,7 @@ header {
   background-image: url(https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_22-60295/img/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 60%;
+  background-position: center 45%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;

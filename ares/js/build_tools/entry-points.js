@@ -39,7 +39,7 @@ module.exports = () => {
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
-            // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
+            'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton

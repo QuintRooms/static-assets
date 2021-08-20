@@ -42,14 +42,14 @@ export default class ModalSeacret {
         this.overlay = document.querySelector('.overlay');
         this.adults_input = document.getElementById('number-adults-input');
         this.modal_triggers = document.getElementById('change-adults-btn');
-        console.log('modal_triggers:', this.modal_triggers);
+        // console.log('modal_triggers:', this.modal_triggers);
         // return {};
     }
 
     checkAdultsParam() {
         const current_url = new URL(window.location.href);
         const current_params = current_url.searchParams;
-        console.log(current_params);
+        // console.log(current_params);
         const check_adults_param = (params) => {
             for (const key of params.keys()) {
                 if (key === 'adults') {

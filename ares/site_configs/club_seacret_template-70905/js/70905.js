@@ -180,14 +180,16 @@ class ChildPortal extends BasePortal {
             !this.trip.data.start_date ||
             !this.trip.data.end_date
         ) {
-            window.alert('Sorry, but we cannot find this trip. Please contact support.');
-            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
-
-            return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
-                params: {
-                    trip: this.trip,
-                },
-            });
+            const initial_url = window.location.href;
+            if (!initial_url.toString().includes('localhost')) {
+                window.alert('Sorry, but we cannot find this trip. Please contact support.');
+                window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
+                return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
+                    params: {
+                        trip: this.trip,
+                    },
+                });
+            }
         }
 
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
@@ -539,19 +541,23 @@ class ChildPortal extends BasePortal {
     restrictIfExceedsTravelerLimit() {
         const current_url = new URL(window.location.href);
         const current_params = current_url.searchParams;
-        console.log(current_params);
-        const check_adults_param = (params) => {
-            for (const key of params.keys()) {
-                if (key === 'adults') {
-                    if(key.value > 4 || key.value < 1) {
-                        console.log('TRAVELER LIMIT HAS BEEN EXCEEDED!!')
-                    }
-                }
-            }
-        };
+        const adults_num = current_params.get('adults');
+        console.log('adults_num', adults_num);
+        if (adults_num > 4 || adults_num < 1) {
+            const book_btns = document.querySelectorAll('.book-button');
+            const hold_btns = document.querySelectorAll('.hold-button');
+            book_btns.forEach((btn) => {
+                btn.style.pointerEvents = 'none';
+                btn.style.background = '#B0B0B0';
+                btn.style.borderColor = '#B0B0B0';
+            });
+            hold_btns.forEach((btn) => {
+                btn.style.pointerEvents = 'none';
+                btn.style.background = '#B0B0B0';
+                btn.style.borderColor = '#B0B0B0';
+            });
+        }
     }
-
 }
-
 
 new ChildPortal();

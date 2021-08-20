@@ -43,6 +43,7 @@ class ChildPortal extends BasePortal {
             this.addChangeAdultsButtonListener();
             this.restyleCarousel();
             modal_adults.init();
+            this.restrictIfExceedsTravelerLimit();
         }
 
         if (document.querySelector('#theReservationForm')) {
@@ -179,14 +180,16 @@ class ChildPortal extends BasePortal {
             !this.trip.data.start_date ||
             !this.trip.data.end_date
         ) {
-            window.alert('Sorry, but we cannot find this trip. Please contact support.');
-            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
-
-            return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
-                params: {
-                    trip: this.trip,
-                },
-            });
+            const initial_url = window.location.href;
+            if (!initial_url.toString().includes('localhost')) {
+                window.alert('Sorry, but we cannot find this trip. Please contact support.');
+                window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
+                return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
+                    params: {
+                        trip: this.trip,
+                    },
+                });
+            }
         }
 
         const start_date = dayjs(this.trip.data.start_date).format('MM/DD/YYYY');
@@ -533,6 +536,38 @@ class ChildPortal extends BasePortal {
 
         document.querySelector('#theSpecialRequestsAjax').insertAdjacentElement('afterEnd', preferred_room_input);
         document.querySelector('#theConfirmCheckboxesAjax').insertAdjacentElement('beforeEnd', room_type_consent_input);
+    }
+
+    restrictIfExceedsTravelerLimit() {
+        const current_url = new URL(window.location.href);
+        const current_params = current_url.searchParams;
+        const adults_num = current_params.get('adults');
+        console.log('adults_num', adults_num);
+        if (adults_num > 4 || adults_num < 1) {
+            const book_btns = document.querySelectorAll('.book-button');
+            const hold_btns = document.querySelectorAll('.hold-button');
+            book_btns.forEach((btn) => {
+                btn.style.pointerEvents = 'none';
+                btn.style.background = '#B0B0B0';
+                btn.style.borderColor = '#B0B0B0';
+            });
+            hold_btns.forEach((btn) => {
+                btn.style.pointerEvents = 'none';
+                btn.style.background = '#B0B0B0';
+                btn.style.borderColor = '#B0B0B0';
+            });
+            document.querySelector('.trips-list').insertAdjacentHTML(
+                'afterBegin',
+                `
+                <div class='adults-limit-alert-trips'>
+                    <p>
+                        The number of travelers must be between 1-4.<br>
+                        Please update the number of travelers to book a trip.
+                    </p>
+                </div>
+                `
+            );
+        }
     }
 }
 

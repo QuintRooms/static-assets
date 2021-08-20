@@ -556,6 +556,17 @@ class ChildPortal extends BasePortal {
                 btn.style.background = '#B0B0B0';
                 btn.style.borderColor = '#B0B0B0';
             });
+            document.querySelector('.trips-list').insertAdjacentHTML(
+                'afterBegin',
+                `
+                <div class='adults-limit-alert-trips'>
+                    <p>
+                        The number of travelers must be between 1-4.<br>
+                        Please update the number of travelers to book a trip.
+                    </p>
+                </div>
+                `
+            );
         }
     }
 }

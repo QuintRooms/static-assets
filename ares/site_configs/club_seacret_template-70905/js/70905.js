@@ -180,6 +180,7 @@ class ChildPortal extends BasePortal {
             !this.trip.data.end_date
         ) {
             window.alert('Sorry, but we cannot find this trip. Please contact support.');
+            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
             return Honeybadger.notify('Trip object, trip data, trip name, property name, trip date, or trip location not found.', {
                 params: {
@@ -244,6 +245,7 @@ class ChildPortal extends BasePortal {
         // Create and populate itinerary container from CMS object
         if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {
             window.alert('Sorry, but we cannot find these trip details. Please contact support.');
+            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
             return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.', {
                 params: {
@@ -296,10 +298,25 @@ class ChildPortal extends BasePortal {
         // Pull existing property rooms from DOM and use them to create new room containers
         if (!document.querySelectorAll('#standardAvail .rateRow')) {
             window.alert('Sorry, but we cannot find rooms for this trip. Please contact support.');
+            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
             return Honeybadger.notify('ARN property rooms array from DOM is not found.');
         }
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
+
+        if (room_array.length === 0) {
+            document.querySelector('.trips-list').insertAdjacentHTML(
+                'afterBegin',
+                `
+                <div class='no-trips-alert'>
+                    <p>
+                        Sorry, but all trips have been booked.<br>
+                        Please contact customer support for more information.
+                    </p>
+                </div>
+                `
+            );
+        }
 
         room_array.forEach((i) => {
             // Insert new rooms container skeleton
@@ -326,6 +343,7 @@ class ChildPortal extends BasePortal {
             // Insert price into new containers before removing unwanted divs from DOM
             if (!i.querySelector('.full-stay')?.innerText) {
                 window.alert('Sorry, but we cannot find prices for this trip. Please contact support.');
+                window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
                 return Honeybadger.notify('ARN Full-stay price for trip is not found.');
             }

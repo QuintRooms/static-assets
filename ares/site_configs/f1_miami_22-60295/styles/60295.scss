@@ -1,11 +1,11 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
 $header_background: #000;
-$logo_flex_position: space-between;
+$logo_flex_position: center;
 $logo_max_width: 300px;
 $background_color: #fff;
 $primary_color: #008E97;
-$secondary_color: #EA6FAA;
+$secondary_color: #FC4C02;
 $primary_text_color: #fff;
 $secondary_text_color: #008E97;
 $border_color: #008E97;
@@ -24,6 +24,47 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 #tickets li:nth-child(2), #tickets li:nth-child(1), #races-contact li:first-child {
     display: none;
+}
+
+header {
+  background-image: url(#{$path}/site_configs/#{$site_name}/img/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 45%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  padding: 0 6rem;
+
+}
+
+.logo {
+  grid-column: 2;
+  text-align: center;
+}
+
+#races-contact{
+  grid-column: 3;
+  justify-self: end;
+}
+
+#races-contact li{
+  &:hover {
+    background: unset;
+  }
+}
+
+#races-contact a{
+  display: inline-block;
+  width: 100%;
+  &:hover {
+    color: #FC4C02;
+  }
+}
+
+header #races-contact {
+  width: unset;
 }
 
 .ArnRateButton .ArnShowRatesLink  {

@@ -43,6 +43,7 @@ class ChildPortal extends BasePortal {
             this.addChangeAdultsButtonListener();
             this.restyleCarousel();
             modal_adults.init();
+            this.restrictIfExceedsTravelerLimit();
         }
 
         if (document.querySelector('#theReservationForm')) {
@@ -534,6 +535,23 @@ class ChildPortal extends BasePortal {
         document.querySelector('#theSpecialRequestsAjax').insertAdjacentElement('afterEnd', preferred_room_input);
         document.querySelector('#theConfirmCheckboxesAjax').insertAdjacentElement('beforeEnd', room_type_consent_input);
     }
+
+    restrictIfExceedsTravelerLimit() {
+        const current_url = new URL(window.location.href);
+        const current_params = current_url.searchParams;
+        console.log(current_params);
+        const check_adults_param = (params) => {
+            for (const key of params.keys()) {
+                if (key === 'adults') {
+                    if(key.value > 4 || key.value < 1) {
+                        console.log('TRAVELER LIMIT HAS BEEN EXCEEDED!!')
+                    }
+                }
+            }
+        };
+    }
+
 }
+
 
 new ChildPortal();

@@ -79,3 +79,45 @@ header #races-contact {
     border-color: #008E97;
   }
 }
+
+@media only screen and (max-width: 400px) {
+ 
+  header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    padding: 0 6rem;
+  }
+  
+  header {
+    grid-template-columns: unset;
+    gap: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: initial;
+  }
+
+  .logo {
+    grid-column: unset;
+    text-align: initial;
+    min-width: initial;
+    width: 100%;
+  }
+
+  #races-contact{
+    grid-column: unset;
+    justify-self: initial;
+  }
+
+  #races-contact a{
+    display: initial;
+    width: initial;
+  }
+
+  header #races-contact {
+    width: initial;
+  }
+}

@@ -20,7 +20,7 @@ new ChildPortal();
 async function addBrs() {
     if (!document.querySelector('.RootBody')) return;
     await utilities.waitForSelectorInDOM('.event-name');
-    document.querySelector('.event-1 .event-name').innerHTML = '<h2 class="event-name">SEARCH <br> CFP CHAMPIONSHIP INDIANAPOLIS 2022</h2>';
+    document.querySelector('.event-1 .event-name').innerHTML = '<h2 class="event-name">SEARCH <br> CFP NATIONAL CHAMPIONSHIP INDIANAPOLIS 2022</h2>';
     document.querySelector('.event-2 .event-name').innerHTML = '<h2 class="event-name">SEARCH <br> ANYWHERE</h2>';
 }
 

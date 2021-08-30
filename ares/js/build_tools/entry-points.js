@@ -26,6 +26,7 @@ module.exports = () => {
             // 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
+            // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
             // 'buku_21-56297': './src/56297.js', // Buku 2021
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
@@ -35,7 +36,7 @@ module.exports = () => {
             // 'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
@@ -62,6 +63,7 @@ module.exports = () => {
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_21-68382': './src/68382.js', // railbird 21
+            // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
@@ -94,13 +96,10 @@ module.exports = () => {
         entry_points = {
             // 'ares_child-60278': './src/60278.js', // Ares Child Test
             // 'ares_child-60279': './src/60279.js', // Ares Child Test
-            // 'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
             // 'cug_template-39624': './src/39624.js', // CUG Template
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
-
         };
 
         // local environment
@@ -108,7 +107,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            // 'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
         };
     }
 

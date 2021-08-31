@@ -8,7 +8,7 @@ export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: '',
+        affiliate_id: '16067',
         master_id: 1816,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',

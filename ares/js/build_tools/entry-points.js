@@ -47,7 +47,7 @@ module.exports = () => {
             // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
-            'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
+            // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
@@ -55,8 +55,8 @@ module.exports = () => {
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
             // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
-            'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
-            'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
+            // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
+            // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
         };
 
         // develop environment

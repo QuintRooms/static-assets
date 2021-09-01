@@ -3723,7 +3723,7 @@
                                                                     .querySelector('header')
                                                                     .insertAdjacentHTML(
                                                                         'afterEnd',
-                                                                        "   <div class='seacret-header'>\n                            <div class='language-select'></div>\n                        </div>\n                        <div class='hero-container'></div>\n                    </div>\n\n                    <article class='body-article'>\n\n                        <section class='left-section'>\n                            <div class='inclusions-container'>\n                                <h3 class='section-title' id='inclusions-container-title'>EXCLUSIVE</h3>\n                                <div id='inclusions-intro'>This trip includes:</div>\n                                <div class='inclusions-list'></div>\n                            </div>\n                            <div class='itinerary-container'>\n                                <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>\n                                <div class='itinerary-list'></div>\n                            </div>\n                        </section>\n\n                        <section class='trips-section'>\n                            <h3 class='section-title' id='trips-section-title'>TRIPS</h3>\n                            <div class='trips-list'>\n                            </div>\n                        </section>\n\n                    </article>\n\n                    <article class='bottom-carousel-article'>\n\n                    </article>\n                "
+                                                                        "   <div class='seacret-header'>\n                            <div class='language-select'></div>\n                        </div>\n                        <div class='hero-container'></div>\n                    </div>\n\n                    <article class='body-article'>\n\n                        <section class='left-section'>\n                            <div class='inclusions-container'>\n                                <h3 class='section-title' id='inclusions-container-title'>EXCLUSIVE</h3>\n                                <div id='inclusions-intro'>This trip includes:</div>\n                                <div class='inclusions-list'></div>\n                            </div>\n                            \x3c!--<div class='itinerary-container'>\n                                <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>\n                                <div class='itinerary-list'></div>\n                            </div>--\x3e\n                        </section>\n\n                        <section class='trips-section'>\n                            <h3 class='section-title' id='trips-section-title'>TRIPS</h3>\n                            <div class='trips-list'>\n                            </div>\n                        </section>\n\n                    </article>\n\n                    <article class='bottom-carousel-article'>\n\n                    </article>\n                "
                                                                     );
                                                             });
                                                     case 3:
@@ -3794,7 +3794,7 @@
                             value:
                                 ((s = d(
                                     regeneratorRuntime.mark(function e() {
-                                        var t, n, o, i, a, c, s, u, l, d, f, p, h, m, y;
+                                        var t, n, o, i, a, c, s, u, l, d, f, p, h, m;
                                         return regeneratorRuntime.wrap(
                                             function (e) {
                                                 for (;;)
@@ -3840,82 +3840,48 @@
                                                                 )
                                                             );
                                                         case 8:
-                                                            for (
-                                                                l = (0, r.default)(this.trip.data.start_date).format('MM/DD/YYYY'),
-                                                                    d = (0, r.default)(this.trip.data.end_date).format('MM/DD/YYYY'),
-                                                                    f = new URL(window.location.href),
-                                                                    p = f.searchParams,
-                                                                    h = p.get('adults'),
-                                                                    document
-                                                                        .querySelector('.hero-container')
-                                                                        .insertAdjacentHTML(
-                                                                            'afterBegin',
-                                                                            "\n            <div class='hero-text-container'>\n                <h1 class='trip-title'>"
-                                                                                .concat(
-                                                                                    this.trip.data.trip_name[0].text,
-                                                                                    "</h1>\n                <h2 class='trip-data-el' id='trip-property'>"
-                                                                                )
-                                                                                .concat(
-                                                                                    this.trip.data.property_name[0].text,
-                                                                                    "</h2>\n                <div class='location-date-container'>\n                    <h2 class='trip-data-el' id='trip-location'>"
-                                                                                )
-                                                                                .concat(
-                                                                                    this.trip.data.trip_location[0].text,
-                                                                                    "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <h2 class='trip-data-el' id='trip-date'>"
-                                                                                )
-                                                                                .concat(l, ' - ')
-                                                                                .concat(
-                                                                                    d,
-                                                                                    "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <div id='adults-elements-outer-container'>\n                        <div id='adults-elements-container'>\n                            <h2 class='trip-data-el' id='trip-adults-number'>"
-                                                                                )
-                                                                                .concat(
-                                                                                    h,
-                                                                                    " Travelers</h2>\n                            <button id='change-adults-btn'>UPDATE</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <style>\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9) 80%), url("
-                                                                                )
-                                                                                .concat(
-                                                                                    this.trip.data.trip_image.url,
-                                                                                    ') no-repeat center center /cover\n                }\n\n                @media only screen and (max-width: 800px) {\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.9) 65%), url('
-                                                                                )
-                                                                                .concat(
-                                                                                    this.trip.data.trip_image.url,
-                                                                                    ') no-repeat center center /cover\n                }\n                }\n            </style>\n        '
-                                                                                )
-                                                                        ),
-                                                                    m = 0;
-                                                                m < this.trip.data.itinerary.length;
-                                                                m += 1
-                                                            )
-                                                                m === this.trip.data.itinerary.length - 1
-                                                                    ? document
-                                                                          .querySelector('.itinerary-list')
-                                                                          .insertAdjacentHTML(
-                                                                              'beforeEnd',
-                                                                              "\n                    <div class='itinerary-item'>\n                        <div class='itinerary-text'>\n                            <span class=\"itinerary-day\">"
-                                                                                  .concat(
-                                                                                      this.trip.data.itinerary[m].day[0].text,
-                                                                                      '</span>\n                            <span class="itinerary-description">'
-                                                                                  )
-                                                                                  .concat(
-                                                                                      this.trip.data.itinerary[m].description[0].text,
-                                                                                      '</span>\n                        </div>\n                    </div>\n                '
-                                                                                  )
-                                                                          )
-                                                                    : document
-                                                                          .querySelector('.itinerary-list')
-                                                                          .insertAdjacentHTML(
-                                                                              'beforeEnd',
-                                                                              "\n                    <div class='itinerary-item'>\n                        <div class='itinerary-text'>\n                            <span class=\"itinerary-day\">"
-                                                                                  .concat(
-                                                                                      this.trip.data.itinerary[m].day[0].text,
-                                                                                      '</span>\n                            <span class="itinerary-description">'
-                                                                                  )
-                                                                                  .concat(
-                                                                                      this.trip.data.itinerary[m].description[0].text,
-                                                                                      "</span>\n                        </div>\n                        <hr class='itinerary-separator'>\n                    </div>\n                "
-                                                                                  )
-                                                                          );
                                                             if (
-                                                                (this.trip.data.inclusions.forEach(function (e) {
+                                                                ((l = (0, r.default)(this.trip.data.start_date).format('MM/DD/YYYY')),
+                                                                (d = (0, r.default)(this.trip.data.end_date).format('MM/DD/YYYY')),
+                                                                (f = new URL(window.location.href)),
+                                                                (p = f.searchParams),
+                                                                (h = p.get('adults')),
+                                                                document
+                                                                    .querySelector('.hero-container')
+                                                                    .insertAdjacentHTML(
+                                                                        'afterBegin',
+                                                                        "\n            <div class='hero-text-container'>\n                <h1 class='trip-title'>"
+                                                                            .concat(
+                                                                                this.trip.data.trip_name[0].text,
+                                                                                "</h1>\n                <h2 class='trip-data-el' id='trip-property'>"
+                                                                            )
+                                                                            .concat(
+                                                                                this.trip.data.property_name[0].text,
+                                                                                "</h2>\n                <div class='location-date-container'>\n                    <h2 class='trip-data-el' id='trip-location'>"
+                                                                            )
+                                                                            .concat(
+                                                                                this.trip.data.trip_location[0].text,
+                                                                                "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <h2 class='trip-data-el' id='trip-date'>"
+                                                                            )
+                                                                            .concat(l, ' - ')
+                                                                            .concat(
+                                                                                d,
+                                                                                "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <div id='adults-elements-outer-container'>\n                        <div id='adults-elements-container'>\n                            <h2 class='trip-data-el' id='trip-adults-number'>"
+                                                                            )
+                                                                            .concat(
+                                                                                h,
+                                                                                " Travelers</h2>\n                            <button id='change-adults-btn'>UPDATE</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <style>\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9) 80%), url("
+                                                                            )
+                                                                            .concat(
+                                                                                this.trip.data.trip_image.url,
+                                                                                ') no-repeat center center /cover\n                }\n\n                @media only screen and (max-width: 800px) {\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.9) 65%), url('
+                                                                            )
+                                                                            .concat(
+                                                                                this.trip.data.trip_image.url,
+                                                                                ') no-repeat center center /cover\n                }\n                }\n            </style>\n        '
+                                                                            )
+                                                                    ),
+                                                                this.trip.data.inclusions.forEach(function (e) {
                                                                     document
                                                                         .querySelector('.inclusions-list')
                                                                         .insertAdjacentHTML(
@@ -3928,7 +3894,7 @@
                                                                 }),
                                                                 document.querySelectorAll('#standardAvail .rateRow'))
                                                             ) {
-                                                                e.next = 20;
+                                                                e.next = 19;
                                                                 break;
                                                             }
                                                             return (
@@ -3936,15 +3902,15 @@
                                                                 (window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea'),
                                                                 e.abrupt('return', b.notify('ARN property rooms array from DOM is not found.'))
                                                             );
-                                                        case 20:
-                                                            0 === (y = document.querySelectorAll('#standardAvail .rateRow')).length &&
+                                                        case 19:
+                                                            0 === (m = document.querySelectorAll('#standardAvail .rateRow')).length &&
                                                                 document
                                                                     .querySelector('.trips-list')
                                                                     .insertAdjacentHTML(
                                                                         'afterBegin',
                                                                         "\n                <div class='no-trips-alert'>\n                    <p>\n                        Sorry, but all trips have been booked.<br>\n                        Please contact customer support for more information.\n                    </p>\n                </div>\n                "
                                                                     ),
-                                                                y.forEach(function (e) {
+                                                                m.forEach(function (e) {
                                                                     var t, n, r;
                                                                     if (
                                                                         (document
@@ -4025,7 +3991,7 @@
                                                                     }
                                                                     (M.innerText = q), (k.innerText = E);
                                                                 });
-                                                        case 23:
+                                                        case 22:
                                                         case 'end':
                                                             return e.stop();
                                                     }

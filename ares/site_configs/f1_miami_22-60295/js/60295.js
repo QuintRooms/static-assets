@@ -2,6 +2,9 @@ import BasePortal from '../../../js/build';
 import SiteConfig from './60295-config';
 import f1Styles from '../../../clients/formula_1/js/f1';
 import Distance from '../../../js/calculate-distance';
+import Utilities from '../../../js/utilities';
+
+const utilities = new Utilities();
 
 const site_config = new SiteConfig();
 
@@ -16,3 +19,19 @@ f1Styles(site_config.site_id);
 
 new ChildPortal();
 new Distance();
+
+async function insertFooterText() {
+    await utilities.waitForSelectorInDOM('.f1-policy');
+
+    const footer_policy = document.querySelector('.f1-policy');
+
+    footer_policy.insertAdjacentHTML(
+    'beforebegin',
+    `
+    <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>
+    `
+);
+}
+
+insertFooterText();
+

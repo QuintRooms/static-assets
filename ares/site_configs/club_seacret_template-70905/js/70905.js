@@ -246,16 +246,16 @@ class ChildPortal extends BasePortal {
         // });
 
         // Create and populate itinerary container from CMS object
-        // if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {
-        //     window.alert('Sorry, but we cannot find these trip details. Please contact support.');
-        //     window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
+        if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {
+            window.alert('Sorry, but we cannot find these trip details. Please contact support.');
+            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
-        //     return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.', {
-        //         params: {
-        //             trip: this.trip,
-        //         },
-        //     });
-        // }
+            return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.', {
+                params: {
+                    trip: this.trip,
+                },
+            });
+        }
 
         for (let i = 0; i < this.trip.data.itinerary.length; i += 1) {
             if (i === this.trip.data.itinerary.length - 1) {
@@ -299,12 +299,12 @@ class ChildPortal extends BasePortal {
         });
 
         // Pull existing property rooms from DOM and use them to create new room containers
-        // if (!document.querySelectorAll('#standardAvail .rateRow')) {
-        //     window.alert('Sorry, but we cannot find rooms for this trip. Please contact support.');
-        //     window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
+        if (!document.querySelectorAll('#standardAvail .rateRow')) {
+            window.alert('Sorry, but we cannot find rooms for this trip. Please contact support.');
+            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
-        //     return Honeybadger.notify('ARN property rooms array from DOM is not found.');
-        // }
+            return Honeybadger.notify('ARN property rooms array from DOM is not found.');
+        }
         const room_array = document.querySelectorAll('#standardAvail .rateRow');
 
         if (room_array.length === 0) {
@@ -344,12 +344,12 @@ class ChildPortal extends BasePortal {
             );
 
             // Insert price into new containers before removing unwanted divs from DOM
-            // if (!i.querySelector('.full-stay')?.innerText) {
-            //     window.alert('Sorry, but we cannot find prices for this trip. Please contact support.');
-            //     window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
+            if (!i.querySelector('.full-stay')?.innerText) {
+                window.alert('Sorry, but we cannot find prices for this trip. Please contact support.');
+                window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
-            //     return Honeybadger.notify('ARN Full-stay price for trip is not found.');
-            // }
+                return Honeybadger.notify('ARN Full-stay price for trip is not found.');
+            }
 
             const full_rate_string = i.querySelector('.full-stay').innerText;
             const trip_rate = Number(full_rate_string.split(' ')[0]).toLocaleString();
@@ -366,10 +366,10 @@ class ChildPortal extends BasePortal {
             desktop_price_per_guest_container.innerText = `$${rate_per_guest} / guest`;
 
             // Move CTAs to new rooms container and format
-            // if (!i.querySelector('.bookRoom')?.innerText) {
-            //     window.alert('Sorry, there was an error. Please contact support.');
-            //     return Honeybadger.notify('ARN book cta is not found.');
-            // }
+            if (!i.querySelector('.bookRoom')?.innerText) {
+                window.alert('Sorry, there was an error. Please contact support.');
+                return Honeybadger.notify('ARN book cta is not found.');
+            }
 
             const cta_container = document.querySelector('.trip-ctas');
             const original_book_cta = i.querySelector('.bookRoom');

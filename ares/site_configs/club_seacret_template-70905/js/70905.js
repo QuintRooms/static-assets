@@ -107,10 +107,10 @@ class ChildPortal extends BasePortal {
                                 <div id='inclusions-intro'>This trip includes:</div>
                                 <div class='inclusions-list'></div>
                             </div>
-                            <div class='itinerary-container'>
+                            <!--<div class='itinerary-container'>
                                 <h3 class='section-title' id='itinerary-container-title'>ITINERARY</h3>
                                 <div class='itinerary-list'></div>
-                            </div>
+                            </div>-->
                         </section>
 
                         <section class='trips-section'>
@@ -257,34 +257,34 @@ class ChildPortal extends BasePortal {
         //     });
         // }
 
-        for (let i = 0; i < this.trip.data.itinerary.length; i += 1) {
-            if (i === this.trip.data.itinerary.length - 1) {
-                document.querySelector('.itinerary-list').insertAdjacentHTML(
-                    'beforeEnd',
-                    `
-                    <div class='itinerary-item'>
-                        <div class='itinerary-text'>
-                            <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
-                            <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
-                        </div>
-                    </div>
-                `
-                );
-            } else {
-                document.querySelector('.itinerary-list').insertAdjacentHTML(
-                    'beforeEnd',
-                    `
-                    <div class='itinerary-item'>
-                        <div class='itinerary-text'>
-                            <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
-                            <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
-                        </div>
-                        <hr class='itinerary-separator'>
-                    </div>
-                `
-                );
-            }
-        }
+        // for (let i = 0; i < this.trip.data.itinerary.length; i += 1) {
+        //     if (i === this.trip.data.itinerary.length - 1) {
+        //         document.querySelector('.itinerary-list').insertAdjacentHTML(
+        //             'beforeEnd',
+        //             `
+        //             <div class='itinerary-item'>
+        //                 <div class='itinerary-text'>
+        //                     <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
+        //                     <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
+        //                 </div>
+        //             </div>
+        //         `
+        //         );
+        //     } else {
+        //         document.querySelector('.itinerary-list').insertAdjacentHTML(
+        //             'beforeEnd',
+        //             `
+        //             <div class='itinerary-item'>
+        //                 <div class='itinerary-text'>
+        //                     <span class="itinerary-day">${this.trip.data.itinerary[i].day[0].text}</span>
+        //                     <span class="itinerary-description">${this.trip.data.itinerary[i].description[0].text}</span>
+        //                 </div>
+        //                 <hr class='itinerary-separator'>
+        //             </div>
+        //         `
+        //         );
+        //     }
+        // }
 
         // Create and populate Inclusions container from CMS object
         this.trip.data.inclusions.forEach((i) => {

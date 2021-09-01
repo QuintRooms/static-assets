@@ -3914,118 +3914,91 @@
                                                                                       "</span>\n                        </div>\n                        <hr class='itinerary-separator'>\n                    </div>\n                "
                                                                                   )
                                                                           );
-                                                            if (
-                                                                (this.trip.data.inclusions.forEach(function (e) {
-                                                                    document
-                                                                        .querySelector('.inclusions-list')
-                                                                        .insertAdjacentHTML(
-                                                                            'beforeEnd',
-                                                                            "   <div class=inclusion-item>\n                            <div class='inclusion-bullet'></div>\n                            <div class='inclusion-text'>".concat(
-                                                                                e.text,
-                                                                                '</div>\n                    </div>\n                '
-                                                                            )
-                                                                        );
-                                                                }),
-                                                                document.querySelectorAll('#standardAvail .rateRow'))
-                                                            ) {
-                                                                e.next = 20;
-                                                                break;
-                                                            }
-                                                            return (
-                                                                window.alert('Sorry, but we cannot find rooms for this trip. Please contact support.'),
-                                                                (window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea'),
-                                                                e.abrupt('return', b.notify('ARN property rooms array from DOM is not found.'))
-                                                            );
-                                                        case 20:
-                                                            0 === (y = document.querySelectorAll('#standardAvail .rateRow')).length &&
+                                                            this.trip.data.inclusions.forEach(function (e) {
                                                                 document
-                                                                    .querySelector('.trips-list')
+                                                                    .querySelector('.inclusions-list')
                                                                     .insertAdjacentHTML(
-                                                                        'afterBegin',
-                                                                        "\n                <div class='no-trips-alert'>\n                    <p>\n                        Sorry, but all trips have been booked.<br>\n                        Please contact customer support for more information.\n                    </p>\n                </div>\n                "
-                                                                    ),
+                                                                        'beforeEnd',
+                                                                        "   <div class=inclusion-item>\n                            <div class='inclusion-bullet'></div>\n                            <div class='inclusion-text'>".concat(
+                                                                            e.text,
+                                                                            '</div>\n                    </div>\n                '
+                                                                        )
+                                                                    );
+                                                            }),
+                                                                0 === (y = document.querySelectorAll('#standardAvail .rateRow')).length &&
+                                                                    document
+                                                                        .querySelector('.trips-list')
+                                                                        .insertAdjacentHTML(
+                                                                            'afterBegin',
+                                                                            "\n                <div class='no-trips-alert'>\n                    <p>\n                        Sorry, but all trips have been booked.<br>\n                        Please contact customer support for more information.\n                    </p>\n                </div>\n                "
+                                                                        ),
                                                                 y.forEach(function (e) {
-                                                                    var t, n, r;
-                                                                    if (
-                                                                        (document
-                                                                            .querySelector('.trips-list')
-                                                                            .insertAdjacentHTML(
-                                                                                'afterBegin',
-                                                                                "\n                <div class='trip-item'>\n                    <div class='trip-text-container'>\n                        <div class='trip-item-name'></div>\n                        <div class=\"trip-price-mobile\">$</div>\n                        <div class=\"price-per-guest-mobile\">$</div>\n                        <p class='trip-item-description'></p>\n                    </div>\n                    <div class='trip-price-cta-container'>\n                        <div class='trip-price-desktop'>$</div>\n                        <div class=\"price-per-guest-desktop\">$</div>\n                        <div class='trip-ctas'>\n                        </div>\n                    </div>\n                </div>\n                "
-                                                                            ),
-                                                                        !(null === (t = e.querySelector('.full-stay')) || void 0 === t ? void 0 : t.innerText))
-                                                                    )
-                                                                        return (
-                                                                            window.alert('Sorry, but we cannot find prices for this trip. Please contact support.'),
-                                                                            (window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea'),
-                                                                            b.notify('ARN Full-stay price for trip is not found.')
+                                                                    var t;
+                                                                    document
+                                                                        .querySelector('.trips-list')
+                                                                        .insertAdjacentHTML(
+                                                                            'afterBegin',
+                                                                            "\n                <div class='trip-item'>\n                    <div class='trip-text-container'>\n                        <div class='trip-item-name'></div>\n                        <div class=\"trip-price-mobile\">$</div>\n                        <div class=\"price-per-guest-mobile\">$</div>\n                        <p class='trip-item-description'></p>\n                    </div>\n                    <div class='trip-price-cta-container'>\n                        <div class='trip-price-desktop'>$</div>\n                        <div class=\"price-per-guest-desktop\">$</div>\n                        <div class='trip-ctas'>\n                        </div>\n                    </div>\n                </div>\n                "
                                                                         );
-                                                                    var o = e.querySelector('.full-stay').innerText,
-                                                                        i = Number(o.split(' ')[0]).toLocaleString(),
-                                                                        a = (Number(o.split(' ')[0]) / h).toFixed(2).toLocaleString(),
-                                                                        c = document.querySelector('.trip-price-mobile'),
-                                                                        s = document.querySelector('.price-per-guest-mobile'),
-                                                                        u = document.querySelector('.trip-price-desktop'),
-                                                                        l = document.querySelector('.price-per-guest-desktop');
-                                                                    if (
-                                                                        ((c.innerText = '$'.concat(i)),
-                                                                        (s.innerText = '$'.concat(a, ' / guest')),
-                                                                        (u.innerText = '$'.concat(i)),
-                                                                        (l.innerText = '$'.concat(a, ' / guest')),
-                                                                        !(null === (n = e.querySelector('.bookRoom')) || void 0 === n ? void 0 : n.innerText))
-                                                                    )
-                                                                        return (
-                                                                            window.alert('Sorry, there was an error. Please contact support.'),
-                                                                            b.notify('ARN book cta is not found.')
-                                                                        );
-                                                                    var d = document.querySelector('.trip-ctas'),
-                                                                        f = e.querySelector('.bookRoom');
-                                                                    f.classList.remove('bookRoom'),
-                                                                        f.classList.add('book-button'),
-                                                                        f.classList.add('new-cta'),
-                                                                        (f.innerText = 'BOOK TRIP'),
-                                                                        d.appendChild(f);
-                                                                    var p = e.querySelector('.holdRoom');
-                                                                    p &&
-                                                                        (p.classList.remove('holdRoom'),
-                                                                        p.classList.add('hold-button'),
-                                                                        p.classList.add('new-cta'),
-                                                                        (p.innerText = 'HOLD TRIP'),
-                                                                        d.appendChild(p)),
+                                                                    var n = e.querySelector('.full-stay').innerText,
+                                                                        r = Number(n.split(' ')[0]).toLocaleString(),
+                                                                        o = (Number(n.split(' ')[0]) / h).toFixed(2).toLocaleString(),
+                                                                        i = document.querySelector('.trip-price-mobile'),
+                                                                        a = document.querySelector('.price-per-guest-mobile'),
+                                                                        c = document.querySelector('.trip-price-desktop'),
+                                                                        s = document.querySelector('.price-per-guest-desktop');
+                                                                    (i.innerText = '$'.concat(r)),
+                                                                        (a.innerText = '$'.concat(o, ' / guest')),
+                                                                        (c.innerText = '$'.concat(r)),
+                                                                        (s.innerText = '$'.concat(o, ' / guest'));
+                                                                    var u = document.querySelector('.trip-ctas'),
+                                                                        l = e.querySelector('.bookRoom');
+                                                                    l.classList.remove('bookRoom'),
+                                                                        l.classList.add('book-button'),
+                                                                        l.classList.add('new-cta'),
+                                                                        (l.innerText = 'BOOK TRIP'),
+                                                                        u.appendChild(l);
+                                                                    var d = e.querySelector('.holdRoom');
+                                                                    d &&
+                                                                        (d.classList.remove('holdRoom'),
+                                                                        d.classList.add('hold-button'),
+                                                                        d.classList.add('new-cta'),
+                                                                        (d.innerText = 'HOLD TRIP'),
+                                                                        u.appendChild(d)),
                                                                         (e.querySelector('.ArnRateCancelPolicyContainer') && e.querySelector('.ArnRateCancelAnchor')) ||
                                                                             b.notify('ARN cancel policy container or anchor are not found.');
-                                                                    var m = document.querySelector('.trip-price-cta-container'),
-                                                                        y = e.querySelector('.ArnRateCancelPolicyContainer'),
-                                                                        g = e.querySelector('.ArnRateCancelAnchor');
-                                                                    g.classList.add('cancellation-policy'), m.appendChild(g), m.appendChild(y);
-                                                                    var v = e.querySelector('.ArnRateFromTo'),
-                                                                        w = e.querySelector('.ArnNightlyRate'),
-                                                                        S = e.querySelector('.RateCalendarPopupAnchor'),
-                                                                        _ = e.querySelector('.RateCalendarPopupContainer');
-                                                                    v.remove(),
+                                                                    var f = document.querySelector('.trip-price-cta-container'),
+                                                                        p = e.querySelector('.ArnRateCancelPolicyContainer'),
+                                                                        m = e.querySelector('.ArnRateCancelAnchor');
+                                                                    m.classList.add('cancellation-policy'), f.appendChild(m), f.appendChild(p);
+                                                                    var y = e.querySelector('.ArnRateFromTo'),
+                                                                        g = e.querySelector('.ArnNightlyRate'),
+                                                                        v = e.querySelector('.RateCalendarPopupAnchor'),
+                                                                        w = e.querySelector('.RateCalendarPopupContainer');
+                                                                    y.remove(),
+                                                                        g.remove(),
+                                                                        v.remove(),
                                                                         w.remove(),
-                                                                        S.remove(),
-                                                                        _.remove(),
-                                                                        ((null === (r = e.innerText) || void 0 === r ? void 0 : r.split(':')[0]) && e.innerText.split(':')[1]) ||
+                                                                        ((null === (t = e.innerText) || void 0 === t ? void 0 : t.split(':')[0]) && e.innerText.split(':')[1]) ||
                                                                             b.notify(
                                                                                 'Room description, Room description colon, room description name, or Room description text is not found'
                                                                             );
-                                                                    var x = e.innerText,
-                                                                        A = e.innerText.split(':'),
-                                                                        k = document.querySelector('.trip-item-name'),
-                                                                        E = A[0].trim(),
-                                                                        M = document.querySelector('.trip-item-description'),
-                                                                        L = e.innerText.indexOf(':') + 1,
-                                                                        q = e.innerText.slice(L).trim();
+                                                                    var S = e.innerText,
+                                                                        _ = e.innerText.split(':'),
+                                                                        x = document.querySelector('.trip-item-name'),
+                                                                        A = _[0].trim(),
+                                                                        k = document.querySelector('.trip-item-description'),
+                                                                        E = e.innerText.indexOf(':') + 1,
+                                                                        M = e.innerText.slice(E).trim();
                                                                     try {
-                                                                        if (!x.includes(':') || !E || !q) return void (M.innerText = x.trim());
+                                                                        if (!S.includes(':') || !A || !M) return void (k.innerText = S.trim());
                                                                     } catch (t) {
                                                                         b.notify('Room description colon is not found in room index '.concat(e)),
                                                                             console.error('Error inside room_title and room_description verification: ', t);
                                                                     }
-                                                                    (M.innerText = q), (k.innerText = E);
+                                                                    (k.innerText = M), (x.innerText = A);
                                                                 });
-                                                        case 23:
+                                                        case 19:
                                                         case 'end':
                                                             return e.stop();
                                                     }

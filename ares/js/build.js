@@ -162,6 +162,8 @@ export default class BasePortal {
             }
 
             if (this.page_name === 'search-results') {
+                this.updateTitleMetaTag();
+
                 if (this.site_config.use_google_autocomplete) {
                     new Autocomplete(this.site_config, this.page_name);
                 } else {
@@ -2159,5 +2161,11 @@ export default class BasePortal {
         </div>`;
         }
         document.body.insertAdjacentHTML('beforeend', html);
+    }
+
+    updateTitleMetaTag() {
+        if (this.site_config.site_type !== 'lodging' || !this?.site_config?.lodging?.event_name) return;
+
+        document.title = this.site_config.lodging.event_name;
     }
 }

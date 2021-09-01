@@ -86,14 +86,14 @@
                     h = e & s.G,
                     m = e & s.S,
                     y = e & s.P,
-                    v = e & s.B,
-                    g = h ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
+                    g = e & s.B,
+                    v = h ? r : m ? r[t] || (r[t] = {}) : (r[t] || {}).prototype,
                     b = h ? o : o[t] || (o[t] = {}),
                     w = b.prototype || (b.prototype = {});
                 for (u in (h && (n = t), n))
-                    (d = ((l = !p && g && void 0 !== g[u]) ? g : n)[u]),
-                        (f = v && l ? c(d, r) : y && 'function' == typeof d ? c(Function.call, d) : d),
-                        g && a(g, u, d, e & s.U),
+                    (d = ((l = !p && v && void 0 !== v[u]) ? v : n)[u]),
+                        (f = g && l ? c(d, r) : y && 'function' == typeof d ? c(Function.call, d) : d),
+                        v && a(v, u, d, e & s.U),
                         b[u] != d && i(b, u, f),
                         y && w[u] != d && (w[u] = d);
             };
@@ -234,8 +234,8 @@
             h = n(91),
             m = n(92),
             y = n(66),
-            v = n(67).set,
-            g = n(93)(),
+            g = n(67).set,
+            v = n(93)(),
             b = n(69),
             w = n(94),
             S = n(95),
@@ -265,7 +265,7 @@
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
-                    g(function () {
+                    v(function () {
                         for (
                             var r = e._v,
                                 o = 1 == e._s,
@@ -297,7 +297,7 @@
                 }
             },
             O = function (e) {
-                v.call(s, function () {
+                g.call(s, function () {
                     var t,
                         n,
                         r,
@@ -323,7 +323,7 @@
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
             Y = function (e) {
-                v.call(s, function () {
+                g.call(s, function () {
                     var t;
                     L ? A.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
@@ -340,7 +340,7 @@
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
                         (t = P(e))
-                            ? g(function () {
+                            ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
                                       t.call(e, u(D, r, 1), u(I, r, 1));
@@ -544,8 +544,8 @@
             var m = Object.getPrototypeOf,
                 y = m && m(m(A([])));
             y && y !== t && n.call(y, o) && (h = y);
-            var v = (p.prototype = d.prototype = Object.create(h));
-            function g(e) {
+            var g = (p.prototype = d.prototype = Object.create(h));
+            function v(e) {
                 ['next', 'throw', 'return'].forEach(function (t) {
                     c(e, t, function (e) {
                         return this._invoke(t, e);
@@ -636,7 +636,7 @@
                 return {value: void 0, done: !0};
             }
             return (
-                (f.prototype = v.constructor = p),
+                (f.prototype = g.constructor = p),
                 (p.constructor = f),
                 (f.displayName = c(p, a, 'GeneratorFunction')),
                 (e.isGeneratorFunction = function (e) {
@@ -644,12 +644,12 @@
                     return !!t && (t === f || 'GeneratorFunction' === (t.displayName || t.name));
                 }),
                 (e.mark = function (e) {
-                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, p) : ((e.__proto__ = p), c(e, a, 'GeneratorFunction')), (e.prototype = Object.create(v)), e;
+                    return Object.setPrototypeOf ? Object.setPrototypeOf(e, p) : ((e.__proto__ = p), c(e, a, 'GeneratorFunction')), (e.prototype = Object.create(g)), e;
                 }),
                 (e.awrap = function (e) {
                     return {__await: e};
                 }),
-                g(b.prototype),
+                v(b.prototype),
                 (b.prototype[i] = function () {
                     return this;
                 }),
@@ -663,12 +663,12 @@
                               return e.done ? e.value : a.next();
                           });
                 }),
-                g(v),
-                c(v, a, 'Generator'),
-                (v[o] = function () {
+                v(g),
+                c(g, a, 'Generator'),
+                (g[o] = function () {
                     return this;
                 }),
-                (v.toString = function () {
+                (g.toString = function () {
                     return '[object Generator]';
                 }),
                 (e.keys = function (e) {
@@ -867,10 +867,10 @@
                 m = 'en',
                 y = {};
             y[m] = h;
-            var v = function (e) {
+            var g = function (e) {
                     return e instanceof S;
                 },
-                g = function (e, t, n) {
+                v = function (e, t, n) {
                     var r;
                     if (!e) return m;
                     if ('string' == typeof e) y[e] && (r = e), t && ((y[e] = t), (r = e));
@@ -881,19 +881,19 @@
                     return !n && r && (m = r), r || (!n && m);
                 },
                 b = function (e, t) {
-                    if (v(e)) return e.clone();
+                    if (g(e)) return e.clone();
                     var n = 'object' == typeof t ? t : {};
                     return (n.date = e), (n.args = arguments), new S(n);
                 },
                 w = p;
-            (w.l = g),
-                (w.i = v),
+            (w.l = v),
+                (w.i = g),
                 (w.w = function (e, t) {
                     return b(e, {locale: t.$L, utc: t.$u, $offset: t.$offset});
                 });
             var S = (function () {
                     function f(e) {
-                        (this.$L = this.$L || g(e.locale, null, !0)), this.parse(e);
+                        (this.$L = this.$L || v(e.locale, null, !0)), this.parse(e);
                     }
                     var p = f.prototype;
                     return (
@@ -967,8 +967,8 @@
                                 },
                                 m = this.$W,
                                 y = this.$M,
-                                v = this.$D,
-                                g = 'set' + (this.$u ? 'UTC' : '');
+                                g = this.$D,
+                                v = 'set' + (this.$u ? 'UTC' : '');
                             switch (f) {
                                 case s:
                                     return d ? p(1, 0) : p(31, 11);
@@ -977,16 +977,16 @@
                                 case i:
                                     var b = this.$locale().weekStart || 0,
                                         S = (m < b ? m + 7 : m) - b;
-                                    return p(d ? v - S : v + (6 - S), y);
+                                    return p(d ? g - S : g + (6 - S), y);
                                 case o:
                                 case u:
-                                    return h(g + 'Hours', 0);
+                                    return h(v + 'Hours', 0);
                                 case r:
-                                    return h(g + 'Minutes', 1);
+                                    return h(v + 'Minutes', 1);
                                 case n:
-                                    return h(g + 'Seconds', 2);
+                                    return h(v + 'Seconds', 2);
                                 case t:
-                                    return h(g + 'Milliseconds', 3);
+                                    return h(v + 'Milliseconds', 3);
                                 default:
                                     return this.clone();
                             }
@@ -1128,7 +1128,7 @@
                         (p.locale = function (e, t) {
                             if (!e) return this.$L;
                             var n = this.clone(),
-                                r = g(e, t, !0);
+                                r = v(e, t, !0);
                             return r && (n.$L = r), n;
                         }),
                         (p.clone = function () {
@@ -1169,8 +1169,8 @@
                 (b.extend = function (e, t) {
                     return e(t, S, b), b;
                 }),
-                (b.locale = g),
-                (b.isDayjs = v),
+                (b.locale = v),
+                (b.isDayjs = g),
                 (b.unix = function (e) {
                     return b(1e3 * e);
                 }),
@@ -1255,7 +1255,7 @@
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e);
                 }
-                var t, n, r, c, s, u, l, d, f, p, h, m, y, v, g;
+                var t, n, r, c, s, u, l, d, f, p, h, m, y, g, v;
                 return (
                     (t = e),
                     (n = [
@@ -1268,7 +1268,7 @@
                         {
                             key: 'createHTML',
                             value:
-                                ((g = o(
+                                ((v = o(
                                     regeneratorRuntime.mark(function e(t, n, r) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1289,7 +1289,7 @@
                                     })
                                 )),
                                 function (e, t, n) {
-                                    return g.apply(this, arguments);
+                                    return v.apply(this, arguments);
                                 }),
                         },
                         {
@@ -1329,7 +1329,7 @@
                         {
                             key: 'waitForSelectorInDOM',
                             value:
-                                ((v = o(
+                                ((g = o(
                                     regeneratorRuntime.mark(function e(t) {
                                         return regeneratorRuntime.wrap(function (e) {
                                             for (;;)
@@ -1352,7 +1352,7 @@
                                     })
                                 )),
                                 function (e) {
-                                    return v.apply(this, arguments);
+                                    return g.apply(this, arguments);
                                 }),
                         },
                         {
@@ -2135,18 +2135,18 @@
                     y = n(a, f, ''[e], function (e, t, n, r, o) {
                         return t.exec === s ? (p && !o ? {done: !0, value: m.call(t, n, r)} : {done: !0, value: e.call(n, t, r)}) : {done: !1};
                     }),
-                    v = y[0],
-                    g = y[1];
-                r(String.prototype, e, v),
+                    g = y[0],
+                    v = y[1];
+                r(String.prototype, e, g),
                     o(
                         RegExp.prototype,
                         f,
                         2 == t
                             ? function (e, t) {
-                                  return g.call(e, this, t);
+                                  return v.call(e, this, t);
                               }
                             : function (e) {
-                                  return g.call(e, this);
+                                  return v.call(e, this);
                               }
                     );
             }
@@ -2362,11 +2362,11 @@
             m++
         ) {
             var y,
-                v = h[m],
-                g = p[v],
-                b = a[v],
+                g = h[m],
+                v = p[g],
+                b = a[g],
                 w = b && b.prototype;
-            if (w && (w[l] || c(w, l, f), w[d] || c(w, d, v), (s[v] = f), g)) for (y in r) w[y] || i(w, y, r[y], !0);
+            if (w && (w[l] || c(w, l, f), w[d] || c(w, d, g), (s[g] = f), v)) for (y in r) w[y] || i(w, y, r[y], !0);
         }
     },
     function (e, t, n) {
@@ -2523,13 +2523,13 @@
                             h = new Date(),
                             m = c || (i || a ? 1 : h.getDate()),
                             y = i || h.getFullYear(),
-                            v = 0;
-                        (i && !a) || (v = a > 0 ? a - 1 : h.getMonth());
-                        var g = u || 0,
+                            g = 0;
+                        (i && !a) || (g = a > 0 ? a - 1 : h.getMonth());
+                        var v = u || 0,
                             b = l || 0,
                             w = d || 0,
                             S = f || 0;
-                        return p ? new Date(Date.UTC(y, v, m, g, b, w, S + 60 * p.offset * 1e3)) : r ? new Date(Date.UTC(y, v, m, g, b, w, S)) : new Date(y, v, m, g, b, w, S);
+                        return p ? new Date(Date.UTC(y, g, m, v, b, w, S + 60 * p.offset * 1e3)) : r ? new Date(Date.UTC(y, g, m, v, b, w, S)) : new Date(y, g, m, v, b, w, S);
                     } catch (e) {
                         return new Date('');
                     }
@@ -2616,8 +2616,8 @@
             h = n(54),
             m = n(53),
             y = n(87),
-            v = n(61),
-            g = n(1),
+            g = n(61),
+            v = n(1),
             b = n(3),
             w = n(21),
             S = n(20),
@@ -2679,16 +2679,16 @@
             Q = function (e, t, n) {
                 return (
                     e === N && Q(H, t, n),
-                    g(e),
+                    v(e),
                     (t = _(t, !0)),
-                    g(n),
+                    v(n),
                     o(F, t)
                         ? (n.enumerable ? (o(e, Y) && e[Y][t] && (e[Y][t] = !1), (n = A(n, {enumerable: x(0, !1)}))) : (o(e, Y) || C(e, Y, x(1, {})), (e[Y][t] = !0)), W(e, t, n))
                         : C(e, t, n)
                 );
             },
             X = function (e, t) {
-                g(e);
+                v(e);
                 for (var n, r = y((t = S(t))), o = 0, i = r.length; i > o; ) Q(e, (n = r[o++]), t[n]);
                 return e;
             },
@@ -2786,7 +2786,7 @@
                             for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
                             if (((n = t = r[1]), (b(t) || void 0 !== e) && !Z(e)))
                                 return (
-                                    v(t) ||
+                                    g(t) ||
                                         (t = function (e, t) {
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !Z(t))) return t;
                                         }),
@@ -2908,22 +2908,22 @@
             h = l.MessageChannel,
             m = l.Dispatch,
             y = 0,
-            v = {},
-            g = function () {
+            g = {},
+            v = function () {
                 var e = +this;
-                if (v.hasOwnProperty(e)) {
-                    var t = v[e];
-                    delete v[e], t();
+                if (g.hasOwnProperty(e)) {
+                    var t = g[e];
+                    delete g[e], t();
                 }
             },
             b = function (e) {
-                g.call(e.data);
+                v.call(e.data);
             };
         (f && p) ||
             ((f = function (e) {
                 for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
                 return (
-                    (v[++y] = function () {
+                    (g[++y] = function () {
                         c('function' == typeof e ? e : Function(e), t);
                     }),
                     r(y),
@@ -2931,15 +2931,15 @@
                 );
             }),
             (p = function (e) {
-                delete v[e];
+                delete g[e];
             }),
             'process' == n(13)(d)
                 ? (r = function (e) {
-                      d.nextTick(a(g, e, 1));
+                      d.nextTick(a(v, e, 1));
                   })
                 : m && m.now
                 ? (r = function (e) {
-                      m.now(a(g, e, 1));
+                      m.now(a(v, e, 1));
                   })
                 : h
                 ? ((i = (o = new h()).port2), (o.port1.onmessage = b), (r = a(i.postMessage, i, 1)))
@@ -2952,11 +2952,11 @@
                       'onreadystatechange' in u('script')
                           ? function (e) {
                                 s.appendChild(u('script')).onreadystatechange = function () {
-                                    s.removeChild(this), g.call(e);
+                                    s.removeChild(this), v.call(e);
                                 };
                             }
                           : function (e) {
-                                setTimeout(a(g, e, 1), 0);
+                                setTimeout(a(v, e, 1), 0);
                             })),
             (e.exports = {set: f, clear: p});
     },
@@ -3101,16 +3101,16 @@
                             f = String(this),
                             p = i(u, RegExp),
                             y = u.unicode,
-                            v = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (h ? 'y' : 'g'),
-                            g = new p(h ? u : '^(?:' + u.source + ')', v),
+                            g = (u.ignoreCase ? 'i' : '') + (u.multiline ? 'm' : '') + (u.unicode ? 'u' : '') + (h ? 'y' : 'g'),
+                            v = new p(h ? u : '^(?:' + u.source + ')', g),
                             b = void 0 === t ? 4294967295 : t >>> 0;
                         if (0 === b) return [];
-                        if (0 === f.length) return null === s(g, f) ? [f] : [];
+                        if (0 === f.length) return null === s(v, f) ? [f] : [];
                         for (var w = 0, S = 0, _ = []; S < f.length; ) {
-                            g.lastIndex = h ? S : 0;
+                            v.lastIndex = h ? S : 0;
                             var x,
-                                A = s(g, h ? f : f.slice(S));
-                            if (null === A || (x = d(c(g.lastIndex + (h ? 0 : S)), f.length)) === w) S = a(f, S, y);
+                                A = s(v, h ? f : f.slice(S));
+                            if (null === A || (x = d(c(v.lastIndex + (h ? 0 : S)), f.length)) === w) S = a(f, S, y);
                             else {
                                 if ((_.push(f.slice(w, S)), _.length === b)) return _;
                                 for (var k = 1; k <= A.length - 1; k++) if ((_.push(A[k]), _.length === b)) return _;
@@ -3172,14 +3172,14 @@
             h = p,
             m = p.prototype,
             y = 'Number' == i(n(33)(m)),
-            v = 'trim' in String.prototype,
-            g = function (e) {
+            g = 'trim' in String.prototype,
+            v = function (e) {
                 var t = c(e, !1);
                 if ('string' == typeof t && t.length > 2) {
                     var n,
                         r,
                         o,
-                        i = (t = v ? t.trim() : f(t, 3)).charCodeAt(0);
+                        i = (t = g ? t.trim() : f(t, 3)).charCodeAt(0);
                     if (43 === i || 45 === i) {
                         if (88 === (n = t.charCodeAt(2)) || 120 === n) return NaN;
                     } else if (48 === i) {
@@ -3211,8 +3211,8 @@
                               m.valueOf.call(n);
                           })
                         : 'Number' != i(n))
-                    ? a(new h(g(t)), n, p)
-                    : g(t);
+                    ? a(new h(v(t)), n, p)
+                    : v(t);
             };
             for (
                 var b,
@@ -3296,17 +3296,17 @@
                     p || (t = String(t));
                     var y = d.global;
                     if (y) {
-                        var v = d.unicode;
+                        var g = d.unicode;
                         d.lastIndex = 0;
                     }
-                    for (var g = []; ; ) {
+                    for (var v = []; ; ) {
                         var b = s(d, f);
                         if (null === b) break;
-                        if ((g.push(b), !y)) break;
-                        '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), v));
+                        if ((v.push(b), !y)) break;
+                        '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), g));
                     }
-                    for (var w, S = '', _ = 0, x = 0; x < g.length; x++) {
-                        b = g[x];
+                    for (var w, S = '', _ = 0, x = 0; x < v.length; x++) {
+                        b = v[x];
                         for (var A = String(b[0]), k = u(l(a(b.index), f.length), 0), E = [], M = 1; M < b.length; M++) E.push(void 0 === (w = b[M]) ? w : String(w));
                         var L = b.groups;
                         if (p) {
@@ -3369,9 +3369,9 @@
             p = function () {
                 return this;
             };
-        e.exports = function (e, t, n, h, m, y, v) {
+        e.exports = function (e, t, n, h, m, y, g) {
             s(n, t, h);
-            var g,
+            var v,
                 b,
                 w,
                 S = function (e) {
@@ -3404,14 +3404,14 @@
                     (M = function () {
                         return E.call(this);
                     })),
-                (r && !v) || (!f && !A && k[d]) || a(k, d, M),
+                (r && !g) || (!f && !A && k[d]) || a(k, d, M),
                 (c[t] = M),
                 (c[_] = p),
                 m)
             )
-                if (((g = {values: x ? M : S('values'), keys: y ? M : S('keys'), entries: L}), v)) for (b in g) b in k || i(k, b, g[b]);
-                else o(o.P + o.F * (f || A), t, g);
-            return g;
+                if (((v = {values: x ? M : S('values'), keys: y ? M : S('keys'), entries: L}), g)) for (b in v) b in k || i(k, b, v[b]);
+                else o(o.P + o.F * (f || A), t, v);
+            return v;
         };
     },
     function (e, t, n) {
@@ -3506,9 +3506,9 @@
             })();
             return function () {
                 var n,
-                    r = g(e);
+                    r = v(e);
                 if (t) {
-                    var o = g(this).constructor;
+                    var o = v(this).constructor;
                     n = Reflect.construct(r, arguments, o);
                 } else n = r.apply(this, arguments);
                 return m(this, n);
@@ -3521,13 +3521,13 @@
             if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return e;
         }
-        function v(e, t, n) {
-            return (v =
+        function g(e, t, n) {
+            return (g =
                 'undefined' != typeof Reflect && Reflect.get
                     ? Reflect.get
                     : function (e, t, n) {
                           var r = (function (e, t) {
-                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = g(e)); );
+                              for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = v(e)); );
                               return e;
                           })(e, t);
                           if (r) {
@@ -3536,8 +3536,8 @@
                           }
                       })(e, t, n || e);
         }
-        function g(e) {
-            return (g = Object.setPrototypeOf
+        function v(e) {
+            return (v = Object.setPrototypeOf
                 ? Object.getPrototypeOf
                 : function (e) {
                       return e.__proto__ || Object.getPrototypeOf(e);
@@ -3573,7 +3573,7 @@
                         (function (e, t) {
                             if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                         })(this, E),
-                        v(((e = y((t = k.call(this, w)))), g(E.prototype)), 'init', e).call(e),
+                        g(((e = y((t = k.call(this, w)))), v(E.prototype)), 'init', e).call(e),
                         t.init(),
                         (t.ref = ''),
                         (t.trips = {}),
@@ -3794,7 +3794,7 @@
                             value:
                                 ((s = d(
                                     regeneratorRuntime.mark(function e() {
-                                        var t, n, o, i, a, c, s, u, l, d, f, p, h, m, y, v, g, w, _, x;
+                                        var t, n, o, i, a, c, s, u, l, d, f, p, h, m, y;
                                         return regeneratorRuntime.wrap(
                                             function (e) {
                                                 for (;;)
@@ -3840,84 +3840,63 @@
                                                                 )
                                                             );
                                                         case 8:
-                                                            if (
-                                                                ((m = (0, r.default)(this.trip.data.start_date).format('MM/DD/YYYY')),
-                                                                (y = (0, r.default)(this.trip.data.end_date).format('MM/DD/YYYY')),
-                                                                (v = new URL(window.location.href)),
-                                                                (g = v.searchParams),
-                                                                (w = g.get('adults')),
-                                                                document
-                                                                    .querySelector('.hero-container')
-                                                                    .insertAdjacentHTML(
-                                                                        'afterBegin',
-                                                                        "\n            <div class='hero-text-container'>\n                <h1 class='trip-title'>"
-                                                                            .concat(
-                                                                                this.trip.data.trip_name[0].text,
-                                                                                "</h1>\n                <h2 class='trip-data-el' id='trip-property'>"
-                                                                            )
-                                                                            .concat(
-                                                                                this.trip.data.property_name[0].text,
-                                                                                "</h2>\n                <div class='location-date-container'>\n                    <h2 class='trip-data-el' id='trip-location'>"
-                                                                            )
-                                                                            .concat(
-                                                                                this.trip.data.trip_location[0].text,
-                                                                                "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <h2 class='trip-data-el' id='trip-date'>"
-                                                                            )
-                                                                            .concat(m, ' - ')
-                                                                            .concat(
-                                                                                y,
-                                                                                "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <div id='adults-elements-outer-container'>\n                        <div id='adults-elements-container'>\n                            <h2 class='trip-data-el' id='trip-adults-number'>"
-                                                                            )
-                                                                            .concat(
-                                                                                w,
-                                                                                " Travelers</h2>\n                            <button id='change-adults-btn'>UPDATE</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <style>\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9) 80%), url("
-                                                                            )
-                                                                            .concat(
-                                                                                this.trip.data.trip_image.url,
-                                                                                ') no-repeat center center /cover\n                }\n\n                @media only screen and (max-width: 800px) {\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.9) 65%), url('
-                                                                            )
-                                                                            .concat(
-                                                                                this.trip.data.trip_image.url,
-                                                                                ') no-repeat center center /cover\n                }\n                }\n            </style>\n        '
-                                                                            )
-                                                                    ),
-                                                                (null === (l = this.trip.data.itinerary) ||
-                                                                void 0 === l ||
-                                                                null === (d = l[0].day) ||
-                                                                void 0 === d ||
-                                                                null === (f = d[0]) ||
-                                                                void 0 === f
-                                                                    ? void 0
-                                                                    : f.text) &&
-                                                                    (null === (p = this.trip.data.itinerary[0].description) || void 0 === p || null === (h = p[0]) || void 0 === h
-                                                                        ? void 0
-                                                                        : h.text))
-                                                            ) {
-                                                                e.next = 18;
-                                                                break;
-                                                            }
-                                                            return (
-                                                                window.alert('Sorry, but we cannot find these trip details. Please contact support.'),
-                                                                (window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea'),
-                                                                e.abrupt(
-                                                                    'return',
-                                                                    b.notify('Itinerary object, itinerary day, or itinerary description not found.', {params: {trip: this.trip}})
-                                                                )
-                                                            );
-                                                        case 18:
-                                                            for (_ = 0; _ < this.trip.data.itinerary.length; _ += 1)
-                                                                _ === this.trip.data.itinerary.length - 1
+                                                            for (
+                                                                l = (0, r.default)(this.trip.data.start_date).format('MM/DD/YYYY'),
+                                                                    d = (0, r.default)(this.trip.data.end_date).format('MM/DD/YYYY'),
+                                                                    f = new URL(window.location.href),
+                                                                    p = f.searchParams,
+                                                                    h = p.get('adults'),
+                                                                    document
+                                                                        .querySelector('.hero-container')
+                                                                        .insertAdjacentHTML(
+                                                                            'afterBegin',
+                                                                            "\n            <div class='hero-text-container'>\n                <h1 class='trip-title'>"
+                                                                                .concat(
+                                                                                    this.trip.data.trip_name[0].text,
+                                                                                    "</h1>\n                <h2 class='trip-data-el' id='trip-property'>"
+                                                                                )
+                                                                                .concat(
+                                                                                    this.trip.data.property_name[0].text,
+                                                                                    "</h2>\n                <div class='location-date-container'>\n                    <h2 class='trip-data-el' id='trip-location'>"
+                                                                                )
+                                                                                .concat(
+                                                                                    this.trip.data.trip_location[0].text,
+                                                                                    "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <h2 class='trip-data-el' id='trip-date'>"
+                                                                                )
+                                                                                .concat(l, ' - ')
+                                                                                .concat(
+                                                                                    d,
+                                                                                    "</h2>\n                    <h2 class='event-text-separators'> | </h2>\n                    <div id='adults-elements-outer-container'>\n                        <div id='adults-elements-container'>\n                            <h2 class='trip-data-el' id='trip-adults-number'>"
+                                                                                )
+                                                                                .concat(
+                                                                                    h,
+                                                                                    " Travelers</h2>\n                            <button id='change-adults-btn'>UPDATE</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <style>\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.9) 80%), url("
+                                                                                )
+                                                                                .concat(
+                                                                                    this.trip.data.trip_image.url,
+                                                                                    ') no-repeat center center /cover\n                }\n\n                @media only screen and (max-width: 800px) {\n                .hero-container{\n                    background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.9) 65%), url('
+                                                                                )
+                                                                                .concat(
+                                                                                    this.trip.data.trip_image.url,
+                                                                                    ') no-repeat center center /cover\n                }\n                }\n            </style>\n        '
+                                                                                )
+                                                                        ),
+                                                                    m = 0;
+                                                                m < this.trip.data.itinerary.length;
+                                                                m += 1
+                                                            )
+                                                                m === this.trip.data.itinerary.length - 1
                                                                     ? document
                                                                           .querySelector('.itinerary-list')
                                                                           .insertAdjacentHTML(
                                                                               'beforeEnd',
                                                                               "\n                    <div class='itinerary-item'>\n                        <div class='itinerary-text'>\n                            <span class=\"itinerary-day\">"
                                                                                   .concat(
-                                                                                      this.trip.data.itinerary[_].day[0].text,
+                                                                                      this.trip.data.itinerary[m].day[0].text,
                                                                                       '</span>\n                            <span class="itinerary-description">'
                                                                                   )
                                                                                   .concat(
-                                                                                      this.trip.data.itinerary[_].description[0].text,
+                                                                                      this.trip.data.itinerary[m].description[0].text,
                                                                                       '</span>\n                        </div>\n                    </div>\n                '
                                                                                   )
                                                                           )
@@ -3927,11 +3906,11 @@
                                                                               'beforeEnd',
                                                                               "\n                    <div class='itinerary-item'>\n                        <div class='itinerary-text'>\n                            <span class=\"itinerary-day\">"
                                                                                   .concat(
-                                                                                      this.trip.data.itinerary[_].day[0].text,
+                                                                                      this.trip.data.itinerary[m].day[0].text,
                                                                                       '</span>\n                            <span class="itinerary-description">'
                                                                                   )
                                                                                   .concat(
-                                                                                      this.trip.data.itinerary[_].description[0].text,
+                                                                                      this.trip.data.itinerary[m].description[0].text,
                                                                                       "</span>\n                        </div>\n                        <hr class='itinerary-separator'>\n                    </div>\n                "
                                                                                   )
                                                                           );
@@ -3949,7 +3928,7 @@
                                                                 }),
                                                                 document.querySelectorAll('#standardAvail .rateRow'))
                                                             ) {
-                                                                e.next = 24;
+                                                                e.next = 20;
                                                                 break;
                                                             }
                                                             return (
@@ -3957,15 +3936,15 @@
                                                                 (window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea'),
                                                                 e.abrupt('return', b.notify('ARN property rooms array from DOM is not found.'))
                                                             );
-                                                        case 24:
-                                                            0 === (x = document.querySelectorAll('#standardAvail .rateRow')).length &&
+                                                        case 20:
+                                                            0 === (y = document.querySelectorAll('#standardAvail .rateRow')).length &&
                                                                 document
                                                                     .querySelector('.trips-list')
                                                                     .insertAdjacentHTML(
                                                                         'afterBegin',
                                                                         "\n                <div class='no-trips-alert'>\n                    <p>\n                        Sorry, but all trips have been booked.<br>\n                        Please contact customer support for more information.\n                    </p>\n                </div>\n                "
                                                                     ),
-                                                                x.forEach(function (e) {
+                                                                y.forEach(function (e) {
                                                                     var t, n, r;
                                                                     if (
                                                                         (document
@@ -3983,7 +3962,7 @@
                                                                         );
                                                                     var o = e.querySelector('.full-stay').innerText,
                                                                         i = Number(o.split(' ')[0]).toLocaleString(),
-                                                                        a = (Number(o.split(' ')[0]) / w).toFixed(2).toLocaleString(),
+                                                                        a = (Number(o.split(' ')[0]) / h).toFixed(2).toLocaleString(),
                                                                         c = document.querySelector('.trip-price-mobile'),
                                                                         s = document.querySelector('.price-per-guest-mobile'),
                                                                         u = document.querySelector('.trip-price-desktop'),
@@ -4015,16 +3994,16 @@
                                                                         d.appendChild(p)),
                                                                         (e.querySelector('.ArnRateCancelPolicyContainer') && e.querySelector('.ArnRateCancelAnchor')) ||
                                                                             b.notify('ARN cancel policy container or anchor are not found.');
-                                                                    var h = document.querySelector('.trip-price-cta-container'),
-                                                                        m = e.querySelector('.ArnRateCancelPolicyContainer'),
-                                                                        y = e.querySelector('.ArnRateCancelAnchor');
-                                                                    y.classList.add('cancellation-policy'), h.appendChild(y), h.appendChild(m);
+                                                                    var m = document.querySelector('.trip-price-cta-container'),
+                                                                        y = e.querySelector('.ArnRateCancelPolicyContainer'),
+                                                                        g = e.querySelector('.ArnRateCancelAnchor');
+                                                                    g.classList.add('cancellation-policy'), m.appendChild(g), m.appendChild(y);
                                                                     var v = e.querySelector('.ArnRateFromTo'),
-                                                                        g = e.querySelector('.ArnNightlyRate'),
+                                                                        w = e.querySelector('.ArnNightlyRate'),
                                                                         S = e.querySelector('.RateCalendarPopupAnchor'),
                                                                         _ = e.querySelector('.RateCalendarPopupContainer');
                                                                     v.remove(),
-                                                                        g.remove(),
+                                                                        w.remove(),
                                                                         S.remove(),
                                                                         _.remove(),
                                                                         ((null === (r = e.innerText) || void 0 === r ? void 0 : r.split(':')[0]) && e.innerText.split(':')[1]) ||
@@ -4046,7 +4025,7 @@
                                                                     }
                                                                     (M.innerText = q), (k.innerText = E);
                                                                 });
-                                                        case 27:
+                                                        case 23:
                                                         case 'end':
                                                             return e.stop();
                                                     }
@@ -4342,17 +4321,17 @@
                 h,
                 m,
                 y,
-                v = f
+                g = f
                     ? function () {
                           return e;
                       }
                     : s(e),
-                g = r(n, d, t ? 2 : 1),
+                v = r(n, d, t ? 2 : 1),
                 b = 0;
-            if ('function' != typeof v) throw TypeError(e + ' is not iterable!');
-            if (i(v)) {
-                for (p = c(e.length); p > b; b++) if ((y = t ? g(a((h = e[b]))[0], h[1]) : g(e[b])) === u || y === l) return y;
-            } else for (m = v.call(e); !(h = m.next()).done; ) if ((y = o(m, g, h.value, t)) === u || y === l) return y;
+            if ('function' != typeof g) throw TypeError(e + ' is not iterable!');
+            if (i(g)) {
+                for (p = c(e.length); p > b; b++) if ((y = t ? v(a((h = e[b]))[0], h[1]) : v(e[b])) === u || y === l) return y;
+            } else for (m = g.call(e); !(h = m.next()).done; ) if ((y = o(m, v, h.value, t)) === u || y === l) return y;
         }).BREAK = u),
             (t.RETURN = l);
     },
@@ -4660,8 +4639,8 @@
                 f = 5 == e || d,
                 p = t || c;
             return function (t, c, h) {
-                for (var m, y, v = i(t), g = o(v), b = r(c, h, 3), w = a(g.length), S = 0, _ = n ? p(t, w) : s ? p(t, 0) : void 0; w > S; S++)
-                    if ((f || S in g) && ((y = b((m = g[S]), S, v)), e))
+                for (var m, y, g = i(t), v = o(g), b = r(c, h, 3), w = a(v.length), S = 0, _ = n ? p(t, w) : s ? p(t, 0) : void 0; w > S; S++)
+                    if ((f || S in v) && ((y = b((m = v[S]), S, g)), e))
                         if (n) _[S] = y;
                         else if (y)
                             switch (e) {
@@ -4760,8 +4739,8 @@
             m = n(51);
         h.extend(m);
         var y = new r.default(),
-            v = new i.default(),
-            g = (function () {
+            g = new i.default(),
+            v = (function () {
                 function e(t) {
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
@@ -4775,7 +4754,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = y.getMetaTagContent('currency') ? y.getMetaTagContent('currency') : 'USD');
                 }
-                var t, n, r, i, a, s, u, m, g, b, w, S, _, x;
+                var t, n, r, i, a, s, u, m, v, b, w, S, _, x;
                 return (
                     (t = e),
                     (n = [
@@ -4894,7 +4873,7 @@
                                                                         document.querySelector('.RootBody') &&
                                                                             (e.site_config.use_google_autocomplete
                                                                                 ? new o.default(e.site_config, e.page_name)
-                                                                                : v.init(e.site_config, e.page_name, y),
+                                                                                : g.init(e.site_config, e.page_name, y),
                                                                             e.buildCurrencyDropdown(),
                                                                             y.updateHTML('.RootBody .ArnSearchHeader', 'Start Your Search'),
                                                                             y.createHTML(
@@ -4929,7 +4908,7 @@
                                                                             (e.updateTitleMetaTag(),
                                                                             e.site_config.use_google_autocomplete
                                                                                 ? new o.default(e.site_config, e.page_name)
-                                                                                : v.init(e.site_config, e.page_name, y),
+                                                                                : g.init(e.site_config, e.page_name, y),
                                                                             e.showOriginalPrice('.ArnProperty', '.arnPrice')),
                                                                         jQuery('#theBody').on(
                                                                             'arnMapLoadedEvent',
@@ -6118,7 +6097,7 @@
                         {
                             key: 'replaceLRGForm',
                             value:
-                                ((g = l(
+                                ((v = l(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -6156,7 +6135,7 @@
                                     })
                                 )),
                                 function () {
-                                    return g.apply(this, arguments);
+                                    return v.apply(this, arguments);
                                 }),
                         },
                         {
@@ -6581,15 +6560,15 @@
                                             h = i.tabIndex,
                                             m = c.tabIndex,
                                             y = s.tabIndex,
-                                            v = u.tabIndex,
-                                            g = l.tabIndex,
+                                            g = u.tabIndex,
+                                            v = l.tabIndex,
                                             b = d.tabIndex;
                                         o.setAttribute('tabIndex', h),
                                             a.setAttribute('tabIndex', f),
                                             i.setAttribute('tabIndex', m),
                                             c.setAttribute('tabIndex', p),
-                                            s.setAttribute('tabIndex', v),
-                                            u.setAttribute('tabIndex', g),
+                                            s.setAttribute('tabIndex', g),
+                                            u.setAttribute('tabIndex', v),
                                             l.setAttribute('tabIndex', b),
                                             d.setAttribute('tabIndex', y);
                                     }
@@ -7092,7 +7071,7 @@
                     e
                 );
             })();
-        t.default = g;
+        t.default = v;
     },
     function (e, t, n) {
         'use strict';
@@ -7249,12 +7228,12 @@
                     });
             });
         }
-        function v(e) {
+        function g(e) {
             var t = new FileReader(),
                 n = y(t);
             return t.readAsArrayBuffer(e), n;
         }
-        function g(e) {
+        function v(e) {
             if (e.slice) return e.slice(0);
             var t = new Uint8Array(e.byteLength);
             return t.set(new Uint8Array(e)), t.buffer;
@@ -7276,9 +7255,9 @@
                                 : o && URLSearchParams.prototype.isPrototypeOf(e)
                                 ? (this._bodyText = e.toString())
                                 : s && a && (t = e) && DataView.prototype.isPrototypeOf(t)
-                                ? ((this._bodyArrayBuffer = g(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
+                                ? ((this._bodyArrayBuffer = v(e.buffer)), (this._bodyInit = new Blob([this._bodyArrayBuffer])))
                                 : s && (ArrayBuffer.prototype.isPrototypeOf(e) || l(e))
-                                ? (this._bodyArrayBuffer = g(e))
+                                ? (this._bodyArrayBuffer = v(e))
                                 : (this._bodyText = e = Object.prototype.toString.call(e))
                             : (this._bodyText = ''),
                         this.headers.get('content-type') ||
@@ -7309,7 +7288,7 @@
                                     : Promise.resolve(this._bodyArrayBuffer))
                             );
                         }
-                        return this.blob().then(v);
+                        return this.blob().then(g);
                     })),
                 (this.text = function () {
                     var e,
@@ -8366,10 +8345,10 @@
                                     n
                                 );
                             }
-                            function v() {
+                            function g() {
                                 if ('search-results' === t && '' !== document.querySelector('input#hotelName').value) return document.querySelector('input#hotelName').value;
                             }
-                            function g(e, t) {
+                            function v(e, t) {
                                 var n = '';
                                 return (
                                     document.querySelectorAll(e).forEach(function (e) {
@@ -8445,10 +8424,10 @@
                                         adults: {key: 'adults', value: y('select#adults')},
                                         kids: {key: 'children', value: y('select#kids')},
                                         currency: {key: 'currency', value: n.getMetaTagContent('currency') ? n.getMetaTagContent('currency') : 'USD'},
-                                        amenities: {key: 'amenities', value: g('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
-                                        stars: {key: 'propertyclasses', value: g('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
-                                        propertyType: {key: 'propertytypes', value: g('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
-                                        optionalHotel: {key: 'hotelname', value: v()},
+                                        amenities: {key: 'amenities', value: v('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
+                                        stars: {key: 'propertyclasses', value: v('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
+                                        propertyType: {key: 'propertytypes', value: v('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
+                                        optionalHotel: {key: 'hotelname', value: g()},
                                     }),
                                     'search-results' === t &&
                                         'lodging' === e.site_type.toLowerCase() &&
@@ -8940,12 +8919,12 @@
                         h = arguments.length,
                         m = h > 1 ? arguments[1] : void 0,
                         y = void 0 !== m,
-                        v = 0,
-                        g = l(f);
-                    if ((y && (m = r(m, h > 2 ? arguments[2] : void 0, 2)), null == g || (p == Array && c(g))))
-                        for (n = new p((t = s(f.length))); t > v; v++) u(n, v, y ? m(f[v], v) : f[v]);
-                    else for (d = g.call(f), n = new p(); !(o = d.next()).done; v++) u(n, v, y ? a(d, m, [o.value, v], !0) : o.value);
-                    return (n.length = v), n;
+                        g = 0,
+                        v = l(f);
+                    if ((y && (m = r(m, h > 2 ? arguments[2] : void 0, 2)), null == v || (p == Array && c(v))))
+                        for (n = new p((t = s(f.length))); t > g; g++) u(n, g, y ? m(f[g], g) : f[g]);
+                    else for (d = v.call(f), n = new p(); !(o = d.next()).done; g++) u(n, g, y ? a(d, m, [o.value, g], !0) : o.value);
+                    return (n.length = g), n;
                 },
             }
         );
@@ -9132,7 +9111,7 @@
                     } catch (e) {}
                 }
             }
-            function v(e, t) {
+            function g(e, t) {
                 if (b('Object', e)) {
                     b('Array', t) || (t = []);
                     var n = [];
@@ -9143,7 +9122,7 @@
                             n.push(r);
                         }
                         if (b('Object', r)) {
-                            for (o in ((i = {}), r)) g(o, t) ? (i[o] = '[FILTERED]') : (i[o] = e(r[o]));
+                            for (o in ((i = {}), r)) v(o, t) ? (i[o] = '[FILTERED]') : (i[o] = e(r[o]));
                             return i;
                         }
                         return b('Array', r)
@@ -9156,7 +9135,7 @@
                     })(e);
                 }
             }
-            function g(e, t) {
+            function v(e, t) {
                 for (var n = 0; n < t.length; n++) if (-1 !== e.toLowerCase().indexOf(t[n].toLowerCase())) return !0;
                 return !1;
             }
@@ -9175,7 +9154,7 @@
                         var n = e.split('=', 2),
                             o = n[0],
                             i = n[1];
-                        g(o, t) && (r = r.replace(o + '=' + i, o + '=[FILTERED]'));
+                        v(o, t) && (r = r.replace(o + '=' + i, o + '=[FILTERED]'));
                     }),
                     r
                 );
@@ -9374,8 +9353,8 @@
                             throw new Error('Must implement send in subclass');
                         }),
                         (e.prototype.__buildPayload = function (e) {
-                            var n = v(e.headers, this.config.filters) || {},
-                                r = v(
+                            var n = g(e.headers, this.config.filters) || {},
+                                r = g(
                                     t(
                                         t({}, e.cgiData),
                                         (function (e, t) {
@@ -9402,8 +9381,8 @@
                                     action: e.action,
                                     context: e.context,
                                     cgi_data: r,
-                                    params: v(e.params, this.config.filters) || {},
-                                    session: v(e.session, this.config.filters) || {},
+                                    params: g(e.params, this.config.filters) || {},
+                                    session: g(e.session, this.config.filters) || {},
                                 },
                                 server: {
                                     project_root: e.projectRoot,
@@ -9547,7 +9526,7 @@
                                         for (var n in e) t.push(n + '=' + e[n]);
                                         return t.join(';');
                                     }
-                                })(v(t, this.config.filters)));
+                                })(g(t, this.config.filters)));
                         var a = n.prototype.__buildPayload.call(this, e);
                         return (a.request.cgi_data = l(i, a.request.cgi_data)), a;
                     }),

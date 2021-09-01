@@ -17,9 +17,10 @@ f1Styles(site_config.site_id);
 new ChildPortal();
 new Distance();
 
-const footer_logo = document.querySelectorAll('.f1-h4h-logo img')[0];
-footer_logo.insertAdjacentHTML(
-    'afterend',
+const footer_policy = document.querySelector('.f1-policy');
+
+footer_policy.insertAdjacentHTML(
+    'beforebegin',
     `
     <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>
     `

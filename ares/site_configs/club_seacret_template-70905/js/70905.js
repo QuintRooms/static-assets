@@ -246,16 +246,16 @@ class ChildPortal extends BasePortal {
         // });
 
         // Create and populate itinerary container from CMS object
-        if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {
-            window.alert('Sorry, but we cannot find these trip details. Please contact support.');
-            window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
+        // if (!this.trip.data.itinerary?.[0].day?.[0]?.text || !this.trip.data.itinerary[0].description?.[0]?.text) {
+        //     window.alert('Sorry, but we cannot find these trip details. Please contact support.');
+        //     window.location.href = 'https://www.seacretdirect.com/www/en/us/clubsea';
 
-            return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.', {
-                params: {
-                    trip: this.trip,
-                },
-            });
-        }
+        //     return Honeybadger.notify('Itinerary object, itinerary day, or itinerary description not found.', {
+        //         params: {
+        //             trip: this.trip,
+        //         },
+        //     });
+        // }
 
         for (let i = 0; i < this.trip.data.itinerary.length; i += 1) {
             if (i === this.trip.data.itinerary.length - 1) {

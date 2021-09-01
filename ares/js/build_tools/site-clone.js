@@ -8,6 +8,8 @@ let site_name;
 let site_id;
 let resbeat_client;
 let update_env;
+let clone_from_name;
+let clone_from_id;
 
 function waitForFile(filePath) {
     return new Promise((resolve) => {
@@ -75,9 +77,9 @@ async function editScss() {
         if (err) throw err;
         if (resbeat_client) {
             const regex = new RegExp(`@import '../../../styles/sass/config-styles/base-styles.config.scss';`, 'g');
-            scss_var = data.replace(/template-11111/g, `${site_name}-${site_id}`).replace(regex, resbeat_config_imports);
+            scss_var = data.replace(`${clone_from_name}-${clone_from_id}`, `${site_name}-${site_id}`).replace(regex, resbeat_config_imports);
         } else {
-            scss_var = data.replace(/template-11111/g, `${site_name}-${site_id}`);
+            scss_var = data.replace(`${clone_from_name}-${clone_from_id}`, `${site_name}-${site_id}`);
         }
         fs.writeFile(`${directory_path}/styles/${site_id}.scss`, scss_var, (er) => {
             if (er) throw er;
@@ -180,7 +182,7 @@ async function editConfig() {
     await waitForFile(`${path}`);
     fs.readFile(`${path}`, 'utf8', (err, data) => {
         if (err) throw err;
-        formatted_data = data.replace(/site_id = 11111;/g, `site_id = ${site_id};`).replace(/template/g, `${site_name}`);
+        formatted_data = data.replace(`site_id = ${clone_from_id};`, `site_id = ${site_id};`).replace(`${clone_from_name}`, `${site_name}`).replace(`${clone_from_name}`, `${site_name}`);
         fs.writeFile(`${path}`, formatted_data, (error) => {
             if (error) throw error;
             console.log('\n - Config JS file updated with new site ID and name');
@@ -216,7 +218,7 @@ new ChildPortal();
                 editConfig();
             });
         } else {
-            formatted = data.replace(/import SiteConfig from '.\/template-config'/g, `import SiteConfig from './${site_id}-config'`);
+            formatted = data.replace(`import SiteConfig from './${clone_from_id}-config'`, `import SiteConfig from './${site_id}-config'`);
             fs.writeFile(`${directory_path}/js/${site_id}.js`, formatted, (er) => {
                 if (er) throw er;
                 console.log('\n - Child JS file updated with new site ID and name');
@@ -240,6 +242,25 @@ import '../site_configs/${site_name}-${site_id}/styles/${site_id}.scss';
     addToEntryPoints();
 }
 
+function deleteOldFiles() {
+    const directory_path = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
+    fs.readdir(directory_path, (err) => {
+        if (err) {
+            return console.log(`Unable to scan directory to delete old files: ${err}`);
+        }
+        // TODO refactor - not DRY
+        fs.rmdir(`${directory_path}/emails`, { recursive: true }, (error) => {
+            if (error) throw error;
+        });
+        fs.unlink(`${directory_path}/styles/${clone_from_id}.css`, (error) => {
+            if (error) throw error;
+        });
+        fs.unlink(`${directory_path}/styles/${clone_from_id}.css.map`, (error) => {
+            if (error) throw error;
+        });
+    });
+}
+
 function renameFiles() {
     const directory_path = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
     fs.readdir(directory_path, (err) => {
@@ -247,21 +268,22 @@ function renameFiles() {
             return console.log(`Unable to scan directory: ${err}`);
         }
         // TODO refactor - not DRY
-        fs.rename(`${directory_path}/js/template.js`, `${directory_path}/js/${site_id}.js`, (error) => {
+        fs.rename(`${directory_path}/js/${clone_from_id}.js`, `${directory_path}/js/${site_id}.js`, (error) => {
             if (error) throw error;
         });
-        fs.rename(`${directory_path}/js/template-config.js`, `${directory_path}/js/${site_id}-config.js`, (error) => {
+        fs.rename(`${directory_path}/js/${clone_from_id}-config.js`, `${directory_path}/js/${site_id}-config.js`, (error) => {
             if (error) throw error;
         });
-        fs.rename(`${directory_path}/styles/template.scss`, `${directory_path}/styles/${site_id}.scss`, (error) => {
+        fs.rename(`${directory_path}/styles/${clone_from_id}.scss`, `${directory_path}/styles/${site_id}.scss`, (error) => {
             if (error) throw error;
         });
+        deleteOldFiles();
         buildSrcFile();
     });
 }
 
 function buildSiteDir() {
-    const source = `${process.cwd()}/site_configs/template_site`;
+    const source = `${process.cwd()}/site_configs/${clone_from_name}-${clone_from_id}`;
     const destination = `${process.cwd()}/site_configs/${site_name}-${site_id}`;
     fsx.copy(source, destination, (err) => {
         if (err) {
@@ -279,17 +301,23 @@ function getSiteVars() {
     });
 
     console.log(' - - - - - - - - - - - - - - - - - - - - - - - - - -');
-    rl.question('\nPlease enter the site ID:  ', (id) => {
-        rl.question('\nPlease enter the site name:  ', (name) => {
+    rl.question('\nPlease enter the site new ID:  ', (id) => {
+        rl.question('\nPlease enter the new site name:  ', (name) => {
             rl.question('\nIs this site for a Resbeat client? (Y/N):  ', (resbeat_response) => {
-                rl.question('\nWould you like to update the .env file to new site name and ID? (Y/N): ', (env_response) => {
-                    resbeat_client = resbeat_response.toLowerCase() === 'y';
-                    site_id = id;
-                    site_name = name;
-                    update_env = env_response.toLowerCase() === 'y';
-                    console.log(`\nThank you, building files for ${site_name}-${site_id} now.`);
-                    console.log('\n - - - - - - - - - - - - - - - - - - - - - - - - - -');
-                    rl.close();
+                rl.question('\nPlease enter the name of the project you would like to clone from (excluding the id):  ', (clone_name) => {
+                    rl.question('\nPlease enter the id of the project you would like to clone from:  ', (clone_id) => {
+                        rl.question('\nWould you like to update the .env file to new site name and ID? (Y/N): ', (env_response) => {
+                            resbeat_client = resbeat_response.toLowerCase() === 'y';
+                            site_id = id;
+                            site_name = name;
+                            clone_from_name = clone_name;
+                            clone_from_id = clone_id;
+                            update_env = env_response.toLowerCase() === 'y';
+                            console.log(`\nThank you, building files for ${site_name}-${site_id} now.`);
+                            console.log('\n - - - - - - - - - - - - - - - - - - - - - - - - - -');
+                            rl.close();
+                        });
+                    });
                 });
             });
         });

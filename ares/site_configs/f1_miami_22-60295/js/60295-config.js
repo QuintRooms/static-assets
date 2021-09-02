@@ -19,7 +19,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: 50425,
-            event_name: 'the F1 Miami Grand Prix',
+            event_name: 'F1 Miami Grand Prix',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

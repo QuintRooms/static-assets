@@ -1,0 +1,35 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #de4344;
+$logo_flex_position: center;
+$logo_max_width: 600px;
+$background_color: #fff;
+$primary_color: #bf2a2b;
+$secondary_color: #5c5c5c;
+$primary_text_color: #fff;
+$secondary_text_color: #333;
+$border_color: #5c5c5c;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #bf2a2b;
+$button_hover_border_color: #bf2a2b;
+$google_font_name: 'Montserrat';
+$site_name: 'test_site_clone_5-10003';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+img.logo-left, img.logo-right {
+    max-width: 375px;
+    min-width: 375px;
+    min-height: 160px;
+    max-height: 160px;
+    padding: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+   .logo-left, .logo-right{
+        display: none;
+    }
+} 

@@ -187,8 +187,8 @@ async function editConfig() {
             .replace(`site_id = ${clone_from_id};`, `site_id = ${site_id};`)
             .replace(`${clone_from_name}`, `${site_name}`)
             .replace(`${clone_from_name}`, `${site_name}`)
-            .replace(/event_id:.*,/, `event_id: 'TEST',`)
-            .replace(/event_dates:.*,/, `event_dates: 'TEST',`);
+            .replace(/event_id:.*,/, `event_id: '',`)
+            .replace(/event_dates:.*,/, `event_dates: '',`);
         fs.writeFile(`${path}`, formatted_data, (error) => {
             if (error) throw error;
             console.log('\n - Config JS file updated with new site ID and name');

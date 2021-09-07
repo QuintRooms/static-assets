@@ -15,6 +15,7 @@
     "compile-resbeat": "node-sass ./styles/sass/base-styles/resbeat.scss ./styles/resbeat.css",
     "compile-dark": "node-sass ./styles/sass/base-styles/dark.scss ./styles/dark.css",
     "build-site": "node js/build_tools/site-build.js",
+    "clone-site": "node js/build_tools/site-clone.js",
     "mjml": "./node_modules/.bin/mjml"
   },
   "author": "",

@@ -35,9 +35,4 @@ $header-images: url(#{$path}/site_configs/#{$site_name}/img/pitch.jpg);
     min-width: 300px;
 }
 
-//For HBCU Classic ONLY -- delete after Sept.5 2021
-.event-1 {
-    justify-content: flex-end;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)),url(https://static.hotelsforhope.com/ares/site_configs/hof_landing_page-62678/img/classic.jpg);
-}
 

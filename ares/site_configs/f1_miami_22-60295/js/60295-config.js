@@ -48,7 +48,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
-            logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
+            logo_outbound_url: 'https://f1miamigp.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/map_marker.png`,
         theme: 'light',

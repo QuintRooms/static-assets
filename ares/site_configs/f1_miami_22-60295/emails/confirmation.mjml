@@ -2,7 +2,7 @@
     <mj-head>
         <mj-title>{{client_name}} Booking Confirmation</mj-title>
         <mj-attributes>
-        <mj-all padding-top="0" padding-bottom="0" font-family="sans-serif" color={{text}}>
+        <mj-all padding-top="0" padding-bottom="0" font-family="Titillium Web" color={{text}}>
         </mj-attributes>
         <mj-style>
             @font-face {
@@ -34,7 +34,7 @@
         <!-- Room is Booked -->
         <mj-section padding-bottom="30px">
             <mj-column width="100%">
-            <mj-text align="center" font-family="F1-Regular, sans-serif">
+            <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
                 <h1>Your Room Is Booked!</h1>
                 <span>BOOKING NUMBER: \{{CONFIRMATIONNUMBER}}</span>
             </mj-text>
@@ -44,7 +44,7 @@
         <!-- Image -->
         <mj-section padding-bottom="10px">
             <mj-column width="100%">
-            <mj-image src="https://static.hotelsforhope.com/ares/clients/formula_1/images/f1-bg.jpg" css-class="banner" />
+            <mj-image src="https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_22-60295/img/banner.jpg" css-class="banner" />
             </mj-column>
         </mj-section>
         </mj-wrapper>
@@ -52,14 +52,14 @@
         <!-- Hotel Address -->
         <mj-section>
         <mj-column width="100%">
-            <mj-text align="center" font-family="F1-Regular, sans-serif">
+            <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
             <mj-raw>
                 <h2>\{{Hotel}}</h2>
             </mj-raw>
             </mj-text>
         </mj-column>
         <mj-column width="100%" padding-bottom="30px">
-            <mj-text align="center" font-family="F1-Regular, sans-serif">
+            <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
             <mj-raw>
                 <p style="font-weight: 500; font-size: 14px;">\{{HotelAddress1}} \{{HotelCity}}, \{{HotelState}} \{{HotelZip}}</p>
             </mj-raw>
@@ -70,7 +70,7 @@
         <!-- Reservation Details -->
         <mj-section padding-left="35px" padding-right="35px" padding-bottom="35px" padding-top="35px" background-color="#F4F4F4">
         <mj-column width="100%" padding-bottom="20px">
-            <mj-text align="center" color="#666" margin-top="0" font-family="F1-Regular, sans-serif">
+            <mj-text align="center" color="#666" margin-top="0" font-family="F1-Regular, Titillium Web, sans-serif">
             <h2 style="margin-top: 0;">RESERVATION DETAILS</h2>
             </mj-text>
             <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
@@ -117,7 +117,7 @@
         <!-- Need Help With This Reservation? -->
         <mj-section>
         <mj-column width="100%" padding-top="20px">
-            <mj-text align="center" font-family="F1-Regular, sans-serif">
+            <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
             <h1>Need Help With This Reservation?</h1>
             </mj-text>
         </mj-column>
@@ -131,7 +131,7 @@
         <!-- Email Contact -->
         <mj-column width="50%" padding-bottom="20px">
             <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/email-dots.png" alt="email" />
-            <mj-text align="center" font-family="F1-Regular, sans-serif">
+            <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
             <h4>Email Quint Rooms</h4>
             <!--email_off-->
             <a style="color:inherit;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a>
@@ -141,7 +141,7 @@
         <!-- Phone Contact -->
         <mj-column width="50%" padding-bottom="20px">
             <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/phone.png" alt="phone" />
-            <mj-text align="center" font-family="F1-Regular, sans-serif">
+            <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
             <h4>Call Quint Rooms</h4>
             <a style="color:inherit;" href="tel:+ 1 512-691-9555">+1 512-691-9555</a>
             </mj-text>

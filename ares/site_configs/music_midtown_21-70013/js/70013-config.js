@@ -81,7 +81,7 @@ export default function siteConfig() {
         has_group_booking_banner: true,
         group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Music%20Midtown',
         has_landing_page: false,
-        has_custom_emails: false,
+        has_custom_emails: true,
         hide_search_on_landing_page: true,
         landing_page_events: [
             {

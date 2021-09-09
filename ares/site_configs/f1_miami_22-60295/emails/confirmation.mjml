@@ -22,12 +22,12 @@
     <mj-body background-color={{theme}}>
         <!-- Header -->
         <mj-section>
-        <mj-column width="50%" padding-top="30px" padding-bottom="30px">
+        <!-- <mj-column width="50%" padding-top="30px" padding-bottom="30px">
             <mj-image css-class="logo" src={{logo}} alt="Logo" title="Logo" />
         </mj-column>
         <mj-column width="100%">
             <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
-        </mj-column>
+        </mj-column> -->
         </mj-section>
 
         <mj-wrapper>
@@ -44,7 +44,7 @@
         <!-- Image -->
         <mj-section padding-bottom="10px">
             <mj-column width="100%">
-            <mj-image src="https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_22-60295/img/banner.jpg" css-class="banner" />
+            <mj-image src="https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_22-60295/img/email_banner.jpg" css-class="banner" />
             </mj-column>
         </mj-section>
         </mj-wrapper>

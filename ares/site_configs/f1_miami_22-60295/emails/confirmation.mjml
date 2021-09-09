@@ -132,7 +132,7 @@
         <mj-column width="50%" padding-bottom="20px">
             <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/email-dots.png" alt="email" />
             <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
-            <h4>Email Quint Rooms</h4>
+            <h4>Email QuintRooms</h4>
             <!--email_off-->
             <a style="color:inherit;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a>
             <!--/email_off-->
@@ -142,7 +142,7 @@
         <mj-column width="50%" padding-bottom="20px">
             <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/phone.png" alt="phone" />
             <mj-text align="center" font-family="F1-Regular, Titillium Web, sans-serif">
-            <h4>Call Quint Rooms</h4>
+            <h4>Call QuintRooms</h4>
             <a style="color:inherit;" href="tel:+ 1 512-691-9555">+1 512-691-9555</a>
             </mj-text>
         </mj-column>

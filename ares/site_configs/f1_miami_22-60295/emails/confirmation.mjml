@@ -226,7 +226,7 @@
             <h4>QuintRooms</h4>
             </mj-text>
             <mj-text padding-bottom="5px">
-            <a style="color:inherit;" href="https://www.hotelsforhope.com/">www.quintrooms.com</a>
+            <a style="color:inherit;" href="https://quintrooms.com/">www.quintrooms.com</a>
             </mj-text>
             <mj-text padding-bottom="5px">
             <div>4029 S. Capital of Texas Hwy, Suite 111 Austin, Texas 78704</div>
@@ -247,10 +247,10 @@
         </mj-column>
         <mj-column width="50%">
             <mj-social padding-top="20px" font-size="15px" icon-size="30px" mode="horizontal" border-radius="20px">
-            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/hotels4hope" />
-            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/hotels4hope/" />
-            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://twitter.com/hotels4hope" />
-            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="linkedin" href="https://www.linkedin.com/company/hotels-for-hope" />
+            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/QuintRooms" />
+            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/quintrooms" />
+            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://www.twitter.com/QuintRooms" />
+            <mj-social-element icon-padding="3px" background-color={{primary_color}} name="linkedin" href="https://www.linkedin.com/company/quint-rooms/" />
             </mj-social>
         </mj-column>
         </mj-section>

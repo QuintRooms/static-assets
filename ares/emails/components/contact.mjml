@@ -20,7 +20,7 @@
         <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/email-dots.png" alt="email" />
         <mj-text align="center">
             <h4>Email Hotels For Hope</h4>
-            <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">reservations@hotelsforhope.com</a> 
+            <a style="color:inherit;" href="mailto:reservations@quintrooms.com">reservations@quintrooms.com</a> 
         </mj-text>
     </mj-column>
     <!-- Phone Contact -->

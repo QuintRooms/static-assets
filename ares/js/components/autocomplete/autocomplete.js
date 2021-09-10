@@ -296,7 +296,7 @@ export default class Autocomplete {
             site === 52342 ||
             (theme === 'standard' && affiliate !== 16980) ||
             (this.site_config.lodging.event_name === 'F1 United States Grand Prix' && affiliate === 16980 && theme === 'standard') ||
-            (this.site_config.lodging.event_name === 'Miami Grand Prix' && affiliate === 16980 && theme === 'standard')
+            (this.site_config.lodging.event_name === 'F1 Miami Grand Prix' && affiliate === 16980 && theme === 'standard')
         ) {
             check_in_value = dayjs(date_in, 'M/D/YYYY').format('M/D/YYYY');
             check_out_value = dayjs(date_out, 'M/D/YYYY').format('M/D/YYYY');

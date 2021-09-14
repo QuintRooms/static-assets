@@ -41,12 +41,15 @@ async function setActiveItemFromLocalStorage() {
     if(!activeClass) return;
     const activeItemArr = document.querySelectorAll('.active');
     activeItemArr.forEach((i)=> {
-        if(!i.classList.contains('ArnSortByAvailability')){
-            i.classList.remove('active');
-        }
+        i.classList.remove('active');
+        // if(!i.classList.contains('ArnSortByAvailability')){
+            
+        // }
     });
     console.log('activeClass',activeClass);
     await utilities.waitForSelectorInDOM('.ArnSortByBeachfront');
+    await utilities.waitForSelectorInDOM('.ArnSortByDistance');
+    await utilities.waitForSelectorInDOM('.ArnSortByPrice');
     let activeItem = document.querySelector(`.${activeClass}`);
     activeItem.classList.add('active');
     console.log('activeItem.classList', activeItem.classList)
@@ -89,7 +92,6 @@ addListenerToSortWrapper();
 
 async function changeActiveSortItem(newActiveClass) {
     const clickedSortATag = document.querySelector(`.${newActiveClass}`);
-    const beachfrontUrl = `https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=60295&longitude=-80.23964600000000&latitude=25.95829850000000&radius=100&checkin=5/5/2022&nights=4&properties=338522,255939,240375,158522,2681,500825,179461,37003,259911,178994,20735,422794,252829,623490,3374,626284,848867,216347,24437,171408,332706,238362,380849,752193,33569,446028,24622,222338,430088,384604,10181,446322,256124,236435,16286,36053,35663,398338,273231,277689,450804,238764,10280,51206,175591,168273,233505,236708,174544,179936,16529,10116,2324,176956,24618,10117,130326,208368,182430,32656,43658,283572,271200,33831,24620,48449,716976,180475,34301,259007,20681,236428&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal`
     const activeStorage = window.localStorage;
     activeStorage.setItem('activeItem', newActiveClass);
     const sortHref = clickedSortATag.href

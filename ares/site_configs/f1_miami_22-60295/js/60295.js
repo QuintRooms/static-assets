@@ -35,7 +35,8 @@ async function insertFooterText() {
 insertFooterText();
 
 async function setActiveItemFromLocalStorage() {
-    await utilities.waitForSelectorInDOM('.active');
+    // await utilities.waitForSelectorInDOM('.sort-wrapper');
+    await utilities.waitForSelectorInDOM('.ArnSortByBeachfront');
     const activeStorage = window.localStorage;
     let activeClass = activeStorage.getItem('activeItem');
     if(!activeClass) return;
@@ -47,14 +48,11 @@ async function setActiveItemFromLocalStorage() {
         // }
     });
     console.log('activeClass',activeClass);
-    await utilities.waitForSelectorInDOM('.ArnSortByBeachfront');
-    await utilities.waitForSelectorInDOM('.ArnSortByDistance');
-    await utilities.waitForSelectorInDOM('.ArnSortByPrice');
     let activeItem = document.querySelector(`.${activeClass}`);
     activeItem.classList.add('active');
     console.log('activeItem.classList', activeItem.classList)
 };
-
+setActiveItemFromLocalStorage();
 
 async function insertBeachSortButton() {
     await utilities.waitForSelectorInDOM('.sort-wrapper');
@@ -111,8 +109,6 @@ async function changeActiveSortItem(newActiveClass) {
     //     window.location.href = sortHref;
     // }
 }
-
-setActiveItemFromLocalStorage();
 
 // console.log(e);
     // console.log(e.target);

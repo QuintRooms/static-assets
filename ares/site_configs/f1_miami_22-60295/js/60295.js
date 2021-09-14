@@ -43,6 +43,9 @@ async function setActiveItemFromLocalStorage() {
     const active_item_arr = document.querySelectorAll('.active');
     active_item_arr.forEach((i) => {
         i.classList.remove('active');
+        // if(!i.classList.contains('ArnSortByAvailability')){
+            
+        // }
     });
     console.log('active_class', active_class);
     const active_item = document.querySelector(`.${active_class}`);

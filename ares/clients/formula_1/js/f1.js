@@ -86,7 +86,7 @@ export default async function f1Styles(siteId, event_name) {
     async function updateBannerMessage() {
         await utilities.waitForSelectorInDOM('.lucid-banner');
 
-        document.querySelector('.lucid-content').innerHTML = '<span>Look for the Exclusive Rate tag - these are the guaranteed lowest rates!</span>';
+        document.querySelector('.lucid-content').innerHTML = '<span style="text-align: center;">Look for the Exclusive Rate tag - these are the guaranteed lowest rates!</span>';
     }
 
     addHeader(siteId, event_name);

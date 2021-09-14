@@ -933,8 +933,8 @@ div.autocomplete ul li.selected {
 .SearchHotels .star {
   transform: scale(0.9); }
 
-.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
-  display: flex !important;
+.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews, #thePropertyReviews {
+  display: none !important;
   order: 1;
   position: absolute;
   bottom: 0;
@@ -1368,7 +1368,7 @@ legend {
   margin-top: 12px; }
 
 .SinglePropDetail .ArnTripAdvisorDetails.HasReviews {
-  display: flex !important;
+  display: none !important;
   justify-content: center;
   align-items: center; }
 

@@ -18,7 +18,7 @@ export default async function f1Styles(siteId, event_name) {
         const races_contact = `
             <ul id="races-contact">
                 <li>
-                    <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
+                    <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs" target="_blank">Contact Us</a>
                 </li>
                 <li>
                     <a href="https://form.jotform.com/203066540331141?bookingPortal=${name}" class="book-plus" target="_blank">Book 10+ Rooms</a>
@@ -43,13 +43,16 @@ export default async function f1Styles(siteId, event_name) {
         document.querySelector('.currency').insertAdjacentElement('afterBegin', currency_el);
     }
 
-    async function addHamburgerMenu(id) {
+    async function addHamburgerMenu(id, name) {
         const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula_1/html/mobile-hamburger-menu.html`);
 
         header.insertAdjacentHTML('afterBegin', burger_html);
 
         const mobile_contact_url = document.querySelector('.mobile-nav-upper-ul #contactUs');
-        mobile_contact_url.href = `href="https://events.${domain}/v6/support?siteId=${id}"`;
+        mobile_contact_url.href = `https://events.${domain}/v6/support?siteId=${id}`;
+
+        const mobile_10_plus_url = document.querySelector('.mobile-nav-upper-ul #book10Plus');
+        mobile_10_plus_url.href = `https://form.jotform.com/203066540331141?bookingPortal=${name}`;
 
         await utilities.waitForSelectorInDOM('.navbar-hamburger');
 
@@ -80,7 +83,14 @@ export default async function f1Styles(siteId, event_name) {
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);
     }
 
+    async function updateBannerMessage() {
+        await utilities.waitForSelectorInDOM('.lucid-banner');
+
+        document.querySelector('.lucid-content').innerHTML = '<span>Look for the Exclusive Rate tag - these are the guaranteed lowest rates!</span>';
+    }
+
     addHeader(siteId, event_name);
     addHamburgerMenu(siteId, event_name);
     addFooter();
+    updateBannerMessage();
 }

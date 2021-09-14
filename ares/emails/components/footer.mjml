@@ -27,10 +27,10 @@
     </mj-column>
     <mj-column width="50%">
         <mj-social padding-top="20px" font-size="15px" icon-size="30px" mode="horizontal" border-radius="20px">
-            <mj-social-element alt="Facebook Logo" icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/QuintRooms" />
-            <mj-social-element alt="Instagram Logo" icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/quintrooms" />
-            <mj-social-element alt="Twitter Logo" icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://www.twitter.com/QuintRooms" />
-            <mj-social-element alt="Linkedin Logo" icon-padding="3px" background-color={{primary_color}} name="linkedin" href="https://www.linkedin.com/company/quint-rooms/" />
+            <mj-social-element alt="Facebook Logo" icon-padding="3px" background-color={{primary_color}} name="facebook-noshare" href="https://www.facebook.com/QuintRooms" />
+            <mj-social-element alt="Instagram Logo" icon-padding="3px" background-color={{primary_color}} name="instagram-noshare" href="https://www.instagram.com/quintrooms" />
+            <mj-social-element alt="Twitter Logo" icon-padding="3px" background-color={{primary_color}} name="twitter-noshare" href="https://www.twitter.com/QuintRooms" />
+            <mj-social-element alt="Linkedin Logo" icon-padding="3px" background-color={{primary_color}} name="linkedin-noshare" href="https://www.linkedin.com/company/quint-rooms/" />
         </mj-social>
     </mj-column>
 </mj-section>

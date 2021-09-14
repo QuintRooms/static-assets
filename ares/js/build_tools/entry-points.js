@@ -4,59 +4,59 @@ module.exports = () => {
     // production environment
     if (process.env.NODE_ENV === 'production') {
         entry_points = {
-            // 'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
-            // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
-            // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
-            // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
-            // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
-            // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
-            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
-            // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
-            // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
-            // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
-            // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
-            // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
-            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
-            // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
-            // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
-            // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
-            // 'f1_template-46972': './src/46972.js', // Formula 1 Template
-            // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
-            // 'firefly_21-64866': './src/64866.js', // firefly 21
-            // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
-            // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
-            // 'hof_hbcu_classic_21-62682': './src/62682.js', // Hall Of Fame HBCU Classic
-            // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
-            // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
-            // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
-            // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
-            // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
-            // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
-            // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
-            // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
-            // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
-            // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
-            // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
-            // 'resbeat-60831': './src/60831.js', // Resbeat
-            // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
-            // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
-            // 'roomcash-63712': './src/63712.js', // RoomCash
-            // 'room_steals-52342': './src/52342.js', // Room Steals
-            // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
-            // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
-            // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
-            // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
-            // 'ticket_manager-70009': './src/70009.js', // ticket manager
-            // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
-            // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
-            // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
-            // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
-            // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
-            // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
-            // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
-            // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
+            'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
+            'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
+            'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
+            'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
+            'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
+            'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
+            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
+            'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
+            'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
+            'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
+            'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
+            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
+            'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
+            f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
+            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
+            'f1_template-46972': './src/46972.js', // Formula 1 Template
+            'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
+            'firefly_21-64866': './src/64866.js', // firefly 21
+            'governors_ball_21-70366': './src/70366.js', // governors ball_21
+            'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
+            'hof_hbcu_classic_21-62682': './src/62682.js', // Hall Of Fame HBCU Classic
+            'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
+            'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
+            'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
+            'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
+            'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
+            'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
+            'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
+            'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
+            'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
+            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
+            'resbeat-60831': './src/60831.js', // Resbeat
+            'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
+            'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
+            'roomcash-63712': './src/63712.js', // RoomCash
+            'room_steals-52342': './src/52342.js', // Room Steals
+            'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
+            'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
+            'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
+            'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
+            'ticket_manager-70009': './src/70009.js', // ticket manager
+            'tortuga_21-62309': './src/62309.js', // Tortuga 2021
+            'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
+            'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
+            'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
+            'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
+            'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
+            'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
+            'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
         };
 
         // develop environment
@@ -68,6 +68,8 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+
         };
 
         // local environment
@@ -75,7 +77,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
         };
     }
 

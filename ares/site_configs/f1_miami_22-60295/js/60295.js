@@ -95,6 +95,7 @@ async function changeActiveSortItem(newActiveClass) {
     const sortHref = clickedSortATag.href
     // console.log('sortHref', sortHref)
     window.location.href = sortHref;
+}
 
     // const current_url = new URL(window.location.href);
     // if (newActiveClass === 'ArnSortByBeachfront') {
@@ -108,7 +109,6 @@ async function changeActiveSortItem(newActiveClass) {
     //     // console.log('sortHref', sortHref)
     //     window.location.href = sortHref;
     // }
-}
 
 // console.log(e);
     // console.log(e.target);

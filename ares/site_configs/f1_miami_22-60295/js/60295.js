@@ -43,9 +43,6 @@ async function setActiveItemFromLocalStorage() {
     const active_item_arr = document.querySelectorAll('.active');
     active_item_arr.forEach((i) => {
         i.classList.remove('active');
-        // if(!i.classList.contains('ArnSortByAvailability')){
-
-        // }
     });
     console.log('active_class', active_class);
     const active_item = document.querySelector(`.${active_class}`);
@@ -61,7 +58,33 @@ async function insertBeachSortButton() {
     sort_wrapper.insertAdjacentHTML(
         'beforeEnd',
         `
-        <a class="ArnSortByBeachfront" href="https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=60295&longitude=-80.23964600000000&latitude=25.95829850000000&radius=100&checkin=5/5/2022&nights=4&properties=338522,255939,240375,158522,2681,500825,179461,37003,259911,178994,20735,422794,252829,623490,3374,626284,848867,216347,24437,171408,332706,238362,380849,752193,33569,446028,24622,222338,430088,384604,10181,446322,256124,236435,16286,36053,35663,398338,273231,277689,450804,238764,10280,51206,175591,168273,233505,236708,174544,179936,16529,10116,2324,176956,24618,10117,130326,208368,182430,32656,43658,283572,271200,33831,24620,48449,716976,180475,34301,259007,20681,236428&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal"><div>Beachfront Location</div></a>
+        <a class="ArnSortByBeachfront" href="https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=60295&longitude=-80.23964600000000&latitude=25.95829850000000&radius=100&checkin=5/5/2022&nights=4&properties=236435,
+        179461,
+        3983382,
+        233505,
+        37003,
+        626284,
+        500825,
+        256124,
+        2681,
+        16286,
+        238362,
+        36053,
+        623490,
+        240375,
+        752193,
+        24437,
+        430088,
+        3385223,
+        43658,
+        422794,
+        3846047,
+        33831,
+        33569,
+        48449,
+        216347,
+        24622,
+        848867&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal"><div>Beachfront Location</div></a>
         `
     );
 }
@@ -95,34 +118,4 @@ async function changeActiveSortItem(newActiveClass) {
     const sort_href = clicked_sort_a_tag.href;
     // console.log('sort_href', sort_href)
     window.location.href = sort_href;
-
-    // const current_url = new URL(window.location.href);
-    // if (newActiveClass === 'ArnSortByBeachfront') {
-    //     current_url.searchParams.set('properties',
-    //     `338522,255939,240375,158522,2681,500825,179461,37003,259911,178994,20735,422794,252829,623490,3374,626284,848867,216347,24437,171408,332706,238362,380849,752193,33569,446028,24622,222338,430088,384604,10181,446322,256124,236435,16286,36053,35663,398338,273231,277689,450804,238764,10280,51206,175591,168273,233505,236708,174544,179936,16529,10116,2324,176956,24618,10117,130326,208368,182430,32656,43658,283572,271200,33831,24620,48449,716976,180475,34301,259007,20681,236428`
-    //     );
-    //     window.location.href = beachfrontUrl;
-    // } else {
-    //     // console.log('clicked_sort_a_tag', clicked_sort_a_tag);
-    //     const sort_href = clicked_sort_a_tag.href
-    //     // console.log('sort_href', sort_href)
-    //     window.location.href = sort_href;
-    // }
 }
-
-// console.log(e);
-// console.log(e.target);
-// e.preventDefault();
-// if (e.target.querySelector('a>div')){
-//     const clickedClass = e.target.querySelector('a>div').closest('a').classList;
-// }
-
-// async function addListenerToBeachButton() {
-//     await utilities.waitForSelectorInDOM('.ArnSortByBeachfront');
-//     const beachSortButton = document.querySelector('.ArnSortByBeachfront');
-//     beachSortButton.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         changeActiveSortItem('ArnSortByBeachfront')
-//     });
-// };
-// addListenerToBeachButton();

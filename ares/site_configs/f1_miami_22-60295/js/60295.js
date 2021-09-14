@@ -15,7 +15,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id);
+f1Styles(site_config.site_id, site_config.lodging.event_name);
 
 new ChildPortal();
 new Distance();
@@ -31,24 +31,24 @@ async function insertFooterText() {
         <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>
         `
     );
-};
+}
 insertFooterText();
 
 async function setActiveItemFromLocalStorage() {
     // await utilities.waitForSelectorInDOM('.sort-wrapper');
     await utilities.waitForSelectorInDOM('.ArnSortByBeachfront');
-    const activeStorage = window.localStorage;
-    let activeClass = activeStorage.getItem('activeItem');
-    if(!activeClass) return;
-    const activeItemArr = document.querySelectorAll('.active');
-    activeItemArr.forEach((i)=> {
+    const active_storage = window.localStorage;
+    const active_class = active_storage.getItem('active_item');
+    if (!active_class) return;
+    const active_item_arr = document.querySelectorAll('.active');
+    active_item_arr.forEach((i) => {
         i.classList.remove('active');
     });
-    console.log('activeClass',activeClass);
-    let activeItem = document.querySelector(`.${activeClass}`);
-    activeItem.classList.add('active');
-    console.log('activeItem.classList', activeItem.classList)
-};
+    console.log('active_class', active_class);
+    const active_item = document.querySelector(`.${active_class}`);
+    active_item.classList.add('active');
+    console.log('active_item.classList', active_item.classList);
+}
 setActiveItemFromLocalStorage();
 
 async function insertBeachSortButton() {
@@ -87,7 +87,7 @@ async function insertBeachSortButton() {
         848867&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal"><div>Beachfront Location</div></a>
         `
     );
-};
+}
 insertBeachSortButton();
 
 async function addListenerToSortWrapper() {
@@ -95,27 +95,27 @@ async function addListenerToSortWrapper() {
     const sort_wrapper = document.querySelector('.sort-wrapper');
     sort_wrapper.addEventListener('click', (e) => {
         e.preventDefault();
-        const clickedSortATag = e.target.closest('a');
-        // console.log('clickedSortATag', clickedSortATag);
+        const clicked_sort_a_tag = e.target.closest('a');
+        // console.log('clicked_sort_a_tag', clicked_sort_a_tag);
 
-        if (clickedSortATag.classList.contains('ArnSortByBeachfront')){
+        if (clicked_sort_a_tag.classList.contains('ArnSortByBeachfront')) {
             changeActiveSortItem('ArnSortByBeachfront');
-        } else if (clickedSortATag.classList.contains('ArnSortByDistance')) {
+        } else if (clicked_sort_a_tag.classList.contains('ArnSortByDistance')) {
             changeActiveSortItem('ArnSortByDistance');
-        } else if (clickedSortATag.classList.contains('ArnSortByPrice')) {
+        } else if (clicked_sort_a_tag.classList.contains('ArnSortByPrice')) {
             changeActiveSortItem('ArnSortByPrice');
-        } else if (clickedSortATag.classList.contains('ArnSortByClass')) {
+        } else if (clicked_sort_a_tag.classList.contains('ArnSortByClass')) {
             changeActiveSortItem('ArnSortByClass');
         }
     });
-};
+}
 addListenerToSortWrapper();
 
 async function changeActiveSortItem(newActiveClass) {
-    const clickedSortATag = document.querySelector(`.${newActiveClass}`);
-    const activeStorage = window.localStorage;
-    activeStorage.setItem('activeItem', newActiveClass);
-    const sortHref = clickedSortATag.href
-    // console.log('sortHref', sortHref)
-    window.location.href = sortHref;
+    const clicked_sort_a_tag = document.querySelector(`.${newActiveClass}`);
+    const active_storage = window.localStorage;
+    active_storage.setItem('active_item', newActiveClass);
+    const sort_href = clicked_sort_a_tag.href;
+    // console.log('sort_href', sort_href)
+    window.location.href = sort_href;
 }

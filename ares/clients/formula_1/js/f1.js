@@ -5,61 +5,54 @@ const utilities = new Utilities();
 const {domain} = process.env;
 const env_path = new Path();
 
-export default async function f1Styles(siteId) {
+export default async function f1Styles(siteId, event_name) {
     await utilities.waitForSelectorInDOM('header');
+
     const header = document.querySelector('header');
     const language_el = document.querySelector('#language');
     const currency_el = document.querySelector('.currencies-container');
 
-    async function addHeader(id) {
+    async function addHeader(id, name) {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula_1/html/f1-header.html`);
-        const races_contact =
-            siteId === '46451' || siteId === '45246'
-                ? `
-        <ul id="races-contact">
-            <li>
-                <a href="#races-container" id="races">Races</a>
-            </li>
-            <li>
-                <a href="https://events.${domain}/v6/support?siteId=46972" id="contactUs">Contact Us</a>
-            </li>
-        </ul>
-        <div class="navbar-hamburger">
-            <span class="toggle-bar top-bar"></span>
-            <span class="toggle-bar middle-bar"></span>
-            <span class="toggle-bar bottom-bar"></span>
-        </div>
-    `
-                : `
-    <ul id="races-contact">
-        <li>
-            <a href="https://bookrooms.formula1.com/" id="races" target="_blank">Races</a>
-        </li>
-        <li>
-            <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs">Contact Us</a>
-        </li>
-    </ul>
-    <div class="navbar-hamburger">
-        <span class="toggle-bar top-bar"></span>
-        <span class="toggle-bar middle-bar"></span>
-        <span class="toggle-bar bottom-bar"></span>
-    </div>
-`;
+
+        const races_contact = `
+            <ul id="races-contact">
+                <li>
+                    <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs" target="_blank">Contact Us</a>
+                </li>
+                <li>
+                    <a href="https://form.jotform.com/203066540331141?bookingPortal=${name}" class="book-plus" target="_blank">Book 10+ Rooms</a>
+                </li>
+            </ul>
+            <div class="navbar-hamburger">
+                <span class="toggle-bar top-bar"></span>
+                <span class="toggle-bar middle-bar"></span>
+                <span class="toggle-bar bottom-bar"></span>
+            </div>
+        `;
+
         header.insertAdjacentHTML('beforebegin', html);
-        header.insertAdjacentHTML('beforeend', races_contact);
+
+        const header_upper = document.querySelector('.header-upper');
+
+        header_upper.insertAdjacentHTML('beforeend', races_contact);
+
         if (language_el === null || currency_el === null) return;
+
         document.querySelector('#tickets .language').insertAdjacentElement('afterbegin', language_el);
         document.querySelector('.currency').insertAdjacentElement('afterBegin', currency_el);
     }
 
-    async function addHamburgerMenu(id) {
+    async function addHamburgerMenu(id, name) {
         const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula_1/html/mobile-hamburger-menu.html`);
-        header.insertAdjacentHTML('beforeend', burger_html);
+
+        header.insertAdjacentHTML('afterBegin', burger_html);
 
         const mobile_contact_url = document.querySelector('.mobile-nav-upper-ul #contactUs');
-        id === '46451' || id === '45246'
-            ? (mobile_contact_url.href = `href="https://events.${domain}/v6/support?siteId=46973"`)
-            : (mobile_contact_url.href = `href="https://events.${domain}/v6/support?siteId=${id}"`);
+        mobile_contact_url.href = `https://events.${domain}/v6/support?siteId=${id}`;
+
+        const mobile_10_plus_url = document.querySelector('.mobile-nav-upper-ul #book10Plus');
+        mobile_10_plus_url.href = `https://form.jotform.com/203066540331141?bookingPortal=${name}`;
 
         await utilities.waitForSelectorInDOM('.navbar-hamburger');
 
@@ -90,7 +83,14 @@ export default async function f1Styles(siteId) {
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);
     }
 
-    addHeader(siteId);
-    addHamburgerMenu(siteId);
+    async function updateBannerMessage() {
+        await utilities.waitForSelectorInDOM('.lucid-banner');
+
+        document.querySelector('.lucid-content').innerHTML = '<span>Look for the Exclusive Rate tag - these are the guaranteed lowest rates!</span>';
+    }
+
+    addHeader(siteId, event_name);
+    addHamburgerMenu(siteId, event_name);
     addFooter();
+    updateBannerMessage();
 }

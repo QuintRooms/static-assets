@@ -54,7 +54,7 @@ async function setActiveItemFromLocalStorage() {
     activeItem.classList.add('active');
     console.log('activeItem.classList', activeItem.classList)
 };
-setActiveItemFromLocalStorage();
+
 
 async function insertBeachSortButton() {
     await utilities.waitForSelectorInDOM('.sort-wrapper');
@@ -111,6 +111,8 @@ async function changeActiveSortItem(newActiveClass) {
     //     window.location.href = sortHref;
     // }
 }
+
+setActiveItemFromLocalStorage();
 
 // console.log(e);
     // console.log(e.target);

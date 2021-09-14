@@ -185,9 +185,110 @@
                                         .querySelector('.f1-policy')
                                         .insertAdjacentHTML(
                                             'beforebegin',
-                                            '\n    <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />\n    <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>\n    '
+                                            '\n        <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />\n        <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>\n        '
                                         );
                                 case 4:
+                                case 'end':
+                                    return e.stop();
+                            }
+                    }, e);
+                })
+            )).apply(this, arguments);
+        }
+        function w() {
+            return (w = u(
+                regeneratorRuntime.mark(function e() {
+                    var t, n, r;
+                    return regeneratorRuntime.wrap(function (e) {
+                        for (;;)
+                            switch ((e.prev = e.next)) {
+                                case 0:
+                                    return (e.next = 2), v.waitForSelectorInDOM('.ArnSortByBeachfront');
+                                case 2:
+                                    if (((t = window.localStorage), (n = t.getItem('activeItem')))) {
+                                        e.next = 6;
+                                        break;
+                                    }
+                                    return e.abrupt('return');
+                                case 6:
+                                    document.querySelectorAll('.active').forEach(function (e) {
+                                        e.classList.remove('active');
+                                    }),
+                                        console.log('activeClass', n),
+                                        (r = document.querySelector('.'.concat(n))).classList.add('active'),
+                                        console.log('activeItem.classList', r.classList);
+                                case 12:
+                                case 'end':
+                                    return e.stop();
+                            }
+                    }, e);
+                })
+            )).apply(this, arguments);
+        }
+        function S() {
+            return (S = u(
+                regeneratorRuntime.mark(function e() {
+                    return regeneratorRuntime.wrap(function (e) {
+                        for (;;)
+                            switch ((e.prev = e.next)) {
+                                case 0:
+                                    return (e.next = 2), v.waitForSelectorInDOM('.sort-wrapper');
+                                case 2:
+                                    document
+                                        .querySelector('.sort-wrapper')
+                                        .insertAdjacentHTML(
+                                            'beforeEnd',
+                                            '\n        <a class="ArnSortByBeachfront" href="https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=60295&longitude=-80.23964600000000&latitude=25.95829850000000&radius=100&checkin=5/5/2022&nights=4&properties=338522,255939,240375,158522,2681,500825,179461,37003,259911,178994,20735,422794,252829,623490,3374,626284,848867,216347,24437,171408,332706,238362,380849,752193,33569,446028,24622,222338,430088,384604,10181,446322,256124,236435,16286,36053,35663,398338,273231,277689,450804,238764,10280,51206,175591,168273,233505,236708,174544,179936,16529,10116,2324,176956,24618,10117,130326,208368,182430,32656,43658,283572,271200,33831,24620,48449,716976,180475,34301,259007,20681,236428&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal"><div>Beachfront Location</div></a>\n        '
+                                        );
+                                case 4:
+                                case 'end':
+                                    return e.stop();
+                            }
+                    }, e);
+                })
+            )).apply(this, arguments);
+        }
+        function k() {
+            return (k = u(
+                regeneratorRuntime.mark(function e() {
+                    return regeneratorRuntime.wrap(function (e) {
+                        for (;;)
+                            switch ((e.prev = e.next)) {
+                                case 0:
+                                    return (e.next = 2), v.waitForSelectorInDOM('.sort-wrapper');
+                                case 2:
+                                    document.querySelector('.sort-wrapper').addEventListener('click', function (e) {
+                                        e.preventDefault();
+                                        var t = e.target.closest('a');
+                                        t.classList.contains('ArnSortByBeachfront')
+                                            ? x('ArnSortByBeachfront')
+                                            : t.classList.contains('ArnSortByDistance')
+                                            ? x('ArnSortByDistance')
+                                            : t.classList.contains('ArnSortByPrice')
+                                            ? x('ArnSortByPrice')
+                                            : t.classList.contains('ArnSortByClass') && x('ArnSortByClass');
+                                    });
+                                case 4:
+                                case 'end':
+                                    return e.stop();
+                            }
+                    }, e);
+                })
+            )).apply(this, arguments);
+        }
+        function x(e) {
+            return A.apply(this, arguments);
+        }
+        function A() {
+            return (A = u(
+                regeneratorRuntime.mark(function e(t) {
+                    var n, r;
+                    return regeneratorRuntime.wrap(function (e) {
+                        for (;;)
+                            switch ((e.prev = e.next)) {
+                                case 0:
+                                    (n = document.querySelector('.'.concat(t))), window.localStorage.setItem('activeItem', t), (r = n.href), (window.location.href = r);
+                                case 5:
                                 case 'end':
                                     return e.stop();
                             }
@@ -200,6 +301,15 @@
             new a.default(),
             (function () {
                 b.apply(this, arguments);
+            })(),
+            (function () {
+                w.apply(this, arguments);
+            })(),
+            (function () {
+                S.apply(this, arguments);
+            })(),
+            (function () {
+                k.apply(this, arguments);
             })();
     },
     function (e, t, n) {
@@ -241,11 +351,11 @@
                     return (L || 'function' == typeof PromiseRejectionEvent) && e.then(P) instanceof t && 0 !== q.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            R = function (e) {
                 var t;
                 return !(!h(e) || 'function' != typeof (t = e.then)) && t;
             },
-            R = function (e, t) {
+            T = function (e, t) {
                 if (!e._n) {
                     e._n = !0;
                     var n = e._c;
@@ -266,7 +376,7 @@
                                         s
                                             ? (i || (2 == e._h && j(e), (e._h = 1)),
                                               !0 === s ? (n = r) : (l && l.enter(), (n = s(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(k('Promise-chain cycle')) : (o = T(n)) ? o.call(n, c, u) : c(n))
+                                              n === t.promise ? u(k('Promise-chain cycle')) : (o = R(n)) ? o.call(n, c, u) : c(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -314,7 +424,7 @@
             },
             D = function (e) {
                 var t = this;
-                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), R(t, !0));
+                t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), T(t, !0));
             },
             Y = function (e) {
                 var t,
@@ -323,7 +433,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw k("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = R(e))
                             ? g(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -332,7 +442,7 @@
                                       D.call(r, e);
                                   }
                               })
-                            : ((n._v = e), (n._s = 1), R(n, !1));
+                            : ((n._v = e), (n._s = 1), T(n, !1));
                     } catch (e) {
                         D.call({_w: n, _d: !1}, e);
                     }
@@ -358,7 +468,7 @@
                         (n.domain = L ? x.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
-                        this._s && R(this, !1),
+                        this._s && T(this, !1),
                         n.promise
                     );
                 },
@@ -1390,18 +1500,18 @@
             P = n(55),
             C = q.f,
             M = L.f,
-            T = A.f,
-            R = r.Symbol,
+            R = A.f,
+            T = r.Symbol,
             O = r.JSON,
             I = O && O.stringify,
             j = f('_hidden'),
             D = f('toPrimitive'),
             Y = {}.propertyIsEnumerable,
             F = l('symbol-registry'),
-            H = l('symbols'),
-            B = l('op-symbols'),
+            B = l('symbols'),
+            H = l('op-symbols'),
             N = Object.prototype,
-            U = 'function' == typeof R && !!E.f,
+            U = 'function' == typeof T && !!E.f,
             $ = r.QObject,
             G = !$ || !$.prototype || !$.prototype.findChild,
             W =
@@ -1424,24 +1534,24 @@
                       }
                     : M,
             z = function (e) {
-                var t = (H[e] = x(R.prototype));
+                var t = (B[e] = x(T.prototype));
                 return (t._k = e), t;
             },
             V =
-                U && 'symbol' == typeof R.iterator
+                U && 'symbol' == typeof T.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
                       }
                     : function (e) {
-                          return e instanceof R;
+                          return e instanceof T;
                       },
             K = function (e, t, n) {
                 return (
-                    e === N && K(B, t, n),
+                    e === N && K(H, t, n),
                     g(e),
                     (t = S(t, !0)),
                     g(n),
-                    i(H, t)
+                    i(B, t)
                         ? (n.enumerable ? (i(e, j) && e[j][t] && (e[j][t] = !1), (n = x(n, {enumerable: k(0, !1)}))) : (i(e, j) || M(e, j, k(1, {})), (e[j][t] = !0)), W(e, t, n))
                         : M(e, t, n)
                 );
@@ -1453,29 +1563,29 @@
             },
             J = function (e) {
                 var t = Y.call(this, (e = S(e, !0)));
-                return !(this === N && i(H, e) && !i(B, e)) && (!(t || !i(this, e) || !i(H, e) || (i(this, j) && this[j][e])) || t);
+                return !(this === N && i(B, e) && !i(H, e)) && (!(t || !i(this, e) || !i(B, e) || (i(this, j) && this[j][e])) || t);
             },
             Z = function (e, t) {
-                if (((e = w(e)), (t = S(t, !0)), e !== N || !i(H, t) || i(B, t))) {
+                if (((e = w(e)), (t = S(t, !0)), e !== N || !i(B, t) || i(H, t))) {
                     var n = C(e, t);
-                    return !n || !i(H, t) || (i(e, j) && e[j][t]) || (n.enumerable = !0), n;
+                    return !n || !i(B, t) || (i(e, j) && e[j][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], o = 0; n.length > o; ) i(H, (t = n[o++])) || t == j || t == c || r.push(t);
+                for (var t, n = R(w(e)), r = [], o = 0; n.length > o; ) i(B, (t = n[o++])) || t == j || t == c || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = T(n ? B : w(e)), o = [], a = 0; r.length > a; ) !i(H, (t = r[a++])) || (n && !i(N, t)) || o.push(H[t]);
+                for (var t, n = e === N, r = R(n ? H : w(e)), o = [], a = 0; r.length > a; ) !i(B, (t = r[a++])) || (n && !i(N, t)) || o.push(B[t]);
                 return o;
             };
         U ||
             (s(
-                (R = function () {
-                    if (this instanceof R) throw TypeError('Symbol is not a constructor!');
+                (T = function () {
+                    if (this instanceof T) throw TypeError('Symbol is not a constructor!');
                     var e = h(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(B, n), i(this, j) && i(this[j], e) && (this[j][e] = !1), W(this, e, k(1, n));
+                            this === N && t.call(H, n), i(this, j) && i(this[j], e) && (this[j][e] = !1), W(this, e, k(1, n));
                         };
                     return o && G && W(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -1493,13 +1603,13 @@
             (p.f = function (e) {
                 return z(f(e));
             })),
-            a(a.G + a.W + a.F * !U, {Symbol: R});
+            a(a.G + a.W + a.F * !U, {Symbol: T});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             f(te[ne++]);
         for (var re = P(f.store), ie = 0; re.length > ie; ) m(re[ie++]);
         a(a.S + a.F * !U, 'Symbol', {
             for: function (e) {
-                return i(F, (e += '')) ? F[e] : (F[e] = R(e));
+                return i(F, (e += '')) ? F[e] : (F[e] = T(e));
             },
             keyFor: function (e) {
                 if (!V(e)) throw TypeError(e + ' is not a symbol!');
@@ -1536,7 +1646,7 @@
                         a.F *
                             (!U ||
                                 u(function () {
-                                    var e = R();
+                                    var e = T();
                                     return '[null]' != I([e]) || '{}' != I({a: e}) || '{}' != I(Object(e));
                                 })),
                     'JSON',
@@ -1555,8 +1665,8 @@
                         },
                     }
                 ),
-            R.prototype[D] || n(14)(R.prototype, D, R.prototype.valueOf),
-            d(R, 'Symbol'),
+            T.prototype[D] || n(14)(T.prototype, D, T.prototype.valueOf),
+            d(T, 'Symbol'),
             d(Math, 'Math', !0),
             d(r.JSON, 'JSON', !0);
     },
@@ -3791,16 +3901,16 @@
                                 if ('confirmation' === this.page_name && null !== this.site_config.confirmation_email_from && '' !== this.site_config.confirmation_email_from) {
                                     var e = window.arnCustomerEmailAddress,
                                         t = this.site_config.confirmation_email_from;
-                                    (null != t && '' !== t) || (t = 'reservations@'.concat(h));
+                                    (null != t && '' !== t) || (t = 'reservations@quintrooms.com');
                                     var n = document.querySelector('.supportInfo');
                                     e &&
                                         n &&
                                         n.insertAdjacentHTML(
                                             'afterEnd',
-                                            '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@'
-                                                .concat(h, '"><strong>')
-                                                .concat(t, '</strong></a> at <strong>')
-                                                .concat(e, '</strong> shortly.</p>\n            </div>\n            ')
+                                            '<div class="confirmation-messaging">\n                <p>You will receive a confirmation email from <a href="mailto:reservations@quintrooms.com"><strong>reservations@quintrooms.com</strong></a> at <strong>'.concat(
+                                                e,
+                                                '</strong> shortly.</p>\n            </div>\n            '
+                                            )
                                         );
                                 }
                             },

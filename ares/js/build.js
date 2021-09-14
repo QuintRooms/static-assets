@@ -1750,7 +1750,7 @@ export default class BasePortal {
         const user_email = window.arnCustomerEmailAddress;
         let email_from = this.site_config.confirmation_email_from;
 
-        if (email_from === undefined || email_from === null || email_from === '') email_from = `reservations@${domain}`;
+        if (email_from === undefined || email_from === null || email_from === '') email_from = `reservations@quintrooms.com`;
 
         const support_info = document.querySelector('.supportInfo');
 
@@ -1759,7 +1759,7 @@ export default class BasePortal {
         support_info.insertAdjacentHTML(
             'afterEnd',
             `<div class="confirmation-messaging">
-                <p>You will receive a confirmation email from <a href="mailto:reservations@${domain}"><strong>${email_from}</strong></a> at <strong>${user_email}</strong> shortly.</p>
+                <p>You will receive a confirmation email from <a href="mailto:reservations@quintrooms.com"><strong>reservations@quintrooms.com</strong></a> at <strong>${user_email}</strong> shortly.</p>
             </div>
             `
         );

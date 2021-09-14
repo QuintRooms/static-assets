@@ -20,7 +20,7 @@ module.exports = () => {
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
@@ -75,7 +75,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
         };
     }
 

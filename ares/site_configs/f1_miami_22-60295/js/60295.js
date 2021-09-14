@@ -15,7 +15,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id);
+f1Styles(site_config.site_id, site_config.lodging.event_name);
 
 new ChildPortal();
 new Distance();
@@ -26,13 +26,12 @@ async function insertFooterText() {
     const footer_policy = document.querySelector('.f1-policy');
 
     footer_policy.insertAdjacentHTML(
-    'beforebegin',
-    `
+        'beforebegin',
+        `
     <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />
     <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>
     `
-);
+    );
 }
 
 insertFooterText();
-

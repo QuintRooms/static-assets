@@ -68,6 +68,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+
         };
 
         // local environment
@@ -75,7 +76,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
         };
     }
 

@@ -53,7 +53,7 @@ async function setBeachFilterFromLocalStorage() {
     active_item_arr.forEach((i)=> {
         i.classList.remove('active');
     });
-    const active_item = document.querySelector(`.${activeClass}`);
+    const active_item = document.querySelector(`.${active_class}`);
     active_item.classList.add('active');
 
     addListenerToBeachBox()

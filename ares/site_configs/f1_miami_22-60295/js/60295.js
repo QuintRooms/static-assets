@@ -49,16 +49,17 @@ async function setBeachFilterFromLocalStorage() {
     } else {
         beach_checkbox.checked = false;
     }
-
-    const active_item_arr = document.querySelectorAll('.active');
-    active_item_arr.forEach((i)=> {
-        i.classList.remove('active');
-    });
     
     if(active_class){
+        const active_item_arr = document.querySelectorAll('.active');
+        active_item_arr.forEach((i)=> {
+            i.classList.remove('active');
+        });
+
         const active_item = document.querySelector(`.${active_class}`);
         active_item.classList.add('active');
-    }
+    } 
+    
     addListenerToBeachBox()
 }
 

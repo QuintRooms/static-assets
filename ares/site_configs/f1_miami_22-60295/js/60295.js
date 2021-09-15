@@ -40,6 +40,7 @@ insertFooterText();
 async function setBeachFilterFromLocalStorage() {
     await utilities.waitForSelectorInDOM('.filter-wrapper');
     const local_storage = window.localStorage;
+    const active_class = local_storage.getItem('activeItem');
     const beach_state = local_storage.getItem('beach_filter');
     console.log('beach_state', beach_state);
     const beach_checkbox = document.querySelector('input[name=beach-checkbox]');
@@ -48,15 +49,20 @@ async function setBeachFilterFromLocalStorage() {
     } else {
         beach_checkbox.checked = false;
     }
+    const active_item_arr = document.querySelectorAll('.active');
+    active_item_arr.forEach((i)=> {
+        i.classList.remove('active');
+    });
+    const active_item = document.querySelector(`.${activeClass}`);
+    active_item.classList.add('active');
+
     addListenerToBeachBox()
 }
-// setBeachFilterFromLocalStorage();
 
 async function insertBeachFilter() {
     await utilities.waitForSelectorInDOM('.sort-wrapper');
     const sort_wrapper = document.querySelector('.sort-wrapper');
     
-
     sort_wrapper.insertAdjacentHTML(
         'afterEnd',
         `
@@ -99,20 +105,30 @@ async function addListenerToBeachBox() {
             window.location.href = initial_url;
         }
       });
+
+      await utilities.waitForSelectorInDOM('.sort-wrapper');
+        const sort_wrapper = document.querySelector('.sort-wrapper');
+        sort_wrapper.addEventListener('click', (e) => {
+        e.preventDefault();
+        const clickedSortATag = e.target.closest('a');
+        // console.log('clickedSortATag', clickedSortATag);
+
+        if (clickedSortATag.classList.contains('ArnSortByDistance')){
+            changeActiveSortItem('ArnSortByDistance');
+        } else if (clickedSortATag.classList.contains('ArnSortByPrice')) {
+            changeActiveSortItem('ArnSortByPrice');
+        } 
+    });
 }
 
 async function changeActiveSortItem(newActiveClass) {
-    const clicked_sort_a_tag = document.querySelector(`.${newActiveClass}`);
-    const local_storage = window.localStorage;
-    local_storage.setItem('beach_filter', newActiveClass);
-    const sort_href = clicked_sort_a_tag.href;
-    // console.log('sort_href', sort_href)
-    window.location.href = sort_href;
+    const clickedSortATag = document.querySelector(`.${newActiveClass}`);
+    const activeStorage = window.localStorage;
+    activeStorage.setItem('activeItem', newActiveClass);
+    const sortHref = clickedSortATag.href
+    // console.log('sortHref', sortHref)
+    window.location.href = sortHref;
 }
-
-//ACTIVE ITEM STATE CHANGE
-
-
 
 //OLD SORT FUNCTION
 

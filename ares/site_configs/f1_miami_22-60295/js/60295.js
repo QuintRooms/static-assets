@@ -96,3 +96,6 @@ async function changeActiveSortItem(newActiveClass) {
     // console.log('sort_href', sort_href)
     window.location.href = sort_href;
 }
+
+
+// "longitude=-80.23964600000000&nights=4&type=geo&map=&cid=GROUP-EVENT-EMAIL&useMiles=&latitude=25.95829850000000&utm_source=internal&checkin=5/5/2022&pageSize=10&siteid=60295&groupid=50425&&currency=USD&locationlabel=Hard Rock Stadium&radius=100"

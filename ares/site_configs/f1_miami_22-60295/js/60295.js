@@ -43,7 +43,7 @@ async function setBeachFilterFromLocalStorage() {
     const beach_state = local_storage.getItem('beach_filter');
     console.log('beach_state', beach_state);
     const beach_checkbox = document.querySelector('input[name=beach-checkbox]');
-    if (beach_state === true) {
+    if (beach_state === 'checked') {
         beach_checkbox.checked = true;
     } else {
         beach_checkbox.checked = false;
@@ -90,11 +90,11 @@ async function addListenerToBeachBox() {
         e.preventDefault();
         if (beach_checkbox.checked) {
             console.log("Checkbox is checked..");
-            local_storage.setItem('beach_filter', true);
+            local_storage.setItem('beach_filter', 'checked');
             window.location.href = beach_property_url;
         } else {
             console.log("Checkbox is not checked..");
-            local_storage.setItem('beach_filter', false);
+            local_storage.setItem('beach_filter', 'unchecked');
             const initial_url = local_storage.getItem('initial_url');
             window.location.href = initial_url;
         }

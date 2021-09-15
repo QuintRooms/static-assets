@@ -38,7 +38,7 @@ async function setActiveItemFromLocalStorage() {
     // await utilities.waitForSelectorInDOM('.sort-wrapper');
     await utilities.waitForSelectorInDOM('.ArnSortByBeachfront');
     const active_storage = window.localStorage;
-    const active_class = active_storage.getItem('active_item');
+    let active_class = active_storage.getItem('active_item');
     if (!active_class) return;
     const active_item_arr = document.querySelectorAll('.active');
     active_item_arr.forEach((i) => {
@@ -48,7 +48,7 @@ async function setActiveItemFromLocalStorage() {
         // }
     });
     console.log('active_class', active_class);
-    const active_item = document.querySelector(`.${active_class}`);
+    let active_item = document.querySelector(`.${active_class}`);
     active_item.classList.add('active');
     console.log('active_item.classList', active_item.classList);
 }
@@ -61,33 +61,7 @@ async function insertBeachSortButton() {
     sort_wrapper.insertAdjacentHTML(
         'beforeEnd',
         `
-        <a class="ArnSortByBeachfront" href="https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=60295&longitude=-80.23964600000000&latitude=25.95829850000000&radius=100&checkin=5/5/2022&nights=4&properties=236435,
-        179461,
-        3983382,
-        233505,
-        37003,
-        626284,
-        500825,
-        256124,
-        2681,
-        16286,
-        238362,
-        36053,
-        623490,
-        240375,
-        752193,
-        24437,
-        430088,
-        3385223,
-        43658,
-        422794,
-        3846047,
-        33831,
-        33569,
-        48449,
-        216347,
-        24622,
-        848867&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal"><div>Beachfront Location</div></a>
+        <a class="ArnSortByBeachfront" href="https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=60295&longitude=-80.23964600000000&latitude=25.95829850000000&radius=100&checkin=5/5/2022&nights=4&properties=236435,179461,3983382,233505,37003,626284,500825,256124,2681,16286,238362,36053,623490,240375,752193,24437,430088,3385223,43658,422794,3846047,33831,33569,48449,216347,24622,848867&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal"><div>Beachfront Location</div></a>
         `
     );
 }
@@ -121,4 +95,4 @@ async function changeActiveSortItem(newActiveClass) {
     const sort_href = clicked_sort_a_tag.href;
     // console.log('sort_href', sort_href)
     window.location.href = sort_href;
-}
+};

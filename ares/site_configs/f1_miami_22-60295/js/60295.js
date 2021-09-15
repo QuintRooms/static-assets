@@ -41,7 +41,6 @@ async function setBeachFilterFromLocalStorage() {
     await utilities.waitForSelectorInDOM('.filter-wrapper');
     const local_storage = window.localStorage;
     const beach_state = local_storage.getItem('beach_filter');
-    if (!beach_state) return;
     console.log('beach_state', beach_state);
     const beach_checkbox = document.querySelector('input[name=beach-checkbox]');
     if (beach_state === true) {
@@ -51,7 +50,7 @@ async function setBeachFilterFromLocalStorage() {
     }
     addListenerToBeachBox()
 }
-setBeachFilterFromLocalStorage();
+// setBeachFilterFromLocalStorage();
 
 async function insertBeachFilter() {
     await utilities.waitForSelectorInDOM('.sort-wrapper');
@@ -68,6 +67,7 @@ async function insertBeachFilter() {
         </div>
         `
     );
+    setBeachFilterFromLocalStorage()
 }
 insertBeachFilter();
 

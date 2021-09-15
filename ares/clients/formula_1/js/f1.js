@@ -5,7 +5,7 @@ const utilities = new Utilities();
 const {domain} = process.env;
 const env_path = new Path();
 
-export default async function f1Styles(siteId, event_name) {
+export default async function f1Styles(siteId, event_name, banner_location) {
     await utilities.waitForSelectorInDOM('header');
 
     const header = document.querySelector('header');
@@ -18,10 +18,10 @@ export default async function f1Styles(siteId, event_name) {
         const races_contact = `
             <ul id="races-contact">
                 <li>
-                    <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs" target="_blank">Contact Us</a>
+                    <a href="https://form.jotform.com/203066540331141?bookingPortal=${name}" class="book-plus" target="_blank">Book 10+ Rooms</a>
                 </li>
                 <li>
-                    <a href="https://form.jotform.com/203066540331141?bookingPortal=${name}" class="book-plus" target="_blank">Book 10+ Rooms</a>
+                    <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs" target="_blank">Contact Us</a>
                 </li>
             </ul>
             <div class="navbar-hamburger">
@@ -83,14 +83,16 @@ export default async function f1Styles(siteId, event_name) {
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);
     }
 
-    async function updateBannerMessage() {
+    async function updateBannerMessage(location) {
         await utilities.waitForSelectorInDOM('.lucid-banner');
 
-        document.querySelector('.lucid-content').innerHTML = '<span style="text-align: center;">Look for the Exclusive Rate tag - these are the guaranteed lowest rates!</span>';
+        document.querySelector('.lucid-content').innerHTML = `<span style="text-align: center;">Look for the Exclusive Rate tag - these are the guaranteed lowest rates${
+            location ? ` in  ${location}` : ''
+        }!</span>`;
     }
 
     addHeader(siteId, event_name);
     addHamburgerMenu(siteId, event_name);
     addFooter();
-    updateBannerMessage();
+    updateBannerMessage(banner_location);
 }

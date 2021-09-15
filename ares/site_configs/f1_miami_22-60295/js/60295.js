@@ -15,7 +15,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id, site_config.lodging.event_name);
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'South Florida');
 
 new ChildPortal();
 new Distance();
@@ -38,17 +38,17 @@ async function setActiveItemFromLocalStorage() {
     // await utilities.waitForSelectorInDOM('.sort-wrapper');
     await utilities.waitForSelectorInDOM('.ArnSortByBeachfront');
     const active_storage = window.localStorage;
-    let active_class = active_storage.getItem('active_item');
+    const active_class = active_storage.getItem('active_item');
     if (!active_class) return;
     const active_item_arr = document.querySelectorAll('.active');
     active_item_arr.forEach((i) => {
         i.classList.remove('active');
         // if(!i.classList.contains('ArnSortByAvailability')){
-            
+
         // }
     });
     console.log('active_class', active_class);
-    let active_item = document.querySelector(`.${active_class}`);
+    const active_item = document.querySelector(`.${active_class}`);
     active_item.classList.add('active');
     console.log('active_item.classList', active_item.classList);
 }
@@ -95,4 +95,4 @@ async function changeActiveSortItem(newActiveClass) {
     const sort_href = clicked_sort_a_tag.href;
     // console.log('sort_href', sort_href)
     window.location.href = sort_href;
-};
+}

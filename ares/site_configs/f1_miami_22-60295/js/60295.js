@@ -38,7 +38,7 @@ async function insertFooterText() {
 insertFooterText();
 
 async function setBeachFilterFromLocalStorage() {
-    await utilities.waitForSelectorInDOM('.ArnFilterByBeachfront');
+    await utilities.waitForSelectorInDOM('#filter-wrapper');
     const local_storage = window.localStorage;
     const beach_state = local_storage.getItem('beach_filter');
     if (!beach_state) return;
@@ -49,12 +49,14 @@ async function setBeachFilterFromLocalStorage() {
     } else {
         beach_checkbox.checked = false;
     }
+    addListenerToBeachBox()
 }
 setBeachFilterFromLocalStorage();
 
 async function insertBeachFilter() {
     await utilities.waitForSelectorInDOM('.sort-wrapper');
     const sort_wrapper = document.querySelector('.sort-wrapper');
+    
 
     sort_wrapper.insertAdjacentHTML(
         'afterEnd',
@@ -97,7 +99,6 @@ async function addListenerToBeachBox() {
         }
       });
 }
-addListenerToBeachBox();
 
 async function changeActiveSortItem(newActiveClass) {
     const clicked_sort_a_tag = document.querySelector(`.${newActiveClass}`);

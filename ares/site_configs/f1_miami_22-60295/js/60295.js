@@ -59,7 +59,7 @@ async function setBeachFilterFromLocalStorage() {
         const active_item = document.querySelector(`.${active_class}`);
         active_item.classList.add('active');
     } 
-    
+
     addListenerToBeachBox()
 }
 
@@ -90,7 +90,7 @@ async function addListenerToBeachBox() {
     console.log('current_properties', current_properties);
     const local_storage = window.localStorage;
 
-    if (current_properties !== beach_property_list) {
+    if (current_properties && current_properties !== beach_property_list) {
         const local_storage = window.localStorage;
         local_storage.setItem('initial_url', current_url);
     }

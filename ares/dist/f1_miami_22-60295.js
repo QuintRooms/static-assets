@@ -8820,7 +8820,7 @@
                                             document.querySelector('.SinglePropDetail') &&
                                                 (e.innerHTML = e.innerHTML.replace(
                                                     'Special Event Rate',
-                                                    '<span style="background: #fc4c02; color: #fff; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span>'
+                                                    '<span style="display: inline-block; margin-bottom: 2px; background: #fc4c02; color: #fff; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span>'
                                                 ));
                                         }),
                                         (g = function () {

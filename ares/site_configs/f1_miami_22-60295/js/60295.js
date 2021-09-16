@@ -37,102 +37,104 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-async function setBeachFilterFromLocalStorage() {
-    await utilities.waitForSelectorInDOM('.filter-wrapper');
-    const local_storage = window.localStorage;
-    const active_class = local_storage.getItem('activeItem');
-    const beach_state = local_storage.getItem('beach_filter');
-    console.log('beach_state', beach_state);
-    const beach_checkbox = document.querySelector('input[name=beach-checkbox]');
-    if (beach_state === 'checked') {
-        beach_checkbox.checked = true;
-    } else {
-        beach_checkbox.checked = false;
-    }
+// Beach Filter Stuff
+
+// async function setBeachFilterFromLocalStorage() {
+//     await utilities.waitForSelectorInDOM('.filter-wrapper');
+//     const local_storage = window.localStorage;
+//     const active_class = local_storage.getItem('activeItem');
+//     const beach_state = local_storage.getItem('beach_filter');
+//     console.log('beach_state', beach_state);
+//     const beach_checkbox = document.querySelector('input[name=beach-checkbox]');
+//     if (beach_state === 'checked') {
+//         beach_checkbox.checked = true;
+//     } else {
+//         beach_checkbox.checked = false;
+//     }
     
-    if(active_class){
-        const active_item_arr = document.querySelectorAll('.active');
-        active_item_arr.forEach((i)=> {
-            i.classList.remove('active');
-        });
+//     if(active_class){
+//         const active_item_arr = document.querySelectorAll('.active');
+//         active_item_arr.forEach((i)=> {
+//             i.classList.remove('active');
+//         });
 
-        const active_item = document.querySelector(`.${active_class}`);
-        active_item.classList.add('active');
-    } 
+//         const active_item = document.querySelector(`.${active_class}`);
+//         active_item.classList.add('active');
+//     } 
 
-    addListenerToBeachBox()
-}
+//     addListenerToBeachBox()
+// }
 
-async function insertBeachFilter() {
-    await utilities.waitForSelectorInDOM('.sort-wrapper');
-    const sort_wrapper = document.querySelector('.sort-wrapper');
+// async function insertBeachFilter() {
+//     await utilities.waitForSelectorInDOM('.sort-wrapper');
+//     const sort_wrapper = document.querySelector('.sort-wrapper');
     
-    sort_wrapper.insertAdjacentHTML(
-        'afterEnd',
-        `
-        <div class="filter-wrapper" id="filter-wrapper">
-            <h4>Filter</h4>
-            <input type='checkbox' id='beach-checkbox' name='beach-checkbox'></input>
-            <label for="beach-checkbox">Beachfront Location</label>
-        </div>
-        `
-    );
-    setBeachFilterFromLocalStorage()
-}
-insertBeachFilter();
+//     sort_wrapper.insertAdjacentHTML(
+//         'afterEnd',
+//         `
+//         <div class="filter-wrapper" id="filter-wrapper">
+//             <h4>Filter</h4>
+//             <input type='checkbox' id='beach-checkbox' name='beach-checkbox'></input>
+//             <label for="beach-checkbox">Beachfront Location</label>
+//         </div>
+//         `
+//     );
+//     setBeachFilterFromLocalStorage()
+// }
+// insertBeachFilter();
 
-async function addListenerToBeachBox() {
-    console.log('inside addlistenertobeachbox')
-    await utilities.waitForSelectorInDOM('#beach-checkbox');
-    const beach_checkbox = document.querySelector('input[name=beach-checkbox]');
-    const current_url = new URL(window.location.href);
-    const current_properties = current_url.searchParams.get('properties');
-    console.log('current_properties', current_properties);
-    const local_storage = window.localStorage;
+// async function addListenerToBeachBox() {
+//     console.log('inside addlistenertobeachbox')
+//     await utilities.waitForSelectorInDOM('#beach-checkbox');
+//     const beach_checkbox = document.querySelector('input[name=beach-checkbox]');
+//     const current_url = new URL(window.location.href);
+//     const current_properties = current_url.searchParams.get('properties');
+//     console.log('current_properties', current_properties);
+//     const local_storage = window.localStorage;
 
-    if (current_properties && current_properties !== beach_property_list) {
-        const local_storage = window.localStorage;
-        local_storage.setItem('initial_url', current_url);
-    }
+//     if (current_properties && current_properties !== beach_property_list) {
+//         const local_storage = window.localStorage;
+//         local_storage.setItem('initial_url', current_url);
+//     }
 
 
-    beach_checkbox.addEventListener('change', (e) => {
-        e.preventDefault();
-        if (beach_checkbox.checked) {
-            console.log("Checkbox is checked..");
-            local_storage.setItem('beach_filter', 'checked');
-            window.location.href = beach_property_url;
-        } else {
-            console.log("Checkbox is not checked..");
-            local_storage.setItem('beach_filter', 'unchecked');
-            const initial_url = local_storage.getItem('initial_url');
-            window.location.href = initial_url;
-        }
-      });
+//     beach_checkbox.addEventListener('change', (e) => {
+//         e.preventDefault();
+//         if (beach_checkbox.checked) {
+//             console.log("Checkbox is checked..");
+//             local_storage.setItem('beach_filter', 'checked');
+//             window.location.href = beach_property_url;
+//         } else {
+//             console.log("Checkbox is not checked..");
+//             local_storage.setItem('beach_filter', 'unchecked');
+//             const initial_url = local_storage.getItem('initial_url');
+//             window.location.href = initial_url;
+//         }
+//       });
 
-      await utilities.waitForSelectorInDOM('.sort-wrapper');
-        const sort_wrapper = document.querySelector('.sort-wrapper');
-        sort_wrapper.addEventListener('click', (e) => {
-        e.preventDefault();
-        const clickedSortATag = e.target.closest('a');
-        // console.log('clickedSortATag', clickedSortATag);
+//       await utilities.waitForSelectorInDOM('.sort-wrapper');
+//         const sort_wrapper = document.querySelector('.sort-wrapper');
+//         sort_wrapper.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const clickedSortATag = e.target.closest('a');
+//         // console.log('clickedSortATag', clickedSortATag);
 
-        if (clickedSortATag.classList.contains('ArnSortByDistance')){
-            changeActiveSortItem('ArnSortByDistance');
-        } else if (clickedSortATag.classList.contains('ArnSortByPrice')) {
-            changeActiveSortItem('ArnSortByPrice');
-        } 
-    });
-}
+//         if (clickedSortATag.classList.contains('ArnSortByDistance')){
+//             changeActiveSortItem('ArnSortByDistance');
+//         } else if (clickedSortATag.classList.contains('ArnSortByPrice')) {
+//             changeActiveSortItem('ArnSortByPrice');
+//         } 
+//     });
+// }
 
-async function changeActiveSortItem(newActiveClass) {
-    const clickedSortATag = document.querySelector(`.${newActiveClass}`);
-    const activeStorage = window.localStorage;
-    activeStorage.setItem('activeItem', newActiveClass);
-    const sortHref = clickedSortATag.href
-    // console.log('sortHref', sortHref)
-    window.location.href = sortHref;
-}
+// async function changeActiveSortItem(newActiveClass) {
+//     const clickedSortATag = document.querySelector(`.${newActiveClass}`);
+//     const activeStorage = window.localStorage;
+//     activeStorage.setItem('activeItem', newActiveClass);
+//     const sortHref = clickedSortATag.href
+//     // console.log('sortHref', sortHref)
+//     window.location.href = sortHref;
+// }
 
 //OLD SORT FUNCTION
 

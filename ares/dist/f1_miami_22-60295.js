@@ -113,7 +113,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            i = n(56),
+            i = n(59),
             o = n(41),
             a = Object.defineProperty;
         t.f = n(5)
@@ -151,10 +151,10 @@
             f = n(16),
             p = n(84),
             m = n(85),
-            y = n(57),
-            v = n(58).set,
+            y = n(60),
+            v = n(61).set,
             g = n(89)(),
-            _ = n(61),
+            _ = n(64),
             b = n(90),
             w = n(91),
             S = n(92),
@@ -818,7 +818,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(28), n(71), n(46), n(50), n(38), n(78), n(8), n(13), n(12);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(28), n(50), n(46), n(53), n(38), n(78), n(8), n(13), n(12);
         var a = n(39),
             s = (function () {
                 function e() {
@@ -1633,7 +1633,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(64),
+        var r = n(67),
             i = n(43);
         e.exports =
             Object.keys ||
@@ -1848,7 +1848,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(73),
+        var r = n(74),
             i = n(121),
             o = n(24),
             a = n(18);
@@ -2287,7 +2287,7 @@
                     r = o.length;
                 for (
                     t.style.display = 'none',
-                        n(60).appendChild(t),
+                        n(63).appendChild(t),
                         t.src = 'javascript:',
                         (e = t.contentWindow.document).open(),
                         e.write('<script>document.F=Object</script>'),
@@ -2339,7 +2339,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(70)(!0);
+        var r = n(73)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
@@ -2376,6 +2376,114 @@
                 );
             }),
             (e.exports = c);
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(1),
+            i = n(35),
+            o = n(25),
+            a = n(26),
+            s = n(48),
+            c = n(36),
+            u = Math.max,
+            l = Math.min,
+            d = Math.floor,
+            h = /\$([$&`']|\d\d?|<[^>]*>)/g,
+            f = /\$([$&`']|\d\d?)/g;
+        n(37)('replace', 2, function (e, t, n, p) {
+            return [
+                function (r, i) {
+                    var o = e(this),
+                        a = null == r ? void 0 : r[t];
+                    return void 0 !== a ? a.call(r, o, i) : n.call(String(o), r, i);
+                },
+                function (e, t) {
+                    var i = p(n, e, this, t);
+                    if (i.done) return i.value;
+                    var d = r(e),
+                        h = String(this),
+                        f = 'function' == typeof t;
+                    f || (t = String(t));
+                    var y = d.global;
+                    if (y) {
+                        var v = d.unicode;
+                        d.lastIndex = 0;
+                    }
+                    for (var g = []; ; ) {
+                        var _ = c(d, h);
+                        if (null === _) break;
+                        if ((g.push(_), !y)) break;
+                        '' === String(_[0]) && (d.lastIndex = s(h, o(d.lastIndex), v));
+                    }
+                    for (var b, w = '', S = 0, k = 0; k < g.length; k++) {
+                        _ = g[k];
+                        for (var x = String(_[0]), A = u(l(a(_.index), h.length), 0), q = [], E = 1; E < _.length; E++) q.push(void 0 === (b = _[E]) ? b : String(b));
+                        var L = _.groups;
+                        if (f) {
+                            var P = [x].concat(q, A, h);
+                            void 0 !== L && P.push(L);
+                            var C = String(t.apply(void 0, P));
+                        } else C = m(x, h, A, q, L, t);
+                        A >= S && ((w += h.slice(S, A) + C), (S = A + x.length));
+                    }
+                    return w + h.slice(S);
+                },
+            ];
+            function m(e, t, r, o, a, s) {
+                var c = r + e.length,
+                    u = o.length,
+                    l = f;
+                return (
+                    void 0 !== a && ((a = i(a)), (l = h)),
+                    n.call(s, l, function (n, i) {
+                        var s;
+                        switch (i.charAt(0)) {
+                            case '$':
+                                return '$';
+                            case '&':
+                                return e;
+                            case '`':
+                                return t.slice(0, r);
+                            case "'":
+                                return t.slice(c);
+                            case '<':
+                                s = a[i.slice(1, -1)];
+                                break;
+                            default:
+                                var l = +i;
+                                if (0 === l) return n;
+                                if (l > u) {
+                                    var h = d(l / 10);
+                                    return 0 === h ? n : h <= u ? (void 0 === o[h - 1] ? i.charAt(1) : o[h - 1] + i.charAt(1)) : n;
+                                }
+                                s = o[l - 1];
+                        }
+                        return void 0 === s ? '' : s;
+                    })
+                );
+            }
+        });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(4),
+            i = n(68)(!0);
+        r(r.P, 'Array', {
+            includes: function (e) {
+                return i(this, e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        }),
+            n(74)('includes');
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(4),
+            i = n(116);
+        r(r.P + r.F * n(117)('includes'), 'String', {
+            includes: function (e) {
+                return !!~i(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        });
     },
     function (e, t, n) {
         for (
@@ -2672,7 +2780,7 @@
         var Events, RedisConnection, Scripts, parser;
         (parser = __webpack_require__(14)),
             (Events = __webpack_require__(21)),
-            (Scripts = __webpack_require__(54)),
+            (Scripts = __webpack_require__(57)),
             (RedisConnection = function () {
                 class RedisConnection {
                     constructor(options = {}) {
@@ -2907,7 +3015,7 @@
         var Events, IORedisConnection, Scripts, parser;
         (parser = __webpack_require__(14)),
             (Events = __webpack_require__(21)),
-            (Scripts = __webpack_require__(54)),
+            (Scripts = __webpack_require__(57)),
             (IORedisConnection = function () {
                 class IORedisConnection {
                     constructor(options = {}) {
@@ -3026,8 +3134,8 @@
             i,
             o,
             a = n(30),
-            s = n(59),
-            c = n(60),
+            s = n(62),
+            c = n(63),
             u = n(40),
             l = n(2),
             d = l.process,
@@ -3130,7 +3238,7 @@
         var r = n(2),
             i = n(15),
             o = n(22),
-            a = n(63),
+            a = n(66),
             s = n(6).f;
         e.exports = function (e) {
             var t = i.Symbol || (i.Symbol = o ? {} : r.Symbol || {});
@@ -3143,7 +3251,7 @@
     function (e, t, n) {
         var r = n(11),
             i = n(18),
-            o = n(65)(!1),
+            o = n(68)(!1),
             a = n(42)('IE_PROTO');
         e.exports = function (e, t) {
             var n,
@@ -3176,7 +3284,7 @@
         t.f = Object.getOwnPropertySymbols;
     },
     function (e, t, n) {
-        var r = n(64),
+        var r = n(67),
             i = n(43).concat('length', 'prototype');
         t.f =
             Object.getOwnPropertyNames ||
@@ -3190,7 +3298,7 @@
             o = n(18),
             a = n(41),
             s = n(11),
-            c = n(56),
+            c = n(59),
             u = Object.getOwnPropertyDescriptor;
         t.f = n(5)
             ? u
@@ -3238,120 +3346,12 @@
         };
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(1),
-            i = n(35),
-            o = n(25),
-            a = n(26),
-            s = n(48),
-            c = n(36),
-            u = Math.max,
-            l = Math.min,
-            d = Math.floor,
-            h = /\$([$&`']|\d\d?|<[^>]*>)/g,
-            f = /\$([$&`']|\d\d?)/g;
-        n(37)('replace', 2, function (e, t, n, p) {
-            return [
-                function (r, i) {
-                    var o = e(this),
-                        a = null == r ? void 0 : r[t];
-                    return void 0 !== a ? a.call(r, o, i) : n.call(String(o), r, i);
-                },
-                function (e, t) {
-                    var i = p(n, e, this, t);
-                    if (i.done) return i.value;
-                    var d = r(e),
-                        h = String(this),
-                        f = 'function' == typeof t;
-                    f || (t = String(t));
-                    var y = d.global;
-                    if (y) {
-                        var v = d.unicode;
-                        d.lastIndex = 0;
-                    }
-                    for (var g = []; ; ) {
-                        var _ = c(d, h);
-                        if (null === _) break;
-                        if ((g.push(_), !y)) break;
-                        '' === String(_[0]) && (d.lastIndex = s(h, o(d.lastIndex), v));
-                    }
-                    for (var b, w = '', S = 0, k = 0; k < g.length; k++) {
-                        _ = g[k];
-                        for (var x = String(_[0]), A = u(l(a(_.index), h.length), 0), q = [], E = 1; E < _.length; E++) q.push(void 0 === (b = _[E]) ? b : String(b));
-                        var L = _.groups;
-                        if (f) {
-                            var P = [x].concat(q, A, h);
-                            void 0 !== L && P.push(L);
-                            var C = String(t.apply(void 0, P));
-                        } else C = m(x, h, A, q, L, t);
-                        A >= S && ((w += h.slice(S, A) + C), (S = A + x.length));
-                    }
-                    return w + h.slice(S);
-                },
-            ];
-            function m(e, t, r, o, a, s) {
-                var c = r + e.length,
-                    u = o.length,
-                    l = f;
-                return (
-                    void 0 !== a && ((a = i(a)), (l = h)),
-                    n.call(s, l, function (n, i) {
-                        var s;
-                        switch (i.charAt(0)) {
-                            case '$':
-                                return '$';
-                            case '&':
-                                return e;
-                            case '`':
-                                return t.slice(0, r);
-                            case "'":
-                                return t.slice(c);
-                            case '<':
-                                s = a[i.slice(1, -1)];
-                                break;
-                            default:
-                                var l = +i;
-                                if (0 === l) return n;
-                                if (l > u) {
-                                    var h = d(l / 10);
-                                    return 0 === h ? n : h <= u ? (void 0 === o[h - 1] ? i.charAt(1) : o[h - 1] + i.charAt(1)) : n;
-                                }
-                                s = o[l - 1];
-                        }
-                        return void 0 === s ? '' : s;
-                    })
-                );
-            }
-        });
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(4),
-            i = n(65)(!0);
-        r(r.P, 'Array', {
-            includes: function (e) {
-                return i(this, e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        }),
-            n(73)('includes');
-    },
-    function (e, t, n) {
         var r = n(0)('unscopables'),
             i = Array.prototype;
         null == i[r] && n(9)(i, r, {}),
             (e.exports = function (e) {
                 i[r][e] = !0;
             });
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(4),
-            i = n(116);
-        r(r.P + r.F * n(117)('includes'), 'String', {
-            includes: function (e) {
-                return !!~i(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        });
     },
     function (e, t, n) {
         var r = n(3),
@@ -3366,7 +3366,7 @@
         'use strict';
         var r = n(75),
             i = n(1),
-            o = n(57),
+            o = n(60),
             a = n(48),
             s = n(25),
             c = n(36),
@@ -3460,7 +3460,7 @@
             s = n(24),
             c = n(122),
             u = n(34),
-            l = n(69),
+            l = n(72),
             d = n(0)('iterator'),
             h = !([].keys && 'next' in [].keys()),
             f = function () {
@@ -3916,8 +3916,8 @@
                     (e.strategy = e.prototype.strategy = {LEAK: 1, OVERFLOW: 2, OVERFLOW_PRIORITY: 4, BLOCK: 3}),
                     (e.BottleneckError = e.prototype.BottleneckError = n(29)),
                     (e.Group = e.prototype.Group = n(140)),
-                    (e.RedisConnection = e.prototype.RedisConnection = n(53)),
-                    (e.IORedisConnection = e.prototype.IORedisConnection = n(55)),
+                    (e.RedisConnection = e.prototype.RedisConnection = n(56)),
+                    (e.IORedisConnection = e.prototype.IORedisConnection = n(58)),
                     (e.Batcher = e.prototype.Batcher = n(141)),
                     (e.prototype.jobDefaults = {priority: 5, weight: 1, expiration: null, id: '<no-id>'}),
                     (e.prototype.storeDefaults = {
@@ -4222,7 +4222,7 @@
     },
     function (e, t, n) {
         var r = n(2),
-            i = n(58).set,
+            i = n(61).set,
             o = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             s = r.Promise,
@@ -4287,7 +4287,7 @@
     function (e, t, n) {
         var r = n(1),
             i = n(3),
-            o = n(61);
+            o = n(64);
         e.exports = function (e, t) {
             if ((r(e), i(t) && t.constructor === e)) return t;
             var n = o.f(e);
@@ -4350,7 +4350,7 @@
         };
     },
     function (e, t, n) {
-        n(62)('asyncIterator');
+        n(65)('asyncIterator');
     },
     function (e, t, n) {
         'use strict';
@@ -4365,8 +4365,8 @@
             d = n(34),
             h = n(23),
             f = n(0),
-            p = n(63),
-            m = n(62),
+            p = n(66),
+            m = n(65),
             y = n(99),
             v = n(102),
             g = n(1),
@@ -4377,8 +4377,8 @@
             k = n(33),
             x = n(45),
             A = n(104),
-            q = n(68),
-            E = n(66),
+            q = n(71),
+            E = n(69),
             L = n(6),
             P = n(27),
             C = q.f,
@@ -4479,7 +4479,7 @@
             ),
             (q.f = Z),
             (L.f = K),
-            (n(67).f = A.f = X),
+            (n(70).f = A.f = X),
             (n(44).f = J),
             (E.f = ee),
             o && !n(22) && s(N, 'propertyIsEnumerable', J, !0),
@@ -4597,7 +4597,7 @@
     },
     function (e, t, n) {
         var r = n(27),
-            i = n(66),
+            i = n(69),
             o = n(44);
         e.exports = function (e) {
             var t = r(e),
@@ -4644,7 +4644,7 @@
     },
     function (e, t, n) {
         var r = n(18),
-            i = n(67).f,
+            i = n(70).f,
             o = {}.toString,
             a = 'object' == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
         e.exports.f = function (e) {
@@ -4710,7 +4710,7 @@
         'use strict';
         var r = n(16),
             i = n(3),
-            o = n(59),
+            o = n(62),
             a = [].slice,
             s = {},
             c = function (e, t, n) {
@@ -4733,8 +4733,8 @@
             };
     },
     function (e, t, n) {
-        var r = n(68),
-            i = n(69),
+        var r = n(71),
+            i = n(72),
             o = n(11),
             a = n(4),
             s = n(3),
@@ -4759,9 +4759,9 @@
             n(46),
             n(13),
             n(114),
-            n(71),
-            n(72),
-            n(74),
+            n(50),
+            n(51),
+            n(52),
             n(76),
             n(12),
             n(118),
@@ -4769,7 +4769,7 @@
         var r = c(n(20)),
             i = c(n(124)),
             o = c(n(125)),
-            a = c(n(52)),
+            a = c(n(55)),
             s = c(n(126));
         function c(e) {
             return e && e.__esModule ? e : {default: e};
@@ -4808,7 +4808,7 @@
         var h = 'hotelsforhope.com',
             f = new a.default(),
             p = n(39),
-            m = n(51);
+            m = n(54);
         p.extend(m);
         var y = new r.default(),
             v = new o.default(),
@@ -8035,7 +8035,7 @@
             }
         }
         var s = n(39),
-            c = n(51);
+            c = n(54);
         s.extend(c);
         var u = new i.default(),
             l = (function () {
@@ -8383,9 +8383,9 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(8), n(12), n(50), n(38), n(13), n(78), n(28);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(8), n(12), n(53), n(38), n(13), n(78), n(28);
         var a = n(39),
-            s = n(51);
+            s = n(54);
         a.extend(s);
         var c = (function () {
             function e() {
@@ -8760,7 +8760,7 @@
                     uses_hybrid_compensation_model: !0,
                 };
             });
-        var i = new ((r = n(52)) && r.__esModule ? r : {default: r}).default(),
+        var i = new ((r = n(55)) && r.__esModule ? r : {default: r}).default(),
             o = 'f1_miami_22-'.concat(60295);
     },
     function (e, t, n) {
@@ -8769,10 +8769,13 @@
             (t.default = function (e, t, n) {
                 return l.apply(this, arguments);
             }),
+            n(51),
+            n(52),
+            n(50),
             n(12),
             n(8),
             n(13);
-        var r = i(n(52));
+        var r = i(n(55));
         function i(e) {
             return e && e.__esModule ? e : {default: e};
         }
@@ -8807,12 +8810,19 @@
         function l() {
             return (l = a(
                 regeneratorRuntime.mark(function e(t, n, r) {
-                    var i, o, l, d, h, f, p, m, y, v, g;
+                    var i, o, l, d, h, f, p, m, y, v, g, _;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     return (
+                                        (_ = function (e) {
+                                            document.querySelector('.SinglePropDetail') &&
+                                                (e.innerHTML = e.innerHTML.replace(
+                                                    'Special Event Rate',
+                                                    '<span style="background: #fc4c02; color: #fff; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span>'
+                                                ));
+                                        }),
                                         (g = function () {
                                             return (g = a(
                                                 regeneratorRuntime.mark(function e(t) {
@@ -8966,18 +8976,21 @@
                                         (d = function (e, t) {
                                             return h.apply(this, arguments);
                                         }),
-                                        (e.next = 10),
+                                        (e.next = 11),
                                         s.waitForSelectorInDOM('header')
                                     );
-                                case 10:
+                                case 11:
                                     (i = document.querySelector('header')),
                                         (o = document.querySelector('#language')),
                                         (l = document.querySelector('.currencies-container')),
                                         d(t, n),
                                         f(t, n),
                                         m(),
-                                        v(r);
-                                case 17:
+                                        v(r),
+                                        document.querySelectorAll('.RoomDescription').forEach(function (e) {
+                                            e.innerHTML.includes('Special Event Rate') && _(e);
+                                        });
+                                case 20:
                                 case 'end':
                                     return e.stop();
                             }
@@ -8988,7 +9001,7 @@
     },
     function (e, t, n) {
         'use strict';
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(50), n(38), n(130), n(8), n(13), n(72), n(74), n(12), n(76), n(28);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(53), n(38), n(130), n(8), n(13), n(51), n(52), n(12), n(76), n(28);
         var r = i(n(131));
         function i(e) {
             return e && e.__esModule ? e : {default: e};
@@ -9392,7 +9405,7 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(70)(!0);
+        var r = n(73)(!0);
         n(77)(
             String,
             'String',
@@ -9848,8 +9861,8 @@
         var a, s, c, u, l;
         (l = n(14)),
             (a = n(29)),
-            (c = n(53)),
-            (s = n(55)),
+            (c = n(56)),
+            (s = n(58)),
             (u = class {
                 constructor(e, t, n) {
                     (this.instance = e),
@@ -10261,9 +10274,9 @@
         var a, s, c, u, l, d;
         (d = n(14)),
             (a = n(21)),
-            (u = n(53)),
-            (c = n(55)),
-            (l = n(54)),
+            (u = n(56)),
+            (c = n(58)),
+            (l = n(57)),
             (s = function () {
                 class e {
                     constructor(e = {}) {

@@ -88,7 +88,7 @@ export default async function f1Styles(siteId, event_name, banner_location) {
 
         document.querySelector(
             '.lucid-content'
-        ).innerHTML = `<span style="text-align: center;">Look for <span class="exclusive-rate" style="margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
+        ).innerHTML = `<span style="text-align: center;">Look for <span style="background: #fc4c02; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
             location ? ` in  ${location}` : ''
         }!</span>`;
     }

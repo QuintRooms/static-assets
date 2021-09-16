@@ -86,7 +86,9 @@ export default async function f1Styles(siteId, event_name, banner_location) {
     async function updateBannerMessage(location) {
         await utilities.waitForSelectorInDOM('.lucid-banner');
 
-        document.querySelector('.lucid-content').innerHTML = `<span style="text-align: center;">Look for the Exclusive Rate tag - these are the guaranteed lowest rates${
+        document.querySelector(
+            '.lucid-content'
+        ).innerHTML = `<span style="text-align: center;">Look for <span class="exclusive-rate" style="margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
             location ? ` in  ${location}` : ''
         }!</span>`;
     }

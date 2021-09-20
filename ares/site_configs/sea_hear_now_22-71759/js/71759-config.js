@@ -16,7 +16,7 @@ export default function siteConfig() {
         use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
+            event_id: '52464',
             event_name: 'Sea Hear Now',
             event_dates: '',
             redirect_date: '',

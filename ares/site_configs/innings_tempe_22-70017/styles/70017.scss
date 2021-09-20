@@ -18,4 +18,5 @@ $path: set-path($env);
 $banner_image: linear-gradient(#dd695c,rgba(0,0,0,.25));
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
 

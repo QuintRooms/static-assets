@@ -86,13 +86,31 @@ export default async function f1Styles(siteId, event_name, banner_location) {
     async function updateBannerMessage(location) {
         await utilities.waitForSelectorInDOM('.lucid-banner');
 
-        document.querySelector('.lucid-content').innerHTML = `<span style="text-align: center;">Look for the Exclusive Rate tag - these are the guaranteed lowest rates${
+        document.querySelector(
+            '.lucid-content'
+        ).innerHTML = `<span style="text-align: center;">Look for <span style="background: #fc4c02; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
             location ? ` in  ${location}` : ''
         }!</span>`;
+    }
+
+    function updateRoomDescription(selector) {
+        if (!document.querySelector('.SinglePropDetail')) return;
+
+        selector.innerHTML = selector.innerHTML.replace(
+            'Special Event Rate',
+            `<span style="display: inline-block; margin-bottom: 2px; background: #fc4c02; color: #fff; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span>`
+        );
     }
 
     addHeader(siteId, event_name);
     addHamburgerMenu(siteId, event_name);
     addFooter();
     updateBannerMessage(banner_location);
+
+    const room_descriptions = document.querySelectorAll('.RoomDescription');
+    room_descriptions.forEach((description) => {
+        if (description.innerHTML.includes('Special Event Rate')) {
+            updateRoomDescription(description);
+        }
+    });
 }

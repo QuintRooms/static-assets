@@ -78,7 +78,7 @@ export default function siteConfig() {
             {
                 name: '2022 Scottsdale Auction',
                 display_date: 'January 22 - 26, 2022',
-                end_date: '1/27/2020', // M/D/YYYY
+                end_date: '1/27/2022', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/group-event?id=50694',
             },
             {

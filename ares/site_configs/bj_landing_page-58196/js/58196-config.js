@@ -79,7 +79,7 @@ export default function siteConfig() {
                 name: '2022 Scottsdale Auction',
                 display_date: 'January 22 - 26, 2022',
                 end_date: '1/27/2022', // M/D/YYYY
-                portal_url: 'https://events.quintrooms.com/group-event?id=50694',
+                portal_url: 'https://events.quintrooms.com/group-event?id=50694&utm_campaign=Barrett-Jackson%20Scottsdale%202022',
             },
             // {
             //     name: '2021 Houston Auction',

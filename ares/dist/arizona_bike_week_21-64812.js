@@ -5068,7 +5068,7 @@
                                                 document.querySelector('.SinglePropDetail') &&
                                                     (t.innerHTML = t.innerHTML.replace(
                                                         'Special Event Rate',
-                                                        '<span class="prop-detail-exclusive-rate-tag exclusive-rate" style="position: static; margin:0 2px 2px 2px; display: inline-block; color: #fff; font-size: 14px; font-weight: lighter; padding: 5px;">Exclusive Rate</span>'
+                                                        '<span class="prop-detail-exclusive-rate-tag exclusive-rate" style="position: static; margin:0 2px 2px 2px; display: inline-block; color: #fff; font-size: 14px; font-weight: light; padding: 5px;">Exclusive Rate</span>'
                                                     )));
                                         }));
                             },

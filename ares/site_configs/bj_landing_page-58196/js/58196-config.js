@@ -81,12 +81,12 @@ export default function siteConfig() {
                 end_date: '1/27/2022', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/group-event?id=50694',
             },
-            {
-                name: '2021 Houston Auction',
-                display_date: 'September 16 - 18, 2021',
-                end_date: '09/19/2021', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021`,
-            },
+            // {
+            //     name: '2021 Houston Auction',
+            //     display_date: 'September 16 - 18, 2021',
+            //     end_date: '09/19/2021', // M/D/YYYY
+            //     portal_url: `http://events.${process.env.domain}/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021`,
+            // },
         ],
     };
 }

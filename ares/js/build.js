@@ -968,18 +968,17 @@ export default class BasePortal {
             if (!dropdown) return;
 
             dropdown.addEventListener('click', (e) => {
-                console.log(e);
-                console.log('after event listener');
                 this.selected_currency = e.target.id;
-                console.log(this.selected_currency);
+
                 if (!this.selected_currency) return;
-                console.log('after early return: !this.selected_currency');
+
                 document.querySelector('.active-currency').classList.remove('active-currency');
                 document.querySelector(`#${e.target.id}`).classList.add('active-currency');
 
                 document.querySelector('#currency-label span').textContent = document.querySelector('.active-currency').textContent;
 
                 if (this.page_name !== 'search-results') return;
+
                 params.set('currency', this.selected_currency);
                 window.location.search = params.toString();
             });
@@ -1285,8 +1284,10 @@ export default class BasePortal {
         */
         function updateRoomDescription(selector, name, text) {
             if (!document.querySelector('.SinglePropDetail')) return;
-            const original = selector.querySelector('.ArnRateList tr td:first-child');
-            original.innerHTML = original.innerHTML.replace('Special Event Rate', `<span id="exclusive-event-rate">${name} ${text}</span>`);
+            selector.innerHTML = selector.innerHTML.replace(
+                'Special Event Rate',
+                `<span class="prop-detail-exclusive-rate-tag exclusive-rate" style="position: static; margin:0 2px 2px 2px; display: inline-block; color: #fff; font-size: 14px; font-weight: lighter; padding: 5px;">Exclusive Rate</span>`
+            );
         }
 
         /**
@@ -1330,8 +1331,8 @@ export default class BasePortal {
         if (this.page_name === 'property-detail') {
             const rates = document.querySelectorAll('div.rateRow');
             rates.forEach((el) => {
-                if (el.querySelector('table.SB16') || (el.querySelector('table.SB20') && this.site_config.exclusive_rate_text !== '')) {
-                    updateRoomDescription(el, eventName, exclusiveRateText);
+                if (el.innerHTML.includes('Special Event Rate')) {
+                    updateRoomDescription(el);
                 }
             });
         }

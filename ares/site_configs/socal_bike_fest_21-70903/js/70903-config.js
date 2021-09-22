@@ -16,8 +16,8 @@ export default function siteConfig() {
         use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
-            event_name: '',
+            event_id: '50623',
+            event_name: 'Socal Bike Fest',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

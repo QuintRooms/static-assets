@@ -9,18 +9,23 @@ module.exports = () => {
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
+            // 'acl_22_production-71762': './src/71762.js', // acl 22_production
+            // 'acl_22_attendees-71761': './src/71761.js', // acl 22_attendees
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
+            // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
+            // 'buku_22-66047': './src/66047.js', // buku 22
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
@@ -33,20 +38,26 @@ module.exports = () => {
             // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
             // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
             // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
+            // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
+            // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
+            // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
+            // 'sea_hear_now_22-71759': './src/71759.js', // sea hear_now_22
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
+            // 'socal_bike_fest_21-70903': './src/70903.js', // Socal Bike Fest 2021
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
@@ -75,6 +86,8 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
+            
+        
         };
     }
 

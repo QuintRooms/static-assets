@@ -25,7 +25,7 @@ class ChildPortal extends BasePortal {
             'beforeend',
             `<div class="event-week pull-right">
             <a id="week-one" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52460">Book Weekend One</a>
-            <a id="week-two" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52460">Book Weekend Two</a>
+            <a id="week-two" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52771">Book Weekend Two</a>
         </div>`
         );
     }

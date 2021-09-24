@@ -13,8 +13,8 @@ class ChildPortal extends BasePortal {
     }
 
     init() {
-        this.addWeekendButtons();
-        this.addUtmTrackingToUrls(window.location.href);
+        // this.addWeekendButtons();
+        // this.addUtmTrackingToUrls(window.location.href);
     }
 
     async addWeekendButtons() {

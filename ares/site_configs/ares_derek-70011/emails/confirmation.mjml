@@ -102,14 +102,14 @@
 
     <!-- Charity Banner. -->
     <mj-section>
-      <mj-column width="100%">
+      <mj-column width="100%" padding-top="20px">
         <mj-text align="center">
           <span>Your reservation just generated a $\{{EstimatedCharitableContribution}} donation</span>
         </mj-text>
         <mj-raw>
           <div>
             FARTFACE
-            [if:\{{CampaignId}}=H4H]to RoomFunding
+            [if:\{{CampaignId}}=H4H]to a children's charity
             [elseif:\{{CampaignId}}=GROUP-EVENT-EMAIL]to a children's charity
             [elseif:\{{CampaignId}}=KING]to Kids in a New Groove
             [elseif:\{{CampaignId}}=AGOH]to A Glimmer of Hope
@@ -149,7 +149,7 @@
           </div>
         </mj-raw>
         <mj-text align="center">
-          <span> [at no cost to you]</span>
+          <span> [at no cost to you].</span>
         </mj-text>
       </mj-column>
     </mj-section>

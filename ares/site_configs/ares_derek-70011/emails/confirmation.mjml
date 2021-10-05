@@ -102,8 +102,8 @@
 
     <!-- Charity Banner. -->
     <mj-section>
-      <mj-column width="100%" padding-top="20px">
-        <mj-text align="center">
+      <mj-column width="100%" padding-top="20px" padding-bottom="20px" background-color={{primary_color}}>
+        <mj-text align="center" color="white">
           <span><b>*Your reservation just generated a $\{{EstimatedCharitableContribution}} donation to \{{CharityName}} [at no cost to you].*</b></span>
         </mj-text>
       </mj-column>

@@ -104,7 +104,7 @@
     <mj-section>
       <mj-column width="100%" padding-top="20px">
         <mj-text align="center">
-          <span>Your reservation just generated a $\{{EstimatedCharitableContribution}} donation to \{{CampaignId}} [at no cost to you].</span>
+          <span>Your reservation just generated a $\{{EstimatedCharitableContribution}} donation to \{{CharityName}} [at no cost to you].</span>
         </mj-text>
       </mj-column>
     </mj-section>

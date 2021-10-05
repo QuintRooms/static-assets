@@ -107,8 +107,7 @@
           <span>Your reservation just generated a $\{{EstimatedCharitableContribution}} donation</span>
         </mj-text>
         <mj-raw>
-          <div>
-            FARTFACE
+        SOMETHING
             [if:\{{CampaignId}}=H4H]to a children's charity
             [elseif:\{{CampaignId}}=GROUP-EVENT-EMAIL]to a children's charity
             [elseif:\{{CampaignId}}=KING]to Kids in a New Groove
@@ -146,7 +145,6 @@
             [elseif:\{{CampaignId}}=ROOTS] to The Roots of Music
             [elseif:\{{CampaignId}}=CFPFoundation] to College Football Playoff Foundation
             [else]to a children's charity[endif]
-          </div>
         </mj-raw>
         <mj-text align="center">
           <span> [at no cost to you].</span>

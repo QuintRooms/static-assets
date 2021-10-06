@@ -1,22 +1,22 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './70011-config';
-import ModalSeacret from '../../../js/components/modal_seacret/modal_seacret';
+// import ModalSeacret from '../../../js/components/modal_seacret/modal_seacret';
 
-const html_str = `
-<h4>Test</h4>
-<p>this is only a test</p>
-`;
-const modal_id = 'test-modal';
+// const html_str = `
+// <h4>Test</h4>
+// <p>this is only a test</p>
+// `;
+// const modal_id = 'test-modal';
 
 const site_config = new SiteConfig();
-const test_modal = new ModalSeacret(modal_id);
+// const test_modal = new ModalSeacret(modal_id);
 
 class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
         super.init();
         // this.useIconStarsFromNodes();
-        test_modal.init();
+        // test_modal.init();
     }
 
     // async useIconStarsFromNodes() {

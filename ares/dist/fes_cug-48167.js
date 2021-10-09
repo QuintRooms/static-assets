@@ -7750,7 +7750,7 @@
                     has_group_booking_banner: !0,
                     group_booking_form_url: '',
                     has_landing_page: !1,
-                    has_custom_emails: !1,
+                    has_custom_emails: !0,
                     hide_search_on_landing_page: !0,
                 };
             });

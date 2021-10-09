@@ -1,9 +1,9 @@
 <mjml>
   <mj-head>
     <mj-title>{{client_name}} Booking Confirmation</mj-title>
+    <mj-font name="Lato" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" />
     <mj-attributes>
-        <mj-font name="Nunito" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" />
-        <mj-all padding-top="0" padding-bottom="0" font-family="Nunito, sans-serif" color={{text}}>
+        <mj-all padding-top="0" padding-bottom="0" font-family="Lato, sans-serif" color={{text}}>
     </mj-attributes>
   </mj-head>
   <mj-body background-color={{theme}}>

@@ -1,8 +1,9 @@
 <mjml>
   <mj-head>
-    <mj-title>{{client_name}}Booking Confirmation</mj-title>
+    <mj-title>{{client_name}} Booking Confirmation</mj-title>
+    <mj-font name="Lato" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" />
     <mj-attributes>
-      <mj-all padding-top="0" padding-bottom="0" font-family="sans-serif" color={{text}}>
+        <mj-all padding-top="0" padding-bottom="0" font-family="Lato, sans-serif" color={{text}}>
     </mj-attributes>
   </mj-head>
   <mj-body background-color={{theme}}>
@@ -92,7 +93,7 @@
           <span><b>Balance Due:</b> \{{CurrencySymbol}}\{{BalanceDue}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Rate Per Night:</b> \{{RoomRates}}</span>
+          <span><b style="display: inline-block; padding-bottom: 8px;">Rate Per Night:</b><br> \{{RoomRates}}</span>
         </mj-text>
       </mj-column>
       <mj-column width="100%" padding-top="20px">

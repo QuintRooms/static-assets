@@ -288,4 +288,38 @@ header {
   border-top-color: #5dc3ac;
 }
 
+.contact-float a {
+  background-color: #5dc3ac;
+  color: #fff;
+}
+
+@media screen and (min-width: 1100px) {
+  .contact-float a:hover {
+    -webkit-animation: pulse 1.25s infinite linear;
+    -moz-animation: pulse 1.25s infinite linear;
+    -ms-animation: pulse 1.25s infinite linear;
+    animation: pulse 1.25s infinite linear;
+  }
+}
+@-webkit-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #5dc3ac;
+  }
+}
+@-moz-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #5dc3ac;
+  }
+}
+@-ms-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #5dc3ac;
+  }
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px #5dc3ac;
+  }
+}
+
 /*# sourceMappingURL=60278.css.map*/

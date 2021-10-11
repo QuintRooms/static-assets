@@ -31,7 +31,7 @@
       <!-- Image -->
       <mj-section padding-bottom="10px">
         <mj-column width="100%">
-          <mj-image src="https://static.hotelsforhope.com/ares/site_configs/hook_em_cug-47495/img/banner.jpg" css-class="banner" />
+          <mj-image src="https://static.hotelsforhope.com/ares/site_configs/hook_em_retail-47496/img/banner.jpg" css-class="banner" />
         </mj-column>
       </mj-section>
     </mj-wrapper>
@@ -212,7 +212,7 @@
     </mj-section>
     <mj-section>
         <mj-column width="100%" padding-top="20px">
-            <a href="https://texassports.com/" target="_blank"><mj-image src="https://static.hotelsforhope.com/ares/site_configs/hook_em_cug-47495/img/email-ad.jpg" css-class="banner" /></a>
+            <a href="https://texassports.com/" target="_blank"><mj-image src="https://static.hotelsforhope.com/ares/site_configs/hook_em_retail-47496/img/email-ad.jpg" css-class="banner" /></a>
         </mj-column>
     </mj-section>
     <!-- Footer -->

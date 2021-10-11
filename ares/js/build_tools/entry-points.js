@@ -61,6 +61,7 @@ module.exports = () => {
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
             // 'socal_bike_fest_21-70903': './src/70903.js', // Socal Bike Fest 2021
+            // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
@@ -82,7 +83,6 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
         };
 
         // local environment
@@ -90,7 +90,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
         };
     }
 

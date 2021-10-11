@@ -28,6 +28,7 @@ module.exports = () => {
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
+            // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
@@ -81,6 +82,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
         };
 
         // local environment
@@ -88,6 +90,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
+            'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
         };
     }
 

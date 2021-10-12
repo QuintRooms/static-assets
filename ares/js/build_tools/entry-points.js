@@ -28,6 +28,7 @@ module.exports = () => {
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
+            // 'f1e_cug-57182': './src/57182.js', // f1e cug
             // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21

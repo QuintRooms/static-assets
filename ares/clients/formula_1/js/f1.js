@@ -5,9 +5,10 @@ const utilities = new Utilities();
 const {domain} = process.env;
 const env_path = new Path();
 
-export default async function f1Styles(siteId, event_name, banner_location) {
+export default async function f1Styles(siteId, event_name, banner_location, rate_color) {
     await utilities.waitForSelectorInDOM('header');
 
+    rate_color = '#333';
     const header = document.querySelector('header');
     const language_el = document.querySelector('#language');
     const currency_el = document.querySelector('.currencies-container');
@@ -83,12 +84,12 @@ export default async function f1Styles(siteId, event_name, banner_location) {
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);
     }
 
-    async function updateBannerMessage(location) {
+    async function updateBannerMessage(location, rate_color) {
         await utilities.waitForSelectorInDOM('.lucid-banner');
 
         document.querySelector(
             '.lucid-content'
-        ).innerHTML = `<span style="text-align: center;">Look for <span style="background: #fc4c02; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
+        ).innerHTML = `<span style="text-align: center;">Look for <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
             location ? ` in  ${location}` : ''
         }!</span>`;
     }
@@ -96,5 +97,5 @@ export default async function f1Styles(siteId, event_name, banner_location) {
     addHeader(siteId, event_name);
     addHamburgerMenu(siteId, event_name);
     addFooter();
-    updateBannerMessage(banner_location);
+    updateBannerMessage(banner_location, rate_color);
 }

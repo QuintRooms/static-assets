@@ -74,7 +74,7 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         has_custom_emails: false,
-        has_group_booking_banner: false,
+        has_group_booking_banner: true,
         prop_image_replacement: [
             {
                 prop_id: '663849',

@@ -14,7 +14,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id);
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'Circuit Zandvoort', '#333');
 utilities.replacePropThumbImage(site_config.prop_image_replacement);
 
 new ChildPortal();

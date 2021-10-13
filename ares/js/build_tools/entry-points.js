@@ -9,6 +9,7 @@ module.exports = () => {
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
+            // 'acl_21_production-60310': './src/60310.js', // acl 21_production
             // 'acl_22_production-71762': './src/71762.js', // acl 22_production
             // 'acl_22_attendees-71761': './src/71761.js', // acl 22_attendees
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
@@ -23,6 +24,7 @@ module.exports = () => {
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
+            'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
@@ -84,6 +86,9 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            // 'ares_derek-70011': './src/70011.js', // ares derek
+           
+            
         };
 
         // local environment
@@ -91,6 +96,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
+            'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
         };
     }
 

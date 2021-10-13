@@ -47,7 +47,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
-            logo_outbound_url: 'https://bookrooms.formula1.com/v6?siteid=45246&theme=standard',
+            logo_outbound_url: 'https://dutchgp.com/',
         },
         map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         theme: 'light',
@@ -74,8 +74,7 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         has_custom_emails: false,
-        has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Dutch%20GP%2022',
+        has_group_booking_banner: false,
         prop_image_replacement: [
             {
                 prop_id: '663849',

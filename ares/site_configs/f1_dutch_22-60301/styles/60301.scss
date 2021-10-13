@@ -30,4 +30,6 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/cl
     transform: translateY(410px) !important;
 }
 
-
+#tickets li:nth-child(2), #tickets li:nth-child(1), #races-contact li:first-child {
+    display: none;
+}

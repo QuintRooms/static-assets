@@ -92,7 +92,7 @@
           <span><b>Balance Due:</b> {{currency_symbol}}{{balance_due}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Rate Per Night:</b> {{room_rates}}</span>
+          <span><b>Rate Per Night:</b><br />  {{room_rates}}</span>
         </mj-text>
       </mj-column>
       <mj-column width="100%" padding-top="20px">

@@ -7,22 +7,20 @@ const env_path = new Path();
 
 export default async function f1Styles(siteId, event_name, banner_location, rate_color) {
     await utilities.waitForSelectorInDOM('header');
-
-    const exclusive_rate_color = rate_color;
     const header = document.querySelector('header');
     const language_el = document.querySelector('#language');
     const currency_el = document.querySelector('.currencies-container');
 
-    async function addHeader(id, name) {
+    async function addHeader() {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula_1/html/f1-header.html`);
 
         const races_contact = `
             <ul id="races-contact">
                 <li>
-                    <a href="https://form.jotform.com/203066540331141?bookingPortal=${name}" class="book-plus" target="_blank">Book 10+ Rooms</a>
+                    <a href="https://form.jotform.com/203066540331141?bookingPortal=${event_name}" class="book-plus" target="_blank">Book 10+ Rooms</a>
                 </li>
                 <li>
-                    <a href="https://events.${domain}/v6/support?siteId=${id}" id="contactUs" target="_blank">Contact Us</a>
+                    <a href="https://events.${domain}/v6/support?siteId=${siteId}" id="contactUs" target="_blank">Contact Us</a>
                 </li>
             </ul>
             <div class="navbar-hamburger">
@@ -44,16 +42,16 @@ export default async function f1Styles(siteId, event_name, banner_location, rate
         document.querySelector('.currency').insertAdjacentElement('afterBegin', currency_el);
     }
 
-    async function addHamburgerMenu(id, name) {
+    async function addHamburgerMenu() {
         const burger_html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula_1/html/mobile-hamburger-menu.html`);
 
         header.insertAdjacentHTML('afterBegin', burger_html);
 
         const mobile_contact_url = document.querySelector('.mobile-nav-upper-ul #contactUs');
-        mobile_contact_url.href = `https://events.${domain}/v6/support?siteId=${id}`;
+        mobile_contact_url.href = `https://events.${domain}/v6/support?siteId=${siteId}`;
 
         const mobile_10_plus_url = document.querySelector('.mobile-nav-upper-ul #book10Plus');
-        mobile_10_plus_url.href = `https://form.jotform.com/203066540331141?bookingPortal=${name}`;
+        mobile_10_plus_url.href = `https://form.jotform.com/203066540331141?bookingPortal=${event_name}`;
 
         await utilities.waitForSelectorInDOM('.navbar-hamburger');
 
@@ -84,17 +82,21 @@ export default async function f1Styles(siteId, event_name, banner_location, rate
         document.querySelector('.pb-container').insertAdjacentHTML('afterend', footer_html);
     }
 
-    async function updateBannerMessage(location, exclusive_rate_color) {
+    async function updateBannerMessage() {
         await utilities.waitForSelectorInDOM('.lucid-banner');
+
+        let preposition = 'in';
+        if (siteId === 60301) preposition = 'near';
+
         document.querySelector(
             '.lucid-content'
-        ).innerHTML = `<span style="text-align: center;">Look for <span style="background: ${exclusive_rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
-            location ? ` in  ${location}` : ''
+        ).innerHTML = `<span style="text-align: center;">Look for <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
+            banner_location ? ` ${preposition}  ${banner_location}` : ''
         }!</span>`;
     }
 
-    addHeader(siteId, event_name);
-    addHamburgerMenu(siteId, event_name);
+    addHeader();
+    addHamburgerMenu();
     addFooter();
-    updateBannerMessage(banner_location, exclusive_rate_color);
+    updateBannerMessage();
 }

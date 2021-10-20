@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>2022 Formula 1 Miami Grand Prix</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;1,200&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Titillium Web', 'Helvetica', 'sans-serif';
+            }
+
+            body {
+                margin: 1rem;
+            }
+
+            h1,
+            h2,
+            h3 {
+                z-index: 3;
+                position: relative;
+            }
+
+            h1 {
+                font-weight: 600;
+                margin-bottom: 2rem;
+            }
+
+            h2 {
+                font-weight: 400;
+            }
+
+            iframe {
+                z-index: 1;
+            }
+
+            .chart iframe {
+                width: 100vw;
+                height: 65vh;
+                z-index: 2;
+                position: relative;
+            }
+
+            .data-chart-container {
+                margin-bottom: 1rem;
+            }
+
+            .data-chart {
+                height: 200px;
+                z-index: 2;
+                padding: 1rem;
+                box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.2);
+                overflow: hidden;
+            }
+
+            .data-chart iframe {
+                z-index: 1;
+                overflow: hidden;
+            }
+
+            .chart {
+                overflow: hidden;
+                height: 400px;
+                padding: 1rem;
+                box-shadow: 0px 0px 12px 3px rgba(0, 0, 0, 0.2);
+                margin-bottom: 2rem;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-gap: 1rem;
+            }
+
+            @media screen and (max-width: 1400px) {
+                .grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+        <h1>2022 Formula 1 Miami Grand Prix</h1>
+        <div class="data-chart-container">
+            <div class="grid">
+                <div class="data-chart" id="monthly-reservations">
+                    <h3>Reservations this Month</h3>
+                    <iframe
+                        src="https://crm.zoho.com/crm/specific/ViewChartImage?width=500&height=75&embedDetails=bcc8a72e3010f20e28e3f2ebae7c8c6ec3cab4641db29398b3e425d9f25770b1898c8ad7a27f0c2b0e5008d879c866ff197b6a5f231a1ae7c0cd79796548928638fb5efaeb070ef234a40d3eb9e50301a1a801c957af867155a7c141715b5c6ba0ec7eaa06f16e65b09a36b8e535a2c3"
+                        frameborder="0"
+                        scrolling="no"
+                        height="150"
+                    ></iframe>
+                </div>1
+                <div class="data-chart">
+                    <h3>Room Revenue this Month</h3>
+                    <iframe
+                        src="https://crm.zoho.com/crm/specific/ViewChartImage?width=500&height=75&embedDetails=bcc8a72e3010f20e28e3f2ebae7c8c6ec3cab4641db29398b3e425d9f25770b146b48cc6f8d864917016a4d1549c06af197b6a5f231a1ae7c0cd79796548928638fb5efaeb070ef234a40d3eb9e50301a1a801c957af867155a7c141715b5c6ba0ec7eaa06f16e65b09a36b8e535a2c3"
+                        frameborder="0"
+                        scrolling="no"
+                        height="150"
+                    ></iframe>
+                </div>
+                <div class="data-chart">
+                    <h3>Room Nights this Month</h3>
+                    <iframe
+                        src="https://crm.zoho.com/crm/specific/ViewChartImage?width=500&height=75&embedDetails=bcc8a72e3010f20e28e3f2ebae7c8c6ec3cab4641db29398b3e425d9f25770b1815902f287e2d73681294fa30c8a39cd197b6a5f231a1ae7c0cd79796548928638fb5efaeb070ef234a40d3eb9e50301a1a801c957af867155a7c141715b5c6ba0ec7eaa06f16e65b09a36b8e535a2c3"
+                        frameborder="0"
+                        scrolling="no"
+                        height="150"
+                    ></iframe>
+                </div>
+                <div class="data-chart">
+                    <h3>Avg Length of Reservation this Month</h3>
+                    <iframe
+                        src="https://crm.zoho.com/crm/specific/ViewChartImage?width=500&height=75&embedDetails=bcc8a72e3010f20e28e3f2ebae7c8c6ec3cab4641db29398b3e425d9f25770b11122a738f42414660ab2f65a349966bd197b6a5f231a1ae7c0cd79796548928638fb5efaeb070ef234a40d3eb9e50301a1a801c957af867155a7c141715b5c6ba0ec7eaa06f16e65b09a36b8e535a2c3"
+                        frameborder="0"
+                        scrolling="no"
+                        height="150"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="charts-container">
+            <div class="chart">
+                <h2>Total Reservations by Hotel</h2>
+                <iframe
+                    src="https://crm.zoho.com/crm/specific/ViewChartImage?width=1500&height=400&embedDetails=bcc8a72e3010f20e28e3f2ebae7c8c6ec3cab4641db29398b3e425d9f25770b1723e454560fe56166c8dfd7fbee4044b197b6a5f231a1ae7c0cd79796548928638fb5efaeb070ef234a40d3eb9e50301a1a801c957af867155a7c141715b5c6ba0ec7eaa06f16e65b09a36b8e535a2c3"
+                    frameborder="0"
+                    scrolling="no"
+                ></iframe>
+            </div>
+            <div class="chart">
+                <h2>Total Room Nights by Hotel</h2>
+                <iframe
+                    src="https://crm.zoho.com/crm/specific/ViewChartImage?width=1500&height=400&embedDetails=bcc8a72e3010f20e28e3f2ebae7c8c6ec3cab4641db29398b3e425d9f25770b1e4cdda775e6b6ae2df7335521ffa9942197b6a5f231a1ae7c0cd79796548928638fb5efaeb070ef234a40d3eb9e50301a1a801c957af867155a7c141715b5c6ba0ec7eaa06f16e65b09a36b8e535a2c3"
+                    frameborder="0"
+                    scrolling="no"
+                ></iframe>
+            </div>
+        </div>
+    </body>
+</html>

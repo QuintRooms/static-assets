@@ -49,6 +49,7 @@ module.exports = () => {
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
+            // 'lolla_22-62635': './src/62635.js', // lolla 22
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021

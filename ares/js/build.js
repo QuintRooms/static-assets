@@ -282,7 +282,7 @@ export default class BasePortal {
             this.setInputToRequired('input#city');
             this.setInputToRequired('input#theCheckIn');
             this.resizeViewportForMapMobile();
-            this.showCoronavirusInfoBanner();
+            // this.showCoronavirusInfoBanner();
             this.showCurrencySelect();
             this.positionPropReviews();
             this.insertPoweredByFooterLogo();

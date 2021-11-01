@@ -95,4 +95,17 @@ $header-images: '';
         max-width: 75vw;
     }
 
+    .lucid-banner .lucid-content {
+    margin-right: 20px;
+}
+}
+
+@media screen and (max-width: 600px) {
+    .lucid-banner{
+        max-width: 75vw;
+    }
+
+    .lucid-banner .lucid-content {
+    margin-right: 0;
+    }
 }

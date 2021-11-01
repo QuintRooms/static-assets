@@ -21,7 +21,7 @@ async function renderLucidBanner() {
     await utilities.waitForSelectorInDOM('.events');
 
     document.querySelector('.events').insertAdjacentHTML(
-        'afterend',
+        'beforeend',
         `
         <div class="lucid-banner">
             <div class="lucid-content">

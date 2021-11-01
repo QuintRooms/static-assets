@@ -25,7 +25,6 @@ async function renderLucidBanner() {
         `
         <div class="lucid-banner">
             <div class="lucid-content">
-                <span id="desktop">Need 10+ rooms for any of the CFP Championship games? <br> We're here to help you secure great rates.</span> 
                 <span id="desktop">NEED 10+ ROOMS FOR ANY OF THE CFP CHAMPIONSHIP GAMES? <br> WE'RE HERE TO HELP YOU SECURE GREAT RATES.</span>       
                 <span id="tablet">Need 10+ rooms for the CFP Championship games?</span>
                 <span id="mobile">Need 10+ rooms?</span>

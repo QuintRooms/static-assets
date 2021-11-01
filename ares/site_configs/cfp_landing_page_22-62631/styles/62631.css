@@ -586,20 +586,20 @@ header {
 
 @media screen and (max-width: 1080px) {
   .lucid-banner {
-    max-width: 75vw;
+    width: 75vw;
   }
 
-  .lucid-banner .lucid-content {
+  .lucid-content {
     margin-right: 20px;
   }
 }
 @media screen and (max-width: 600px) {
   .lucid-banner {
-    max-width: 75vw;
+    width: revert;
   }
 
-  .lucid-banner .lucid-content {
-    margin-right: 0;
+  .lucid-content {
+    margin-right: revert;
   }
 }
 

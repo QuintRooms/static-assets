@@ -584,4 +584,10 @@ header {
   color: white;
 }
 
+@media screen and (max-width: 1080px) {
+  .lucid-banner {
+    max-width: 75vw;
+  }
+}
+
 /*# sourceMappingURL=62631.css.map*/

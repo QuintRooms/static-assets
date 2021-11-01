@@ -326,7 +326,11 @@ header {
 }
 
 .event-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/cfp_landing_page_22-62631/img/banner-email3.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/cfp_landing_page_22-62631/img/2023.png);
+}
+
+.event-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://dev-static.hotelsforhope.com/ares/site_configs/cfp_landing_page_22-62631/img/2024.png);
 }
 
 .ArnSupportBottom .searchLink, .ArnSupportBottom .dvd:first-of-type, .ArnSupportBottom .dvd:nth-of-type(2) {
@@ -564,6 +568,10 @@ header {
   background-color: #c9920e;
   padding: 15px;
   border-radius: 16px;
+}
+
+.lucid-banner {
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=62631.css.map*/

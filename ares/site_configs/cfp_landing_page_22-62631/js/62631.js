@@ -25,12 +25,12 @@ async function renderLucidBanner() {
         `
         <div class="lucid-banner">
             <div class="lucid-content">
-                <span id="desktop">Need 10+ rooms for any of the CFP Championship games? We're here to help you secure great rates.</span>     
+                <span id="desktop">Need 10+ rooms for any of the CFP Championship games? <br> We're here to help you secure great rates.</span>     
                 <span id="tablet">Need 10+ rooms for the CFP Championship games?</span>
                 <span id="mobile">Need 10+ rooms?</span>
             </div>
             <div class="lucid-button">
-                <a id="lucid-link" target="_blank" href="https://form.jotform.com/203066540331141?bookingPortal=CFP%20Championship">Book 10+ Rooms</a>
+                <a id="lucid-link" target="_blank" href="https://form.jotform.com/203066540331141?bookingPortal=CFP%20Championship">CONTACT US</a>
             </div>
         </div>
         <style>
@@ -43,6 +43,13 @@ async function renderLucidBanner() {
 }
 
 renderLucidBanner();
+
+async function changeButtonText() {
+    const view_hotels_buttons = document.querySelectorAll('.view-hotels');
+    
+}
+
+
 
 // async function addBrs() {
 //     if (!document.querySelector('.RootBody')) return;

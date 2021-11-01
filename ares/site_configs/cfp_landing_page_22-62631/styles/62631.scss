@@ -78,8 +78,9 @@ $header-images: '';
 
 .lucid-banner {
     margin-top: 20px;
+    border-radius: 10px;
 }
 
-.lucid-content {
+.lucid-banner .lucid-content {
     text-align: left;
 }

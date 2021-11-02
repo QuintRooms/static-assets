@@ -578,11 +578,11 @@ header {
 
 @media screen and (min-width: 960px) {
   .lucid-banner {
+    width: 925px;
     max-width: 75vw;
   }
 
   .lucid-content {
-    margin-right: 205px;
     padding-top: 10px;
     padding-bottom: 10px;
   }

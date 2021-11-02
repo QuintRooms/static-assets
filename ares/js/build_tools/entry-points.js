@@ -45,6 +45,7 @@ module.exports = () => {
             // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
+            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
@@ -89,6 +90,8 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
+            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+
         };
 
         // local environment

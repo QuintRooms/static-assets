@@ -554,13 +554,6 @@ header {
   background-color: #000 !important;
 }
 
-.event-2 .display-date {
-  visibility: hidden;
-}
-.event-2 .view-hotels {
-  margin-top: 20px;
-}
-
 .event-container h2 {
   font-size: 24px;
 }
@@ -572,7 +565,6 @@ header {
 
 .lucid-banner {
   margin-top: 20px;
-  border-radius: 10px;
 }
 
 .lucid-banner .lucid-content {
@@ -584,16 +576,18 @@ header {
   color: white;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 960px) {
   .lucid-banner {
     max-width: 75vw;
   }
 
   .lucid-content {
-    margin-right: 20px;
+    margin-right: 205px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 960px) {
   .lucid-banner {
     max-width: revert;
   }

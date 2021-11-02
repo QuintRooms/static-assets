@@ -108,15 +108,15 @@ $header-images: '';
 
 @media screen and (max-width: 960px) {
 
-    .lucid-banner .lucid-content #desktop {
+    .lucid-banner .lucid-content span #desktop {
             display: none;
         }
 
-    .lucid-banner .lucid-content #tablet {
+    .lucid-banner .lucid-content span #tablet {
             display: none;
         }
 
-    .lucid-banner .lucid-content #mobile {
+    .lucid-banner .lucid-content span #mobile {
         display: inline;
     }
 
@@ -131,5 +131,19 @@ $header-images: '';
     }
     .lucid-banner .lucid-content span {
         margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .lucid-banner .lucid-content span #desktop {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content span #tablet {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content span #mobile {
+        display: inline;
     }
 }

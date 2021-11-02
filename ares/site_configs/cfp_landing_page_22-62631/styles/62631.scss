@@ -99,6 +99,10 @@ $header-images: '';
     margin-right: 205px;
     padding-top: 10px;
     padding-bottom: 10px;
+
+    .span {
+        font-size: 14px;
+    }
 }
 }
 
@@ -109,5 +113,13 @@ $header-images: '';
 
     .lucid-content {
     margin-right: revert;
+
+    #desktop {
+            display: none;
+        }
+
+    #mobile {
+        display: inline;
+    }
     }
 }

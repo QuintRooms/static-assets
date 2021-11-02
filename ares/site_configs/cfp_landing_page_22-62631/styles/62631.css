@@ -591,20 +591,21 @@ header {
   }
 }
 @media screen and (max-width: 960px) {
-  #desktop {
+  .lucid-banner .lucid-content #desktop {
     display: none;
   }
 
-  #mobile {
+  .lucid-banner .lucid-content #mobile {
     display: inline;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 785px) {
   .lucid-banner {
-    max-width: 50vw;
+    width: 300px;
   }
+
   .lucid-banner .lucid-content .span {
-    margin-left: 15px;
+    margin-left: 5%;
   }
 }
 

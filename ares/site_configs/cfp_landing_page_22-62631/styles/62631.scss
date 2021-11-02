@@ -90,7 +90,7 @@ $header-images: '';
     color: white;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (min-width: 600px) {
     .lucid-banner{
         width: 75vw;
     }

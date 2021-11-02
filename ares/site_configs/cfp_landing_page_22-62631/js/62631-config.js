@@ -89,11 +89,23 @@ export default function siteConfig() {
                 end_date: '01/12/2022', // M/D/YYYY
                 portal_url: 'http://collegefootballplayoffhotels.com/group-event?id=46199&utm_campaign=CFP%20Indianapolis%202022',
             },
+            // {
+            //     name: 'SEARCH ANYWHERE',
+            //     display_date: '2/10/2023',
+            //     end_date: '3/28/2025', // M/D/YYYY
+            //     portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',
+            // },
             {
-                name: 'SEARCH ANYWHERE',
-                display_date: '2/10/2023',
-                end_date: '3/28/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',
+                name: 'CFP NATIONAL CHAMPIONSHIP LOS ANGELES 2023',
+                display_date: 'January 6 - 10, 2023',
+                end_date: '01/10/2023', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/212695796550064',
+            },
+            {
+                name: 'CFP NATIONAL CHAMPIONSHIP HOUSTON 2024',
+                display_date: 'January 5 - 9, 2024',
+                end_date: '01/09/2024', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/212986027619161',
             },
         ],
     };

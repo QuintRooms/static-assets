@@ -22,7 +22,7 @@ module.exports = () => {
             // 'buku_22-66047': './src/66047.js', // buku 22
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
-            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
@@ -45,6 +45,7 @@ module.exports = () => {
             // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
+            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
@@ -89,6 +90,7 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
+
         };
 
         // local environment

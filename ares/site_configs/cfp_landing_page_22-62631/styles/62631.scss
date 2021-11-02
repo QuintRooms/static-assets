@@ -18,11 +18,12 @@ $site_name: 'cfp_landing_page_22-62631';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
 $logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
-$bg-images: url(#{$path}/site_configs/#{$site_name}/img/indy_stadium.jpg), url(#{$path}/site_configs/#{$site_name}/img/banner-email3.jpg);
+$bg-images: url(#{$path}/site_configs/#{$site_name}/img/indy_stadium.jpg), url(#{$path}/site_configs/#{$site_name}/img/2023.png),  url(#{$path}/site_configs/#{$site_name}/img/2024.png);
 $header-images: '';
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/landing_page/landing-page.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
 
 /* Fonts */
 @font-face {
@@ -53,15 +54,15 @@ $header-images: '';
     background-color: #000 !important;
 }
 
-.event-2 {
-    .display-date {
-        visibility: hidden;
-    }
+// .event-2 {
+//     .display-date {
+//         visibility: hidden;
+//     }
 
-    .view-hotels {
-        margin-top: 20px;
-    }
-}
+//     .view-hotels {
+//         margin-top: 20px;
+//     }
+// }
 
 .event-container {
     h2 {
@@ -72,5 +73,77 @@ $header-images: '';
         background-color: #c9920e;
         padding: 15px;
         border-radius: 16px;
+    }
+}
+
+.lucid-banner {
+    margin-top: 20px;
+    // border-radius: 10px;
+}
+
+.lucid-banner .lucid-content {
+    text-align: left;
+}
+
+#lucid-link {
+    background-color: black;
+    color: white;
+}
+
+@media screen and (min-width: 960px) {
+    .lucid-banner{
+        width: 925px;
+        max-width: 75vw;
+    }
+
+    .lucid-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .span {
+        font-size: 14px;
+    }
+}
+}
+
+@media screen and (max-width: 960px) {
+
+    .lucid-banner .lucid-content #desktop {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #tablet {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #mobile {
+        display: inline;
+    }
+
+    .lucid-banner .lucid-content span {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 785px) {
+    .lucid-banner{
+        width: 300px;
+    }
+    .lucid-banner .lucid-content span {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .lucid-banner .lucid-content #desktop {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #tablet {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #mobile {
+        display: inline;
     }
 }

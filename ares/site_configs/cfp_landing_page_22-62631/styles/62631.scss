@@ -92,7 +92,7 @@ $header-images: '';
 
 @media screen and (min-width: 600px) {
     .lucid-banner{
-        width: 75vw;
+        max-width: 75vw;
     }
 
     .lucid-content {
@@ -102,7 +102,7 @@ $header-images: '';
 
 @media screen and (max-width: 600px) {
     .lucid-banner{
-        width: revert;
+        max-width: revert;
     }
 
     .lucid-content {

@@ -591,15 +591,15 @@ header {
   }
 }
 @media screen and (max-width: 960px) {
-  .lucid-banner .lucid-content span #desktop {
+  .lucid-banner .lucid-content #desktop {
     display: none;
   }
 
-  .lucid-banner .lucid-content span #tablet {
+  .lucid-banner .lucid-content #tablet {
     display: none;
   }
 
-  .lucid-banner .lucid-content span #mobile {
+  .lucid-banner .lucid-content #mobile {
     display: inline;
   }
 
@@ -617,15 +617,15 @@ header {
   }
 }
 @media screen and (max-width: 600px) {
-  .lucid-banner .lucid-content span #desktop {
+  .lucid-banner .lucid-content #desktop {
     display: none;
   }
 
-  .lucid-banner .lucid-content span #tablet {
+  .lucid-banner .lucid-content #tablet {
     display: none;
   }
 
-  .lucid-banner .lucid-content span #mobile {
+  .lucid-banner .lucid-content #mobile {
     display: inline;
   }
 }

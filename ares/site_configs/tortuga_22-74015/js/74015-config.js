@@ -17,7 +17,7 @@ export default function siteConfig() {
         currency: 'USD',
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
+            event_id: '53145',
             event_name: 'Tortuga Music Festival',
             event_dates: '',
             redirect_date: '',
@@ -79,5 +79,7 @@ export default function siteConfig() {
         root_page_subheader_text: '',
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
+        // has_group_booking_banner: true,
+        // group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Tortuga',
     };
 }

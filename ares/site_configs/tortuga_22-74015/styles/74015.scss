@@ -1,7 +1,7 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
 $logo_flex_position: center;
-$logo_max_width: 600px;
+$logo_max_width: 300px;
 $background_color: #fff;
 $primary_color: #04539e;
 $secondary_color: #00a3df;
@@ -15,8 +15,8 @@ $google_font_name: 'Montserrat';
 $site_name: 'tortuga_22-74015';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
-$header_background: #fff;
-// $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
+// $header_background: #fff;
+$header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
 
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';

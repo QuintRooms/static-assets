@@ -2,27 +2,25 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 
-const site_id = 66047;
-const directory_name = `buku_22-${site_id}`;
+const site_id = 70016;
+const directory_name = `high_water_22-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: 17015,
-        master_id: 920,
+        affiliate_id: 16067,
+        master_id: 1816,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        currency: 'USD',
-        distance_unit: 'useMiles',
         lodging: {
-            event_id: '48619',
-            event_name: 'Buku Music and Art Project ',
+            event_id: '',
+            event_name: 'Lollapalooza',
             event_dates: '',
             redirect_date: '',
-            redirect_url: '',
-            is_lrg: false,
+            redirect_url: 'https://lollapalooza.quintrooms.com/group-event?id=44059',
+            is_lrg: true,
         },
         cug: {
             is_cug: false,
@@ -31,9 +29,10 @@ export default function siteConfig() {
             percent_off_text: 'off',
             show_percent_savings: false,
         },
-        exclusive_rate_text: 'Exclusive Rate',
+        exclusive_rate_text: 'Exclusive Rates',
         host_hotel_text: 'Host Hotel',
         partner_hotel_text: 'Partner Hotel',
+        sponsor_hotel_text: 'Sponsor Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
@@ -46,10 +45,10 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.thebukuproject.com/',
+            logo_outbound_url: 'https://www.lollapalooza.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-        theme: 'dark',
+        theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
@@ -73,7 +72,7 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Buku',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Lollapalooza',
         confirmation_email_from: 'Quint Rooms',
     };
 }

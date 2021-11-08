@@ -92,7 +92,9 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'high_water_22-70016': './src/70016.js', // high water_22
-            'tortuga_22-74015': './src/74015.js', // tortuga 22
+            // 'tortuga_22-74015': './src/74015.js', // tortuga 22
+            'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
+
         };
 
         // local environment

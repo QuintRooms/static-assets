@@ -20,6 +20,8 @@ $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
 
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
 
 // .leaflet-container .leaflet-marker-pane img {
 //     max-width: 30px !important;

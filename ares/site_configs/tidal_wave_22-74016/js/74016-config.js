@@ -17,8 +17,8 @@ export default function siteConfig() {
         currency: 'USD',
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
-            event_name: 'Tortuga Music Festival',
+            event_id: '54036',
+            event_name: 'Tidal Wave',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -46,7 +46,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.tortugamusicfestival.com',
+            logo_outbound_url: 'http://rocktheocean.com/',
             background: `url(${env_path.path}/site_configs/${directory_name}/img/header-bg.png)`,
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
@@ -54,7 +54,7 @@ export default function siteConfig() {
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
-                is_active: true,
+                is_active: false,
                 image_url: `${env_path.path}/site_configs/${directory_name}/img/ad.png`,
                 outbound_url: 'http://rocktheocean.com/',
             },
@@ -79,7 +79,7 @@ export default function siteConfig() {
         root_page_subheader_text: '',
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
-        // has_group_booking_banner: true,
-        // group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Tortuga',
+        has_group_booking_banner: true,
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Tidal%20Wave',
     };
 }

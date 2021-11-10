@@ -15,11 +15,11 @@ export default function siteConfig() {
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
-            event_id: '',
-            event_name: 'Lollapalooza',
+            event_id: '53986',
+            event_name: 'High Water',
             event_dates: '',
             redirect_date: '',
-            redirect_url: 'https://lollapalooza.quintrooms.com/group-event?id=44059',
+            redirect_url: '',
             is_lrg: true,
         },
         cug: {
@@ -45,7 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.lollapalooza.com/',
+            logo_outbound_url: 'https://www.highwaterfest.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
@@ -72,7 +72,7 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Lollapalooza',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=High%20Water',
         confirmation_email_from: 'Quint Rooms',
     };
 }

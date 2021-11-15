@@ -15,24 +15,24 @@ class ChildPortal extends BasePortal {
 new ChildPortal();
 
 //Insert Sponsor Banner
-const includeSponsorBanner = async () => {
-    await utilities.waitForSelectorInDOM('header');
-    document.querySelector('header').insertAdjacentHTML(
-    'afterend',
-    `
-    <div class="sponsor-container">
-        <div class='sponsor-text'>
-            Proudly sponsored by
-        </div>
-        <div class='sponsor-text-space'></div>
-        <div class='sponsor-logo'>
-            <img src="https://dev-static.hotelsforhope.com/ares/site_configs/governors_ball_21-70366/img/logo-hilton.png" alt="Hilton logo">
-        </div>
+// const includeSponsorBanner = async () => {
+//     await utilities.waitForSelectorInDOM('header');
+//     document.querySelector('header').insertAdjacentHTML(
+//     'afterend',
+//     `
+//     <div class="sponsor-container">
+//         <div class='sponsor-text'>
+//             Proudly sponsored by
+//         </div>
+//         <div class='sponsor-text-space'></div>
+//         <div class='sponsor-logo'>
+//             <img src="https://dev-static.hotelsforhope.com/ares/site_configs/governors_ball_21-70366/img/logo-hilton.png" alt="Hilton logo">
+//         </div>
         
-    </div>
-    `
-    );
-}
+//     </div>
+//     `
+//     );
+// }
 
-includeSponsorBanner();
+// includeSponsorBanner();
 

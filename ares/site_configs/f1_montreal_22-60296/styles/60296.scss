@@ -25,3 +25,12 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/cl
 // #tickets li:nth-child(2), #tickets li:nth-child(1), #races-contact li:first-child {
 //     display: none;
 // }
+
+.language-container > div{
+    display: none;
+}
+
+.language-container > div#french,
+.language-container > div#standard{
+    display: unset;
+}

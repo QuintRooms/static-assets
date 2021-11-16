@@ -22,12 +22,13 @@ module.exports = () => {
             // 'buku_22-66047': './src/66047.js', // buku 22
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
-            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
@@ -93,8 +94,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'high_water_22-70016': './src/70016.js', // high water_22
             // 'tortuga_22-74015': './src/74015.js', // tortuga 22
-            'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
-
+            // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
         };
 
         // local environment

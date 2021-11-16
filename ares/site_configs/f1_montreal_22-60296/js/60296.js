@@ -19,22 +19,22 @@ f1Styles(site_config.site_id, site_config.lodging.event_name, 'Montreal CA', '#0
 
 // f1Styles(site_config.site_id);
 
-new ChildPortal();
-new Distance();
+// new ChildPortal();
+// new Distance();
 
-async function insertFooterText() {
-    await utilities.waitForSelectorInDOM('.f1-policy');
-    const footer_policy = document.querySelector('.f1-policy');
+// async function insertFooterText() {
+//     await utilities.waitForSelectorInDOM('.f1-policy');
+//     const footer_policy = document.querySelector('.f1-policy');
 
-    footer_policy.insertAdjacentHTML(
-        'beforebegin',
-        `
-        <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />
-        <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>
-        `
-    );
-}
-insertFooterText();
+//     footer_policy.insertAdjacentHTML(
+//         'beforebegin',
+//         `
+//         <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />
+//         <p class="f1-partner-text">Authorized Hotel Booking Partner of F1 Miami Grand Prix</p>
+//         `
+//     );
+// }
+// insertFooterText();
 
 // Beach Filter Stuff
 

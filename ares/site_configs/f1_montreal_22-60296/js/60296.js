@@ -15,13 +15,12 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id, site_config.lodging.event_name, 'South Florida', '#fc4c02');
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'Montreal CA', '#000');
+
+// f1Styles(site_config.site_id);
 
 new ChildPortal();
 new Distance();
-
-const beach_property_list = '236435,179461,3983382,233505,37003,626284,500825,256124,2681,16286,238362,36053,623490,240375,752193,24437,430088,3385223,43658,422794,3846047,33831,33569,48449,216347,24622,848867'
-const beach_property_url = 'https://events.quintrooms.com/v6?currency=USD&type=geo&siteid=60295&longitude=-80.23964600000000&latitude=25.95829850000000&radius=100&checkin=5/5/2022&nights=4&properties=236435,179461,3983382,233505,37003,626284,500825,256124,2681,16286,238362,36053,623490,240375,752193,24437,430088,3385223,43658,422794,3846047,33831,33569,48449,216347,24622,848867&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles&groupid=50425&utm_source=internal'
 
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.f1-policy');

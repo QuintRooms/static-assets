@@ -11,7 +11,7 @@ export default function siteConfig() {
         directory_name,
         affiliate_id: 16980,
         master_id: 920,
-        site_type: 'lodging',
+        site_type: 'retail',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         use_google_autocomplete: true,
@@ -19,7 +19,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'F1 Miami Grand Prix',
+            event_name: 'Canadian Grand Prix',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -49,7 +49,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
-            logo_outbound_url: 'https://f1miamigp.com/',
+            logo_outbound_url: 'https://www.gpcanada.ca/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/map_marker.png`,
         theme: 'light',
@@ -75,9 +75,9 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
-        has_custom_emails: true,
+        has_custom_emails: false,
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Miami%20GP',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Canadian%20GP',
         uses_hybrid_compensation_model: true,
     };
 }

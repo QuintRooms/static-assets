@@ -37,7 +37,7 @@ async function insertFooterText() {
 insertFooterText();
 
 async function changeArnRateTextLanguage() {
-    await utilities.waitForSelectorInDOM('.ArnShowRatesLink');
+    await utilities.waitForSelectorInDOM('.full-stay');
 
     const selected_language = document.querySelector('#language-label span').innerText;
     const room_array = document.querySelectorAll('#standardAvail .rateRow');
@@ -61,5 +61,4 @@ async function changeArnRateTextLanguage() {
         });
     }
 }
-
 changeArnRateTextLanguage();

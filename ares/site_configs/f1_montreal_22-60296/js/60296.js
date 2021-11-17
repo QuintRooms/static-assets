@@ -36,17 +36,17 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-async function changeLucidBannerText() {
-    await utilities.waitForSelectorInDOM('header');
-    const selected_language = document.querySelector('#language-label span').innerText;
-    const lucid_content = document.querySelector('.lucid-content');
-    if (selected_language === 'Français') {
-        lucid_content.innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis près de  Circuit Gilles Villeneuve }!</span>`;
-    } else {
-        lucid_content.innerHTML = `<span style="text-align: center;">Look for <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates near Circuit Gilles Villeneuve }!</span>`;
-    }
-}
-changeLucidBannerText();
+// async function changeLucidBannerText() {
+//     await utilities.waitForSelectorInDOM('header');
+//     const selected_language = document.querySelector('#language-label span').innerText;
+//     const lucid_content = document.querySelector('.lucid-content');
+//     if (selected_language === 'Français') {
+//         lucid_content.innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis près de  Circuit Gilles Villeneuve }!</span>`;
+//     } else {
+//         lucid_content.innerHTML = `<span style="text-align: center;">Look for <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates near Circuit Gilles Villeneuve }!</span>`;
+//     }
+// }
+// changeLucidBannerText();
 
 // async function changeArnRateTextLanguage() {
 //     await utilities.waitForSelectorInDOM('.sort-wrapper h4');

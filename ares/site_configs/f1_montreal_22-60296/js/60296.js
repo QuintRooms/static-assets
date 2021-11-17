@@ -39,6 +39,27 @@ insertFooterText();
 async function changeArnRateTextLanguage() {
     await utilities.waitForSelectorInDOM('.ArnShowRatesLink');
 
-    const language_container_el = document.querySelector('#language');
+    const selected_language = document.querySelector('#language-label span').innerText;
+    const room_array = document.querySelectorAll('#standardAvail .rateRow');
+    if (selected_language === 'Français') {
+        utilities.updateHTML('.ArnSearchHeader', 'Modifier La Recherche');
+        utilities.updateHTML('.sort-wrapper h4', 'Trier');
+        utilities.updateHTML('.lblAmenities', 'Équipements');
+        room_array.forEach((i) => {
+            const book_button = i.querySelector('.ArnShowRatesLink');
+            book_button.innerHTML = 'Réserver';
+            // utilities.updateHTML('.full-stay','${fixed_full_stay} for ${nights} nights');
+        });
+    } else {
+        utilities.updateHTML('.ArnSearchHeader', 'Update Search');
+        utilities.updateHTML('.sort-wrapper h4', 'Sort');
+        utilities.updateHTML('.lblAmenities', 'Amenities');
+        room_array.forEach((i) => {
+            const book_button = i.querySelector('.ArnShowRatesLink');
+            book_button.innerHTML = 'Book Rooms';
+            // utilities.updateHTML('.full-stay','${fixed_full_stay} for ${nights} nights');
+        });
+    }
 }
+
 changeArnRateTextLanguage();

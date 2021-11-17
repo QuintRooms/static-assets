@@ -382,6 +382,15 @@ select#adults {
     order: 1;
     margin: 0 30px 0 15px;
 }
+.language {
+    display: none;
+}
+
+.SearchResults .language,
+.RootBody .language {
+    display: block;
+}
+
 .language-container {
     display: none;
     position: absolute;
@@ -443,8 +452,13 @@ select#adults {
 
 /* Currency Dropdown Start */
 
-.SinglePropDetail .currency {
+.currency {
     display: none;
+}
+
+.RootBody .currency,
+.SearchHotels .currency {
+    display: block;
 }
 
 #CurrenciesContainer {
@@ -863,7 +877,7 @@ select#adults {
     background: rgba(0, 0, 0, 0.9);
     height: 100%;
     width: 100%;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1196,7 +1210,8 @@ div.autocomplete ul li.selected {
     transform: scale(0.9);
 }
 
-.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews, #thePropertyReviews {
+.SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews,
+#thePropertyReviews {
     display: none !important;
     order: 1;
     position: absolute;
@@ -3716,7 +3731,7 @@ body.HoldRoomsForm {
 .GroupHoldForm p.bookRoomButton:hover,
 .GroupHoldForm p.bookRoomButton {
     background: transparent;
-    border: none
+    border: none;
 }
 
 /* Hold Room Page End */
@@ -4270,7 +4285,7 @@ input[type='search']::-webkit-search-results-decoration {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-    padding: .75rem;
+    padding: 0.75rem;
 }
 
 .banner-content {
@@ -4283,7 +4298,6 @@ input[type='search']::-webkit-search-results-decoration {
     max-width: 130px;
     width: 100%;
     margin-left: 40px;
-
 }
 
 .banner-content img {
@@ -4357,11 +4371,11 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 @media screen and (max-width: 400px) {
-    .stay-22-banner{
+    .stay-22-banner {
         flex-direction: column;
     }
 
-    .banner-content{
+    .banner-content {
         justify-content: center;
     }
 
@@ -4369,7 +4383,7 @@ input[type='search']::-webkit-search-results-decoration {
         margin-left: 0;
     }
 
-    .custom-button{
+    .custom-button {
         margin-right: 0;
         margin-top: 8px;
     }

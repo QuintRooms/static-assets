@@ -162,6 +162,24 @@ export default class BasePortal {
             }
 
             if (this.page_name === 'search-results') {
+                utilities
+                    .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
+                    .then((test) => {
+                        document.body.insertAdjacentHTML(
+                            'beforeEnd',
+                            `
+                            <style>
+                                #searching{
+                                    display: none !important;
+                                }
+                            </style>
+                        `
+                        );
+                    })
+                    .catch((e) => {
+                        console.log(e);
+                    });
+
                 this.updateTitleMetaTag();
 
                 if (this.site_config.use_google_autocomplete) {
@@ -1728,7 +1746,7 @@ export default class BasePortal {
 
         document.querySelector(
             'span.confirmationAgreement'
-        ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
+        ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
 
         utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I');
         utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my');

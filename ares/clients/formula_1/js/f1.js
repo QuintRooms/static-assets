@@ -91,7 +91,7 @@ export default async function f1Styles(siteId, event_name, banner_location, rate
         const selected_language = document.querySelector('#language-label span').innerText;
         const lucid_content = document.querySelector('.lucid-content');
         if (selected_language === 'Français') {
-            lucid_content.innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis à ${banner_location} }!</span>`;
+            lucid_content.innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis à ${banner_location}!</span>`;
         } else {
             lucid_content.innerHTML = `<span style="text-align: center;">Look for <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
                 banner_location ? ` ${preposition}  ${banner_location}` : ''

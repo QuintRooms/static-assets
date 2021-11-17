@@ -335,7 +335,7 @@ select#adults {
 .language {
   display: none; }
 
-.SearchResults .language,
+.SearchHotels .language,
 .RootBody .language {
   display: block; }
 

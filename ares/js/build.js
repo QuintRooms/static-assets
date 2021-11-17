@@ -228,16 +228,21 @@ export default class BasePortal {
                 this.movePropClassBelowPropName();
                 utilities.selectCheckboxOnLabelClick('.ArnSearchField div');
                 utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
-                utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                 utilities.updateHTML('.lblRating', 'Stars');
                 utilities.updateHTML('.lblCurrency', 'Currency');
-                utilities.updateHTML('.lblAmenities', 'Amenities');
                 utilities.updateHTML('.lblNearbyCities', 'Nearby Cities');
                 utilities.updateHTML('.lblPropertyType', 'Property Type');
-                utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
-                utilities.updateHTML('.ArnSearchHeader', 'Update Search');
                 utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                 utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
+
+                const selected_language = document.querySelector('#language-label span').innerText;
+
+                if (selected_language === 'English') {
+                    utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                    utilities.updateHTML('.ArnSearchHeader', 'Update Search');
+                    utilities.updateHTML('.lblAmenities', 'Amenities');
+                    utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
+                }
 
                 await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
                     utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');

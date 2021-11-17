@@ -37,10 +37,10 @@ async function insertFooterText() {
 insertFooterText();
 
 async function changeArnRateTextLanguage() {
-    await utilities.waitForSelectorInDOM('.full-stay');
+    await utilities.waitForSelectorInDOM('.sort-wrapper h4');
 
     const selected_language = document.querySelector('#language-label span').innerText;
-    const room_array = document.querySelectorAll('#standardAvail .rateRow');
+    const room_array = document.querySelectorAll('.ArnProperty');
     if (selected_language === 'Français') {
         utilities.updateHTML('.ArnSearchHeader', 'Modifier La Recherche');
         utilities.updateHTML('.sort-wrapper h4', 'Trier');

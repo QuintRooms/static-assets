@@ -35,3 +35,10 @@ async function insertFooterText() {
     );
 }
 insertFooterText();
+
+async function changeArnRateTextLanguage() {
+    await utilities.waitForSelectorInDOM('.ArnShowRatesLink');
+
+    const language_container_el = document.querySelector('#language');
+}
+changeArnRateTextLanguage();

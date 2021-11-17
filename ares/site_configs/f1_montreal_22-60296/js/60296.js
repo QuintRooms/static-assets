@@ -6,6 +6,8 @@ import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();
 
+const {domain} = process.env;
+
 const site_config = new SiteConfig();
 
 class ChildPortal extends BasePortal {
@@ -35,6 +37,36 @@ async function insertFooterText() {
     );
 }
 insertFooterText();
+
+const selected_language = document.querySelector('#language-label span').innerText;
+
+async function changeUpdateSearchTextOnPropPage() {
+    await utilities.waitForSelectorInDOM('.translateMe');
+
+    if (selected_language === 'Français') {
+        utilities.updateHTML('.translateMe', 'Modifier La Recherche');
+    } else {
+        utilities.updateHTML('.translateMe', 'Update Search');
+    }
+}
+changeUpdateSearchTextOnPropPage();
+
+async function changeConfirmationAgreementTextOnCheckout() {
+    await utilities.waitForSelectorInDOM('.confirmationAgreement');
+
+    if (selected_language === 'Français') {
+        utilities.updateHTML(
+            'span.confirmationAgreement',
+            `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`
+        );
+    } else {
+        utilities.updateHTML(
+            'span.confirmationAgreement',
+            `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`
+        );
+    }
+}
+changeConfirmationAgreementTextOnCheckout();
 
 // async function changeLucidBannerText() {
 //     await utilities.waitForSelectorInDOM('header');

@@ -37,7 +37,7 @@ async function insertFooterText() {
 insertFooterText();
 
 async function changeArnRateTextLanguage() {
-    await utilities.waitForSelectorInDOM('.lucid-content');
+    await utilities.waitForSelectorInDOM('.sort-wrapper h4');
 
     const selected_language = document.querySelector('#language-label span').innerText;
     const room_array = document.querySelectorAll('.ArnProperty');
@@ -53,7 +53,9 @@ async function changeArnRateTextLanguage() {
 
         room_array.forEach((i) => {
             const book_button = i.querySelector('.ArnShowRatesLink');
+            const full_stay_text = i.querySelector('.full-stay');
             book_button.innerHTML = 'Réserver';
+            
             // utilities.updateHTML('.full-stay','${fixed_full_stay} for ${nights} nights');
         });
     } else {
@@ -73,4 +75,4 @@ async function changeArnRateTextLanguage() {
         });
     }
 }
-changeArnRateTextLanguage();
+// changeArnRateTextLanguage();

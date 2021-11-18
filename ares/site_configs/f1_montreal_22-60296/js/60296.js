@@ -72,13 +72,13 @@ async function changeConfirmationAgreementTextOnCheckout() {
     if (selected_language === 'french') {
         console.log('inside french changeConfirmationAgreementTextOnCheckout');
         utilities.updateHTML(
-            'span.confirmationAgreement',
+            '.confirmationAgreement',
             `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`
         );
     } else {
         console.log('inside English changeConfirmationAgreementTextOnCheckout');
         utilities.updateHTML(
-            'span.confirmationAgreement',
+            '.confirmationAgreement',
             `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`
         );
     }

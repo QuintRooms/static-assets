@@ -4,6 +4,7 @@ import Utilities from '../../../js/utilities';
 const utilities = new Utilities();
 const {domain} = process.env;
 const env_path = new Path();
+const selected_language = utilities.getMetaTagContent('theme');
 
 export default async function f1Styles(siteId, event_name, banner_location, rate_color) {
     await utilities.waitForSelectorInDOM('header');
@@ -14,7 +15,7 @@ export default async function f1Styles(siteId, event_name, banner_location, rate
     async function addHeader() {
         const html = await utilities.fetchHTMLFromFile(`${env_path.path}/clients/formula_1/html/f1-header.html`);
 
-        const races_contact = `
+        let races_contact = `
             <ul id="races-contact">
                 <li>
                     <a href="https://form.jotform.com/203066540331141?bookingPortal=${event_name}" class="book-plus" target="_blank">Book 10+ Rooms</a>
@@ -29,6 +30,24 @@ export default async function f1Styles(siteId, event_name, banner_location, rate
                 <span class="toggle-bar bottom-bar"></span>
             </div>
         `;
+
+        if (selected_language === 'french') {
+            races_contact = `
+            <ul id="races-contact">
+                <li>
+                    <a href="https://form.jotform.com/203066540331141?bookingPortal=${event_name}" class="book-plus" target="_blank">Réserver 10+ Chambres</a>
+                </li>
+                <li>
+                    <a href="https://events.${domain}/v6/support?siteId=${siteId}" id="contactUs" target="_blank">Contactez-nous</a>
+                </li>
+            </ul>
+            <div class="navbar-hamburger">
+                <span class="toggle-bar top-bar"></span>
+                <span class="toggle-bar middle-bar"></span>
+                <span class="toggle-bar bottom-bar"></span>
+            </div>
+        `;
+        }
 
         header.insertAdjacentHTML('beforebegin', html);
 
@@ -88,11 +107,16 @@ export default async function f1Styles(siteId, event_name, banner_location, rate
         let preposition = 'in';
         if (siteId === 60301) preposition = 'near';
 
-        document.querySelector(
-            '.lucid-content'
-        ).innerHTML = `<span style="text-align: center;">Look for <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
-            banner_location ? ` ${preposition}  ${banner_location}` : ''
-        }!</span>`;
+        // const selected_language = utilities.getMetaTagContent('theme');
+        // const selected_language = document.querySelector('#language-label span').innerText;
+        const lucid_content = document.querySelector('.lucid-content');
+        if (selected_language === 'french') {
+            lucid_content.innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis à ${banner_location}!</span>`;
+        } else {
+            lucid_content.innerHTML = `<span style="text-align: center;">Look for <span style="background: ${rate_color}; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates${
+                banner_location ? ` ${preposition}  ${banner_location}` : ''
+            }!</span>`;
+        }
     }
 
     addHeader();

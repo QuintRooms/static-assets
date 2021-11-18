@@ -28,7 +28,7 @@ module.exports = () => {
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
-            // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
+            'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
@@ -72,7 +72,9 @@ module.exports = () => {
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
+            // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
+            // 'tortuga_22-74015': './src/74015.js', // tortuga 22
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
@@ -92,9 +94,7 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            // 'high_water_22-70016': './src/70016.js', // high water_22
-            // 'tortuga_22-74015': './src/74015.js', // tortuga 22
-            // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
+            'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
         };
 
         // local environment
@@ -102,6 +102,8 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
+            // 'sial_canada_22-75294': './src/75294.js', // sial canada_22
+            // 'high_water_22-70016': './src/70016.js', // high water_22
         };
     }
 

@@ -16,6 +16,7 @@ dayjs.extend(custom_parse_format);
 
 const utilities = new Utilities();
 const algolia = new Algolia();
+const selected_language = utilities.getMetaTagContent('theme');
 
 export default class BasePortal {
     constructor(config) {
@@ -162,6 +163,24 @@ export default class BasePortal {
             }
 
             if (this.page_name === 'search-results') {
+                utilities
+                    .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
+                    .then((test) => {
+                        document.body.insertAdjacentHTML(
+                            'beforeEnd',
+                            `
+                            <style>
+                                #searching{
+                                    display: none !important;
+                                }
+                            </style>
+                        `
+                        );
+                    })
+                    .catch((e) => {
+                        console.log(e);
+                    });
+
                 this.updateTitleMetaTag();
 
                 if (this.site_config.use_google_autocomplete) {
@@ -228,16 +247,20 @@ export default class BasePortal {
                 this.movePropClassBelowPropName();
                 utilities.selectCheckboxOnLabelClick('.ArnSearchField div');
                 utilities.updateHTML('#ShowHotelOnMap', 'Open Map');
-                utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                 utilities.updateHTML('.lblRating', 'Stars');
                 utilities.updateHTML('.lblCurrency', 'Currency');
-                utilities.updateHTML('.lblAmenities', 'Amenities');
                 utilities.updateHTML('.lblNearbyCities', 'Nearby Cities');
                 utilities.updateHTML('.lblPropertyType', 'Property Type');
-                utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
-                utilities.updateHTML('.ArnSearchHeader', 'Update Search');
                 utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                 utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
+
+                if (selected_language === 'standard') {
+                    utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
+                    utilities.updateHTML('.ArnSearchHeader', 'Update Search');
+                    utilities.updateHTML('.lblAmenities', 'Amenities');
+                    utilities.updateHTML('.ArnSortBy', `Sort`);
+                    // utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
+                }
 
                 await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
                     utilities.appendToParent('#pagerBottomAjax', '#currentPropertyPage');
@@ -252,7 +275,11 @@ export default class BasePortal {
                         )
                         .then(() => {
                             this.createMobileSortAndFilter();
-                            utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                            if (selected_language === 'french') {
+                                utilities.createHTML('<h4>Trier</h4>', '.sort-wrapper', 'afterBegin');
+                            } else {
+                                utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                            }
 
                             if (utilities.matchMediaQuery('min-width: 1105px'))
                                 document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>');
@@ -712,23 +739,19 @@ export default class BasePortal {
     }
 
     setupReservationSummaryContainer() {
-        let check_in_date = '';
-        let check_in_text = '';
-        let check_out_date = '';
-        let check_out_text = '';
-        const check_in_element = document.querySelector('.checkInRow td');
-        const check_out_element = document.querySelector('.checkOutRow td');
-        const currency_element = document.querySelector('meta[name="currency"]');
+        const check_in_text = utilities.getMetaTagContent('checkIn');
+        const check_out_text = utilities.getMetaTagContent('checkOut');
 
-        if (!check_in_element || !check_out_element || !currency_element) return;
+        if (selected_language === 'french') {
+            this.site_config.dayjs_date_format = 'D/M/YYYY';
+        }
 
-        check_in_text = check_in_element.textContent;
-        check_out_text = check_out_element.textContent;
+        utilities.createHTML(
+            `<span class="date-container">${dayjs(check_in_text).format(this.site_config.dayjs_date_format)} - ${dayjs(check_out_text).format(this.site_config.dayjs_date_format)}`,
+            '#theHotelAddress',
+            'beforeBegin'
+        );
 
-        check_in_date = dayjs(check_in_text).format(this.site_config.dayjs_date_format);
-        check_out_date = dayjs(check_out_text).format(this.site_config.dayjs_date_format);
-
-        utilities.createHTML(`<span class="date-container">${check_in_date} - ${check_out_date}`, '#theHotelAddress', 'beforeBegin');
         utilities.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
     }
 
@@ -1065,7 +1088,11 @@ export default class BasePortal {
 
                         if (!average_rate) return;
 
-                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        if (selected_language === 'french') {
+                            rate.insertAdjacentHTML('beforeEnd', `<div>par nuit</div><div class="full-stay">${fixed_full_stay} pour ${nights} nuits </div>`);
+                        } else {
+                            rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        }
 
                         if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
                     });
@@ -1085,7 +1112,11 @@ export default class BasePortal {
 
                         if (!fixed_full_stay) return;
 
-                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        if (selected_language === 'french') {
+                            average_rate.insertAdjacentHTML('beforeEnd', `<div>par nuit</div><div class="full-stay">${fixed_full_stay} pour ${nights} nuits </div>`);
+                        } else {
+                            average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        }
 
                         if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
                     });
@@ -1110,8 +1141,13 @@ export default class BasePortal {
                         full_stay_rate.style.fontSize = '13px';
                         property.querySelector('.arnCurrency').style.display = 'none';
 
-                        average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-                        full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        if (selected_language === 'french') {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>par nuit</div>`);
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> pour ${nights} nuits </span>`);
+                        } else {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        }
 
                         if (nights === 1) property.querySelector('.arnPrice').style.display = 'none';
                     });
@@ -1127,9 +1163,15 @@ export default class BasePortal {
 
                         average_rate.style.display = 'block';
 
-                        average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-                        full_stay_rate.textContent = full_stay_rate.textContent.replace(/[^\d.-]/g, '');
-                        full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        if (selected_language === 'french') {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>par nuit</div>`);
+                            full_stay_rate.textContent = full_stay_rate.textContent.replace(/[^\d.-]/g, '');
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> pour ${nights} nuits </span>`);
+                        } else {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                            full_stay_rate.textContent = full_stay_rate.textContent.replace(/[^\d.-]/g, '');
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        }
 
                         if (nights === 1) {
                             property.querySelector('strong').style.display = 'none';
@@ -1723,15 +1765,14 @@ export default class BasePortal {
 
         document.querySelector(
             'span.confirmationAgreement'
-        ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
+        ).innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId=${this.site_id}&theme=standard">Terms & Conditions</a> found on this website.`;
 
         utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I');
         utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my');
 
         const policies_lower = document.querySelector('#policies-fees');
-        policies_lower.addEventListener('click', () => {
-            document.querySelector('div.modal-overlay').classList.toggle('show-modal');
-            document.body.classList.toggle('hide');
+        policies_lower.addEventListener('click', (e) => {
+            document.querySelector('span.open-modal').click();
         });
 
         const policies_header = document.querySelector('span.open-modal');

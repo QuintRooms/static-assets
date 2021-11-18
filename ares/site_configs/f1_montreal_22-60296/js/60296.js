@@ -38,13 +38,14 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-// const selected_language = utilities.getMetaTagContent('theme', 'french');
+const selected_language = utilities.getMetaTagContent('theme', 'french');
 
 async function changeUpdateSearchTextOnPropPage() {
-    const selected_language = document.querySelector('#language-label span').innerText;
+    // const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.translateMe');
 
-    if (selected_language === 'Français') {
+    if (selected_language === 'french') {
+        console.log('inside french changeUpdateSearchTextOnPropPage');
         utilities.updateHTML('.translateMe', 'Modifier La Recherche');
     } else {
         utilities.updateHTML('.translateMe', 'Update Search');
@@ -53,10 +54,11 @@ async function changeUpdateSearchTextOnPropPage() {
 changeUpdateSearchTextOnPropPage();
 
 async function changeConfirmationAgreementTextOnCheckout() {
-    const selected_language = document.querySelector('#language-label span').innerText;
+    // const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.confirmationAgreement');
 
-    if (selected_language === 'Français') {
+    if (selected_language === 'french') {
+        console.log('inside french changeConfirmationAgreementTextOnCheckout');
         utilities.updateHTML(
             'span.confirmationAgreement',
             `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`

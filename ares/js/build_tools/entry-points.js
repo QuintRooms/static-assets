@@ -94,6 +94,7 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
+            'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
         };
 
         // local environment

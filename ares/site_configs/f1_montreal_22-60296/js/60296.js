@@ -83,6 +83,23 @@ async function changeConfirmationAgreementTextOnCheckout() {
 }
 changeConfirmationAgreementTextOnCheckout();
 
+async function changeArnRateTextLanguage() {
+    // const selected_language = document.querySelector('#language-label span').innerText;
+    await utilities.waitForSelectorInDOM('.sort-wrapper h4');
+    const room_array = document.querySelectorAll('.ArnProperty');
+    const full_stay_text = i.querySelector('.full-stay');
+    const per_night_text = i.querySelector('.arnUnit + div');
+
+    if (selected_language === 'french') {
+        room_array.forEach((i) => {
+            full_stay_text.textContent.replace('for', 'pour').replace('nights', 'nuits');
+            per_night_text.textContent = 'par nuit';
+        });
+    }
+}
+
+changeArnRateTextLanguage();
+
 // async function changeLucidBannerText() {
 //     await utilities.waitForSelectorInDOM('header');
 //     const selected_language = document.querySelector('#language-label span').innerText;
@@ -100,7 +117,26 @@ changeConfirmationAgreementTextOnCheckout();
 
 //     const selected_language = document.querySelector('#language-label span').innerText;
 //     const room_array = document.querySelectorAll('.ArnProperty');
+//     if (selected_language === 'Français') {// async function changeArnRateTextLanguage() {
+//     await utilities.waitForSelectorInDOM('.sort-wrapper h4');
+
+//     const selected_language = document.querySelector('#language-label span').innerText;
+//     const room_array = document.querySelectorAll('.ArnProperty');
 //     if (selected_language === 'Français') {
+//         utilities.updateHTML('.ArnSearchHeader', 'Modifier La Recherche');
+//         utilities.updateHTML('.sort-wrapper h4', 'Trier');
+//         utilities.updateHTML('.lblAmenities', 'Équipements');
+
+//         document.querySelector(
+//             '.lucid-content'
+//         ).innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis près de  Circuit Gilles Villeneuve
+//         }!</span>`;
+
+//         room_array.forEach((i) => {
+//             const book_button = i.querySelector('.ArnShowRatesLink');
+//             const full_stay_text = i.querySelector('.full-stay');
+//             book_button.innerHTML = 'Réserver';
+            
 //         utilities.updateHTML('.ArnSearchHeader', 'Modifier La Recherche');
 //         utilities.updateHTML('.sort-wrapper h4', 'Trier');
 //         utilities.updateHTML('.lblAmenities', 'Équipements');

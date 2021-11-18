@@ -87,11 +87,11 @@ async function changeArnRateTextLanguage() {
     // const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.sort-wrapper h4');
     const room_array = document.querySelectorAll('.ArnProperty');
-    const full_stay_text = i.querySelector('.full-stay');
-    const per_night_text = i.querySelector('.arnUnit + div');
 
     if (selected_language === 'french') {
         room_array.forEach((i) => {
+            const full_stay_text = i.querySelector('.full-stay');
+            const per_night_text = i.querySelector('.arnUnit + div');
             full_stay_text.textContent.replace('for', 'pour').replace('nights', 'nuits');
             per_night_text.textContent = 'par nuit';
         });

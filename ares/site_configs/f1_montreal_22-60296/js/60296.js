@@ -38,7 +38,19 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-const selected_language = utilities.getMetaTagContent('theme', 'french');
+function getMeta(metaName) {
+  const metas = document.getElementsByTagName('meta');
+
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+
+  return '';
+}
+
+const selected_language = getMeta('theme');
 
 async function changeUpdateSearchTextOnPropPage() {
     // const selected_language = document.querySelector('#language-label span').innerText;
@@ -56,7 +68,7 @@ changeUpdateSearchTextOnPropPage();
 async function changeConfirmationAgreementTextOnCheckout() {
     // const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.confirmationAgreement');
-
+    console.log('inside changeConfirmationAgreementTextOnCheckout');
     if (selected_language === 'french') {
         console.log('inside french changeConfirmationAgreementTextOnCheckout');
         utilities.updateHTML(
@@ -64,6 +76,7 @@ async function changeConfirmationAgreementTextOnCheckout() {
             `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`
         );
     } else {
+        console.log('inside English changeConfirmationAgreementTextOnCheckout');
         utilities.updateHTML(
             'span.confirmationAgreement',
             `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`

@@ -84,15 +84,19 @@ async function changeConfirmationAgreementTextOnCheckout() {
 changeConfirmationAgreementTextOnCheckout();
 
 async function changeArnRateTextLanguage() {
-    // const selected_language = document.querySelector('#language-label span').innerText;
-    await utilities.waitForSelectorInDOM('.sort-wrapper h4');
+    await utilities.waitForSelectorInDOM('.full-stay');
+    // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
     const room_array = document.querySelectorAll('.ArnProperty');
 
+    //MAKE SURE IS FRENCH!!
     if (selected_language === 'french') {
         room_array.forEach((i) => {
-            const full_stay_text = i.querySelector('.full-stay');
+            const full_stay_text = i.querySelector('.full-stay').textContent;
+            const new_full_stay_text = full_stay_text.replace('for', 'pour').replace('nights', 'nuits');
+            console.log('new_full_stay_text', new_full_stay_text);
             const per_night_text = i.querySelector('.arnUnit + div');
-            full_stay_text.textContent.replace('for', 'pour').replace('nights', 'nuits');
+
+            i.querySelector('.full-stay').textContent = full_stay_text;
             per_night_text.textContent = 'par nuit';
         });
     }

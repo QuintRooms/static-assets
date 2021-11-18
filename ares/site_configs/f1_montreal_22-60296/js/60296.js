@@ -75,14 +75,10 @@ async function changeConfirmationAgreementTextOnCheckout() {
     console.log('inside changeConfirmationAgreementTextOnCheckout');
     if (selected_language === 'french') {
         console.log('inside french changeConfirmationAgreementTextOnCheckout');
-        confirmation_agreement_el.innerHTML(
-            `<span class="innerConfirmationAgreement">En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.</span>`
-        );
+        confirmation_agreement_el.innerHTML = `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`
     } else {
         console.log('inside English changeConfirmationAgreementTextOnCheckout');
-        confirmation_agreement_el.innerHTML(
-            `<span class="innerConfirmationAgreement">By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.</span>`
-        );
+        confirmation_agreement_el.innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`
     }
 }
 changeConfirmationAgreementTextOnCheckout();

@@ -38,19 +38,21 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-function getMeta(metaName) {
-  const metas = document.getElementsByTagName('meta');
+// function getMeta(metaName) {
+//     const metas = document.getElementsByTagName('meta');
 
-  for (let i = 0; i < metas.length; i++) {
-    if (metas[i].getAttribute('name') === metaName) {
-      return metas[i].getAttribute('content');
-    }
-  }
+//     for (let i = 0; i < metas.length; i++) {
+//         if (metas[i].getAttribute('name') === metaName) {
+//             return metas[i].getAttribute('content');
+//         }
+//     }
+//     return 'standard';
+// }
 
-  return '';
-}
 
-const selected_language = getMeta('theme');
+
+const selected_language = utilities.getMetaTagContent('theme');
+console.log(`THEME META TAG IN CANADIAN GP IS ${selected_language}`);
 
 async function changeUpdateSearchTextOnPropPage() {
     // const selected_language = document.querySelector('#language-label span').innerText;
@@ -74,12 +76,12 @@ async function changeConfirmationAgreementTextOnCheckout() {
     if (selected_language === 'french') {
         console.log('inside french changeConfirmationAgreementTextOnCheckout');
         confirmation_agreement_el.innerHTML(
-            `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`
+            `<span class="innerConfirmationAgreement">En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.</span>`
         );
     } else {
         console.log('inside English changeConfirmationAgreementTextOnCheckout');
         confirmation_agreement_el.innerHTML(
-            `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`
+            `<span class="innerConfirmationAgreement">By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.</span>`
         );
     }
 }

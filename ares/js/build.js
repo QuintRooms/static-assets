@@ -253,13 +253,17 @@ export default class BasePortal {
                 utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                 utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
 
-                const selected_language = document.querySelector('#language-label span').innerText;
+                // const selected_language = document.querySelector('#language-label span').innerText;
 
-                if (selected_language === 'English') {
+                const selected_language = utilities.getMetaTagContent('theme');
+                console.log(`THEM META TAG IN BUILD.JS IS ${selected_language}`);
+
+                if (selected_language === 'standard') {
                     utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
                     utilities.updateHTML('.ArnSearchHeader', 'Update Search');
                     utilities.updateHTML('.lblAmenities', 'Amenities');
-                    utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
+                    utilities.updateHTML('.ArnSortBy', `Sort`);
+                    // utilities.updateHTML('.ArnSortBy', `<div class="sort">Sort</div>`);
                 }
 
                 await utilities.waitForSelectorInDOM('#pagerBottomAjax').then(() => {
@@ -275,7 +279,11 @@ export default class BasePortal {
                         )
                         .then(() => {
                             this.createMobileSortAndFilter();
-                            utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                            if (selected_language === 'french') {
+                                utilities.createHTML('<h4>Trier</h4>', '.sort-wrapper', 'afterBegin');
+                            } else {
+                                utilities.createHTML('<h4>Sort</h4>', '.sort-wrapper', 'afterBegin');
+                            }
 
                             if (utilities.matchMediaQuery('min-width: 1105px'))
                                 document.body.insertAdjacentHTML('afterBegin', '<style>.ArnSortContainer, .sort-wrapper{display: block !important}</style>');

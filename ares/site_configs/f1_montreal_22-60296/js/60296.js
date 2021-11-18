@@ -89,7 +89,7 @@ async function changeConfirmationAgreementTextOnCheckout() {
 
 changeConfirmationAgreementTextOnCheckout();
 
-async function changeArnRateTextLanguage() {
+async function changePerNightTextInSearchResults() {
     await utilities.waitForSelectorInDOM('.sort-wrapper h4');
     // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
     const room_array = document.querySelectorAll('.ArnProperty');
@@ -105,7 +105,25 @@ async function changeArnRateTextLanguage() {
     }
 }
 
-changeArnRateTextLanguage();
+changePerNightTextInSearchResults();
+
+async function changePerNightTextInPropPage() {
+    await utilities.waitForSelectorInDOM('.ArnNightlyRate strong div:first-child');
+    // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
+    const room_array = document.querySelectorAll('.SinglePropDetail .rateRow');
+
+    //MAKE SURE IS FRENCH!!
+    if (selected_language === 'french') {
+        room_array.forEach((i) => {
+            if (!i.querySelector('.ArnNightlyRate')) return;
+            const per_night_text = i.querySelector('.ArnNightlyRate strong div:first-child');
+
+            per_night_text.textContent = 'par nuit';
+        });
+    }
+}
+
+changePerNightTextInPropPage();
 
 // async function changeLucidBannerText() {
 //     await utilities.waitForSelectorInDOM('header');

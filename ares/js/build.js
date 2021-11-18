@@ -1752,7 +1752,8 @@ export default class BasePortal {
         utilities.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my');
 
         const policies_lower = document.querySelector('#policies-fees');
-        policies_lower.addEventListener('click', () => {
+        policies_lower.addEventListener('click', (e) => {
+            console.log(e);
             document.querySelector('span.open-modal').click();
         });
 

@@ -2139,8 +2139,8 @@
                                             )),
                                             _.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
                                             _.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
-                                            document.querySelector('#policies-fees').addEventListener('click', function () {
-                                                document.querySelector('span.open-modal').click();
+                                            document.querySelector('#policies-fees').addEventListener('click', function (e) {
+                                                console.log(e), document.querySelector('span.open-modal').click();
                                             }),
                                             document.querySelector('span.open-modal').addEventListener('click', function () {
                                                 document.body.classList.toggle('hide');

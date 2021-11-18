@@ -752,6 +752,9 @@ export default class BasePortal {
         check_in_text = check_in_element.textContent;
         check_out_text = check_out_element.textContent;
 
+        if (selected_language === 'french') {
+            this.site_config.dayjs_date_format = 'D/M/YYYY';
+        }
         check_in_date = dayjs(check_in_text).format(this.site_config.dayjs_date_format);
         check_out_date = dayjs(check_out_text).format(this.site_config.dayjs_date_format);
 

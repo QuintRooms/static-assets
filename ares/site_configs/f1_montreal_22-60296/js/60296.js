@@ -38,9 +38,10 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-const selected_language = document.querySelector('#language-label span').innerText;
+// const selected_language = utilities.getMetaTagContent('theme', 'french');
 
 async function changeUpdateSearchTextOnPropPage() {
+    const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.translateMe');
 
     if (selected_language === 'Français') {
@@ -52,6 +53,7 @@ async function changeUpdateSearchTextOnPropPage() {
 changeUpdateSearchTextOnPropPage();
 
 async function changeConfirmationAgreementTextOnCheckout() {
+    const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.confirmationAgreement');
 
     if (selected_language === 'Français') {

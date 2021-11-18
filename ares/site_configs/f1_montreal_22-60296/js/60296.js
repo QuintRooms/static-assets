@@ -80,7 +80,13 @@ async function changeConfirmationAgreementTextOnCheckout() {
         console.log('inside English changeConfirmationAgreementTextOnCheckout');
         confirmation_agreement_el.innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`
     }
+
+    const policies_lower = document.querySelector('#policies-fees');
+    policies_lower.addEventListener('click', (e) => {
+        document.querySelector('span.open-modal').click();
+    });
 }
+
 changeConfirmationAgreementTextOnCheckout();
 
 async function changeArnRateTextLanguage() {
@@ -89,7 +95,7 @@ async function changeArnRateTextLanguage() {
     const room_array = document.querySelectorAll('.ArnProperty');
 
     //MAKE SURE IS FRENCH!!
-    if (selected_language === 'standard') {
+    if (selected_language === 'french') {
         room_array.forEach((i) => {
             if (!i.querySelector('.full-stay')) return;
             // const full_stay_text = i.querySelector('.full-stay').textContent;

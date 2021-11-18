@@ -1761,7 +1761,6 @@ export default class BasePortal {
 
         const policies_lower = document.querySelector('#policies-fees');
         policies_lower.addEventListener('click', (e) => {
-            console.log(e);
             document.querySelector('span.open-modal').click();
         });
 

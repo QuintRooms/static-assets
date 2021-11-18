@@ -739,26 +739,19 @@ export default class BasePortal {
     }
 
     setupReservationSummaryContainer() {
-        let check_in_date = '';
-        let check_in_text = '';
-        let check_out_date = '';
-        let check_out_text = '';
-        const check_in_element = document.querySelector('.checkInRow td');
-        const check_out_element = document.querySelector('.checkOutRow td');
-        const currency_element = document.querySelector('meta[name="currency"]');
-
-        if (!check_in_element || !check_out_element || !currency_element) return;
-
-        check_in_text = check_in_element.textContent;
-        check_out_text = check_out_element.textContent;
+        const check_in_text = utilities.getMetaTagContent('checkIn');
+        const check_out_text = utilities.getMetaTagContent('checkOut');
 
         if (selected_language === 'french') {
             this.site_config.dayjs_date_format = 'D/M/YYYY';
         }
-        check_in_date = dayjs(check_in_text).format(this.site_config.dayjs_date_format);
-        check_out_date = dayjs(check_out_text).format(this.site_config.dayjs_date_format);
 
-        utilities.createHTML(`<span class="date-container">${check_in_date} - ${check_out_date}`, '#theHotelAddress', 'beforeBegin');
+        utilities.createHTML(
+            `<span class="date-container">${dayjs(check_in_text).format(this.site_config.dayjs_date_format)} - ${dayjs(check_out_text).format(this.site_config.dayjs_date_format)}`,
+            '#theHotelAddress',
+            'beforeBegin'
+        );
+
         utilities.moveElementIntoExistingWrapper('.totalRow .discount', '.theHotelName', 'afterEnd');
     }
 

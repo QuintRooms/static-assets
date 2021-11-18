@@ -91,6 +91,7 @@ async function changeArnRateTextLanguage() {
     //MAKE SURE IS FRENCH!!
     if (selected_language === 'french') {
         room_array.forEach((i) => {
+            if (!i.querySelector('.full-stay')) return;
             const full_stay_text = i.querySelector('.full-stay').textContent;
             const new_full_stay_text = full_stay_text.replace('for', 'pour').replace('nights', 'nuits');
             console.log('new_full_stay_text', new_full_stay_text);

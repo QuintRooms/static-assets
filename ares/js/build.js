@@ -16,6 +16,7 @@ dayjs.extend(custom_parse_format);
 
 const utilities = new Utilities();
 const algolia = new Algolia();
+const selected_language = utilities.getMetaTagContent('theme');
 
 export default class BasePortal {
     constructor(config) {
@@ -252,11 +253,6 @@ export default class BasePortal {
                 utilities.updateHTML('.lblPropertyType', 'Property Type');
                 utilities.moveElementIntoExistingWrapper('.ArnPropClass', '.ArnPropName', 'beforeEnd');
                 utilities.moveElementIntoExistingWrapper('#theOtherSubmitButton', '.ArnSecondarySearchOuterContainer', 'beforeEnd');
-
-                // const selected_language = document.querySelector('#language-label span').innerText;
-
-                const selected_language = utilities.getMetaTagContent('theme');
-                console.log(`THEM META TAG IN BUILD.JS IS ${selected_language}`);
 
                 if (selected_language === 'standard') {
                     utilities.updateHTML('.ArnShowRatesLink', 'Book Rooms');
@@ -1096,7 +1092,11 @@ export default class BasePortal {
 
                         if (!average_rate) return;
 
-                        rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        if (selected_language === 'french') {
+                            rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} pour ${nights} nuits </div>`);
+                        } else {
+                            rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        }
 
                         if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
                     });

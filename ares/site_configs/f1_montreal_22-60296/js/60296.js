@@ -84,20 +84,23 @@ async function changeConfirmationAgreementTextOnCheckout() {
 changeConfirmationAgreementTextOnCheckout();
 
 async function changeArnRateTextLanguage() {
-    await utilities.waitForSelectorInDOM('.full-stay');
+    await utilities.waitForSelectorInDOM('.sort-wrapper h4');
     // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
     const room_array = document.querySelectorAll('.ArnProperty');
 
     //MAKE SURE IS FRENCH!!
-    if (selected_language === 'french') {
+    if (selected_language === 'standard') {
         room_array.forEach((i) => {
             if (!i.querySelector('.full-stay')) return;
-            const full_stay_text = i.querySelector('.full-stay').textContent;
-            const new_full_stay_text = full_stay_text.replace('for', 'pour').replace('nights', 'nuits');
-            console.log('new_full_stay_text', new_full_stay_text);
+            // const full_stay_text = i.querySelector('.full-stay').textContent;
+            // const new_full_stay_text = full_stay_text.replace('for', 'pour').replace('nights', 'nuits');
+            // console.log('new_full_stay_text', new_full_stay_text);
             const per_night_text = i.querySelector('.arnUnit + div');
 
-            i.querySelector('.full-stay').textContent = full_stay_text;
+            // setTimeout(() => {
+                // i.querySelector('.full-stay').textContent = new_full_stay_text;
+            // }, 3000);
+
             per_night_text.textContent = 'par nuit';
         });
     }

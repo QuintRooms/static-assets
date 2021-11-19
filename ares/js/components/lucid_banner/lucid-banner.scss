@@ -32,7 +32,7 @@
         background: $primary_text_color;
         display: flex;
         margin-right: 50px;
-        width: 150px;
+        // width: 150px;
         height: 30px;
         transition: all 0.3s linear;
         
@@ -49,6 +49,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 10px;
         }
     }
 

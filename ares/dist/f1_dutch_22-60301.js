@@ -278,7 +278,7 @@
                                         l = t.domain;
                                     try {
                                         s
-                                            ? (i || (2 == e._h && j(e), (e._h = 1)),
+                                            ? (i || (2 == e._h && I(e), (e._h = 1)),
                                               !0 === s ? (n = r) : (l && l.enter(), (n = s(r)), l && (l.exit(), (a = !0))),
                                               n === t.promise ? u(k('Promise-chain cycle')) : (o = T(n)) ? o.call(n, c, u) : c(n))
                                             : u(r);
@@ -300,7 +300,7 @@
                         n,
                         r,
                         i = e._v,
-                        o = I(e);
+                        o = j(e);
                     if (
                         (o &&
                             ((t = b(function () {
@@ -310,17 +310,17 @@
                                     ? n({promise: e, reason: i})
                                     : (r = c.console) && r.error && r.error('Unhandled promise rejection', i);
                             })),
-                            (e._h = L || I(e) ? 2 : 1)),
+                            (e._h = L || j(e) ? 2 : 1)),
                         (e._a = void 0),
                         o && t.e)
                     )
                         throw t.v;
                 });
             },
-            I = function (e) {
+            j = function (e) {
                 return 1 !== e._h && 0 === (e._a || e._c).length;
             },
-            j = function (e) {
+            I = function (e) {
                 v.call(c, function () {
                     var t;
                     L ? x.emit('rejectionHandled', e) : (t = c.onrejectionhandled) && t({promise: e, reason: e._v});
@@ -3101,8 +3101,8 @@
             T = A.f,
             R = r.Symbol,
             O = r.JSON,
-            I = O && O.stringify,
-            j = p('_hidden'),
+            j = O && O.stringify,
+            I = p('_hidden'),
             D = p('toPrimitive'),
             Y = {}.propertyIsEnumerable,
             F = l('symbol-registry'),
@@ -3150,7 +3150,7 @@
                     (t = S(t, !0)),
                     g(n),
                     i(H, t)
-                        ? (n.enumerable ? (i(e, j) && e[j][t] && (e[j][t] = !1), (n = x(n, {enumerable: k(0, !1)}))) : (i(e, j) || M(e, j, k(1, {})), (e[j][t] = !0)), W(e, t, n))
+                        ? (n.enumerable ? (i(e, I) && e[I][t] && (e[I][t] = !1), (n = x(n, {enumerable: k(0, !1)}))) : (i(e, I) || M(e, I, k(1, {})), (e[I][t] = !0)), W(e, t, n))
                         : M(e, t, n)
                 );
             },
@@ -3161,16 +3161,16 @@
             },
             Z = function (e) {
                 var t = Y.call(this, (e = S(e, !0)));
-                return !(this === N && i(H, e) && !i(B, e)) && (!(t || !i(this, e) || !i(H, e) || (i(this, j) && this[j][e])) || t);
+                return !(this === N && i(H, e) && !i(B, e)) && (!(t || !i(this, e) || !i(H, e) || (i(this, I) && this[I][e])) || t);
             },
             J = function (e, t) {
                 if (((e = w(e)), (t = S(t, !0)), e !== N || !i(H, t) || i(B, t))) {
                     var n = P(e, t);
-                    return !n || !i(H, t) || (i(e, j) && e[j][t]) || (n.enumerable = !0), n;
+                    return !n || !i(H, t) || (i(e, I) && e[I][t]) || (n.enumerable = !0), n;
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], o = 0; n.length > o; ) i(H, (t = n[o++])) || t == j || t == c || r.push(t);
+                for (var t, n = T(w(e)), r = [], o = 0; n.length > o; ) i(H, (t = n[o++])) || t == I || t == c || r.push(t);
                 return r;
             },
             ee = function (e) {
@@ -3183,7 +3183,7 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = h(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(B, n), i(this, j) && i(this[j], e) && (this[j][e] = !1), W(this, e, k(1, n));
+                            this === N && t.call(B, n), i(this, I) && i(this[I], e) && (this[I][e] = !1), W(this, e, k(1, n));
                         };
                     return o && G && W(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
@@ -3245,7 +3245,7 @@
                             (!U ||
                                 u(function () {
                                     var e = R();
-                                    return '[null]' != I([e]) || '{}' != I({a: e}) || '{}' != I(Object(e));
+                                    return '[null]' != j([e]) || '{}' != j({a: e}) || '{}' != j(Object(e));
                                 })),
                     'JSON',
                     {
@@ -3258,7 +3258,7 @@
                                             if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
                                     (r[1] = t),
-                                    I.apply(O, r)
+                                    j.apply(O, r)
                                 );
                         },
                     }
@@ -3952,7 +3952,13 @@
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name &&
-                                                                            (y
+                                                                            (setTimeout(function () {
+                                                                                document.body.insertAdjacentHTML(
+                                                                                    'beforeEnd',
+                                                                                    '\n                            <style>\n                                #searching{\n                                    display: none !important;\n                                }\n                            </style>\n                        '
+                                                                                );
+                                                                            }, 12e3),
+                                                                            y
                                                                                 .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
                                                                                 .then(function () {
                                                                                     document.body.insertAdjacentHTML(
@@ -5569,12 +5575,16 @@
                                     '52342' === this.site_id ||
                                     (document.querySelector('.open-modal') &&
                                         ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                        (document.querySelector(
-                                            'span.confirmationAgreement'
-                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
-                                            this.site_id,
-                                            '&theme=standard">Terms & Conditions</a> found on this website.'
-                                        )),
+                                        (document.querySelector('span.confirmationAgreement').innerHTML =
+                                            'french' === g
+                                                ? 'En cochant cette case, j\'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Conditions Générales</a> trouvées sur ce site Web.'
+                                                  )
+                                                : 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Terms & Conditions</a> found on this website.'
+                                                  )),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                         document.querySelector('#policies-fees').addEventListener('click', function (e) {
@@ -7605,35 +7615,55 @@
         function s() {
             return (s = o(
                 regeneratorRuntime.mark(function e(t, n) {
+                    var r;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     if (!document.querySelector('.SearchHotels') && !document.querySelector('.SinglePropDetail')) {
-                                        e.next = 4;
+                                        e.next = 5;
                                         break;
                                     }
-                                    return (e.next = 3), a.waitForSelectorInDOM('header');
-                                case 3:
-                                    document
-                                        .querySelector('header')
-                                        .insertAdjacentHTML(
-                                            'afterend',
-                                            '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
-                                                .concat(
-                                                    t,
-                                                    ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
-                                                )
-                                                .concat(
-                                                    t,
-                                                    '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
-                                                )
-                                                .concat(
-                                                    n,
-                                                    '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
-                                                )
-                                        );
+                                    return (r = a.getMetaTagContent('theme')), (e.next = 4), a.waitForSelectorInDOM('header');
                                 case 4:
+                                    'french' === r
+                                        ? document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Besoin de 10+ chambres pour '
+                                                      .concat(
+                                                          t,
+                                                          ' ou un autre événement? Nous sommes là pour vous aider à obtenir des tarifs avantageux.</span>     \n                    <span id="tablet">Besoin de 10+ chambres pour '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Besoin de 10+ chambres?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Réservez 10+ chambres</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              )
+                                        : document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
+                                                      .concat(
+                                                          t,
+                                                          ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              );
+                                case 5:
                                 case 'end':
                                     return e.stop();
                             }

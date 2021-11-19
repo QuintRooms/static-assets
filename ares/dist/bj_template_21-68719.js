@@ -246,7 +246,7 @@
             q = 'process' == l(k),
             C = function () {},
             E = (o = b.f),
-            P = !!(function () {
+            T = !!(function () {
                 try {
                     var e = L.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -255,7 +255,7 @@
                     return (q || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== M.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
-            T = function (e) {
+            P = function (e) {
                 var t;
                 return !(!f(e) || 'function' != typeof (t = e.then)) && t;
             },
@@ -280,7 +280,7 @@
                                         c
                                             ? (o || (2 == e._h && D(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = P(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -337,7 +337,7 @@
                     (n._d = !0), (n = n._w || n);
                     try {
                         if (n === e) throw x("Promise can't be resolved itself");
-                        (t = T(e))
+                        (t = P(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
                                   try {
@@ -352,7 +352,7 @@
                     }
                 }
             };
-        P ||
+        T ||
             ((L = function (e) {
                 h(this, L, 'Promise', '_h'), p(e), r.call(this);
                 try {
@@ -387,17 +387,17 @@
             (b.f = E = function (e) {
                 return e === L || e === a ? new i(e) : o(e);
             })),
-            d(d.G + d.W + d.F * !P, {Promise: L}),
+            d(d.G + d.W + d.F * !T, {Promise: L}),
             n(30)(L, 'Promise'),
             n(92)('Promise'),
             (a = n(11).Promise),
-            d(d.S + d.F * !P, 'Promise', {
+            d(d.S + d.F * !T, 'Promise', {
                 reject: function (e) {
                     var t = E(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            d(d.S + d.F * (c || !P), 'Promise', {
+            d(d.S + d.F * (c || !T), 'Promise', {
                 resolve: function (e) {
                     return _(c && this === a ? L : this, e);
                 },
@@ -406,7 +406,7 @@
                 d.S +
                     d.F *
                         !(
-                            P &&
+                            T &&
                             n(93)(function (e) {
                                 L.all(e).catch(C);
                             })
@@ -3097,8 +3097,8 @@
             q = n(6),
             C = n(20),
             E = M.f,
-            P = q.f,
-            T = A.f,
+            T = q.f,
+            P = A.f,
             R = r.Symbol,
             O = r.JSON,
             Y = O && O.stringify,
@@ -3118,9 +3118,9 @@
                     return (
                         7 !=
                         k(
-                            P({}, 'a', {
+                            T({}, 'a', {
                                 get: function () {
-                                    return P(this, 'a', {value: 7}).a;
+                                    return T(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
@@ -3128,9 +3128,9 @@
                 })
                     ? function (e, t, n) {
                           var r = E(N, t);
-                          r && delete N[t], P(e, t, n), r && e !== N && P(N, t, r);
+                          r && delete N[t], T(e, t, n), r && e !== N && T(N, t, r);
                       }
-                    : P,
+                    : T,
             z = function (e) {
                 var t = (F[e] = k(R.prototype));
                 return (t._k = e), t;
@@ -3150,8 +3150,8 @@
                     (t = _(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
-                        : P(e, t, n)
+                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || T(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
+                        : T(e, t, n)
                 );
             },
             J = function (e, t) {
@@ -3170,11 +3170,11 @@
                 }
             },
             X = function (e) {
-                for (var t, n = T(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
+                for (var t, n = P(w(e)), r = [], i = 0; n.length > i; ) o(F, (t = n[i++])) || t == D || t == s || r.push(t);
                 return r;
             },
             ee = function (e) {
-                for (var t, n = e === N, r = T(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
+                for (var t, n = e === N, r = P(n ? B : w(e)), i = [], a = 0; r.length > a; ) !o(F, (t = r[a++])) || (n && !o(N, t)) || i.push(F[t]);
                 return i;
             };
         U ||
@@ -3952,7 +3952,13 @@
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name &&
-                                                                            (y
+                                                                            (setTimeout(function () {
+                                                                                document.body.insertAdjacentHTML(
+                                                                                    'beforeEnd',
+                                                                                    '\n                            <style>\n                                #searching{\n                                    display: none !important;\n                                }\n                            </style>\n                        '
+                                                                                );
+                                                                            }, 12e3),
+                                                                            y
                                                                                 .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
                                                                                 .then(function () {
                                                                                     document.body.insertAdjacentHTML(
@@ -5569,12 +5575,16 @@
                                     '52342' === this.site_id ||
                                     (document.querySelector('.open-modal') &&
                                         ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                        (document.querySelector(
-                                            'span.confirmationAgreement'
-                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
-                                            this.site_id,
-                                            '&theme=standard">Terms & Conditions</a> found on this website.'
-                                        )),
+                                        (document.querySelector('span.confirmationAgreement').innerHTML =
+                                            'french' === v
+                                                ? 'En cochant cette case, j\'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Conditions Générales</a> trouvées sur ce site Web.'
+                                                  )
+                                                : 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Terms & Conditions</a> found on this website.'
+                                                  )),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                         document.querySelector('#policies-fees').addEventListener('click', function (e) {
@@ -7605,35 +7615,55 @@
         function c() {
             return (c = i(
                 regeneratorRuntime.mark(function e(t, n) {
+                    var r;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     if (!document.querySelector('.SearchHotels') && !document.querySelector('.SinglePropDetail')) {
-                                        e.next = 4;
+                                        e.next = 5;
                                         break;
                                     }
-                                    return (e.next = 3), a.waitForSelectorInDOM('header');
-                                case 3:
-                                    document
-                                        .querySelector('header')
-                                        .insertAdjacentHTML(
-                                            'afterend',
-                                            '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
-                                                .concat(
-                                                    t,
-                                                    ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
-                                                )
-                                                .concat(
-                                                    t,
-                                                    '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
-                                                )
-                                                .concat(
-                                                    n,
-                                                    '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
-                                                )
-                                        );
+                                    return (r = a.getMetaTagContent('theme')), (e.next = 4), a.waitForSelectorInDOM('header');
                                 case 4:
+                                    'french' === r
+                                        ? document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Besoin de 10+ chambres pour '
+                                                      .concat(
+                                                          t,
+                                                          ' ou un autre événement? Nous sommes là pour vous aider à obtenir des tarifs avantageux.</span>     \n                    <span id="tablet">Besoin de 10+ chambres pour '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Besoin de 10+ chambres?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Réservez 10+ chambres</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              )
+                                        : document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
+                                                      .concat(
+                                                          t,
+                                                          ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              );
+                                case 5:
                                 case 'end':
                                     return e.stop();
                             }

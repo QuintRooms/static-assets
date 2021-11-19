@@ -244,15 +244,15 @@
             q = (A && A.v8) || '',
             M = s.Promise,
             L = 'process' == l(k),
-            C = function () {},
-            T = (o = b.f),
+            T = function () {},
+            C = (o = b.f),
             E = !!(function () {
                 try {
                     var e = M.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
-                            e(C, C);
+                            e(T, T);
                         });
-                    return (L || 'function' == typeof PromiseRejectionEvent) && e.then(C) instanceof t && 0 !== q.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
+                    return (L || 'function' == typeof PromiseRejectionEvent) && e.then(T) instanceof t && 0 !== q.indexOf('6.6') && -1 === w.indexOf('Chrome/66');
                 } catch (e) {}
             })(),
             P = function (e) {
@@ -365,7 +365,7 @@
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
             }).prototype = n(91)(M.prototype, {
                 then: function (e, t) {
-                    var n = T(y(this, M));
+                    var n = C(y(this, M));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -384,7 +384,7 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = u(F, e, 1)), (this.reject = u(I, e, 1));
             }),
-            (b.f = T = function (e) {
+            (b.f = C = function (e) {
                 return e === M || e === i ? new a(e) : o(e);
             })),
             d(d.G + d.W + d.F * !E, {Promise: M}),
@@ -393,7 +393,7 @@
             (i = n(11).Promise),
             d(d.S + d.F * !E, 'Promise', {
                 reject: function (e) {
-                    var t = T(this);
+                    var t = C(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
@@ -408,14 +408,14 @@
                         !(
                             E &&
                             n(93)(function (e) {
-                                M.all(e).catch(C);
+                                M.all(e).catch(T);
                             })
                         ),
                 'Promise',
                 {
                     all: function (e) {
                         var t = this,
-                            n = T(t),
+                            n = C(t),
                             r = n.resolve,
                             o = n.reject,
                             a = S(function () {
@@ -437,7 +437,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = T(t),
+                            n = C(t),
                             r = n.reject,
                             o = S(function () {
                                 m(e, !1, function (e) {
@@ -2584,11 +2584,11 @@
                         for (var k = String(b[0]), A = u(l(i(b.index), f.length), 0), q = [], M = 1; M < b.length; M++) q.push(void 0 === (S = b[M]) ? S : String(S));
                         var L = b.groups;
                         if (p) {
-                            var C = [k].concat(q, A, f);
-                            void 0 !== L && C.push(L);
-                            var T = String(t.apply(void 0, C));
-                        } else T = m(k, f, A, q, L, t);
-                        A >= _ && ((w += f.slice(_, A) + T), (_ = A + k.length));
+                            var T = [k].concat(q, A, f);
+                            void 0 !== L && T.push(L);
+                            var C = String(t.apply(void 0, T));
+                        } else C = m(k, f, A, q, L, t);
+                        A >= _ && ((w += f.slice(_, A) + C), (_ = A + k.length));
                     }
                     return w + f.slice(_);
                 },
@@ -3044,9 +3044,9 @@
                 q = A[d] || A['@@iterator'] || (m && A[m]),
                 M = q || w(m),
                 L = m ? (x ? w('entries') : M) : void 0,
-                C = ('Array' == t && A.entries) || q;
+                T = ('Array' == t && A.entries) || q;
             if (
-                (C && (S = l(C.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || i(S, d, p)),
+                (T && (S = l(T.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || i(S, d, p)),
                 x &&
                     q &&
                     'values' !== q.name &&
@@ -3095,8 +3095,8 @@
             q = n(58),
             M = n(66),
             L = n(6),
-            C = n(20),
-            T = q.f,
+            T = n(20),
+            C = q.f,
             E = L.f,
             P = A.f,
             R = r.Symbol,
@@ -3127,7 +3127,7 @@
                     );
                 })
                     ? function (e, t, n) {
-                          var r = T(N, t);
+                          var r = C(N, t);
                           r && delete N[t], E(e, t, n), r && e !== N && E(N, t, r);
                       }
                     : E,
@@ -3165,7 +3165,7 @@
             },
             K = function (e, t) {
                 if (((e = w(e)), (t = _(t, !0)), e !== N || !o(H, t) || o(B, t))) {
-                    var n = T(e, t);
+                    var n = C(e, t);
                     return !n || !o(H, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
@@ -3204,7 +3204,7 @@
             i(i.G + i.W + i.F * !U, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
             p(te[ne++]);
-        for (var re = C(p.store), oe = 0; re.length > oe; ) m(re[oe++]);
+        for (var re = T(p.store), oe = 0; re.length > oe; ) m(re[oe++]);
         i(i.S + i.F * !U, 'Symbol', {
             for: function (e) {
                 return o(Y, (e += '')) ? Y[e] : (Y[e] = R(e));
@@ -3952,7 +3952,13 @@
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name &&
-                                                                            (y
+                                                                            (setTimeout(function () {
+                                                                                document.body.insertAdjacentHTML(
+                                                                                    'beforeEnd',
+                                                                                    '\n                            <style>\n                                #searching{\n                                    display: none !important;\n                                }\n                            </style>\n                        '
+                                                                                );
+                                                                            }, 12e3),
+                                                                            y
                                                                                 .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
                                                                                 .then(function () {
                                                                                     document.body.insertAdjacentHTML(
@@ -5569,12 +5575,16 @@
                                     '52342' === this.site_id ||
                                     (document.querySelector('.open-modal') &&
                                         ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                        (document.querySelector(
-                                            'span.confirmationAgreement'
-                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
-                                            this.site_id,
-                                            '&theme=standard">Terms & Conditions</a> found on this website.'
-                                        )),
+                                        (document.querySelector('span.confirmationAgreement').innerHTML =
+                                            'french' === v
+                                                ? 'En cochant cette case, j\'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Conditions Générales</a> trouvées sur ce site Web.'
+                                                  )
+                                                : 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Terms & Conditions</a> found on this website.'
+                                                  )),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                         document.querySelector('#policies-fees').addEventListener('click', function (e) {
@@ -7605,35 +7615,55 @@
         function c() {
             return (c = a(
                 regeneratorRuntime.mark(function e(t, n) {
+                    var r;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     if (!document.querySelector('.SearchHotels') && !document.querySelector('.SinglePropDetail')) {
-                                        e.next = 4;
+                                        e.next = 5;
                                         break;
                                     }
-                                    return (e.next = 3), i.waitForSelectorInDOM('header');
-                                case 3:
-                                    document
-                                        .querySelector('header')
-                                        .insertAdjacentHTML(
-                                            'afterend',
-                                            '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
-                                                .concat(
-                                                    t,
-                                                    ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
-                                                )
-                                                .concat(
-                                                    t,
-                                                    '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
-                                                )
-                                                .concat(
-                                                    n,
-                                                    '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
-                                                )
-                                        );
+                                    return (r = i.getMetaTagContent('theme')), (e.next = 4), i.waitForSelectorInDOM('header');
                                 case 4:
+                                    'french' === r
+                                        ? document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Besoin de 10+ chambres pour '
+                                                      .concat(
+                                                          t,
+                                                          ' ou un autre événement? Nous sommes là pour vous aider à obtenir des tarifs avantageux.</span>     \n                    <span id="tablet">Besoin de 10+ chambres pour '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Besoin de 10+ chambres?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Réservez 10+ chambres</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              )
+                                        : document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
+                                                      .concat(
+                                                          t,
+                                                          ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              );
+                                case 5:
                                 case 'end':
                                     return e.stop();
                             }

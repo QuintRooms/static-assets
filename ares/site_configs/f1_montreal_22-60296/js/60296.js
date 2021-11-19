@@ -49,8 +49,6 @@ insertFooterText();
 //     return 'standard';
 // }
 
-
-
 const selected_language = utilities.getMetaTagContent('theme');
 console.log(`THEME META TAG IN CANADIAN GP IS ${selected_language}`);
 
@@ -75,10 +73,10 @@ async function changeConfirmationAgreementTextOnCheckout() {
     console.log('inside changeConfirmationAgreementTextOnCheckout');
     if (selected_language === 'french') {
         console.log('inside french changeConfirmationAgreementTextOnCheckout');
-        confirmation_agreement_el.innerHTML = `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`
+        confirmation_agreement_el.innerHTML = `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`;
     } else {
         console.log('inside English changeConfirmationAgreementTextOnCheckout');
-        confirmation_agreement_el.innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`
+        confirmation_agreement_el.innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`;
     }
 
     const policies_lower = document.querySelector('#policies-fees');
@@ -89,23 +87,41 @@ async function changeConfirmationAgreementTextOnCheckout() {
 
 changeConfirmationAgreementTextOnCheckout();
 
-async function changeArnRateTextLanguage() {
-    await utilities.waitForSelectorInDOM('.sort-wrapper h4');
-    // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
-    const room_array = document.querySelectorAll('.ArnProperty');
+// async function changePerNightTextInSearchResults() {
+//     await utilities.waitForSelectorInDOM('.sort-wrapper h4');
+//     // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
+//     const room_array = document.querySelectorAll('.ArnProperty');
 
-    //MAKE SURE IS FRENCH!!
-    if (selected_language === 'french') {
-        room_array.forEach((i) => {
-            if (!i.querySelector('.full-stay')) return;
-            const per_night_text = i.querySelector('.arnUnit + div');
+//     //MAKE SURE IS FRENCH!!
+//     if (selected_language === 'french') {
+//         room_array.forEach((i) => {
+//             if (!i.querySelector('.full-stay')) return;
+//             const per_night_text = i.querySelector('.arnUnit + div');
 
-            per_night_text.textContent = 'par nuit';
-        });
-    }
-}
+//             per_night_text.textContent = 'par nuit';
+//         });
+//     }
+// }
 
-changeArnRateTextLanguage();
+// changePerNightTextInSearchResults();
+
+// async function changePerNightTextInPropPage() {
+//     await utilities.waitForSelectorInDOM('.ArnNightlyRate strong div:first-child');
+//     // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
+//     const room_array = document.querySelectorAll('.SinglePropDetail .rateRow');
+
+//     //MAKE SURE IS FRENCH!!
+//     if (selected_language === 'french') {
+//         room_array.forEach((i) => {
+//             if (!i.querySelector('.ArnNightlyRate')) return;
+//             const per_night_text = i.querySelector('.ArnNightlyRate strong div:first-child');
+
+//             per_night_text.textContent = 'par nuit';
+//         });
+//     }
+// }
+
+// changePerNightTextInPropPage();
 
 // async function changeLucidBannerText() {
 //     await utilities.waitForSelectorInDOM('header');
@@ -143,7 +159,7 @@ changeArnRateTextLanguage();
 //             const book_button = i.querySelector('.ArnShowRatesLink');
 //             const full_stay_text = i.querySelector('.full-stay');
 //             book_button.innerHTML = 'Réserver';
-            
+
 //         utilities.updateHTML('.ArnSearchHeader', 'Modifier La Recherche');
 //         utilities.updateHTML('.sort-wrapper h4', 'Trier');
 //         utilities.updateHTML('.lblAmenities', 'Équipements');
@@ -157,7 +173,7 @@ changeArnRateTextLanguage();
 //             const book_button = i.querySelector('.ArnShowRatesLink');
 //             const full_stay_text = i.querySelector('.full-stay');
 //             book_button.innerHTML = 'Réserver';
-            
+
 //             // utilities.updateHTML('.full-stay','${fixed_full_stay} for ${nights} nights');
 //         });
 //     } else {

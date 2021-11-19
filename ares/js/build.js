@@ -1092,7 +1092,7 @@ export default class BasePortal {
                         if (!average_rate) return;
 
                         if (selected_language === 'french') {
-                            rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} pour ${nights} nuits </div>`);
+                            rate.insertAdjacentHTML('beforeEnd', `<div>par nuit</div><div class="full-stay">${fixed_full_stay} pour ${nights} nuits </div>`);
                         } else {
                             rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
                         }
@@ -1115,7 +1115,11 @@ export default class BasePortal {
 
                         if (!fixed_full_stay) return;
 
-                        average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        if (selected_language === 'french') {
+                            average_rate.insertAdjacentHTML('beforeEnd', `<div>par nuit</div><div class="full-stay">${fixed_full_stay} pour ${nights} nuits </div>`);
+                        } else {
+                            average_rate.insertAdjacentHTML('beforeEnd', `<div>per night</div><div class="full-stay">${fixed_full_stay} for ${nights} nights </div>`);
+                        }
 
                         if (nights === 1) property.querySelector('.full-stay').style.display = 'none';
                     });
@@ -1140,8 +1144,13 @@ export default class BasePortal {
                         full_stay_rate.style.fontSize = '13px';
                         property.querySelector('.arnCurrency').style.display = 'none';
 
-                        average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-                        full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        if (selected_language === 'french') {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>par nuit</div>`);
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> pour ${nights} nuits </span>`);
+                        } else {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        }
 
                         if (nights === 1) property.querySelector('.arnPrice').style.display = 'none';
                     });
@@ -1157,9 +1166,15 @@ export default class BasePortal {
 
                         average_rate.style.display = 'block';
 
-                        average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
-                        full_stay_rate.textContent = full_stay_rate.textContent.replace(/[^\d.-]/g, '');
-                        full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        if (selected_language === 'french') {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>par nuit</div>`);
+                            full_stay_rate.textContent = full_stay_rate.textContent.replace(/[^\d.-]/g, '');
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> pour ${nights} nuits </span>`);
+                        } else {
+                            average_rate.insertAdjacentHTML('afterEnd', `<div>per night</div>`);
+                            full_stay_rate.textContent = full_stay_rate.textContent.replace(/[^\d.-]/g, '');
+                            full_stay_rate.insertAdjacentHTML('beforeEnd', `<span> for ${nights} nights </span>`);
+                        }
 
                         if (nights === 1) {
                             property.querySelector('strong').style.display = 'none';

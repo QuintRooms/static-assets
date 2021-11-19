@@ -28,7 +28,7 @@ module.exports = () => {
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
-            // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
+            'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
@@ -94,7 +94,7 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            'f1_montreal_22-60296': './src/60296.js', // tortuga 22
+            'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
         };
 
         // local environment
@@ -104,8 +104,6 @@ module.exports = () => {
             // new sites populate below
             // 'sial_canada_22-75294': './src/75294.js', // sial canada_22
             // 'high_water_22-70016': './src/70016.js', // high water_22
-            // 'tortuga_22-74015': './src/74015.js', // tortuga 22
-            'f1_montreal_22-60296': './src/60296.js', // tortuga 22
         };
     }
 

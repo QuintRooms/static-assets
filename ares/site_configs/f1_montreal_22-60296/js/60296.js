@@ -54,14 +54,11 @@ changeUpdateSearchTextOnPropPage();
 
 // const confirmation_agreement_el = document.querySelector('.confirmationAgreement');
 
-async function changeConfirmationAgreementTextOnCheckout() {
-    await utilities.waitForSelectorInDOM('.confirmationAgreement');
-    // console.log('inside changeConfirmationAgreementTextOnCheckout');
+async function setListenerPolicyModal() {
+    await utilities.waitForSelectorInDOM('#policies-fees');
     // if (selected_language === 'french') {
-    //     console.log('inside french changeConfirmationAgreementTextOnCheckout');
     //     confirmation_agreement_el.innerHTML = `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`;
     // } else {
-    //     console.log('inside English changeConfirmationAgreementTextOnCheckout');
     //     confirmation_agreement_el.innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`;
     // }
 
@@ -71,4 +68,4 @@ async function changeConfirmationAgreementTextOnCheckout() {
     });
 }
 
-changeConfirmationAgreementTextOnCheckout();
+setListenerPolicyModal();

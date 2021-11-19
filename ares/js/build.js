@@ -165,7 +165,7 @@ export default class BasePortal {
             if (this.page_name === 'search-results') {
                 utilities
                     .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
-                    .then((test) => {
+                    .then(() => {
                         document.body.insertAdjacentHTML(
                             'beforeEnd',
                             `

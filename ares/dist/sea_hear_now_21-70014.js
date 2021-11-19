@@ -3131,11 +3131,11 @@
                           r && delete N[t], P(e, t, n), r && e !== N && P(N, t, r);
                       }
                     : P,
-            V = function (e) {
+            z = function (e) {
                 var t = (F[e] = k(R.prototype));
                 return (t._k = e), t;
             },
-            z =
+            V =
                 U && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
@@ -3185,7 +3185,7 @@
                         t = function (n) {
                             this === N && t.call(B, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
                         };
-                    return i && W && G(N, e, {configurable: !0, set: t}), V(e);
+                    return i && W && G(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
                 'toString',
                 function () {
@@ -3199,7 +3199,7 @@
             (L.f = ee),
             i && !n(22) && c(N, 'propertyIsEnumerable', J, !0),
             (h.f = function (e) {
-                return V(p(e));
+                return z(p(e));
             })),
             a(a.G + a.W + a.F * !U, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
@@ -3210,7 +3210,7 @@
                 return o(I, (e += '')) ? I[e] : (I[e] = R(e));
             },
             keyFor: function (e) {
-                if (!z(e)) throw TypeError(e + ' is not a symbol!');
+                if (!V(e)) throw TypeError(e + ' is not a symbol!');
                 for (var t in I) if (I[t] === e) return t;
             },
             useSetter: function () {
@@ -3251,11 +3251,11 @@
                     {
                         stringify: function (e) {
                             for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
-                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !z(e)))
+                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !V(e)))
                                 return (
                                     g(t) ||
                                         (t = function (e, t) {
-                                            if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
+                                            if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
                                     (r[1] = t),
                                     Y.apply(O, r)
@@ -3952,7 +3952,13 @@
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name &&
-                                                                            (y
+                                                                            (setTimeout(function () {
+                                                                                document.body.insertAdjacentHTML(
+                                                                                    'beforeEnd',
+                                                                                    '\n                            <style>\n                                #searching{\n                                    display: none !important;\n                                }\n                            </style>\n                        '
+                                                                                );
+                                                                            }, 12e3),
+                                                                            y
                                                                                 .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
                                                                                 .then(function () {
                                                                                     document.body.insertAdjacentHTML(
@@ -5569,12 +5575,16 @@
                                     '52342' === this.site_id ||
                                     (document.querySelector('.open-modal') &&
                                         ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                        (document.querySelector(
-                                            'span.confirmationAgreement'
-                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
-                                            this.site_id,
-                                            '&theme=standard">Terms & Conditions</a> found on this website.'
-                                        )),
+                                        (document.querySelector('span.confirmationAgreement').innerHTML =
+                                            'french' === v
+                                                ? 'En cochant cette case, j\'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Conditions Générales</a> trouvées sur ce site Web.'
+                                                  )
+                                                : 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Terms & Conditions</a> found on this website.'
+                                                  )),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                         document.querySelector('#policies-fees').addEventListener('click', function (e) {
@@ -7605,35 +7615,55 @@
         function c() {
             return (c = i(
                 regeneratorRuntime.mark(function e(t, n) {
+                    var r;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     if (!document.querySelector('.SearchHotels') && !document.querySelector('.SinglePropDetail')) {
-                                        e.next = 4;
+                                        e.next = 5;
                                         break;
                                     }
-                                    return (e.next = 3), a.waitForSelectorInDOM('header');
-                                case 3:
-                                    document
-                                        .querySelector('header')
-                                        .insertAdjacentHTML(
-                                            'afterend',
-                                            '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
-                                                .concat(
-                                                    t,
-                                                    ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
-                                                )
-                                                .concat(
-                                                    t,
-                                                    '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
-                                                )
-                                                .concat(
-                                                    n,
-                                                    '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
-                                                )
-                                        );
+                                    return (r = a.getMetaTagContent('theme')), (e.next = 4), a.waitForSelectorInDOM('header');
                                 case 4:
+                                    'french' === r
+                                        ? document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Besoin de 10+ chambres pour '
+                                                      .concat(
+                                                          t,
+                                                          ' ou un autre événement? Nous sommes là pour vous aider à obtenir des tarifs avantageux.</span>     \n                    <span id="tablet">Besoin de 10+ chambres pour '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Besoin de 10+ chambres?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Réservez 10+ chambres</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              )
+                                        : document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
+                                                      .concat(
+                                                          t,
+                                                          ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              );
+                                case 5:
                                 case 'end':
                                     return e.stop();
                             }

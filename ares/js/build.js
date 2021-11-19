@@ -163,6 +163,18 @@ export default class BasePortal {
             }
 
             if (this.page_name === 'search-results') {
+                setTimeout(() => {
+                    document.body.insertAdjacentHTML(
+                        'beforeEnd',
+                        `
+                            <style>
+                                #searching{
+                                    display: none !important;
+                                }
+                            </style>
+                        `
+                    );
+                }, 12000);
                 utilities
                     .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
                     .then(() => {

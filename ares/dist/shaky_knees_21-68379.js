@@ -238,12 +238,12 @@
             S = n(88),
             w = n(89),
             _ = n(90),
-            x = s.TypeError,
-            k = s.process,
-            A = k && k.versions,
+            k = s.TypeError,
+            x = s.process,
+            A = x && x.versions,
             M = (A && A.v8) || '',
             L = s.Promise,
-            q = 'process' == l(k),
+            q = 'process' == l(x),
             C = function () {},
             E = (o = b.f),
             P = !!(function () {
@@ -280,7 +280,7 @@
                                         c
                                             ? (o || (2 == e._h && D(e), (e._h = 1)),
                                               !0 === c ? (n = r) : (l && l.enter(), (n = c(r)), l && (l.exit(), (a = !0))),
-                                              n === t.promise ? u(x('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
+                                              n === t.promise ? u(k('Promise-chain cycle')) : (i = T(n)) ? i.call(n, s, u) : s(n))
                                             : u(r);
                                     } catch (e) {
                                         l && !a && l.exit(), u(e);
@@ -305,7 +305,7 @@
                         (i &&
                             ((t = S(function () {
                                 q
-                                    ? k.emit('unhandledRejection', o, e)
+                                    ? x.emit('unhandledRejection', o, e)
                                     : (n = s.onunhandledrejection)
                                     ? n({promise: e, reason: o})
                                     : (r = s.console) && r.error && r.error('Unhandled promise rejection', o);
@@ -323,7 +323,7 @@
             D = function (e) {
                 g.call(s, function () {
                     var t;
-                    q ? k.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
+                    q ? x.emit('rejectionHandled', e) : (t = s.onrejectionhandled) && t({promise: e, reason: e._v});
                 });
             },
             j = function (e) {
@@ -336,7 +336,7 @@
                 if (!n._d) {
                     (n._d = !0), (n = n._w || n);
                     try {
-                        if (n === e) throw x("Promise can't be resolved itself");
+                        if (n === e) throw k("Promise can't be resolved itself");
                         (t = T(e))
                             ? v(function () {
                                   var r = {_w: n, _d: !1};
@@ -369,7 +369,7 @@
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
-                        (n.domain = q ? k.domain : void 0),
+                        (n.domain = q ? x.domain : void 0),
                         this._c.push(n),
                         this._a && this._a.push(n),
                         this._s && R(this, !1),
@@ -471,7 +471,7 @@
             function s(e, t, n, r) {
                 var o = t && t.prototype instanceof d ? t : d,
                     i = Object.create(o.prototype),
-                    a = new x(r || []);
+                    a = new k(r || []);
                 return (
                     (i._invoke = (function (e, t, n) {
                         var r = 'suspendedStart';
@@ -525,7 +525,7 @@
                 return this;
             };
             var m = Object.getPrototypeOf,
-                y = m && m(m(k([])));
+                y = m && m(m(x([])));
             y && y !== t && n.call(y, o) && (h = y);
             var g = (p.prototype = d.prototype = Object.create(h));
             function v(e) {
@@ -596,10 +596,10 @@
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function x(e) {
+            function k(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(w, this), this.reset(!0);
             }
-            function k(e) {
+            function x(e) {
                 if (e) {
                     var t = e[o];
                     if (t) return t.call(e);
@@ -668,9 +668,9 @@
                         }
                     );
                 }),
-                (e.values = k),
-                (x.prototype = {
-                    constructor: x,
+                (e.values = x),
+                (k.prototype = {
+                    constructor: k,
                     reset: function (e) {
                         if (
                             ((this.prev = 0),
@@ -760,7 +760,7 @@
                         throw new Error('illegal catch attempt');
                     },
                     delegateYield: function (e, t, n) {
-                        return (this.delegate = {iterator: k(e), resultName: t, nextLoc: n}), 'next' === this.method && (this.arg = void 0), l;
+                        return (this.delegate = {iterator: x(e), resultName: t, nextLoc: n}), 'next' === this.method && (this.arg = void 0), l;
                     },
                 }),
                 e
@@ -2579,16 +2579,16 @@
                         if ((v.push(b), !y)) break;
                         '' === String(b[0]) && (d.lastIndex = c(f, i(d.lastIndex), g));
                     }
-                    for (var S, w = '', _ = 0, x = 0; x < v.length; x++) {
-                        b = v[x];
-                        for (var k = String(b[0]), A = u(l(a(b.index), f.length), 0), M = [], L = 1; L < b.length; L++) M.push(void 0 === (S = b[L]) ? S : String(S));
+                    for (var S, w = '', _ = 0, k = 0; k < v.length; k++) {
+                        b = v[k];
+                        for (var x = String(b[0]), A = u(l(a(b.index), f.length), 0), M = [], L = 1; L < b.length; L++) M.push(void 0 === (S = b[L]) ? S : String(S));
                         var q = b.groups;
                         if (p) {
-                            var C = [k].concat(M, A, f);
+                            var C = [x].concat(M, A, f);
                             void 0 !== q && C.push(q);
                             var E = String(t.apply(void 0, C));
-                        } else E = m(k, f, A, M, q, t);
-                        A >= _ && ((w += f.slice(_, A) + E), (_ = A + k.length));
+                        } else E = m(x, f, A, M, q, t);
+                        A >= _ && ((w += f.slice(_, A) + E), (_ = A + x.length));
                     }
                     return w + f.slice(_);
                 },
@@ -2965,13 +2965,13 @@
                         if (0 === f.length) return null === s(v, f) ? [f] : [];
                         for (var S = 0, w = 0, _ = []; w < f.length; ) {
                             v.lastIndex = h ? w : 0;
-                            var x,
-                                k = s(v, h ? f : f.slice(w));
-                            if (null === k || (x = d(c(v.lastIndex + (h ? 0 : w)), f.length)) === S) w = a(f, w, y);
+                            var k,
+                                x = s(v, h ? f : f.slice(w));
+                            if (null === x || (k = d(c(v.lastIndex + (h ? 0 : w)), f.length)) === S) w = a(f, w, y);
                             else {
                                 if ((_.push(f.slice(S, w)), _.length === b)) return _;
-                                for (var A = 1; A <= k.length - 1; A++) if ((_.push(k[A]), _.length === b)) return _;
-                                w = S = x;
+                                for (var A = 1; A <= x.length - 1; A++) if ((_.push(x[A]), _.length === b)) return _;
+                                w = S = k;
                             }
                         }
                         return _.push(f.slice(S)), _;
@@ -3038,29 +3038,29 @@
                     };
                 },
                 _ = t + ' Iterator',
-                x = 'values' == m,
-                k = !1,
+                k = 'values' == m,
+                x = !1,
                 A = e.prototype,
                 M = A[d] || A['@@iterator'] || (m && A[m]),
                 L = M || w(m),
-                q = m ? (x ? w('entries') : L) : void 0,
+                q = m ? (k ? w('entries') : L) : void 0,
                 C = ('Array' == t && A.entries) || M;
             if (
                 (C && (S = l(C.call(new e()))) !== Object.prototype && S.next && (u(S, _, !0), r || 'function' == typeof S[d] || a(S, d, p)),
-                x &&
+                k &&
                     M &&
                     'values' !== M.name &&
-                    ((k = !0),
+                    ((x = !0),
                     (L = function () {
                         return M.call(this);
                     })),
-                (r && !g) || (!f && !k && A[d]) || a(A, d, L),
+                (r && !g) || (!f && !x && A[d]) || a(A, d, L),
                 (c[t] = L),
                 (c[_] = p),
                 m)
             )
-                if (((v = {values: x ? L : w('values'), keys: y ? L : w('keys'), entries: q}), g)) for (b in v) b in A || i(A, b, v[b]);
-                else o(o.P + o.F * (f || k), t, v);
+                if (((v = {values: k ? L : w('values'), keys: y ? L : w('keys'), entries: q}), g)) for (b in v) b in A || i(A, b, v[b]);
+                else o(o.P + o.F * (f || x), t, v);
             return v;
         };
     },
@@ -3089,8 +3089,8 @@
             S = n(31),
             w = n(16),
             _ = n(41),
-            x = n(32),
-            k = n(43),
+            k = n(32),
+            x = n(43),
             A = n(103),
             M = n(58),
             L = n(66),
@@ -3117,7 +3117,7 @@
                 u(function () {
                     return (
                         7 !=
-                        k(
+                        x(
                             P({}, 'a', {
                                 get: function () {
                                     return P(this, 'a', {value: 7}).a;
@@ -3131,11 +3131,11 @@
                           r && delete N[t], P(e, t, n), r && e !== N && P(N, t, r);
                       }
                     : P,
-            V = function (e) {
-                var t = (F[e] = k(R.prototype));
+            z = function (e) {
+                var t = (F[e] = x(R.prototype));
                 return (t._k = e), t;
             },
-            z =
+            V =
                 U && 'symbol' == typeof R.iterator
                     ? function (e) {
                           return 'symbol' == typeof e;
@@ -3150,7 +3150,7 @@
                     (t = _(t, !0)),
                     v(n),
                     o(F, t)
-                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || P(e, D, x(1, {})), (e[D][t] = !0)), G(e, t, n))
+                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = x(n, {enumerable: k(0, !1)}))) : (o(e, D) || P(e, D, k(1, {})), (e[D][t] = !0)), G(e, t, n))
                         : P(e, t, n)
                 );
             },
@@ -3183,9 +3183,9 @@
                     if (this instanceof R) throw TypeError('Symbol is not a constructor!');
                     var e = f(arguments.length > 0 ? arguments[0] : void 0),
                         t = function (n) {
-                            this === N && t.call(B, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, x(1, n));
+                            this === N && t.call(B, n), o(this, D) && o(this[D], e) && (this[D][e] = !1), G(this, e, k(1, n));
                         };
-                    return i && W && G(N, e, {configurable: !0, set: t}), V(e);
+                    return i && W && G(N, e, {configurable: !0, set: t}), z(e);
                 }).prototype,
                 'toString',
                 function () {
@@ -3199,7 +3199,7 @@
             (L.f = ee),
             i && !n(22) && c(N, 'propertyIsEnumerable', J, !0),
             (h.f = function (e) {
-                return V(p(e));
+                return z(p(e));
             })),
             a(a.G + a.W + a.F * !U, {Symbol: R});
         for (var te = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(','), ne = 0; te.length > ne; )
@@ -3210,7 +3210,7 @@
                 return o(I, (e += '')) ? I[e] : (I[e] = R(e));
             },
             keyFor: function (e) {
-                if (!z(e)) throw TypeError(e + ' is not a symbol!');
+                if (!V(e)) throw TypeError(e + ' is not a symbol!');
                 for (var t in I) if (I[t] === e) return t;
             },
             useSetter: function () {
@@ -3222,7 +3222,7 @@
         }),
             a(a.S + a.F * !U, 'Object', {
                 create: function (e, t) {
-                    return void 0 === t ? k(e) : Q(k(e), t);
+                    return void 0 === t ? x(e) : Q(x(e), t);
                 },
                 defineProperty: Z,
                 defineProperties: Q,
@@ -3251,11 +3251,11 @@
                     {
                         stringify: function (e) {
                             for (var t, n, r = [e], o = 1; arguments.length > o; ) r.push(arguments[o++]);
-                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !z(e)))
+                            if (((n = t = r[1]), (b(t) || void 0 !== e) && !V(e)))
                                 return (
                                     g(t) ||
                                         (t = function (e, t) {
-                                            if (('function' == typeof n && (t = n.call(this, e, t)), !z(t))) return t;
+                                            if (('function' == typeof n && (t = n.call(this, e, t)), !V(t))) return t;
                                         }),
                                     (r[1] = t),
                                     Y.apply(O, r)
@@ -3801,7 +3801,7 @@
                         (this.map_loaded = !1),
                         (this.selected_currency = y.getMetaTagContent('currency') ? y.getMetaTagContent('currency') : 'USD');
                 }
-                var t, n, r, i, a, s, u, m, b, S, w, _, x, k;
+                var t, n, r, i, a, s, u, m, b, S, w, _, k, x;
                 return (
                     (t = e),
                     (n = [
@@ -3952,7 +3952,13 @@
                                                                         ),
                                                                         'lrg-page' === e.page_name && e.replaceLRGForm(),
                                                                         'search-results' === e.page_name &&
-                                                                            (y
+                                                                            (setTimeout(function () {
+                                                                                document.body.insertAdjacentHTML(
+                                                                                    'beforeEnd',
+                                                                                    '\n                            <style>\n                                #searching{\n                                    display: none !important;\n                                }\n                            </style>\n                        '
+                                                                                );
+                                                                            }, 12e3),
+                                                                            y
                                                                                 .waitForSelectorInDOM('.ArnProperty + #pagerBottomAjax')
                                                                                 .then(function () {
                                                                                     document.body.insertAdjacentHTML(
@@ -4199,7 +4205,7 @@
                         {
                             key: 'getSiteID',
                             value:
-                                ((k = l(
+                                ((x = l(
                                     regeneratorRuntime.mark(function e() {
                                         return regeneratorRuntime.wrap(
                                             function (e) {
@@ -4224,13 +4230,13 @@
                                     })
                                 )),
                                 function () {
-                                    return k.apply(this, arguments);
+                                    return x.apply(this, arguments);
                                 }),
                         },
                         {
                             key: 'getCurrency',
                             value:
-                                ((x = l(
+                                ((k = l(
                                     regeneratorRuntime.mark(function e() {
                                         var t;
                                         return regeneratorRuntime.wrap(
@@ -4256,7 +4262,7 @@
                                     })
                                 )),
                                 function () {
-                                    return x.apply(this, arguments);
+                                    return k.apply(this, arguments);
                                 }),
                         },
                         {
@@ -5569,12 +5575,16 @@
                                     '52342' === this.site_id ||
                                     (document.querySelector('.open-modal') &&
                                         ((document.querySelector('.open-modal').textContent = 'Policies & Fees'),
-                                        (document.querySelector(
-                                            'span.confirmationAgreement'
-                                        ).innerHTML = 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
-                                            this.site_id,
-                                            '&theme=standard">Terms & Conditions</a> found on this website.'
-                                        )),
+                                        (document.querySelector('span.confirmationAgreement').innerHTML =
+                                            'french' === v
+                                                ? 'En cochant cette case, j\'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Conditions Générales</a> trouvées sur ce site Web.'
+                                                  )
+                                                : 'By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.quintrooms.com/v6/terms-and-conditions?&siteId='.concat(
+                                                      this.site_id,
+                                                      '&theme=standard">Terms & Conditions</a> found on this website.'
+                                                  )),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)You(?=\s|$)/gi, 'I'),
                                         y.replaceSpecificText('.confirmedDueNowCharge .confirmationAgreement', /(^|)your(?=|$)/gi, 'my'),
                                         document.querySelector('#policies-fees').addEventListener('click', function (e) {
@@ -6225,7 +6235,7 @@
                 return w;
             }),
             n.d(t, 'Response', function () {
-                return x;
+                return k;
             }),
             n.d(t, 'DOMException', function () {
                 return A;
@@ -6504,8 +6514,8 @@
                 t
             );
         }
-        function x(e, t) {
-            if (!(this instanceof x)) throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
+        function k(e, t) {
+            if (!(this instanceof k)) throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.');
             t || (t = {}),
                 (this.type = 'default'),
                 (this.status = void 0 === t.status ? 200 : t.status),
@@ -6519,18 +6529,18 @@
             return new w(this, {body: this._bodyInit});
         }),
             b.call(w.prototype),
-            b.call(x.prototype),
-            (x.prototype.clone = function () {
-                return new x(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new h(this.headers), url: this.url});
+            b.call(k.prototype),
+            (k.prototype.clone = function () {
+                return new k(this._bodyInit, {status: this.status, statusText: this.statusText, headers: new h(this.headers), url: this.url});
             }),
-            (x.error = function () {
-                var e = new x(null, {status: 0, statusText: ''});
+            (k.error = function () {
+                var e = new k(null, {status: 0, statusText: ''});
                 return (e.type = 'error'), e;
             });
-        var k = [301, 302, 303, 307, 308];
-        x.redirect = function (e, t) {
-            if (-1 === k.indexOf(t)) throw new RangeError('Invalid status code');
-            return new x(null, {status: t, headers: {location: e}});
+        var x = [301, 302, 303, 307, 308];
+        k.redirect = function (e, t) {
+            if (-1 === x.indexOf(t)) throw new RangeError('Invalid status code');
+            return new k(null, {status: t, headers: {location: e}});
         };
         var A = r.DOMException;
         try {
@@ -6576,7 +6586,7 @@
                     r.url = 'responseURL' in c ? c.responseURL : r.headers.get('X-Request-URL');
                     var o = 'response' in c ? c.response : c.responseText;
                     setTimeout(function () {
-                        n(new x(o, r));
+                        n(new k(o, r));
                     }, 0);
                 }),
                     (c.onerror = function () {
@@ -6625,7 +6635,7 @@
                     c.send(void 0 === i._bodyInit ? null : i._bodyInit);
             });
         }
-        (M.polyfill = !0), r.fetch || ((r.fetch = M), (r.Headers = h), (r.Request = w), (r.Response = x));
+        (M.polyfill = !0), r.fetch || ((r.fetch = M), (r.Headers = h), (r.Request = w), (r.Response = k));
     },
     function (e, t, n) {
         (function (e) {
@@ -7605,35 +7615,55 @@
         function c() {
             return (c = i(
                 regeneratorRuntime.mark(function e(t, n) {
+                    var r;
                     return regeneratorRuntime.wrap(function (e) {
                         for (;;)
                             switch ((e.prev = e.next)) {
                                 case 0:
                                     if (!document.querySelector('.SearchHotels') && !document.querySelector('.SinglePropDetail')) {
-                                        e.next = 4;
+                                        e.next = 5;
                                         break;
                                     }
-                                    return (e.next = 3), a.waitForSelectorInDOM('header');
-                                case 3:
-                                    document
-                                        .querySelector('header')
-                                        .insertAdjacentHTML(
-                                            'afterend',
-                                            '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
-                                                .concat(
-                                                    t,
-                                                    ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
-                                                )
-                                                .concat(
-                                                    t,
-                                                    '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
-                                                )
-                                                .concat(
-                                                    n,
-                                                    '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
-                                                )
-                                        );
+                                    return (r = a.getMetaTagContent('theme')), (e.next = 4), a.waitForSelectorInDOM('header');
                                 case 4:
+                                    'french' === r
+                                        ? document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Besoin de 10+ chambres pour '
+                                                      .concat(
+                                                          t,
+                                                          ' ou un autre événement? Nous sommes là pour vous aider à obtenir des tarifs avantageux.</span>     \n                    <span id="tablet">Besoin de 10+ chambres pour '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Besoin de 10+ chambres?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Réservez 10+ chambres</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              )
+                                        : document
+                                              .querySelector('header')
+                                              .insertAdjacentHTML(
+                                                  'afterend',
+                                                  '\n            <div class="lucid-banner">\n                <div class="lucid-content">\n                    <span id="desktop">Need 10+ rooms for '
+                                                      .concat(
+                                                          t,
+                                                          ' or another event? We\'re here to help you secure great rates.</span>     \n                    <span id="tablet">Need 10+ rooms for '
+                                                      )
+                                                      .concat(
+                                                          t,
+                                                          '?</span>     \n                    <span id="mobile">Need 10+ rooms?</span>     \n                </div>\n                <div class="lucid-button">\n                    <a id="lucid-link" target="_blank" href="'
+                                                      )
+                                                      .concat(
+                                                          n,
+                                                          '">Book 10+ Rooms</a>\n                </div>\n            </div>\n            <style>\n            header {\n                border-bottom: unset !important;\n            }\n            </style>\n            '
+                                                      )
+                                              );
+                                case 5:
                                 case 'end':
                                     return e.stop();
                             }

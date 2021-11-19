@@ -38,22 +38,9 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-// function getMeta(metaName) {
-//     const metas = document.getElementsByTagName('meta');
-
-//     for (let i = 0; i < metas.length; i++) {
-//         if (metas[i].getAttribute('name') === metaName) {
-//             return metas[i].getAttribute('content');
-//         }
-//     }
-//     return 'standard';
-// }
-
 const selected_language = utilities.getMetaTagContent('theme');
-console.log(`THEME META TAG IN CANADIAN GP IS ${selected_language}`);
 
 async function changeUpdateSearchTextOnPropPage() {
-    // const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.translateMe');
 
     if (selected_language === 'french') {
@@ -68,7 +55,6 @@ changeUpdateSearchTextOnPropPage();
 const confirmation_agreement_el = document.querySelector('.confirmationAgreement');
 
 async function changeConfirmationAgreementTextOnCheckout() {
-    // const selected_language = document.querySelector('#language-label span').innerText;
     await utilities.waitForSelectorInDOM('.confirmationAgreement');
     console.log('inside changeConfirmationAgreementTextOnCheckout');
     if (selected_language === 'french') {
@@ -86,111 +72,3 @@ async function changeConfirmationAgreementTextOnCheckout() {
 }
 
 changeConfirmationAgreementTextOnCheckout();
-
-// async function changePerNightTextInSearchResults() {
-//     await utilities.waitForSelectorInDOM('.sort-wrapper h4');
-//     // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
-//     const room_array = document.querySelectorAll('.ArnProperty');
-
-//     //MAKE SURE IS FRENCH!!
-//     if (selected_language === 'french') {
-//         room_array.forEach((i) => {
-//             if (!i.querySelector('.full-stay')) return;
-//             const per_night_text = i.querySelector('.arnUnit + div');
-
-//             per_night_text.textContent = 'par nuit';
-//         });
-//     }
-// }
-
-// changePerNightTextInSearchResults();
-
-// async function changePerNightTextInPropPage() {
-//     await utilities.waitForSelectorInDOM('.ArnNightlyRate strong div:first-child');
-//     // await utilities.waitForSelectorInDOM('.sort-wrapper h4');
-//     const room_array = document.querySelectorAll('.SinglePropDetail .rateRow');
-
-//     //MAKE SURE IS FRENCH!!
-//     if (selected_language === 'french') {
-//         room_array.forEach((i) => {
-//             if (!i.querySelector('.ArnNightlyRate')) return;
-//             const per_night_text = i.querySelector('.ArnNightlyRate strong div:first-child');
-
-//             per_night_text.textContent = 'par nuit';
-//         });
-//     }
-// }
-
-// changePerNightTextInPropPage();
-
-// async function changeLucidBannerText() {
-//     await utilities.waitForSelectorInDOM('header');
-//     const selected_language = document.querySelector('#language-label span').innerText;
-//     const lucid_content = document.querySelector('.lucid-content');
-//     if (selected_language === 'Français') {
-//         lucid_content.innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis près de  Circuit Gilles Villeneuve }!</span>`;
-//     } else {
-//         lucid_content.innerHTML = `<span style="text-align: center;">Look for <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates near Circuit Gilles Villeneuve }!</span>`;
-//     }
-// }
-// changeLucidBannerText();
-
-// async function changeArnRateTextLanguage() {
-//     await utilities.waitForSelectorInDOM('.sort-wrapper h4');
-
-//     const selected_language = document.querySelector('#language-label span').innerText;
-//     const room_array = document.querySelectorAll('.ArnProperty');
-//     if (selected_language === 'Français') {// async function changeArnRateTextLanguage() {
-//     await utilities.waitForSelectorInDOM('.sort-wrapper h4');
-
-//     const selected_language = document.querySelector('#language-label span').innerText;
-//     const room_array = document.querySelectorAll('.ArnProperty');
-//     if (selected_language === 'Français') {
-//         utilities.updateHTML('.ArnSearchHeader', 'Modifier La Recherche');
-//         utilities.updateHTML('.sort-wrapper h4', 'Trier');
-//         utilities.updateHTML('.lblAmenities', 'Équipements');
-
-//         document.querySelector(
-//             '.lucid-content'
-//         ).innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis près de  Circuit Gilles Villeneuve
-//         }!</span>`;
-
-//         room_array.forEach((i) => {
-//             const book_button = i.querySelector('.ArnShowRatesLink');
-//             const full_stay_text = i.querySelector('.full-stay');
-//             book_button.innerHTML = 'Réserver';
-
-//         utilities.updateHTML('.ArnSearchHeader', 'Modifier La Recherche');
-//         utilities.updateHTML('.sort-wrapper h4', 'Trier');
-//         utilities.updateHTML('.lblAmenities', 'Équipements');
-
-//         document.querySelector(
-//             '.lucid-content'
-//         ).innerHTML = `<span style="text-align: center;">Recherchez un <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Tarif Exclusif</span> - ces hôtels ont les tarifs les plus bas garantis près de  Circuit Gilles Villeneuve
-//         }!</span>`;
-
-//         room_array.forEach((i) => {
-//             const book_button = i.querySelector('.ArnShowRatesLink');
-//             const full_stay_text = i.querySelector('.full-stay');
-//             book_button.innerHTML = 'Réserver';
-
-//             // utilities.updateHTML('.full-stay','${fixed_full_stay} for ${nights} nights');
-//         });
-//     } else {
-//         utilities.updateHTML('.ArnSearchHeader', 'Update Search');
-//         utilities.updateHTML('.sort-wrapper h4', 'Sort');
-//         utilities.updateHTML('.lblAmenities', 'Amenities');
-
-//         document.querySelector(
-//             '.lucid-content'
-//         ).innerHTML = `<span style="text-align: center;">Look for <span style="background: #000; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates near Circuit Gilles Villeneuve
-//         }!</span>`;
-
-//         room_array.forEach((i) => {
-//             const book_button = i.querySelector('.ArnShowRatesLink');
-//             book_button.innerHTML = 'Book Rooms';
-//             // utilities.updateHTML('.full-stay','${fixed_full_stay} for ${nights} nights');
-//         });
-//     }
-// }
-// changeArnRateTextLanguage();

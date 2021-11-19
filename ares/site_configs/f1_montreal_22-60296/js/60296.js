@@ -44,7 +44,6 @@ async function changeUpdateSearchTextOnPropPage() {
     await utilities.waitForSelectorInDOM('.translateMe');
 
     if (selected_language === 'french') {
-        console.log('inside french changeUpdateSearchTextOnPropPage');
         utilities.updateHTML('.translateMe', 'Modifier La Recherche');
     } else {
         utilities.updateHTML('.translateMe', 'Update Search');
@@ -52,15 +51,8 @@ async function changeUpdateSearchTextOnPropPage() {
 }
 changeUpdateSearchTextOnPropPage();
 
-// const confirmation_agreement_el = document.querySelector('.confirmationAgreement');
-
-async function changeConfirmationAgreementTextOnCheckout() {
+async function setListenerForPolicyModal() {
     await utilities.waitForSelectorInDOM('.span.open-modal');
-    // if (selected_language === 'french') {
-    //     confirmation_agreement_el.innerHTML = `En cochant cette case, j'accepte les <span id="policies-fees">Politiques Et Frais</span> ci-dessus et les <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Conditions Générales</a> trouvées sur ce site Web.`;
-    // } else {
-    //     confirmation_agreement_el.innerHTML = `By checking this box I agree to the <span id="policies-fees">Policies & Fees</span> above and the <a id="t-and-cs" target="_blank" href="https://events.${domain}/v6/terms-and-conditions?&siteId=60296&theme=standard">Terms & Conditions</a> found on this website.`;
-    // }
 
     const policies_lower = document.querySelector('#policies-fees');
     policies_lower.addEventListener('click', (e) => {
@@ -68,4 +60,4 @@ async function changeConfirmationAgreementTextOnCheckout() {
     });
 }
 
-changeConfirmationAgreementTextOnCheckout();
+setListenerForPolicyModal();

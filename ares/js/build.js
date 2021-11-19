@@ -908,9 +908,12 @@ export default class BasePortal {
                     setValuesForDayJs(iso8601, us_format);
                 } else if (clicked_language !== 'standard' && active_language.includes('mandarin')) {
                     setValuesForDayJs(iso8601, euro_format);
-                } else if (this.site_config.affilaite_id === 16980) {
+                } else if (this.site_config.affilaite_id === 16980 && clicked_language === 'standard' && active_language === 'french') {
+                    setValuesForDayJs('M/D/YYYY', 'D/M/YYYY');
+                } else if (this.site_config.affilaite_id === 16980 && active_language !== 'standard') {
                     setValuesForDayJs('D/M/YYYY', 'D/M/YYYY');
                 }
+
                 if (this.page_name === 'search-results') {
                     params.set('nights', nights);
                     params.set('checkin', check_in_value);

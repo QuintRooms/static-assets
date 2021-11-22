@@ -46,7 +46,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'http://rocktheocean.com/',
+            logo_outbound_url: 'https://TidalWaveFest.com',
             background: `url(${env_path.path}/site_configs/${directory_name}/img/header-bg.png)`,
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,

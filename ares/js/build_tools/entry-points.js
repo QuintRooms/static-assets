@@ -20,6 +20,7 @@ module.exports = () => {
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'buku_22-66047': './src/66047.js', // buku 22
+            'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
@@ -122,7 +123,6 @@ module.exports = () => {
 // 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
 // 'buku_21-56297': './src/56297.js', // Buku 2021
 // 'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
-// 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
 // 'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
 // 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
 // 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021

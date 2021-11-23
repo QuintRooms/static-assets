@@ -2,7 +2,7 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 
-const site_id = 70016;
+const site_id = 71767;
 const directory_name = `high_water_22-${site_id}`;
 
 export default function siteConfig() {
@@ -15,7 +15,7 @@ export default function siteConfig() {
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
-            event_id: '53986',
+            event_id: '',
             event_name: 'High Water',
             event_dates: '',
             redirect_date: '',

@@ -19,3 +19,18 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+// hide all other languages
+.language-container > div {
+    display: none;
+}
+
+.language-container > div#french,
+.language-container > div#standard {
+    display: unset;
+}
+
+.SinglePropDetail #moreRatesLink {
+  width: unset;
+  height: unset;
+}

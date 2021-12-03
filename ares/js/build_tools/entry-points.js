@@ -20,7 +20,7 @@ module.exports = () => {
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'buku_22-66047': './src/66047.js', // buku 22
-            'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
+            // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
@@ -47,7 +47,7 @@ module.exports = () => {
             // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
-            'high_water_22-71767': './src/71767.js', // high water_22
+            // 'high_water_22-71767': './src/71767.js', // high water_22
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
@@ -69,6 +69,7 @@ module.exports = () => {
             // 'sea_hear_now_22-71759': './src/71759.js', // sea hear_now_22
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
+            // 'sial_canada_22-75294': './src/75294.js', // sea hear_now_22
             // 'socal_bike_fest_21-70903': './src/70903.js', // Socal Bike Fest 2021
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
@@ -95,7 +96,6 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            'high_water_22-71767': './src/71767.js', // high water_22
         };
 
         // local environment
@@ -103,8 +103,6 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
-            'high_water_22-71767': './src/71767.js', // high water_22
-            'f1_montreal_22-60296': './src/60296.js', // f1 montreal_22
         };
     }
 

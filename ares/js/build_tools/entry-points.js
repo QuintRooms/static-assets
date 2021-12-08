@@ -84,36 +84,6 @@ module.exports = () => {
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
             // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
-            'acl_20-53336': './src/53336.js', // Austin City Limits Festival (ACL) 2020
-            'akon_21-60284': './src/60284.js', // A-Kon 2021
-            'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
-            'austin_food_and_wine_20-60290': './src/60290.js', // Austin Food And Wine 2020
-            'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
-            'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
-            'bj_las_vegas_21-64190': './src/64190.js', // Barrett-Jackson Las Vegas 2021
-            'bj_northeast_20-60086': './src/60086.js', // Barrett-Jackson Northeast 2020
-            'bj_scottsdale_21-58513': './src/58513.js', // Barrett-Jackson Scottsdale 2021
-            'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
-            'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
-            'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
-            'buku_21-56297': './src/56297.js', // Buku 2021
-            'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
-            'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
-            'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
-            'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
-            'hof_enshrinement_friends_fam_21-66018': './src/66018.js', // hof enshrinement_friends_fam_21
-            'housing_template-60265': './src/60265.js', // Housing Template
-            'innings_21-60093': './src/60093.js', // Innings Fest 2021
-            'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
-            'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
-            'railbird_21-68382': './src/68382.js', // railbird 21
-            'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
-            'shaky_knees_20-60303': './src/60303.js', // Shaky Knees 2020
-            'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // Special Olympics Of Texas Summer Games San Antonio 2021
-            'sotx_fall_classic_bocce_softball_21-68888': './src/68888.js', // sotx fall_classic_bocce_softball_21
-            'sotx_fall_classic_golf_swimming_21-68887': './src/68887.js', // sotx fall_classic_golf_swimming_21
-            'tortuga_20-60336': './src/60336.js', // Tortuga 2020
-            'voodoo_21-60792': './src/60792.js', // Voodoo Festival 2021
         };
 
         // develop environment
@@ -140,3 +110,33 @@ module.exports = () => {
 };
 
 // OLD PORTALS
+// 'acl_20-53336': './src/53336.js', // Austin City Limits Festival (ACL) 2020
+// 'akon_21-60284': './src/60284.js', // A-Kon 2021
+// 'arizona_bike_week_20-60509': './src/60509.js', // Arizona Bike Week 2020
+// 'austin_food_and_wine_20-60290': './src/60290.js', // Austin Food And Wine 2020
+// 'austin_marathon_21-59243': './src/59243.js', // Austin Marathon 2021
+// 'bj_las_vegas_20-60089': './src/60089.js', // Barrett-Jackson Las Vegas 2020
+// 'bj_las_vegas_21-64190': './src/64190.js', // Barrett-Jackson Las Vegas 2021
+// 'bj_northeast_20-60086': './src/60086.js', // Barrett-Jackson Northeast 2020
+// 'bj_scottsdale_21-58513': './src/58513.js', // Barrett-Jackson Scottsdale 2021
+// 'bj_west_palm_beach_20-60292': './src/60292.js', // Barrett-Jackson West Palm Beach 2020
+// 'breeders_cup_20-59788': './src/59788.js', // Breeders Cup 2020
+// 'bonnaroo_21-64868': './src/64868.js', // Bonnaroo 21
+// 'buku_21-56297': './src/56297.js', // Buku 2021
+// 'club_seacret_template-70905': './src/70905.js', // Club Seacret Template
+// 'f1_bahrain_20-60302': './src/60302.js', // Formula 1 Bahrain 2020 (Gulf Air & Rolex Sakhir)
+// 'f1_portugal_20-54494': './src/54494.js', // Formula 1 Portugal 2020
+// 'hof_enshrinement_21-60041': './src/60041.js', // Hall Of Fame Enshrinement 2021
+// 'hof_enshrinement_friends_fam_21-66018': './src/66018.js', // hof enshrinement_friends_fam_21
+// 'housing_template-60265': './src/60265.js', // Housing Template
+// 'innings_21-60093': './src/60093.js', // Innings Fest 2021
+// 'lolla_20-52975': './src/52975.js', // Lollapalooza 2020
+// 'moto_gp_portugal-67854': './src/67854.js', // moto gp_portugal
+// 'railbird_21-68382': './src/68382.js', // railbird 21
+// 'rot_rally_21-60512': './src/60512.js', // Republic of Texas Rally 2021
+// 'shaky_knees_20-60303': './src/60303.js', // Shaky Knees 2020
+// 'sotx_summer_games_san_antonio_21-54034': './src/54034.js', // Special Olympics Of Texas Summer Games San Antonio 2021
+// 'sotx_fall_classic_bocce_softball_21-68888': './src/68888.js', // sotx fall_classic_bocce_softball_21
+// 'sotx_fall_classic_golf_swimming_21-68887': './src/68887.js', // sotx fall_classic_golf_swimming_21
+// 'tortuga_20-60336': './src/60336.js', // Tortuga 2020
+// 'voodoo_21-60792': './src/60792.js', // Voodoo Festival 2021

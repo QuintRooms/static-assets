@@ -20,8 +20,8 @@ export default function siteConfig() {
             event_id: '54036',
             event_name: 'Tidal Wave',
             event_dates: '',
-            redirect_date: '',
-            redirect_url: '',
+            redirect_date: '12/12/2021',
+            redirect_url: 'https://events.quintrooms.com/group-event?id=54036',
             is_lrg: false,
         },
         cug: {

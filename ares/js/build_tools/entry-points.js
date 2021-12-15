@@ -75,6 +75,7 @@ module.exports = () => {
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
+            // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'tortuga_22-74015': './src/74015.js', // tortuga 22
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020

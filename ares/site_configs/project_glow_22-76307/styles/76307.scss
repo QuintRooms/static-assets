@@ -21,6 +21,33 @@ $header_background: #fff;
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
+@media screen and (max-width: 2000px) {
+  .logo img {
+    visibility: hidden;
+  }
+  
+  header {
+    background-image: url(#{$path}/site_configs/#{$site_name}/img/header.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center; 
+    height: 400px;
+  }
+} 
+
+@media screen and (max-width: 1250px) {
+  .logo img {
+    visibility: visible;
+  }
+
+  header {
+    background-image: none;
+    background-image: url(#{$path}/site_configs/#{$site_name}/img/white_header.png);
+    height: auto;
+  }
+} 
+
+
 // .lucid-banner {
 //   background-color: #649afe;
 // }

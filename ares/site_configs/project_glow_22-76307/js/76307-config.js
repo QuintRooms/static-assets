@@ -80,6 +80,6 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Tidal%20Wave',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Project%20Glow',
     };
 }

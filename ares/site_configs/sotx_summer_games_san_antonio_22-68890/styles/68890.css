@@ -12,11 +12,11 @@
 /* Header */
 header {
   justify-content: center;
-  background: #fff;
+  background: #E7E5D3;
 }
 
 .RootBody {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/sotx_summer_games_san_antonio_22-68890/img/banner.jpg) no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/sotx_summer_games_san_antonio_22-68890/img/banner.png) no-repeat center center/cover;
 }
 
 .logo img {
@@ -46,7 +46,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 .yui3-skin-sam .yui3-calendar-day:hover,
 .sort-wrapper .active,
 .sort-wrapper a:hover, #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover, .WBConfirmedBooking .submit, .GroupHoldForm .bookRoomButton, .stay-22-banner {
-  background: #5dc3ac;
+  background: #CD3C3E;
 }
 
 @media screen and (max-width: 1105px) {
@@ -54,12 +54,12 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    border: 1px solid #5dc3ac;
+    border: 1px solid #CD3C3E;
   }
 
   .closeMap {
     border: 1px solid #fff !important;
-    background-color: #5dc3ac !important;
+    background-color: #CD3C3E !important;
     color: #fff !important;
   }
 }
@@ -73,7 +73,7 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 .sort-wrapper a:before,
 .sort-wrapper a.active-filter:before,
 .sort {
-    background: #5dc3ac;
+    background: #CD3C3E;
   }
 }
 #searching,
@@ -99,11 +99,11 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
 }
 
 .custom-button a, .WBForgotPasswordFormActions input:hover {
-  color: #5dc3ac;
+  color: #CD3C3E;
 }
 
 span.exclusive-rate {
-  background: #7487dd;
+  background: #3677BE;
   color: #fff;
 }
 
@@ -112,7 +112,7 @@ span.exclusive-rate {
 #arnCloseAnchorId:active,
 #arnCloseAnchorId:focus,
 #arnCloseAnchorId:hover {
-    color: #5dc3ac;
+    color: #CD3C3E;
   }
 }
 @media screen and (max-width: 800px) {
@@ -138,11 +138,11 @@ span.exclusive-rate {
 .receiptLink,
 .returnResultsInfo a,
 .supportInfo a, .SinglePropDetail #show-more-or-less {
-  color: #5dc3ac;
+  color: #CD3C3E;
 }
 
 .percentSavings {
-  color: #7487dd;
+  color: #3677BE;
 }
 
 input#theSubmitButton,
@@ -151,16 +151,16 @@ input#theSubmitButton,
 .arn-leaflet-reset-button,
 input#theConfirmationButton,
 a.ArnShowRatesLink, .WBConfirmedBooking .submit {
-  background: #5dc3ac;
+  background: #CD3C3E;
   color: #fff;
-  border: 1px solid #5dc3ac;
+  border: 1px solid #CD3C3E;
 }
 
 .CheckRates input.submit,
 .CheckRates input.submit,
 .CheckRates input.submit,
 #lightbox, #lightbox .dialog-button-ok input:hover {
-  background: #5dc3ac;
+  background: #CD3C3E;
   color: #fff;
 }
 
@@ -184,50 +184,50 @@ input#theConfirmationButton:focus,
 input#theConfirmationButton:active,
 a.ArnShowRatesLink:hover, .WBConfirmedBooking .submit:hover, .GroupHoldForm .bookRoomButton:hover {
   background: #fff;
-  color: #5dc3ac;
-  border: 1px solid #5dc3ac;
+  color: #CD3C3E;
+  border: 1px solid #CD3C3E;
 }
 
 .CheckRates input.submit:hover,
 .CheckRates input.submit:focus,
 .CheckRates input.submit:active {
   background: #fff;
-  color: #5dc3ac;
+  color: #CD3C3E;
 }
 
 .SinglePropDetail #moreRatesLink, #lightbox .dialog-button-ok input {
-  color: #5dc3ac;
-  border-color: #5dc3ac;
+  color: #CD3C3E;
+  border-color: #CD3C3E;
 }
 
 .SinglePropDetail #moreRatesLink:hover {
-  background-color: #5dc3ac;
+  background-color: #CD3C3E;
 }
 
 @media screen and (max-width: 800px) {
   #theBookingPage legend#policies-legend {
-    color: #5dc3ac;
+    color: #CD3C3E;
   }
 }
 header {
-  border-bottom: 3px solid #5dc3ac;
+  border-bottom: 3px solid #CD3C3E;
 }
 
 .arnMapMarker.contracted-pin,
 .arnMapMarker.contracted-pin.highlight {
   border: 1px solid #fff;
-  background: #7487dd;
+  background: #3677BE;
   color: #fff;
 }
 
 .arnMapMarker.contracted-pin:hover {
-  border: 1px solid #7487dd;
+  border: 1px solid #3677BE;
   background: #fff;
-  color: #7487dd;
+  color: #3677BE;
 }
 
 .arnMapMarker.contracted-pin .arnMapMarkerTriangle {
-  border-top-color: #7487dd;
+  border-top-color: #3677BE;
 }
 
 #theOtherSubmitButton,
@@ -237,59 +237,59 @@ header {
 .bookRoom,
 .sort,
 .HoldRoomsForm .submit, #lightbox .WBChangePasswordFormActions .ChangePasswordAction, .custom-button a {
-  border: 1px solid #5dc3ac;
+  border: 1px solid #CD3C3E;
 }
 
 .holdRoom {
-  border: 1px solid #5dc3ac;
+  border: 1px solid #CD3C3E;
 }
 
 @media screen and (max-width: 1105px) {
   #arnCloseAnchorId,
 .sort {
-    border: 1px solid #5dc3ac;
+    border: 1px solid #CD3C3E;
   }
 }
 @media screen and (max-width: 800px) {
   .sort-wrapper a:before {
-    border: 2px solid #5dc3ac;
+    border: 2px solid #CD3C3E;
   }
 }
 .active-page {
-  background: #5dc3ac !important;
+  background: #CD3C3E !important;
   color: #fff !important;
-  border: 1px solid #5dc3ac !important;
+  border: 1px solid #CD3C3E !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day-selected {
-  background-color: #5dc3ac !important;
+  background-color: #CD3C3E !important;
   color: #fff !important;
 }
 
 .yui3-skin-sam .yui3-calendar-day:hover {
-  background-color: #5dc3ac !important;
+  background-color: #CD3C3E !important;
 }
 
 .yui3-skin-sam .yui3-calendar-content {
-  border-color: #5dc3ac !important;
+  border-color: #CD3C3E !important;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarker {
-  background: #5dc3ac;
+  background: #CD3C3E;
   border-color: #fff;
   color: #fff;
 }
 
 .MemberAuthenticated .SearchHotels .arnMapMarkerTriangle {
-  border-top-color: #5dc3ac;
+  border-top-color: #CD3C3E;
 }
 
 .MemberAuthenticated .arnMapMarker:hover .arnMapMarkerTriangle {
-  border-top-color: #5dc3ac;
+  border-top-color: #CD3C3E;
 }
 
 .contact-float a {
-  background-color: #5dc3ac;
+  background-color: #CD3C3E;
   color: #fff;
 }
 
@@ -303,22 +303,22 @@ header {
 }
 @-webkit-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #5dc3ac;
+    box-shadow: 0 0 0 20px #CD3C3E;
   }
 }
 @-moz-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #5dc3ac;
+    box-shadow: 0 0 0 20px #CD3C3E;
   }
 }
 @-ms-keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #5dc3ac;
+    box-shadow: 0 0 0 20px #CD3C3E;
   }
 }
 @keyframes pulse {
   to {
-    box-shadow: 0 0 0 20px #5dc3ac;
+    box-shadow: 0 0 0 20px #CD3C3E;
   }
 }
 

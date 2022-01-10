@@ -21,6 +21,10 @@ $header_background: #fff;
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
+.lucid-banner .lucid-content span  {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 1800px) {
   .logo img {
     visibility: hidden;
@@ -42,7 +46,7 @@ $header_background: #fff;
 
   header {
     background-image: none;
-    background-image: url(#{$path}/site_configs/#{$site_name}/img/white_header.png);
+    // background-image: url(#{$path}/site_configs/#{$site_name}/img/white_header.png);
     height: auto;
   }
 } 

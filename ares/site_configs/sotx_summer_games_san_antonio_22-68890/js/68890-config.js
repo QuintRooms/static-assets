@@ -8,7 +8,7 @@ export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: '',
+        affiliate_id: 14851,
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
@@ -16,8 +16,8 @@ export default function siteConfig() {
         use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
-            event_id: '',
-            event_name: '',
+            event_id: '51368',
+            event_name: '2022 Special Olympics of Texas',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -45,7 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'http://www..com/',
+            logo_outbound_url: 'https://www.sotx.org/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',

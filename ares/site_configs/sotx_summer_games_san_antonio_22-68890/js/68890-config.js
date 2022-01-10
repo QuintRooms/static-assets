@@ -8,15 +8,16 @@ export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: 14851,
+        affiliate_id: '',
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+        use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: '2022 Special Olympics of Texas',
+            event_name: '',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -43,8 +44,8 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo2.png`,
-            logo_outbound_url: 'https://www.sotx.org/',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            logo_outbound_url: 'http://www..com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
@@ -76,8 +77,11 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
+        has_group_booking_banner: false,
+        group_booking_form_url: '',
         has_landing_page: false,
-        hide_search_on_landing_page: false,
+        has_custom_emails: false,
+        hide_search_on_landing_page: true,
         landing_page_events: [
             {
                 name: '',

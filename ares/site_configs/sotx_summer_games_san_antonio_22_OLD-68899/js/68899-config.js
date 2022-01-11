@@ -1,22 +1,22 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 70018;
-const directory_name = `forecastle_22-${site_id}`;
+const site_id = 68890;
+const directory_name = `sotx_summer_games_san_antonio_22-${site_id}`;
 
 export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: '16067',
-        master_id: 1816,
+        affiliate_id: 14851,
+        master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'Forecastle Fest 2022',
+            event_name: '2022 Special Olympics of Texas',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -43,9 +43,8 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
-            logo_outbound_url: 'https://www.forecastlefest.com/',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo2.png`,
+            logo_outbound_url: 'https://www.sotx.org/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
@@ -77,10 +76,8 @@ export default function siteConfig() {
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
-        has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Forecastle',
         has_landing_page: false,
-        hide_search_on_landing_page: true,
+        hide_search_on_landing_page: false,
         landing_page_events: [
             {
                 name: '',

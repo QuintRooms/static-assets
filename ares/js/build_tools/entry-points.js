@@ -37,6 +37,7 @@ module.exports = () => {
             // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
+            // 'forecastle_22-70018': './src/70018.js', // forecastle 22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_hbcu_classic_21-62682': './src/62682.js', // Hall Of Fame HBCU Classic
@@ -58,6 +59,8 @@ module.exports = () => {
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
+            // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
+            // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'resbeat-60831': './src/60831.js', // Resbeat
@@ -65,12 +68,15 @@ module.exports = () => {
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
+            // 'project_glow_22-76307': './src/76307.js', // project glow_22
             // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
             // 'sea_hear_now_22-71759': './src/71759.js', // sea hear_now_22
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
             // 'sial_canada_22-75294': './src/75294.js', // sea hear_now_22
             // 'socal_bike_fest_21-70903': './src/70903.js', // Socal Bike Fest 2021
+            // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
+            // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
@@ -104,6 +110,7 @@ module.exports = () => {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // new sites populate below
+            'project_glow_22-76307': './src/76307.js', // project glow_22
         };
     }
 

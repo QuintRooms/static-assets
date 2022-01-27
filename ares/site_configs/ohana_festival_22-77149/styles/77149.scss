@@ -16,7 +16,7 @@ $site_name: 'ohana_festival_22-77149';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
 // $header_background: #fff;
-$header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
+$header_background: #008773;
 
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
@@ -26,6 +26,14 @@ $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
   background: #fba724;
   border-color: #fba724;
   font-weight: bold;
+}
+
+.lucid-banner {
+  background-color: #fba724;
+}
+
+.lucid-banner .lucid-button a {
+  color: #fba724;
 }
 
 

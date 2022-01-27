@@ -1,17 +1,17 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #fff;
+$header_background: #F5C0C0;
 $logo_flex_position: center;
 $logo_max_width: 400px;
 $background_color: #fff;
-$primary_color: #07425c;
-$secondary_color: #1e837d;
+$primary_color: #516BEB;
+$secondary_color: #516BEB;
 $primary_text_color: #fff;
-$secondary_text_color: #1e837d;
-$border_color: #1e837d;
+$secondary_text_color: #516BEB;
+$border_color: #FF79CD;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #1e837d;
-$button_hover_border_color: #1e837d;
+$button_hover_text_color: #FF79CD;
+$button_hover_border_color: #FF79CD;
 $google_font_name: 'Montserrat';
 $site_name: 'sueno_22-71766';
 $path: set-path($env);
@@ -21,12 +21,20 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
 .ArnRateButton .ArnShowRatesLink  {
-  background: #1e837d;
+  background: #FF79CD;
   color: #fff;
-  border-color: #1e837d;
+  border-color: #FF79CD;
   &:hover{
-    border-color: #1e837d;
+    border-color: #FF79CD;
     background: #fff;
-    color: #1e837d;
+    color: #FF79CD;
   }
+}
+
+.lucid-banner {
+  background-color: #FF79CD;
+}
+
+.lucid-banner .lucid-button a {
+  color: #FF79CD;
 }

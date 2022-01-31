@@ -14,10 +14,10 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-async function addHeaderContent() {
-    await utilities.waitForSelectorInDOM('header');
-    const header = document.querySelector('header');
-    header.insertAdjacentHTML('beforeend', '<span class="event-dates">Feb 18-20, 2022 - Downtown Austin, TX</span>');
-}
+// async function addHeaderContent() {
+//     await utilities.waitForSelectorInDOM('header');
+//     const header = document.querySelector('header');
+//     header.insertAdjacentHTML('beforeend', '<span class="event-dates">Feb 18-20, 2022 - Downtown Austin, TX</span>');
+// }
 
-addHeaderContent();
+// addHeaderContent();

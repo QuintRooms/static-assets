@@ -81,12 +81,12 @@ export default function siteConfig() {
                 end_date: '1/27/2022', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/group-event?id=50694&utm_campaign=Barrett-Jackson%20Scottsdale%202022',
             },
-            // {
-            //     name: '2021 Houston Auction',
-            //     display_date: 'September 16 - 18, 2021',
-            //     end_date: '09/19/2021', // M/D/YYYY
-            //     portal_url: `http://events.${process.env.domain}/group-event?id=48634&utm_campaign=Barrett-Jackson%20Houston%202021`,
-            // },
+            {
+                name: '2022 West Palm Beach Auction',
+                display_date: 'April 06 - 11, 2022',
+                end_date: '04/11/2022', // M/D/YYYY
+                portal_url: `http://events.${process.env.domain}/group-event?id=53142&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202022`,
+            },
         ],
     };
 }

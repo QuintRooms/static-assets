@@ -82,8 +82,8 @@ export default function siteConfig() {
                 portal_url: 'https://events.quintrooms.com/group-event?id=50694&utm_campaign=Barrett-Jackson%20Scottsdale%202022',
             },
             {
-                name: '2022 West Palm Beach Auction',
-                display_date: 'April 07 - 9, 2022',
+                name: '2022 Palm Beach Auction',
+                display_date: 'April 7 - 9, 2022',
                 end_date: '04/11/2022', // M/D/YYYY
                 portal_url: `http://events.${process.env.domain}/group-event?id=53142&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202022`,
             },

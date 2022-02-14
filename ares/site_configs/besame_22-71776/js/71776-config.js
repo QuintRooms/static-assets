@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'Railbird 2022',
+            event_name: 'Besame Festival 2022',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -46,7 +46,7 @@ export default function siteConfig() {
         email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo-black.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png?v2`,
-            logo_outbound_url: 'https://www.railbirdfest.com/',
+            logo_outbound_url: '',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
@@ -79,7 +79,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Railbird',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Besame',
         has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [

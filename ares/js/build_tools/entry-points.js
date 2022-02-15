@@ -9,14 +9,17 @@ module.exports = () => {
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
+            // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23    
             // 'acl_21_production-60310': './src/60310.js', // acl 21_production
             // 'acl_22_production-71762': './src/71762.js', // acl 22_production
             // 'acl_22_attendees-71761': './src/71761.js', // acl 22_attendees
+            // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
+            // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'buku_22-66047': './src/66047.js', // buku 22
@@ -39,6 +42,7 @@ module.exports = () => {
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
+            // 'governors_ball_22-77491': './src/77491.js', // governors ball_22
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_hbcu_classic_21-62682': './src/62682.js', // Hall Of Fame HBCU Classic
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
@@ -49,18 +53,21 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_22-71767': './src/71767.js', // high water_22
-            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
+            'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_22-62635': './src/62635.js', // lolla 22
+            // 'lolla_23-71770': './src/71770.js', // lolla 23
+            // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
             // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
+            // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'resbeat-60831': './src/60831.js', // Resbeat
@@ -102,15 +109,17 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'ares_derek-70011': './src/70011.js', // ares derek
+            // 'ares_derek-70011': './src/70011.js', // ares derek          
+            // 'besame_22-71776': './src/71776.js', // besame 22
+            'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
+            'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            'project_glow_22-76307': './src/76307.js', // project glow_22
         };
     }
 

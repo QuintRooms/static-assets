@@ -1,17 +1,17 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #fff;
+$header_background: #214c45;
 $logo_flex_position: center;
 $logo_max_width: 300px;
 $background_color: #fff;
-$primary_color: #5dc3ac;
-$secondary_color: #7487dd;
+$primary_color: #0087ff;
+$secondary_color: #da0097;
 $primary_text_color: #fff;
-$secondary_text_color: #5dc3ac;
-$border_color: #5dc3ac;
+$secondary_text_color: #0087ff;
+$border_color: #0087ff;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #5dc3ac;
-$button_hover_border_color: #5dc3ac;
+$button_hover_text_color: #0087ff;
+$button_hover_border_color: #0087ff;
 $google_font_name: 'Montserrat';
 $site_name: 'fourleaf_versa_22-73546';
 $path: set-path($env);
@@ -19,3 +19,30 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.logo img {
+    padding: 25px;
+}
+
+// .lucid-banner .lucid-button {
+//   background: #fcb214;
+//   border: 2px solid #000;
+//   &:hover{
+//     background: #fff;
+//     border-width: 2px;
+//     color: #fcb214;
+//     border-color: #fcb214;
+//   }
+// }
+
+#lucid-link {
+  color: #da0097;
+}
+
+.lucid-banner {
+  background: #da0097;
+}
+
+// .lucid-content #desktop {
+//   color: #000;
+// }

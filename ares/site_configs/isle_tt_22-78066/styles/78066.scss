@@ -1,0 +1,71 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #000;
+$logo_flex_position: center;
+$logo_max_width: 200px;
+$background_color: #fff;
+$primary_color: #000;
+$secondary_color: #FFF200;
+$primary_text_color: #fff;
+$secondary_text_color: #000;
+$border_color: #000;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #000;
+$button_hover_border_color: #000;
+$google_font_name: 'Montserrat';
+$site_name: 'isle_tt_22-78066';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg?v2) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+
+.ArnRateButton .ArnShowRatesLink  {
+  border-width: 2px;
+  background: #FFF200;
+  color: #000;
+  border-color: #FFF200;
+  font-weight: bold;
+  &:hover{
+    border-width: 2px;
+    border-color: #000;
+  }
+}
+
+#theOtherSubmitButton {
+  &:hover {
+     border-color: #FFF200;
+  }
+}
+
+.arn-leaflet-reset-button {
+    border-color: #000;
+    &:hover {
+     border-color: #FFF200;
+  }
+}
+
+.lucid-banner .lucid-button {
+  background: #FFF200;
+  border: 2px solid #000;
+  &:hover{
+    background: #fff;
+    border-width: 2px;
+    color: #000;
+    border-color: #000;
+  }
+}
+
+#lucid-link {
+  color: #000;
+  // background: #FFF200;
+}
+
+.lucid-banner {
+  background: #FFF200;
+}
+
+.lucid-content #desktop {
+  color: #000;
+}

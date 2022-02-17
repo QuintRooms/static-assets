@@ -14,7 +14,7 @@ new ChildPortal();
 //Replace No Vacancny text with Room Description text
 const noVacancyTextChange = async () => {
     await utilities.waitForSelectorInDOM('.ArnLimitedAvail');
-    document.querySelector('ArnLimitedAvail').insertAdjacentHTML(
+    document.querySelector('.ArnLimitedAvail').insertAdjacentHTML(
         'afterend',
         `
     <div class="sponsor-container">

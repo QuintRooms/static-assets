@@ -1,5 +1,7 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './78066-config';
+import Utilities from '../../../js/utilities';
+const utilities = new Utilities();
 
 const site_config = new SiteConfig();
 class ChildPortal extends BasePortal {
@@ -29,21 +31,16 @@ const noVacancyTextChange = async () => {
 noVacancyTextChange();
 
 
-//Insert Sponsor Banner
+// Insert Room Availability Text
 // const includeSponsorBanner = async () => {
-//     await utilities.waitForSelectorInDOM('header');
-//     document.querySelector('header').insertAdjacentHTML(
-//         'afterend',
-//         `
+//     await utilities.waitForSelectorInDOM('.logo');
+//     document.querySelector('.logo img').insertAdjacentHTML(
+//     'afterend',
+//     `
 //     <div class="sponsor-container">
 //         <div class='sponsor-text'>
-//             Proudly sponsored by
-//         </div>
-//         <div class='sponsor-text-space'></div>
-//         <div class='sponsor-logo'>
-//             <img src="https://dev-static.hotelsforhope.com/ares/site_configs/isle_tt_22-78066/img/logo-sportsnet.png" alt="Hilton logo">
-//         </div>
-        
+//             *Rooms are only available for 5 or 10 nights starting 2/6/2022, or 5 nights starting 7/6/2022.
+//         </div>        
 //     </div>
 //     `
 //     );

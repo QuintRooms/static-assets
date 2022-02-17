@@ -11,6 +11,24 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
+//Replace No Vacancny text with Room Description text
+const noVacancyTextChange = async () => {
+    await utilities.waitForSelectorInDOM('.ArnLimitedAvail');
+    document.querySelector('ArnLimitedAvail').insertAdjacentHTML(
+        'afterend',
+        `
+    <div class="sponsor-container">
+        <div class='available-options-text'>
+            Rooms are only available for 5 or 10 nights starting 2/6/2022, or 5 nights starting 7/6/2022.
+        </div>
+    </div>
+    `
+    );
+}
+
+noVacancyTextChange();
+
+
 //Insert Sponsor Banner
 // const includeSponsorBanner = async () => {
 //     await utilities.waitForSelectorInDOM('header');

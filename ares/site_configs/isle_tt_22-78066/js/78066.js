@@ -19,7 +19,7 @@ const noVacancyTextChange = async () => {
     document.querySelector('.ArnLimitedAvail').insertAdjacentHTML(
         'afterend',
         `
-    <div class="sponsor-container">
+    <div class="available-options-container">
         <div class='available-options-text'>
             Rooms are only available for 5 or 10 nights starting 2/6/2022, or 5 nights starting 7/6/2022.
         </div>

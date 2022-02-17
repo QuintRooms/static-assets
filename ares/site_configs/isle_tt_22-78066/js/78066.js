@@ -30,6 +30,23 @@ const noVacancyTextChange = async () => {
 
 noVacancyTextChange();
 
+//Replace No Vacancny text with Room Description text
+const minNightText = async () => {
+    await utilities.waitForSelectorInDOM('.ArnPropName');
+    document.querySelector('.ArnPropName').insertAdjacentHTML(
+        'beforeend',
+        `
+    <div class="minimum-nights-container">
+        <div class='minimum-nights-text'>
+            *5 night minimum
+        </div>
+    </div>
+    `
+    );
+}
+
+minNightText();
+
 
 // Insert Room Availability Text
 // const includeSponsorBanner = async () => {

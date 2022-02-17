@@ -21,7 +21,7 @@ const noVacancyTextChange = async () => {
         `
     <div class="available-options-container">
         <div class='available-options-text'>
-            Rooms are only available for 5 or 10 nights starting 2/6/2022,</br> or 5 nights starting 7/6/2022.
+            Rooms are only available for:</br> 5 or 10 nights starting 2/6/2022,</br> or 5 nights starting 7/6/2022.
         </div>
     </div>
     `

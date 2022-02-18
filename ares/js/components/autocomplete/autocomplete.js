@@ -292,9 +292,11 @@ export default class Autocomplete {
         let check_out_value;
         let nights;
         // TODO needs refactor.
+
+        // date formatting for id 52342 (Room Steals), all standard site themes as per ARN config, non F1 affiliates, and non Sports Net Holiday affiliates
         if (
             site === 52342 ||
-            (theme === 'standard' && affiliate !== 16980) ||
+            (theme === 'standard' && affiliate !== 16980 && affiliate !== 17583) ||
             (this.site_config.lodging.event_name === 'F1 United States Grand Prix' && affiliate === 16980 && theme === 'standard') ||
             (this.site_config.lodging.event_name === 'F1 Miami Grand Prix' && affiliate === 16980 && theme === 'standard') ||
             (this.site_config.lodging.event_name === 'F1 Canadian Grand Prix' && affiliate === 16980 && theme === 'standard')
@@ -306,6 +308,7 @@ export default class Autocomplete {
             return {check_in_value, nights};
         }
 
+        // date formatting for mandarin themes
         if (theme === 'mandarin' || theme === 'tw_mandarin') {
             check_in_value = dayjs(date_in, 'YYYY/M/D').format('YYYY/M/D');
             check_out_value = dayjs(date_out, 'YYYY/M/D').format('YYYY/M/D');
@@ -314,6 +317,7 @@ export default class Autocomplete {
             return {check_in_value, nights};
         }
 
+        // euro date format
         check_in_value = dayjs(date_in, 'D/M/YYYY').format('M/D/YYYY');
         check_out_value = dayjs(date_out, 'D/M/YYYY').format('M/D/YYYY');
         nights = dayjs(check_out_value).diff(dayjs(check_in_value), 'days');

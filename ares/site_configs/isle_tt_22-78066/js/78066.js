@@ -1,6 +1,7 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './78066-config';
 import Utilities from '../../../js/utilities';
+
 const utilities = new Utilities();
 
 const site_config = new SiteConfig();
@@ -13,25 +14,25 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-//Replace No Vacancny text with Room Description text
-const noVacancyTextChange = async () => {
+// Replace No Vacancny text with Room Description text
+const no_vacancy_text_change = async () => {
     await utilities.waitForSelectorInDOM('.ArnLimitedAvail');
     document.querySelector('.ArnLimitedAvail').insertAdjacentHTML(
         'afterend',
         `
     <div class="available-options-container">
         <div class='available-options-text'>
-            Rooms are only available for: </br> 5 or 10 nights starting 2/6/2022,</br> or 5 nights starting 7/6/2022.
+            Rooms are only available for: </br> 5 or 10 nights starting 2/6/2022, or 5 nights starting 7/6/2022.
         </div>
     </div>
     `
     );
-}
+};
 
-noVacancyTextChange();
+no_vacancy_text_change();
 
-//Replace No Vacancny text with Room Description text
-const minNightText = async () => {
+// Replace No Vacancny text with Room Description text
+const min_night_text = async () => {
     await utilities.waitForSelectorInDOM('.ArnPropName');
     document.querySelector('.ArnPropName').insertAdjacentHTML(
         'beforeend',
@@ -43,10 +44,9 @@ const minNightText = async () => {
     </div>
     `
     );
-}
+};
 
-minNightText();
-
+min_night_text();
 
 // Insert Room Availability Text
 // const includeSponsorBanner = async () => {
@@ -57,12 +57,10 @@ minNightText();
 //     <div class="sponsor-container">
 //         <div class='sponsor-text'>
 //             *Rooms are only available for 5 or 10 nights starting 2/6/2022, or 5 nights starting 7/6/2022.
-//         </div>        
+//         </div>
 //     </div>
 //     `
 //     );
 // }
 
 // includeSponsorBanner();
-
-

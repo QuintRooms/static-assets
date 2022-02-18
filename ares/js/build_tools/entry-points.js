@@ -9,7 +9,7 @@ module.exports = () => {
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
-            // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23    
+            // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
             // 'acl_21_production-60310': './src/60310.js', // acl 21_production
             // 'acl_22_production-71762': './src/71762.js', // acl 22_production
             // 'acl_22_attendees-71761': './src/71761.js', // acl 22_attendees
@@ -41,6 +41,7 @@ module.exports = () => {
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
+            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'governors_ball_22-77491': './src/77491.js', // governors ball_22
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
@@ -53,9 +54,9 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_22-71767': './src/71767.js', // high water_22
-            'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
+            'isle_tt_22-78066': './src/78066.js', // isle tt_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_22-62635': './src/62635.js', // lolla 22
@@ -109,16 +110,16 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'ares_derek-70011': './src/70011.js', // ares derek          
+            // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'besame_22-71776': './src/71776.js', // besame 22
-            'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
+            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
+            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
         };
     }

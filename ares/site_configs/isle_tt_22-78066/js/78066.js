@@ -9,6 +9,13 @@ class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
         super.init();
+        this.updateSpecialRequestsLabelText();
+    }
+
+    updateSpecialRequestsLabelText() {
+        utilities.waitForTextInDOM('#theSpecialRequestsAjax label', 'Note to Hotel Staff: (optional)').then(() => {
+            document.querySelector('#theSpecialRequestsAjax label').textContent = `Please note any additional guests or special requests here.`;
+        });
     }
 }
 

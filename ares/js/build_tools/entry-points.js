@@ -56,7 +56,7 @@ module.exports = () => {
             // 'high_water_22-71767': './src/71767.js', // high water_22
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
-            'isle_tt_22-78066': './src/78066.js', // isle tt_22
+            // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_22-62635': './src/62635.js', // lolla 22
@@ -121,6 +121,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
+            //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
         };
     }
 

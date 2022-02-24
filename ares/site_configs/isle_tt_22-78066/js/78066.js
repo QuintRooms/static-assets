@@ -55,6 +55,14 @@ const min_night_text = async () => {
 
 min_night_text();
 
+// Replace No Vacancny text with Room Description text
+const additional_notes_text = async () => {
+    await utilities.waitForSelectorInDOM('#theSpecialRequestsAjax');
+    document.querySelector('#theSpecialRequestsAjax').innerText = "Additional guest name or special requests please note here.";
+};
+
+additional_notes_text();
+
 // Insert Room Availability Text
 // const includeSponsorBanner = async () => {
 //     await utilities.waitForSelectorInDOM('.logo');

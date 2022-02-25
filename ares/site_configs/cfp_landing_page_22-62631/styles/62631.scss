@@ -18,7 +18,7 @@ $site_name: 'cfp_landing_page_22-62631';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
 $logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
-$bg-images: url(#{$path}/site_configs/#{$site_name}/img/indy_stadium.jpg), url(#{$path}/site_configs/#{$site_name}/img/2023.png),  url(#{$path}/site_configs/#{$site_name}/img/2024.png);
+$bg-images: url(#{$path}/site_configs/#{$site_name}/img/la_stadium_2023), url(#{$path}/site_configs/#{$site_name}/img/houston_stadium_2024.png),  url(#{$path}/site_configs/#{$site_name}/img/2024.png);
 $header-images: '';
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';

@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 410));
+        n((n.s = 474));
 })([
     function (e, t, n) {
         var r = n(29)('wks'),
@@ -7219,7 +7219,7 @@
                                     a = document.querySelector('input#theCheckIn').value,
                                     s = document.querySelector('input#theCheckOut').value;
                                 return 52342 === n ||
-                                    ('standard' === e && 16980 !== t) ||
+                                    ('standard' === e && 16980 !== t && 17583 !== t) ||
                                     ('F1 United States Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Miami Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Canadian Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e)
@@ -7965,15 +7965,79 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
-        n(411), n(413);
+        n(475), n(477);
     },
     function (e, t, n) {
         'use strict';
         n(73), n(74), n(17), n(37), n(12), n(75), n(76), n(18);
         var r = a(n(105)),
-            o = a(n(412)),
+            o = a(n(476)),
             i = a(n(35));
         function a(e) {
             return e && e.__esModule ? e : {default: e};

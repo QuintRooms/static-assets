@@ -80,20 +80,25 @@
       </mj-column>
       <mj-column width="50%" padding-top="10px">
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Total for Stay:</b> {{currency_symbol}}{{total}}</span>
+          <span><b>Total:</b> \{{currency_symbol}}\{{total}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Tax Amount:</b> {{currency_symbol}}{{tax_amount}}</span>
+          <span><b>Subtotal:</b> \{{currency_symbol}}\{{sub_total}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Deposit Charged:</b> {{currency_symbol}}{{deposit_charged}}</span>
+          <span><b>Tax Amount:</b> \{{currency_symbol}}\{{tax_amount}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Balance Due:</b> {{currency_symbol}}{{balance_due}}</span>
+          <span><b>Deposit Charged:</b> \{{currency_symbol}}\{{deposit_charged}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Rate Per Night:</b><br />  {{room_rates}}</span>
+          <span><b>Balance Due:</b> \{{currency_symbol}}\{{balance_due}}</span>
         </mj-text>
+        <mj-raw>[if:currency_symbol=$]</mj-raw>
+          <mj-text padding-bottom="10px" color="#666">
+            <span><b>Rate Per Night:</b> \{{room_rates}}</span>
+          </mj-text>
+        <mj-raw>[endif]</mj-raw>
       </mj-column>
       <mj-column width="100%" padding-top="20px">
         <mj-divider border-width="4px" border-style="solid" border-color="#00a498" />

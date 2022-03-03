@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 376));
+        n((n.s = 424));
 })([
     function (e, t, n) {
         var r = n(29)('wks'),
@@ -7219,7 +7219,7 @@
                                     i = document.querySelector('input#theCheckIn').value,
                                     s = document.querySelector('input#theCheckOut').value;
                                 return 52342 === n ||
-                                    ('standard' === e && 16980 !== t) ||
+                                    ('standard' === e && 16980 !== t && 17583 !== t) ||
                                     ('F1 United States Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Miami Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Canadian Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e)
@@ -7696,18 +7696,19 @@
     ,
     ,
     ,
+    ,
     function (e, t, n) {
         'use strict';
         var r = n(2),
             o = n(10),
             a = n(13),
-            i = n(380),
+            i = n(428),
             c = n(41),
             s = n(7),
             u = n(63).f,
             l = n(58).f,
             d = n(6).f,
-            p = n(382).trim,
+            p = n(430).trim,
             f = r.Number,
             h = f,
             m = f.prototype,
@@ -8003,16 +8004,63 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
-        n(377), n(385);
+        n(425), n(433);
     },
     function (e, t, n) {
         'use strict';
         n(73), n(74), n(37), n(12), n(75), n(76);
         var r = i(n(105)),
-            o = i(n(378)),
-            a = i(n(379));
+            o = i(n(426)),
+            a = i(n(427));
         function i(e) {
             return e && e.__esModule ? e : {default: e};
         }
@@ -8161,10 +8209,10 @@
     },
     function (e, t, n) {
         'use strict';
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(17), n(12), n(68), n(69), n(50), n(141), n(70), n(18);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(17), n(12), n(68), n(69), n(50), n(142), n(70), n(18);
         var r = i(n(35)),
             o = i(n(48)),
-            a = i(n(384));
+            a = i(n(432));
         function i(e) {
             return e && e.__esModule ? e : {default: e};
         }
@@ -8871,7 +8919,7 @@
     },
     function (e, t, n) {
         var r = n(3),
-            o = n(381).set;
+            o = n(429).set;
         e.exports = function (e, t, n) {
             var a,
                 i = t.constructor;
@@ -8906,7 +8954,7 @@
         var r = n(5),
             o = n(14),
             a = n(7),
-            i = n(383),
+            i = n(431),
             c = '[' + i + ']',
             s = RegExp('^' + c + c + '*'),
             u = RegExp(c + c + '*$'),
@@ -8935,7 +8983,7 @@
                 (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, r.key, r);
             }
         }
-        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(141), n(68), n(69), n(49), n(36), n(12);
+        Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(142), n(68), n(69), n(49), n(36), n(12);
         var a = new ((r = n(35)) && r.__esModule ? r : {default: r}).default(),
             i = (function () {
                 function e(t, n, r, o) {

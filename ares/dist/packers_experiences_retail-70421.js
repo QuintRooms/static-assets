@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 354));
+        n((n.s = 402));
 })([
     function (e, t, n) {
         var r = n(29)('wks'),
@@ -7219,7 +7219,7 @@
                                     a = document.querySelector('input#theCheckIn').value,
                                     s = document.querySelector('input#theCheckOut').value;
                                 return 52342 === n ||
-                                    ('standard' === e && 16980 !== t) ||
+                                    ('standard' === e && 16980 !== t && 17583 !== t) ||
                                     ('F1 United States Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Miami Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Canadian Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e)
@@ -7909,9 +7909,57 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
-        n(355), n(357);
+        n(403), n(405);
     },
     function (e, t, n) {
         'use strict';
@@ -7987,7 +8035,7 @@
                       return e.__proto__ || Object.getPrototypeOf(e);
                   })(e);
         }
-        var f = new (o(n(356)).default)();
+        var f = new (o(n(404)).default)();
         new ((function (e) {
             !(function (e, t) {
                 if ('function' != typeof t && null !== t) throw new TypeError('Super expression must either be null or a function');

@@ -649,7 +649,19 @@
                   
       <div
          style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Total for Stay:</b> {{CurrencySymbol}}{{Total}}</span></div>
+      ><span><b>Total:</b> {{CurrencySymbol}}{{Total}}</span></div>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td
+                   align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
+      ><span><b>Subtotal:</b> {{CurrencySymbol}}{{SubTotal}}</span></div>
     
                 </td>
               </tr>
@@ -689,7 +701,7 @@
     
                 </td>
               </tr>
-            
+            [if:CurrencySymbol=$]
               <tr>
                 <td
                    align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"
@@ -697,11 +709,11 @@
                   
       <div
          style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b style="display: inline-block; padding-bottom: 8px;">Rate Per Night:</b><br> {{RoomRates}}</span></div>
+      ><span><b>Rate Per Night:</b> {{RoomRates}}</span></div>
     
                 </td>
               </tr>
-            
+            [endif]
         </tbody>
       </table>
     

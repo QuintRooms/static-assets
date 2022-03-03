@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 241));
+        n((n.s = 258));
 })([
     function (e, t, n) {
         var r = n(29)('wks'),
@@ -7219,7 +7219,7 @@
                                     a = document.querySelector('input#theCheckIn').value,
                                     c = document.querySelector('input#theCheckOut').value;
                                 return 52342 === n ||
-                                    ('standard' === e && 16980 !== t) ||
+                                    ('standard' === e && 16980 !== t && 17583 !== t) ||
                                     ('F1 United States Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Miami Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                     ('F1 Canadian Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e)
@@ -10380,15 +10380,32 @@
     ,
     ,
     ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
     function (e, t, n) {
         'use strict';
-        n(242), n(244);
+        n(259), n(261);
     },
     function (e, t, n) {
         'use strict';
         n(73), n(74), n(37), n(12), n(75), n(76);
         var r = s(n(105)),
-            i = s(n(243)),
+            i = s(n(260)),
             o = s(n(125)),
             a = s(n(126));
         function s(e) {

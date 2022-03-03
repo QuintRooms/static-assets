@@ -34,23 +34,28 @@
             </mj-text>
         </mj-column>
 
-        <mj-column width="50%">
-            <mj-text color="#666" padding-bottom="10px">
-                    <span><b>Total for Stay:</b> [CurrencySymbol, fallback=][Total,fallback=]</span>
-            </mj-text>
-            <mj-text padding-bottom="10px" color="#666">
-                    <span><b>Tax Amount:</b> [CurrencySymbol, fallback=][TaxAmount,fallback=]</span>
-            </mj-text>
-            <mj-text padding-bottom="10px" color="#666">
-                    <span><b>Deposit Charged:</b> 	[CurrencySymbol, fallback=][DepositCharged,fallback=]</span>
-            </mj-text>
-            <mj-text padding-bottom="10px" color="#666">
-                    <span><b>Balance Due:</b> [CurrencySymbol, fallback=][BalanceDue,fallback=]</span>
-            </mj-text>
-            <mj-text padding-bottom="10px" color="#666">
-                    <span><b>Rate Per Night:</b> [RoomRates,fallback=]</span>
-            </mj-text>
-        </mj-column>
+      <mj-column width="50%" padding-top="10px">
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Total:</b> \{{CurrencySymbol}}\{{Total}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Subtotal:</b> \{{CurrencySymbol}}\{{SubTotal}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Tax Amount:</b> \{{CurrencySymbol}}\{{TaxAmount}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Deposit Charged:</b> \{{CurrencySymbol}}\{{DepositCharged}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Balance Due:</b> \{{CurrencySymbol}}\{{BalanceDue}}</span>
+        </mj-text>
+        <mj-raw>[if:CurrencySymbol=$]</mj-raw>
+          <mj-text padding-bottom="10px" color="#666">
+            <span><b>Rate Per Night:</b> \{{RoomRates}}</span>
+          </mj-text>
+        <mj-raw>[endif]</mj-raw>
+      </mj-column>
 
     </mj-section>
 
@@ -59,5 +64,5 @@
             <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
         </mj-column>
     </mj-section>
-    
+
 </mj-wrapper>

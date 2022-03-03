@@ -80,7 +80,10 @@
       </mj-column>
       <mj-column width="50%" padding-top="10px">
         <mj-text padding-bottom="10px" color="#666">
-          <span><b>Total for Stay:</b> \{{CurrencySymbol}}\{{Total}}</span>
+          <span><b>Total:</b> \{{CurrencySymbol}}\{{Total}}</span>
+        </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>SubTotal:</b> \{{CurrencySymbol}}\{{SubTotal}}</span>
         </mj-text>
         <mj-text padding-bottom="10px" color="#666">
           <span><b>Tax Amount:</b> \{{CurrencySymbol}}\{{TaxAmount}}</span>

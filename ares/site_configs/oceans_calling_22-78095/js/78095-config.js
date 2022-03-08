@@ -43,7 +43,6 @@ export default function siteConfig() {
         show_date_prompt: false,
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-        email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo-black.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png?v2`,
             logo_outbound_url: 'https://www.railbirdfest.com/',
@@ -79,7 +78,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Railbird',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Oceans%20Calling',
         has_landing_page: false,
         hide_search_on_landing_page: true,
         landing_page_events: [

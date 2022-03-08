@@ -111,7 +111,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'ares_derek-70011': './src/70011.js', // ares derek
+            // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
@@ -123,7 +123,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
+            'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
             //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
         };
     }

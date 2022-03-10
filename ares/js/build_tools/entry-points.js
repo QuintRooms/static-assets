@@ -62,13 +62,14 @@ module.exports = () => {
             // 'lolla_22-62635': './src/62635.js', // lolla 22
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
+            'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
             // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
-            'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
+            // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
             // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
@@ -112,9 +113,7 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            // 'besame_22-71776': './src/71776.js', // besame 22
-            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
-            'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
+            'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
         };
 
         // local environment
@@ -123,7 +122,8 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
+            'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
+            // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
             //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
         };
     }

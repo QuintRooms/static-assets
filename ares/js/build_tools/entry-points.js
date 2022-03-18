@@ -41,6 +41,7 @@ module.exports = () => {
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
+            'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'governors_ball_22-77491': './src/77491.js', // governors ball_22
@@ -62,7 +63,7 @@ module.exports = () => {
             // 'lolla_22-62635': './src/62635.js', // lolla 22
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
-            'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
+            // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
@@ -113,7 +114,8 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
+            // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
+            'format_festival_22-68383': './src/68383.js', // format festival_22
         };
 
         // local environment
@@ -122,7 +124,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
+            'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
             //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
         };

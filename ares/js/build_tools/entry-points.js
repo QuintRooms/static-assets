@@ -22,11 +22,12 @@ module.exports = () => {
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
+            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'buku_22-66047': './src/66047.js', // buku 22
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
-            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
@@ -41,7 +42,7 @@ module.exports = () => {
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
-            'format_festival_22-68383': './src/68383.js', // format festival_22
+            // 'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'governors_ball_22-77491': './src/77491.js', // governors ball_22
@@ -102,6 +103,7 @@ module.exports = () => {
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
             // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
+           
         };
 
         // develop environment
@@ -115,7 +117,8 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
-            'format_festival_22-68383': './src/68383.js', // format festival_22
+            // 'format_festival_22-68383': './src/68383.js', // format festival_22
+            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
         };
 
         // local environment
@@ -124,7 +127,8 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            'format_festival_22-68383': './src/68383.js', // format festival_22
+            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
+            // 'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
             //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
         };

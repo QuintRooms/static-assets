@@ -102,6 +102,7 @@ module.exports = () => {
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
             // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
+            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
         };
 
         // develop environment
@@ -115,7 +116,8 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
-            'format_festival_22-68383': './src/68383.js', // format festival_22
+            // 'format_festival_22-68383': './src/68383.js', // format festival_22
+            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
         };
 
         // local environment
@@ -124,7 +126,8 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            'format_festival_22-68383': './src/68383.js', // format festival_22
+            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
+            // 'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
             //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
         };

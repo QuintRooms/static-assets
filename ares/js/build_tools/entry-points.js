@@ -22,7 +22,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
-            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
+            // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'buku_22-66047': './src/66047.js', // buku 22
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
@@ -72,7 +72,7 @@ module.exports = () => {
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
             // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
-            // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'resbeat-60831': './src/60831.js', // Resbeat
@@ -118,7 +118,8 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
             // 'format_festival_22-68383': './src/68383.js', // format festival_22
-            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
+            // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
+            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
         };
 
         // local environment
@@ -127,10 +128,11 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
+            // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
             //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
+            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
         };
     }
 

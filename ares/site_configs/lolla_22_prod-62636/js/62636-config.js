@@ -3,7 +3,7 @@ import Path from '../../../js/build_tools/path';
 const env_path = new Path();
 
 const site_id = 62636;
-const directory_name = `lolla_22_prod_prod-${site_id}`;
+const directory_name = `lolla_22_prod-${site_id}`;
 
 export default function siteConfig() {
     return {

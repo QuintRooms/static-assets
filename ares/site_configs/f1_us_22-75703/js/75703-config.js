@@ -46,7 +46,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.jpg`,
+            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.formula1.com/en/racing/2021/United_States.html',
         },
         map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,

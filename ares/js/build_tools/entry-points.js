@@ -16,6 +16,7 @@ module.exports = () => {
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
             // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
@@ -28,6 +29,7 @@ module.exports = () => {
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
@@ -37,12 +39,14 @@ module.exports = () => {
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1_turkey_21-70474': './src/70474.js', // Formula 1 Turkish Grand Prix 2021
+            // 'f1_us_22-75703': './src/75703.js', // f1 us_22
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
             // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
             // 'format_festival_22-68383': './src/68383.js', // format festival_22
+            // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'governors_ball_22-77491': './src/77491.js', // governors ball_22
@@ -62,6 +66,7 @@ module.exports = () => {
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_22-62635': './src/62635.js', // lolla 22
+            // 'lolla_22_prod-62636': './src/62636.js', // lolla 22_prod
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
@@ -72,7 +77,7 @@ module.exports = () => {
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
             // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
-            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'resbeat-60831': './src/60831.js', // Resbeat
@@ -96,6 +101,8 @@ module.exports = () => {
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'tortuga_22-74015': './src/74015.js', // tortuga 22
+            // 'tortuga_23-77405': './src/77405.js', // tortuga 23
+            // 'tortuga_23_public-77406': './src/77406.js', // tortuga 23_public
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
@@ -116,23 +123,17 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
-            // 'format_festival_22-68383': './src/68383.js', // format festival_22
-            // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
-            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
+            'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
-            // 'ares_derek-70011': './src/70011.js', // ares derek
-            // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // new sites populate below
-            // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
-            // 'format_festival_22-68383': './src/68383.js', // format festival_22
-            // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
-            //  'isle_tt_22-78066': './src/78066.js', // isle tt_22
-            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
+            // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
+            // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }
 

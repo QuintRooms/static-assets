@@ -1,8 +1,8 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 58196;
-const directory_name = `bj_landing_page-${site_id}`;
+const site_id = 73525;
+const directory_name = `bj_las_vegas_22-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -10,7 +10,7 @@ export default function siteConfig() {
         directory_name,
         affiliate_id: 16659,
         master_id: 920,
-        site_type: 'event-landing-page',
+        site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         currency: 'USD',
@@ -18,9 +18,11 @@ export default function siteConfig() {
         map_size: '12',
         radius: '50',
         lodging: {
-            event_id: 42991,
-            event_name: 'Barrett Jackson Event Landing Page',
+            event_id: '',
+            event_name: 'Barrett-Jackson Las Vegas 2022',
             event_dates: '',
+            redirect_date: '',
+            redirect_url: '',
             is_lrg: false,
         },
         cug: {
@@ -47,15 +49,14 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.barrett-jackson.com/',
         },
-
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
-                is_active: false,
-                image_url: '',
-                outbound_url: '',
+                is_active: true,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/left_banner.jpg?v1`,
+                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=06/16/2021&nights=5&siteid=64190',
             },
             between_property_ad: {
                 is_active: false,
@@ -68,31 +69,12 @@ export default function siteConfig() {
                 outbound_url: '',
             },
         },
+        // new options
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
-        has_landing_page: true,
-        hide_search_on_landing_page: true,
-        landing_page_events: [
-            {
-                name: '2022 Scottsdale Auction',
-                display_date: 'January 22 - 30, 2022',
-                end_date: '1/27/2022', // M/D/YYYY
-                portal_url: 'https://events.quintrooms.com/group-event?id=50694&utm_campaign=Barrett-Jackson%20Scottsdale%202022',
-            },
-            {
-                name: '2022 Palm Beach Auction',
-                display_date: 'April 7 - 9, 2022',
-                end_date: '04/11/2022', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=53142&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202022`,
-            },
-            {
-                name: '2022 Las Vegas Auction',
-                display_date: 'June 29 - July 3, 2022',
-                end_date: '07/4/2022', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=57298&utm_campaign=Barrett-Jackson%20Las%20Vegas%202022`,
-            },
-        ],
+        has_group_booking_banner: true,
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Las%20Vegas',
     };
 }

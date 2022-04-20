@@ -76,21 +76,9 @@ export default function siteConfig() {
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: '2022 Scottsdale Auction',
-                display_date: 'January 22 - 30, 2022',
-                end_date: '1/27/2022', // M/D/YYYY
-                portal_url: 'https://events.quintrooms.com/group-event?id=50694&utm_campaign=Barrett-Jackson%20Scottsdale%202022',
-            },
-            {
-                name: '2022 Palm Beach Auction',
-                display_date: 'April 7 - 9, 2022',
-                end_date: '04/11/2022', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=53142&utm_campaign=Barrett-Jackson%20West%20Palm%20Beach%202022`,
-            },
-            {
                 name: '2022 Las Vegas Auction',
                 display_date: 'June 29 - July 3, 2022',
-                end_date: '07/4/2022', // M/D/YYYY
+                end_date: '07/04/2022', // M/D/YYYY
                 portal_url: `http://events.${process.env.domain}/group-event?id=57298&utm_campaign=Barrett-Jackson%20Las%20Vegas%202022`,
             },
         ],

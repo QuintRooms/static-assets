@@ -1,5 +1,7 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './73525-config';
+import Utilities from '../../../js/utilities';
+const utilities = new Utilities();
 
 const site_config = new SiteConfig();
 

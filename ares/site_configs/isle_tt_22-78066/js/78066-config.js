@@ -31,7 +31,7 @@ export default function siteConfig() {
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rate',
-        host_hotel_text: 'Free Ferry!',
+        host_hotel_text: 'Includes Ferry!',
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'D/M/YYYY',

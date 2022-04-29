@@ -16,7 +16,7 @@ module.exports = () => {
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
-            'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
+            // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
             // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
@@ -124,7 +124,7 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
-            'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
+            // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
         };
 
         // local environment
@@ -132,7 +132,6 @@ module.exports = () => {
         entry_points = {
             // new sites populate below
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
-            // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

@@ -93,6 +93,7 @@ module.exports = () => {
             // 'sial_canada_22-75294': './src/75294.js', // sea hear_now_22
             // 'socal_bike_fest_21-70903': './src/70903.js', // Socal Bike Fest 2021
             // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
+            // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
@@ -125,12 +126,14 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
             // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
+            // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

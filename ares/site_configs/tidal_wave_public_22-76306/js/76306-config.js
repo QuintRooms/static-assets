@@ -54,7 +54,7 @@ export default function siteConfig() {
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
-                is_active: false,
+                is_active: true,
                 image_url: `${env_path.path}/site_configs/${directory_name}/img/ad.png`,
                 outbound_url: 'http://rocktheocean.com/',
             },

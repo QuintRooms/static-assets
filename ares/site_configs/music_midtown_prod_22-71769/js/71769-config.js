@@ -31,7 +31,7 @@ export default function siteConfig() {
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rate',
-        host_hotel_text: 'Host Hotel',
+        host_hotel_text: 'Sponsor',
         partner_hotel_text: 'Partner Hotel',
         sponsor_hotel_text: 'Sponsor Hotel',
         show_tax_inclusive_rates: false,

@@ -39,21 +39,21 @@ const no_vacancy_text_change = async () => {
 no_vacancy_text_change();
 
 // Replace No Vacancny text with Room Description text
-const min_night_text = async () => {
-    await utilities.waitForSelectorInDOM('.ArnPropName');
-    document.querySelector('.ArnPropName').insertAdjacentHTML(
-        'beforeend',
-        `
-    <div class="minimum-nights-container">
-        <div class='minimum-nights-text'>
-            *5 night minimum
-        </div>
-    </div>
-    `
-    );
-};
+// const min_night_text = async () => {
+//     await utilities.waitForSelectorInDOM('.ArnPropName');
+//     document.querySelector('.ArnPropName').insertAdjacentHTML(
+//         'beforeend',
+//         `
+//     <div class="minimum-nights-container">
+//         <div class='minimum-nights-text'>
+//             *5 night minimum
+//         </div>
+//     </div>
+//     `
+//     );
+// };
 
-min_night_text();
+// min_night_text();
 
 // Replace No Vacancny text with Room Description text
 const additional_notes_text = async () => {

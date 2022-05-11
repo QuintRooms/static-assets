@@ -15,18 +15,18 @@ class ChildPortal extends BasePortal {
 new ChildPortal();
 
 //Insert Sponsor Banner
-const includeSponsorBanner = async () => {
-    await utilities.waitForSelectorInDOM('header');
-    document.querySelector('header').insertAdjacentHTML(
-        'afterend',
-        `
-    <div class="sponsor-container">
-        <div class='sponsor-text'>
-            Resorts World is the Host Hotel for Barrett Jackson and home of the new Tesla Tunnel. Exclusive rates for Resorts World coming soon!
-        </div>        
-    </div>
-    `
-    );
-}
+// const includeSponsorBanner = async () => {
+//     await utilities.waitForSelectorInDOM('header');
+//     document.querySelector('header').insertAdjacentHTML(
+//         'afterend',
+//         `
+//     <div class="sponsor-container">
+//         <div class='sponsor-text'>
+//             Resorts World is the Host Hotel for Barrett Jackson and home of the new Tesla Tunnel. Exclusive rates for Resorts World coming soon!
+//         </div>        
+//     </div>
+//     `
+//     );
+// }
 
-includeSponsorBanner();
+// includeSponsorBanner();

@@ -57,6 +57,9 @@ module.exports = () => {
             // 'hof_marathon_21-60871': './src/60871.js', // Hall Of Fame Marathon 2021
             // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
             // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            // 'hof_enshrinement_attendees_22-74241': './src/74241.js', // hof enshrinement_attendees_22
+            // 'hof_enshrinement_friends_fam_22-74242': './src/74242.js', // hof enshrinement_friends_fam_22
+            // 'hof_enshrinement_internal_22-74242-74240': './src/74240.js', // hof enshrinement_internal_22-74242
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_22-71767': './src/71767.js', // high water_22
@@ -64,6 +67,7 @@ module.exports = () => {
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
+            'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_22-62635': './src/62635.js', // lolla 22
             // 'lolla_22_prod-62636': './src/62636.js', // lolla 22_prod
@@ -111,7 +115,6 @@ module.exports = () => {
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
             // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
-           
         };
 
         // develop environment
@@ -124,15 +127,18 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
-            // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
-            // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
+            // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
+            // 'hof_enshrinement_internal_22-74242-74240': './src/74240.js', // hof enshrinement_internal_22-74242
+            'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
+            // 'hof_enshrinement_internal_22-74242-74240': './src/74240.js', // hof enshrinement_internal_22-74242
+            // 'hof_enshrinement_friends_fam_22-74242': './src/74242.js', // hof enshrinement_friends_fam_22
             // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
             // 'ares_derek-70011': './src/70011.js', // ares derek

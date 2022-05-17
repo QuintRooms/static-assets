@@ -2,7 +2,7 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 const site_id = 71773;
-const directory_name = `railbird_23_prod_prod-${site_id}`;
+const directory_name = `railbird_production_23-${site_id}`;
 
 export default function siteConfig() {
     return {

@@ -13,7 +13,7 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #84754e;
 $button_hover_border_color: #84754e;
 $google_font_name: 'Montserrat';
-$site_name: 'railbird_23_prod-71773';
+$site_name: 'railbird_production_23-71773';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg?v2) no-repeat center center / cover;
 

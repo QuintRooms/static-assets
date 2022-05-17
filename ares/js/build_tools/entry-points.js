@@ -67,7 +67,7 @@ module.exports = () => {
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
-            'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
+            // 'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
             // 'lolla_22-62635': './src/62635.js', // lolla 22
             // 'lolla_22_prod-62636': './src/62636.js', // lolla 22_prod
@@ -94,10 +94,12 @@ module.exports = () => {
             // 'sea_hear_now_22-71759': './src/71759.js', // sea hear_now_22
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
+            // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'sial_canada_22-75294': './src/75294.js', // sea hear_now_22
             // 'socal_bike_fest_21-70903': './src/70903.js', // Socal Bike Fest 2021
-            // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
             // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
+            'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
+            // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
@@ -129,18 +131,17 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
             // 'hof_enshrinement_internal_22-74242-74240': './src/74240.js', // hof enshrinement_internal_22-74242
-            'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
+            // 'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
+            // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
+            'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
-            // 'hof_enshrinement_internal_22-74242-74240': './src/74240.js', // hof enshrinement_internal_22-74242
-            // 'hof_enshrinement_friends_fam_22-74242': './src/74242.js', // hof enshrinement_friends_fam_22
-            // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
-            // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
+            'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
+            // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

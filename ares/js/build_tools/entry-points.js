@@ -84,7 +84,8 @@ module.exports = () => {
             // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
-            'railbird_23-71772': './src/71772.js', // railbird 23
+            // 'railbird_23-71772': './src/71772.js', // railbird 23
+            'railbird_23_prod-71773': './src/71773.js', // railbird 23_prod
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
@@ -135,13 +136,14 @@ module.exports = () => {
             // 'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
-            'railbird_23-71772': './src/71772.js', // railbird 23
+            'railbird_23_prod-71773': './src/71773.js', // railbird 23_prod
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'railbird_23_prod-71773': './src/71773.js', // railbird 23_prod
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'ares_derek-70011': './src/70011.js', // ares derek

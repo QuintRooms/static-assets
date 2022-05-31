@@ -13,17 +13,17 @@ class ChildPortal extends BasePortal {
         super.init();
     }
 
-    init() {
-        this.prepopulateSearchDate();
-    }
+    // init() {
+    //     this.prepopulateSearchDate();
+    // }
 
-    async prepopulateSearchDate() {
+    // async prepopulateSearchDate() {
 
-        await utilities.waitForSelectorInDOM('#theQuickCheckIn');
+    //     await utilities.waitForSelectorInDOM('#theQuickCheckIn');
 
-        const date_prompt_image=document.querySelectorAll('#theDatePrompt #datePromptContainer img');
-        date_prompt_image[0].src = `${env_path.path}/site_configs/f1_dutch_promoters_22-75705/img/general-email-logo.jpg`; 
-    }
+    //     const date_prompt_image=document.querySelectorAll('#theDatePrompt #datePromptContainer img');
+    //     date_prompt_image[0].src = `${env_path.path}/site_configs/f1_dutch_promoters_22-75705/img/general-email-logo.jpg`; 
+    // }
 }
 
 f1Styles(site_config.site_id, site_config.lodging.event_name, 'Circuit Zandvoort', '#333');

@@ -35,5 +35,5 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/cl
 }
 
 #theDatePrompt #datePromptContainer img {
-    background: url(#{$path}/site_configs/#{$site_name}/img/email-logo.jpg) no-repeat center center;
+    background: #000;
 }

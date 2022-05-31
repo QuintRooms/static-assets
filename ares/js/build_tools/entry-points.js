@@ -33,7 +33,7 @@ module.exports = () => {
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
-            'f1_dutch_22_promoter-75705': './src/75705.js', // f1 dutch_22_promoter
+            'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
@@ -131,14 +131,14 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'f1_dutch_22_promoter-75705': './src/75705.js', // f1 dutch_22_promoter
+            'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'f1_dutch_22_promoter-75705': './src/75705.js', // f1 dutch_22_promoter
+            'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23

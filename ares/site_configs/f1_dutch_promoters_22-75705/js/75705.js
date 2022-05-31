@@ -18,7 +18,6 @@ class ChildPortal extends BasePortal {
     }
 
     async prepopulateSearchDate() {
-        if ( !document.querySelector('.SearchHotels')) return;
 
         await utilities.waitForSelectorInDOM('#theQuickCheckIn');
 

@@ -3,7 +3,7 @@ import Path from '../../../js/build_tools/path';
 const env_path = new Path();
 
 const site_id = 75705;
-const directory_name = `f1_dutch_22_promoter_promoter-${site_id}`;
+const directory_name = `f1_dutch_promoters_22-${site_id}`;
 
 export default function siteConfig() {
     return {

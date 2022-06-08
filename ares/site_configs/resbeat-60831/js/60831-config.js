@@ -12,7 +12,7 @@ export default function siteConfig() {
         affiliate_id: 16827,
         master_id: 2143,
         site_type: 'cug',
-        // use_google_autocomplete: true,
+        use_google_autocomplete: true,
         algolia_app_id: 'pl58QCMXHS4C',
         algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
         currency: 'USD',

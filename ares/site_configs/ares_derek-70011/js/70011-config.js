@@ -11,9 +11,9 @@ export default function siteConfig() {
         affiliate_id: '',
         master_id: 920,
         site_type: 'lodging',
+        use_google_autocomplete: true,
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',

@@ -148,12 +148,13 @@
     "79448": "sotx_equestrain_22-79448",
     "74242": "hof_enshrinement_friends_fam_22-74242",
     "74241": "hof_enshrinement_attendees_22-74241",
-    "74240": "hof_enshrinement_internal_22-74242-74240",
     "78856": "liv_golf_pumpkin_ridge_22-78856",
     "78097": "shaky_knees_23-78097",
     "79449": "sotx_fall_classic_22-79449",
     "71772": "railbird_23-71772"
 ,
-    "71773": "railbird_production_23-71773",
-    "75705": "f1_dutch_promoters_22-75705"
+    "71773": "railbird_production_23-71773"
+,
+    "75705": "f1_dutch_promoters_22-75705",
+    "74240": "hof_enshrinement_internal_22-74240"
 }

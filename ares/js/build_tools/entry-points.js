@@ -30,10 +30,12 @@ module.exports = () => {
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
+            // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
+            'farm_aid_22-78568': './src/78568.js', // farm aid_22
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
-            'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
+            // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
             // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
@@ -60,7 +62,7 @@ module.exports = () => {
             // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
             // 'hof_enshrinement_attendees_22-74241': './src/74241.js', // hof enshrinement_attendees_22
             // 'hof_enshrinement_friends_fam_22-74242': './src/74242.js', // hof enshrinement_friends_fam_22
-            // 'hof_enshrinement_internal_22-74242-74240': './src/74240.js', // hof enshrinement_internal_22-74242
+            // 'hof_enshrinement_internal_22-74240': './src/74240.js', // hof enshrinement_internal_22
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_22-71767': './src/71767.js', // high water_22
@@ -131,14 +133,16 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
+            // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
+            // 'hof_enshrinement_internal_22-74240': './src/74240.js', // hof enshrinement_internal_22
+            'farm_aid_22-78568': './src/78568.js', // farm aid_22
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
-            // new sites populate below
-            'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
+            // new sites populate below            
+            // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23

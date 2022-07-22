@@ -35,6 +35,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
+            'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22 
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
             // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
@@ -136,13 +137,15 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22 
-            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23    
+            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
+            'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22      
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
-            // new sites populate below        
+            // new sites populate below
+            'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22        
             // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22

@@ -17,8 +17,8 @@ module.exports = () => {
             // 'acl_22_attendees-71761': './src/71761.js', // acl 22_attendees
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
-            'bj_houston_22-73526': './src/73526.js', // bj houston_22
-            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_houston_22-73526': './src/73526.js', // bj houston_22
+            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
             // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
@@ -137,22 +137,12 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'farm_aid_22-78568': './src/78568.js', // farm aid_22 
-            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
-            // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22 
-            'bj_houston_22-73526': './src/73526.js', // bj houston_22     
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
-            // new sites populate below
-            'bj_houston_22-73526': './src/73526.js', // bj houston_22
-            // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22        
-            // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
-            // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
-            // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
-            // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
+            // new sites populate below            
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

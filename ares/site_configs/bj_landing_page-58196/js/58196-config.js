@@ -76,10 +76,10 @@ export default function siteConfig() {
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: '2022 Las Vegas Auction',
-                display_date: 'June 30 - July 2, 2022',
-                end_date: '07/04/2022', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=57298&utm_campaign=Barrett-Jackson%20Las%20Vegas%202022`,
+                name: '2022 Houston Auction',
+                display_date: 'October 20 - October 22, 2022',
+                end_date: '10/23/2022', // M/D/YYYY
+                portal_url: `http://events.${process.env.domain}/group-event?id=59081&utm_campaign=Barrett-Jackson%20Houston%202022`,
             },
         ],
     };

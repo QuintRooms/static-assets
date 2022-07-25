@@ -7,9 +7,9 @@ module.exports = () => {
             // 'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
             // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
-            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23    
+            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
-            // 'austin_food_and_wine_22-71764': './src/71764.js', // austin food_and_wine_22    
+            // 'austin_food_and_wine_22-71764': './src/71764.js', // austin food_and_wine_22
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
             // 'acl_21_production-60310': './src/60310.js', // acl 21_production
@@ -18,7 +18,7 @@ module.exports = () => {
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_houston_22-73526': './src/73526.js', // bj houston_22
-            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
             // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
@@ -31,6 +31,7 @@ module.exports = () => {
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
+            'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
@@ -137,6 +138,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
         };
 
         // local environment

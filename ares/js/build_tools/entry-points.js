@@ -31,7 +31,7 @@ module.exports = () => {
             // 'cfp_21-60797': './src/60797.js', // College football Playoff Championship 2021
             // 'cfp_indianapolis_22-62632': './src/62632.js', // College football Playoff Championship Indianapolis 2022
             // 'cfp_indianapolis_internal_22-67666': './src/67666.js', // cfp indianapolis_internal_22
-            'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
+            // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
@@ -113,6 +113,7 @@ module.exports = () => {
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
+            'texas_book_festival_22-69574': './src/69574.js', // texas book_festival_22 
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
@@ -138,13 +139,14 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
+            'texas_book_festival_22-69574': './src/69574.js', // texas book_festival_22 
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
-            // new sites populate below            
+            // new sites populate below
+            'texas_book_festival_22-69574': './src/69574.js', // texas book_festival_22            
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

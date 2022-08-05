@@ -39,12 +39,13 @@ module.exports = () => {
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
             // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22 
-            'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
             // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
+            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
@@ -141,16 +142,16 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'f1_miami_23-46977': './src/46977.js', // f1 miami_23
-            'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
-            'f1_miami_23-46977': './src/46977.js', // f1 miami_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

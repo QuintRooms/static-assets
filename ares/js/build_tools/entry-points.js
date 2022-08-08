@@ -90,7 +90,7 @@ module.exports = () => {
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
             // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
-            // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'railbird_23-71772': './src/71772.js', // railbird 23
@@ -140,6 +140,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
         };
 
         // local environment

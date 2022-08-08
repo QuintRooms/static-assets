@@ -13,8 +13,6 @@ module.exports = () => {
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
             // 'acl_21_production-60310': './src/60310.js', // acl 21_production
-            // 'acl_22_production-71762': './src/71762.js', // acl 22_production
-            // 'acl_22_attendees-71761': './src/71761.js', // acl 22_attendees
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_houston_22-73526': './src/73526.js', // bj houston_22
@@ -45,7 +43,7 @@ module.exports = () => {
             // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
-            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
@@ -142,8 +140,6 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
-            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
         };
 
         // local environment

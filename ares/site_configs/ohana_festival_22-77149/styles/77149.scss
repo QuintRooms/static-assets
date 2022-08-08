@@ -23,12 +23,14 @@ $header_background: #008773;
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
 header {
+  flex-direction: column;
   border-bottom: none;
 }
 
-.logo img {
-  padding-bottom: 5px;
-}
+// .logo img {
+//   padding: 15px;
+//   padding-bottom: 5px;
+// }
 
 .ArnRateButton .ArnShowRatesLink  {
   background: #fba724;

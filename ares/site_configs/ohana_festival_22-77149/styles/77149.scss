@@ -22,6 +22,14 @@ $header_background: #008773;
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
+header {
+  border-bottom: none;
+}
+
+.logo img {
+  padding-bottom: 5px;
+}
+
 .ArnRateButton .ArnShowRatesLink  {
   background: #fba724;
   border-color: #fba724;
@@ -46,16 +54,16 @@ $header_background: #008773;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #fba724;
+  background-color: #008773;
   padding: 2px;
 }
 
 .sponsor-logo img {
-  max-width: 125px;
+  max-width: 110px;
 }
 
 .sponsor-text {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 300;
   color: white;
   // letter-spacing: 1px;
@@ -64,4 +72,3 @@ $header_background: #008773;
 .sponsor-text-space {
   width: 8px;
 }
-

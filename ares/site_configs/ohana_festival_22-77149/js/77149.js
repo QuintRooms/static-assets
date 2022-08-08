@@ -19,7 +19,7 @@ new ChildPortal();
 const include_sponsor_banner = async () => {
     await utilities.waitForSelectorInDOM('header');
     document.querySelector('header').insertAdjacentHTML(
-        'afterend',
+        'beforeend',
         `
     <div class="sponsor-container">
         <div class='sponsor-text'>

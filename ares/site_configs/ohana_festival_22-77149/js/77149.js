@@ -1,8 +1,9 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './77149-config';
-// import Utilities from '../../../js/utilities';
+import Utilities from '../../../js/utilities';
+import addStay22Banner from '../../../js/components/stay-22-banner';
 
-// const utilities = new Utilities();
+const utilities = new Utilities();
 
 const site_config = new SiteConfig();
 

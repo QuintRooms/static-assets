@@ -1,7 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './77149-config';
 import Utilities from '../../../js/utilities';
-import addStay22Banner from '../../../js/components/stay-22-banner';
 
 const utilities = new Utilities();
 
@@ -15,7 +14,6 @@ class ChildPortal extends BasePortal {
 }
 
 new ChildPortal();
-addStay22Banner('https://www.stay22.com/embed/60d0b8e0b6d36700179f32ba?hidebrandlogo=true');
 
 // Insert Sponsor Banner
 const include_sponsor_banner = async () => {

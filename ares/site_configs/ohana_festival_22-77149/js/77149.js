@@ -21,7 +21,7 @@ addStay22Banner('https://www.stay22.com/embed/60d0b8e0b6d36700179f32ba?hidebrand
 const include_sponsor_banner = async () => {
     await utilities.waitForSelectorInDOM('header');
     document.querySelector('header').insertAdjacentHTML(
-        'beforeend',
+        'afterend',
         `
     <div class="sponsor-container">
         <div class='sponsor-text'>

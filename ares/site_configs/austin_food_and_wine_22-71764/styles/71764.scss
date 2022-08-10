@@ -4,10 +4,10 @@ $header_background: #D92B29;
 $logo_flex_position: center;
 $logo_max_width: 250px;
 $background_color: #fff;
-$primary_color: #D92B29;
-$secondary_color: #EEA741;
-$primary_text_color: #000;
-$secondary_text_color: #D92B29;
+$primary_color: #2F4A9A;
+$secondary_color: #2F4A9A;
+$primary_text_color: #fff;
+$secondary_text_color: #2F4A9A;
 $border_color: #D92B29;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #D92B29;
@@ -22,4 +22,26 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 header img {
     padding: 0;
+}
+
+.lucid-banner {
+    background-color: #2F4A9A;
+}
+
+.lucid-banner .lucid-button a {
+    color: #2F4A9A;
+}
+
+.ArnRateButton .ArnShowRatesLink {
+    border-width: 2px;
+    background: #D92B29;
+    color: #fff;
+    border-color: #D92B29;
+    font-weight: bold;
+
+    &:hover {
+        border-width: 2px;
+        border-color: #D92B29;
+        color: #D92B29;
+    }
 }

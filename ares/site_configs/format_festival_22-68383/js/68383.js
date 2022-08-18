@@ -12,9 +12,9 @@ class ChildPortal extends BasePortal {
         this.init();
     }
 
-    init() {
+    async init() {
         if (document.querySelector('.SearchHotels')) {
-            this.changeDistanceLocationToEventName();
+            await this.changeDistanceLocationToEventName();
         }
     }
 

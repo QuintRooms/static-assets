@@ -113,6 +113,12 @@ export default function siteConfig() {
                 end_date: '01/09/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285410763150',
             },
+            {
+                name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
+                display_date: 'TBD',
+                end_date: '01/09/2026', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/222285562425153',
+            },
         ],
     };
 }

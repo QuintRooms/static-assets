@@ -22,7 +22,7 @@ class ChildPortal extends BasePortal {
     async changeDistanceLocationToEventName() {
         await utilities.waitForSelectorInDOM('.distanceLabel');
         const hotels = document.querySelectorAll('.ArnProperty');
-        for(hotel of hotels) {
+        for(const hotel of hotels) {
             let distanceLabel = hotel.querySelector('.distanceLabel');
             const finalText = distanceLabel.innerHTML.replace('Bentonville', 'Format');
             distanceLabel.innerHTML = finalText

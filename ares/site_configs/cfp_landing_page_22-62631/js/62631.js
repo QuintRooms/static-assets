@@ -49,6 +49,7 @@ async function changeButtonText() {
     const view_hotels_buttons = document.querySelectorAll('.view-hotels');
     view_hotels_buttons[1].innerHTML = 'SUBMIT REQUESTS';
     view_hotels_buttons[2].innerHTML = 'SUBMIT REQUESTS';
+    view_hotels_buttons[3].innerHTML = 'SUBMIT REQUESTS';
 }
 
 changeButtonText();

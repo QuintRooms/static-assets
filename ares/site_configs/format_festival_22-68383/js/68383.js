@@ -10,6 +10,22 @@ class ChildPortal extends BasePortal {
         super(site_config);
         super.init();
     }
+
+    async init() {
+        if (document.querySelector('.SearchHotels')) {
+            await this.changeDistanceLocationToEventName();
+        }
+    }
+
+    async changeDistanceLocationToEventName() {
+        await utilities.waitForSelectorInDOM('.distanceLabel');
+        const hotels = document.querySelectorAll('.ArnProperty');
+        for (const hotel of hotels) {
+            let distanceLabel = hotel.querySelector('.distanceLabel');
+            const finalText = distanceLabel.innerHTML.replace('Bentonville', 'Format');
+            distanceLabel.innerHTML = finalText
+        }
+    }
 }
 
 new ChildPortal();

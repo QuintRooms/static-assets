@@ -12,12 +12,11 @@ class ChildPortal extends BasePortal {
     }
 
     init() {
-        this.addWeekendButtons();
+        this.addLocationButtons();
         this.addUtmTrackingToUrls(window.location.href);
-        this.init();
     }
 
-    async addWeekendButtons() {
+    async addLocationButtons() {
         if (document.querySelector('meta[name="siteId"]').content !== '67667') return;
 
         await utilities.waitForSelectorInDOM('header');
@@ -35,7 +34,7 @@ class ChildPortal extends BasePortal {
 
         await utilities.waitForSelectorInDOM('#stadium-location');
         await utilities.waitForSelectorInDOM('#downtown-location');
-        const weekend_btns = document.querySelectorAll('#stadium-location, #downtown-location');
+        const location_btns = document.querySelectorAll('#stadium-location, #downtown-location');
 
         if (!document.querySelector('#stadium-location') || !document.querySelector('#downtown-location')) return;
 
@@ -48,12 +47,12 @@ class ChildPortal extends BasePortal {
 
         // const check_in = search_params.get('checkin');
 
-        // if (check_in === '10/6/2022') weekend_btns[0].style.display = 'none';
-        // if (check_in === '10/13/2022') weekend_btns[1].style.display = 'none';
+        // if (check_in === '10/6/2022') location_btns[0].style.display = 'none';
+        // if (check_in === '10/13/2022') location_btns[1].style.display = 'none';
 
         if (source === null || medium === null || campaign === null) return;
 
-        weekend_btns.forEach((e) => {
+        location_btns.forEach((e) => {
             const href = e.getAttribute('href');
             e.href = `${href}&utm_campaign=${campaign}&utm_source=${source}&utm_medium=${medium}`;
         });

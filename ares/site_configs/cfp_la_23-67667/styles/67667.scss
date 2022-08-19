@@ -351,20 +351,6 @@ span.exclusive-rate {
     }
 }
 
-@media screen and (max-width: 750px) {
-    header {
-        flex-direction: column;
-    }
-
-    .event-location {
-        flex-direction: row;
-    }
-
-    .event-location a {
-        margin: 6px;
-    }
-}
-
 @media screen and (max-width: 600px) {
     body {
         background: #fff;
@@ -385,7 +371,7 @@ span.exclusive-rate {
     }
 
     a.logo {
-        width: 40%;
+        width: 60%;
     }
 
     .logo img {
@@ -401,6 +387,15 @@ span.exclusive-rate {
 
     .event-week a {
         margin: 6px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .event-location a {
+        margin: 6px;
+        font-size: 14px;
     }
 }
 

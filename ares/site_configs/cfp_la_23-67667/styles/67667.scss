@@ -194,9 +194,9 @@ header a {
     background: $logo_bg;
 }
 
-// #yui_3_18_1_1_1660941460208_147 {
-//     width: 30%;
-// }
+a.logo {
+    width: 40%;
+}
 
 .logo img {
     margin-top: 40px;
@@ -296,8 +296,8 @@ span.exclusive-rate {
         width: unset;
     }
 
-    header a {
-        width: 100%;
+    a.logo {
+        width: 40%;
     }
 
     .ArnSubPage {
@@ -384,9 +384,9 @@ span.exclusive-rate {
         height: unset;
     }
 
-    // header a {
-    //     width: 75%;
-    // }
+    a.logo {
+        width: 40%;
+    }
 
     .logo img {
         margin-top: unset;

@@ -23,9 +23,9 @@ class ChildPortal extends BasePortal {
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-location pull-right">
-            <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=57102">Book Near Stadium</a>
-            <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=60377">Book Near Downtown</a>
-        </div>`
+                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=57102">Book Stadium Location</a>
+                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=60377">Book Downtown Location</a>
+            </div>`
         );
     }
 

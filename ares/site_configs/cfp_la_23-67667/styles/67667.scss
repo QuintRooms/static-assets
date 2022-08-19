@@ -187,9 +187,10 @@ body {
 header {
     border-bottom: unset;
     height: 115px;
+    justify-content: space-between;
 }
 
-header a {
+.logo header a {
     width: 30%;
     background: $logo_bg;
 }
@@ -317,18 +318,24 @@ span.exclusive-rate {
 }
 
 .event-location a {
-    color: $primary_text_color;
-    background: $secondary_color;
-    font-family: 'Paytone One';
+    color: #c9920e;
+    background: #000;
+    border: 2px solid #c9920e;
+    font-family: 'UnitedSansReg-Heavy';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
     font-size: 17px;
     padding: 6px;
     margin: 6px 0;
     transition: all 0.5s ease;
-    box-shadow: 2px 2px 1px 0px #ccc;
+    // box-shadow: 2px 2px 1px 0px #ccc;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .event-location a:hover {
-    background: $secondary_color;
+    background: #fff;
 }
 
 @media screen and (max-width: 900px) {

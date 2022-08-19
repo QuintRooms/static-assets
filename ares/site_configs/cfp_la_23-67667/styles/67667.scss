@@ -310,6 +310,27 @@ span.exclusive-rate {
     }
 }
 
+.event-location {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.event-location a {
+    color: $primary_text_color;
+    background: $secondary_color;
+    font-family: 'Paytone One';
+    font-size: 17px;
+    padding: 6px;
+    margin: 6px 0;
+    transition: all 0.5s ease;
+    box-shadow: 2px 2px 1px 0px #ccc;
+}
+
+.event-location a:hover {
+    background: $secondary_color;
+}
+
 @media screen and (max-width: 900px) {
     .logo img {
         max-width: 250px;
@@ -317,6 +338,20 @@ span.exclusive-rate {
 
     .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
         color: #000;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header {
+        flex-direction: column;
+    }
+
+    .event-location {
+        flex-direction: row;
+    }
+
+    .event-location a {
+        margin: 6px;
     }
 }
 
@@ -345,6 +380,17 @@ span.exclusive-rate {
 
     .logo img {
         margin-top: unset;
+    }
+
+    header {
+        flex-direction: column;
+    }
+    .event-week {
+        flex-direction: row;
+    }
+
+    .event-week a {
+        margin: 6px;
     }
 }
 

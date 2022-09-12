@@ -23,7 +23,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
-            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23  
+            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'buku_22-66047': './src/66047.js', // buku 22
@@ -33,10 +33,10 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
-            // 'ares_derek-70011': './src/70011.js', // ares derek
+            'ares_derek-70011': './src/70011.js', // ares derek
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
-            // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22 
+            // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
@@ -114,7 +114,7 @@ module.exports = () => {
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
-            // 'texas_book_festival_22-69574': './src/69574.js', // texas book_festival_22 
+            // 'texas_book_festival_22-69574': './src/69574.js', // texas book_festival_22
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22

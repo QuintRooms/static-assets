@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'Miami Cosmetic Surgery 2023',
+            event_name: '2023 Aesthetic and Anti-aging Medicine World Congress North America',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

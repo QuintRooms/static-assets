@@ -16,7 +16,7 @@ utilities.addMultipleHeaderLogos({
     image1: {
         insertPosition: 'beforeend',
         className: 'logo-bottom',
-        imageUrl: `https://static.${domain}/ares/site_configs/miami_esap_23-83061/img/ESAP-logo-2line.png
+        imageUrl: `https://static.${domain}/ares/site_configs/miami_esap_23-83061/img/logo_bottom.png
         `,
     },
 });

@@ -83,7 +83,8 @@ module.exports = () => {
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
-            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            'miami_esap_23-83061': './src/83061.js', // miami esap_23
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
@@ -142,14 +143,16 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
-            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            'miami_esap_23-83061': './src/83061.js', // miami esap_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            'miami_esap_23-83061': './src/83061.js', // miami esap_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'ares_derek-70011': './src/70011.js', // ares derek

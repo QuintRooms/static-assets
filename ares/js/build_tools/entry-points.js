@@ -33,7 +33,7 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
-            'ares_derek-70011': './src/70011.js', // ares derek
+            // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
             // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22
@@ -83,6 +83,7 @@ module.exports = () => {
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
+            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
@@ -90,7 +91,7 @@ module.exports = () => {
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
             // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
-            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
             // 'railbird_23-71772': './src/71772.js', // railbird 23
@@ -140,15 +141,17 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
+            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
-            'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

@@ -54,7 +54,7 @@ module.exports = () => {
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
-            // 'format_festival_22-68383': './src/68383.js', // format festival_22
+            'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
@@ -156,6 +156,7 @@ module.exports = () => {
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
+            // 'austin_food_and_wine_22-71764': './src/71764.js', // austin food_and_wine_22
         };
     }
 

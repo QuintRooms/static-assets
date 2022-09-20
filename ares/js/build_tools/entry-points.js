@@ -7,7 +7,7 @@ module.exports = () => {
             // 'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
             // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
-            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
+            'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_food_and_wine_22-71764': './src/71764.js', // austin food_and_wine_22
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
@@ -54,7 +54,7 @@ module.exports = () => {
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'firefly_21-64866': './src/64866.js', // firefly 21
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
-            'format_festival_22-68383': './src/68383.js', // format festival_22
+            // 'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
@@ -83,7 +83,7 @@ module.exports = () => {
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
-            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'miami_esap_23-83061': './src/83061.js', // miami esap_23
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
@@ -143,8 +143,9 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
-            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'miami_esap_23-83061': './src/83061.js', // miami esap_23
+            'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
         };
 
         // local environment
@@ -152,7 +153,7 @@ module.exports = () => {
         entry_points = {
             // new sites populate below
             // 'miami_esap_23-83061': './src/83061.js', // miami esap_23
-            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'ares_derek-70011': './src/70011.js', // ares derek

@@ -19,7 +19,7 @@ module.exports = () => {
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
             // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
-            'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
+            // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
@@ -38,13 +38,13 @@ module.exports = () => {
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
             // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22
-            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_21-65003': './src/65003.js', // Formula 1 Dutch 2021
             // 'f1_dutch_22-60301': './src/60301.js', // f1 dutch_22
             // 'f1_dutch_promoters_22-75705': './src/75705.js', // f1 dutch_promoters_22
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
-            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
@@ -146,15 +146,17 @@ module.exports = () => {
             // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'miami_esap_23-83061': './src/83061.js', // miami esap_23
-            'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
+            // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
+            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
+            // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

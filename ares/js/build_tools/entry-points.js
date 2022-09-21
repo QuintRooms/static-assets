@@ -7,7 +7,7 @@ module.exports = () => {
             // 'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
             // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
-            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
+            'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_food_and_wine_22-71764': './src/71764.js', // austin food_and_wine_22
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
@@ -19,7 +19,7 @@ module.exports = () => {
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_las_vegas_22-73525': './src/73525.js', // bj las_vegas_22
             // 'bj_scottsdale_22-68720': './src/68720.js', // bj scottsdale_22
-            'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
+            // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
@@ -146,14 +146,15 @@ module.exports = () => {
             // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'miami_esap_23-83061': './src/83061.js', // miami esap_23
-            // 'arizona_bike_week_23-81186': './src/81186.js', // arizona bike_week_23
-            'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
+            // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
+            'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'miami_esap_23-83061': './src/83061.js', // miami esap_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23

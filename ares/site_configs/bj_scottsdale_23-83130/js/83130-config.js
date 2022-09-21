@@ -19,7 +19,7 @@ export default function siteConfig() {
         radius: '50',
         lodging: {
             event_id: '',
-            event_name: 'Barrett-Jackson Scottsdale 2021',
+            event_name: 'Barrett-Jackson Scottsdale 2023',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -56,7 +56,7 @@ export default function siteConfig() {
             sidebar_ad: {
                 is_active: true,
                 image_url: `${env_path.path}/site_configs/${directory_name}/img/left_banner.jpg?v1`,
-                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=06/16/2021&nights=5&siteid=64190',
+                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=01/25/2023&nights=4&siteid=83130',
             },
             between_property_ad: {
                 is_active: false,

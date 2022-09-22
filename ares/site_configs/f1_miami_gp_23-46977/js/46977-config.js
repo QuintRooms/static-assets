@@ -34,7 +34,7 @@ export default function siteConfig() {
         },
         exclusive_rate_text: 'Exclusive Rate',
         host_hotel_text: 'Host Hotel',
-        partner_hotel_text: 'Beach',
+        partner_hotel_text: 'Partner Hotel',
         sponsor_hotel_text: '',
         show_tax_inclusive_rates: true,
         dayjs_date_format: 'M/D/YYYY',

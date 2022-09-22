@@ -17,7 +17,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id, site_config.lodging.event_name, 'Montreal CA', '#000');
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'Miami FL', '#000');
 
 // f1Styles(site_config.site_id);
 
@@ -32,7 +32,7 @@ async function insertFooterText() {
         'beforebegin',
         `
         <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />
-        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Canadian Grand Prix</p>
+        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Miami Grand Prix</p>
         `
     );
 }

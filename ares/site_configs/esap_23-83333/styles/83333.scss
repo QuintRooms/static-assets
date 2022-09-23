@@ -1,0 +1,33 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #89191c;
+$secondary_color: #101944;
+$primary_text_color: #fff;
+$secondary_text_color: #89191c;
+$border_color: #89191c;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #89191c;
+$button_hover_border_color: #89191c;
+$google_font_name: 'Montserrat';
+$site_name: 'esap_23-83333';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+img.logo-bottom {
+  max-width: 375px;
+  // min-width: 375px;
+  // min-height: 160px;
+  max-height: 160px;
+  padding: 15px;
+}
+
+header {
+  flex-direction: column;
+}

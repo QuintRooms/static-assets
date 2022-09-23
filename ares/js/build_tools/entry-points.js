@@ -35,6 +35,7 @@ module.exports = () => {
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
+            'esap_23-83333': './src/83333.js', // esap 23
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
             // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22
@@ -45,7 +46,7 @@ module.exports = () => {
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_miami_22-60295': './src/60295.js', // Formula 1 Miami Grand Prix 2022
-            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_montreal_22-60296': './src/60296.js', // Formula 1 Montreal Grand Prix 2022
             // 'f1_us_21-65006': './src/65006.js', // Formula 1 United States Grand Prix 2021
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
@@ -147,12 +148,15 @@ module.exports = () => {
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            'esap_23-83333': './src/83333.js', // esap 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'esap_23-83333': './src/83333.js', // esap 23
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

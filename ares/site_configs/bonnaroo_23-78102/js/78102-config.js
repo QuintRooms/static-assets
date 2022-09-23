@@ -16,7 +16,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'Bonnaroo Music and Arts Festival 2022',
+            event_name: 'Bonnaroo Music and Arts Festival 2023',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

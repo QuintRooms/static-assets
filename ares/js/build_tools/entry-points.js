@@ -24,7 +24,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
-            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'buku_22-66047': './src/66047.js', // buku 22
@@ -35,7 +35,7 @@ module.exports = () => {
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            'esap_23-83333': './src/83333.js', // esap 23
+            // 'esap_23-83333': './src/83333.js', // esap 23
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
             // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22
@@ -75,6 +75,7 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_22-71767': './src/71767.js', // high water_22
+            'high_water_23-78098': './src/78098.js', // high water_23
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
@@ -149,14 +150,17 @@ module.exports = () => {
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
-            'esap_23-83333': './src/83333.js', // esap 23
+            // 'esap_23-83333': './src/83333.js', // esap 23
+            'high_water_23-78098': './src/78098.js', // high water_23
+            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'esap_23-83333': './src/83333.js', // esap 23
+            
+            // 'esap_23-83333': './src/83333.js', // esap 23
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

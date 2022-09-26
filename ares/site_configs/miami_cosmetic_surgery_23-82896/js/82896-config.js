@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: '2023 Aesthetic and Anti-aging Medicine World Congress North America',
+            event_name: '2023 AMWC North America',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -45,7 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.jpg`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.miamicosmeticsurgery.info/en/home.html',
+            logo_outbound_url: 'https://www.amwc-conference.com/en/home.html',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.jpg`,
         theme: 'light',

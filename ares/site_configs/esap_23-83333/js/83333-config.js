@@ -31,7 +31,7 @@ export default function siteConfig() {
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rate',
-        host_hotel_text: 'Host Hotel',
+        host_hotel_text: 'Official ESAP Hotel',
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
@@ -45,7 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.jpg`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'http://www..com/',
+            logo_outbound_url: 'https://www.physicianstrategy.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.jpg`,
         theme: 'light',

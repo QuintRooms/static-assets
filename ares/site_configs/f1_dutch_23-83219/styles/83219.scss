@@ -20,6 +20,7 @@ $banner_image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(#{$path}/cl
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../styles/sass/f1.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
 
 #popup-modal.show-modal {
     background: unset;

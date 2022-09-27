@@ -45,7 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.jpg`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.amwc-conference.com/en/home.html',
+            logo_outbound_url: 'https://www.amwc-na.com/en/home.html',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.jpg`,
         theme: 'light',

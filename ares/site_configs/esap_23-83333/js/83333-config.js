@@ -32,7 +32,7 @@ export default function siteConfig() {
         },
         exclusive_rate_text: 'Exclusive Rate',
         host_hotel_text: 'Partner Hotel + Resort Fee Included',
-        partner_hotel_text: 'Partner Hotel',
+        partner_hotel_text: 'OFFICIAL ESAP Hotel + Resort Fee Included',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,

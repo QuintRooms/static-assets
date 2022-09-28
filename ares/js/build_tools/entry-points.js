@@ -24,7 +24,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
-            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'buku_22-66047': './src/66047.js', // buku 22
@@ -35,7 +35,7 @@ module.exports = () => {
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            // 'esap_23-83333': './src/83333.js', // esap 23
+            'esap_23-83333': './src/83333.js', // esap 23
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
             // 'farm_aid_internal_22-78569': './src/78569.js', // farm aid_internal_22
@@ -75,7 +75,7 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_22-71767': './src/71767.js', // high water_22
-            'high_water_23-78098': './src/78098.js', // high water_23
+            // 'high_water_23-78098': './src/78098.js', // high water_23
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
@@ -88,7 +88,6 @@ module.exports = () => {
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_22-78429': './src/78429.js', // miami cosmetic_surgery_22
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
-            // 'miami_esap_23-83061': './src/83061.js', // miami esap_23
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
@@ -118,6 +117,7 @@ module.exports = () => {
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
             // 'sueno_22-71766': './src/71766.js', // sueno 22
+            'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'texas_book_festival_22-69574': './src/69574.js', // texas book_festival_22
@@ -135,6 +135,7 @@ module.exports = () => {
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             // 'voodoo_22-70452': './src/70452.js', // Voodoo Festival Attendees 2022
             // 'voodoo_22-70453': './src/70453.js', // Voodoo Festival Production 2022
+            
         };
 
         // develop environment
@@ -151,16 +152,21 @@ module.exports = () => {
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'esap_23-83333': './src/83333.js', // esap 23
-            'high_water_23-78098': './src/78098.js', // high water_23
-            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
+            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            // 'high_water_23-78098': './src/78098.js', // high water_23
+            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
+            'suenos_23-83395': './src/83395.js', // suenos 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            
-            // 'esap_23-83333': './src/83333.js', // esap 23
+            'suenos_23-83395': './src/83395.js', // suenos 23
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

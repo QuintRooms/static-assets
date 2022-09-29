@@ -78,6 +78,8 @@ module.exports = () => {
             // 'high_water_23-78098': './src/78098.js', // high water_23
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
+            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
@@ -117,7 +119,7 @@ module.exports = () => {
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
             // 'sueno_22-71766': './src/71766.js', // sueno 22
-            'suenos_23-83395': './src/83395.js', // suenos 23
+            // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_21-69571': './src/69571.js', // texas book_festival 2021
             // 'texas_book_festival_22-69574': './src/69574.js', // texas book_festival_22
@@ -159,14 +161,25 @@ module.exports = () => {
             // 'high_water_23-78098': './src/78098.js', // high water_23
             // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
-            'suenos_23-83395': './src/83395.js', // suenos 23
+            // 'suenos_23-83395': './src/83395.js', // suenos 23
+            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'suenos_23-83395': './src/83395.js', // suenos 23
+            'austin_food_and_wine_23-61666': './src/61666.js', // austin food_and_wine_23
+            'acl_23_prod-61662': './src/61662.js', // acl 23_prod
+            'acl_23-61659': './src/61659.js', // acl 23
+            'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
+            'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
+            'format_festival_23-83432': './src/83432.js', // format festival_23
+            'format_23-83443': './src/83443.js', // format 23
+            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
+            // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

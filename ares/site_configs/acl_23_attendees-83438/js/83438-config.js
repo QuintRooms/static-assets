@@ -2,8 +2,8 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 
-const site_id = 61659;
-const directory_name = `acl_23-${site_id}`;
+const site_id = 83438;
+const directory_name = `acl_23_attendees-${site_id}`;
 
 export default function siteConfig() {
     return {

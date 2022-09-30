@@ -5,17 +5,17 @@ module.exports = () => {
     if (process.env.NODE_ENV === 'production') {
         entry_points = {
             // 'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
+            'acl_23_production-83441': './src/83441.js', // acl 23_production
+            'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_food_and_wine_22-71764': './src/71764.js', // austin food_and_wine_22
-            'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
+            // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
             // 'acl_21_production-60310': './src/60310.js', // acl 21_production
-            // 'acl_23_prod-61662': './src/61662.js', // acl 23_prod
-            // 'acl_23-61659': './src/61659.js', // acl 23
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_houston_22-73526': './src/73526.js', // bj houston_22
@@ -170,18 +170,20 @@ module.exports = () => {
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
-            // 'acl_23_prod-61662': './src/61662.js', // acl 23_prod
-            // 'acl_23-61659': './src/61659.js', // acl 23
             // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
             // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
-            'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
+            // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
+            'acl_23_production-83441': './src/83441.js', // acl 23_production
+            'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'acl_23_production-83441': './src/83441.js', // acl 23_production
+            'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23

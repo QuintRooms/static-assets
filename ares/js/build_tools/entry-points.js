@@ -97,6 +97,7 @@ module.exports = () => {
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
+            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
@@ -174,14 +175,16 @@ module.exports = () => {
             // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
-            'acl_23_production-83441': './src/83441.js', // acl 23_production
-            'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
+            // 'acl_23_production-83441': './src/83441.js', // acl 23_production
+            // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
+            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             'acl_23_production-83441': './src/83441.js', // acl 23_production
             'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23

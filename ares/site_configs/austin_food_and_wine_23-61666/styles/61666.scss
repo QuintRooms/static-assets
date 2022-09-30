@@ -1,0 +1,47 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #D92B29;
+$logo_flex_position: center;
+$logo_max_width: 250px;
+$background_color: #fff;
+$primary_color: #2F4A9A;
+$secondary_color: #2F4A9A;
+$primary_text_color: #fff;
+$secondary_text_color: #2F4A9A;
+$border_color: #D92B29;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #D92B29;
+$button_hover_border_color: #D92B29;
+$google_font_name: 'Montserrat';
+$site_name: 'austin_food_and_wine_23-61666';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+header img {
+    padding: 0;
+}
+
+.lucid-banner {
+    background-color: #2F4A9A;
+}
+
+.lucid-banner .lucid-button a {
+    color: #2F4A9A;
+}
+
+.ArnRateButton .ArnShowRatesLink {
+    border-width: 2px;
+    background: #D92B29;
+    color: #fff;
+    border-color: #D92B29;
+    font-weight: bold;
+
+    &:hover {
+        border-width: 2px;
+        border-color: #D92B29;
+        color: #D92B29;
+    }
+}

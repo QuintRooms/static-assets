@@ -1,6 +1,6 @@
 import BasePortal from '../../../js/build';
 import Utilities from '../../../js/utilities';
-import SiteConfig from './61659-config';
+import SiteConfig from './83441-config';
 
 const utilities = new Utilities();
 const site_config = new SiteConfig();
@@ -13,19 +13,19 @@ class ChildPortal extends BasePortal {
     }
 
     init() {
-        this.addWeekendButtons();
-        this.addUtmTrackingToUrls(window.location.href);
+        // this.addWeekendButtons();
+        // this.addUtmTrackingToUrls(window.location.href);
     }
 
     async addWeekendButtons() {
-        if (document.querySelector('meta[name="siteId"]').content !== '71761') return;
+        if (document.querySelector('meta[name="siteId"]').content !== '71762') return;
 
         await utilities.waitForSelectorInDOM('header');
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-week pull-right">
-            <a id="week-one" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52460">Book Weekend One</a>
-            <a id="week-two" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52771">Book Weekend Two</a>
+            <a id="week-one" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52462">Book Weekend One</a>
+            <a id="week-two" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52462">Book Weekend Two</a>
         </div>`
         );
     }

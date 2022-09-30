@@ -10,12 +10,12 @@ module.exports = () => {
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'austin_food_and_wine_21-60305': './src/60305.js', // Austin Food And Wine 2021
             // 'austin_food_and_wine_22-71764': './src/71764.js', // austin food_and_wine_22
-            'austin_food_and_wine_23-61666': './src/61666.js', // austin food_and_wine_23
+            'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
             // 'acl_21_production-60310': './src/60310.js', // acl 21_production
-            'acl_23_prod-61662': './src/61662.js', // acl 23_prod
-            'acl_23-61659': './src/61659.js', // acl 23
+            // 'acl_23_prod-61662': './src/61662.js', // acl 23_prod
+            // 'acl_23-61659': './src/61659.js', // acl 23
             // 'besame_22-71776': './src/71776.js', // besame 22
             // 'bj_houston_21-64191': './src/64191.js', // Barrett-Jackson Houston 2021
             // 'bj_houston_22-73526': './src/73526.js', // bj houston_22
@@ -62,8 +62,8 @@ module.exports = () => {
             // 'forecastle_22-70018': './src/70018.js', // forecastle 22
             // 'format_festival_22-68383': './src/68383.js', // format festival_22
             // 'format_festival__prod_22-68384': './src/68384.js', // format festival__prod_22
-            'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
-            'format_festival_23-83432': './src/83432.js', // format festival_23
+            // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
+            // 'format_festival_23-83432': './src/83432.js', // format festival_23
             // 'fourleaf_versa_22-73546': './src/73546.js', // fourleaf versa_22
             // 'governors_ball_21-70366': './src/70366.js', // governors ball_21
             // 'governors_ball_22-77491': './src/77491.js', // governors ball_22
@@ -102,7 +102,7 @@ module.exports = () => {
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
             // 'music_midtown_prod_22-71769': './src/71769.js', // music midtown_prod_22
             // 'oceans_calling_22-78095': './src/78095.js', // oceans calling_22
-            'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
+            // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
             // 'ohana_festival_22-77149': './src/77149.js', // ohana festival_22
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_22-70020': './src/70020.js', // railbird 22
@@ -170,24 +170,18 @@ module.exports = () => {
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
-            'austin_food_and_wine_23-61666': './src/61666.js', // austin food_and_wine_23
-            'acl_23_prod-61662': './src/61662.js', // acl 23_prod
-            'acl_23-61659': './src/61659.js', // acl 23
-            'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
-            'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
-            'format_festival_23-83432': './src/83432.js', // format festival_23
+            // 'acl_23_prod-61662': './src/61662.js', // acl 23_prod
+            // 'acl_23-61659': './src/61659.js', // acl 23
+            // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
+            // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
+            // 'format_festival_23-83432': './src/83432.js', // format festival_23
+            'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'austin_food_and_wine_23-61666': './src/61666.js', // austin food_and_wine_23
-            'acl_23_prod-61662': './src/61662.js', // acl 23_prod
-            'acl_23-61659': './src/61659.js', // acl 23
-            'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
-            'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
-            'format_festival_23-83432': './src/83432.js', // format festival_23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23

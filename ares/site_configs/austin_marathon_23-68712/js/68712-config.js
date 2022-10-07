@@ -29,7 +29,7 @@ export default function siteConfig() {
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rate',
-        sponsor_hotel_text: 'Partner Hotel + Late Check-Out',
+        // sponsor_hotel_text: 'Partner Hotel + Late Check-Out',
         host_hotel_text: 'Late Check-Out',
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,

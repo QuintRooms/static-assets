@@ -46,8 +46,8 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.svg`,
-            logo_outbound_url: 'https://hotels.sportsnet_holidays_cug.com',
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            logo_outbound_url: 'https://sportsnetholidays.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',

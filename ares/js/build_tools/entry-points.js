@@ -5,8 +5,8 @@ module.exports = () => {
     if (process.env.NODE_ENV === 'production') {
         entry_points = {
             // 'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
-            'acl_23_production-83441': './src/83441.js', // acl 23_production
-            'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
+            // 'acl_23_production-83441': './src/83441.js', // acl 23_production
+            // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
             // 'arizona_bike_week_22-66931': './src/66931.js', // Arizona Bike Week 2022
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
@@ -97,7 +97,7 @@ module.exports = () => {
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_21-68381': './src/68381.js', // moon river_festival_21
             // 'moon_river_22-70021': './src/70021.js', // moon river_22
-            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
+            // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'music_midtown_21-70012': './src/70012.js', // Music Midtown Production 2021
             // 'music_midtown_21-70013': './src/70013.js', // Music Midtown Attendees 2021
             // 'music_midtown_22-71768': './src/71768.js', // music midtown_22
@@ -125,6 +125,7 @@ module.exports = () => {
             // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
+            'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
@@ -177,16 +178,15 @@ module.exports = () => {
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'acl_23_production-83441': './src/83441.js', // acl 23_production
             // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
-            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
+            // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
+            'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
-            'acl_23_production-83441': './src/83441.js', // acl 23_production
-            'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
+            'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23

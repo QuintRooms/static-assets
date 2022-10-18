@@ -82,7 +82,7 @@ export default function siteConfig() {
                 portal_url: `http://events.${process.env.domain}/group-event?id=59081&utm_campaign=Barrett-Jackson%20Houston%202022`,
             },
             {
-                name: '2022 Houston Auction',
+                name: '2023 Scottsdale Auction',
                 display_date: 'January 25 - January 29, 2023',
                 end_date: '1/30/2023', // M/D/YYYY
                 portal_url: `http://events.${process.env.domain}/group-event?id=61383&utm_campaign=Barrett-Jackson%20Scottsdale%202023`,

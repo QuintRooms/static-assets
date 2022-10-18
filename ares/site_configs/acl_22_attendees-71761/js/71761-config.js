@@ -22,8 +22,8 @@ export default function siteConfig() {
             event_id: '52460',
             event_name: 'Austin City Limits Music Festival',
             event_dates: '',
-            redirect_date: '',
-            redirect_url: '',
+            redirect_date: '10/17/2022',
+            redirect_url: 'http://aclfestival.quintrooms.com/group-event?id=61659',
             is_lrg: true,
         },
         cug: {

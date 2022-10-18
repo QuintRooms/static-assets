@@ -18,14 +18,14 @@ class ChildPortal extends BasePortal {
     }
 
     async addWeekendButtons() {
-        if (document.querySelector('meta[name="siteId"]').content !== '71761') return;
+        if (document.querySelector('meta[name="siteId"]').content !== '83438') return;
 
         await utilities.waitForSelectorInDOM('header');
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-week pull-right">
-            <a id="week-one" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52460">Book Weekend One</a>
-            <a id="week-two" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=52771">Book Weekend Two</a>
+            <a id="week-one" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=61659">Book Weekend One</a>
+            <a id="week-two" target="_blank" href="https://aclfestival.quintrooms.com/group-event?id=61994">Book Weekend Two</a>
         </div>`
         );
     }
@@ -48,8 +48,8 @@ class ChildPortal extends BasePortal {
 
         const check_in = search_params.get('checkin');
 
-        if (check_in === '10/6/2022') weekend_btns[0].style.display = 'none';
-        if (check_in === '10/13/2022') weekend_btns[1].style.display = 'none';
+        if (check_in === '10/6/2023') weekend_btns[0].style.display = 'none';
+        if (check_in === '10/13/2023') weekend_btns[1].style.display = 'none';
 
         if (source === null || medium === null || campaign === null) return;
 

@@ -5,6 +5,7 @@ module.exports = () => {
     if (process.env.NODE_ENV === 'production') {
         entry_points = {
             // 'acl_21-60311': './src/60311.js', // Austin City Limits Festival (ACL) 2021
+            // 'acl_22_attendees-71761': './src/71761.js', // acl 22_attendees
             // 'acl_23_production-83441': './src/83441.js', // acl 23_production
             // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'arizona_bike_week_21-64812': './src/64812.js', // Arizona Bike week 2021
@@ -86,6 +87,7 @@ module.exports = () => {
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
+            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
@@ -117,6 +119,7 @@ module.exports = () => {
             // 'project_glow_22-76307': './src/76307.js', // project glow_22
             // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
             // 'sea_hear_now_22-71759': './src/71759.js', // sea hear_now_22
+            // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
             // 'shaky_knees_21-68379': './src/68379.js', // Shaky Knees 2021
             // 'shaky_knees_22-70057': './src/70057.js', // Shaky Knees 2022
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
@@ -125,7 +128,7 @@ module.exports = () => {
             // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
-            'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
+            // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
@@ -157,36 +160,15 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
-            // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
-            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
-            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
-            // 'esap_23-83333': './src/83333.js', // esap 23
-            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
-            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
-            // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
-            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
-            // 'high_water_23-78098': './src/78098.js', // high water_23
-            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
-            // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
-            // 'suenos_23-83395': './src/83395.js', // suenos 23
-            // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
-            // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
-            // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
-            // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
-            // 'format_festival_23-83432': './src/83432.js', // format festival_23
-            // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
-            // 'acl_23_production-83441': './src/83441.js', // acl 23_production
-            // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
-            // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
-            'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
+            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
+            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
+            // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23

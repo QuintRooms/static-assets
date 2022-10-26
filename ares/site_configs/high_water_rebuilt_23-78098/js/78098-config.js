@@ -3,7 +3,7 @@ import Path from '../../../js/build_tools/path';
 const env_path = new Path();
 
 const site_id = 78098;
-const directory_name = `high_water_23-${site_id}`;
+const directory_name = `high_water_rebuilt_23-${site_id}`;
 
 export default function siteConfig() {
     return {

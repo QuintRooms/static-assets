@@ -1,0 +1,32 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff5e8;
+$logo_flex_position: center;
+$logo_max_width: 400px;
+$background_color: #fff5e8;
+$primary_color: #001d21;
+$secondary_color: #ff9900;
+$primary_text_color: #fff;
+$secondary_text_color: #ff9900;
+$border_color: #ff9900;
+$button_hover_background_color: #fff5e8;
+$button_hover_text_color: #ff9900;
+$button_hover_border_color: #ff9900;
+$google_font_name: 'Montserrat';
+$site_name: 'two_step_inn_festival_23-84537';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink  {
+  background: #cc66ff;
+  color: #fff;
+  border-color: #cc66ff;
+  &:hover{
+    border-color: #cc66ff;
+    background: #fff;
+    color: #cc66ff;
+  }
+}

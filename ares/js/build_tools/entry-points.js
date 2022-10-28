@@ -84,7 +84,7 @@ module.exports = () => {
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
-            // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
@@ -142,7 +142,7 @@ module.exports = () => {
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23
             // 'tortuga_23_public-77406': './src/77406.js', // tortuga 23_public
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
-            'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
+            // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
             // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
@@ -163,7 +163,8 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
-            'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
+            // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
+            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
         };
 
         // local environment

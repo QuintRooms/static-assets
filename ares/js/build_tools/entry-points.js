@@ -163,7 +163,7 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
-            // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
+            'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
         };
 
         // local environment

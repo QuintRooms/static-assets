@@ -83,7 +83,7 @@ export default function siteConfig() {
             },
             {
                 name: '2023 Scottsdale Auction',
-                display_date: 'January 25 - January 29, 2023',
+                display_date: 'January 21 - January 29, 2023',
                 end_date: '1/30/2023', // M/D/YYYY
                 portal_url: `http://events.${process.env.domain}/group-event?id=61383&utm_campaign=Barrett-Jackson%20Scottsdale%202023`,
             }

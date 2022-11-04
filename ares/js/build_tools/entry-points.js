@@ -84,7 +84,7 @@ module.exports = () => {
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'innings_tempe_22-70017': './src/70017.js', // innings tempe_22
             // 'innings_tampa_22-70015': './src/70015.js', // innings tampa_22
-            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
@@ -137,6 +137,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
+            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'tortuga_22-74015': './src/74015.js', // tortuga 22
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23
@@ -164,13 +165,15 @@ module.exports = () => {
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
-            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23

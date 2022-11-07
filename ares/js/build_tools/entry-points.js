@@ -117,6 +117,7 @@ module.exports = () => {
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'project_glow_22-76307': './src/76307.js', // project glow_22
+            'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_21-70014': './src/70014.js', // Sea Hear Now 21
             // 'sea_hear_now_22-71759': './src/71759.js', // sea hear_now_22
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
@@ -137,7 +138,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
-            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
+            // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'tortuga_22-74015': './src/74015.js', // tortuga 22
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23
@@ -166,14 +167,16 @@ module.exports = () => {
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
-            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
+            // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
+            'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
+            'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
+            // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23

@@ -67,8 +67,12 @@ export default function siteConfig() {
             },
         },
         // new options
+        // new options
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
+        has_group_booking_banner: true,
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=SMF',
+        confirmation_email_from: 'Quint Rooms',
     };
 }

@@ -135,3 +135,15 @@ class ChildPortal extends BasePortal {
 // };
 
 new ChildPortal();
+
+async function addTestText() {
+    await utilities.waitForSelectorInDOM('header');
+    document.querySelector('header').insertAdjacentHTML(
+        'beforeend',
+        `<div class="test-text pull-right">
+            <p>TESTING UBUNTU SETUP</p>
+        </div>`
+    );
+}
+
+addTestText();

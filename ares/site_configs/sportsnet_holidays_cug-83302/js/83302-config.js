@@ -29,7 +29,7 @@ export default function siteConfig() {
             is_cug: true,
             show_points: false,
             allow_registration: false,
-            percent_off_text: "BEAT 'EM BY",
+            percent_off_text: "Lowest Price by",
             show_percent_savings: true,
         },
         exclusive_rate_text: '',
@@ -78,6 +78,6 @@ export default function siteConfig() {
         root_page_header_text: 'START YOUR <b>SEARCH</b>',
         root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
         is_resbeat_client: true,
-        confirmation_email_from: 'RESBEAT',
+        confirmation_email_from: 'Sportsnet Holidays',
     };
 }

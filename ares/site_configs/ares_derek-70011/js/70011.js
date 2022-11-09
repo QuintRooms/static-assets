@@ -141,7 +141,7 @@ async function addTestText() {
     document.querySelector('header').insertAdjacentHTML(
         'beforeend',
         `<div class="test-text pull-right">
-            <p>TESTING UBUNTU SETUP</p>
+            <p>RETESTING UBUNTU SETUP HOPEFULLY THIS WORKS!</p>
         </div>`
     );
 }

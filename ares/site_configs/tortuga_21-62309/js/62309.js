@@ -22,7 +22,7 @@ const includeSponsorBanner = async () => {
     `
     <div class="sponsor-container">
         <div class='sponsor-text'>
-            Proudly sponsored by
+            TEST Proudly sponsored by
         </div>
         <div class='sponsor-text-space'></div>
         <div class='sponsor-logo'>

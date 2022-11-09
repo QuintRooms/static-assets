@@ -16,7 +16,18 @@ class ChildPortal extends BasePortal {
         super(site_config);
         super.init();
         // this.useIconStarsFromNodes();
+        this.addTestText();
         // test_modal.init();
+    }
+
+    async addTestText() {
+        await utilities.waitForSelectorInDOM('header');
+        document.querySelector('header').insertAdjacentHTML(
+            'beforeend',
+            `<div class="test-text pull-right">
+                <p>RETESTING UBUNTU SETUP HOPEFULLY THIS WORKS!</p>
+            </div>`
+        );
     }
 
     // async useIconStarsFromNodes() {
@@ -136,14 +147,3 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-async function addTestText() {
-    await utilities.waitForSelectorInDOM('header');
-    document.querySelector('header').insertAdjacentHTML(
-        'beforeend',
-        `<div class="test-text pull-right">
-            <p>RETESTING UBUNTU SETUP HOPEFULLY THIS WORKS!</p>
-        </div>`
-    );
-}
-
-addTestText();

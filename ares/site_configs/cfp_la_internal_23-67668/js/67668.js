@@ -14,7 +14,7 @@ class ChildPortal extends BasePortal {
 new ChildPortal();
 
 async function removeHoldRoomsText() {
-    await utilities.waitForSelectorInDOM('body');
+    await utilities.waitForSelectorInDOM('.ArnNightlyRateCal');
     if (!document.querySelector('.GroupHoldForm')) return;
     // const prop_id = document.querySelector('.propId').innerHTML;
     const available_rooms_array = document.querySelectorAll('.ArnNightlyRateCal');

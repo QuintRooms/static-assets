@@ -1,6 +1,8 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './67668-config';
+import Utilities from '../../../js/utilities';
 
+const utilities = new Utilities();
 const site_config = new SiteConfig();
 class ChildPortal extends BasePortal {
     constructor() {
@@ -11,7 +13,8 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-function removeHoldRoomsText() {
+async function removeHoldRoomsText() {
+    await utilities.waitForSelectorInDOM('body');
     if (!document.querySelector('.GroupHoldForm')) return;
     // const prop_id = document.querySelector('.propId').innerHTML;
     const available_rooms_array = document.querySelectorAll('.ArnNightlyRateCal');

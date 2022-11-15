@@ -14,6 +14,7 @@ class ChildPortal extends BasePortal {
 new ChildPortal();
 
 async function removeHoldRoomsText() {
+    console.log('inside removeHoldRoomsText');
     await utilities.waitForSelectorInDOM('.GroupHoldForm');
     console.log('passed waitForSelectorInDOM');
     if (!document.querySelector('.GroupHoldForm')) return;

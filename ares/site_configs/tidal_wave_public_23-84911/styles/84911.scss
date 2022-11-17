@@ -15,8 +15,8 @@ $google_font_name: 'Montserrat';
 $site_name: 'tidal_wave_public_23-84911';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
-// $header_background: #fff;
-$header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
+$header_background: #F7F7E7;
+// $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
 
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';

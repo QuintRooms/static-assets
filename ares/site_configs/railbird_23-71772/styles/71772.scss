@@ -1,21 +1,34 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #84754e;
+$header_background: #DFD9C6;
 $logo_flex_position: center;
 $logo_max_width: 300px;
-$background_color: #fff;
-$primary_color: #a23833;
-$secondary_color: #84754e;
+$background_color: #DFD9C6;
+$primary_color: #be8537;
+$secondary_color: #be8537;
 $primary_text_color: #fff;
-$secondary_text_color: #a23833;
-$border_color: #a23833;
-$button_hover_background_color: #fff;
-$button_hover_text_color: #84754e;
-$button_hover_border_color: #84754e;
+$secondary_text_color: #be8537;
+$border_color: #000;
+$button_hover_background_color: #DFD9C6;
+$button_hover_text_color: #000;
+$button_hover_border_color: #000;
 $google_font_name: 'Montserrat';
 $site_name: 'railbird_23-71772';
 $path: set-path($env);
-$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg?v2) no-repeat center center / cover;
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat center center / cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink {
+  border-width: 2px;
+  background: #b93921;
+  color: #000;
+  border-color: #000;
+  font-weight: bold;
+
+  &:hover {
+    border-width: 2px;
+    background: #DFD9C6;
+  }
+}

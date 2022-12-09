@@ -12,8 +12,18 @@ class ChildPortal extends BasePortal {
     }
 
     init() {
+        this.deselectPropertyTypes();
         this.addLocationButtons();
         this.addUtmTrackingToUrls(window.location.href);
+    }
+
+    async deselectPropertyTypes() {
+        await utilities.waitForSelectorInDOM('.ExtStayBox');
+        // const extStayBox = document.querySelector('.ExtStayBox .checkbox');
+        const extStayBox = document.getElementsByName('234');
+        const motelBox = document.getElementsByName('238');
+        extStayBox[0].checked = false;
+        motelBox[0].checked = false;
     }
 
     async addLocationButtons() {

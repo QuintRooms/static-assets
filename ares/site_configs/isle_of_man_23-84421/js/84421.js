@@ -22,21 +22,21 @@ class ChildPortal extends BasePortal {
 new ChildPortal();
 
 // Replace No Vacancny text with Room Description text
-const no_vacancy_text_change = async () => {
-    await utilities.waitForSelectorInDOM('.ArnLimitedAvail');
-    document.querySelector('.ArnLimitedAvail').insertAdjacentHTML(
-        'afterend',
-        `
-    <div class="available-options-container">
-        <div class='available-options-text'>
-            Rooms are only available for: </br> 5 or 10 nights starting 2/6/2022, or 5 nights starting 7/6/2022.
-        </div>
-    </div>
-    `
-    );
-};
+// const no_vacancy_text_change = async () => {
+//     await utilities.waitForSelectorInDOM('.ArnLimitedAvail');
+//     document.querySelector('.ArnLimitedAvail').insertAdjacentHTML(
+//         'afterend',
+//         `
+//     <div class="available-options-container">
+//         <div class='available-options-text'>
+//             Rooms are only available for: </br> 5 or 10 nights starting 2/6/2022, or 5 nights starting 7/6/2022.
+//         </div>
+//     </div>
+//     `
+//     );
+// };
 
-no_vacancy_text_change();
+// no_vacancy_text_change();
 
 // Replace No Vacancny text with Room Description text
 // const min_night_text = async () => {
@@ -56,12 +56,12 @@ no_vacancy_text_change();
 // min_night_text();
 
 // Replace No Vacancny text with Room Description text
-const additional_notes_text = async () => {
-    await utilities.waitForSelectorInDOM('#theSpecialRequestsAjax');
-    document.querySelector('#theSpecialRequestsAjax').innerText = "Additional guest name or special requests please note here.";
-};
+// const additional_notes_text = async () => {
+//     await utilities.waitForSelectorInDOM('#theSpecialRequestsAjax');
+//     document.querySelector('#theSpecialRequestsAjax').innerText = "Additional guest name or special requests please note here.";
+// };
 
-additional_notes_text();
+// additional_notes_text();
 
 // Insert Room Availability Text
 // const includeSponsorBanner = async () => {

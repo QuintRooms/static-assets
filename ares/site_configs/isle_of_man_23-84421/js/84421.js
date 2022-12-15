@@ -9,7 +9,7 @@ class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
         super.init();
-        this.updateSpecialRequestsLabelText();
+        // this.updateSpecialRequestsLabelText();
     }
 
     updateSpecialRequestsLabelText() {

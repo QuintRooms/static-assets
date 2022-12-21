@@ -10,3 +10,9 @@ class ChildPortal extends BasePortal {
 }
 
 new ChildPortal();
+
+const redirect_to_new_site = ()=> {
+    window.location.href = 'https://events.quintrooms.com/group-event?id=57442'
+};
+
+redirect_to_new_site();

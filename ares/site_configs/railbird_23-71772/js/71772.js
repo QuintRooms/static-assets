@@ -14,13 +14,13 @@ new ChildPortal();
 
 
 
-const redirect_to_new_site = ()=> {
+// const redirect_to_new_site = ()=> {
 
-    const initial_url = window.location.href;
-    if (!initial_url.toString().includes('281087')) {
-        window.location.href = 'https://events.quintrooms.com/group-event?id=57442';
-        return
-    }
-};
+//     const initial_url = window.location.href;
+//     if (!initial_url.toString().includes('281087')) {
+//         window.location.href = 'https://events.quintrooms.com/group-event?id=57442';
+//         return
+//     }
+// };
 
-redirect_to_new_site();
+// redirect_to_new_site();

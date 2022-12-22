@@ -130,6 +130,7 @@ module.exports = () => {
             // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
+            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'suenos_23-83395': './src/83395.js', // suenos 23
@@ -139,7 +140,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
-            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
+            // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'tortuga_22-74015': './src/74015.js', // tortuga 22
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23
@@ -164,7 +165,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
+            // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
@@ -172,13 +173,15 @@ module.exports = () => {
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
+            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'echoland_23-85734': './src/85734.js', // echoland 23
+            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

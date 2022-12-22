@@ -88,7 +88,7 @@ module.exports = () => {
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
-            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
+            // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021

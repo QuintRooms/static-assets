@@ -247,7 +247,7 @@
         <mj-social padding-top="20px" font-size="15px" icon-size="30px" mode="horizontal" border-radius="20px">
           <mj-social-element icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/SportsnetHols" />
           <mj-social-element icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/sportsnetholidays" />
-          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://www.twitter.com/QuintRooms" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://www.twitter.com/SportsnetHols" />
         </mj-social>
       </mj-column>
     </mj-section>

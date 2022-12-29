@@ -17,7 +17,7 @@ $google_font_name: 'Graphik-Regular';
 $site_name: 'cfp_21-60797';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
-$logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
+$logo_bg: url(#{$path}/site_configs/#{$site_name}/logo-la.png)  top left / 117% 150% no-repeat;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 

@@ -28,7 +28,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
-            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'buku_22-66047': './src/66047.js', // buku 22
@@ -88,7 +88,7 @@ module.exports = () => {
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_tt_22-78066': './src/78066.js', // isle tt_22
-            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
+            // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lib_21-63504': './src/63504.js', // Life Is Beautiful Festival 2021
             // 'liv_golf_pumpkin_ridge_22-78856': './src/78856.js', // liv golf_pumpkin_ridge_22
             // 'lolla_21-60828': './src/60828.js', // Lollapalooza 2021
@@ -139,7 +139,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_22-74016': './src/74016.js', // tidal wave_22
             // 'tidal_wave_public_22-76306': './src/76306.js', // tidal wave_public_22
-            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
+            // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'tortuga_22-74015': './src/74015.js', // tortuga 22
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23
@@ -164,7 +164,7 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
+            // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
@@ -172,13 +172,16 @@ module.exports = () => {
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
+            // 'railbird_23-71772': './src/71772.js', // railbird 23
+            // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
+            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'echoland_23-85734': './src/85734.js', // echoland 23
+            // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

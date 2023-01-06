@@ -9,7 +9,7 @@
     <!-- Header -->
     <mj-section>
       <mj-column width="50%" padding-top="30px" padding-bottom="30px">
-        <mj-image css-class="logo" src="https://dev-static.hotelsforhope.com/ares/site_configs/isle_of_man_23-84421/img/logo.png" alt="Logo" title="Logo" />
+        <mj-image css-class="logo" src="https://static.hotelsforhope.com/ares/site_configs/isle_of_man_23-84421/img/logo.png" alt="Logo" title="Logo" />
       </mj-column>
       <mj-column width="100%">
         <mj-divider border-width="4px" border-style="solid" border-color={{primary_color}} />
@@ -247,7 +247,7 @@
         <mj-social padding-top="20px" font-size="15px" icon-size="30px" mode="horizontal" border-radius="20px">
           <mj-social-element icon-padding="3px" background-color={{primary_color}} name="facebook" href="https://www.facebook.com/SportsnetHols" />
           <mj-social-element icon-padding="3px" background-color={{primary_color}} name="instagram" href="https://www.instagram.com/sportsnetholidays" />
-          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://www.twitter.com/SportsnetHols" />
+          <mj-social-element icon-padding="3px" background-color={{primary_color}} name="twitter" href="https://www.twitter.com/QuintRooms" />
         </mj-social>
       </mj-column>
     </mj-section>

@@ -28,7 +28,7 @@ module.exports = () => {
             // 'bj_west_palm_beach_21-64187': './src/64187.js', // Barrett-Jackson West Palm Beach 2021
             // 'bj_west_palm_beach_22-68721': './src/68721.js', // bj west_palm_beach_22
             // 'bonnaroo_22-70019': './src/70019.js', // Bonnaroo 22
-            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
             // 'breeders_cup_21-70372': './src/70372.js', // Breeders Cup 2021
             // 'breeders_cup_22-77470': './src/77470.js', // breeders cup_22
             // 'buku_22-66047': './src/66047.js', // buku 22
@@ -130,7 +130,6 @@ module.exports = () => {
             // 'sotx_equestrain_22-79448': './src/79448.js', // sotx equestrain_22
             // 'sotx_fall_classic_22-79449': './src/79449.js', // sotx fall_classic_22
             // 'sotx_summer_games_san_antonio_22-68890': './src/68890.js', // sotx summer_games_san_antonio_22
-            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'sueno_22-71766': './src/71766.js', // sueno 22
             // 'suenos_23-83395': './src/83395.js', // suenos 23
@@ -173,14 +172,15 @@ module.exports = () => {
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'tortuga_21-62309': './src/62309.js', // Tortuga 2021
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
-            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            // 'railbird_23-71772': './src/71772.js', // railbird 23
+            // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
+            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

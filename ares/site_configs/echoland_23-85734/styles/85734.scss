@@ -1,0 +1,34 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #406C33;
+$secondary_color: #406C33;
+$primary_text_color: #fff;
+$secondary_text_color: #406C33;
+$border_color: #000;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #000;
+$button_hover_border_color: #000;
+$google_font_name: 'Montserrat';
+$site_name: 'echoland_23-85734';
+$path: set-path($env);
+$banner_image: linear-gradient(#5C94CE, #9D6EAF);
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+// .ArnRateButton .ArnShowRatesLink {
+//   border-width: 2px;
+//   background: #B73435;
+//   color: #000;
+//   border-color: #000;
+//   font-weight: bold;
+
+//   &:hover {
+//     border-width: 2px;
+//     background: #DFD9C6;
+//   }
+// }

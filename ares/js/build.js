@@ -231,7 +231,7 @@ export default class BasePortal {
 
             utilities.waitForSelectorInDOM('.pollingFinished').then(async (selector) => {
                 if (this.page_name === 'hold-rooms') {
-                    this.moveReviewsIntoPropNameContainer();
+                    // this.moveReviewsIntoPropNameContainer();
                     utilities.addClass('ArnSearchContainerMainDiv', 'ArnSubPage');
                 }
 
@@ -252,7 +252,7 @@ export default class BasePortal {
                 this.showLoaderOnResultsUpdate();
                 this.showSearchContainerOnMobile();
                 this.moveFooterOutOfSearchContainer();
-                this.moveReviewsIntoPropNameContainer();
+                // this.moveReviewsIntoPropNameContainer();
 
                 utilities.updateAttribute('.ArnShowRatesLink', '_blank', 'target');
 

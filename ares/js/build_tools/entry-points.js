@@ -40,7 +40,7 @@ module.exports = () => {
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            'echoland_23-85734': './src/85734.js', // echoland 23
+            // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
             // 'farm_aid_21-70422': './src/70422.js', // Farm Aid 21
             // 'farm_aid_22-78568': './src/78568.js', // farm aid_22
@@ -166,14 +166,19 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'echoland_23-85734': './src/85734.js', // echoland 23
+            // 'echoland_23-85734': './src/85734.js', // echoland 23
+            // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
+            //   'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
+            // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
+            // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'echoland_23-85734': './src/85734.js', // echoland 23
+            // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

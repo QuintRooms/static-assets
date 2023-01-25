@@ -4,75 +4,75 @@ module.exports = () => {
     // production environment
     if (process.env.NODE_ENV === 'production') {
         entry_points = {
-           
-            'acl_23_production-83441': './src/83441.js', // acl 23_production
-            'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
-            'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
-            'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
-            'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
-            'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
-            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
-            'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
-            'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
-            'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
-            'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
-            'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
-            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            'confidential_template-60276': './src/60276.js', // confidential template
-            'ares_derek-70011': './src/70011.js', // ares derek
-            'echoland_23-85734': './src/85734.js', // echoland 23
-            'esap_23-83333': './src/83333.js', // esap 23
-            'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
-            'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
-            f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
-            'f1_template-46972': './src/46972.js', // Formula 1 Template
-            'f1e_cug-57182': './src/57182.js', // f1e cug
-            'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
-            'fes_cug-48167': './src/48167.js', // fes cug
-            'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
-            'format_festival_23-83432': './src/83432.js', // format festival_23
-            'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
-            'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
-            'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
-            'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
-            'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
-            'hook_em_cug-47495': './src/47495.js', // hook em_cug
-            'hook_em_retail-47496': './src/47496.js', // hook em_retail
-            'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
-            'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
-            'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
-            'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
-            'lolla_23-71770': './src/71770.js', // lolla 23
-            'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
-            'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
-            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
-            'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
-            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
-            'railbird_23-71772': './src/71772.js', // railbird 23
-            'railbird_production_23-71773': './src/71773.js', // railbird production_23
-            'resbeat-60831': './src/60831.js', // Resbeat
-            'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
-            'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
-            'roomcash-63712': './src/63712.js', // RoomCash
-            'room_steals-52342': './src/52342.js', // Room Steals
-            'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
-            'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
-            'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
-            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
-            'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
-            'suenos_23-83395': './src/83395.js', // suenos 23
-            'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
-            'ticket_manager-70009': './src/70009.js', // ticket manager
-            'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
-            'tortuga_23-77405': './src/77405.js', // tortuga 23
-            'tortuga_23_public-77406': './src/77406.js', // tortuga 23_public
-            'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
-            'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
-            'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
-            'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
-            'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
-            'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
+            // 'acl_23_production-83441': './src/83441.js', // acl 23_production
+            // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
+            // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
+            // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
+            // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
+            // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
+            // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
+            'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
+            // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
+            // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
+            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            // 'confidential_template-60276': './src/60276.js', // confidential template
+            // 'ares_derek-70011': './src/70011.js', // ares derek
+            // 'echoland_23-85734': './src/85734.js', // echoland 23
+            // 'esap_23-83333': './src/83333.js', // esap 23
+            // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
+            // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
+            // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
+            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            // 'f1_template-46972': './src/46972.js', // Formula 1 Template
+            // 'f1e_cug-57182': './src/57182.js', // f1e cug
+            // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
+            // 'fes_cug-48167': './src/48167.js', // fes cug
+            // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
+            // 'format_festival_23-83432': './src/83432.js', // format festival_23
+            // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
+            // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
+            // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
+            // 'hof_points_cug-63711': './src/63711.js', // Hall Of Fame points_cug
+            // 'hof_retail-60037': './src/60037.js', // Hall Of Fame retail
+            // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
+            // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
+            // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
+            // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
+            // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
+            // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
+            // 'lolla_23-71770': './src/71770.js', // lolla 23
+            // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
+            // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
+            // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
+            // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
+            // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
+            // 'railbird_23-71772': './src/71772.js', // railbird 23
+            // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
+            // 'resbeat-60831': './src/60831.js', // Resbeat
+            // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
+            // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
+            // 'roomcash-63712': './src/63712.js', // RoomCash
+            // 'room_steals-52342': './src/52342.js', // Room Steals
+            // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
+            // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
+            // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
+            // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
+            // 'suenos_23-83395': './src/83395.js', // suenos 23
+            // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
+            // 'ticket_manager-70009': './src/70009.js', // ticket manager
+            // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
+            // 'tortuga_23-77405': './src/77405.js', // tortuga 23
+            // 'tortuga_23_public-77406': './src/77406.js', // tortuga 23_public
+            // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
+            // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
+            // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
+            // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
+            // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
+            // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
         };
 
         // develop environment
@@ -84,12 +84,14 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
+            'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'ares_derek-70011': './src/70011.js', // ares derek

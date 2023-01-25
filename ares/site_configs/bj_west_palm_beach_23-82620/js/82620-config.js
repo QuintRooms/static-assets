@@ -19,7 +19,7 @@ export default function siteConfig() {
         radius: '50',
         lodging: {
             event_id: '',
-            event_name: 'Barrett-Jackson West Palm Beach 2022',
+            event_name: 'Barrett-Jackson West Palm Beach',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -56,7 +56,7 @@ export default function siteConfig() {
             sidebar_ad: {
                 is_active: false,
                 image_url: `${env_path.path}/site_configs/${directory_name}/img/left_banner.jpg?v1`,
-                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=04/06/2022&nights=5&siteid=64190',
+                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=04/06/2023&nights=5&siteid=64190',
             },
             between_property_ad: {
                 is_active: false,

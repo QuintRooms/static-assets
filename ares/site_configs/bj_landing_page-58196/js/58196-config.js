@@ -76,17 +76,18 @@ export default function siteConfig() {
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: '2022 Houston Auction',
-                display_date: 'October 20 - October 22, 2022',
-                end_date: '10/23/2022', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=59081&utm_campaign=Barrett-Jackson%20Houston%202022`,
-            },
-            {
                 name: '2023 Scottsdale Auction',
                 display_date: 'January 21 - January 29, 2023',
                 end_date: '1/30/2023', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=61383&utm_campaign=Barrett-Jackson%20Scottsdale%202023`,
-            }
+                portal_url: `http://events.${process.env.domain}/group-event?id=61383&utm_campaign=Barrett%20Jackson%20Scottsdale%202023`,
+            },
+            {
+                name: '2023 West Palm Beach Auction',
+                display_date: 'April 13 - April 15, 2023',
+                end_date: '4/16/2023', // M/D/YYYY
+                portal_url: `http://events.${process.env.domain}/group-event?id=61383&utm_campaign=Barrett%20Jackson%20West%20Palm%20Beach%202023`,
+            },
+
         ],
     };
 }

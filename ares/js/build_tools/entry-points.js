@@ -10,7 +10,7 @@ module.exports = () => {
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
-            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
@@ -48,7 +48,7 @@ module.exports = () => {
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
-            'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
+            // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_23-71772': './src/71772.js', // railbird 23
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
@@ -86,14 +86,15 @@ module.exports = () => {
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
-            'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
+            // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
+            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
+            // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23

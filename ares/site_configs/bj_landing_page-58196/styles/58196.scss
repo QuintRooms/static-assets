@@ -16,7 +16,7 @@ $google_font_name: 'Montserrat';
 $site_name: 'bj_landing_page-58196';
 $path: set-path($env);
 $banner_image: #fff;
-$bg-images: url(#{$path}/site_configs/#{$site_name}/img/houston/banner_houston.jpg), url(#{$path}/site_configs/#{$site_name}/img/scottsdale/banner5.jpg);
+$bg-images: url(#{$path}/site_configs/#{$site_name}/img/scottsdale/banner5.jpg), url(#{$path}/site_configs/#{$site_name}/img/wpb/banner2.jpg),;
 $header-images: '';
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';

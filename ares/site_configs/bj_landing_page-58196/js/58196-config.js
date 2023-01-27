@@ -85,7 +85,7 @@ export default function siteConfig() {
                 name: '2023 West Palm Beach Auction',
                 display_date: 'April 13 - April 15, 2023',
                 end_date: '4/16/2023', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=61383&utm_campaign=Barrett%20Jackson%20West%20Palm%20Beach%202023`,
+                portal_url: `http://events.${process.env.domain}/group-event?id=60955&utm_campaign=Barrett%20Jackson%20West%20Palm%20Beach%202023`,
             },
 
         ],

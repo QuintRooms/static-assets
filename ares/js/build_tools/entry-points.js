@@ -10,7 +10,7 @@ module.exports = () => {
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
-            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
@@ -57,7 +57,7 @@ module.exports = () => {
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
-            // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
+            'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
@@ -87,7 +87,7 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
-            'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
         };
 
         // local environment

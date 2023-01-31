@@ -1,0 +1,67 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: center;
+$logo_max_width: 400px;
+$background_color: #fff;
+$primary_color: #89cedf;
+$secondary_color: #89cedf;
+$primary_text_color: #fff;
+$secondary_text_color: #89cedf;
+$border_color: #89cedf;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #b45129;
+$button_hover_border_color: #b45129;
+$google_font_name: 'Montserrat';
+$site_name: 'farm_aid_23-87656';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+// #2d3192 url(https://static.hotelsforhope.com/portals/child-portals/noLRG/51821/images/pattern.png) repeat;
+
+.ArnRateButton .ArnShowRatesLink  {
+  border-width: 2px;
+  background: #b45129;
+  border-color: #b45129;
+  font-weight: bold;
+  &:hover{
+    background: #fff;
+    border-width: 2px;
+    color: #b45129;
+    border-color: #b45129;
+  }
+}
+
+.lucid-banner .lucid-button {
+  background: #fff;
+  border: 2px solid #fff;
+  &:hover{
+    background: #b45129;
+    border-width: 2px;
+    color: #fff;
+  }
+}
+
+#lucid-link {
+  color: #b45129;
+  &:hover{
+    color: #fff;
+  }
+
+}
+
+.lucid-banner {
+  background: #b45129;
+}
+
+.GroupHoldForm .ArnLeftSearchContainer {
+    display: none;
+}
+
+// .lucid-content #desktop {
+//   color: #000;
+// }
+

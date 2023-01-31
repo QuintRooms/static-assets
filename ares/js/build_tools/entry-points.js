@@ -22,6 +22,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
+            'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -57,7 +58,7 @@ module.exports = () => {
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
             // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
-            'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
+            // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
@@ -88,12 +89,14 @@ module.exports = () => {
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            'farm_aid_23-87656': './src/87656.js', // farm aid_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'echoland_23-85734': './src/85734.js', // echoland 23

@@ -22,7 +22,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
-            'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -33,6 +33,7 @@ module.exports = () => {
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
+            'hive_23-86603': './src/86603.js', // hive 23
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
@@ -89,14 +90,16 @@ module.exports = () => {
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
-            'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            'hive_23-86603': './src/86603.js', // hive 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            'hive_23-86603': './src/86603.js', // hive 23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'echoland_23-85734': './src/85734.js', // echoland 23

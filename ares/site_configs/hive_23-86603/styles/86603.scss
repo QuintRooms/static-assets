@@ -1,14 +1,14 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #fff;
+$header_background: #1b173d;
 $logo_flex_position: center;
 $logo_max_width: 200px;
 $background_color: #fff;
 $primary_color: #5b2d75;
-$secondary_color: #c01c64;
+$secondary_color: #5b2d75;
 $primary_text_color: #fff;
 $secondary_text_color: #5b2d75;
-$border_color: #5b2d75;
+$border_color: #c01c64;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #c01c64;
 $button_hover_border_color: #c01c64;
@@ -19,3 +19,15 @@ $banner_image: linear-gradient(#5b2d75, #c01c64);
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink {
+  background: #c01c64;
+  color: #fff;
+  border-color: #c01c64;
+
+  &:hover {
+    border-color: #c01c64;
+    background: #fff;
+    color: #c01c64;
+  }
+}

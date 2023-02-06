@@ -10,6 +10,7 @@ module.exports = () => {
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
+            'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
@@ -33,7 +34,7 @@ module.exports = () => {
             // 'fes_cug-48167': './src/48167.js', // fes cug
             // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
-            'hive_23-86603': './src/86603.js', // hive 23
+            // 'hive_23-86603': './src/86603.js', // hive 23
             // 'hof_canton-62681': './src/62681.js', // Hall Of Fame Canton
             // 'hof_cug-63710': './src/63710.js', // Hall Of Fame cug
             // 'hof_landing_page-62678': './src/62678.js', // Hall Of Fame landing page
@@ -91,14 +92,16 @@ module.exports = () => {
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
-            'hive_23-86603': './src/86603.js', // hive 23
+            // 'hive_23-86603': './src/86603.js', // hive 23
+            'beach_it_23-84923': './src/84923.js', // beach it_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'hive_23-86603': './src/86603.js', // hive 23
+            'beach_it_23-84923': './src/84923.js', // beach it_23
+            // 'hive_23-86603': './src/86603.js', // hive 23
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23

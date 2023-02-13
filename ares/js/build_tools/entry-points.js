@@ -27,6 +27,7 @@ module.exports = () => {
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
+            'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -46,7 +47,6 @@ module.exports = () => {
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
-            'f1_las_vegas_23-85764': './src/85764.js', // f1 las_vegas_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
@@ -95,14 +95,14 @@ module.exports = () => {
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'hive_23-86603': './src/86603.js', // hive 23
             // 'beach_it_23-84923': './src/84923.js', // beach it_23
-            'f1_las_vegas_23-85764': './src/85764.js', // f1 las_vegas_23
+            'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'f1_las_vegas_23-85764': './src/85764.js', // f1 las_vegas_23
+            'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
             // 'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'hive_23-86603': './src/86603.js', // hive 23
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23

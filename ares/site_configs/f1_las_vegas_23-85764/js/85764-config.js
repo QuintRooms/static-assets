@@ -75,11 +75,11 @@ export default function siteConfig() {
         is_resbeat_client: false,
         has_group_booking_banner: true,
         group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Las%20Vegas%20GP',
-        prop_image_replacement: [
-            {
-                prop_id: '663849',
-                image_url: 'https://media.travsrv.com/663849/1089261127_804480.jpg',
-            },
-        ],
+        // prop_image_replacement: [
+        //     {
+        //         prop_id: '663849',
+        //         image_url: 'https://media.travsrv.com/663849/1089261127_804480.jpg',
+        //     },
+        // ],
     };
 }

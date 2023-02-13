@@ -78,7 +78,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         has_custom_emails: false,
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Las%20Vegas%20GP',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=VegasGP',
         uses_hybrid_compensation_model: true,
     };
 }

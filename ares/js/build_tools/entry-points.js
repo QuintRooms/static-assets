@@ -10,7 +10,7 @@ module.exports = () => {
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
-            'beach_it_23-84923': './src/84923.js', // beach it_23
+            // 'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
@@ -46,6 +46,7 @@ module.exports = () => {
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
+            'f1_las_vegas_23-85764': './src/85764.js', // f1 las_vegas_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
@@ -93,14 +94,16 @@ module.exports = () => {
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'hive_23-86603': './src/86603.js', // hive 23
-            'beach_it_23-84923': './src/84923.js', // beach it_23
+            // 'beach_it_23-84923': './src/84923.js', // beach it_23
+            'f1_las_vegas_23-85764': './src/85764.js', // f1 las_vegas_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'beach_it_23-84923': './src/84923.js', // beach it_23
+            // 'f1_las_vegas_23-85764': './src/85764.js', // f1 las_vegas_23
+            // 'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'hive_23-86603': './src/86603.js', // hive 23
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23

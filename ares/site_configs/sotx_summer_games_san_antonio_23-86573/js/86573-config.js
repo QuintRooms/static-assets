@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: '2022 Special Olympics of Texas',
+            event_name: '2023 Special Olympics of Texas',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -44,8 +44,8 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo2.png`,
-            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo2.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.sotx.org/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,

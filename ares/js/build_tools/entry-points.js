@@ -27,7 +27,7 @@ module.exports = () => {
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
+            // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -64,7 +64,7 @@ module.exports = () => {
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
-            // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
@@ -95,14 +95,15 @@ module.exports = () => {
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'hive_23-86603': './src/86603.js', // hive 23
             // 'beach_it_23-84923': './src/84923.js', // beach it_23
-            'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
+            // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
+            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
+            // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
             // 'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'hive_23-86603': './src/86603.js', // hive 23
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23

@@ -2,10 +2,10 @@
 
 $header_background: #E7E5D3;
 $logo_flex_position: center;
-$logo_max_width: 300px;
+$logo_max_width: 250px;
 $background_color: #fff;
 $primary_color: #5D8619;
-$secondary_color: #943B16;
+$secondary_color: #5D8619;
 $primary_text_color: #fff;
 $secondary_text_color: #5D8619;
 $border_color: #943B16;
@@ -30,4 +30,12 @@ $banner_image: linear-gradient(#5D8619, #943B16);
     background: #fff;
     color: #943B16;
   }
+}
+
+.lucid-banner {
+  background-color: #943B16;
+}
+
+.lucid-banner .lucid-button a {
+  color: #943B16;
 }

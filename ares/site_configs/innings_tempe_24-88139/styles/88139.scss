@@ -1,0 +1,22 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: center;
+$logo_max_width: 250px;
+$background_color: #fff;
+$primary_color: #dd695c;
+$secondary_color: #0b1a46;
+$primary_text_color: #fff;
+$secondary_text_color: #dd695c;
+$border_color: #dd695c;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #dd695c;
+$button_hover_border_color: #dd695c;
+$google_font_name: 'Montserrat';
+$site_name: 'innings_tempe_24-88139';
+$path: set-path($env);
+$banner_image: linear-gradient(#dd695c,rgba(0,0,0,.25));
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+

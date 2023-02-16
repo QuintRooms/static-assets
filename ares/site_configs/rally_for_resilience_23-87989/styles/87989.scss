@@ -1,0 +1,33 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #E7E5D3;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #5D8619;
+$secondary_color: #943B16;
+$primary_text_color: #fff;
+$secondary_text_color: #5D8619;
+$border_color: #943B16;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #943B16;
+$button_hover_border_color: #943B16;
+$google_font_name: 'Montserrat';
+$site_name: 'rally_for_resilience_23-87989';
+$path: set-path($env);
+$banner_image: linear-gradient(#5D8619, #943B16);
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink {
+  background: #943B16;
+  color: #fff;
+  border-color: #943B16;
+
+  &:hover {
+    border-color: #943B16;
+    background: #fff;
+    color: #943B16;
+  }
+}

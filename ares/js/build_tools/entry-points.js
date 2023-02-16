@@ -56,6 +56,7 @@ module.exports = () => {
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_23-71772': './src/71772.js', // railbird 23
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
+            'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
@@ -64,7 +65,7 @@ module.exports = () => {
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
-            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
@@ -96,21 +97,14 @@ module.exports = () => {
             // 'hive_23-86603': './src/86603.js', // hive 23
             // 'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
-            'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
-            // 'beach_it_23-84923': './src/84923.js', // beach it_23
-            // 'hive_23-86603': './src/86603.js', // hive 23
-            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
-            // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
-            // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
-            // 'echoland_23-85734': './src/85734.js', // echoland 23
-            // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

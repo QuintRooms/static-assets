@@ -46,6 +46,7 @@ module.exports = () => {
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
+            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
@@ -56,7 +57,7 @@ module.exports = () => {
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_23-71772': './src/71772.js', // railbird 23
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
-            'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
+            // 'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
             // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
@@ -98,13 +99,15 @@ module.exports = () => {
             // 'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
-            'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
+            // 'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
+            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

@@ -16,6 +16,7 @@ module.exports = () => {
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            'catbird_23-88335': './src/88335.js', // catbird 23
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
@@ -46,7 +47,7 @@ module.exports = () => {
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
-            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
+            // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
@@ -100,14 +101,16 @@ module.exports = () => {
             // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
-            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
+            // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
+            'catbird_23-88335': './src/88335.js', // catbird 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
+            'catbird_23-88335': './src/88335.js', // catbird 23
+            // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

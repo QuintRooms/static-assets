@@ -16,7 +16,8 @@ module.exports = () => {
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
-            'catbird_23-88335': './src/88335.js', // catbird 23
+            'breeders_23-88324': './src/88324.js', // breeders 23
+            // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
@@ -102,13 +103,15 @@ module.exports = () => {
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
-            'catbird_23-88335': './src/88335.js', // catbird 23
+            // 'catbird_23-88335': './src/88335.js', // catbird 23
+            'breeders_23-88324': './src/88324.js', // breeders 23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'breeders_23-88324': './src/88324.js', // breeders 23
             'catbird_23-88335': './src/88335.js', // catbird 23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'ares_derek-70011': './src/70011.js', // ares derek

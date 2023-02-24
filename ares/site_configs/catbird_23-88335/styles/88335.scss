@@ -1,0 +1,40 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff9db;
+$logo_flex_position: center;
+$logo_max_width: 200px;
+$background_color: #fff9db;
+$primary_color: #404828;
+$secondary_color: #404828;
+$primary_text_color: #fff9db;
+$secondary_text_color: #402020;
+$border_color: #C05728;
+$button_hover_background_color: #fff9db;
+$button_hover_text_color: #C05728;
+$button_hover_border_color: #C05728;
+$google_font_name: 'Montserrat';
+$site_name: 'catbird_23-88335';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink  {
+  background: #C05728;
+  color: #fff9db;
+  border-color: #C05728;
+  &:hover{
+    border-color: #C05728;
+    background: #fff9db;
+    color: #C05728;
+  }
+}
+
+.lucid-banner {
+  background-color: #C05728;
+}
+
+.lucid-banner .lucid-button a {
+  color: #C05728;
+}

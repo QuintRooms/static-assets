@@ -42,7 +42,7 @@ export default function siteConfig() {
         show_currency_select: false,
         show_date_prompt: false,
         has_social_sharing: true,
-        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon_lg.png`,
+        fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo_black.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,

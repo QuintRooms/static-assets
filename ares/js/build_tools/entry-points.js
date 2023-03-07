@@ -114,6 +114,7 @@ module.exports = () => {
         entry_points = {
             // new sites populate below
             'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             'breeders_23-88324': './src/88324.js', // breeders 23
             'catbird_23-88335': './src/88335.js', // catbird 23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24

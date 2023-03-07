@@ -21,11 +21,12 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
-            'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
+            // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
@@ -106,7 +107,8 @@ module.exports = () => {
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'breeders_23-88324': './src/88324.js', // breeders 23
-            'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
+            // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
         };
 
         // local environment

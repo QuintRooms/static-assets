@@ -103,14 +103,14 @@ export default function siteConfig() {
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
-                display_date: 'January 3 - 7, 2025',
-                end_date: '01/07/2025', // M/D/YYYY
+                display_date: 'January 17 - 20, 2025',
+                end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285410763150',
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
-                display_date: 'January 2 - 6, 2026',
-                end_date: '01/09/2026', // M/D/YYYY
+                display_date: 'January 16 - 19, 2026',
+                end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
         ],

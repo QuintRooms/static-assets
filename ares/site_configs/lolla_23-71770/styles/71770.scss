@@ -4,8 +4,8 @@ $header_background: #17120f;
 $logo_flex_position: center;
 $logo_max_width: 300px;
 $background_color: #fff;
-$primary_color: #32c3e2;
-$secondary_color: #32c3e2;
+$primary_color: #17120f;
+$secondary_color: #17120f;
 $primary_text_color: #fff;
 $secondary_text_color: #000;
 $border_color: #00ae99;
@@ -46,5 +46,33 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 }
 
 .ArnQuadSearchContainer.ArnPrimarySearchContainer {
-  background: #000;
+  background: #17120f;
+}
+
+// .arnCurrency,
+// .arnUnit {
+//   color: #32c3e2;
+// }
+
+span.exclusive-rate {
+  background: #17120f;
+}
+
+.arnMapMarker.contracted-pin {
+  background: #32c3e2;
+
+  .arnMapMarkerTriangle{
+    border-top-color: #32c3e2;
+    background: #32c3e2;
+  }
+}
+
+.arn-leaflet-reset-button {
+      border-color: #fff;
+      background: #32c3e2;
+  
+      &:hover {
+        border-color: #32c3e2;
+        background: #fff;
+      }
 }

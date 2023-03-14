@@ -66,17 +66,20 @@ span.exclusive-rate {
   }
   .arnMapMarkerTriangle{
     border-top-color: #32c3e2;
-    .highlight {
-        border-top-color: #17120f;
-      }
       &:hover {
         border-top-color: #17120f;
       }
   }
+    .arnMapMarkerTriangle.highlight {
+      border-top-color: #17120f;
+    }
 }
 
 .arnMapMarker:hover .arnMapMarkerTriangle {
   border-top-color: #17120f;
+  .highlight {
+    border-top-color: #17120f;
+  }
 }
 
 .arn-leaflet-reset-button {

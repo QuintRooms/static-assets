@@ -7,7 +7,7 @@ $background_color: #fff;
 $primary_color: #32c3e2;
 $secondary_color: #32c3e2;
 $primary_text_color: #fff;
-$secondary_text_color: #32c3e2;
+$secondary_text_color: #000;
 $border_color: #00ae99;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #00ae99;
@@ -32,10 +32,19 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
   }
 }
 
+.logo img {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .lucid-banner {
   background-color: #00ae99;
 }
 
 .lucid-banner .lucid-button a {
   color: #00ae99;
+}
+
+.ArnQuadSearchContainer.ArnPrimarySearchContainer {
+  background: #000;
 }

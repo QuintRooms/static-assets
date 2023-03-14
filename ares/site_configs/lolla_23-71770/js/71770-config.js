@@ -45,6 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/old_logo.png`,
             logo_outbound_url: 'https://www.lollapalooza.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
@@ -74,5 +75,6 @@ export default function siteConfig() {
         has_group_booking_banner: true,
         group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Lollapalooza',
         confirmation_email_from: 'Quint Rooms',
+        has_custom_emails: false
     };
 }

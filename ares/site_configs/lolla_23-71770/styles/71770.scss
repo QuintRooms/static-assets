@@ -49,10 +49,10 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
   background: #17120f;
 }
 
-.arnCurrency,
-.arnUnit {
-  color: #32c3e2;
-}
+// .arnCurrency,
+// .arnUnit {
+//   color: #32c3e2;
+// }
 
 span.exclusive-rate {
   background: #17120f;
@@ -61,12 +61,19 @@ span.exclusive-rate {
 .arnMapMarker.contracted-pin {
   background: #32c3e2;
 
+  .highlight{
+    border-top-color: #17120f;
+  }
   .arnMapMarkerTriangle{
     border-top-color: #32c3e2;
       &:hover {
         border-top-color: #17120f;
       }
   }
+}
+
+.arnMapMarker:hover .arnMapMarkerTriangle {
+  border-top-color: #17120f;
 }
 
 .arn-leaflet-reset-button {

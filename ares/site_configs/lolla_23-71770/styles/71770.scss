@@ -61,9 +61,10 @@ span.exclusive-rate {
 .arnMapMarker.contracted-pin {
   background: #32c3e2;
 
-  // .highlight{
-  //   border-top-color: #17120f;
-  // }
+  .highlight{
+    background: #fff;
+    color: #17120f;
+  }
   .arnMapMarkerTriangle{
     border-top-color: #32c3e2;
       &:hover {

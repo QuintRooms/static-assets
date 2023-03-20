@@ -7,6 +7,7 @@ module.exports = () => {
             // 'acl_23_production-83441': './src/83441.js', // acl 23_production
             // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
+            'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
@@ -21,7 +22,7 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'echoland_23-85734': './src/85734.js', // echoland 23
@@ -108,17 +109,21 @@ module.exports = () => {
             // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'breeders_23-88324': './src/88324.js', // breeders 23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            // 'lolla_23-71770': './src/71770.js', // lolla 23
+            'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
-            'breeders_23-88324': './src/88324.js', // breeders 23
-            'catbird_23-88335': './src/88335.js', // catbird 23
+            'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
+            // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
+            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            // 'breeders_23-88324': './src/88324.js', // breeders 23
+            // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

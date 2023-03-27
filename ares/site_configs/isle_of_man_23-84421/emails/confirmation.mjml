@@ -132,13 +132,11 @@
       <!-- Phone Contact -->
       <mj-column width="50%" padding-bottom="20px">
         <mj-image width="50%" src="https://dev-static.hotelsforhope.com/ares/emails/icons/phone.png" alt="phone" />
-        <mj-text align="center">
+        <mj-text align="center" padding-top="15px">
           <span><b>International:</b><a style="color:inherit; text-decoration: none;" href="tel:+ 61 3 9482 9411"> +61.3.9482.9411</a></span>
-        </mj-text>
-        <mj-text align="center">
+          <br>
           <span><b>Australia:</b><a style="color:inherit; text-decoration: none;" href="tel:1300 888 858"> 1300.888.858</a></span>
-        </mj-text>
-        <mj-text align="center">
+          <br>
           <span><b>New Zealand:</b><a style="color:inherit; text-decoration: none;" href="tel:0800 658 745"> 0800.658.745</a></span>
         </mj-text>
       </mj-column>

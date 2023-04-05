@@ -34,4 +34,4 @@ const include_sponsor_banner = async () => {
     );
 };
 
-include_sponsor_banner();
+// include_sponsor_banner();

@@ -7,7 +7,7 @@ module.exports = () => {
             // 'acl_23_production-83441': './src/83441.js', // acl 23_production
             // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
-            'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
+            // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
@@ -49,6 +49,7 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
+            'high_water_24-89860': './src/89860.js', // high water_24
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
@@ -112,20 +113,26 @@ module.exports = () => {
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
-            'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
+            // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
+            // 'tortuga_23-77405': './src/77405.js', // tortuga 23
+            // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
+            // 'format_festival_23-83432': './src/83432.js', // format festival_23
+            'high_water_24-89860': './src/89860.js', // high water_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
+            'high_water_24-89860': './src/89860.js', // high water_24
+            // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'breeders_23-88324': './src/88324.js', // breeders 23
             // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
+            // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
         };
     }
 

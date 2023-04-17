@@ -51,6 +51,14 @@ $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
     width: 8px;
   }
 
-#theDatePrompt #datePromptContainer img {
-  background: url(#{$path}/site_configs/#{$site_name}/img/logo_blue.png) no-repeat center / cover;
+#datePromptContainer+.SimpleSearch {
+  background: #4ec1cd !important;
+}
+
+// #theDatePrompt #datePromptContainer img {
+//   background: #4ec1cd;
+// }
+
+#datePromptContainer {
+  background: #4ec1cd !important;
 }

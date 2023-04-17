@@ -49,7 +49,7 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
-            'high_water_24-89860': './src/89860.js', // high water_24
+            // 'high_water_24-89860': './src/89860.js', // high water_24
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
@@ -78,7 +78,7 @@ module.exports = () => {
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
-            // 'tortuga_23-77405': './src/77405.js', // tortuga 23
+            'tortuga_23-77405': './src/77405.js', // tortuga 23npmnp
             // 'tortuga_23_public-77406': './src/77406.js', // tortuga 23_public
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
@@ -114,17 +114,17 @@ module.exports = () => {
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
-            // 'tortuga_23-77405': './src/77405.js', // tortuga 23
+            'tortuga_23-77405': './src/77405.js', // tortuga 23
             // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
-            'high_water_24-89860': './src/89860.js', // high water_24
+            // 'high_water_24-89860': './src/89860.js', // high water_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'high_water_24-89860': './src/89860.js', // high water_24
+            // 'high_water_24-89860': './src/89860.js', // high water_24
             // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24

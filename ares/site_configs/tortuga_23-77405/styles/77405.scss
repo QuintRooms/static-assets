@@ -50,3 +50,7 @@ $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
   .sponsor-text-space {
     width: 8px;
   }
+
+#theDatePrompt #datePromptContainer img {
+  background: url(#{$path}/site_configs/#{$site_name}/img/logo_blue.png) no-repeat center / cover;
+}

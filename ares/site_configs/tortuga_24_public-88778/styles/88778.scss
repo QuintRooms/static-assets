@@ -55,9 +55,9 @@ $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
     background: #4ec1cd !important;
   }
 
-  #theDatePrompt #datePromptContainer img {
-    background: url(#{$path}/site_configs/#{$site_name}/img/logo_blue.png);
-  }
+  // #theDatePrompt #datePromptContainer img {
+  //   background: url(#{$path}/site_configs/#{$site_name}/img/logo_blue.png);
+  // }
 
   #datePromptContainer {
     background: #4ec1cd !important;

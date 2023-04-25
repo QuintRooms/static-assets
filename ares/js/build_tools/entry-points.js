@@ -57,7 +57,7 @@ module.exports = () => {
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
-            'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
+            // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
@@ -76,7 +76,7 @@ module.exports = () => {
             // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
-            'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
+            // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23npmnp
@@ -84,6 +84,7 @@ module.exports = () => {
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
+            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
             // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
@@ -122,14 +123,16 @@ module.exports = () => {
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
             // 'high_water_24-89860': './src/89860.js', // high water_24
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
-            'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
+            // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
+            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
+            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
+            // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'high_water_24-89860': './src/89860.js', // high water_24
             // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23

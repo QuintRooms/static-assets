@@ -4,14 +4,14 @@ $header_background: #fff;
 $logo_flex_position: center;
 $logo_max_width: 300px;
 $background_color: #fff;
-$primary_color: #f86242;
-$secondary_color: #1f391e;
+$primary_color: #61BC5F;
+$secondary_color: #009AB7;
 $primary_text_color: #fff;
-$secondary_text_color: #f86242;
-$border_color: #1f391e;
+$secondary_text_color: #009AB7;
+$border_color: #61BC5F;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #f86242;
-$button_hover_border_color: #f86242;
+$button_hover_text_color: #61BC5F;
+$button_hover_border_color: #61BC5F;
 $google_font_name: 'Montserrat';
 $site_name: 'music_midtown_23-86605';
 $path: set-path($env);
@@ -21,43 +21,43 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
 
-header {
-    flex-direction: column;
-    padding-bottom: 10px;
-    padding-top: 15px;
-    background: #1f391e;
-  }
+// header {
+//     flex-direction: column;
+//     padding-bottom: 10px;
+//     padding-top: 15px;
+//     background: #1f391e;
+//   }
   
-  .banner-content span {
-    font-size: 18px;
-    font-weight: 400;
-    margin-left: 0;
-  }
+//   .banner-content span {
+//     font-size: 18px;
+//     font-weight: 400;
+//     margin-left: 0;
+//   }
   
-  .sponsor-container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: 15px;
-  }
+//   .sponsor-container{
+//     width: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: flex-start;
+//     justify-content: center;
+//     margin-top: 15px;
+//   }
   
-  .sponsor-logo img {
-    max-width: 50px;
-  }
+//   .sponsor-logo img {
+//     max-width: 50px;
+//   }
   
-  .sponsor-text {
-    font-size: 15px;
-    font-weight: 300;
-    color: white;
-    // letter-spacing: 1px;
-  }
+//   .sponsor-text {
+//     font-size: 15px;
+//     font-weight: 300;
+//     color: white;
+//     // letter-spacing: 1px;
+//   }
   
-  .sponsor-text-space {
-    width: 8px;
-  }
+//   .sponsor-text-space {
+//     width: 8px;
+//   }
 
-  .logo img {
-    width: 300px;
-}
+//   .logo img {
+//     width: 300px;
+// }

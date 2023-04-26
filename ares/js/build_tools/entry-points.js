@@ -58,6 +58,7 @@ module.exports = () => {
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
+            'music_midtown_23-86605': './src/86605.js', // music midtown_23
             // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
@@ -84,7 +85,7 @@ module.exports = () => {
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
-            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
+            // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
             // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
@@ -124,25 +125,16 @@ module.exports = () => {
             // 'high_water_24-89860': './src/89860.js', // high water_24
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
-            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
+            // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
+            'music_midtown_23-86605': './src/86605.js', // music midtown_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
-            // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
-            // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
-            // 'high_water_24-89860': './src/89860.js', // high water_24
-            // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
-            // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
-            // 'breeders_23-88324': './src/88324.js', // breeders 23
-            // 'catbird_23-88335': './src/88335.js', // catbird 23
-            // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
+            'music_midtown_23-86605': './src/86605.js', // music midtown_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
         };
     }
 

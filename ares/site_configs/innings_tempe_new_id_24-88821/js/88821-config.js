@@ -3,7 +3,7 @@ import Path from '../../../js/build_tools/path';
 const env_path = new Path();
 
 const site_id = 88821;
-const directory_name = `innings_tempe_24_rebuilt-${site_id}`;
+const directory_name = `innings_tempe_new_id_24-${site_id}`;
 
 export default function siteConfig() {
     return {

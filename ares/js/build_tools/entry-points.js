@@ -53,7 +53,7 @@ module.exports = () => {
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
-            'innings_tempe_24_rebuilt-88821': './src/88821.js', // innings tempe_24_rebuilt
+            'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
@@ -128,15 +128,14 @@ module.exports = () => {
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'music_midtown_23-86605': './src/86605.js', // music midtown_23
-            'innings_tempe_24_rebuilt-88821': './src/88821.js', // innings tempe_24_rebuilt
+            'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'innings_tempe_24_rebuilt-88821': './src/88821.js', // innings tempe_24_rebuilt
-            // 'music_midtown_23-86605': './src/86605.js', // music midtown_23
+            'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

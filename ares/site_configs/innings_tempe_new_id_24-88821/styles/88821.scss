@@ -21,6 +21,10 @@ $banner_image: linear-gradient(#dd695c,rgba(0,0,0,.25));
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 @import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
 
+header {
+  justify-content: space-between;
+}
+
 header .logo {
   margin-left: 15px;
 }

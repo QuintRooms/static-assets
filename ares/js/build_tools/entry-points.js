@@ -53,12 +53,13 @@ module.exports = () => {
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
+            'innings_tempe_24_rebuilt-88821': './src/88821.js', // innings tempe_24_rebuilt
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
-            'music_midtown_23-86605': './src/86605.js', // music midtown_23
+            // 'music_midtown_23-86605': './src/ 86605.js', // music midtown_23
             // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
@@ -126,14 +127,16 @@ module.exports = () => {
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
-            'music_midtown_23-86605': './src/86605.js', // music midtown_23
+            // 'music_midtown_23-86605': './src/86605.js', // music midtown_23
+            'innings_tempe_24_rebuilt-88821': './src/88821.js', // innings tempe_24_rebuilt
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'music_midtown_23-86605': './src/86605.js', // music midtown_23
+            'innings_tempe_24_rebuilt-88821': './src/88821.js', // innings tempe_24_rebuilt
+            // 'music_midtown_23-86605': './src/86605.js', // music midtown_23
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

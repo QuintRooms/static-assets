@@ -57,7 +57,8 @@ module.exports = () => {
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
-            'lolla_24-90306': './src/90306.js', // lolla 24
+            // 'lolla_24-90306': './src/90306.js', // lolla 24
+            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'music_midtown_23-86605': './src/ 86605.js', // music midtown_23
@@ -132,13 +133,15 @@ module.exports = () => {
             // 'music_midtown_23-86605': './src/86605.js', // music midtown_23
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
-            'lolla_24-90306': './src/90306.js', // lolla 24
+            // 'lolla_24-90306': './src/90306.js', // lolla 24
+            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
             'lolla_24-90306': './src/90306.js', // lolla 24
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24

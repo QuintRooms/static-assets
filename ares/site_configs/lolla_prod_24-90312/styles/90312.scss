@@ -1,0 +1,94 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #17120f;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #17120f;
+$secondary_color: #17120f;
+$primary_text_color: #fff;
+$secondary_text_color: #000;
+$border_color: #00ae99;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #00ae99;
+$button_hover_border_color: #00ae99;
+$google_font_name: 'Montserrat';
+$site_name: 'lolla_prod_24-90312';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink {
+  background: #00ae99;
+  color: #fff;
+  border-color: #00ae99;
+
+  &:hover {
+    border-color: #00ae99;
+    background: #fff;
+    color: #00ae99;
+  }
+}
+
+.logo img {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.lucid-banner {
+  background-color: #00ae99;
+}
+
+.lucid-banner .lucid-button a {
+  color: #00ae99;
+}
+
+.ArnQuadSearchContainer.ArnPrimarySearchContainer {
+  background: #17120f;
+}
+
+// .arnCurrency,
+// .arnUnit {
+//   color: #32c3e2;
+// }
+
+span.exclusive-rate {
+  background: #32c3e2;
+}
+
+.arnMapMarker.contracted-pin {
+  background: #32c3e2;
+
+  .highlight{
+    background: #fff;
+    color: #17120f;
+  }
+  .arnMapMarkerTriangle{
+    border-top-color: #32c3e2;
+      &:hover {
+        border-top-color: #17120f;
+      }
+  }
+    .arnMapMarkerTriangle.highlight {
+      border-top-color: #17120f;
+    }
+}
+
+.arnMapMarker:hover .arnMapMarkerTriangle {
+  border-top-color: #17120f;
+  .highlight {
+    border-top-color: #17120f;
+  }
+}
+
+.arn-leaflet-reset-button {
+      border-color: #fff;
+      background: #32c3e2;
+  
+      &:hover {
+        border-color: #32c3e2;
+        background: #fff;
+      }
+}

@@ -57,6 +57,7 @@ module.exports = () => {
             // 'isle_of_man_23-84421': './src/84421.js', // isle of_man_23
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
+            'lolla_24-90306': './src/90306.js', // lolla 24
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'music_midtown_23-86605': './src/ 86605.js', // music midtown_23
@@ -74,7 +75,7 @@ module.exports = () => {
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
-            'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
+            // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
             // 'suenos_23-83395': './src/83395.js', // suenos 23
@@ -130,14 +131,16 @@ module.exports = () => {
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'music_midtown_23-86605': './src/86605.js', // music midtown_23
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
-            'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
+            // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
+            'lolla_24-90306': './src/90306.js', // lolla 24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
+            'lolla_24-90306': './src/90306.js', // lolla 24
+            // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

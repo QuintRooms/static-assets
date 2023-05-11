@@ -58,7 +58,7 @@ module.exports = () => {
             // 'lolla_23-71770': './src/71770.js', // lolla 23
             // 'lolla_prod_23-71771': './src/71771.js', // lolla prod_23
             // 'lolla_24-90306': './src/90306.js', // lolla 24
-            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
+            // 'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
             // 'miami_cosmetic_surgery_23-82896': './src/82896.js', // miami cosmetic_surgery_23
             // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'music_midtown_23-86605': './src/ 86605.js', // music midtown_23
@@ -78,7 +78,8 @@ module.exports = () => {
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
-            // 'sportsnet_holidays_cug-83302': './src/83302.js', // sportsnet holidays_cug
+            // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
+            'sportsnet_holidays_cug_standard-83302': './src/83302.js', // sportsnet holidays_cug_standard
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
@@ -106,41 +107,14 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
-            // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
-            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
-            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
-            // 'hive_23-86603': './src/86603.js', // hive 23
-            // 'beach_it_23-84923': './src/84923.js', // beach it_23
-            // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
-            // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
-            // 'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
-            // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
-            // 'catbird_23-88335': './src/88335.js', // catbird 23
-            // 'breeders_23-88324': './src/88324.js', // breeders 23
-            // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
-            // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
-            // 'lolla_23-71770': './src/71770.js', // lolla 23
-            // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
-            // 'tortuga_23-77405': './src/77405.js', // tortuga 23
-            // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
-            // 'format_festival_23-83432': './src/83432.js', // format festival_23
-            // 'high_water_24-89860': './src/89860.js', // high water_24
-            // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
-            // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
-            // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
-            // 'music_midtown_23-86605': './src/86605.js', // music midtown_23
-            // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
-            // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
-            // 'lolla_24-90306': './src/90306.js', // lolla 24
-            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
+            'sportsnet_holidays_cug_standard-83302': './src/83302.js', // sportsnet holidays_cug_standard
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'sportsnet_holidays_cug_standard-83302': './src/83302.js', // sportsnet holidays_cug_standard
             'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
             'lolla_24-90306': './src/90306.js', // lolla 24
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24

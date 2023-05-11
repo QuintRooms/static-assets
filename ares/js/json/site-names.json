@@ -181,7 +181,7 @@
     "83441": "acl_23_production-83441",
     "83438": "acl_23_attendees-83438",
     "83415": "moon_river_festival_23-83415",
-    "83302": "sportsnet_holidays_cug-83302",
+    "00001": "sportsnet_holidays_cug-00001",
     "84116": "sea_hear_now_23-84116",
     "84421": "isle_of_man_23-84421"
 ,
@@ -210,8 +210,10 @@
     "89705": "texas_book_festival_23-89705",
     "90132": "two_step_inn_festival_24-90132",
     "86605": "music_midtown_23-86605",
-    "88821": "innings_tempe_new_id_24-88821",
+    "88821": "innings_tempe_new_id_24-88821"
+,
     "90249": "shaky_knees_attendees_24-90249",
     "90306": "lolla_24-90306",
-    "90312": "lolla_prod_24-90312"
+    "90312": "lolla_prod_24-90312",
+    "83302": "sportsnet_holidays_cug_standard-83302"
 }

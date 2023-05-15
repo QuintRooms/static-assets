@@ -13,6 +13,7 @@ export default function siteConfig() {
         site_type: 'cug',
         algolia_app_id: 'pl58QCMXHS4C',
         algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
+        use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',

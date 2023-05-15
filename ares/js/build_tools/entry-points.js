@@ -79,7 +79,7 @@ module.exports = () => {
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
-            'sportsnet_holidays_cug_standard-83302': './src/83302.js', // sportsnet holidays_cug_standard
+            'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
@@ -107,14 +107,14 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'sportsnet_holidays_cug_standard-83302': './src/83302.js', // sportsnet holidays_cug_standard
+            'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'sportsnet_holidays_cug_standard-83302': './src/83302.js', // sportsnet holidays_cug_standard
+            'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
             'lolla_24-90306': './src/90306.js', // lolla 24
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24

@@ -1,9 +1,8 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-
 const site_id = 83302;
-const directory_name = `sportsnet_holidays_cug_standard-${site_id}`;
+const directory_name = `sportsnet_holidays_cug_23-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -12,23 +11,19 @@ export default function siteConfig() {
         affiliate_id: 16827,
         master_id: 2143,
         site_type: 'cug',
-        use_google_autocomplete: true,
-        algolia_app_id: 'plCZXR0GZ7J1',
-        algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        currency: 'USD',
+        algolia_app_id: 'pl58QCMXHS4C',
+        algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
         distance_unit: 'useMiles',
-        map_size: '12',
-        radius: '50',
         lodging: {
             event_id: '',
             event_name: '',
             event_dates: '',
-            is_lrg: '',
+            is_lrg: false,
         },
         cug: {
             is_cug: true,
             show_points: false,
-            allow_registration: false,
+            allow_registration: true,
             percent_off_text: 'off',
             show_percent_savings: true,
         },
@@ -47,11 +42,11 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://sportsnetholidays.com/' /* only for test */,
+            logo_outbound_url: 'https://sportsnetholidays.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
-        google_font_url: '',
+        google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
                 is_active: false,
@@ -75,9 +70,20 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: 'Start Your Search',
-        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
+        root_page_header_text: 'START YOUR <b>SEARCH</b>',
+        root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
         is_resbeat_client: true,
-        confirmation_email_from: 'RESBEAT',
+        confirmation_email_from: 'Sportsnet Holidays',
+        has_custom_emails: true,
+        has_landing_page: false,
+        hide_search_on_landing_page: true,
+        landing_page_events: [
+            {
+                name: '',
+                display_date: '', // August 5-8, 2021
+                end_date: '', // M/D/YYYY
+                portal_url: '',
+            },
+        ],
     };
 }

@@ -8,6 +8,7 @@ class ChildPortal extends Resbeat {
     constructor() {
         super(site_config);
         super.init();
+        this.init();
     }
     init() {
         utilities.updateHTML(

@@ -7,6 +7,7 @@ module.exports = () => {
             // 'acl_23_production-83441': './src/83441.js', // acl 23_production
             // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
+            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
             // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
@@ -67,6 +68,9 @@ module.exports = () => {
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_23-71772': './src/71772.js', // railbird 23
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
+            'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            'railbird_24-90535': './src/90535.js', // railbird 24
+            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
             // 'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
@@ -79,7 +83,7 @@ module.exports = () => {
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
-            'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
+            // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
@@ -107,16 +111,23 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
+            // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
+            // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
+            'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            'railbird_24-90535': './src/90535.js', // railbird 24
+            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
-            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
-            'lolla_24-90306': './src/90306.js', // lolla 24
+            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
+            'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            'railbird_24-90535': './src/90535.js', // railbird 24
+            // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
+            // 'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
+            // 'lolla_24-90306': './src/90306.js', // lolla 24
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             // 'ares_derek-70011': './src/70011.js', // ares derek

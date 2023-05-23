@@ -49,7 +49,7 @@ async function changeUpdateSearchTextOnPropPage() {
         utilities.updateHTML('.translateMe', 'Update Search');
     }
 }
-changeUpdateSearchTextOnPropPage();
+// changeUpdateSearchTextOnPropPage();
 
 async function setListenerForPolicyModal() {
     await utilities.waitForSelectorInDOM('.span.open-modal');

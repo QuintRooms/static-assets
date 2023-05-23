@@ -147,7 +147,7 @@ export default class Autocomplete {
             this.onPlaceChanged(autocomplete);
         });
         // eslint-disable-next-line no-undef
-        google.maps.event.addEventListener(input, 'keydown', (e) => {
+        google.maps.event.addDomListener(input, 'keydown', (e) => {
             if (e.keyCode === 13) {
                 e.preventDefault();
             }

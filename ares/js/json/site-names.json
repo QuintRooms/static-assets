@@ -197,7 +197,6 @@
     "87656": "farm_aid_23-87656",
     "86603": "hive_23-86603",
     "84923": "beach_it_23-84923",
-    "85764": "f1_las_vegas_gp_23-85764",
     "87989": "rally_for_resilience_23-87989",
     "88139": "innings_tempe_24-88139",
     "88335": "catbird_23-88335",
@@ -213,9 +212,11 @@
     "88821": "innings_tempe_new_id_24-88821",
     "90249": "shaky_knees_attendees_24-90249",
     "90306": "lolla_24-90306",
-    "90312": "lolla_prod_24-90312",
+    "90312": "lolla_prod_24-90312"
+,
     "83302": "sportsnet_holidays_cug_23-83302",
     "90538": "railbird_production_24-90538",
     "90535": "railbird_24-90535",
-    "90541": "arizona_bike_week_24-90541"
+    "90541": "arizona_bike_week_24-90541",
+    "85764": "f1_lv_gp_23-85764"
 }

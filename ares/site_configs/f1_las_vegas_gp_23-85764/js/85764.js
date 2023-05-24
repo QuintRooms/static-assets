@@ -1,5 +1,5 @@
 import BasePortal from '../../../js/build';
-import SiteConfig from './00003-config';
+import SiteConfig from './85764-config';
 import f1Styles from '../../../clients/formula_1/js/f1';
 import Distance from '../../../js/calculate-distance';
 import Utilities from '../../../js/utilities';

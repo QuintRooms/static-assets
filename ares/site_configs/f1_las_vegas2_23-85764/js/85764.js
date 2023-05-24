@@ -15,7 +15,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id, site_config.lodging.event_name, 'South Florida', '#fc4c02');
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#fc4c02');
 
 new ChildPortal();
 new Distance();

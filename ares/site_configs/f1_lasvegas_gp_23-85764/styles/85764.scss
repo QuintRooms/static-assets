@@ -14,7 +14,7 @@ $button_hover_text_color: #e10600;
 $button_hover_border_color: #e10600;
 $google_font_name: 'Titillium Web';
 $header_font_name: 'F1-Regular';
-$site_name: 'f1_vegas_gp_24-85764';
+$site_name: 'f1_lasvegas_gp_23-85764';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/clients/formula_1/images/f1-bg-1.jpg) no-repeat center center / cover;
 
@@ -36,7 +36,7 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 //     display: unset;
 // }
 
-// hide all other currencies
+// // hide all other currencies
 // .currency-content {
 //     h4,
 //     .top-currencies,
@@ -51,7 +51,7 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 //     }
 // }
 
-.SinglePropDetail #moreRatesLink {
-    width: unset;
-    height: unset;
-}
+// .SinglePropDetail #moreRatesLink {
+//   width: unset;
+//   height: unset;
+// }

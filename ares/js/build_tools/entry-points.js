@@ -7,7 +7,7 @@ module.exports = () => {
             // 'acl_23_production-83441': './src/83441.js', // acl 23_production
             // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
-            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
+            // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
             // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
@@ -33,7 +33,7 @@ module.exports = () => {
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 las_vegas_gp_23
+            'f1_lv_gp_23-85764': './src/85764.js', // f1 lv_gp_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -68,9 +68,8 @@ module.exports = () => {
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_23-71772': './src/71772.js', // railbird 23
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
-            'railbird_production_24-90538': './src/90538.js', // railbird production_24
-            'railbird_24-90535': './src/90535.js', // railbird 24
-            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
+            // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            // 'railbird_24-90535': './src/90535.js', // railbird 24
             // 'rally_for_resilience_23-87989': './src/87989.js', // rally for_resilience_23
             // 'resbeat-60831': './src/60831.js', // Resbeat
             // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
@@ -113,18 +112,19 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
-            'railbird_production_24-90538': './src/90538.js', // railbird production_24
-            'railbird_24-90535': './src/90535.js', // railbird 24
-            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
+            // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            // 'railbird_24-90535': './src/90535.js', // railbird 24
+            'f1_lv_gp_23-85764': './src/85764.js', // f1 lv_gp_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
-            'railbird_production_24-90538': './src/90538.js', // railbird production_24
-            'railbird_24-90535': './src/90535.js', // railbird 24
+            'f1_lv_gp_23-85764': './src/85764.js', // f1 lv_gp_23
+            // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
+            // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            // 'railbird_24-90535': './src/90535.js', // railbird 24
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
             // 'lolla_24-90306': './src/90306.js', // lolla 24

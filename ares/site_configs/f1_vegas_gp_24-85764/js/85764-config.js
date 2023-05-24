@@ -3,7 +3,7 @@ import Path from '../../../js/build_tools/path';
 const env_path = new Path();
 
 const site_id = 85764;
-const directory_name = `f1_lv_gp_23-${site_id}`;
+const directory_name = `f1_vegas_gp_24-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -14,6 +14,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
+        use_google_autocomplete: true,
         currency: 'USD',
         distance_unit: 'useMiles',
         lodging: {
@@ -32,10 +33,11 @@ export default function siteConfig() {
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rate',
-        host_hotel_text: 'Breakfast Included',
+        host_hotel_text: 'Partner Hotel + Resort Fee Included',
         partner_hotel_text: 'Partner Hotel',
+        sponsor_hotel_text: '',
         show_tax_inclusive_rates: true,
-        dayjs_date_format: 'D/M/YYYY',
+        dayjs_date_format: 'M/D/YYYY',
         reviews_before_info: true,
         show_stars: false,
         show_property_type: false,
@@ -73,6 +75,7 @@ export default function siteConfig() {
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
+        has_custom_emails: false,
         has_group_booking_banner: true,
         group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=F1%20Las%20Vegas%20Grand%20Prix',
         uses_hybrid_compensation_model: true,

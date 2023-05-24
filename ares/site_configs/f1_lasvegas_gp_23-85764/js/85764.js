@@ -17,9 +17,9 @@ class ChildPortal extends BasePortal {
     }
 }
 
-// f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#000');
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#000');
 
-f1Styles(site_config.site_id);
+// f1Styles(site_config.site_id);
 
 new ChildPortal();
 new Distance();
@@ -51,13 +51,13 @@ insertFooterText();
 // }
 // changeUpdateSearchTextOnPropPage();
 
-// async function setListenerForPolicyModal() {
-//     await utilities.waitForSelectorInDOM('.span.open-modal');
+async function setListenerForPolicyModal() {
+    await utilities.waitForSelectorInDOM('.span.open-modal');
 
-//     const policies_lower = document.querySelector('#policies-fees');
-//     policies_lower.addEventListener('click', (e) => {
-//         document.querySelector('span.open-modal').click();
-//     });
-// }
+    const policies_lower = document.querySelector('#policies-fees');
+    policies_lower.addEventListener('click', (e) => {
+        document.querySelector('span.open-modal').click();
+    });
+}
 
-// setListenerForPolicyModal();
+setListenerForPolicyModal();

@@ -3,7 +3,7 @@ import Path from '../../../js/build_tools/path';
 const env_path = new Path();
 
 const site_id = 85764;
-const directory_name = `f1_vegas_gp_24-${site_id}`;
+const directory_name = `f1_lasvegas_gp_23-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -33,8 +33,8 @@ export default function siteConfig() {
             show_percent_savings: false,
         },
         exclusive_rate_text: 'Exclusive Rate',
-        host_hotel_text: 'Partner Hotel + Resort Fee Included',
-        partner_hotel_text: 'Partner Hotel',
+        host_hotel_text: 'Host Hotel',
+        partner_hotel_text: 'Transport Included',
         sponsor_hotel_text: '',
         show_tax_inclusive_rates: true,
         dayjs_date_format: 'M/D/YYYY',
@@ -51,7 +51,7 @@ export default function siteConfig() {
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
             logo_outbound_url: 'https://www.f1lasvegasgp.com/',
         },
-        map_marker_image_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
+        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/map_marker.png`,
         theme: 'light',
         google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
         ads: {

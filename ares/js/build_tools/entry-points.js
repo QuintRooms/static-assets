@@ -33,8 +33,8 @@ module.exports = () => {
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
-            'f1_lasvegas_gp_23-85764': './src/85764.js', // f1 lasvegas_gp_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            'f1_las_vegas2_23-85764': './src/85764.js', // f1 las_vegas2_23
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
             // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
@@ -114,14 +114,14 @@ module.exports = () => {
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
             // 'railbird_24-90535': './src/90535.js', // railbird 24
-            'f1_lasvegas_gp_23-85764': './src/85764.js', // f1 lasvegas_gp_23
+            'f1_las_vegas2_23-85764': './src/85764.js', // f1 las_vegas2_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'f1_lasvegas_gp_23-85764': './src/85764.js', // f1 lasvegas_gp_23
+            'f1_las_vegas2_23-85764': './src/85764.js', // f1 las_vegas2_23
             // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
             // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
             // 'railbird_24-90535': './src/90535.js', // railbird 24

@@ -77,7 +77,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         has_custom_emails: false,
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=F1%20Las%20Vegas%20Grand%20Prix',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Miami%20GP',
         uses_hybrid_compensation_model: true,
     };
 }

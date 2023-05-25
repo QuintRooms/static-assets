@@ -19,7 +19,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'F1 Miami Grand Prix',
+            event_name: 'F1 Las Vegas Grand Prix',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -49,7 +49,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
-            logo_outbound_url: 'https://f1miamigp.com/',
+            logo_outbound_url: 'https://www.f1lasvegasgp.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/map_marker.png`,
         theme: 'light',
@@ -77,7 +77,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         has_custom_emails: false,
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Miami%20GP',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=F1%20Las%20Vegas%20Grand%20Prix',
         uses_hybrid_compensation_model: true,
     };
 }

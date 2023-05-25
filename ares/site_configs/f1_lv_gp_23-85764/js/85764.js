@@ -19,7 +19,7 @@ class ChildPortal extends BasePortal {
 
 // f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#000');
 
-f1Styles(site_config.site_id);
+// f1Styles(site_config.site_id);
 
 new ChildPortal();
 new Distance();
@@ -32,7 +32,7 @@ async function insertFooterText() {
         'beforebegin',
         `
         <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />
-        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Miami Grand Prix</p>
+        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Las Vegas Grand Prix</p>
         `
     );
 }

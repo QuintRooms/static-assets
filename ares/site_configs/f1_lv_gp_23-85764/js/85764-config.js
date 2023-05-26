@@ -19,6 +19,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
+            event_name: 'Las Vegas GP',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

@@ -2227,7 +2227,7 @@ export default class BasePortal {
     }
 
     updateTitleMetaTag() {
-        if (this.site_config.site_type !== 'lodging' || !this?.site_config?.lodging?.event_name) return;
+        if (this.site_config.site_type !== 'lodging' || !this?.site_config?.lodging?.event_name && this.site_id !== '85764') return;
 
         document.title = this.site_config.lodging.event_name;
     }

@@ -1307,21 +1307,22 @@ export default class BasePortal {
 
     useLogoForVenueMapMarker() {
         const map_markers = document.querySelectorAll('.arn-green-marker-icon');
+        const map_marker_images = this.site_config.map_marker_image_url;
 
         if (!this.site_config) return;
-        if (!this.site_config.map_marker_image_url) return;
+        if (!map_marker_images) return;
 
         // map_markers.forEach((marker) => {
-        //     marker.setAttribute('src', `${this.site_config.map_marker_image_url}`);
+        //     marker.setAttribute('src', `${map_marker_images}`);
         // });
 
-        if (typeof this.site_config.map_marker_image_url == 'string') {
-            map_markers[0].setAttribute('src', `${this.site_config.map_marker_image_url}`);
+        if (typeof map_marker_images == 'string') {
+            map_markers[0].setAttribute('src', `${map_marker_images}`);
         } 
         
-        if (Array.isArray(this.site_config.map_marker_image_url)){
+        if (Array.isArray(map_marker_images)){
             for (let i = 0; i < map_markers.length; i++) {
-                map_markers[i].setAttribute('src', `${this.site_config.map_marker_image_url[i]}`);
+                map_markers[i].setAttribute('src', `${map_marker_images[i]}`);
             }
         }
     }

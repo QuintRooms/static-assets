@@ -21,3 +21,45 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../styles/sass/f1.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+header {
+  background-image: url(#{$path}/site_configs/#{$site_name}/img/header_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  padding: 0 6rem;
+}
+
+.logo {
+  grid-column: 2;
+  text-align: center;
+  min-width: 300px;
+}
+
+#races-contact {
+  grid-column: 3;
+  justify-self: end;
+}
+
+#races-contact li {
+  &:hover {
+    background: unset;
+  }
+}
+
+#races-contact a {
+  display: inline-block;
+  width: 100%;
+
+  &:hover {
+    color: #e10600;
+  }
+}
+
+header #races-contact {
+  width: unset;
+}

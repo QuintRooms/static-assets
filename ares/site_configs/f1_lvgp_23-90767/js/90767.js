@@ -16,6 +16,8 @@ class ChildPortal extends BasePortal {
     }
 }
 
+f1Styles(site_config.site_id);
+
 new ChildPortal();
 
 async function insertFooterText() {

@@ -17,7 +17,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas GP', '#000');
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'F1 Las Vegas Grand Prix', '#000');
 
 // f1Styles(site_config.site_id);
 

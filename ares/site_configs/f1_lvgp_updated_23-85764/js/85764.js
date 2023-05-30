@@ -19,7 +19,7 @@ class ChildPortal extends BasePortal {
 f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#000');
 
 new ChildPortal();
-new Distance();
+// new Distance();
 
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.f1-policy');

@@ -1535,7 +1535,7 @@ export default class BasePortal {
             'beforeend',
             `<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html">
             <meta property="og:type" content="website" >
-            <meta property="og:title" content="${event_name}" >
+    
             <meta property="og:description" content="I just booked my room for ${event_name} through Hotels4Hope and donated to charity!" >
             <meta property="og:image" content="https://events.${domain}/group-event?id=${event_id}">`
         );

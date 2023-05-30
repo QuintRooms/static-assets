@@ -1309,18 +1309,21 @@ export default class BasePortal {
         const map_markers = document.querySelectorAll('.arn-green-marker-icon');
 
         if (!this.site_config) return;
+        if (!this.site_config.map_marker_image_url) return;
 
-        map_markers.forEach((marker) => {
-            marker.setAttribute('src', `${this.site_config.map_marker_image_url}`);
-        });
-        // map_markers[0].setAttribute('src', `${this.site_config.map_marker_image_url}`);
+        // map_markers.forEach((marker) => {
+        //     marker.setAttribute('src', `${this.site_config.map_marker_image_url}`);
+        // });
 
-        // if (map_markers.length > 1) {
-        //     for (let i = 1; i < map_markers.length+1; i++){
-        //         const map_marker_url_variable = `map_marker_image_url${i+1}`
-        //         map_markers[i].setAttribute('src', `${this.site_config.map_marker_image_url}`);
-        //     }
-        // }
+        if (typeof this.site_config.map_marker_image_url == 'string') {
+            map_markers[0].setAttribute('src', `${this.site_config.map_marker_image_url}`);
+        } 
+        
+        if (Array.isArray(this.site_config.map_marker_image_url)){
+            for (let i = 0; i < map_markers.length; i++) {
+                map_markers[i].setAttribute('src', `${this.site_config.map_marker_image_url[i]}`);
+            }
+        }
     }
 
     addHRToProperties() {

@@ -1313,6 +1313,14 @@ export default class BasePortal {
         map_markers.forEach((marker) => {
             marker.setAttribute('src', `${this.site_config.map_marker_image_url}`);
         });
+        // map_markers[0].setAttribute('src', `${this.site_config.map_marker_image_url}`);
+
+        // if (map_markers.length > 1) {
+        //     for (let i = 1; i < map_markers.length+1; i++){
+        //         const map_marker_url_variable = `map_marker_image_url${i+1}`
+        //         map_markers[i].setAttribute('src', `${this.site_config.map_marker_image_url}`);
+        //     }
+        // }
     }
 
     addHRToProperties() {

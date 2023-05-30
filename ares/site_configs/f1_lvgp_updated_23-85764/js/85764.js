@@ -6,10 +6,9 @@ import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();
 
-const {domain} = process.env;
+const { domain } = process.env;
 
 const site_config = new SiteConfig();
-
 class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
@@ -17,9 +16,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id, site_config.lodging.event_name, 'F1 Las Vegas Grand Prix', '#000');
-
-// f1Styles(site_config.site_id);
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#000');
 
 new ChildPortal();
 new Distance();
@@ -38,26 +35,14 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-// const selected_language = utilities.getMetaTagContent('theme');
+async function setListenerForPolicyModal() {
+    await utilities.waitForSelectorInDOM('.span.open-modal');
 
-// async function changeUpdateSearchTextOnPropPage() {
-//     await utilities.waitForSelectorInDOM('.translateMe');
+    const policies_lower = document.querySelector('#policies-fees');
+    policies_lower.addEventListener('click', (e) => {
+        document.querySelector('span.open-modal').click();
+    });
+}
 
-//     if (selected_language === 'french') {
-//         utilities.updateHTML('.translateMe', 'Modifier La Recherche');
-//     } else {
-//         utilities.updateHTML('.translateMe', 'Update Search');
-//     }
-// }
-// changeUpdateSearchTextOnPropPage();
+setListenerForPolicyModal();
 
-// async function setListenerForPolicyModal() {
-//     await utilities.waitForSelectorInDOM('.span.open-modal');
-
-//     const policies_lower = document.querySelector('#policies-fees');
-//     policies_lower.addEventListener('click', (e) => {
-//         document.querySelector('span.open-modal').click();
-//     });
-// }
-
-// setListenerForPolicyModal();

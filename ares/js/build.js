@@ -323,7 +323,7 @@ export default class BasePortal {
             this.resizeViewportForMapMobile();
             // this.showCoronavirusInfoBanner();
             this.showCurrencySelect();
-            this.positionPropReviews();
+            // this.positionPropReviews();
             this.insertPoweredByFooterLogo();
             this.updateConfirmationCheckBoxes();
             this.showMoreAmenities();

@@ -29,7 +29,7 @@ async function insertFooterText() {
         'beforebegin',
         `
         <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />
-        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Las Vegas Grand Prix</p>
+        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Las Vegas Grand Prix. The F1 FORMULA 1 logo, F1 logo, FORMULA 1, F1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX, PADDOCK CLUB, FORMULA 1 LAS VEGAS GRAND PRIX and related marks are trademarks of Formula One Licensing BV, a Formula 1 company. All rights reserved.</p>
         `
     );
 }

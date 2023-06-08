@@ -56,10 +56,12 @@ header {
   width: 100%;
   margin: 0;
   padding: 9px !important;
+  transition: all 0.4s ease;
 
   &:hover {
-    color: #000 !important;
-    background-color: #e10600;
+    color: #e10600 !important;
+    background-color: #fff !important;
+    border: 1px solid #e10600 !important;
   }
 }
 

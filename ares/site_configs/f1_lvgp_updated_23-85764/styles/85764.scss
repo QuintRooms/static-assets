@@ -45,19 +45,25 @@ header {
   justify-self: end;
 }
 
-#races-contact li {
-  &:hover {
-    background: unset;
-  }
-}
+// #races-contact li {
+//   &:hover {
+//     background: unset;
+//   }
+// }
 
 #races-contact a {
   display: inline-block;
   width: 100%;
 
   &:hover {
-    color: #e10600;
+    color: #000;
+    background-color: #e10600;
   }
+}
+
+a.book-plus {
+  color: #fff;
+  background-color: #e10600;
 }
 
 header #races-contact {

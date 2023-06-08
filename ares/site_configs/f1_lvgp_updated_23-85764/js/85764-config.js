@@ -79,7 +79,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=F1%20Las%20Vegas%20Grand%20Prix',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Las%20Vegas%20Grand%20Prix',
         has_landing_page: false,
         has_custom_emails: false,
         hide_search_on_landing_page: true,

@@ -68,6 +68,7 @@ async function hideFirstAmenity() {
         await utilities.waitForSelectorInDOM('.show-amenities');
         //select first Amenity element and set display to 'none'
         document.querySelector('.show-amenities').style.visibility = 'hidden !important';
+        document.querySelector('.show-amenities').style.display = 'none !important';
         console.log('end of first amenity function')
     }  
 

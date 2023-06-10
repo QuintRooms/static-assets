@@ -67,12 +67,12 @@ async function hideFirstAmenity() {
         console.log('first amenity function passed singlePropDetail conditional')
         await utilities.waitForSelectorInDOM('.show-amenities');
         //select first Amenity element and set display to 'none'
-        document.querySelector('.show-amenities').style.visibility = 'hidden !important';
-        document.querySelector('.show-amenities').style.display = 'none !important';
+        // document.querySelector('.show-amenities').style.visibility = 'hidden';
+        document.querySelector('.show-amenities').innerHTML = '';
         console.log('end of first amenity function')
     }  
 
 }
 
-hideFirstAmenity()
+hideFirstAmenity();
 

@@ -59,3 +59,14 @@ async function setListenerForPolicyModal() {
 
 setListenerForPolicyModal();
 
+async function hideFirstAmenity() {
+    if (utilities.getPageName == 'property-detail') {
+        await utilities.waitForSelectorInDOM('.show-amenities');
+        //select first Amenity element and set display to 'none'
+        document.querySelector('.show-amenities').style.display = 'none';
+    }  
+
+}
+
+hideFirstAmenity()
+

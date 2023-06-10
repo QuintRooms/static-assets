@@ -60,6 +60,7 @@ async function setListenerForPolicyModal() {
 setListenerForPolicyModal();
 
 async function hideFirstAmenity() {
+    await utilities.waitForSelectorInDOM('#theBody');
     if (utilities.getPageName == 'property-detail') {
         await utilities.waitForSelectorInDOM('.show-amenities');
         //select first Amenity element and set display to 'none'

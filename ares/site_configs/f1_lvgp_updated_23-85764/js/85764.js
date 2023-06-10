@@ -61,8 +61,9 @@ setListenerForPolicyModal();
 
 async function hideFirstAmenity() {
     console.log('first amenity function was called and accessed')
-    utilities.waitForSelectorInDOM('body');
-    if (document.querySelector('SinglePropDetail')) {
+    await utilities.waitForSelectorInDOM('#theBody');
+    console.log('first amenity function passed initial await selector')
+    if (document.querySelector('.SinglePropDetail')) {
         console.log('first amenity function passed singlePropDetail conditional')
         await utilities.waitForSelectorInDOM('.show-amenities');
         //select first Amenity element and set display to 'none'

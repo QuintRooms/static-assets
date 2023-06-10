@@ -69,6 +69,12 @@ async function hideFirstAmenity() {
         //select first Amenity element and set display to 'none'
         // document.querySelector('.show-amenities').style.visibility = 'hidden';
         document.querySelector('.show-amenities').innerHTML = '';
+        // let clickEvent = new MouseEvent("click", {
+        //     "view": window,
+        //     "bubbles": true,
+        //     "cancelable": false
+        // });
+        document.getElementById("show-more-or-less").click();
         console.log('end of first amenity function')
     }  
 

@@ -13,7 +13,7 @@ module.exports = () => {
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
-            // 'beach_it_23-84923': './src/84923.js', // beach it_23
+            'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
@@ -35,7 +35,7 @@ module.exports = () => {
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
-            'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
+            // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -117,8 +117,10 @@ module.exports = () => {
             // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
             // 'railbird_24-90535': './src/90535.js', // railbird 24
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
-            'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
+            // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             //  'ares_derek-70011': './src/70011.js', // ares derek
+            // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
+            'beach_it_23-84923': './src/84923.js', // beach it_23
         };
 
         // local environment
@@ -127,7 +129,7 @@ module.exports = () => {
             // new sites populate below
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
-            // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
+            
             // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 Las Vegas GP 23
             // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
             // 'railbird_24-90535': './src/90535.js', // railbird 24

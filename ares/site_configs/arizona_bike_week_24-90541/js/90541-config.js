@@ -16,7 +16,7 @@ export default function siteConfig() {
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         lodging: {
             event_id: '',
-            event_name: 'Arizona Bike Week 2023',
+            event_name: 'Arizona Bike Week',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

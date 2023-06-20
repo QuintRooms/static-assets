@@ -13,18 +13,20 @@ module.exports = () => {
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
-            'beach_it_23-84923': './src/84923.js', // beach it_23
+            // 'beach_it_23-84923': './src/84923.js', // beach it_23
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
+            'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'breeders_23-88324': './src/88324.js', // breeders 23
             // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'echoland_23-85734': './src/85734.js', // echoland 23
@@ -86,6 +88,7 @@ module.exports = () => {
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
+            'suenos_24-90956': './src/90956.js', // suenos 24
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
@@ -120,13 +123,19 @@ module.exports = () => {
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             //  'ares_derek-70011': './src/70011.js', // ares derek
             // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
-            'beach_it_23-84923': './src/84923.js', // beach it_23
+            // 'beach_it_23-84923': './src/84923.js', // beach it_23
+            'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
+            'suenos_24-90956': './src/90956.js', // suenos 24
+            'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
+            'suenos_24-90956': './src/90956.js', // suenos 24
+            'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
             

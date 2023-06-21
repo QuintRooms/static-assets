@@ -14,7 +14,7 @@ module.exports = () => {
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
             // 'beach_it_23-84923': './src/84923.js', // beach it_23
-            'beach_it_24-91129': './src/91129.js', // beach it_24
+            // 'beach_it_24-91129': './src/91129.js', // beach it_24
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
@@ -22,6 +22,7 @@ module.exports = () => {
             // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'breeders_23-88324': './src/88324.js', // breeders 23
+            'breeders_24-88325': './src/88325.js', // breeders 24
             // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
@@ -128,13 +129,15 @@ module.exports = () => {
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'suenos_24-90956': './src/90956.js', // suenos 24
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
-            'beach_it_24-91129': './src/91129.js', // beach it_24
+            // 'beach_it_24-91129': './src/91129.js', // beach it_24
+            'breeders_24-88325': './src/88325.js', // breeders 24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'breeders_24-88325': './src/88325.js', // breeders 24
             'beach_it_24-91129': './src/91129.js', // beach it_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'suenos_24-90956': './src/90956.js', // suenos 24

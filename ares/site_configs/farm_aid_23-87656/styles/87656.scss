@@ -4,14 +4,14 @@ $header_background: #fff;
 $logo_flex_position: center;
 $logo_max_width: 400px;
 $background_color: #fff;
-$primary_color: #89cedf;
-$secondary_color: #89cedf;
+$primary_color: #006300;
+$secondary_color: #006300;
 $primary_text_color: #fff;
-$secondary_text_color: #89cedf;
-$border_color: #89cedf;
+$secondary_text_color: #006300;
+$border_color: #006300;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #b45129;
-$button_hover_border_color: #b45129;
+$button_hover_text_color: #009D0A;
+$button_hover_border_color: #009D0A;
 $google_font_name: 'Montserrat';
 $site_name: 'farm_aid_23-87656';
 $path: set-path($env);
@@ -24,14 +24,14 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 .ArnRateButton .ArnShowRatesLink  {
   border-width: 2px;
-  background: #b45129;
-  border-color: #b45129;
+  background: #009D0A;
+  border-color: #009D0A;
   font-weight: bold;
   &:hover{
     background: #fff;
     border-width: 2px;
-    color: #b45129;
-    border-color: #b45129;
+    color: #009D0A;
+    border-color: #009D0A;
   }
 }
 
@@ -39,14 +39,14 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
   background: #fff;
   border: 2px solid #fff;
   &:hover{
-    background: #b45129;
+    background: #009D0A;
     border-width: 2px;
     color: #fff;
   }
 }
 
 #lucid-link {
-  color: #b45129;
+  color: #009D0A;
   &:hover{
     color: #fff;
   }
@@ -54,7 +54,7 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 }
 
 .lucid-banner {
-  background: #b45129;
+  background: #009D0A;
 }
 
 .GroupHoldForm .ArnLeftSearchContainer {

@@ -34,8 +34,8 @@ module.exports = () => {
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            'farm_aid_23-87656': './src/87656.js', // farm aid_23
-            'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -88,6 +88,7 @@ module.exports = () => {
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
+            'sotx_fall_classic_23-88453': './src/88453.js', // sotx fall_classic_23
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
@@ -132,14 +133,16 @@ module.exports = () => {
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'beach_it_24-91129': './src/91129.js', // beach it_24
             // 'breeders_24-88325': './src/88325.js', // breeders 24
-            'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
-            'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            'sotx_fall_classic_23-88453': './src/88453.js', // sotx fall_classic_23
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            
             'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'breeders_24-88325': './src/88325.js', // breeders 24
             // 'beach_it_24-91129': './src/91129.js', // beach it_24

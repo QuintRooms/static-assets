@@ -34,8 +34,8 @@ module.exports = () => {
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
-            // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
+            'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -133,8 +133,8 @@ module.exports = () => {
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'beach_it_24-91129': './src/91129.js', // beach it_24
             // 'breeders_24-88325': './src/88325.js', // breeders 24
-            // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
-            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
+            'farm_aid_23-87656': './src/87656.js', // farm aid_23
             'sotx_fall_classic_23-88453': './src/88453.js', // sotx fall_classic_23
         };
 

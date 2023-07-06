@@ -34,14 +34,15 @@ module.exports = () => {
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            'farm_aid_23-87656': './src/87656.js', // farm aid_23
-            'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
+            'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
             // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
@@ -133,33 +134,17 @@ module.exports = () => {
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'beach_it_24-91129': './src/91129.js', // beach it_24
             // 'breeders_24-88325': './src/88325.js', // breeders 24
-            'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
-            'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'sotx_fall_classic_23-88453': './src/88453.js', // sotx fall_classic_23
+            'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            
-            'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
-            // 'breeders_24-88325': './src/88325.js', // breeders 24
-            // 'beach_it_24-91129': './src/91129.js', // beach it_24
-            // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
-            // 'suenos_24-90956': './src/90956.js', // suenos 24
-            // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
-            // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
-            // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
-            
-            // 'f1_las_vegas_gp_23-85764': './src/85764.js', // f1 Las Vegas GP 23
-            // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
-            // 'railbird_24-90535': './src/90535.js', // railbird 24
-            // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
-            // 'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
-            // 'lolla_24-90306': './src/90306.js', // lolla 24
-            // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
-            // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
+            'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

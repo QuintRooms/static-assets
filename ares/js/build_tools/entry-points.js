@@ -27,7 +27,7 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
@@ -42,7 +42,7 @@ module.exports = () => {
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
-            'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
+            // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
             // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
@@ -120,8 +120,8 @@ module.exports = () => {
             // 'resbeat_points_demo-62725': './src/62725.js', // Resbeat Points Demo
             // 'resbeat_test-62011': './src/62011.js', // Resbeat Test
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
-            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
-            'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
         };
 
         // local environment

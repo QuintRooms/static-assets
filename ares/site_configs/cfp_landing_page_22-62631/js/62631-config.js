@@ -90,16 +90,10 @@ export default function siteConfig() {
             //     portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',
             // },
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP LOS ANGELES 2023',
-                display_date: 'January 6 - 10, 2023',
-                end_date: '01/10/2023', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=57102',
-            },
-            {
                 name: 'CFP NATIONAL CHAMPIONSHIP HOUSTON 2024',
                 display_date: 'January 5 - 9, 2024',
                 end_date: '01/09/2024', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/212986027619161',
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=66665',
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',

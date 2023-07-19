@@ -26,7 +26,7 @@ module.exports = () => {
             // 'catbird_23-88335': './src/88335.js', // catbird 23
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
-            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'confidential_template-60276': './src/60276.js', // confidential template
@@ -37,7 +37,7 @@ module.exports = () => {
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
-            // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
+            'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
@@ -123,8 +123,8 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
-            // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
-            'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
+            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
         };
 
         // local environment

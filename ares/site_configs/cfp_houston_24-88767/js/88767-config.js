@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'College Football Playoff LA',
+            event_name: 'College Football Playoff',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

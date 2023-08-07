@@ -37,7 +37,7 @@ module.exports = () => {
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
-            'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
+            // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
@@ -91,6 +91,7 @@ module.exports = () => {
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sotx_fall_classic_23-88453': './src/88453.js', // sotx fall_classic_23
+            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
@@ -123,14 +124,16 @@ module.exports = () => {
             // 'roomcash_develop-63713': './src/63713.js', // RoomCash Develop
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
-            'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
+            // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

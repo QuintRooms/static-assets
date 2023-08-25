@@ -91,11 +91,12 @@ module.exports = () => {
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sotx_fall_classic_23-88453': './src/88453.js', // sotx fall_classic_23
-            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
+            // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'suenos_24-90956': './src/90956.js', // suenos 24
+            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
@@ -126,14 +127,19 @@ module.exports = () => {
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
+            // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
+            // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
+            // 'format_festival_23-83432': './src/83432.js', // format festival_23
+            // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
+            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
+            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
+            // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

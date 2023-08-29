@@ -27,14 +27,15 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
-            'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
+            // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
@@ -133,15 +134,18 @@ module.exports = () => {
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
-            'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
+            // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
+            'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
-            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
+            'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
+            // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
+            // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
             // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'ares_derek-70011': './src/70011.js', // ares derek

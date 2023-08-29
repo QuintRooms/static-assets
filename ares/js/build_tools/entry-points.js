@@ -34,6 +34,7 @@ module.exports = () => {
             // 'echoland_23-85734': './src/85734.js', // echoland 23
             // 'esap_23-83333': './src/83333.js', // esap 23
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
+            'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
@@ -96,7 +97,7 @@ module.exports = () => {
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
             // 'suenos_24-90956': './src/90956.js', // suenos 24
-            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
+            // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
@@ -131,13 +132,15 @@ module.exports = () => {
             // 'format_festival__prod_23-83443': './src/83443.js', // format festival__prod_23
             // 'format_festival_23-83432': './src/83432.js', // format festival_23
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
-            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
+            // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
+            'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
             // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24

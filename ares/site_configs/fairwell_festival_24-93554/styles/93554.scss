@@ -1,0 +1,21 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #587e72;
+$logo_flex_position: center;
+$logo_max_width: 300px;
+$background_color: #FFF9DB;
+$primary_color: #2a739d;
+$secondary_color: #2a739d;
+$primary_text_color: #fff;
+$secondary_text_color: #000;
+$border_color: #2a739d;
+$button_hover_background_color: #FFF9DB;
+$button_hover_text_color: #2a739d;
+$button_hover_border_color: #2a739d;
+$google_font_name: 'Montserrat';
+$site_name: 'fairwell_festival_24-93554';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';

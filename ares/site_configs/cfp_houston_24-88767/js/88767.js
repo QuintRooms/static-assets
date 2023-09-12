@@ -57,10 +57,20 @@ class ChildPortal extends BasePortal {
         const medium = search_params.get('utm_medium');
         const campaign = search_params.get('utm_campaign');
 
-        // const check_in = search_params.get('checkin');
+        const location_label = search_params.get('locationlabel');
 
-        // if (check_in === '10/6/2022') location_btns[0].style.display = 'none';
-        // if (check_in === '10/13/2022') location_btns[1].style.display = 'none';
+        if (location_label === 'NRG Stadium') {
+            location_btns[0].style.color = '#000';
+            location_btns[0].style.background = '#c9920e';
+        };
+        if (location_label === 'George R. Brown Convention Center (Playoff Fan Central)') {
+            location_btns[1].style.color = '#000';
+            location_btns[1].style.background = '#c9920e';
+        };
+        if (location_label === 'Galleria') {
+            location_btns[2].style.color = '#000';
+            location_btns[2].style.background = '#c9920e';
+        };
 
         if (source === null || medium === null || campaign === null) return;
 

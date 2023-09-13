@@ -46,6 +46,8 @@ class ChildPortal extends BasePortal {
         await utilities.waitForSelectorInDOM('#stadium-location');
         await utilities.waitForSelectorInDOM('#downtown-location');
         await utilities.waitForSelectorInDOM('#galleria-location');
+        await utilities.waitForSelectorInDOM('meta[name="originalParams"]');
+
         const location_btns = document.querySelectorAll('#stadium-location, #downtown-location, #galleria-location');
 
         if (!document.querySelector('#stadium-location') || !document.querySelector('#downtown-location') || !document.querySelector('#galleria-location')) return;
@@ -57,7 +59,9 @@ class ChildPortal extends BasePortal {
         const medium = search_params.get('utm_medium');
         const campaign = search_params.get('utm_campaign');
 
-        const location_label = search_params.get('locationlabel');
+        const original_params_content = document.querySelector('meta[name="originalParams"]').content;
+        let searchable_original_params = new URLSearchParams(original_params_content);
+        const location_label = searchable_original_params.get('locationlabel');
 
         if (location_label === 'NRG Stadium') {
             location_btns[0].style.color = '#000';

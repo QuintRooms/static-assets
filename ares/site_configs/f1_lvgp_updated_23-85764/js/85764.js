@@ -46,7 +46,7 @@ async function insertFooterText() {
 
 }
 
-insertFooterText();
+
 
 async function setListenerForPolicyModal() {
     await utilities.waitForSelectorInDOM('.span.open-modal');
@@ -57,7 +57,7 @@ async function setListenerForPolicyModal() {
     });
 }
 
-setListenerForPolicyModal();
+
 
 async function hideFirstAmenity() {
     console.log('first amenity function was called and accessed')
@@ -81,4 +81,6 @@ async function hideFirstAmenity() {
 }
 
 hideFirstAmenity();
+insertFooterText();
+setListenerForPolicyModal();
 

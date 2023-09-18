@@ -30,7 +30,6 @@ export default function siteConfig() {
             percent_off_text: 'off',
             show_percent_savings: false,
         },
-        exclusive_rate_text: 'Exclusive Rate',
         host_hotel_text: 'Official Partner',
         partner_hotel_text: 'Official Partner',
         show_tax_inclusive_rates: false,

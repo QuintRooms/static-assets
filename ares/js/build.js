@@ -1391,7 +1391,7 @@ export default class BasePortal {
                 if (el.classList.contains('ArnPropertyTierThree') && hostHotelText !== '' && hostHotelText !== undefined) {
                     addCustomTag(hostHotelText, el);
                 }
-                if (el.classList.contains('S16') || el.classList.contains('S20') || (el.classList.contains('S33') && exclusiveRateText !== '' && hostHotelText !== undefined)) {
+                if (el.classList.contains('S16') || el.classList.contains('S20') || (el.classList.contains('S33') && exclusiveRateText !== '' && exclusiveRateText !== undefined)) {
                     add_exclusive_rates_sash(exclusiveRateText, el);
                 }
             });

@@ -48,7 +48,7 @@ class ChildPortal extends BasePortal {
 
         const check_in = search_params.get('checkin');
 
-        if (check_in === '2/24/2024') weekend_btns[0].style.display = 'none';
+        if (check_in === '2/23/2024') weekend_btns[0].style.display = 'none';
         if (check_in === '3/1/2024') weekend_btns[1].style.display = 'none';
 
         if (source === null || medium === null || campaign === null) return;

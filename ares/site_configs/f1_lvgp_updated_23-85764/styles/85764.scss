@@ -32,6 +32,7 @@ header {
   gap: 10px;
   justify-content: center;
   padding: 0 6rem;
+  border-bottom: 4px solid #e10600;
 }
 
 .logo {
@@ -76,4 +77,8 @@ header #races-contact {
 
 .searchLink {
   visibility: hidden;
+}
+
+.lucid-banner {
+  display: none;
 }

@@ -1353,6 +1353,7 @@ export default class BasePortal {
         */
         function updateRoomDescription(selector, name, text) {
             if (!document.querySelector('.SinglePropDetail')) return;
+            if (exclusiveRateText === '' || exclusiveRateText === undefined) return;
             selector.innerHTML = selector.innerHTML.replace(
                 'Special Event Rate',
                 `<span class="prop-detail-exclusive-rate-tag exclusive-rate" style="position: static; margin:0 2px 2px 2px; display: inline-block; color: #fff; font-size: 14px; font-weight: light; padding: 5px;">Exclusive Rate</span>`

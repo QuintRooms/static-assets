@@ -27,7 +27,7 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'confidential_template-60276': './src/60276.js', // confidential template
@@ -77,6 +77,7 @@ module.exports = () => {
             // 'music_midtown_23-86605': './src/ 86605.js', // music midtown_23
             // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
+            'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
             // 'railbird_23-71772': './src/71772.js', // railbird 23
             // 'railbird_production_23-71773': './src/71773.js', // railbird production_23
@@ -136,14 +137,18 @@ module.exports = () => {
             // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
-            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'f1_usgp_23-93744': './src/93744.js', // f1 usgp_23
+            // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
+            'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
             
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24

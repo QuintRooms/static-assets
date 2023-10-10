@@ -33,8 +33,8 @@ class ChildPortal extends BasePortal {
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-location pull-right">
-                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66674">Book Downtown Location</a>
-                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66665">Book Stadium Location</a>
+                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66665">Book Downtown Location</a>
+                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66674">Book Stadium Location</a>
                 <a id="galleria-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=69301">Book Galleria Location</a>
             </div>`
         );

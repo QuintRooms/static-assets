@@ -64,12 +64,12 @@ class ChildPortal extends BasePortal {
         const location_label = searchable_original_params.get('locationlabel');
 
         if (location_label === 'NRG Stadium') {
-            location_btns[0].style.color = '#000';
-            location_btns[0].style.background = '#c9920e';
-        };
-        if (location_label === 'George R. Brown Convention Center (Playoff Fan Central)') {
             location_btns[1].style.color = '#000';
             location_btns[1].style.background = '#c9920e';
+        };
+        if (location_label === 'George R. Brown Convention Center (Playoff Fan Central)') {
+            location_btns[0].style.color = '#000';
+            location_btns[0].style.background = '#c9920e';
         };
         if (location_label === 'Galleria') {
             location_btns[2].style.color = '#000';

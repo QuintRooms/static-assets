@@ -1,0 +1,59 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #fff;
+$logo_flex_position: space-between;
+$logo_max_width: 400px;
+$background_color: #fff;
+$primary_color: #d6410f;
+$secondary_color: #00a081;
+$primary_text_color: #fff;
+$secondary_text_color: #d6410f;
+$border_color: #d6410f;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #d6410f;
+$button_hover_border_color: #d6410f;
+$google_font_name: 'Montserrat';
+$site_name: 'acl_production_24-94608';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+@import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
+
+header .logo {
+    margin-left: 15px;
+}
+.event-week {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.event-week a {
+    color: $primary_text_color;
+    background: $secondary_color;
+    font-family: 'Paytone One';
+    font-size: 17px;
+    padding: 6px;
+    margin: 6px 0;
+    transition: all 0.5s ease;
+    box-shadow: 2px 2px 1px 0px #ccc;
+}
+
+.event-week a:hover {
+    background: $secondary_color;
+}
+
+@media screen and (max-width: 750px) {
+    header {
+        flex-direction: column;
+    }
+    .event-week {
+        flex-direction: row;
+    }
+
+    .event-week a {
+        margin: 6px;
+    }
+}

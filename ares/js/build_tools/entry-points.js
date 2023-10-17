@@ -7,8 +7,8 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'acl_23_production-83441': './src/83441.js', // acl 23_production
             // 'acl_23_attendees-83438': './src/83438.js', // acl 23_attendees
-            'acl_production_24-94608': './src/94608.js', // acl production_24
-            'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
+            // 'acl_production_24-94608': './src/94608.js', // acl production_24
+            // 'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
             // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
@@ -93,6 +93,7 @@ module.exports = () => {
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
+            'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
@@ -145,14 +146,16 @@ module.exports = () => {
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
-            'acl_production_24-94608': './src/94608.js', // acl production_24
-            'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
+            // 'acl_production_24-94608': './src/94608.js', // acl production_24
+            // 'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
+            'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
             'acl_production_24-94608': './src/94608.js', // acl production_24
             'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
             // 'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24

@@ -33,8 +33,8 @@ class ChildPortal extends BasePortal {
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-location pull-right">
-                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66665">Book Stadium Location</a>
-                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66674">Book Downtown Location</a>
+                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66665">Book Downtown Location</a>
+                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66674">Book Stadium Location</a>
                 <a id="galleria-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=69301">Book Galleria Location</a>
             </div>`
         );
@@ -64,12 +64,12 @@ class ChildPortal extends BasePortal {
         const location_label = searchable_original_params.get('locationlabel');
 
         if (location_label === 'NRG Stadium') {
-            location_btns[0].style.color = '#000';
-            location_btns[0].style.background = '#c9920e';
-        };
-        if (location_label === 'George R. Brown Convention Center (Playoff Fan Central)') {
             location_btns[1].style.color = '#000';
             location_btns[1].style.background = '#c9920e';
+        };
+        if (location_label === 'George R. Brown Convention Center (Playoff Fan Central)') {
+            location_btns[0].style.color = '#000';
+            location_btns[0].style.background = '#c9920e';
         };
         if (location_label === 'Galleria') {
             location_btns[2].style.color = '#000';

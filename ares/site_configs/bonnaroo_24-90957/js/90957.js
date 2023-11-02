@@ -30,15 +30,16 @@ async function addThirdPartyRateText() {
 
     original_price_elements.forEach(original_price => {
         const original_price_text = original_price.textContent;
-        console.log('original_price:' + original_price);
+        console.log('original_price:' + original_price_text);
         original_price.insertAdjacentHTML(
-            'afterbegin', 
+            'beforebegin', 
             `
             <div class="third-party-orig-price">
                     <span class="third-party-rate-text">Third Party Rate: </span>
                     <span class="strike-through-price">${original_price_text}</span>
             </div>
-            `);
+            `
+            );
     });
 }
 

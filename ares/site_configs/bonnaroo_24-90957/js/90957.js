@@ -1,5 +1,9 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './90957-config';
+import Distance from '../../../js/calculate-distance';
+import Utilities from '../../../js/utilities';
+
+const utilities = new Utilities();
 
 const site_config = new SiteConfig();
 class ChildPortal extends BasePortal {
@@ -9,6 +13,7 @@ class ChildPortal extends BasePortal {
     }
 }
 new ChildPortal();
+new Distance();
 
 async function addThirdPartyRateText() {
     await utilities.waitForSelectorInDOM('.otherPrice');

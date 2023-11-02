@@ -20,7 +20,7 @@ $banner_image: linear-gradient(#7EBFBC, #7A5FBC);
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
-div.originalPrice{
+.SearchHotels .originalPrice{
   display: none;
 }
 
@@ -32,7 +32,7 @@ div.otherPrice{
   text-decoration: line-through;
 }
 
-span.third-party-rate-span{
+.third-party-rate-span{
   color: #666;
   font-size: 15px;
   font-weight: 500;

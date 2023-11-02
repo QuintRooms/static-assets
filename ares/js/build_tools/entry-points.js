@@ -22,7 +22,7 @@ module.exports = () => {
             // 'bj_scottsdale_23-83130': './src/83130.js', // bj scottsdale_23
             // 'bj_west_palm_beach_23-82620': './src/82620.js', // bj west_palm_beach_23
             // 'bonnaroo_23-78102': './src/78102.js', // bonnaroo 23
-            // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
+            'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'breeders_23-88324': './src/88324.js', // breeders 23
             // 'breeders_24-88325': './src/88325.js', // breeders 24
             // 'catbird_23-88335': './src/88335.js', // catbird 23
@@ -64,7 +64,7 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_rebuilt_23-78098': './src/78098.js', // high water_rebuilt_23
-            'high_water_24-89860': './src/89860.js', // high water_24
+            // 'high_water_24-89860': './src/89860.js', // high water_24
             // 'innings_tampa_23-71774': './src/71774.js', // innings tampa_23
             // 'innings_tempe_23-71775': './src/71775.js', // innings tempe_23
             // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
@@ -93,7 +93,7 @@ module.exports = () => {
             // 'room_steals-52342': './src/52342.js', // Room Steals
             // 'savannah_music_festival_23-84598': './src/84598.js', // savannah music_festival_23
             // 'sea_hear_now_23-84116': './src/84116.js', // sea hear_now_23
-            'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
+            // 'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
             // 'shaky_knees_23-78097': './src/78097.js', // shaky knees_23
             // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
@@ -145,7 +145,27 @@ module.exports = () => {
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
-            'high_water_24-89860': './src/89860.js', // high water_24
+            // 'high_water_24-89860': './src/89860.js', // high water_24
+
+            // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
+            // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
+            // 'acl_production_24-94608': './src/94608.js', // acl production_24
+            // 'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
+            // 'beach_it_24-91129': './src/91129.js', // beach it_24
+            // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
+            // 'high_water_24-89860': './src/89860.js', // high water_24
+            // 'lolla_24-90306': './src/90306.js', // lolla 24
+            // 'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
+            // 'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
+            // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            // 'railbird_24-90535': './src/90535.js', // railbird 24
+            // 'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
+            // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
+            // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
+            // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
+            // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
+            'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
+
         };
 
         // local environment

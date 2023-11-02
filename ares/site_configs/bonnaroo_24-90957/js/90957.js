@@ -16,14 +16,16 @@ new ChildPortal();
 new Distance();
 
 async function addThirdPartyRateText() {
-    await utilities.waitForSelectorInDOM('.originalPrice');
+    await utilities.waitForSelectorInDOM('.otherPrice');
+    console.log('after waitForSelectorInDOM');
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
-    const original_price_elements = document.querySelectorAll('.SearchHotels div.originalPrice');
-    console.log('original_price_elements: ' + original_price_elements);
-    original_price_elements.forEach(original_price => {
-        console.log('original_price:' + original_price);
-        original_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
+    console.log('after pagename validation');
+    const other_price_elements = document.querySelectorAll('.SearchHotels div.otherPrice');
+    console.log('other_price_elements' + other_price_elements);
+    other_price_elements.forEach(other_price => {
+        console.log('original_price:' + other_price);
+        other_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
     });
 }
 

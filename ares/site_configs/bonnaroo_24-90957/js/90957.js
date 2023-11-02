@@ -31,8 +31,9 @@ async function addThirdPartyRateText() {
     original_price_elements.forEach(original_price => {
         const original_price_text = original_price.textContent;
         console.log('original_price:' + original_price_text);
-        original_price.insertAdjacentHTML(
-            'beforebegin', 
+        const price_parent_box = original_price.parentElement.parentElement;
+        price_parent_box.insertAdjacentHTML(
+            'afterbegin', 
             `
             <div class="third-party-orig-price">
                     <span class="third-party-rate-text">Third Party Rate: </span>

@@ -16,12 +16,12 @@ new ChildPortal();
 new Distance();
 
 async function addThirdPartyRateText() {
-    await utilities.waitForSelectorInDOM('.otherPrice');
+    await utilities.waitForSelectorInDOM('.originalPrice');
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
 
-    const other_price = document.querySelector('.otherPrice');
-    other_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
+    const original_price = document.querySelector('.originalPrice');
+    original_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
 }
 
 addThirdPartyRateText();

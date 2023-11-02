@@ -8,6 +8,7 @@ class ChildPortal extends BasePortal {
         super.init();
     }
 }
+new ChildPortal();
 
 async function addThirdPartyRateText() {
     await utilities.waitForSelectorInDOM('.otherPrice');
@@ -16,5 +17,3 @@ async function addThirdPartyRateText() {
 }
 
 addThirdPartyRateText();
-
-new ChildPortal();

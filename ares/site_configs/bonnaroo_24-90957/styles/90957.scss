@@ -49,13 +49,13 @@ $banner_image: linear-gradient(#7EBFBC, #7A5FBC);
 //   flex-direction: row;
 // }
 
-.third-party-orig-price {
+.third-party-orig-price p{
     display: flex;
     color: #666;
     font-size: 15px;
     font-weight: 500;
 }
 
-.third-party-orig-price > span {
-  text-decoration: line-through;
-}
+// .third-party-orig-price > span {
+//   text-decoration: line-through;
+// }

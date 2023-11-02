@@ -37,7 +37,7 @@ async function addThirdPartyRateText() {
             'afterbegin', 
             `
             <div class="third-party-orig-price">
-                Third Party Rate: <span class="strike-through-price">${original_price_text}</span>
+                <p>Third Party Rate: </p>
             </div>
             `
             );

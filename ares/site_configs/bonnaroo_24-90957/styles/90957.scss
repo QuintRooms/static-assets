@@ -25,11 +25,11 @@ $banner_image: linear-gradient(#7EBFBC, #7A5FBC);
 //   flex-direction: column;
 // }
 
-.otherPrice {
-  display: inline;
-}
+// .otherPrice {
+//   display: inline;
+// }
 
-div.otherPrice{
+strike-through-price{
   display: inline;
   color: #666;
   font-size: 15px;
@@ -37,8 +37,14 @@ div.otherPrice{
   text-decoration: line-through;
 }
 
-.third-party-rate-span{
+.third-party-rate-text{
+  display: inline;
   color: #666;
   font-size: 15px;
   font-weight: 500;
+}
+
+.third-party-orig-price {
+  display:flex;
+  flex-direction: row;
 }

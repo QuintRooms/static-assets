@@ -114,6 +114,7 @@ export default class BasePortal {
                 utilities.moveElementIntoExistingWrapper('#theBookingPage #theRateDescription', '#theHotel', 'beforeEnd');
                 // utilities.emailVerificationSetup();
                 this.fixCheckoutInputTabOrder();
+                this.updateBookingFeeLanguage();
 
                 utilities.selectCheckboxOnLabelClick('.confirmationWarning, .confirmationAgreement, #theMarketingOptInAjax');
             }
@@ -247,7 +248,6 @@ export default class BasePortal {
                     });
                 });
 
-                this.updateBookingFeeLanguage();
                 this.createStarIcons();
                 this.addHRToProperties();
                 this.showLoaderOnResultsUpdate();

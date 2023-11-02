@@ -247,6 +247,7 @@ export default class BasePortal {
                     });
                 });
 
+                this.updateBookingFeeLanguage();
                 this.createStarIcons();
                 this.addHRToProperties();
                 this.showLoaderOnResultsUpdate();
@@ -416,12 +417,17 @@ export default class BasePortal {
         if (document.querySelector('.CheckOutForm')) {
             const due_now = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
             if (due_now) {
-                if ((due_now.textContent.includes('4.95') || due_now.textContent.includes('5.00')) && due_now.textContent.includes('Hotels For Hope')) {
-                    due_now.insertAdjacentHTML(
-                        'beforeEnd',
-                        ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>'
-                    );
+                if (due_now.textContent.includes('Hotels For Hope')) {
+                    const new_due_now = due_now.textContent.replace("Hotels For Hope", "Quintrooms");
+                    due_now.innerText = new_due_now;
                 }
+                // if ((due_now.textContent.includes('4.95') || due_now.textContent.includes('5.00')) && due_now.textContent.includes('Hotels For Hope')) {
+                    // due_now.insertAdjacentHTML(
+                    //     'beforeEnd',
+                    //     ' <i>This fee is in addition to any immediate charges for prepayment as required in the above deposit and booking terms.</i>'
+                    // );
+                //     due_now.textContent.replace("Hotels For Hope", "Quintrooms");
+                // }
             }
         }
     }

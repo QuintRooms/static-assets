@@ -29,22 +29,33 @@ $banner_image: linear-gradient(#7EBFBC, #7A5FBC);
 //   display: inline;
 // }
 
-.strike-through-price{
-  display: inline-flex;
-  color: #666;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: line-through;
-}
+// .strike-through-price{
+//   display: inline-flex;
+//   color: #666;
+//   font-size: 15px;
+//   font-weight: 500;
+//   text-decoration: line-through;
+// }
 
-.third-party-rate-text{
-  display: inline-flex;
-  color: #666;
-  font-size: 15px;
-  font-weight: 500;
-}
+// .third-party-rate-text{
+//   display: inline-flex;
+//   color: #666;
+//   font-size: 15px;
+//   font-weight: 500;
+// }
+
+// .third-party-orig-price {
+//   display: flex;
+//   flex-direction: row;
+// }
 
 .third-party-orig-price {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.third-party-orig-price > span {
+  text-decoration: line-through;
 }

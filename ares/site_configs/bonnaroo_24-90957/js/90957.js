@@ -32,12 +32,12 @@ async function addThirdPartyRateText() {
         const original_price_text = original_price.textContent;
         console.log('original_price:' + original_price_text);
         const price_parent_box = original_price.parentElement.parentElement;
+        console.log('priceparentbox' + price_parent_box);
         price_parent_box.insertAdjacentHTML(
             'afterbegin', 
             `
             <div class="third-party-orig-price">
-                    <span class="third-party-rate-text">Third Party Rate: </span>
-                    <span class="strike-through-price">${original_price_text}</span>
+                Third Party Rate: <span class="strike-through-price">${original_price_text}</span>
             </div>
             `
             );

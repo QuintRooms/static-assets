@@ -28,7 +28,7 @@ async function addThirdPartyRateText() {
     //     original_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
     // });
 
-    original_price_elements.forEach(original_price => {
+    original_price_elements.forEach((original_price) => {
         const original_price_text = original_price.textContent;
         console.log('original_price:' + original_price_text);
         const price_parent_box = original_price.parentElement.parentElement;

@@ -17,6 +17,10 @@ new Distance();
 
 async function addThirdPartyRateText() {
     await utilities.waitForSelectorInDOM('.otherPrice');
+    const page_name = utilities.getPageName();
+    if (page_name !== 'search-results') return;
+
+    
     const other_price = document.querySelector('.otherPrice');
     other_price.insertAdjacentHTML('beforebegin', '<span class="third-party-rate-span">Third Party Rate: </span>');
 }

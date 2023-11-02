@@ -16,16 +16,29 @@ new ChildPortal();
 new Distance();
 
 async function addThirdPartyRateText() {
-    await utilities.waitForSelectorInDOM('.otherPrice');
-    console.log('after waitForSelectorInDOM');
+    await utilities.waitForSelectorInDOM('.originalPrice');
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
-    console.log('after pagename validation');
-    const other_price_elements = document.querySelectorAll('.SearchHotels div.otherPrice');
-    console.log('other_price_elements' + other_price_elements);
-    other_price_elements.forEach(other_price => {
-        console.log('original_price:' + other_price);
-        other_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
+
+    const original_price_elements = document.querySelectorAll('.SearchHotels div.originalPrice');
+    console.log('original_price_elements: ' + original_price_elements);
+
+    // original_price_elements.forEach(original_price => {
+    //     console.log('original_price:' + original_price);
+    //     original_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
+    // });
+
+    original_price_elements.forEach(original_price => {
+        const original_price_text = original_price.textContent;
+        console.log('original_price:' + original_price);
+        original_price.insertAdjacentHTML(
+            'afterbegin', 
+            `
+            <div class="third-party-orig-price">
+                    <span class="third-party-rate-text">Third Party Rate: </span>
+                    <span class="strike-through-price">${original_price_text}</span>
+            </div>
+            `);
     });
 }
 

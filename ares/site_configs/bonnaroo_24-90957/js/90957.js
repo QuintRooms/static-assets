@@ -20,7 +20,7 @@ async function addThirdPartyRateText() {
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
 
-    const original_price = document.querySelector('.originalPrice');
+    const original_price = document.querySelector('.SearchHotels .originalPrice');
     original_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
 }
 

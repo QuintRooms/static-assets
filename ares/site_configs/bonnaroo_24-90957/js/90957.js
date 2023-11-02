@@ -19,10 +19,10 @@ async function addThirdPartyRateText() {
     await utilities.waitForSelectorInDOM('.originalPrice');
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
-    const original_price_elements = document.querySelectorAll('.SearchHotels .originalPrice');
+    const original_price_elements = document.querySelectorAll('.SearchHotels div.originalPrice');
     console.log('original_price_elements: ' + original_price_elements);
     original_price_elements.forEach(original_price => {
-        console.log('inside original price foreach loop');
+        console.log('original_price:' + original_price);
         original_price.insertAdjacentHTML('beforebegin', '<div class="third-party-rate-span">Third Party Rate: </div>');
     });
 }

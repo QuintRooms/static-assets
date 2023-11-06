@@ -53,26 +53,23 @@ async function addThirdPartyExclusiveStyling() {
 
     const contracted_props = document.querySelectorAll('.OnSale');
 
-
-    let tpRateContainer = document.createElement('div');
-
-
     contracted_props.forEach((property) => {
         const original_price = property.querySelector('.SearchHotels div.originalPrice');
+        const main_rate_box = property.querySelector('.mainRate');
+        let tp_rate_container = document.createElement('div');
+        let orig_strike_price = document.createElement('span');
+
+        tp_rate_container.id = 'tp-rate-container';
+        tp_rate_container.style.display = 'flex';
+        tp_rate_container.style.flexDirection = 'row';
+        tp_rate_container.innerHTML = '<span class="tp-text">3rd Party</span>';
+        main_rate_box.prepend(tp_rate_container);
+        
+        orig_strike_price.classList.add("tp-text");
         const original_price_text = original_price.textContent;
-
-
-        console.log('original_price:' + original_price_text);
-        const price_parent_box = original_price.parentElement.parentElement;
-        console.log('priceparentbox' + price_parent_box);
-        price_parent_box.insertAdjacentHTML(
-            'afterBegin', 
-            `
-            <div class="third-party-orig-price">
-                3rd Party: <span class="strike-through-price">${original_price_text}</span>
-            </div>
-            `
-            );
+        orig_strike_price.innerText = original_price_text;
+        
+        tp_rate_container.appendChild(orig_strike_price);
     });
 }
 

@@ -54,7 +54,7 @@ async function addThirdPartyExclusiveStyling() {
     const contracted_props = document.querySelectorAll('.OnSale');
 
     contracted_props.forEach((property) => {
-        const original_price = property.querySelector('.SearchHotels .originalPrice');
+        const original_price = property.querySelector('div.originalPrice');
         const main_rate_box = property.querySelector('.mainRate');
         let tp_rate_container = document.createElement('div');
         let orig_strike_price = document.createElement('span');

@@ -47,7 +47,7 @@ new Distance();
 // addThirdPartyRateText();
 
 async function addThirdPartyExclusiveStyling() {
-    await utilities.waitForSelectorInDOM('.SearchHotels div.originalPrice');
+    await utilities.waitForSelectorInDOM('.leaflet-marker-icon');
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
 

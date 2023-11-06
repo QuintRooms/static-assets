@@ -1,6 +1,5 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './90957-config';
-import Distance from '../../../js/calculate-distance';
 import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();
@@ -17,27 +16,26 @@ class ChildPortal extends BasePortal {
     }
 
     async addThirdPartyExclusiveStyling() {
-    await utilities.waitForSelectorInDOM('.originalPrice');
-    const page_name = utilities.getPageName();
-    if (page_name !== 'search-results') return;
+        await utilities.waitForSelectorInDOM('.originalPrice');
+        const page_name = utilities.getPageName();
+        if (page_name !== 'search-results') return;
 
-    const contracted_props = document.querySelectorAll('.OnSale');
+        const contracted_props = document.querySelectorAll('.currentPropertyPage div.OnSale');
 
-    console.log(contracted_props.length);
+        console.log(contracted_props.length);
 
-    contracted_props.forEach((property) => {
-        const original_price = property.querySelector('.SearchHotels div.originalPrice');
-        console.log(original_price);
-        const original_price_text = original_price.textContent;
-        console.log(original_price_text);
-        original_price.innerText = '3rd Party: ' + original_price_text;
-        console.log(original_price);;
-    });
+        contracted_props.forEach((property) => {
+            const original_price = property.querySelector('.SearchHotels div.originalPrice');
+            console.log(original_price);
+            const original_price_text = original_price.textContent;
+            console.log(original_price_text);
+            original_price.innerText = '3rd Party: ' + original_price_text;
+            console.log(original_price);;
+        });
 
 }
 }
 new ChildPortal();
-new Distance();
 
 // async function addThirdPartyRateText() {
 //     await utilities.waitForSelectorInDOM('.originalPrice');

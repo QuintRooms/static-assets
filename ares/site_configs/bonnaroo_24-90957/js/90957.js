@@ -47,11 +47,13 @@ new Distance();
 // addThirdPartyRateText();
 
 async function addThirdPartyExclusiveStyling() {
-    await utilities.waitForSelectorInDOM('.arnCurrency');
+    await utilities.waitForSelectorInDOM('.SearchHotels div.originalPrice');
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
 
     const contracted_props = document.querySelectorAll('.OnSale');
+
+    console.log(contracted_props.length);
 
     contracted_props.forEach((property) => {
         const original_price = property.querySelector('.SearchHotels div.originalPrice');
@@ -59,6 +61,7 @@ async function addThirdPartyExclusiveStyling() {
         const original_price_text = original_price.textContent;
         console.log(original_price_text);
         original_price.innerText = '3rd Party: ' + original_price_text;
+        console.log(original_price);;
 
         // const main_rate_box = property.querySelector('.mainRate');
         // let tp_rate_container = document.createElement('div');

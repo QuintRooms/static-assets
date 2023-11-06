@@ -20,7 +20,7 @@ class ChildPortal extends BasePortal {
         const page_name = utilities.getPageName();
         if (page_name !== 'search-results') return;
 
-        const contracted_props = document.querySelectorAll('.currentPropertyPage div.OnSale');
+        const contracted_props = document.querySelectorAll('#currentPropertyPage div.OnSale');
 
         console.log(contracted_props.length);
 

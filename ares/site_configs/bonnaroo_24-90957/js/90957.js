@@ -46,8 +46,8 @@ new Distance();
 
 // addThirdPartyRateText();
 
-async function addThirdPartyExclusiveStyling() {
-    await utilities.waitForSelectorInDOM('.leaflet-marker-icon');
+function addThirdPartyExclusiveStyling() {
+    utilities.waitForSelectorInDOM('.originalPrice');
     const page_name = utilities.getPageName();
     if (page_name !== 'search-results') return;
 

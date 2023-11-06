@@ -49,15 +49,12 @@ $banner_image: linear-gradient(#79C530, #7A5FBC);
 //   flex-direction: row;
 // }
 
-.third-party-orig-price {
+.tp-text {
     display: flex;
     color: #666;
     font-size: 15px;
     font-weight: 500;
-}
-
-.third-party-orig-price > span {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 .OnSale .arnPrice .arnUnit {

@@ -54,7 +54,7 @@ async function addThirdPartyExclusiveStyling() {
     const contracted_props = document.querySelectorAll('.OnSale');
 
     contracted_props.forEach((property) => {
-        const original_price = property.querySelector('.SearchHotels div.originalPrice');
+        const original_price = property.querySelector('.SearchHotels .originalPrice');
         const main_rate_box = property.querySelector('.mainRate');
         let tp_rate_container = document.createElement('div');
         let orig_strike_price = document.createElement('span');
@@ -68,7 +68,7 @@ async function addThirdPartyExclusiveStyling() {
         orig_strike_price.classList.add("tp-text");
         const original_price_text = original_price.textContent;
         orig_strike_price.innerText = original_price_text;
-        
+
         tp_rate_container.appendChild(orig_strike_price);
     });
 }

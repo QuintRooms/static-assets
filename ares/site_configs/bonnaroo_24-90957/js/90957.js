@@ -4,13 +4,37 @@ import Distance from '../../../js/calculate-distance';
 import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();
-
 const site_config = new SiteConfig();
 class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
         super.init();
+        this.init();
     }
+
+    init() {
+        this.addThirdPartyExclusiveStyling();
+    }
+
+    async addThirdPartyExclusiveStyling() {
+    await utilities.waitForSelectorInDOM('.originalPrice');
+    const page_name = utilities.getPageName();
+    if (page_name !== 'search-results') return;
+
+    const contracted_props = document.querySelectorAll('.OnSale');
+
+    console.log(contracted_props.length);
+
+    contracted_props.forEach((property) => {
+        const original_price = property.querySelector('.SearchHotels div.originalPrice');
+        console.log(original_price);
+        const original_price_text = original_price.textContent;
+        console.log(original_price_text);
+        original_price.innerText = '3rd Party: ' + original_price_text;
+        console.log(original_price);;
+    });
+
+}
 }
 new ChildPortal();
 new Distance();
@@ -46,39 +70,9 @@ new Distance();
 
 // addThirdPartyRateText();
 
-function addThirdPartyExclusiveStyling() {
-    utilities.waitForSelectorInDOM('.originalPrice');
-    const page_name = utilities.getPageName();
-    if (page_name !== 'search-results') return;
 
-    const contracted_props = document.querySelectorAll('.OnSale');
 
-    console.log(contracted_props.length);
-
-    contracted_props.forEach((property) => {
-        const original_price = property.querySelector('.SearchHotels div.originalPrice');
-        console.log(original_price);
-        const original_price_text = original_price.textContent;
-        console.log(original_price_text);
-        original_price.innerText = '3rd Party: ' + original_price_text;
-        console.log(original_price);;
-
-        // const main_rate_box = property.querySelector('.mainRate');
-        // let tp_rate_container = document.createElement('div');
-        // let orig_strike_price = document.createElement('span');
-
-        // tp_rate_container.id = 'tp-rate-container';
-        // tp_rate_container.style.display = 'flex';
-        // tp_rate_container.style.flexDirection = 'row';
-        // tp_rate_container.innerHTML = '<span class="tp-text">3rd Party</span>';
-        // main_rate_box.prepend(tp_rate_container);
-        
-        // orig_strike_price.classList.add("tp-text");
-        
-        // orig_strike_price.innerText = original_price_text;
-
-        // tp_rate_container.appendChild(orig_strike_price);
-    });
+// addThirdPartyExclusiveStyling();
 
     // contracted_props.forEach((property) => {
     //     const original_price = property.querySelector('.SearchHotels div.originalPrice');
@@ -98,6 +92,3 @@ function addThirdPartyExclusiveStyling() {
 
     //     tp_rate_container.appendChild(orig_strike_price);
     // });
-}
-
-addThirdPartyExclusiveStyling();

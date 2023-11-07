@@ -8,7 +8,6 @@ class ChildPortal extends BasePortal {
     constructor() {
         super(site_config);
         super.init();
-        this.init();
     }
 
     async init() {
@@ -39,6 +38,31 @@ class ChildPortal extends BasePortal {
     }
 }
 new ChildPortal();
+
+    async function addThirdPartyExclusiveStyling() {
+    await utilities.waitForSelectorInDOM('.OnSale');
+    const page_name = utilities.getPageName();
+    if (page_name !== 'search-results') return;
+
+    const contracted_props = document.querySelectorAll('#currentPropertyPage div.OnSale');
+
+    console.log(contracted_props.length);
+
+    async function update_tp_text() {
+        await (contracted_props[0].querySelector('.SearchHotels div.originalPrice'));
+        contracted_props.forEach((property) => {
+            const original_price = property.querySelector('.SearchHotels div.originalPrice');
+            console.log(original_price);
+            const original_price_text = original_price.textContent;
+            console.log(original_price_text);
+            original_price.innerText = '3rd Party: ' + original_price_text;
+            console.log(original_price);;
+        });
+    }
+    update_tp_text();
+}
+
+addThirdPartyExclusiveStyling();
 
 // async function addThirdPartyRateText() {
 //     await utilities.waitForSelectorInDOM('.originalPrice');

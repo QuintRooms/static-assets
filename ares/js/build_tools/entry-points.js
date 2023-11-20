@@ -78,6 +78,7 @@ module.exports = () => {
             // 'moon_river_festival_23-83415': './src/83415.js', // moon river_festival_23
             // 'music_midtown_23-86605': './src/ 86605.js', // music midtown_23
             // 'oceans_calling_23-83436': './src/83436.js', // oceans calling_23
+            'oceans_calling_24-96197': './src/96197.js', // oceans calling_24
             // 'ohana_festival_23-84337': './src/84337.js', // ohana festival_23
             // 'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
             // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
@@ -151,6 +152,10 @@ module.exports = () => {
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'acl_production_24-94608': './src/94608.js', // acl production_24
             // 'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
+<<<<<<< HEAD
+            // 'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
+            'oceans_calling_24-96197': './src/96197.js', // oceans calling_24
+=======
             // 'beach_it_24-91129': './src/91129.js', // beach it_24
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'high_water_24-89860': './src/89860.js', // high water_24
@@ -165,6 +170,7 @@ module.exports = () => {
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
+>>>>>>> develop
 
         };
 
@@ -172,6 +178,13 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+<<<<<<< HEAD
+            'oceans_calling_24-96197': './src/96197.js', // oceans calling_24
+            // 'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
+            // 'acl_production_24-94608': './src/94608.js', // acl production_24
+            // 'acl_attendees_24-94605': './src/94605.js', // acl attendees_24
+=======
+>>>>>>> develop
             // 'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
             
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24

@@ -24,7 +24,7 @@ class ChildPortal extends BasePortal {
             'beforeend',
             `<div class="event-week pull-right">
             <a id="week-one" target="_blank" href="https://hotels.oceanscallingfestival.com/group-event?id=73569">Book Weekend One</a>
-            <a id="week-two" target="_blank" href="https://hotels.oceanscallingfestival.com/v6?currency=USD&type=geo&siteid=96197&longitude=-75.08646810000000&latitude=38.32813760000000&radius=100&checkin=10/4/2024&nights=3&map&locationlabel=Oceans+Calling&cid=GROUP-EVENT-EMAIL&promptForCheckIn&pageSize=10&useMiles">Book Weekend Two</a>
+            <a id="week-two" target="_blank" href="https://hotels.oceanscallingfestival.com/group-event?id=74406">Book Weekend Two</a>
         </div>`
         );
     }

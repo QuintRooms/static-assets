@@ -167,6 +167,7 @@ module.exports = () => {
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
+            // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
 
         };
 

@@ -111,7 +111,7 @@ module.exports = () => {
             // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23npmnp
             // 'tortuga_23_public-77406': './src/77406.js', // tortuga 23_public
-            'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
+            // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_23-84537': './src/84537.js', // two step_inn_festival_23
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
@@ -167,7 +167,7 @@ module.exports = () => {
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
-            'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
+            // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
 
         };
 

@@ -29,7 +29,7 @@ module.exports = () => {
             // 'cfp_la_23-67667': './src/67667.js', // College football Playoff Championship LA 2023
             // 'cfp_la_internal_23-67668': './src/67668.js', // cfp la_internal_23
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
             'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
@@ -170,6 +170,7 @@ module.exports = () => {
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
+            'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
 
         };
 

@@ -1,0 +1,41 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #1E1E1D;
+$logo_flex_position: center;
+$logo_max_width: 250px;
+$background_color: #fff;
+$primary_color: #3E92F9;
+$secondary_color: #3E92F9;
+$primary_text_color: #fff;
+$secondary_text_color: #3E92F9;
+$border_color: #FF644A;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #FF644A;
+$button_hover_border_color: #FF644A;
+$google_font_name: 'Montserrat';
+$site_name: 'atx_tv_festival_24-95455';
+$path: set-path($env);
+$banner_image: linear-gradient(#3E92F9, #FF644A);
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+.ArnRateButton .ArnShowRatesLink {
+  background: #FF644A;
+  color: #fff;
+  border-color: #FF644A;
+
+  &:hover {
+    border-color: #FF644A;
+    background: #fff;
+    color: #FF644A;
+  }
+}
+
+.lucid-banner {
+  background-color: #FF644A;
+}
+
+.lucid-banner .lucid-button a {
+  color: #FF644A;
+}

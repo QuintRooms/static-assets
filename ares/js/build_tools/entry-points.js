@@ -12,7 +12,7 @@ module.exports = () => {
             // 'arizona_bike_week_23-83240': './src/83240.js', // arizona bike_week_23
             // 'arizona_bike_week_24-90541': './src/90541.js', // arizona bike_week_24
             // 'atx_tv_festival_23-88918': './src/88918.js', // atx tv_festival_23
-            'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
+            // 'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
             // 'austin_food_and_wine_23-83445': './src/83445.js', // austin food_and_wine_23
             // 'austin_marathon_22-68711': './src/68711.js', // Austin Marathon 2022
             // 'austin_marathon_23-68712': './src/68712.js', // austin marathon_23
@@ -41,6 +41,7 @@ module.exports = () => {
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
+            'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
@@ -172,15 +173,15 @@ module.exports = () => {
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
-            'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
-
+            // 'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
+            'farm_aid_24-98897': './src/98897.js', // farm aid_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
+            // 'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

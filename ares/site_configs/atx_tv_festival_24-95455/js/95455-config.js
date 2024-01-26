@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: '2023 ATX TV Festival',
+            event_name: '2024 ATX TV Festival',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

@@ -41,13 +41,14 @@ module.exports = () => {
             // 'fairwell_festival_23-86604': './src/86604.js', // fairwell festival_23
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_23-87656': './src/87656.js', // farm aid_23
-            'farm_aid_24-98897': './src/98897.js', // farm aid_24
+            // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_internal_23-91180': './src/91180.js', // farm aid_internal_23
             // 'f1_canada_gp_23-81399': './src/81399.js', // f1 canada_gp_23
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
+            'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
@@ -174,13 +175,15 @@ module.exports = () => {
             // 'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
-            'farm_aid_24-98897': './src/98897.js', // farm aid_24
+            // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
+            'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };

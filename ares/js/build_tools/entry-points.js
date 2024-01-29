@@ -48,7 +48,7 @@ module.exports = () => {
             // 'f1_dutch_23-83219': './src/83219.js', // f1 dutch_23
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_23-90767': './src/90767.js', // f1 lvgp_23
-            'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
+            // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'f1_lvgp_updated_23-85764': './src/85764.js', // f1 lvgp_updated_23
             // 'f1_miami_gp_23-46977': './src/46977.js', // f1 miami_gp_23
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
@@ -111,6 +111,7 @@ module.exports = () => {
             // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
+            'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23npmnp
@@ -176,15 +177,15 @@ module.exports = () => {
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
-            'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
+            // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
+            // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
+            'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
-            // 'atx_tv_festival_24-95455': './src/95455.js', // atx tv_festival_24
             // 'ares_derek-70011': './src/70011.js', // ares derek
         };
     }

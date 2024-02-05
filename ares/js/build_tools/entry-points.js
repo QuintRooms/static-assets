@@ -104,6 +104,7 @@ module.exports = () => {
             // 'sotx_summer_games_san_antonio_23-86573': './src/86573.js', // sotx summer_games_san_antonio_23
             // 'sotx_fall_classic_23-88453': './src/88453.js', // sotx fall_classic_23
             // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
+            'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'sportsnet_holidays_cug_23-83302': './src/83302.js', // sportsnet holidays_cug_23
             // 'suenos_23-83395': './src/83395.js', // suenos 23
@@ -111,7 +112,7 @@ module.exports = () => {
             // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
             // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
             // 'texas_book_festival_23-89705': './src/89705.js', // texas book_festival_23
-            'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
+            // 'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tidal_wave_public_23-84911': './src/84911.js', // tidal wave_public_23
             // 'tortuga_23-77405': './src/77405.js', // tortuga 23npmnp
@@ -179,7 +180,8 @@ module.exports = () => {
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
-            'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
+            // 'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
+            'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
         };
 
         // local environment

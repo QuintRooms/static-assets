@@ -232,7 +232,7 @@
         </mj-text>
         <mj-text padding-bottom="5px">
           <!--email_off-->
-          <a style="color:inherit;" href="mailto:reservations@hotelsforhope.com">rooms@quint.co</a>
+          <a style="color:inherit;" href="mailto:rooms@quint.co">rooms@quint.co</a>
           <!--/email_off-->
         </mj-text>
         <mj-text padding-bottom="5px">

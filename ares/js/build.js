@@ -2077,7 +2077,7 @@ export default class BasePortal {
         if (this.site_config.is_resbeat_client) return;
         if (!document.querySelector('.WBSupportForm')) return;
 
-        document.querySelector('.ArnSupportChatTable p').textContent = 'If you would like to speak with a representative, please call + 1 512-691-9555';
+        document.querySelector('.ArnSupportChatTable p').textContent = 'If you would like to speak with a representative, please call + 1 980-356-4209';
     }
 
     removeLrgFooterLink() {

@@ -418,7 +418,7 @@ export default class BasePortal {
             const due_now = document.querySelector('p.confirmedDueNowCharge span.confirmationAgreement');
             if (due_now) {
                 if (due_now.textContent.includes('Hotels For Hope')) {
-                    const new_due_now = due_now.textContent.replace("Hotels For Hope", "Quintrooms");
+                    const new_due_now = due_now.textContent.replace("Hotels For Hope", "Quint");
                     due_now.innerText = new_due_now + ' I also understand that this charge is non-refundable.';
                 }
                 // if ((due_now.textContent.includes('4.95') || due_now.textContent.includes('5.00')) && due_now.textContent.includes('Hotels For Hope')) {

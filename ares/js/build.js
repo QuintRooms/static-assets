@@ -1783,7 +1783,7 @@ export default class BasePortal {
         document.querySelector('.ArnSupportBottom').insertAdjacentHTML(
             'beforeend',
             `<div class="pb-container">
-            <a href="https://www.hotelsforhope.com/" target="_blank"><img src="${env_path.path}/images/quintrooms/qr-logo-white.png" alt="Powered by Hotels for Hope logo"></a>
+            <a href="https://quint.co/" target="_blank"><img src="${env_path.path}/images/quintrooms/quint_logo_white.png" alt="Quint logo"></a>
             </div>`
         );
     }

@@ -31,7 +31,7 @@ async function insertFooterText() {
     footer_policy.insertAdjacentHTML(
         'beforebegin',
         `
-        <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quintrooms-logo-footer.png" alt="Quintrooms Logo" />
+       <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quint_logo_white.png" alt="Quint Logo" />
         <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Miami Grand Prix</p>
         `
     );

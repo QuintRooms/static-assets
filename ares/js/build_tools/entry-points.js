@@ -26,6 +26,7 @@ module.exports = () => {
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
+            'f1_lvgp_retail-91626': './src/91626.js', // f1 lvgp_retail
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -39,74 +40,44 @@ module.exports = () => {
             // 'hook_em_cug-47495': './src/47495.js', // hook em_cug
             // 'hook_em_retail-47496': './src/47496.js', // hook em_retail
             // 'high_water_24-89860': './src/89860.js', // high water_24
-            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
-            'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
-            'lolla_24-90306': './src/90306.js', // lolla 24
-            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
-            'oceans_calling_24-96197': './src/96197.js', // oceans calling_24
-            'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
-            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
-            'railbird_production_24-90538': './src/90538.js', // railbird production_24
-            'railbird_24-90535': './src/90535.js', // railbird 24
-            'resbeat-60831': './src/60831.js', // Resbeat
-            'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
-            'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
-            'roomcash-63712': './src/63712.js', // RoomCash
+            // 'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
+            // 'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
+            // 'lolla_24-90306': './src/90306.js', // lolla 24
+            // 'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
+            // 'oceans_calling_24-96197': './src/96197.js', // oceans calling_24
+            // 'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
+            // 'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
+            // 'railbird_production_24-90538': './src/90538.js', // railbird production_24
+            // 'railbird_24-90535': './src/90535.js', // railbird 24
+            // 'resbeat-60831': './src/60831.js', // Resbeat
+            // 'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
+            // 'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
+            // 'roomcash-63712': './src/63712.js', // RoomCash
             // 'room_steals-52342': './src/52342.js', // Room Steals
-            'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
-            'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
-            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
-            'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
+            // 'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
+            // 'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
+            // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
+            // 'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
-            'suenos_24-90956': './src/90956.js', // suenos 24
-            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
-            'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
-            'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
-            'ticket_manager-70009': './src/70009.js', // ticket manager
-            'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
-            'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
-            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
-            'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
-            'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
-            'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
-            'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
+            // 'suenos_24-90956': './src/90956.js', // suenos 24
+            // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
+            // 'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
+            // 'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
+            // 'ticket_manager-70009': './src/70009.js', // ticket manager
+            // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
+            // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
+            // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
+            // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
+            // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
+            // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
+            // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             
         };
 
         // develop environment
     } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
-            'innings_tempe_24-88139': './src/88139.js', // innings tempe_24
-            'innings_tempe_new_id_24-88821': './src/88821.js', // innings tempe_new_id_24
-            'lolla_24-90306': './src/90306.js', // lolla 24
-            'lolla_prod_24-90312': './src/90312.js', // lolla prod_24
-            'oceans_calling_24-96197': './src/96197.js', // oceans calling_24
-            'ohana_festival_c3_24-94904': './src/94904.js', // ohana festival_c3_24
-            'packers_experiences_retail-70421': './src/70421.js', // packers experiences_retail
-            'railbird_production_24-90538': './src/90538.js', // railbird production_24
-            'railbird_24-90535': './src/90535.js', // railbird 24
-            'resbeat-60831': './src/60831.js', // Resbeat
-            'retail_resbeat_public-51474': './src/51474.js', // Retail Resbeat Public
-            'resbeat_squad_test-62686': './src/62686.js', // Resbeat Service Squad Test
-            'roomcash-63712': './src/63712.js', // RoomCash
-            // 'room_steals-52342': './src/52342.js', // Room Steals
-            'sea_hear_now_24-94600': './src/94600.js', // sea hear_now_24
-            'shaky_knees_attendees_24-90249': './src/90249.js', // shaky knees_attendees_24
-            'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
-            'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
-            // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
-            'suenos_24-90956': './src/90956.js', // suenos 24
-            'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
-            'tejas_trails_retail-45007': './src/45007.js', // tejas trails_retail
-            'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
-            'ticket_manager-70009': './src/70009.js', // ticket manager
-            'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
-            'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
-            'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
-            'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
-            'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
-            'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
-            'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
+            'f1_lvgp_retail-91626': './src/91626.js', // f1 lvgp_retail
         };
 
         // local environment

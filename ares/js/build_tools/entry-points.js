@@ -27,6 +27,7 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
+            'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
             // // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
             // 'f1e_rewards_cug-40598': './src/40598.js', // f1e rewards_cug
@@ -76,6 +77,7 @@ module.exports = () => {
         // develop environment
     } else if (process.env.NODE_ENV === 'develop') {
         entry_points = {
+            'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
         };
 
         // local environment

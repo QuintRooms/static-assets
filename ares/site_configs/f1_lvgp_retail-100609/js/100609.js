@@ -90,7 +90,7 @@ async function updateSearchPageH3() {
 }
 
 async function addLVGPRoomsButton() {
-    if (!document.querySelector('.RootBody') || !document.querySelector('.SearchHotels')) return;
+    if (!document.querySelector('.RootBody') && !document.querySelector('.SearchHotels')) return;
     await utilities.waitForSelectorInDOM('.book-plus');
 
     let requestRoomsButton = `

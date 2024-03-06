@@ -94,9 +94,11 @@ async function addLVGPRoomsButton() {
     await utilities.waitForSelectorInDOM('.book-plus');
 
     let requestRoomsButton = `
+        <li>
             <a href="https://form.jotform.com/240656046741153?bookingPortal=Las%20Vegas%20Grand%20Prix" class="book-plus" target="_blank">Request 2024 LVGP Rooms</a>
+        </li>
     `
-    const tenPlusButton = document.querySelector('.book-plus');
+    const tenPlusButton = document.querySelector('#races-contact li');
     tenPlusButton.insertAdjacentHTML('afterend', requestRoomsButton);
 }
 

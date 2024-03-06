@@ -22,8 +22,8 @@ new ChildPortal();
 // new Distance();
 
 async function updateDatePromptLogo() {
-    await utilities.waitForSelectorInDOM('#datePromptContainer');
     if (!document.querySelector('.SearchHotels')) return;
+    await utilities.waitForSelectorInDOM('#theDatePrompt #datePromptContainer img');
     const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
     date_prompt_image[0].src = `${env_path.path}/site_configs/f1_lvgp_retail-100609/img/email-logo.png`;
 }
@@ -87,8 +87,8 @@ async function hideFirstAmenity() {
 
 }
 
-updateDatePromptLogo()
 hideFirstAmenity();
+updateDatePromptLogo();
 insertFooterText();
 setListenerForPolicyModal();
 

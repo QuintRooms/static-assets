@@ -21,13 +21,6 @@ f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#000
 new ChildPortal();
 // new Distance();
 
-async function updateDatePromptLogo() {
-    if (!document.querySelector('.SearchHotels')) return;
-    await utilities.waitForSelectorInDOM('#theDatePrompt #datePromptContainer img');
-    const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
-    date_prompt_image[0].src = `${env_path.path}/site_configs/f1_lvgp_retail-100609/img/email-logo.png`;
-}
-
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.f1-policy');
     const footer_policy = document.querySelector('.f1-policy');
@@ -49,11 +42,7 @@ async function insertFooterText() {
         <p class="f1-policy" style="margin-top: 35px; font-size: 12px;">The F1 FORMULA 1 logo, F1 logo, FORMULA 1, F1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX, PADDOCK CLUB, FORMULA 1 LAS VEGAS GRAND PRIX and related marks are trademarks of Formula One Licensing BV, a Formula 1 company. All rights reserved.</p>
     </div>
     `
-
-
 }
-
-
 
 async function setListenerForPolicyModal() {
     await utilities.waitForSelectorInDOM('.span.open-modal');
@@ -63,8 +52,6 @@ async function setListenerForPolicyModal() {
         document.querySelector('span.open-modal').click();
     });
 }
-
-
 
 async function hideFirstAmenity() {
     console.log('first amenity function was called and accessed')
@@ -87,8 +74,15 @@ async function hideFirstAmenity() {
 
 }
 
+
+async function updateDatePromptLogo() {
+    if (!document.querySelector('.SearchHotels')) return;
+    await utilities.waitForSelectorInDOM('#theDatePrompt');
+    const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
+    date_prompt_image[0].src = `${env_path.path}/site_configs/f1_lvgp_retail-100609/img/email-logo.png`;
+}
+
 hideFirstAmenity();
 updateDatePromptLogo();
 insertFooterText();
 setListenerForPolicyModal();
-

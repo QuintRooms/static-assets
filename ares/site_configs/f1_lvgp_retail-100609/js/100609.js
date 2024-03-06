@@ -77,12 +77,12 @@ async function hideFirstAmenity() {
 
 async function updateDatePromptLogo() {
     if (!document.querySelector('.SearchHotels')) return;
-    await utilities.waitForSelectorInDOM('#theDatePrompt');
+    await utilities.waitForSelectorInDOM('#theQuickCheckIn');
     const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
     date_prompt_image[0].src = `${env_path.path}/site_configs/f1_lvgp_retail-100609/img/email-logo.png`;
 }
 
 hideFirstAmenity();
-updateDatePromptLogo();
 insertFooterText();
+updateDatePromptLogo();
 setListenerForPolicyModal();

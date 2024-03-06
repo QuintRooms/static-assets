@@ -45,6 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            date_prompt_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/date_prompt_logo.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
             logo_outbound_url: 'https://hotels.f1lasvegasgp.com/group-event?id=69356',
         },

@@ -596,7 +596,7 @@ into the command line and answer the questions.
 ### **Sass/Scss**
 All styles written in the Ares repo should be written in SCSS.
 
-[Sass or Scss](https://sass-lang.com/guide) is a CSS extension that allos us to use variables, functions and nesting to make it quicker and easier to write styles. All styles written in Scss end up as CSS when a build is run. For Example, when adding colors to a site's `.scss` file, you won't see any CSS files within the `site_name/styles` directory. When the build is run, the Scss is compiled into CSS and eventually injected into the DOM on load of the page.
+[Sass or Scss](https://sass-lang.com/guide) is a CSS extension that allows us to use variables, functions and nesting to make it quicker and easier to write styles. All styles written in Scss end up as CSS when a build is run. For Example, when adding colors to a site's `.scss` file, you won't see any CSS files within the `site_name/styles` directory. When the build is run, the Scss is compiled into CSS and eventually injected into the DOM on load of the page.
 
 ### **base-styles**
 The `base-styles` directory holds the `.scss` files for three different types of sites. These styles aren't specific to a site (they do not hold client specific colors or logos etc), they simply apply styles that are consistent across all of our portals.

@@ -1058,7 +1058,12 @@ export default class BasePortal {
 
         if (!date_prompt) return;
 
-        date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.header.logo_file_location}" alt="Logo">`);
+        if (this.site_config.header.date_prompt_logo_file_location){
+            date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.header.date_prompt_logo_file_location}" alt="Logo">`);
+        } else {
+            date_prompt.querySelector('#datePromptContainer').insertAdjacentHTML('afterBegin', `<img src="${this.site_config.header.logo_file_location}" alt="Logo">`);
+        };
+        
     }
 
     highlightMapMarkersOnPropertyHover() {

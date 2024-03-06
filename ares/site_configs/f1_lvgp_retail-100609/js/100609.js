@@ -83,7 +83,7 @@ async function updateDatePromptLogo() {
 }
 
 async function updateSearchPageH3() {
-    if (!document.querySelector('.RootBody')) return;
+    if (!document.querySelector('.RootBody') || !document.querySelector('.SearchHotels')) return;
     await utilities.waitForSelectorInDOM('h3');
     const h3Text = document.querySelector('.RootBody h3');
     h3Text.innerText = 'year-round rates exclusive to LVGP';

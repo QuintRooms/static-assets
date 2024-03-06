@@ -91,20 +91,28 @@ async function updateSearchPageH3() {
 
 async function addLVGPRoomsButton() {
     if (!document.querySelector('.RootBody')) return;
-    await utilities.waitForSelectorInDOM('book-plus');
+    await utilities.waitForSelectorInDOM('.book-plus');
 
     let requestRoomsButton = `
         <li>
             <a href="https://form.jotform.com/240656046741153?bookingPortal=Las%20Vegas%20Grand%20Prix" class="book-plus" target="_blank">Request 2024 LVGP Rooms</a>
         </li>
     `
-    const tenPlusButton = document.querySelector('book-plus');
-    header_upper.insertAdjacentHTML('afterend', races_contact);
+    const tenPlusButton = document.querySelector('.book-plus');
+    tenPlusButton.insertAdjacentHTML('afterend', requestRoomsButton);
+}
+
+async function prefillAddressField() {
+    if (!document.querySelector('.RootBody')) return;
+    await utilities.waitForSelectorInDOM('#address-input');
+    const addressInput = document.querySelector('#address-input');
+    addressInput.value = '260 East Harmon Avenue, Las Vegas, NV, USA';
 }
 
 hideFirstAmenity();
 updateSearchPageH3();
 addLVGPRoomsButton();
+prefillAddressField();
 insertFooterText();
 // updateDatePromptLogo();
 setListenerForPolicyModal();

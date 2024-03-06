@@ -82,7 +82,29 @@ async function updateDatePromptLogo() {
     date_prompt_image[0].src = `${env_path.path}/site_configs/f1_lvgp_retail-100609/img/email-logo.png`;
 }
 
+async function updateSearchPageH3() {
+    if (!document.querySelector('.RootBody')) return;
+    await utilities.waitForSelectorInDOM('h3');
+    const h3Text = document.querySelector('.RootBody h3');
+    h3Text.innerText = 'Year round rates exclusive to LVGP!';
+}
+
+async function addLVGPRoomsButton() {
+    if (!document.querySelector('.RootBody')) return;
+    await utilities.waitForSelectorInDOM('book-plus');
+
+    let requestRoomsButton = `
+        <li>
+            <a href="https://form.jotform.com/240656046741153?bookingPortal=Las%20Vegas%20Grand%20Prix" class="book-plus" target="_blank">Request 2024 LVGP Rooms</a>
+        </li>
+    `
+    const tenPlusButton = document.querySelector('book-plus');
+    header_upper.insertAdjacentHTML('afterend', races_contact);
+}
+
 hideFirstAmenity();
+updateSearchPageH3();
+addLVGPRoomsButton();
 insertFooterText();
-updateDatePromptLogo();
+// updateDatePromptLogo();
 setListenerForPolicyModal();

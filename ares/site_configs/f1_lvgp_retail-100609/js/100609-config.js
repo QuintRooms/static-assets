@@ -40,7 +40,7 @@ export default function siteConfig() {
         show_property_type: false,
         show_language_select: false,
         show_currency_select: false,
-        show_date_prompt: false,
+        show_date_prompt: true,
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {

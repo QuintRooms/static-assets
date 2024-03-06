@@ -21,6 +21,13 @@ f1Styles(site_config.site_id, site_config.lodging.event_name, 'Las Vegas', '#000
 new ChildPortal();
 // new Distance();
 
+async function updateDatePromptLogo() {
+    if (!document.querySelector('.SearchHotels')) return;
+    await utilities.waitForSelectorInDOM('#theQuickCheckIn');
+    const date_prompt_image = document.querySelectorAll('#theDatePrompt #datePromptContainer img');
+    date_prompt_image[0].src = `${env_path.path}/site_configs/f1_lvgp_retail-100609/img/email-logo.png`;
+}
+
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.f1-policy');
     const footer_policy = document.querySelector('.f1-policy');
@@ -80,6 +87,7 @@ async function hideFirstAmenity() {
 
 }
 
+updateDatePromptLogo()
 hideFirstAmenity();
 insertFooterText();
 setListenerForPolicyModal();

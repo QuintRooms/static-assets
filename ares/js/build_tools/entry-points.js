@@ -14,7 +14,7 @@ module.exports = () => {
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'breeders_24-88325': './src/88325.js', // breeders 24
-            'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
+            // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
@@ -67,6 +67,7 @@ module.exports = () => {
             // 'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
+            'tortuga_25-101623': './src/101623.js', // tortuga 25
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
@@ -82,14 +83,16 @@ module.exports = () => {
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
             // 'sotx_winter_games_25-101018': './src/101018.js', // sotx winter_games_25
             // 'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
-            'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
+            // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
+            'tortuga_25-101623': './src/101623.js', // tortuga 25
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
+            'tortuga_25-101623': './src/101623.js', // tortuga 25
+            // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
             // 'sotx_winter_games_25-101018': './src/101018.js', // sotx winter_games_25
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
             // 'ares_derek-70011': './src/70011.js', // ares derek

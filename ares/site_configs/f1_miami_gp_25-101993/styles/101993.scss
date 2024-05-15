@@ -1,0 +1,146 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #000;
+$logo_flex_position: center;
+$logo_max_width: 400px;
+$background_color: #fff;
+$primary_color: #008e97;
+$secondary_color: #fc4c02;
+$primary_text_color: #fff;
+$secondary_text_color: #008e97;
+$border_color: #008e97;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #008e97;
+$button_hover_border_color: #008e97;
+$google_font_name: 'Titillium Web';
+$header_font_name: 'F1-Regular';
+$site_name: 'f1_miami_gp_25-101993';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../styles/sass/f1.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+header {
+    background-image: url(#{$path}/site_configs/#{$site_name}/img/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 45%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    padding: 0 6rem;
+}
+
+.logo {
+    grid-column: 2;
+    text-align: center;
+    min-width: 300px;
+}
+
+#races-contact {
+    grid-column: 3;
+    justify-self: end;
+}
+
+#races-contact li {
+    &:hover {
+        background: unset;
+    }
+}
+
+#races-contact a {
+    display: inline-block;
+    width: 100%;
+
+    &:hover {
+        color: #fc4c02;
+    }
+}
+
+header #races-contact {
+    width: unset;
+}
+
+.ArnRateButton .ArnShowRatesLink {
+    border-width: 2px;
+    background: #008e97;
+    border-color: #008e97;
+    font-weight: bold;
+
+    &:hover {
+        background: #fff;
+        border-width: 2px;
+        color: #008e97;
+        border-color: #008e97;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-content: center;
+        padding: 0 6rem;
+    }
+
+    header {
+        grid-template-columns: unset;
+        gap: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: initial;
+    }
+
+    .logo {
+        grid-column: unset;
+        text-align: initial;
+        min-width: initial;
+        width: 100%;
+    }
+
+    #races-contact {
+        grid-column: unset;
+        justify-self: initial;
+    }
+
+    #races-contact a {
+        display: initial;
+        width: initial;
+    }
+
+    header #races-contact {
+        width: initial;
+    }
+}
+
+.f1-partner-text {
+    color: white;
+    margin: 0;
+}
+
+// .f1-h4h-logo img {
+//   max-width: 300px;
+// }
+
+.show-mobile-nav {
+    transform: translateY(68px);
+}
+
+.mobile-nav-upper-ul {
+    background: #008e97;
+
+    li a {
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+}
+
+.ArnSortByBeachfront {
+    display: block;
+}

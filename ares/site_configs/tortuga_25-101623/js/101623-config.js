@@ -50,7 +50,7 @@ export default function siteConfig() {
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email_logo.png`,
             background: `url(${env_path.path}/site_configs/${directory_name}/img/header-bg.png)`,
         },
-        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
+        map_marker_image_url: [`${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`],
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {

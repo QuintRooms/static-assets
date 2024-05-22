@@ -68,7 +68,7 @@ module.exports = () => {
             // 'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
-            'tortuga_25-101623': './src/101623.js', // tortuga 25
+            // 'tortuga_25-101623': './src/101623.js', // tortuga 25
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas

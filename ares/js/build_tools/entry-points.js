@@ -28,7 +28,7 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
-            'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
+            // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
             // // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -68,13 +68,14 @@ module.exports = () => {
             // 'texas_book_festival_24-98724': './src/98724.js', // texas book_festival_24
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
-            // 'tortuga_25-101623': './src/101623.js', // tortuga 25
+            'tortuga_25-101623': './src/101623.js', // tortuga 25
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
             // 'van_gogh_phoenix-71012': './src/71012.js', // Van Gogh Phoenix
             // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
+            'veronica_test_site-102126': './src/102126.js', // veronica test_site
             
         }; 
 
@@ -86,15 +87,17 @@ module.exports = () => {
             // 'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
             // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
-            'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
+            // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
+            'veronica_test_site-102126': './src/102126.js', // veronica test_site
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
-            'tortuga_25-101623': './src/101623.js', // tortuga 25
+            'veronica_test_site-102126': './src/102126.js', // veronica test_site
+            // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
+            // 'tortuga_25-101623': './src/101623.js', // tortuga 25
             // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
             // 'sotx_winter_games_25-101018': './src/101018.js', // sotx winter_games_25
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail

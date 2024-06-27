@@ -1,0 +1,84 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #000;
+$logo_flex_position: space-between;
+$logo_max_width: 300px;
+$background_color: #fff;
+$primary_color: #e10600;
+$secondary_color: #333;
+$primary_text_color: #fff;
+$secondary_text_color: #333;
+$border_color: #e10600;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #e10600;
+$button_hover_border_color: #e10600;
+$google_font_name: 'Titillium Web';
+$header_font_name: 'F1-Regular';
+$site_name: 'f1_lvgp_public_24-102817';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../styles/sass/f1.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+header {
+  background-image: url(#{$path}/site_configs/#{$site_name}/img/header_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  padding: 0 6rem;
+  border-bottom: 4px solid #e10600 !important;
+}
+
+.logo {
+  grid-column: 2;
+  text-align: center;
+  min-width: 300px;
+}
+
+#races-contact {
+  grid-column: 3;
+  justify-self: end;
+}
+
+// #races-contact li {
+//   &:hover {
+//     background: unset;
+//   }
+// }
+
+#races-contact a {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 9px !important;
+  transition: all 0.4s ease;
+
+  &:hover {
+    color: #e10600 !important;
+    background-color: #fff !important;
+    border: 1px solid #e10600 !important;
+  }
+}
+
+a.book-plus {
+  background-color: #e10600;
+  color: #fff !important;
+}
+
+header #races-contact {
+  width: unset;
+}
+
+.searchLink {
+  visibility: hidden;
+}
+
+.lucid-banner {
+  display: none !important;
+}

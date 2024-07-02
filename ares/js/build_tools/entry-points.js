@@ -30,6 +30,7 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24
+            'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
@@ -64,7 +65,7 @@ module.exports = () => {
             // 'sotx_winter_games_24-92088': './src/92088.js', // sotx winter_games_24
             // 'sotx_winter_games_25-101018': './src/101018.js', // sotx winter_games_25
             // 'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
-            'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
+            // 'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'suenos_24-90956': './src/90956.js', // suenos 24
             // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
@@ -97,13 +98,15 @@ module.exports = () => {
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24
-            'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
+            // 'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
+            'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24

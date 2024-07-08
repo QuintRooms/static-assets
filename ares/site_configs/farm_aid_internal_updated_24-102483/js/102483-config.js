@@ -2,7 +2,7 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 const site_id = 102483;
-const directory_name = `farm_aid_internal_24-${site_id}`;
+const directory_name = `farm_aid_internal_updated_24-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -47,7 +47,7 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.farmaid.org/',
         },
-        map_marker_image_url: [`${env_path.path}/site_configs/${directory_name}/img/favicon.png`],
+        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {

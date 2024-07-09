@@ -2,7 +2,7 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 const site_id = 102483;
-const directory_name = `farm_aid_internal_updated_24-${site_id}`;
+const directory_name = `farm_aid_prevclone_internal_24-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -13,7 +13,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-        // use_google_autocomplete: true,
+        use_google_autocomplete: true,
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',

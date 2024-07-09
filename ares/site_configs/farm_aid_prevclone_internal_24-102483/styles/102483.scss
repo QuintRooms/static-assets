@@ -13,7 +13,7 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #FF9933;
 $button_hover_border_color: #FF9933;
 $google_font_name: 'Montserrat';
-$site_name: 'farm_aid_internal_updated_24-102483';
+$site_name: 'farm_aid_prevclone_internal_24-102483';
 $path: set-path($env);
 $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center center / cover;
 
@@ -22,12 +22,13 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 // #2d3192 url(https://static.hotelsforhope.com/portals/child-portals/noLRG/51821/images/pattern.png) repeat;
 
-.ArnRateButton .ArnShowRatesLink  {
+.ArnRateButton .ArnShowRatesLink {
   border-width: 2px;
   background: #FF9933;
   border-color: #FF9933;
   font-weight: bold;
-  &:hover{
+
+  &:hover {
     background: #fff;
     border-width: 2px;
     color: #FF9933;
@@ -38,7 +39,8 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 .lucid-banner .lucid-button {
   background: #fff;
   border: 2px solid #fff;
-  &:hover{
+
+  &:hover {
     background: #FF9933;
     border-width: 2px;
     color: #fff;
@@ -47,7 +49,8 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 #lucid-link {
   color: #FF9933;
-  &:hover{
+
+  &:hover {
     color: #fff;
   }
 
@@ -58,10 +61,9 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 }
 
 .GroupHoldForm .ArnLeftSearchContainer {
-    display: none;
+  display: none;
 }
 
 // .lucid-content #desktop {
 //   color: #000;
 // }
-

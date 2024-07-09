@@ -25,7 +25,7 @@ module.exports = () => {
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24
-            'farm_aid_internal_updated_24-102483': './src/102483.js', // farm aid_internal_updated_24
+            'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
@@ -100,14 +100,14 @@ module.exports = () => {
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24
             // 'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
-            'farm_aid_internal_updated_24-102483': './src/102483.js', // farm aid_internal_updated_24
+            'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'farm_aid_internal_updated_24-102483': './src/102483.js', // farm aid_internal_updated_24
+            'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24

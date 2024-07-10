@@ -67,3 +67,9 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 // .lucid-content #desktop {
 //   color: #000;
 // }
+
+#theAdditionalGuestLink,
+.DSFormFields,
+.paymentMethods {
+  display: block;
+}

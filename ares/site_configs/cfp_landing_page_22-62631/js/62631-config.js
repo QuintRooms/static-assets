@@ -99,7 +99,7 @@ export default function siteConfig() {
                 name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
                 display_date: 'January 17 - 20, 2025',
                 end_date: '01/20/2025', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/222285410763150',
+                portal_url: 'https://collegefootballplayoffhotels.com/v6?siteid=62631',
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',

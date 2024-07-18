@@ -20,7 +20,8 @@ module.exports = () => {
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
             // 'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
-            'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
+            'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+            // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
@@ -103,14 +104,17 @@ module.exports = () => {
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
-            'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
+            // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
+            'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
+            'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+            // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24

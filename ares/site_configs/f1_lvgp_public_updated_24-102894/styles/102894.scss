@@ -1,6 +1,6 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #000;
+$header_background: #fff;
 $logo_flex_position: space-between;
 $logo_max_width: 300px;
 $background_color: #fff;
@@ -24,14 +24,14 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 header {
   // background-image: url(#{$path}/site_configs/#{$site_name}/img/header_bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  justify-content: center;
-  padding: 0 6rem;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // gap: 10px;
+  // justify-content: center;
+  // padding: 0 6rem;
   border-bottom: 4px solid #e10600 !important;
 }
 

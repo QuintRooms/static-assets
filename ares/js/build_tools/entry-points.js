@@ -20,7 +20,7 @@ module.exports = () => {
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
             // 'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
-            'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+            // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
@@ -32,7 +32,7 @@ module.exports = () => {
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_24-91626': './src/91626.js', // f1 lvgp_24
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24
-            // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
+            'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
@@ -105,7 +105,8 @@ module.exports = () => {
             // 'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
-            'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+            // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+            'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
 
         };
 
@@ -113,7 +114,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+            // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24

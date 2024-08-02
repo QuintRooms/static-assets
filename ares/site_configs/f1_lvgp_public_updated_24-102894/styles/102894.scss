@@ -58,6 +58,19 @@ a.book-plus {
   color: #fff !important;
 }
 
+body header {
+  background-image: url(#{$path}/site_configs/#{$site_name}/img/header_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  padding: 0 6rem;
+  // border-bottom: 4px solid #e10600 !important;
+}
+
 header #races-contact {
   width: unset;
 }
@@ -78,15 +91,3 @@ header #races-contact {
   display: none;
 }
 
-body header {
-  // background-image: url(#{$path}/site_configs/#{$site_name}/img/header_bg.jpg);
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // gap: 10px;
-  // justify-content: center;
-  // padding: 0 6rem;
-  border-bottom: 4px solid #e10600 !important;
-}

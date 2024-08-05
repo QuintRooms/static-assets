@@ -121,7 +121,7 @@ async function rearrangeSearchHotelsPagePricing() {
         //Replace map marker text with Hotel Name
         await utilities.waitForSelectorInDOM('.ArnPropNameLink');
         const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
-        document.querySelector('.arnMapMarkerSpan').innerHTML = 'propertyNameText';
+        document.querySelector('.arnMapMarkerSpan').innerHTML = propertyNameText;
     }
 }
 

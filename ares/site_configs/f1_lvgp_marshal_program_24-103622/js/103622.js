@@ -80,6 +80,29 @@ async function hideFirstAmenity() {
 
 }
 
+async function rearrangeSearchHotelsPagePricing() {
+    console.log('rearrangeSearchHotelsPagePricing was called and accessed')
+    await utilities.waitForSelectorInDOM('#theBody');
+    console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
+    if (document.querySelector('.SearchHotels')) {
+        console.log('rearrangeSearchHotelsPagePricing passed singlePropDetail conditional')
+        await utilities.waitForSelectorInDOM('.arnPrice');
+        //Get Total For x Nights Text
+        const rateTotalText = document.querySelector('.full-stay').innerHTML;
+        
+        //Remove Total From Total For x Nights Text From Dom
+        const indexOfF = rateTotalText.indexOf('f');
+        const perNightText = rateTotalText.substring(indexOfF);
+        rateTotalText.innerHTML = perNightText;
+
+        //Get Total String and replace the top price
+        const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
+        document.querySelector('.arnUnit').innerHTML = totalRateString;
+    }  
+
+}
+
+rearrangeSearchHotelsPagePricing();
 hideFirstAmenity();
 insertFooterText();
 setListenerForPolicyModal();

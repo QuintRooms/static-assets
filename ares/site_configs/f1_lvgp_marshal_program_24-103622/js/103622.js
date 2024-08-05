@@ -113,6 +113,7 @@ async function updatePropDetailPricing() {
     if (document.querySelector('.SinglePropDetail')) {
         await utilities.waitForSelectorInDOM('.full-stay');
         const roomRateRowArr = document.querySelectorAll('.rateRow');
+
         roomRateRowArr.forEach(room => {
             const rateTotalElement = room.querySelector('.full-stay')
             //Get Total For x Nights Text
@@ -125,6 +126,7 @@ async function updatePropDetailPricing() {
 
             //Get Total String and replace the top price
             const propPageNightlyTotalElement = room.querySelector('.SinglePropDetail .ArnNightlyRate strong');
+            const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
             const propPageNightlyTotalText = propPageNightlyTotalElement.innerHTML;
             const propPageRateNightlyAmount = propPageNightlyTotalText.substring(1, propPageNightlyTotalText.indexOf("<"));
             const propPageRateNewString = propPageNightlyTotalText.replace(propPageRateNightlyAmount, totalRateString);

@@ -83,6 +83,10 @@ header #races-contact {
   display: none !important;
 }
 
+.ArnLeftSearchContainer {
+  display: none;
+}
+
 .SearchHotels .originalPrice {
   display: none;
 }
@@ -91,15 +95,26 @@ header #races-contact {
   display: none;
 }
 
+.SearchHotels #currentPropertyPage {
+  width: 60vw;
+}
+
 .SinglePropDetail .originalPrice {
   display: none;
 }
 
-.ArnSearchHeader {
+.SinglePropDetail .SimpleSearch {
   display: none;
 }
 
-.ArnSecondarySearchOuterContainer {
+.SinglePropDetail .ArnLeftListContainer>span.translateMe {
   display: none;
 }
 
+// .ArnSearchHeader {
+//   display: none;
+// }
+
+// .ArnSecondarySearchOuterContainer {
+//   display: none;
+// }

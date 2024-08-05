@@ -84,14 +84,14 @@ async function rearrangeSearchHotelsPagePricing() {
     // console.log('rearrangeSearchHotelsPagePricing was called and accessed')
     await utilities.waitForSelectorInDOM('#theBody');
     // console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
-    if (document.querySelector('.SearchHotels')) {
+    if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
         // console.log('rearrangeSearchHotelsPagePricing passed singlePropDetail conditional')
         await utilities.waitForSelectorInDOM('.full-stay');
         const rateTotalElement = document.querySelector('.full-stay')
-        console.log('rearrangeSearchHotelsPagePricing full-stay is ' + rateTotalElement)
+        // console.log('rearrangeSearchHotelsPagePricing full-stay is ' + rateTotalElement)
         //Get Total For x Nights Text
         const rateTotalText = rateTotalElement.innerHTML;
-        console.log('rearrangeSearchHotelsPagePricing rateTotalText is ' + rateTotalText)
+        // console.log('rearrangeSearchHotelsPagePricing rateTotalText is ' + rateTotalText)
         // console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
 
         
@@ -104,11 +104,17 @@ async function rearrangeSearchHotelsPagePricing() {
         const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
         document.querySelector('.arnUnit').innerHTML = totalRateString;
 
-        //Replace map marker text with Hotel Name
-        const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
-        document.querySelector('.arnMapMarkerSpan').innerHTML = 'propertyNameText';
+        // //Replace map marker text with Hotel Name
+        // const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
+        // document.querySelector('.arnMapMarkerSpan').innerHTML = 'propertyNameText';
     }  
 
+    if (document.querySelector('.SearchHotels')) {
+        //Replace map marker text with Hotel Name
+        await utilities.waitForSelectorInDOM('.ArnPropNameLink');
+        const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
+        document.querySelector('.arnMapMarkerSpan').innerHTML = 'propertyNameText';
+    }
 }
 
 rearrangeSearchHotelsPagePricing();

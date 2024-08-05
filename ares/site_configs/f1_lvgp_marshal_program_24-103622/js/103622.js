@@ -98,7 +98,7 @@ async function rearrangeSearchHotelsPagePricing() {
         //Remove Total From Total For x Nights Text From Dom
         const indexOfF = rateTotalText.indexOf('f');
         const perNightText = rateTotalText.substring(indexOfF);
-        rateTotalText.innerHTML = perNightText;
+        rateTotalElement.innerHTML = perNightText;
 
         //Get Total String and replace the top price
         const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));

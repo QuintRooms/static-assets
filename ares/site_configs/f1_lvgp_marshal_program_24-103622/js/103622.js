@@ -103,6 +103,10 @@ async function rearrangeSearchHotelsPagePricing() {
         //Get Total String and replace the top price
         const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
         document.querySelector('.arnUnit').innerHTML = totalRateString;
+
+        //Replace map marker text with Hotel Name
+        const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
+        document.querySelector('.arnMapMarkerSpan').innerHTML = 'propertyNameText';
     }  
 
 }

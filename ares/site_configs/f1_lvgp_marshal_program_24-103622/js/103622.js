@@ -102,7 +102,15 @@ async function rearrangeSearchHotelsPagePricing() {
 
         //Get Total String and replace the top price
         const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
-        document.querySelector('.arnUnit').innerHTML = totalRateString;
+        if (document.querySelector('.SearchHotels')){
+            document.querySelector('.arnUnit').innerHTML = totalRateString; 
+        } else if (document.querySelector('.SinglePropDetail')) {
+            const propPageNightlyTotalElement = document.querySelector('.SinglePropDetail .ArnNightlyRate strong');
+            const propPageNightlyTotalText = propPageNightlyTotalElement.innerHTML;
+            const propPageRateNightlyAmount = propPageNightlyTotalText.substring(1, propPageNightlyTotalText.indexOf("<"));
+            const propPageRateNewString = propPageNightlyTotalText.replace(propPageRateNightlyAmount, totalRateString);
+            propPageNightlyTotalElement.innerHTML = propPageRateNewString;
+        }
 
         // //Replace map marker text with Hotel Name
         // const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;

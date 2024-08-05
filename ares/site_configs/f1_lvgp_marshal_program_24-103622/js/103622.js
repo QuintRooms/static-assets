@@ -62,9 +62,9 @@ async function setListenerForPolicyModal() {
 async function hideFirstAmenity() {
     console.log('first amenity function was called and accessed')
     await utilities.waitForSelectorInDOM('#theBody');
-    console.log('first amenity function passed initial await selector')
+    // console.log('first amenity function passed initial await selector')
     if (document.querySelector('.SinglePropDetail')) {
-        console.log('first amenity function passed singlePropDetail conditional')
+        // console.log('first amenity function passed singlePropDetail conditional')
         await utilities.waitForSelectorInDOM('.show-amenities');
         //select first Amenity element and set display to 'none'
         // document.querySelector('.show-amenities').style.visibility = 'hidden';
@@ -75,20 +75,25 @@ async function hideFirstAmenity() {
         //     "cancelable": false
         // });
         document.getElementById("show-more-or-less").click();
-        console.log('end of first amenity function')
+        // console.log('end of first amenity function')
     }  
 
 }
 
 async function rearrangeSearchHotelsPagePricing() {
-    console.log('rearrangeSearchHotelsPagePricing was called and accessed')
+    // console.log('rearrangeSearchHotelsPagePricing was called and accessed')
     await utilities.waitForSelectorInDOM('#theBody');
-    console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
+    // console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
     if (document.querySelector('.SearchHotels')) {
-        console.log('rearrangeSearchHotelsPagePricing passed singlePropDetail conditional')
+        // console.log('rearrangeSearchHotelsPagePricing passed singlePropDetail conditional')
         await utilities.waitForSelectorInDOM('.full-stay');
+        const rateTotalElement = document.querySelector('.full-stay')
+        console.log('rearrangeSearchHotelsPagePricing full-stay is ' + rateTotalElement)
         //Get Total For x Nights Text
-        const rateTotalText = document.querySelector('.full-stay').innerHTML;
+        const rateTotalText = rateTotalElement.innerHTML;
+        console.log('rearrangeSearchHotelsPagePricing rateTotalText is ' + rateTotalText)
+        // console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
+
         
         //Remove Total From Total For x Nights Text From Dom
         const indexOfF = rateTotalText.indexOf('f');

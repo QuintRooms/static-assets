@@ -80,44 +80,27 @@ async function hideFirstAmenity() {
 
 }
 
-async function rearrangeSearchHotelsPagePricing() {
-    // console.log('rearrangeSearchHotelsPagePricing was called and accessed')
+async function updateSearchHotelsPagePricingAndMapMarker() {
     await utilities.waitForSelectorInDOM('#theBody');
-    // console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
-    if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
-        // console.log('rearrangeSearchHotelsPagePricing passed singlePropDetail conditional')
-        await utilities.waitForSelectorInDOM('.full-stay');
-        const rateTotalElement = document.querySelector('.full-stay')
-        // console.log('rearrangeSearchHotelsPagePricing full-stay is ' + rateTotalElement)
-        //Get Total For x Nights Text
-        const rateTotalText = rateTotalElement.innerHTML;
-        // console.log('rearrangeSearchHotelsPagePricing rateTotalText is ' + rateTotalText)
-        // console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
-
-        
-        //Remove Total From Total For x Nights Text From Dom
-        const indexOfF = rateTotalText.indexOf('f');
-        const perNightText = rateTotalText.substring(indexOfF);
-        rateTotalElement.innerHTML = perNightText;
-
-        //Get Total String and replace the top price
-        const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
-        if (document.querySelector('.SearchHotels')){
-            document.querySelector('.arnUnit').innerHTML = totalRateString; 
-        } else if (document.querySelector('.SinglePropDetail')) {
-            const propPageNightlyTotalElement = document.querySelector('.SinglePropDetail .ArnNightlyRate strong');
-            const propPageNightlyTotalText = propPageNightlyTotalElement.innerHTML;
-            const propPageRateNightlyAmount = propPageNightlyTotalText.substring(1, propPageNightlyTotalText.indexOf("<"));
-            const propPageRateNewString = propPageNightlyTotalText.replace(propPageRateNightlyAmount, totalRateString);
-            propPageNightlyTotalElement.innerHTML = propPageRateNewString;
-        }
-
-        // //Replace map marker text with Hotel Name
-        // const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
-        // document.querySelector('.arnMapMarkerSpan').innerHTML = 'propertyNameText';
-    }  
-
     if (document.querySelector('.SearchHotels')) {
+        await utilities.waitForSelectorInDOM('.full-stay');
+        const propArr = document.querySelectorAll('.ArnProperty');
+        propArr.forEach(prop => {
+
+            const rateTotalElement = prop.querySelector('.full-stay')
+            //Get Total For x Nights Text
+            const rateTotalText = rateTotalElement.innerHTML;
+
+            //Remove Total From Total For x Nights Text From Dom
+            const indexOfF = rateTotalText.indexOf('f');
+            const perNightText = rateTotalText.substring(indexOfF);
+            rateTotalElement.innerHTML = perNightText;
+
+            //Get Total String and replace the top price
+            const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
+            prop.querySelector('.arnUnit').innerHTML = totalRateString;
+        });
+
         //Replace map marker text with Hotel Name
         await utilities.waitForSelectorInDOM('.ArnPropNameLink');
         const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
@@ -125,8 +108,78 @@ async function rearrangeSearchHotelsPagePricing() {
     }
 }
 
-rearrangeSearchHotelsPagePricing();
+async function updatePropDetailPricing() {
+    await utilities.waitForSelectorInDOM('#theBody');
+    if (document.querySelector('.SinglePropDetail')) {
+        await utilities.waitForSelectorInDOM('.full-stay');
+        const roomRateRowArr = document.querySelectorAll('.rateRow');
+        roomRateRowArr.forEach(room => {
+            const rateTotalElement = room.querySelector('.full-stay')
+            //Get Total For x Nights Text
+            const rateTotalText = rateTotalElement.innerHTML;
+
+            //Remove Total From Total For x Nights Text From Dom
+            const indexOfF = rateTotalText.indexOf('f');
+            const perNightText = rateTotalText.substring(indexOfF);
+            rateTotalElement.innerHTML = perNightText;
+
+            //Get Total String and replace the top price
+            const propPageNightlyTotalElement = room.querySelector('.SinglePropDetail .ArnNightlyRate strong');
+            const propPageNightlyTotalText = propPageNightlyTotalElement.innerHTML;
+            const propPageRateNightlyAmount = propPageNightlyTotalText.substring(1, propPageNightlyTotalText.indexOf("<"));
+            const propPageRateNewString = propPageNightlyTotalText.replace(propPageRateNightlyAmount, totalRateString);
+            propPageNightlyTotalElement.innerHTML = propPageRateNewString;
+        });
+    }
+}
+
+updateSearchHotelsPagePricingAndMapMarker();
+updatePropDetailPricing();
 hideFirstAmenity();
 insertFooterText();
 setListenerForPolicyModal();
 
+
+// async function rearrangeAllPricing() {
+//     await utilities.waitForSelectorInDOM('#theBody');
+//     if (document.querySelector('.SearchHotels') || document.querySelector('.SinglePropDetail')) {
+//         await utilities.waitForSelectorInDOM('.full-stay');
+//         // const propArr = document.querySelectorAll('.ArnProperty');
+//         // propArr.forEach(prop => {
+//         // });
+//         const roomRateRowArr = document.querySelectorAll('.rateRow');
+//         // roomRateRowArr.forEach(room => {
+//         // });
+//         const rateTotalElement = document.querySelector('.full-stay')
+//         //Get Total For x Nights Text
+//         const rateTotalText = rateTotalElement.innerHTML;
+
+//         //Remove Total From Total For x Nights Text From Dom
+//         const indexOfF = rateTotalText.indexOf('f');
+//         const perNightText = rateTotalText.substring(indexOfF);
+//         rateTotalElement.innerHTML = perNightText;
+
+//         //Get Total String and replace the top price
+//         const totalRateString = rateTotalText.substring(0, rateTotalText.indexOf("f"));
+//         if (document.querySelector('.SearchHotels')) {
+//             document.querySelector('.arnUnit').innerHTML = totalRateString;
+//         } else if (document.querySelector('.SinglePropDetail')) {
+//             const propPageNightlyTotalElement = document.querySelector('.SinglePropDetail .ArnNightlyRate strong');
+//             const propPageNightlyTotalText = propPageNightlyTotalElement.innerHTML;
+//             const propPageRateNightlyAmount = propPageNightlyTotalText.substring(1, propPageNightlyTotalText.indexOf("<"));
+//             const propPageRateNewString = propPageNightlyTotalText.replace(propPageRateNightlyAmount, totalRateString);
+//             propPageNightlyTotalElement.innerHTML = propPageRateNewString;
+//         }
+
+//         // //Replace map marker text with Hotel Name
+//         // const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
+//         // document.querySelector('.arnMapMarkerSpan').innerHTML = 'propertyNameText';
+//     }
+
+//     if (document.querySelector('.SearchHotels')) {
+//         //Replace map marker text with Hotel Name
+//         await utilities.waitForSelectorInDOM('.ArnPropNameLink');
+//         const propertyNameText = document.querySelector('.ArnPropNameLink span').innerHTML;
+//         document.querySelector('.arnMapMarkerSpan').innerHTML = propertyNameText;
+//     }
+// }

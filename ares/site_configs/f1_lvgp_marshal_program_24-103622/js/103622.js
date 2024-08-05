@@ -86,7 +86,7 @@ async function rearrangeSearchHotelsPagePricing() {
     console.log('rearrangeSearchHotelsPagePricing passed initial await selector')
     if (document.querySelector('.SearchHotels')) {
         console.log('rearrangeSearchHotelsPagePricing passed singlePropDetail conditional')
-        await utilities.waitForSelectorInDOM('.arnPrice');
+        await utilities.waitForSelectorInDOM('.full-stay');
         //Get Total For x Nights Text
         const rateTotalText = document.querySelector('.full-stay').innerHTML;
         

@@ -88,6 +88,10 @@ header #races-contact {
   display: none;
 }
 
+.SearchHotels .arnPrice {
+  display: none;
+}
+
 .SearchHotels .originalPrice {
   display: none;
 }
@@ -115,8 +119,14 @@ header #races-contact {
 .SinglePropDetail .ArnNightlyRate strong div:first-child {
   display: none;
 }
+
 .SinglePropDetail .holdRoom {
   display: none;
+}
+
+.SinglePropDetail td.RoomDescription {
+  font-size: 17px !important;
+  font-weight: 700;
 }
 
 .CheckOutForm div#theRateSummaryInfo {

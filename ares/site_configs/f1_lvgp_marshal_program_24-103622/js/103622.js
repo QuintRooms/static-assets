@@ -159,6 +159,7 @@ async function updateCheckoutDescription() {
         const roomDescriptionUpdatedText = roomDescriptionText.substring(roomDescriptionText.indexOf("y") + 1).replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
         console.log("roomDescriptionUpdatedText = " + roomDescriptionUpdatedText);
         roomDescriptionElement.innerHTML = `<span style="font-weight: 700;">${roomTitleText} <span style="font-weight: 300;">${roomDescriptionUpdatedText}</span></span>`;
+        roomDescriptionElement.style.display = "block";
         };
     }
 

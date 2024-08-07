@@ -151,7 +151,7 @@ async function updateCheckoutDescription() {
         await utilities.waitForSelectorInDOM('#theRateDescription');
   
         //Get Room Descriptions
-        const roomDescriptionElement = document.querySelector("#theRateDescription p: nth - child(2)");
+        const roomDescriptionElement = document.querySelector("#theRateDescription p:nth-child(2)");
         const roomDescriptionText = roomDescriptionElement.innerText;
         // const roomDescriptionSeparator = roomDescriptionUpdatedText.indexOf("y");
         const roomTitleText = roomDescriptionText.substring(0, roomDescriptionText.indexOf("y") + 1) + ":";

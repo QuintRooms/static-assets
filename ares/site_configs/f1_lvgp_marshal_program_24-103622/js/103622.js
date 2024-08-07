@@ -135,9 +135,11 @@ async function updatePropDetailPricing() {
             //Get Room Descriptions
             const roomDescriptionElement = room.querySelector(".RoomDescription");
             const roomDescriptionText = roomDescriptionElement.innerText;
-            const roomDescriptionSeparator = roomDescriptionUpdatedText.indexOf("y");
+            // const roomDescriptionSeparator = roomDescriptionUpdatedText.indexOf("y");
             const roomTitleText = roomDescriptionText.substring(0, roomDescriptionText.indexOf("y") + 1);
+            console.log("roomTitleText = " + roomTitleText);
             const roomDescriptionUpdatedText = roomDescriptionText.substring(roomDescriptionText.indexOf("y") + 1).replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+            console.log("roomDescriptionUpdatedText = " + roomDescriptionUpdatedText);
             roomDescriptionElement.innerHTML = `<span style="font-weight: 700; font-size: 17px !important;">${roomTitleText} <span style="font-weight: 300; font-size: 14px !important;">${roomDescriptionUpdatedText}</span></span>`;
         });
     }

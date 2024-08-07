@@ -134,7 +134,10 @@ async function updatePropDetailPricing() {
 
             //Get Room Descriptions
             const roomDescriptionElement = room.querySelector(".RoomDescription");
-            const roomDescriptionUpdatedText = roomDescriptionElement.innerText.replace('Additional fees: ', '').replace('..', '.').replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+            let roomDescriptionUpdatedText = roomDescriptionElement.innerText.replace('Additional fees: ', '').replace('..', '.').replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+            if (roomDescriptionUpdatedText.includes("Single Occupancy")) {
+                roomDescriptionUpdatedText.replace("2", "1");
+            }
             roomDescriptionElement.innerText = roomDescriptionUpdatedText;
         });
     }

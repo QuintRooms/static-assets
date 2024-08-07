@@ -132,13 +132,13 @@ async function updatePropDetailPricing() {
             const propPageRateNewString = propPageNightlyTotalText.replace(propPageRateNightlyAmount, totalRateString);
             propPageNightlyTotalElement.innerHTML = propPageRateNewString;
 
-            //Get Room Descriptions
-            const roomDescriptionElement = room.querySelector(".RoomDescription");
-            let roomDescriptionUpdatedText = roomDescriptionElement.innerText.replace('Additional fees: ', '').replace('..', '.').replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
-            if (roomDescriptionUpdatedText.includes("Single")) {
-                roomDescriptionUpdatedText.replace("2", "1");
-            }
-            roomDescriptionElement.innerText = roomDescriptionUpdatedText;
+            // //Get Room Descriptions
+            // const roomDescriptionElement = room.querySelector(".RoomDescription");
+            // let roomDescriptionUpdatedText = roomDescriptionElement.innerText.replace('Additional fees: ', '').replace('..', '.').replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+            // if (roomDescriptionUpdatedText.includes("Single")) {
+            //     roomDescriptionUpdatedText.replace("2", "1");
+            // }
+            // roomDescriptionElement.innerText = roomDescriptionUpdatedText;
         });
     }
 }
@@ -157,6 +157,7 @@ async function updatePropDetailDescriptions() {
 
 updateSearchHotelsPagePricingAndMapMarker();
 updatePropDetailPricing();
+updatePropDetailDescriptions();
 hideFirstAmenity();
 insertFooterText();
 setListenerForPolicyModal();

@@ -132,32 +132,34 @@ async function updatePropDetailPricing() {
             const propPageRateNewString = propPageNightlyTotalText.replace(propPageRateNightlyAmount, totalRateString);
             propPageNightlyTotalElement.innerHTML = propPageRateNewString;
 
-            // //Get Room Descriptions
-            // const roomDescriptionElement = room.querySelector(".RoomDescription");
-            // let roomDescriptionUpdatedText = roomDescriptionElement.innerText.replace('Additional fees: ', '').replace('..', '.').replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
-            // if (roomDescriptionUpdatedText.includes("Single")) {
-            //     roomDescriptionUpdatedText.replace("2", "1");
-            // }
-            // roomDescriptionElement.innerText = roomDescriptionUpdatedText;
+            //Get Room Descriptions
+            const roomDescriptionElement = room.querySelector(".RoomDescription");
+            const roomDescriptionText = roomDescriptionElement.innerText;
+            const roomTitleText = roomDescriptionText.substring(0, roomDescriptionText.indexOf("y") + 1);
+            const roomDescriptionUpdatedText = roomDescriptionText.substring(roomDescriptionText.indexOf("y")).replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+            roomDescriptionElement.innerHTML = `<span style="font-weight: 700;font-size: 17px !important;">${roomTitleText} <span style="font-weight: 300; font-size: 15px !important;">${roomDescriptionUpdatedText}</span></span>`;
+            roomDescriptionElement.innerText = roomDescriptionUpdatedText;
         });
     }
 }
 
-async function updatePropDetailDescriptions() {
-    await utilities.waitForSelectorInDOM('#theBody');
-    if (document.querySelector('.SinglePropDetail')) {
-        await utilities.waitForSelectorInDOM('.RoomDescription');
-        const roomDescriptionArray = document.querySelectorAll(".RoomDescription");
-        const doubleDescriptionText = roomDescriptionArray[0].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
-        const singleDescriptionText = roomDescriptionArray[1].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
-        roomDescriptionArray[0].innerHTML = `<span style="font-weight: 700;">Double Occupancy <span style="font-weight: 300">${doubleDescriptionText}</span></span>`;
-        roomDescriptionArray[1].innerHTML = `<span style="font-weight: 700;">Single Occupancy <span style="font-weight: 300">${singleDescriptionText}</span></span>`;
-    }
-}
+// async function updatePropDetailDescriptions() {
+//     await utilities.waitForSelectorInDOM('#theBody');
+//     if (document.querySelector('.SinglePropDetail')) {
+//         await utilities.waitForSelectorInDOM('.RoomDescription');
+//         const roomDescriptionArray = document.querySelectorAll(".RoomDescription");
+//         // const doubleRoomTitleText = roomDescriptionArray[0].substring(0, rateTotalText.indexOf("y")+1);
+//         // const singleRoomTitleText = roomDescriptionArray[0].substring(0, rateTotalText.indexOf("y")+1);
+//         const doubleDescriptionText = roomDescriptionArray[0].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+//         const singleDescriptionText = roomDescriptionArray[1].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+//         roomDescriptionArray[0].innerHTML = `<span style="font-weight: 700;">Double Occupancy <span style="font-weight: 300">${doubleDescriptionText}</span></span>`;
+//         roomDescriptionArray[1].innerHTML = `<span style="font-weight: 700;">Single Occupancy <span style="font-weight: 300">${singleDescriptionText}</span></span>`;
+//     }
+// }
 
 updateSearchHotelsPagePricingAndMapMarker();
 updatePropDetailPricing();
-updatePropDetailDescriptions();
+// updatePropDetailDescriptions();
 hideFirstAmenity();
 insertFooterText();
 setListenerForPolicyModal();

@@ -143,6 +143,18 @@ async function updatePropDetailPricing() {
     }
 }
 
+async function updatePropDetailDescriptions() {
+    await utilities.waitForSelectorInDOM('#theBody');
+    if (document.querySelector('.SinglePropDetail')) {
+        await utilities.waitForSelectorInDOM('.RoomDescription');
+        const roomDescriptionArray = room.querySelectorAll(".RoomDescription");
+        let doubleDescriptionText = "<b>Double Occupancy <b>" + roomDescriptionArray[0].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+        let singleDescriptionText = "<b>Single Occupancy <b>" + roomDescriptionArray[1].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+        roomDescriptionArray[0].innerHTML = doubleDescriptionText;
+        roomDescriptionArray[0].innerHTML = singleDescriptionText;
+    }
+}
+
 updateSearchHotelsPagePricingAndMapMarker();
 updatePropDetailPricing();
 hideFirstAmenity();

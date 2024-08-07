@@ -136,7 +136,7 @@ async function updatePropDetailPricing() {
             const roomDescriptionElement = room.querySelector(".RoomDescription");
             const roomDescriptionText = roomDescriptionElement.innerText;
             // const roomDescriptionSeparator = roomDescriptionUpdatedText.indexOf("y");
-            const roomTitleText = roomDescriptionText.substring(0, roomDescriptionText.indexOf("y") + 1);
+            const roomTitleText = roomDescriptionText.substring(0, roomDescriptionText.indexOf("y") + 1) + ":";
             console.log("roomTitleText = " + roomTitleText);
             const roomDescriptionUpdatedText = roomDescriptionText.substring(roomDescriptionText.indexOf("y") + 1).replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
             console.log("roomDescriptionUpdatedText = " + roomDescriptionUpdatedText);

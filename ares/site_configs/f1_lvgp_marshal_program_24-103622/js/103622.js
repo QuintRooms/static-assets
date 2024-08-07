@@ -148,10 +148,10 @@ async function updatePropDetailDescriptions() {
     if (document.querySelector('.SinglePropDetail')) {
         await utilities.waitForSelectorInDOM('.RoomDescription');
         const roomDescriptionArray = document.querySelectorAll(".RoomDescription");
-        let doubleDescriptionText = "<b>Double Occupancy <b>" + roomDescriptionArray[0].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
-        let singleDescriptionText = "<b>Single Occupancy <b>" + roomDescriptionArray[1].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
-        roomDescriptionArray[0].innerHTML = doubleDescriptionText;
-        roomDescriptionArray[0].innerHTML = singleDescriptionText;
+        const doubleDescriptionText = roomDescriptionArray[0].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+        const singleDescriptionText = roomDescriptionArray[1].innerText.replace('Hotel requires a 5-night minimum stay for this reservation.', '').replace('undefined', '');
+        roomDescriptionArray[0].innerHTML = `<span style="font-weight: 700;">Double Occupancy <span style="font-weight: 300">${doubleDescriptionText}</span></span>`;
+        roomDescriptionArray[1].innerHTML = `<span style="font-weight: 700;">Single Occupancy <span style="font-weight: 300">${singleDescriptionText}</span></span>`;
     }
 }
 

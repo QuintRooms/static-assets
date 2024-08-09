@@ -1,0 +1,410 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #000;
+$logo_flex_position: flex-start;
+$logo_max_width: 330px;
+$background_color: #fff;
+$secondary_background_color: #f0f0f0;
+$primary_color: #c9920e;
+$secondary_color: #000;
+$primary_text_color: #fff;
+$secondary_text_color: #000;
+$border_color: #c9920e;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #c9920e;
+$button_hover_border_color: #c9920e;
+$google_font_name: 'Graphik-Regular';
+$site_name: 'cfp_retail_24-103769';
+$path: set-path($env);
+$banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
+$logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+
+/* Fonts */
+@font-face {
+    font-family: 'Graphik-Bold';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Bold.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik-Regular';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Regular.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik-RegularItalic';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-RegularItalic.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UnitedSansReg-Heavy';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/UnitedSansReg-Heavy.otf') format('truetype');
+    font-style: normal;
+}
+
+.ArnSearchHeader,
+.SinglePropDetail .ArnLeftListContainer > span.translateMe {
+    font-family: 'UnitedSansReg-Heavy';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding: 12px;
+}
+
+.ArnPropNameLink span,
+.arnCurrency,
+.arnUnit,
+.sort-wrapper h4,
+.lblAmenities,
+#moreRatesLink,
+#show-more-or-less,
+#thePropertyAmenities span,
+.SinglePropDetail legend {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'UnitedSansReg-Heavy';
+}
+
+.SinglePropDetail span#show-more-or-less {
+    letter-spacing: unset;
+    text-decoration: unset;
+}
+
+.SinglePropDetail span#show-more-or-less:hover {
+    text-decoration: underline;
+}
+
+.sort-wrapper h4,
+.lblAmenities {
+    font-size: 17px;
+}
+
+.full-stay {
+    font-family: 'Graphik-Bold';
+}
+
+.SinglePropDetail .ArnNightlyRate strong {
+    font-family: 'UnitedSansReg-Heavy';
+}
+
+.RootBody #CitySearchContainer span:first-of-type,
+.RootBody #CheckInContainer span,
+.RootBody #CheckOutContainer span,
+.RootBody .ArnSearchHolderBoth span {
+    color: #fff;
+}
+
+.RootBody .ArnPrimarySearchOuterContainer h1,
+.RootBody .ArnPrimarySearchOuterContainer h3 {
+    color: #333;
+}
+
+/*  Fonts End */
+
+/* Buttons */
+
+input[type='submit'] {
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+}
+
+.SearchHotels #theSubmitButton,
+.SearchHotels #theOtherSubmitButton,
+.SinglePropDetail .CheckRates .submit {
+    border: 3px solid #000;
+    background-color: #fff;
+    color: #000;
+    font-family: 'UnitedSansReg-Heavy';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+.SearchHotels a.ArnShowRatesLink,
+.SinglePropDetail a.bookRoom,
+.SinglePropDetail a.holdRoom,
+.RootBody #theOtherSubmitButton,
+#theConfirmationButton,
+.CheckOutForm legend,
+.FinalConfirmation legend {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'UnitedSansReg-Heavy';
+}
+
+.SearchHotels .ArnRateButton {
+    max-width: 130px;
+}
+
+.SearchHotels #theSubmitButton:hover,
+.SearchHotels #theOtherSubmitButton:hover,
+.SinglePropDetail .CheckRates .submit:hover {
+    border: 3px solid #000;
+    background-color: #000;
+    color: #fff;
+    font-family: 'UnitedSansReg-Heavy';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Buttons End */
+
+.info-banner {
+    z-index: 5;
+}
+
+.SearchHotels .ArnPropertyMapInner {
+    width: 92% !important;
+    height: 96vh !important;
+}
+
+.ArnPrimarySearchContainer input,
+.ArnPrimarySearchContainer select,
+.SimpleSearch input,
+.SimpleSearch select {
+    border: 1px solid #e5e5e5;
+}
+
+#AdminControlsContainer {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $banner_image top center;
+    font-family: 'Graphik-Regular';
+    background-attachment: fixed;
+    background-size: 100% auto;
+    overflow-x: hidden;
+}
+
+header {
+    border-bottom: unset;
+    height: 115px;
+    justify-content: space-between;
+}
+
+header a {
+    background: $logo_bg;
+}
+
+a.logo {
+    width: 40%;
+}
+
+.logo img {
+    margin-top: 40px;
+    padding: 5px;
+}
+
+.ArnSearchContainerMainDiv,
+.PropDetailView,
+#theBookingPage {
+    border: 1px solid #e5e5e5;
+    width: 96vw;
+    background-color: #fff;
+    margin: 84px 0 5px 0;
+}
+
+.RootBody .ArnSearchContainerMainDiv {
+    background-color: unset;
+    border: unset;
+}
+
+.SinglePropDetail .ArnSubPage,
+#theBookingPage {
+    max-width: unset;
+    padding: 0 40px;
+}
+
+span.exclusive-rate {
+    position: absolute;
+    border: unset;
+    margin: 0;
+    top: unset;
+    left: unset;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-family: 'UnitedSansReg-Heavy';
+}
+
+.ArnPrimarySearchContainer,
+.SimpleSearch {
+    background-color: transparent;
+    color: #000;
+}
+
+.ArnSupportLinks {
+    background: #fff;
+}
+
+.ArnSupportLinks .dvd {
+    color: #000;
+}
+
+.ArnSupportLinks a {
+    color: #000;
+}
+
+.pb-container img {
+    filter: invert(0.5);
+}
+
+.SinglePropDetail .PropertyAmenities li {
+    padding: 3px 0;
+}
+
+.SinglePropDetail .ArnNightlyRate strong div:nth-last-child(2) {
+    padding: 7px 0;
+}
+
+.ArnSubPage {
+    margin: 65px auto;
+}
+
+.WBRateGuaranteeForm2 .zsFormClass {
+    background: transparent;
+}
+
+.SearchHotels .ArnSearchHeader {
+    padding: 35px 12px 12px 12px;
+}
+
+.SearchHotels .ArnSecondarySearchOuterContainer {
+    padding: 0 8px;
+}
+
+.sort-wrapper h4 {
+    margin-top: 12px;
+}
+
+.SinglePropDetail .PropDetailView {
+    margin: 84px 0 5px 0;
+}
+
+@media screen and (max-width: 1100px) {
+    .ArnSearchContainerMainDiv,
+    .PropDetailView,
+    #theBookingPage {
+        width: unset;
+    }
+
+    a.logo {
+        width: 40%;
+    }
+
+    .ArnSubPage {
+        margin: 0 auto;
+    }
+
+    .SinglePropDetail .ArnPropName {
+        padding: 15px 0;
+    }
+
+    .SearchHotels .ArnPropertyMapInner {
+        width: 100% !important;
+        height: 100vh !important;
+    }
+}
+
+.event-location {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.event-location a {
+    color: #c9920e;
+    background: #000;
+    border: 2px solid #c9920e;
+    font-family: 'UnitedSansReg-Heavy';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 4px;
+    margin: 3px 0;
+    transition: all 0.5s ease;
+    // box-shadow: 2px 2px 1px 0px #ccc;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.event-location a:hover {
+    background: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .logo img {
+        max-width: 250px;
+    }
+
+    .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
+        color: #000;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background: #fff;
+    }
+
+    .ArnSearchContainerMainDiv,
+    .PropDetailView,
+    #theBookingPage {
+        border: unset;
+        width: unset;
+        height: unset;
+        margin: unset !important;
+        padding: unset !important;
+    }
+
+    header {
+        height: unset;
+    }
+
+    a.logo {
+        width: 60%;
+    }
+
+    .logo img {
+        margin-top: unset;
+    }
+
+    header {
+        flex-direction: column;
+    }
+    .event-week {
+        flex-direction: row;
+    }
+
+    .event-week a {
+        margin: 6px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .event-location a {
+        margin: 6px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo img {
+        max-width: 200px;
+    }
+}
+
+.CheckOutForm .DSFormFields {
+    display: unset !important;
+}

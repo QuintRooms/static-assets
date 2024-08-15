@@ -22,7 +22,7 @@ module.exports = () => {
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
-            'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
+            // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
@@ -78,6 +78,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
+            'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
@@ -110,16 +111,16 @@ module.exports = () => {
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24
-            'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
-
-
+            // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
+            'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
+            'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
+            // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22

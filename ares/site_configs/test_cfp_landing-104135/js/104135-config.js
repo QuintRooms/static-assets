@@ -102,7 +102,7 @@ export default function siteConfig() {
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
             },
             {
-                name: 'CFP BOWL GAMES 2025',
+                name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
                 display_date: 'VARIOUS DATES',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',

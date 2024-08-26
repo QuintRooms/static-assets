@@ -106,48 +106,56 @@ export default function siteConfig() {
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
                 display_date: 'January 17 - 20, 2025',
+                display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
             },
             {
                 name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
                 display_date: 'VARIOUS DATES',
+                display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
                 display_date: 'January 16 - 19, 2026',
+                display_location: 'Atlanta, GA',
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
                 display_date: 'January 17 - 20, 2025',
+                display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
             },
             {
                 name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
                 display_date: 'VARIOUS DATES',
+                display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
                 display_date: 'January 16 - 19, 2026',
+                display_location: 'Atlanta, GA',
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
                 name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
                 display_date: 'VARIOUS DATES',
+                display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',
             },
             {
                 name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
                 display_date: 'January 16 - 19, 2026',
+                display_location: 'Atlanta, GA',
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             }

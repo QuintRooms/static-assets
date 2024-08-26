@@ -68,9 +68,7 @@
     // justify-content: space-around;
     align-items: center;
     margin: auto;
-    // background-position: center;
-    // background-size: cover;
-    // background-repeat: no-repeat;
+    background: #272427;
     transition: all .3s ease-in-out;
 
     h2 {
@@ -79,8 +77,11 @@
 }
 
 .event-image-container {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
-    aspect-ratio: 1 / 1;
+    width: 100px;
     border-right: 4px solid #C8A24A;
 }
 

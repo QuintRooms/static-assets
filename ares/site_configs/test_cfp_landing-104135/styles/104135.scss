@@ -51,6 +51,19 @@ $border-radius-general: 8px;
     font-style: normal;
 }
 
+.RootBody .ArnSearchContainerMainDiv h1 {
+    display: none;
+}
+
+.RootBody h3 {
+    display: none;
+}
+
+.RootBody .ArnPrimarySearchContainer {
+    background: #272427;
+    border-radius: $border-radius-general;
+}
+
 .ArnSupportLinks.ArnSupportBottom {
     background-color: #000 !important;
 }
@@ -74,7 +87,8 @@ $border-radius-general: 8px;
 
 .event-container {
 
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border: none;
 
     h2 {
@@ -83,6 +97,7 @@ $border-radius-general: 8px;
 
     .view-hotels {
         background-color: #c9920e;
+        font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
         padding: 15px;
         border-radius: $border-radius-general;
         margin-right: 15px;
@@ -91,7 +106,7 @@ $border-radius-general: 8px;
 
     &:hover {
         border: none;
-        outline: 2px solid #c9920e; 
+        outline: 3px solid #c9920e; 
     }
 }
 
@@ -112,6 +127,7 @@ $border-radius-general: 8px;
 }
 
 .event-name {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
     margin: 0;
     margin-bottom: 7px;
 }

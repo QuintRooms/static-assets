@@ -95,14 +95,16 @@ export default class LandingPage {
                 <a class="event-container event-${i + 1}" href="${event.portal_url}" target="_blank">
                     <div class="event-image-container event-image-container-${i + 1}">
                     </div>
-                    <div class="event-details">
-                        <h2 class="event-name">${event.name}</h2>
-                        <div class="display-date-location-container">
-                            <div class="display-date">${event.display_date}</div>
-                            <div class="display-location">${event.display_location}</div>
+                    <div class="event-details-and-button">
+                        <div class="event-details">
+                            <h2 class="event-name">${event.name}</h2>
+                            <div class="display-date-location-container">
+                                <div class="display-date">${event.display_date}</div>
+                                <div class="display-location">${event.display_location}</div>
+                            </div>
                         </div>
+                        <div class="view-hotels">View Hotels</div>
                     </div>
-                    <div class="view-hotels">View Hotels</div>
                 </a>
                 `
             );

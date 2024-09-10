@@ -83,6 +83,24 @@ $header-images: '';
     }
 }
 
+.event-details-and-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.event-details {
+    margin-left: 15px;
+}
+
+.event-name {
+    margin-bottom: 12px;
+}
+
+.display-location {
+    margin-left: 15px;
+}
+
 .lucid-banner {
     margin-top: 20px;
     // border-radius: 10px;

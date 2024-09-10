@@ -20,6 +20,7 @@ $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat
 $logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
 $bg-images: url(#{$path}/site_configs/#{$site_name}/img/atlanta_stadium.jpg), url(#{$path}/site_configs/#{$site_name}/img/trophy_bg.png), url(#{$path}/site_configs/#{$site_name}/img/miami_2023.jpg);
 $header-images: '';
+$border-radius-general: 8px;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/landing_page/landing-page_bar_design.scss';
@@ -73,7 +74,7 @@ $header-images: '';
 
 .event-container {
 
-    margin: 3px;
+    margin: 5px;
     border: none;
 
     h2 {
@@ -83,7 +84,7 @@ $header-images: '';
     .view-hotels {
         background-color: #c9920e;
         padding: 15px;
-        border-radius: 15px;
+        border-radius: $border-radius-general;
         margin-right: 15px;
         width: 200px;
     }
@@ -100,6 +101,10 @@ $header-images: '';
     justify-content: space-between;
     width: 100%;
     align-items: center;
+}
+
+.event-image-container{
+    border-radius: $border-radius-general 0px 0px $border-radius-general;
 }
 
 .event-details {

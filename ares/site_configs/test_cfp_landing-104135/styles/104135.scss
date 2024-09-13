@@ -2,7 +2,7 @@
 
 $header_background: #000;
 $logo_flex_position: center;
-$logo_max_width: 330px;
+$logo_max_width: 200px;
 $background_color: #fff;
 $secondary_background_color: #f0f0f0;
 $primary_color: #c9920e;
@@ -51,10 +51,10 @@ $border-radius-general: 8px;
     font-style: normal;
 }
 
-// h2.search-container-header-text {
-//     font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
-//     font-size: 24px;
-// }
+h2.search-container-header-text {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    font-size: 30px;
+}
 
 // .RootBody .ArnSearchContainerMainDiv h1 {
 //     display: none;
@@ -71,6 +71,11 @@ $border-radius-general: 8px;
 
 .ArnSupportLinks.ArnSupportBottom {
     background-color: #000 !important;
+}
+
+select#rooms,
+select#adults {
+    border-radius: 8px;
 }
 
 // .event-1 {
@@ -113,6 +118,10 @@ $border-radius-general: 8px;
         border: none;
         outline: 3px solid #c9920e; 
     }
+}
+
+.logo img {
+    padding: 0px;
 }
 
 .event-details-and-button {
@@ -172,6 +181,14 @@ $border-radius-general: 8px;
 }
 
 input {
+    border: 1px solid #c9920e;
+    border-radius: 8px;
+}
+
+#theCheckIn,
+#theCheckOut,
+#rooms,
+#adults {
     border: 1px solid #c9920e;
     border-radius: 8px;
 }

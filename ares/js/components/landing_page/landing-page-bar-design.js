@@ -11,6 +11,7 @@ export default class LandingPage {
     init() {
         if (!document.querySelector('.RootBody')) return;
         this.generateEventHtml();
+        this.udpateArnSearchContainer();
         // this.removeArnSearchContainer();
     }
 
@@ -26,6 +27,21 @@ export default class LandingPage {
         if (!document.querySelector('#root-search-container')) return;
 
         document.querySelector('#root-search-container').remove();
+    }
+
+    async udpateArnSearchContainer() {
+        await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
+        const searchContainer = document.querySelector(".ArnPrimarySearchContainer");
+
+        searchContainer.insertAdjacentHTML(
+            'afterbegin',
+            `
+            <div class="search-container-header">
+                    <h2 class="search-container-header-text">BOOK YOUR COLLEGE HOTEL PLAYOFF ROOMS NOW!</h2>
+            </div>
+        `
+        );
+
     }
 
     buildCitySearchElement(event) {

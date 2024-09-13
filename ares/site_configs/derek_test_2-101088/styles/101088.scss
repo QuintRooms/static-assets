@@ -42,9 +42,18 @@ a.ArnShowRatesLink,
   border-color: #be955b;
 
   &:hover {
-    color: #be955b;
+    border-color: #be955b;
     color: #be955b;
   }
+}
+
+#theOtherSubmit {
+      border: 1px solid #be955b;
+      background: #be955b;
+      &:hover {
+          border-color: #be955b;
+          color: #be955b;
+        }
 }
 
 .ArnShowRatesLink {

@@ -2,7 +2,7 @@
 
 $header_background: #fff;
 $logo_flex_position: center;
-$logo_max_width: 250px;
+$logo_max_width: 300px;
 $background_color: #fff;
 $primary_color: #db0032;
 $secondary_color: #be955b;
@@ -22,5 +22,27 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 
 
 .logo img {
-  padding: 0px;
+  padding: 25px;
+}
+
+input#theSubmitButton,
+#theOtherSubmitButton,
+.bookRoom,
+.arn-leaflet-reset-button,
+input#theConfirmationButton,
+a.ArnShowRatesLink,
+.WBConfirmedBooking .submit {
+  border-radius: 60px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.ArnShowRatesLink {
+  width: 125px;
+}
+
+.lucid-banner .lucid-button a {
+  border-radius: 60px;
+  text-transform: uppercase;
+  font-size: 13px;
 }

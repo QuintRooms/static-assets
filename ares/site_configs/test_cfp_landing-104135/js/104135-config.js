@@ -14,6 +14,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'pl58QCMXHS4C',
         algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
+        use_google_autocomplete: true,
         currency: 'USD',
         distance_unit: 'useMiles',
         map_size: '12',

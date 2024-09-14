@@ -112,13 +112,6 @@ export default function siteConfig() {
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
             },
             {
-                name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
-                display_date: 'VARIOUS DATES',
-                display_location: 'Atlanta, GA',
-                end_date: '01/20/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',
-            },
-            {
                 name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
                 display_date: 'January 16 - 19, 2026',
                 display_location: 'Atlanta, GA',
@@ -126,40 +119,47 @@ export default function siteConfig() {
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
-                display_date: 'January 17 - 20, 2025',
-                display_location: 'Atlanta, GA',
-                end_date: '01/20/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
+                name: 'VRBO FIESTA BOWL',
+                display_date: 'December 31, 2024',
+                display_location: 'Glendale, AZ',
+                end_date: '01/1/2025', // M/D/YYYY
+                portal_url: 'https://events.quintrooms.com/v6/?siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2',
             },
             {
-                name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
-                display_date: 'VARIOUS DATES',
+                name: 'CHIK-FIL-A PEACH BOWL',
+                display_date: 'January 1, 2025',
                 display_location: 'Atlanta, GA',
-                end_date: '01/20/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',
+                end_date: '01/02/2025', // M/D/YYYY
+                portal_url: 'https://events.quintrooms.com/v6/?siteid=104135&longitude=-84.4031654&latitude=33.7553232&radius=100&checkin=1/1/2025&nights=2',
             },
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
-                display_date: 'January 16 - 19, 2026',
-                display_location: 'Atlanta, GA',
-                end_date: '01/19/2026', // M/D/YYYY
+                name: 'PRUDENTIAL ROSE BOWL',
+                display_date: 'January 1, 2025',
+                display_location: 'Pasadena, CA',
+                end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
-                name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
-                display_date: 'VARIOUS DATES',
-                display_location: 'Atlanta, GA',
-                end_date: '01/20/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',
+                name: 'ALLSTATE SUGAR BOWL',
+                display_date: 'January 1, 2025',
+                display_location: 'New Orleans, LA',
+                end_date: '01/02/2025', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
-                display_date: 'January 16 - 19, 2026',
-                display_location: 'Atlanta, GA',
-                end_date: '01/19/2026', // M/D/YYYY
+                name: 'CAPITAL ONE ORANGE BOWL',
+                display_date: 'January 9, 2025',
+                display_location: 'Miami, FL',
+                end_date: '01/10/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
-            }
+            },
+            {
+                name: 'GOOD YEAR COTTON BOWL',
+                display_date: 'January 10, 2025',
+                display_location: 'Dallas, TX',
+                end_date: '01/11/2025', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/222285562425153',
+            },
         ],
     };
 }

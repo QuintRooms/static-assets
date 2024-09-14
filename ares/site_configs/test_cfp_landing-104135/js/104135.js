@@ -47,9 +47,14 @@ renderLucidBanner();
 async function changeButtonText() {
     await utilities.waitForSelectorInDOM('.view-hotels');
     const view_hotels_buttons = document.querySelectorAll('.view-hotels');
-    view_hotels_buttons[1].innerHTML = 'SEARCH HOTELS';
-    view_hotels_buttons[2].innerHTML = 'SUBMIT REQUESTS';
-    view_hotels_buttons[3].innerHTML = 'SUBMIT REQUESTS';
+    view_hotels_buttons[0].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[1].innerHTML = 'SUBMIT REQUESTS';
+    view_hotels_buttons[2].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[3].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[4].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[5].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
 }
 
 changeButtonText();

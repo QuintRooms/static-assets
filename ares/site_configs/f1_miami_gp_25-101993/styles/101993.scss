@@ -22,6 +22,10 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 @import '../../../styles/sass/f1.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 
+#searching {
+    background: #000;
+}
+
 header {
     background-image: url(#{$path}/site_configs/#{$site_name}/img/banner.jpg);
     background-size: cover;

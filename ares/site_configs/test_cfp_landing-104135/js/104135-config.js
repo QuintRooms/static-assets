@@ -123,14 +123,14 @@ export default function siteConfig() {
                 display_date: 'December 31, 2024',
                 display_location: 'Glendale, AZ',
                 end_date: '01/1/2025', // M/D/YYYY
-                portal_url: 'https://events.quintrooms.com/v6/?siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2',
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
             },
             {
                 name: 'CHIK-FIL-A PEACH BOWL',
                 display_date: 'January 1, 2025',
                 display_location: 'Atlanta, GA',
                 end_date: '01/02/2025', // M/D/YYYY
-                portal_url: 'https://events.quintrooms.com/v6/?siteid=104135&longitude=-84.4031654&latitude=33.7553232&radius=100&checkin=1/1/2025&nights=2',
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-84.4031654&latitude=33.7553232&radius=100&checkin=1/1/2025&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
             },
             {
                 name: 'PRUDENTIAL ROSE BOWL',

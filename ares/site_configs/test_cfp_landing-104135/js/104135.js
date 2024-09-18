@@ -42,6 +42,22 @@ async function renderLucidBanner() {
     );
 }
 
+async function renderEventGroupHeaders() {
+    // await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
+    await utilities.waitForSelectorInDOM('.events');
+
+    document.querySelector('.ArnPrimarySearchContainer').insertAdjacentHTML(
+        'afterend',
+        `
+        <div class="first-event-header">Championship Games</div>
+        `
+    );
+
+    
+
+
+}
+
 renderLucidBanner();
 
 async function changeButtonText() {

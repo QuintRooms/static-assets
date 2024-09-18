@@ -61,6 +61,10 @@
     flex-direction: column;
 }
 
+.RootBody input {
+    height: 37px !important;
+}
+
 // h2.search-container-header-text {
 //     font-family: "UnitedSansReg-Heavy",
 //         "Graphik-Regular",
@@ -168,12 +172,20 @@
 }
 
 .RootBody #theOtherSubmitButton {
-    width: 200px;
+    max-width: none;
+    max-height: none;
+    width: 400px;
+    height: 46px;
     margin: 15px;
+    
 }
 
 .header-container:hover {
     border: 2px solid $primary_color;
+}
+
+.lucid-banner {
+    width: 85vw;
 }
 
 @media screen and (max-width: 800px){

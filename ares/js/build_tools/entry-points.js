@@ -25,7 +25,7 @@ module.exports = () => {
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
-            'derek_test_2-101088': './src/101088.js', // derek test_2
+            // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24
@@ -79,7 +79,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
-            // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
+            'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
@@ -113,9 +113,9 @@ module.exports = () => {
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
-            // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
+            'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
-            'derek_test_2-101088': './src/101088.js', // derek test_2
+            // 'derek_test_2-101088': './src/101088.js', // derek test_2
 
         };
 

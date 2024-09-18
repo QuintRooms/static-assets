@@ -84,77 +84,57 @@ export default function siteConfig() {
         has_landing_page: true,
         hide_search_on_landing_page: false,
         landing_page_events: [
-            // Normal with Retail
-            // {
-            //     name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
-            //     display_date: 'January 17 - 20, 2025',
-            //     end_date: '01/20/2025', // M/D/YYYY
-            //     portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
-            // },
-            // {
-            //     name: 'CFP BOWL GAMES 2025 - HOTEL SEARCH',
-            //     display_date: 'VARIOUS DATES',
-            //     end_date: '01/20/2025', // M/D/YYYY
-            //     portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=80509',
-            // },
-            // {
-            //     name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
-            //     display_date: 'January 16 - 19, 2026',
-            //     end_date: '01/19/2026', // M/D/YYYY
-            //     portal_url: 'https://form.jotform.com/222285562425153',
-            // }
-            //Normal with all Bowl Games
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
+                name: '2025 College Football Playoff National Championship',
                 display_date: 'January 17 - 20, 2025',
                 display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
             },
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
+                name: '2026 College Football Playoff National Championship',
                 display_date: 'January 16 - 19, 2026',
                 display_location: 'Atlanta, GA',
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
-                name: 'VRBO FIESTA BOWL',
+                name: 'Playoff Quarterfinal at the Vrbo Fiesta Bowl',
                 display_date: 'December 31, 2024',
                 display_location: 'Glendale, AZ',
                 end_date: '01/1/2025', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
             },
             {
-                name: 'CHIK-FIL-A PEACH BOWL',
+                name: 'Playoff Quarterfinal at the Chick-fil-A Peach Bowl',
                 display_date: 'January 1, 2025',
                 display_location: 'Atlanta, GA',
                 end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-84.4031654&latitude=33.7553232&radius=100&checkin=1/1/2025&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
             },
             {
-                name: 'PRUDENTIAL ROSE BOWL',
+                name: 'Playoff Quarterfinal at the Rose Bowl Game presented by Prudential',
                 display_date: 'January 1, 2025',
                 display_location: 'Pasadena, CA',
                 end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
-                name: 'ALLSTATE SUGAR BOWL',
+                name: 'Playoff Quarterfinal at the Allstate Sugar Bowl',
                 display_date: 'January 1, 2025',
                 display_location: 'New Orleans, LA',
                 end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
-                name: 'CAPITAL ONE ORANGE BOWL',
+                name: 'Playoff Semifinal at the Capital One Orange Bowl',
                 display_date: 'January 9, 2025',
                 display_location: 'Miami, FL',
                 end_date: '01/10/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
             },
             {
-                name: 'GOOD YEAR COTTON BOWL',
+                name: 'Playoff Semifinal at the Goodyear Cotton Bowl Classic',
                 display_date: 'January 10, 2025',
                 display_location: 'Dallas, TX',
                 end_date: '01/11/2025', // M/D/YYYY

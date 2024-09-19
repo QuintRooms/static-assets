@@ -62,7 +62,7 @@
 }
 
 .RootBody input {
-    height: 37px !important;
+    height: 24px !important;
 }
 
 // h2.search-container-header-text {
@@ -77,12 +77,14 @@
     flex-direction: column;
     // grid-template-columns: setUpEventColumns($bg-images);
     // max-width: 75vw;
+    min-width: none;
+    min-height: none;
     width: 85vw;
 }
 
 .header-events {
     display: flex;
-    width: 100%;
+    // width: 100%;
 }
 
 .event-container {
@@ -111,7 +113,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
-    width: 100px;
+    min-width: 100px;
+    max-width: 200px;
     border-right: 4px solid #c9920e;
 }
 
@@ -178,7 +181,7 @@
 .RootBody #theOtherSubmitButton {
     max-width: none;
     max-height: none;
-    width: 400px;
+    min-width: 250px;
     height: 46px;
     margin: 15px;
     

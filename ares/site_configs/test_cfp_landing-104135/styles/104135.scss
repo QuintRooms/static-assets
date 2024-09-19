@@ -208,6 +208,9 @@ input {
 }
 
 @media screen and (max-width: 960px) {
+    .event-image-container {
+        min-height: 200px;
+    }
 
     .event-container {
         
@@ -222,6 +225,12 @@ input {
     }
 
     .event-details-and-button {
+        flex-direction: column;
+    }
+
+    .display-date-location-container {
+        margin-top: 0px;
+        margin-bottom:10px;
         flex-direction: column;
     }
 

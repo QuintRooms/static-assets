@@ -152,6 +152,17 @@ select#adults {
 
 .display-location {
     margin-left: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.display-date {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .lucid-banner {
@@ -251,18 +262,10 @@ input {
 
     .display-location {
         font-size: 12px;
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 200;
-        font-style: normal;
     }
 
     .display-date {
         font-size: 12px;
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 200;
-        font-style: normal;
     }
 
     .view-hotels {

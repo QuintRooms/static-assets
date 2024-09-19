@@ -239,6 +239,13 @@ input {
 
 @media screen and (max-width: 960px) {
 
+    .event-container {
+        
+        h2 {
+            font-size: 18px;
+        }
+    }
+
     .lucid-banner .lucid-content #desktop {
             display: none;
         }
@@ -257,15 +264,6 @@ input {
 }
 
 @media screen and (max-width: 785px) {
-    .lucid-banner{
-        width: 85vw;
-    }
-    .lucid-banner .lucid-content span {
-        margin-left: 15px;
-    }
-}
-
-@media screen and (max-width: 600px) {
 
     .event-image-container {
         min-width: 100px;
@@ -316,7 +314,17 @@ input {
         width: unset;
         min-width: 150px
     }
-    
+
+    .lucid-banner{
+        width: 85vw;
+    }
+    .lucid-banner .lucid-content span {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
     .lucid-banner .lucid-content #desktop {
             display: none;
         }

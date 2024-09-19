@@ -40,6 +40,12 @@ $border-radius-general: 8px;
 }
 
 @font-face {
+    font-family: 'Graphik-Thin';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Thin.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Graphik-RegularItalic';
     src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-RegularItalic.otf') format('truetype');
     font-style: normal;
@@ -244,10 +250,12 @@ input {
 
     .display-location {
         font-size: 12px;
+        font-family: 'Graphik-Thin';
     }
 
     .display-date {
         font-size: 12px;
+        font-family: 'Graphik-Thin';
     }
 
     .view-hotels {

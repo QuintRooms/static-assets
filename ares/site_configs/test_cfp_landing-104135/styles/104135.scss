@@ -25,6 +25,7 @@ $border-radius-general: 8px;
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../js/components/landing_page/landing-page_bar_design.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 /* Fonts */
 @font-face {
@@ -250,12 +251,18 @@ input {
 
     .display-location {
         font-size: 12px;
-        font-family: 'Graphik-Thin';
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
     }
 
     .display-date {
         font-size: 12px;
-        font-family: 'Graphik-Thin';
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
     }
 
     .view-hotels {

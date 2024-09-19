@@ -64,6 +64,15 @@ h2.search-container-header-text {
     text-align: center;
 }
 
+.taxFeeRow td, .discount td, .totalRow td, .balanceDueRow td, .dueNowRow td, .guestNameFields td, .total-points-earned td {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
 // .RootBody .ArnSearchContainerMainDiv h1 {
 //     display: none;
 // }
@@ -73,7 +82,7 @@ h2.search-container-header-text {
 // }
 
 .RootBody .ArnPrimarySearchContainer {
-    background: #272427;
+    background: #000;
     border-radius: $border-radius-general;
 }
 
@@ -99,9 +108,10 @@ select#adults {
     margin-top: 5px;
     margin-bottom: 5px;
     border: none;
+    min-height: 83px;
 
     h2 {
-        font-size: 24px;
+        font-size: 20px;
         text-align: left;
     }
 
@@ -147,7 +157,7 @@ select#adults {
 }
 
 .display-date-location-container {
-    margin-top: 7px;
+    margin-top: 0px;
 }
 
 .display-location {
@@ -255,7 +265,6 @@ input {
     }
 
     .display-date-location-container {
-        margin-top: 0px;
         margin-bottom:10px;
         flex-direction: column;
     }

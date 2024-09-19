@@ -61,8 +61,8 @@
     flex-direction: column;
 }
 
-.RootBody input {
-    height: 24px !important;
+.RootBody input, .RootBody select {
+    height: 30px !important;
 }
 
 // h2.search-container-header-text {
@@ -143,7 +143,6 @@
     border-radius: $border-radius-general;
     margin-right: 15px;
     width: 200px;
-    min-width: 200px
 }
 
 .header-container {
@@ -182,7 +181,6 @@
     max-width: none;
     max-height: none;
     min-width: 250px;
-    height: 46px;
     margin: 15px;
     
 }

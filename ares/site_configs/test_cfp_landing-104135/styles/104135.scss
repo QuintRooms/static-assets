@@ -54,6 +54,7 @@ $border-radius-general: 8px;
 h2.search-container-header-text {
     font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
     font-size: 30px;
+    text-align: center;
 }
 
 // .RootBody .ArnSearchContainerMainDiv h1 {
@@ -124,6 +125,7 @@ select#adults {
 
 .event-image-container{
     border-radius: $border-radius-general 0px 0px $border-radius-general;
+    min-width: 200px;
 }
 
 .event-details {
@@ -171,6 +173,7 @@ select#adults {
     font-size: 16px;
     font-weight: 600;
     max-width: none;
+    min-height: 46px;
 }
 
 input {
@@ -193,8 +196,7 @@ input {
 
 @media screen and (min-width: 960px) {
     .lucid-banner{
-        width: 925px;
-        max-width: 75vw;
+        width: 85vw;
     }
 
     .lucid-content {
@@ -209,6 +211,7 @@ input {
 
 @media screen and (max-width: 960px) {
     .event-image-container {
+        min-width: 100px;
         min-height: 200px;
     }
 
@@ -221,11 +224,16 @@ input {
     
         .view-hotels {
             font-size: 14px;
+            margin-right: 0px;
         }
     }
 
     .event-details-and-button {
         flex-direction: column;
+    }
+
+    .event-details {
+        margin-left: 0px;
     }
 
     .display-date-location-container {
@@ -240,6 +248,17 @@ input {
 
     .display-date {
         font-size: 12px;
+    }
+
+    .view-hotels {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 15px;
+        border-radius: $border-radius-general;
+        margin-right: 15px;
+        width: unset;
+        min-width: 150px
     }
 
     .lucid-banner .lucid-content #desktop {
@@ -261,7 +280,7 @@ input {
 
 @media screen and (max-width: 785px) {
     .lucid-banner{
-        width: 300px;
+        width: 85vw;
     }
     .lucid-banner .lucid-content span {
         margin-left: 15px;

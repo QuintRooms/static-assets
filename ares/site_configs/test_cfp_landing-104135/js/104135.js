@@ -53,6 +53,13 @@ async function renderEventGroupHeaders() {
         `
     );
 
+    document.querySelector('.event-2').insertAdjacentHTML(
+        'afterend',
+        `
+        <div class="second-event-header">Playoff Quarterfinal Games</div>
+        `
+    );
+
     
 
 

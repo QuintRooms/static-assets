@@ -19,15 +19,15 @@ export default class LandingPage {
      *@description Removes ARN search container
      *@return void
      */
-    async removeArnSearchContainer() {
-        document.body.insertAdjacentHTML('afterBegin', '<style>#root-search-container{display: none;}');
+    // async removeArnSearchContainer() {
+    //     document.body.insertAdjacentHTML('afterBegin', '<style>#root-search-container{display: none;}');
 
-        await utilities.waitForSelectorInDOM('#root-search-container');
+    //     await utilities.waitForSelectorInDOM('#root-search-container');
 
-        if (!document.querySelector('#root-search-container')) return;
+    //     if (!document.querySelector('#root-search-container')) return;
 
-        document.querySelector('#root-search-container').remove();
-    }
+    //     document.querySelector('#root-search-container').remove();
+    // }
 
     async udpateArnSearchContainer() {
         await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
@@ -65,25 +65,25 @@ export default class LandingPage {
         i += 1;
     }
 
-    async setGridSize() {
-        await utilities.waitForSelectorInDOM('.events');
-        const events = document.querySelectorAll('.event-container');
-        const grid = document.querySelector('.events');
+    // async setGridSize() {
+    //     await utilities.waitForSelectorInDOM('.events');
+    //     const events = document.querySelectorAll('.event-container');
+    //     const grid = document.querySelector('.events');
 
-        switch (events.length) {
-            case 1:
-                grid.style.gridTemplateColumns = '1fr';
-                break;
-            case 2:
-                grid.style.gridTemplateColumns = '1fr 1fr';
-                break;
-            case 3:
-                grid.style.gridTemplateColumns = '1fr 1fr 1fr';
-                break;
-            default:
-                grid.style.gridTemplateColumns = '1fr 1fr 1fr';
-        }
-    }
+    //     switch (events.length) {
+    //         case 1:
+    //             grid.style.gridTemplateColumns = '1fr';
+    //             break;
+    //         case 2:
+    //             grid.style.gridTemplateColumns = '1fr 1fr';
+    //             break;
+    //         case 3:
+    //             grid.style.gridTemplateColumns = '1fr 1fr 1fr';
+    //             break;
+    //         default:
+    //             grid.style.gridTemplateColumns = '1fr 1fr 1fr';
+    //     }
+    // }
 
     /**
      *@description Generates the events in HTML

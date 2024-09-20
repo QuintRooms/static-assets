@@ -98,16 +98,6 @@
     }
 }
 
-.event-image-container {
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    min-width: 100px;
-    max-width: 200px;
-    border-right: 4px solid #c9920e;
-}
-
 .event-container:hover {
     border: 2px solid $primary_color;
 }

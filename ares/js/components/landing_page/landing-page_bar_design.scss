@@ -184,7 +184,7 @@
     width: 85vw;
 }
 
-@media screen and (min-width: 785px){
+@media screen and (min-width: 786px){
     @mixin append-images {
         $i: 0;
         @each $image in $bg-images-desktop {

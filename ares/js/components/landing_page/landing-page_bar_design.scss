@@ -1,27 +1,17 @@
-@mixin append-images {
-    $i: 0;
-    @each $image in $bg-images {
-        $i: $i +1;
-        .event-image-container-#{$i} {
-            background: $image;
-        }
-    }
-}
+// @mixin append-header-images {
+//     $i: 0;
+//     @each $image in $header-images {
+//         $i: $i +1;
+//         .search-header-#{$i} {
+//             background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), $image;
+//         }
+//     }
+// }
 
-@mixin append-header-images {
-    $i: 0;
-    @each $image in $header-images {
-        $i: $i +1;
-        .search-header-#{$i} {
-            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), $image;
-        }
-    }
-}
-
-@include append-images();
-@if ($header-images != '') {
-    @include append-header-images();
-}
+// @include append-images();
+// @if ($header-images != '') {
+//     @include append-header-images();
+// }
 
 .ArnSupportBottom .searchLink, .ArnSupportBottom .dvd:first-of-type, .ArnSupportBottom .dvd:nth-of-type(2) {
     display: none;
@@ -194,8 +184,38 @@
     width: 85vw;
 }
 
-@media screen and (max-width: 800px){
-    .events{
-        grid-template-columns: 1fr !important;
+@media screen and (min-width: 785px){
+    @mixin append-images {
+        $i: 0;
+        @each $image in $bg-images-desktop {
+            $i: $i +1;
+            .event-image-container-#{$i} {
+                background: $image;
+            }
+        }
     }
+
+    @include append-images();
+    @if ($header-images != '') {
+    @include append-header-images();
+    }
+    
+}
+
+@media screen and (max-width: 785px){
+    @mixin append-images {
+        $i: 0;
+        @each $image in $bg-images-mobile {
+            $i: $i +1;
+            .event-image-container-#{$i} {
+                background: $image;
+            }
+        }
+    }
+
+    @include append-images();
+    @if ($header-images != '') {
+    @include append-header-images();
+    }
+
 }

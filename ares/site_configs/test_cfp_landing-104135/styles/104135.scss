@@ -241,21 +241,6 @@ input {
         font-size: 14px;
     }
 }
-
-@mixin append-images {
-    $i: 0;
-    @each $image in $bg-images-desktop {
-        $i: $i +1;
-        .event-image-container-#{$i} {
-            background: $image;
-        }
-    }
-}
-
-@include append-images();
-@if ($header-images != '') {
-@include append-header-images();
-}
 }
 
 @media screen and (max-width: 960px) {
@@ -282,21 +267,6 @@ input {
     .lucid-banner .lucid-content span {
         margin-left: 15px;
     }
-
-    @mixin append-images {
-        $i: 0;
-        @each $image in $bg-images-mobile {
-            $i: $i +1;
-            .event-image-container-#{$i} {
-                background: $image;
-            }
-        }
-    }
-
-    @include append-images();
-    @if ($header-images != '') {
-    @include append-header-images();
-    }
 }
 
 @media screen and (max-width: 785px) {
@@ -304,11 +274,6 @@ input {
     .event-image-container {
         min-width: 100px;
         min-height: 200px;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 100%;
-        border-right: 4px solid #c9920e;
     }
 
     .event-container {

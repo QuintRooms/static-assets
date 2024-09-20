@@ -144,6 +144,11 @@ select#adults {
 .event-image-container{
     border-radius: $border-radius-general 0px 0px $border-radius-general;
     min-width: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    border-right: 4px solid #c9920e;
 }
 
 .event-details {
@@ -224,17 +229,6 @@ input {
 }
 
 @media screen and (min-width: 960px) {
-
-    .event-image-container {
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 100%;
-        min-width: 100px;
-        max-width: 200px;
-        border-right: 4px solid #c9920e;
-    }
-    
     .lucid-banner{
         width: 85vw;
     }
@@ -308,12 +302,12 @@ input {
 @media screen and (max-width: 785px) {
 
     .event-image-container {
+        min-width: 100px;
+        min-height: 200px;
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
         height: 100%;
-        min-width: 100px;
-        max-width: 200px;
         border-right: 4px solid #c9920e;
     }
 

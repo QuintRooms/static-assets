@@ -185,37 +185,9 @@
 }
 
 @media screen and (min-width: 786px){
-    @mixin append-images {
-        $i: 0;
-        @each $image in $bg-images-desktop {
-            $i: $i +1;
-            .event-image-container-#{$i} {
-                background: $image;
-            }
-        }
-    }
 
-    @include append-images();
-    @if ($header-images != '') {
-    @include append-header-images();
-    }
-    
 }
 
 @media screen and (max-width: 785px){
-    @mixin append-images {
-        $i: 0;
-        @each $image in $bg-images-mobile {
-            $i: $i +1;
-            .event-image-container-#{$i} {
-                background: $image;
-            }
-        }
-    }
-
-    @include append-images();
-    @if ($header-images != '') {
-    @include append-header-images();
-    }
 
 }

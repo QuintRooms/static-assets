@@ -236,8 +236,6 @@ input {
         font-size: 14px;
     }
 }
-
-$bg-images: url(#{$path}/site_configs/#{$site_name}/img/CFP_2025_CHAMPIONSHIP_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_CHAMPIONSHIP_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIESTA_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_PEACH_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ROSE_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_SUGAR_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ORANGE_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_COTTON_HORZ_WHITE.png);
 }
 
 @media screen and (max-width: 960px) {

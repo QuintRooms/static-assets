@@ -18,7 +18,7 @@ $site_name: 'test_cfp_landing-104135';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
 $logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
-$bg-images: url(#{$path}/site_configs/#{$site_name}/img/CFP_2025_CHAMPIONSHIP.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_CHAMPIONSHIP.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIESTA_HORZ_STACK.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_PEACH_HORZ_STACK.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ROSE_HORZ_STACK.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_SUGAR_HORZ_STACK.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ORANGE_HORZ_STACK.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_COTTON_HORZ_STACK.png);
+$bg-images: url(#{$path}/site_configs/#{$site_name}/img/CFP_2025_CHAMPIONSHIP_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_CHAMPIONSHIP_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIESTA_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_PEACH_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ROSE_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_SUGAR_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ORANGE_HORZ_WHITE.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_COTTON_HORZ_WHITE.png);
 $header-images: '';
 $border-radius-general: 8px;
 

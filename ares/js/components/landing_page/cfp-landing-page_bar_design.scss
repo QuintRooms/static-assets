@@ -42,8 +42,9 @@ h1 {
     justify-content: center;
 }
 
-// .event-group-header-left-box {
-// }
+.event-group-header-left-box {
+    margin-top:30px;
+}
 
 .event-group-header {
     font-family: 'UnitedSansReg-Heavy';
@@ -56,8 +57,9 @@ h1 {
     margin: 20px 0;
 }
 
-// .event-group-header-right-box {
-// }
+.event-group-header-right-box {
+    margin-top: 30px;
+}
 
 // .event-group-header:before,
 // .event-group-header:after {
@@ -267,12 +269,6 @@ h1 {
 }
 
 @media screen and (max-width: 786px){
-
-    .RootBody .ArnPrimarySearchContainer {
-            flex-direction: column;
-            justify-content: none;
-            padding-left: 0px;
-        }
     
     .event-image-container{
         border-radius: $border-radius-general 0px 0px $border-radius-general;

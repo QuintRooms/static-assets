@@ -253,6 +253,12 @@ input {
 
 @media screen and (max-width: 960px) {
 
+    .RootBody .ArnPrimarySearchContainer {
+        flex-direction: column;
+        justify-content: none;
+        padding-left: 0px;
+    }
+
     .event-container {
         
         h2 {
@@ -278,12 +284,6 @@ input {
 }
 
 @media screen and (max-width: 786px) {
-
-    .RootBody .ArnPrimarySearchContainer {
-            flex-direction: column;
-            justify-content: none;
-            padding-left: 0px;
-        }
 
     .search-container-header-text {
         font-size: 24px;

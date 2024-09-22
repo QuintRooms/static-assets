@@ -267,6 +267,13 @@ h1 {
 }
 
 @media screen and (max-width: 786px){
+
+    .ArnPrimarySearchContainer {
+            flex-direction: column;
+            justify-content: none;
+            padding-left: 0px;
+        }
+    
     .event-image-container{
         border-radius: $border-radius-general 0px 0px $border-radius-general;
         min-width: 100px;
@@ -276,12 +283,6 @@ h1 {
         background-repeat: no-repeat;
         height: 100%;
         border-right: 4px solid #c9920e;
-    }
-
-    .ArnPrimarySearchContainer {
-        flex-direction: column;
-        justify-content: none;
-        padding-left: 0px;
     }
 
     #theOtherSubmitButton {

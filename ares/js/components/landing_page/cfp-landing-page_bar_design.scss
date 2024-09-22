@@ -42,24 +42,24 @@ h1 {
     justify-content: center;
 }
 
-.event-group-header-left-box {
-    margin-top:30px;
-}
+// .event-group-header-left-box {
+//     margin-top:30px;
+// }
 
 .event-group-header {
     font-family: 'UnitedSansReg-Heavy';
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     z-index: 1;
     overflow: hidden;
     text-transform: uppercase;
-    color: #000;
+    color: #393939;
     margin: 20px 0;
 }
 
-.event-group-header-right-box {
-    margin-top: 30px;
-}
+// .event-group-header-right-box {
+//     margin-top: 30px;
+// }
 
 // .event-group-header:before,
 // .event-group-header:after {
@@ -102,6 +102,7 @@ h1 {
     padding-left:10px;
     background: none;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .RootBody input, .RootBody select {

@@ -75,9 +75,9 @@ async function renderEventGroupHeaders() {
         'beforebegin',
         `
         <div class="event-group-header-container">
-            <hr width="30%" size="2" color="#949494" class="event-group-header-left-box">
+            // <hr width="30%" size="2" color="#949494" class="event-group-header-left-box">
             <div class="event-group-header">NATIONAL CHAMPIONSHIP GAMES</div>
-            <hr width="30%" size="2" color="#949494" margin-top="30px" class="event-group-header-right-box">
+            // <hr width="30%" size="2" color="#949494" margin-top="30px" class="event-group-header-right-box">
         </div>
         `
     ); 
@@ -86,9 +86,9 @@ async function renderEventGroupHeaders() {
         'afterend',
         `
         <div class="event-group-header-container">
-            <hr width="40%" size="2" color="#949494" class="event-group-header-left-box">
+            // <hr width="40%" size="2" color="#949494" class="event-group-header-left-box">
             <div class="event-group-header">PLAYOFF GAMES</div>
-            <hr width="40%" size="2" color="#949494" margin-top="30px" class="event-group-header-right-box">
+            // <hr width="40%" size="2" color="#949494" margin-top="30px" class="event-group-header-right-box">
         </div>
         `
     ); 

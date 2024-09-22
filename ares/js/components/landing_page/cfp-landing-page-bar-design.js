@@ -32,12 +32,16 @@ export default class LandingPage {
     async udpateArnSearchContainer() {
         await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
         const searchContainer = document.querySelector(".ArnPrimarySearchContainer");
+        const searchContainerWrapper = document.createElement('div');
+        searchContainerWrapper.className = "search-container-wrapper";
+        searchContainer.parentNode.insertBefore(searchContainerWrapper, searchContainer);
+        searchContainerWrapper.appendChild(searchContainer);
 
-        searchContainer.insertAdjacentHTML(
+        searchContainerWrapper.insertAdjacentHTML(
             'afterbegin',
             `
             <div class="search-container-header">
-                    <h2 class="search-container-header-text">BOOK YOUR COLLEGE HOTEL PLAYOFF ROOMS NOW!</h2>
+                    <div class="search-container-header-text">BOOK YOUR COLLEGE FOOTBALL PLAYOFF HOTEL ROOMS NOW!</div>
             </div>
         `
         );
@@ -65,26 +69,6 @@ export default class LandingPage {
         i += 1;
     }
 
-    // async setGridSize() {
-    //     await utilities.waitForSelectorInDOM('.events');
-    //     const events = document.querySelectorAll('.event-container');
-    //     const grid = document.querySelector('.events');
-
-    //     switch (events.length) {
-    //         case 1:
-    //             grid.style.gridTemplateColumns = '1fr';
-    //             break;
-    //         case 2:
-    //             grid.style.gridTemplateColumns = '1fr 1fr';
-    //             break;
-    //         case 3:
-    //             grid.style.gridTemplateColumns = '1fr 1fr 1fr';
-    //             break;
-    //         default:
-    //             grid.style.gridTemplateColumns = '1fr 1fr 1fr';
-    //     }
-    // }
-
     /**
      *@description Generates the events in HTML
      *@return void
@@ -103,12 +87,12 @@ export default class LandingPage {
             }
             if (utilities.checkForPastDate(event.end_date)) return;
 
-            if (i === 0) container.insertAdjacentHTML('beforeEnd', `<div class="event-group-header">Upcoming Events</div><div class="events"></div>`);
+            if (i === 0) container.insertAdjacentHTML('beforeEnd', `<div class="event-group-header">NATIONAL CHAMPIONSHIP GAMES</div><div class="events"></div>`);
 
             document.querySelector('.events').insertAdjacentHTML(
                 'beforeEnd',
                 `
-                <a class="event-container event-${i + 1}" href="${event.portal_url}" target="_blank">
+                <a class="event-container event-${i + 1} ${event.type_class}" href="${event.portal_url}" target="_blank">
                     <div class="event-image-container event-image-container-${i + 1}"></div>
                     <div class="event-details-and-button">
                         <div class="event-details">

@@ -49,33 +49,33 @@ async function renderEventGroupHeaders() {
     const lastChampionshipEvent = championshipEventsArray[championshipEventsArray.length - 1];
     const firstChampionshipEvent = championshipEventsArray[0];
 
-    firstChampionshipEvent.insertAdjacentHTML(
-        'beforebegin',
-        `
-        <div class="event-group-header-container">
-            <div class="event-group-header-left-box"></div>
-            <div class="event-group-header">NATIONAL CHAMPIONSHIP GAMES</div>
-            <div class="event-group-header-right-box"></div>
-        </div>
-        `
-    ); 
+    console.log('championshipEventsArray' + championshipEventsArray);
+    console.log('lastChampionshipEvent' + lastChampionshipEvent);
+    console.log('firstChampionshipEvent' + firstChampionshipEvent);
 
-    lastChampionshipEvent.insertAdjacentHTML(
-        'afterend',
-        `
-        <div class="event-group-header-container">
-            <div class="event-group-header-left-box"></div>
-            <div class="event-group-header">PLAYOFF GAMES</div>
-            <div class="event-group-header-right-box"></div>
-        </div>
-        `
-    ); 
+    // firstChampionshipEvent.insertAdjacentHTML(
+    //     'beforebegin',
+    //     `
+    //     <div class="event-group-header-container">
+    //         <div class="event-group-header-left-box"></div>
+    //         <div class="event-group-header">NATIONAL CHAMPIONSHIP GAMES</div>
+    //         <div class="event-group-header-right-box"></div>
+    //     </div>
+    //     `
+    // ); 
+
+    // lastChampionshipEvent.insertAdjacentHTML(
+    //     'afterend',
+    //     `
+    //     <div class="event-group-header-container">
+    //         <div class="event-group-header-left-box"></div>
+    //         <div class="event-group-header">PLAYOFF GAMES</div>
+    //         <div class="event-group-header-right-box"></div>
+    //     </div>
+    //     `
+    // ); 
 
 }
-
-renderEventGroupHeaders()
-
-renderLucidBanner();
 
 async function changeButtonText() {
     await utilities.waitForSelectorInDOM('.view-hotels');
@@ -90,7 +90,9 @@ async function changeButtonText() {
     view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
 }
 
+renderLucidBanner();
 changeButtonText();
+renderEventGroupHeaders();
 
 // async function addBrs() {
 //     if (!document.querySelector('.RootBody')) return;

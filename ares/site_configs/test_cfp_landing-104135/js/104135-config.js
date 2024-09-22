@@ -77,7 +77,7 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: 'START YOUR <b>SEARCH</b>',
+        root_page_header_text: 'BOOK YOUR COLLEGE HOTEL PLAYOFF ROOMS NOW!',
         root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
         is_resbeat_client: false,
         confirmation_email_from: 'College Football Playoff Hotels',
@@ -90,6 +90,7 @@ export default function siteConfig() {
                 display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
+                type_class: 'championship'
             },
             {
                 name: '2026 College Football Playoff National Championship',
@@ -97,6 +98,7 @@ export default function siteConfig() {
                 display_location: 'Atlanta, GA',
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
+                type_class: 'championship'
             },
             {
                 name: 'Playoff Quarterfinal at the Vrbo Fiesta Bowl',
@@ -104,6 +106,7 @@ export default function siteConfig() {
                 display_location: 'Glendale, AZ',
                 end_date: '01/1/2025', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                type_class: 'bowl'
             },
             {
                 name: 'Playoff Quarterfinal at the Chick-fil-A Peach Bowl',
@@ -111,6 +114,7 @@ export default function siteConfig() {
                 display_location: 'Atlanta, GA',
                 end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-84.4031654&latitude=33.7553232&radius=100&checkin=1/1/2025&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                type_class: 'bowl'
             },
             {
                 name: 'Playoff Quarterfinal at the Rose Bowl Game presented by Prudential',
@@ -118,6 +122,7 @@ export default function siteConfig() {
                 display_location: 'Pasadena, CA',
                 end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
+                type_class: 'bowl'
             },
             {
                 name: 'Playoff Quarterfinal at the Allstate Sugar Bowl',
@@ -125,6 +130,7 @@ export default function siteConfig() {
                 display_location: 'New Orleans, LA',
                 end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
+                type_class: 'bowl'
             },
             {
                 name: 'Playoff Semifinal at the Capital One Orange Bowl',
@@ -132,6 +138,7 @@ export default function siteConfig() {
                 display_location: 'Miami, FL',
                 end_date: '01/10/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
+                type_class: 'bowl'
             },
             {
                 name: 'Playoff Semifinal at the Goodyear Cotton Bowl Classic',
@@ -139,6 +146,7 @@ export default function siteConfig() {
                 display_location: 'Dallas, TX',
                 end_date: '01/11/2025', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
+                type_class: 'bowl'
             },
         ],
     };

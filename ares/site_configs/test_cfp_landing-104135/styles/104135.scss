@@ -2,7 +2,7 @@
 
 $header_background: #000;
 $logo_flex_position: center;
-$logo_max_width: 200px;
+$logo_max_width: 150px;
 $background_color: #fff;
 $secondary_background_color: #f0f0f0;
 $primary_color: #c9920e;
@@ -24,7 +24,7 @@ $header-images: '';
 $border-radius-general: 8px;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
-@import '../../../js/components/landing_page/landing-page_bar_design.scss';
+@import '../../../js/components/landing_page/cfp-landing-page_bar_design.scss';
 @import '../../../js/components/lucid_banner/lucid-banner.scss';
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
@@ -59,7 +59,18 @@ $border-radius-general: 8px;
     font-style: normal;
 }
 
-h2.search-container-header-text {
+.RootBody .ArnSearchContainerMainDiv h1 {
+    text-transform: uppercase;
+    display: block;
+    color: #000;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 15px 0;
+    text-align: center;
+    font-family: 'UnitedSansReg-Heavy';
+}
+
+.search-container-header-text {
     font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
     font-size: 30px;
     text-align: center;

@@ -66,24 +66,20 @@
     display: none;
 }
 
-.RootBody .ArnPrimarySearchContainer {
+.search-container-wrapper {
     width: 85vw;
     margin-top: 25px;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
+}
+
+.RootBody .ArnPrimarySearchContainer {
+    flex-direction: row;
 }
 
 .RootBody input, .RootBody select {
     height: 30px !important;
 }
-
-// h2.search-container-header-text {
-//     font-family: "UnitedSansReg-Heavy",
-//         "Graphik-Regular",
-//         "Helvetica";
-//     font-size: 20px;
-// }
 
 .events {
     display: flex;

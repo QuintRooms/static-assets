@@ -5,7 +5,7 @@ $logo_flex_position: center;
 $logo_max_width: 150px;
 $background_color: #fff;
 $secondary_background_color: #f0f0f0;
-$primary_color: #c9920e;
+$primary_color: #000;
 $secondary_color: #000;
 $primary_text_color: #fff;
 $secondary_text_color: #000;
@@ -84,6 +84,8 @@ $border-radius-general: 8px;
 a.ArnShowRatesLink {
     font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
     text-transform: uppercase;
+    border: 1px solid #c9920e;
+    border-radius: 8px;
 }
 
 .search-container-header-text {

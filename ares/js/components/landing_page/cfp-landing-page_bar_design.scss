@@ -270,6 +270,11 @@ h1 {
 }
 
 @media screen and (max-width: 786px){
+
+    .RootBody #theOtherSubmitButton {
+            width: 100%;
+            margin-top: 20px;
+        }
     
     .event-image-container{
         border-radius: $border-radius-general 0px 0px $border-radius-general;
@@ -280,13 +285,6 @@ h1 {
         background-repeat: no-repeat;
         height: 100%;
         border-right: 4px solid #c9920e;
-    }
-
-    #theOtherSubmitButton {
-            max-width: none;
-            max-height: none;
-            width: 100%;
-            margin-top: 15px;
     }
 
     @mixin append-images {

@@ -12,7 +12,7 @@ $secondary_text_color: #000;
 $border_color: none;
 $button_hover_background_color: #fff;
 $button_hover_text_color: #c9920e;
-$button_hover_border_color: none;
+$button_hover_border_color: #c9920e;
 $google_font_name: 'Graphik-Regular';
 $site_name: 'test_cfp_landing-104135';
 $path: set-path($env);
@@ -69,6 +69,22 @@ $border-radius-general: 8px;
 //     text-align: center;
 //     font-family: 'UnitedSansReg-Heavy';
 // }
+
+.ArnPropNameLink span {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    text-transform: uppercase;
+}
+
+.arnCurrency,
+.arnUnit{
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    text-transform: uppercase;
+}
+
+a.ArnShowRatesLink {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    text-transform: uppercase;
+}
 
 .search-container-header-text {
     font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";

@@ -71,14 +71,30 @@
     margin-top: 25px;
     display: flex;
     flex-direction: column;
+    background: #000;
 }
 
 .RootBody .ArnPrimarySearchContainer {
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+
 }
 
 .RootBody input, .RootBody select {
     height: 30px !important;
+}
+
+#CitySearchContainer {
+    margin-left: 15px;
+
+    span {
+        text-transform: uppercase;
+    }
+}
+
+.ArnIndividualSearchContainer span {
+    text-transform: uppercase;
 }
 
 .events {
@@ -180,7 +196,8 @@
 .RootBody #theOtherSubmitButton {
     max-width: none;
     max-height: none;
-    min-width: 250px;
+    width: 200px;
+    min-width: 200px;
     margin: 15px;
     
 }

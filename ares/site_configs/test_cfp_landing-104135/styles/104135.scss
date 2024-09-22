@@ -253,12 +253,6 @@ input {
 
 @media screen and (max-width: 960px) {
 
-    .RootBody .ArnPrimarySearchContainer {
-        flex-direction: column;
-        justify-content: none;
-        padding-left: 0px;
-    }
-
     .event-container {
         
         h2 {
@@ -281,6 +275,14 @@ input {
     .lucid-banner .lucid-content span {
         margin-left: 15px;
     }
+}
+
+@media screen and (max-width: 920px) {
+    .RootBody .ArnPrimarySearchContainer {
+            flex-direction: column;
+            justify-content: none;
+            padding-left: 0px;
+        }
 }
 
 @media screen and (max-width: 786px) {

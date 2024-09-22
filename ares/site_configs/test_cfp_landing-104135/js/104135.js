@@ -86,9 +86,9 @@ async function renderEventGroupHeaders() {
         'afterend',
         `
         <div class="event-group-header-container">
-            <div class="event-group-header-left-box"></div>
+            <hr width="30%" size="2" color="#000" class="event-group-header-left-box">
             <div class="event-group-header">PLAYOFF GAMES</div>
-            <div class="event-group-header-right-box"></div>
+            <hr width="30%" size="2" color="#000" margin-top="30px" class="event-group-header-right-box">
         </div>
         `
     ); 

@@ -101,6 +101,7 @@ h1 {
     padding: 0px;
     padding-left:10px;
     background: none;
+    margin-top: 20px;
 }
 
 .RootBody input, .RootBody select {
@@ -227,7 +228,7 @@ h1 {
     max-height: none;
     width: 200px;
     min-width: 200px;
-    margin: 15px;
+    margin: 0px;
     
 }
 
@@ -285,7 +286,7 @@ h1 {
             max-width: none;
             max-height: none;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 15px;
     }
 
     @mixin append-images {

@@ -42,6 +42,24 @@ async function renderLucidBanner() {
     );
 }
 
+renderLucidBanner();
+
+async function changeButtonText() {
+    await utilities.waitForSelectorInDOM('.view-hotels');
+    const view_hotels_buttons = document.querySelectorAll('.view-hotels');
+    view_hotels_buttons[0].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[1].innerHTML = 'SUBMIT REQUESTS';
+    view_hotels_buttons[2].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[3].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[4].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[5].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
+}
+
+
+changeButtonText();
+
 async function renderEventGroupHeaders() {
     // await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
     await utilities.waitForSelectorInDOM('.championship');
@@ -77,22 +95,7 @@ async function renderEventGroupHeaders() {
 
 }
 
-async function changeButtonText() {
-    await utilities.waitForSelectorInDOM('.view-hotels');
-    const view_hotels_buttons = document.querySelectorAll('.view-hotels');
-    view_hotels_buttons[0].innerHTML = 'VIEW HOTELS';
-    view_hotels_buttons[1].innerHTML = 'SUBMIT REQUESTS';
-    view_hotels_buttons[2].innerHTML = 'VIEW HOTELS';
-    view_hotels_buttons[3].innerHTML = 'VIEW HOTELS';
-    view_hotels_buttons[4].innerHTML = 'VIEW HOTELS';
-    view_hotels_buttons[5].innerHTML = 'VIEW HOTELS';
-    view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
-    view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
-}
-
-renderLucidBanner();
-changeButtonText();
-renderEventGroupHeaders();
+// renderEventGroupHeaders();
 
 // async function addBrs() {
 //     if (!document.querySelector('.RootBody')) return;

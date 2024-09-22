@@ -17,23 +17,39 @@
     display: none;
 }
 
-.RootBody .ArnSearchContainerMainDiv {
-    justify-content: space-around;
+h1 {
+    display: none;
+}
 
-    h1 {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #000;
-        font-size: 50px;
-        font-weight: 400;
-        margin: 40px 0 ;
-        text-align: center;
-    }
+// .RootBody .ArnSearchContainerMainDiv {
+//     justify-content: space-around;
+
+//     h1 {
+//         text-transform: uppercase;
+//         letter-spacing: 2px;
+//         color: #000;
+//         font-size: 50px;
+//         font-weight: 400;
+//         margin: 40px 0 ;
+//         text-align: center;
+//     }
+// }
+
+.event-group-header-container{
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.event-group-header-left-box {
+    border-bottom: #000 1px;
+    margin-bottom: 11px;
 }
 
 .event-group-header {
     font-family: 'UnitedSansReg-Heavy';
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
     z-index: 1;
     overflow: hidden;
@@ -42,21 +58,25 @@
     margin: 20px 0;
 }
 
-.event-group-header:before,
-.event-group-header:after {
-    position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 50%;
-    height: 1px;
-    content: '\a0';
-    background-color: #000;
+.event-group-header-right-box {
+    border-bottom: #000 1px;
+    margin-bottom: 11px;
 }
 
-.event-group-header:before {
-    margin-left: -50%;
-    text-align: right;
-}
+// .event-group-header:before,
+// .event-group-header:after {
+//     top: 51%;
+//     overflow: hidden;
+//     width: 50%;
+//     height: 1px;
+//     content: '\a0';
+//     background-color: #000;
+// }
+
+// .event-group-header:before {
+//     margin-left: -50%;
+//     text-align: right;
+// }
 
 .RootBody h3 {
     display: none;
@@ -72,17 +92,21 @@
     display: flex;
     flex-direction: column;
     background: #000;
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .RootBody .ArnPrimarySearchContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    padding: 0px;
+    background: none;
 }
 
 .RootBody input, .RootBody select {
-    height: 30px !important;
+    height: 28px !important;
+    margin-top: 3px;
 }
 
 #CitySearchContainer {
@@ -90,11 +114,18 @@
 
     span {
         text-transform: uppercase;
+        // font-size: 13px !important;
     }
 }
 
 .ArnIndividualSearchContainer span {
     text-transform: uppercase;
+    // font-size: 13px !important;
+}
+
+.ArnRooms span {
+    text-transform: uppercase;
+    // font-size: 13px !important;
 }
 
 .events {

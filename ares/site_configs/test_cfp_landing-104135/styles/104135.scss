@@ -74,6 +74,8 @@ $border-radius-general: 8px;
     font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
     font-size: 30px;
     text-align: center;
+    color: #fff;
+    margin-top: 20px;
 }
 
 .taxFeeRow td, .discount td, .totalRow td, .balanceDueRow td, .dueNowRow td, .guestNameFields td, .total-points-earned td {
@@ -92,11 +94,6 @@ $border-radius-general: 8px;
 // .RootBody h3 {
 //     display: none;
 // }
-
-.RootBody .ArnPrimarySearchContainer {
-    background: #000;
-    border-radius: $border-radius-general;
-}
 
 .ArnSupportLinks.ArnSupportBottom {
     background-color: #000 !important;

@@ -1,6 +1,6 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './104135-config';
-import LandingPage from '../../../js/components/landing_page/landing-page-bar-design';
+import LandingPage from '../../../js/components/landing_page/cfp-landing-page-bar-design';
 import Utilities from '../../../js/utilities';
 
 const utilities = new Utilities();
@@ -44,26 +44,20 @@ async function renderLucidBanner() {
 
 async function renderEventGroupHeaders() {
     // await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
-    await utilities.waitForSelectorInDOM('.events');
+    await utilities.waitForSelectorInDOM('.championship');
+    const championshipEventsArray = document.querySelectorAll('.championship');
+    const lastChampionshipEvent = championshipEventsArray.pop;
 
-    document.querySelector('.ArnPrimarySearchContainer').insertAdjacentHTML(
+    lastChampionshipEvent.insertAdjacentHTML(
         'afterend',
         `
-        <div class="first-event-header">Championship Games</div>
+        <div class="event-group-header">PLAYOFF GAMES</div>
         `
-    );
-
-    document.querySelector('.event-2').insertAdjacentHTML(
-        'afterend',
-        `
-        <div class="second-event-header">Playoff Quarterfinal Games</div>
-        `
-    );
-
-    
-
+    ); 
 
 }
+
+renderEventGroupHeaders()
 
 renderLucidBanner();
 

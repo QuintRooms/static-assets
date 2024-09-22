@@ -75,9 +75,9 @@ async function renderEventGroupHeaders() {
         'beforebegin',
         `
         <div class="event-group-header-container">
-            <div class="event-group-header-left-box"></div>
+            <hr width="100%" size="2" color="#000" class="event-group-header-left-box">
             <div class="event-group-header">NATIONAL CHAMPIONSHIP GAMES</div>
-            <div class="event-group-header-right-box"></div>
+            <hr width="100%" size="2" color="#000" class="event-group-header-right-box">
         </div>
         `
     ); 

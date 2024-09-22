@@ -95,7 +95,7 @@ async function renderEventGroupHeaders() {
 
 }
 
-// renderEventGroupHeaders();
+renderEventGroupHeaders();
 
 // async function addBrs() {
 //     if (!document.querySelector('.RootBody')) return;

@@ -87,7 +87,7 @@ export default class LandingPage {
             }
             if (utilities.checkForPastDate(event.end_date)) return;
 
-            if (i === 0) container.insertAdjacentHTML('beforeEnd', `<h1 class="old-event-group-header">NATIONAL CHAMPIONSHIP GAMES</div><div class="events"></h1>`);
+            if (i === 0) container.insertAdjacentHTML('beforeEnd', `<div class="events"></div>`);
 
             document.querySelector('.events').insertAdjacentHTML(
                 'beforeEnd',

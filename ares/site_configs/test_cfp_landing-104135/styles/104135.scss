@@ -287,8 +287,13 @@ input {
 
 @media screen and (max-width: 786px) {
 
+    .RootBody #theOtherSubmitButton {
+            width: 100%;
+            margin-top: 20px;
+        }
+
     .search-container-header-text {
-        font-size: 24px;
+        font-size: 20px;
         }
 
     .event-image-container {

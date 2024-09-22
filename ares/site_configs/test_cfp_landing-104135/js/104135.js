@@ -46,12 +46,28 @@ async function renderEventGroupHeaders() {
     // await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
     await utilities.waitForSelectorInDOM('.championship');
     const championshipEventsArray = document.querySelectorAll('.championship');
-    const lastChampionshipEvent = championshipEventsArray.pop;
+    const lastChampionshipEvent = championshipEventsArray[championshipEventsArray.length - 1];
+    const firstChampionshipEvent = championshipEventsArray[0];
+
+    firstChampionshipEvent.insertAdjacentHTML(
+        'beforebegin',
+        `
+        <div class="event-group-header-container">
+            <div class="event-group-header-left-box"></div>
+            <div class="event-group-header">NATIONAL CHAMPIONSHIP GAMES</div>
+            <div class="event-group-header-right-box"></div>
+        </div>
+        `
+    ); 
 
     lastChampionshipEvent.insertAdjacentHTML(
         'afterend',
         `
-        <div class="event-group-header">PLAYOFF GAMES</div>
+        <div class="event-group-header-container">
+            <div class="event-group-header-left-box"></div>
+            <div class="event-group-header">PLAYOFF GAMES</div>
+            <div class="event-group-header-right-box"></div>
+        </div>
         `
     ); 
 

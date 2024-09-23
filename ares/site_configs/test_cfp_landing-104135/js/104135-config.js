@@ -106,7 +106,7 @@ export default function siteConfig() {
                 display_location: 'Glendale, AZ',
                 end_date: '01/1/2025', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
-                type_class: 'bowl'
+                type_class: 'quarterfinal'
             },
             {
                 name: 'Playoff Quarterfinal at the Chick-fil-A Peach Bowl',
@@ -114,39 +114,71 @@ export default function siteConfig() {
                 display_location: 'Atlanta, GA',
                 end_date: '01/02/2025', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-84.4031654&latitude=33.7553232&radius=100&checkin=1/1/2025&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
-                type_class: 'bowl'
+                type_class: 'quarterfinal'
             },
             {
                 name: 'Playoff Quarterfinal at the Rose Bowl Game presented by Prudential',
                 display_date: 'January 1, 2025',
                 display_location: 'Pasadena, CA',
                 end_date: '01/02/2025', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/222285562425153',
-                type_class: 'bowl'
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-118.1702211&latitude=34.1613284&radius=100&checkin=1/1/2025&nights=2&map&locationlabel=Rose+Bowl+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                type_class: 'quarterfinal'
             },
             {
                 name: 'Playoff Quarterfinal at the Allstate Sugar Bowl',
                 display_date: 'January 1, 2025',
                 display_location: 'New Orleans, LA',
                 end_date: '01/02/2025', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/222285562425153',
-                type_class: 'bowl'
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-90.0838191&latitude=29.951061&radius=100&checkin=1/1/2025&nights=2&map&locationlabel=Caesars+Superdome&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                type_class: 'quarterfinal'
             },
             {
                 name: 'Playoff Semifinal at the Capital One Orange Bowl',
                 display_date: 'January 9, 2025',
                 display_location: 'Miami, FL',
                 end_date: '01/10/2025', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/222285562425153',
-                type_class: 'bowl'
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-80.2421728&latitude=25.958326&radius=100&checkin=1/9/2025&nights=2&map&locationlabel=Hard+Rock+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                type_class: 'semifinal'
             },
             {
                 name: 'Playoff Semifinal at the Goodyear Cotton Bowl Classic',
                 display_date: 'January 10, 2025',
                 display_location: 'Dallas, TX',
                 end_date: '01/11/2025', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/222285562425153',
-                type_class: 'bowl'
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-97.0959914&latitude=32.7479966&radius=100&checkin=1/10/2025&nights=2&map&locationlabel=AT&T+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                type_class: 'semifinal'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 20, 2024',
+                display_location: 'TBD',
+                end_date: '12/21/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 21, 2024',
+                display_location: 'TBD',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 21, 2024',
+                display_location: 'TBD',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 21, 2024',
+                display_location: 'TBD',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
             },
         ],
     };

@@ -14,12 +14,16 @@ class ChildPortal extends BasePortal {
     }
 }
 
-async function buildPage() {
-    new LandingPage(site_config.landing_page_events, site_config.hide_search_on_landing_page).init();
+new LandingPage(site_config.landing_page_events, site_config.hide_search_on_landing_page).init();
+new ChildPortal();
+
+async function setLoadingScreen() {
     await utilities.waitForSelectorInDOM('#searching');
     const loader = document.querySelector('#searching');
     loader.style.display = 'block';
-    new ChildPortal();
+}
+
+setLoadingScreen();
 
 
 async function renderLucidBanner() {
@@ -97,10 +101,13 @@ async function renderEventGroupHeaders() {
 }
 
 renderEventGroupHeaders();
-loader.style.display = 'none';
-};
 
-buildPage();
+async function removeLoadingScreen() {
+    const loader = document.querySelector('#searching');
+    loader.style.display = 'none';
+}
+
+removeLoadingScreen();
 
 // async function addBrs() {
 //     if (!document.querySelector('.RootBody')) return;

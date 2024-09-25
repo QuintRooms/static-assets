@@ -95,7 +95,7 @@ export default function siteConfig() {
             {
                 name: '2026 College Football Playoff National Championship',
                 display_date: 'January 16 - 19, 2026',
-                display_location: 'Atlanta, GA',
+                display_location: 'Miami, FL',
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
                 type_class: 'championship'

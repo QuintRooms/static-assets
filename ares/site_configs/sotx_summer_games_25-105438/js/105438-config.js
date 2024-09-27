@@ -1,8 +1,8 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 94660;
-const directory_name = `sotx_summer_games_24-${site_id}`;
+const site_id = 105438;
+const directory_name = `sotx_summer_games_25-${site_id}`;
 
 export default function siteConfig() {
     return {

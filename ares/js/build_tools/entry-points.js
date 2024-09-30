@@ -21,6 +21,7 @@ module.exports = () => {
             // 'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
+            'cfp_atlanta_media_25-105604': './src/105604.js', // cfp atlanta_media_25
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'confidential_template-60276': './src/60276.js', // confidential template
@@ -71,6 +72,7 @@ module.exports = () => {
             // 'sotx_winter_games_25-101018': './src/101018.js', // sotx winter_games_25
             // 'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
             // 'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
+            // 'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'suenos_24-90956': './src/90956.js', // suenos 24
             // 'suenos_new_dates_24-93376': './src/93376.js', // suenos new_dates_24
@@ -79,7 +81,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
-            'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
+            // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
@@ -113,9 +115,11 @@ module.exports = () => {
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
-            'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
+            // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
+            // 'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
+            'cfp_atlanta_media_25-105604': './src/105604.js', // cfp atlanta_media_25
 
         };
 
@@ -123,7 +127,9 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'derek_test_2-101088': './src/101088.js', // derek test_2
+            'cfp_atlanta_media_25-105604': './src/105604.js', // cfp atlanta_media_25
+            'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
+            // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24

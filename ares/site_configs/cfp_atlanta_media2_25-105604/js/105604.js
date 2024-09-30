@@ -33,8 +33,9 @@ class ChildPortal extends BasePortal {
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-location pull-right">
-                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66665">Book Stadium Location</a>
-                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66674">Book Downtown Location</a>
+                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66665">Book Downtown Location</a>
+                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66674">Book Stadium Location</a>
+                <a id="galleria-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=69301">Book Galleria Location</a>
             </div>`
         );
     }
@@ -44,9 +45,12 @@ class ChildPortal extends BasePortal {
 
         await utilities.waitForSelectorInDOM('#stadium-location');
         await utilities.waitForSelectorInDOM('#downtown-location');
-        const location_btns = document.querySelectorAll('#stadium-location, #downtown-location');
+        await utilities.waitForSelectorInDOM('#galleria-location');
+        await utilities.waitForSelectorInDOM('meta[name="originalParams"]');
 
-        if (!document.querySelector('#stadium-location') || !document.querySelector('#downtown-location')) return;
+        const location_btns = document.querySelectorAll('#stadium-location, #downtown-location, #galleria-location');
+
+        if (!document.querySelector('#stadium-location') || !document.querySelector('#downtown-location') || !document.querySelector('#galleria-location')) return;
 
         const params = new URL(url);
         const search_params = new URLSearchParams(params.search);
@@ -55,10 +59,22 @@ class ChildPortal extends BasePortal {
         const medium = search_params.get('utm_medium');
         const campaign = search_params.get('utm_campaign');
 
-        // const check_in = search_params.get('checkin');
+        const original_params_content = document.querySelector('meta[name="originalParams"]').content;
+        let searchable_original_params = new URLSearchParams(original_params_content);
+        const location_label = searchable_original_params.get('locationlabel');
 
-        // if (check_in === '10/6/2022') location_btns[0].style.display = 'none';
-        // if (check_in === '10/13/2022') location_btns[1].style.display = 'none';
+        if (location_label === 'NRG Stadium') {
+            location_btns[1].style.color = '#000';
+            location_btns[1].style.background = '#c9920e';
+        };
+        if (location_label === 'George R. Brown Convention Center (Playoff Fan Central)') {
+            location_btns[0].style.color = '#000';
+            location_btns[0].style.background = '#c9920e';
+        };
+        if (location_label === 'Galleria') {
+            location_btns[2].style.color = '#000';
+            location_btns[2].style.background = '#c9920e';
+        };
 
         if (source === null || medium === null || campaign === null) return;
 

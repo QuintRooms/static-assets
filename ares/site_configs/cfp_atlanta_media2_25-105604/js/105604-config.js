@@ -2,7 +2,7 @@ import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
 const site_id = 105604;
-const directory_name = `cfp_atlanta_media_25-${site_id}`;
+const directory_name = `cfp_atlanta_media2_25-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -17,7 +17,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'College Football Playoff LA',
+            event_name: 'College Football Playoff',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -47,7 +47,7 @@ export default function siteConfig() {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://collegefootballplayoff.com/',
         },
-        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
+        map_marker_image_url: [`${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`],
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {

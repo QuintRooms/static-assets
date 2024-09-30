@@ -14,7 +14,7 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #c9920e;
 $button_hover_border_color: #c9920e;
 $google_font_name: 'Graphik-Regular';
-$site_name: 'cfp_21-60797';
+$site_name: 'cfp_atlanta_media2_25-105604';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
 $logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
@@ -329,8 +329,8 @@ span.exclusive-rate {
     letter-spacing: 1px;
     text-decoration: none;
     font-size: 17px;
-    padding: 6px;
-    margin: 6px 0;
+    padding: 4px;
+    margin: 3px 0;
     transition: all 0.5s ease;
     // box-shadow: 2px 2px 1px 0px #ccc;
     white-space: nowrap;
@@ -403,4 +403,8 @@ span.exclusive-rate {
     .logo img {
         max-width: 200px;
     }
+}
+
+.CheckOutForm .DSFormFields {
+    display: unset !important;
 }

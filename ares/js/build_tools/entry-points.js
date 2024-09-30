@@ -21,7 +21,7 @@ module.exports = () => {
             // 'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
-            'cfp_atlanta_media_25-105604': './src/105604.js', // cfp atlanta_media_25
+            'cfp_atlanta_media2_25-105604': './src/105604.js', // cfp atlanta_media2_25
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'confidential_template-60276': './src/60276.js', // confidential template
@@ -119,7 +119,7 @@ module.exports = () => {
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
-            'cfp_atlanta_media_25-105604': './src/105604.js', // cfp atlanta_media_25
+            'cfp_atlanta_media2_25-105604': './src/105604.js', // cfp atlanta_media2_25
 
         };
 
@@ -127,8 +127,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'cfp_atlanta_media_25-105604': './src/105604.js', // cfp atlanta_media_25
-            'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
+            'cfp_atlanta_media2_25-105604': './src/105604.js', // cfp atlanta_media2_25
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24

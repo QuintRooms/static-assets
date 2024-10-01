@@ -56,7 +56,7 @@ export default function siteConfig() {
         ads: {
             sidebar_ad: {
                 is_active: true,
-                image_url: `${env_path.path}/site_configs/${directory_name}/img/ad.png`,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/advert_banner.png`,
                 outbound_url: 'http://rocktheocean.com/',
             },
             between_property_ad: {

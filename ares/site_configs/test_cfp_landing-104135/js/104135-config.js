@@ -105,7 +105,7 @@ export default function siteConfig() {
                 display_date: 'December 31, 2024',
                 display_location: 'Glendale, AZ',
                 end_date: '01/1/2025', // M/D/YYYY
-                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2&map&locationlabel=Mercedes-Benz+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-112.2651342&latitude=33.5276247&radius=100&checkin=10/31/2024&nights=2&map&locationlabel=State+Farm+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
                 type_class: 'quarterfinal'
             },
             {
@@ -145,7 +145,7 @@ export default function siteConfig() {
                 display_date: 'January 10, 2025',
                 display_location: 'Dallas, TX',
                 end_date: '01/11/2025', // M/D/YYYY
-                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-97.0959914&latitude=32.7479966&radius=100&checkin=1/10/2025&nights=2&map&locationlabel=AT&T+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
+                portal_url: 'https://events.quintrooms.com/v6/?currency=USD&type=geo&siteid=104135&longitude=-97.0959914&latitude=32.7479966&radius=100&checkin=1/10/2025&nights=2&map&locationlabel=Cotton+Bowl+Stadium&cid=GROUP-EVENT-EMAIL&pageSize=10&useMiles',
                 type_class: 'semifinal'
             },
             {

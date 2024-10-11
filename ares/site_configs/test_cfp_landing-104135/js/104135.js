@@ -106,6 +106,29 @@ async function renderEventGroupHeaders() {
 
 renderEventGroupHeaders();
 
+async function insertFooterText() {
+    await utilities.waitForSelectorInDOM('.pb-container');
+    const footer_logo_container = document.querySelector('.pb-container');
+
+    footer_logo_container.insertAdjacentHTML(
+        'afterend',
+        `
+        <p class="official-partner-footer-text">Official College Football Playoff Hotel Booking Partner</p>
+        `
+    );
+}
+insertFooterText();
+
+async function changeSearchText() {
+    await utilities.waitForSelectorInDOM('#CitySearchContainer');
+    const footer_logo_container = document.querySelector('#CitySearchContainer span');
+    footer_logo_container.innerHTML = `
+        LOCATION SEARCH:
+        <input type="search" id="address-input" placeholder="Destination" required="" class="pac-target-input" autocomplete="off">
+    `
+}
+changeSearchText();
+
 // async function removeLoadingScreen() {
 //     const loader = document.querySelector('#searching');
 //     loader.style.display = 'none';

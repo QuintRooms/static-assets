@@ -127,7 +127,7 @@ async function changeSearchText() {
         <input type="search" id="address-input" placeholder="Destination" required="" class="pac-target-input" autocomplete="off">
     `
 }
-changeSearchText();
+// changeSearchText();
 
 // async function removeLoadingScreen() {
 //     const loader = document.querySelector('#searching');

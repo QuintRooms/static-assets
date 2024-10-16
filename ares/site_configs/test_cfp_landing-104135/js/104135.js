@@ -121,13 +121,10 @@ insertFooterText();
 
 async function changeSearchText() {
     await utilities.waitForSelectorInDOM('#CitySearchContainer');
-    const footer_logo_container = document.querySelector('#CitySearchContainer span');
-    footer_logo_container.innerHTML = `
-        LOCATION SEARCH:
-        <input type="search" id="address-input" placeholder="Destination" required="" class="pac-target-input" autocomplete="off">
-    `
+    const search_label = document.querySelector('#CitySearchContainer span');
+    search_label.textContent = 'LOCATION SEARCH:'
 }
-// changeSearchText();
+changeSearchText();
 
 // async function removeLoadingScreen() {
 //     const loader = document.querySelector('#searching');

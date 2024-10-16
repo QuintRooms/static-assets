@@ -122,9 +122,10 @@ insertFooterText();
 async function changeSearchText() {
     await utilities.waitForSelectorInDOM('#CitySearchContainer');
     const search_label = document.querySelector('#CitySearchContainer span');
-    search_label.textContent = 'LOCATION SEARCH:'
+    const search_text = search_label.firstChild;
+    search_text.textContent = 'LOCATION SEARCH:'
 }
-// changeSearchText();
+changeSearchText();
 
 // async function removeLoadingScreen() {
 //     const loader = document.querySelector('#searching');

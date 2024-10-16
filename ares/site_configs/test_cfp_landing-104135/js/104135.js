@@ -124,7 +124,7 @@ async function changeSearchText() {
     const search_label = document.querySelector('#CitySearchContainer span');
     search_label.textContent = 'LOCATION SEARCH:'
 }
-changeSearchText();
+// changeSearchText();
 
 // async function removeLoadingScreen() {
 //     const loader = document.querySelector('#searching');

@@ -4,14 +4,14 @@ $header_background: #000;
 $logo_flex_position: center;
 $logo_max_width: 400px;
 $background_color: #fff;
-$primary_color: #008e97;
-$secondary_color: #fc4c02;
+$primary_color: #E6006F;
+$secondary_color: #008e97;
 $primary_text_color: #fff;
-$secondary_text_color: #008e97;
-$border_color: #008e97;
+$secondary_text_color: #E6006F;
+$border_color: #E6006F;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #008e97;
-$button_hover_border_color: #008e97;
+$button_hover_text_color: #E6006F;
+$button_hover_border_color: #E6006F;
 $google_font_name: 'Titillium Web';
 $header_font_name: 'F1-Regular';
 $site_name: 'f1_miami_gp_25-101993';
@@ -60,7 +60,7 @@ header {
     width: 100%;
 
     &:hover {
-        color: #fc4c02;
+        color: #008e97;
     }
 }
 
@@ -70,15 +70,15 @@ header #races-contact {
 
 .ArnRateButton .ArnShowRatesLink {
     border-width: 2px;
-    background: #008e97;
-    border-color: #008e97;
+    background: #E6006F;
+    border-color: #E6006F;
     font-weight: bold;
 
     &:hover {
         background: #fff;
         border-width: 2px;
-        color: #008e97;
-        border-color: #008e97;
+        color: #E6006F;
+        border-color: #E6006F;
     }
 }
 
@@ -137,7 +137,7 @@ header #races-contact {
 }
 
 .mobile-nav-upper-ul {
-    background: #008e97;
+    background: #E6006F;
 
     li a {
         border-right: 1px solid #fff;

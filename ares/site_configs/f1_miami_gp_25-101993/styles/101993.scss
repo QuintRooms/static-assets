@@ -86,21 +86,49 @@ header #races-contact {
     background-color: #008e97;
 }
 
-.lucid-banner .lucid-content span:first-child {
+.lucid-content span {
     background-color: #008e97;
 }
 
 .ArnPrimarySearchContainer {
-    background: #212934;
+    background: #000;
 }
 
 .sort-wrapper .active {
-    background: #212934;
+    background: #000;
 }
 
 #theOtherSubmitButton {
-    background: #212934;
-    border: 1px solid #212934;
+    background: #000;
+    border: 1px solid #000;
+}
+
+.SinglePropDetail .bookRoom {
+    border-width: 2px;
+        background: #E6006F;
+        border-color: #E6006F;
+        font-weight: bold;
+    
+        &:hover {
+            background: #fff;
+            border-width: 2px;
+            color: #E6006F;
+            border-color: #E6006F;
+        }
+}
+
+input#theConfirmationButton {
+    border-width: 2px;
+        background: #E6006F;
+        border-color: #E6006F;
+        font-weight: bold;
+    
+        &:hover {
+            background: #fff;
+            border-width: 2px;
+            color: #E6006F;
+            border-color: #E6006F;
+        }
 }
 
 

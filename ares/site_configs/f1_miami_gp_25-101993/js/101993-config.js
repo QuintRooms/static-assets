@@ -51,7 +51,7 @@ export default function siteConfig() {
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email_logo_color.png`,
             logo_outbound_url: 'https://f1miamigp.com/',
         },
-        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/email_logo_color.png`,
+        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/map_marker.png`,
         theme: 'light',
         google_font_url: 'https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap',
         ads: {

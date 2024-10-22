@@ -91,16 +91,20 @@ header #races-contact {
 }
 
 .ArnPrimarySearchContainer {
-    background: #000;
+    background: #15151E;
 }
 
 .sort-wrapper .active {
-    background: #000;
+    background: #15151E;
 }
 
 #theOtherSubmitButton {
-    background: #000;
-    border: 1px solid #000;
+    background: #15151E;
+    border: 1px solid #15151E;
+}
+
+.leaflet-touch .leaflet-bar {
+    background: #15151E;
 }
 
 .SinglePropDetail .bookRoom {

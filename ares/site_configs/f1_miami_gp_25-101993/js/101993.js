@@ -40,9 +40,9 @@ insertFooterText();
 
 async function updateBannerTag() {
     await utilities.waitForSelectorInDOM('.lucid-content span');
-    const lucid_content = document.querySelector('.lucid-content');
+    const lucid_content = document.querySelector('.lucid-content span');
 
-    lucid_content.innerHTML = `<span style="text-align: center;">Look for <span style="background:#008e97; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates in Miami FL!</span>`
+    lucid_content.forEach((element) => element.style.background = "#008e97");
 }
 updateBannerTag();
 

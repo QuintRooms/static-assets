@@ -38,6 +38,14 @@ async function insertFooterText() {
 }
 insertFooterText();
 
+async function updateBannerTag() {
+    await utilities.waitForSelectorInDOM('.lucid-content');
+    const lucid_content = document.querySelector('.lucid-content');
+
+    lucid_content.innerHTML = `<span style="text-align: center;">Look for <span style="background:#008e97;"; margin-left: 2px; margin-right: 2px; position: static; font-size: 14px; font-weight: lighter; padding: 5px; border: 1px solid #ccc;">Exclusive Rate</span> - these hotels have the guaranteed lowest rates in Miami FL!</span>`
+}
+updateBannerTag();
+
 // const selected_language = utilities.getMetaTagContent('theme');
 
 // async function changeUpdateSearchTextOnPropPage() {

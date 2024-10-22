@@ -17,7 +17,7 @@ class ChildPortal extends BasePortal {
     }
 }
 
-f1Styles(site_config.site_id, site_config.lodging.event_name, 'Miami FL', '#000');
+f1Styles(site_config.site_id, site_config.lodging.event_name, 'Miami FL', '#008e97');
 
 // f1Styles(site_config.site_id);
 
@@ -44,7 +44,7 @@ async function updateBannerTag() {
 
     lucid_content.forEach((element) => element.style.background = "#008e97");
 }
-updateBannerTag();
+// pdateBannerTag();u
 
 // const selected_language = utilities.getMetaTagContent('theme');
 

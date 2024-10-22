@@ -83,12 +83,26 @@ header #races-contact {
 }
 
 .lucid-banner {
-    background-color: #E6006F;
+    background-color: #008e97;
 }
 
-// .lucid-banner .lucid-content span:first-child {
-//     background-color: #008e97;
-// }
+.lucid-banner .lucid-content span:first-child {
+    background-color: #008e97;
+}
+
+.ArnPrimarySearchContainer {
+    background: #212934;
+}
+
+.sort-wrapper .active {
+    background: #212934;
+}
+
+#theOtherSubmitButton {
+    background: #212934;
+    border: 1px solid #212934;
+}
+
 
 // .lucid-banner .lucid-button a {
 //     color: #008e97;

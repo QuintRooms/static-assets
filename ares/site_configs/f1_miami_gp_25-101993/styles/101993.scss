@@ -82,6 +82,14 @@ header #races-contact {
     }
 }
 
+.lucid-banner {
+    background-color: #E6006F;
+}
+
+.lucid-banner .lucid-button a {
+    color: #E6006F;
+}
+
 @media only screen and (max-width: 400px) {
     header {
         display: grid;

@@ -40,7 +40,7 @@ insertFooterText();
 
 async function updateBannerTag() {
     await utilities.waitForSelectorInDOM('.lucid-content span');
-    const lucid_content = document.querySelector('.lucid-content span');
+    const lucid_content = document.querySelectorAll('.lucid-content span');
 
     lucid_content.forEach((element) => element.style.background = "#008e97");
 }

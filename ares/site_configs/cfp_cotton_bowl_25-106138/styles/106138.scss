@@ -1,0 +1,404 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #000;
+$logo_flex_position: center;
+$logo_max_width: 450px;
+$background_color: #fff;
+$secondary_background_color: #f0f0f0;
+$primary_color: #000;
+$secondary_color: #000;
+$primary_text_color: #fff;
+$secondary_text_color: #000;
+$border_color: none;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #c9920e;
+$button_hover_border_color: #c9920e;
+$google_font_name: 'Graphik-Regular';
+$site_name: 'cfp_cotton_bowl_25-106138';
+$path: set-path($env);
+$banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
+$logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
+$bg-images-desktop: url(#{$path}/site_configs/#{$site_name}/img/CFP_2025_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIESTA_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_PEACH_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ROSE_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_SUGAR_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ORANGE_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_COTTON_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_HORZ_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_HORZ_WHITE_SM33.png);
+$bg-images-mobile: url(#{$path}/site_configs/#{$site_name}/img/CFP_2025_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIESTA_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_PEACH_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ROSE_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_SUGAR_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_ORANGE_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_COTTON_VERT_WHITE_SM33.png),url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_VERT_WHITE_SM33.png), url(#{$path}/site_configs/#{$site_name}/img/CFP_FIRST_VERT_WHITE_SM33.png);
+$header-images: '';
+$border-radius-general: 8px;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/landing_page/cfp-landing-page_bar_design.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* Fonts */
+@font-face {
+    font-family: 'Graphik-Bold';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Bold.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik-Regular';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Regular.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik-Thin';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-Thin.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Graphik-RegularItalic';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/Graphik-RegularItalic.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UnitedSansReg-Heavy';
+    src: url('https://static.#{$domain}/ares/site_configs/cfp_21-60797/fonts/UnitedSansReg-Heavy.otf') format('truetype');
+    font-style: normal;
+}
+
+// .RootBody .ArnSearchContainerMainDiv h1 {
+//     text-transform: uppercase;
+//     display: block;
+//     color: #000;
+//     font-size: 30px;
+//     font-weight: 400;
+//     margin: 15px 0;
+//     text-align: center;
+//     font-family: 'UnitedSansReg-Heavy';
+// }
+
+// #searching {
+//     background: #000;
+// }
+
+#searching h2:after {
+    background:#c9920e;
+}
+
+.ArnPropNameLink span {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    text-transform: uppercase;
+}
+
+span.titleLabel {
+    text-transform: uppercase;
+}
+
+.arnCurrency,
+.arnUnit{
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    text-transform: uppercase;
+}
+
+a.ArnShowRatesLink {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    text-transform: uppercase;
+    border: 1px solid #c9920e;
+    border-radius: 8px;
+    background: #c9920e;
+}
+
+.search-container-header-text {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.taxFeeRow td, .discount td, .totalRow td, .balanceDueRow td, .dueNowRow td, .guestNameFields td, .total-points-earned td {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+// .RootBody .ArnSearchContainerMainDiv h1 {
+//     display: none;
+// }
+
+// .RootBody h3 {
+//     display: none;
+// }
+
+.ArnSupportLinks.ArnSupportBottom {
+    background-color: #000 !important;
+}
+
+select#rooms,
+select#adults {
+    border-radius: 8px;
+}
+
+// .event-1 {
+
+//     .display-date {
+//         margin-bottom: -25px;
+//     }
+// }
+
+
+.event-container {
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    min-height: 83px;
+
+    h2 {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .view-hotels {
+        background-color: #c9920e;
+        font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    }
+
+    &:hover {
+        border: none;
+        outline: 3px solid #c9920e; 
+    }
+}
+
+.logo img {
+    padding: 0px;
+}
+
+.event-details-and-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.event-image-container{
+    border-radius: $border-radius-general 0px 0px $border-radius-general;
+    min-width: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    border-right: 4px solid #c9920e;
+}
+
+.event-details {
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.event-name {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    margin: 0;
+    margin-bottom: 7px;
+}
+
+.display-date-location-container {
+    margin-top: 0px;
+}
+
+.display-location {
+    margin-left: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.display-date {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.lucid-banner {
+    margin-top: 20px;
+    border-radius: 8px;
+    background: #c9920e;
+}
+
+.lucid-banner .lucid-content {
+    text-align: left;
+}
+
+#lucid-link {
+    background-color: #000;
+    color: white;
+    border-radius: 8px;
+}
+
+.RootBody .ArnSecondarySearchOuterContainer {
+    padding: 0px;
+}
+
+.RootBody #theOtherSubmitButton {
+    font-family: "UnitedSansReg-Heavy", "Graphik-Regular", "Helvetica";
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    max-width: none;
+    min-height: 46px;
+    background: #c9920e;
+}
+
+input {
+    border: 1px solid #c9920e;
+    border-radius: 8px;
+}
+
+#address-input {
+    border: 1px solid #c9920e;
+    border-radius: 8px; 
+}
+
+#theCheckIn,
+#theCheckOut,
+#rooms,
+#adults {
+    border: 1px solid #c9920e;
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 960px) {
+    .lucid-banner{
+        width: 85vw;
+    }
+
+    .lucid-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .span {
+        font-size: 14px;
+    }
+}
+}
+
+@media screen and (max-width: 960px) {
+
+    .event-container {
+        
+        h2 {
+            font-size: 18px;
+        }
+    }
+
+    .lucid-banner .lucid-content #desktop {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #tablet {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #mobile {
+        display: inline;
+    }
+
+    .lucid-banner .lucid-content span {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .RootBody .ArnPrimarySearchContainer {
+            flex-direction: column;
+            justify-content: none;
+            padding-left: 0px;
+        }
+}
+
+@media screen and (max-width: 786px) {
+
+    .RootBody #theOtherSubmitButton {
+            width: 100%;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+    .search-container-header-text {
+        font-size: 20px;
+        }
+
+    .event-image-container {
+        min-width: 100px;
+        min-height: 200px;
+    }
+
+    .event-container {
+        
+        h2 {
+            font-size: 18px;
+            text-align: center;
+        }
+    
+        .view-hotels {
+            font-size: 14px;
+            margin-right: 0px;
+        }
+    }
+
+    .event-details-and-button {
+        flex-direction: column;
+    }
+
+    .event-details {
+        margin-left: 0px;
+    }
+
+    .display-date-location-container {
+        margin-bottom:10px;
+        flex-direction: column;
+    }
+
+    .display-location {
+        font-size: 12px;
+    }
+
+    .display-date {
+        font-size: 12px;
+    }
+
+    .view-hotels {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 15px;
+        border-radius: $border-radius-general;
+        margin-right: 15px;
+        width: unset;
+        min-width: 150px
+    }
+
+    .lucid-banner{
+        width: 85vw;
+    }
+    .lucid-banner .lucid-content span {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .lucid-banner .lucid-content #desktop {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #tablet {
+            display: none;
+        }
+
+    .lucid-banner .lucid-content #mobile {
+        display: inline;
+    }
+}

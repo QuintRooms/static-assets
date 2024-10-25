@@ -50,7 +50,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
-            logo_outbound_url: 'https://collegefootballplayoff.com/',
+            logo_outbound_url: 'https://collegefootballplayoffhotels.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',

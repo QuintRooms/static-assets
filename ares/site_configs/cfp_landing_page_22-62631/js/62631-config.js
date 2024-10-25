@@ -14,6 +14,7 @@ export default function siteConfig() {
         site_type: 'lodging',
         algolia_app_id: 'pl58QCMXHS4C',
         algolia_api_key: '1514caaca583b1ed25dad3b0c6addf0a',
+        use_google_autocomplete: true,
         currency: 'USD',
         distance_unit: 'useMiles',
         map_size: '12',
@@ -76,36 +77,108 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: 'START YOUR <b>SEARCH</b>',
+        root_page_header_text: 'BOOK YOUR COLLEGE HOTEL PLAYOFF ROOMS NOW!',
         root_page_subheader_text: 'RESERVATIONS AT 600K+ HOTELS AT UNBEATABLE RATES',
         is_resbeat_client: false,
         confirmation_email_from: 'College Football Playoff Hotels',
         has_landing_page: true,
-        hide_search_on_landing_page: true,
+        hide_search_on_landing_page: false,
         landing_page_events: [
-            // {
-            //     name: 'SEARCH ANYWHERE',
-            //     display_date: '2/10/2023',
-            //     end_date: '3/28/2025', // M/D/YYYY
-            //     portal_url: 'https://collegefootballplayoffhotels.com/v6/?siteid=67665&utm_campaign=CFP%20Retail%202022',
-            // },
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP HOUSTON 2024',
-                display_date: 'January 5 - 9, 2024',
-                end_date: '01/09/2024', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=66665',
-            },
-            {
-                name: 'CFP NATIONAL CHAMPIONSHIP ATLANTA 2025',
+                name: '2025 College Football Playoff National Championship',
                 display_date: 'January 17 - 20, 2025',
+                display_location: 'Atlanta, GA',
                 end_date: '01/20/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
+                type_class: 'championship'
             },
             {
-                name: 'CFP NATIONAL CHAMPIONSHIP MIAMI 2026',
+                name: '2026 College Football Playoff National Championship',
                 display_date: 'January 16 - 19, 2026',
+                display_location: 'Miami, FL',
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
+                type_class: 'championship'
+            },
+            {
+                name: 'Playoff Quarterfinal at the Vrbo Fiesta Bowl',
+                display_date: 'December 31, 2024',
+                display_location: 'Glendale, AZ',
+                end_date: '01/1/2025', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82612',
+                type_class: 'quarterfinal'
+            },
+            {
+                name: 'Playoff Quarterfinal at the Chick-fil-A Peach Bowl',
+                display_date: 'January 1, 2025',
+                display_location: 'Atlanta, GA',
+                end_date: '01/02/2025', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82613',
+                type_class: 'quarterfinal'
+            },
+            {
+                name: 'Playoff Quarterfinal at the Rose Bowl Game presented by Prudential',
+                display_date: 'January 1, 2025',
+                display_location: 'Pasadena, CA',
+                end_date: '01/02/2025', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82615',
+                type_class: 'quarterfinal'
+            },
+            {
+                name: 'Playoff Quarterfinal at the Allstate Sugar Bowl',
+                display_date: 'January 1, 2025',
+                display_location: 'New Orleans, LA',
+                end_date: '01/02/2025', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82620',
+                type_class: 'quarterfinal'
+            },
+            {
+                name: 'Playoff Semifinal at the Capital One Orange Bowl',
+                display_date: 'January 9, 2025',
+                display_location: 'Miami, FL',
+                end_date: '01/10/2025', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82623',
+                type_class: 'semifinal'
+            },
+            {
+                name: 'Playoff Semifinal at the Goodyear Cotton Bowl Classic',
+                display_date: 'January 10, 2025',
+                display_location: 'Dallas, TX',
+                end_date: '01/11/2025', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82622',
+                type_class: 'semifinal'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 20, 2024',
+                display_location: 'TBD',
+                end_date: '12/21/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 21, 2024',
+                display_location: 'TBD',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 21, 2024',
+                display_location: 'TBD',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
+            },
+            {
+                name: 'TBD Playoff First Round',
+                display_date: 'December 21, 2024',
+                display_location: 'TBD',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
+                type_class: 'tbd'
             },
         ],
     };

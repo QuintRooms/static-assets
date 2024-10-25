@@ -34,9 +34,9 @@ async function renderLucidBanner() {
         `
         <div class="lucid-banner">
             <div class="lucid-content">
-                <span id="desktop">NEED 10+ ROOMS FOR ANY OF THE CFP CHAMPIONSHIP GAMES? <br> WE'RE HERE TO HELP YOU SECURE GREAT RATES.</span>       
-                <span id="tablet">Need 10+ rooms for the CFP Championship games?</span>
-                <span id="mobile">Need 10+ rooms?</span>
+                <span id="desktop">NEED 10+ ROOMS FOR ANY OF THESE EVENTS? <br> WE'RE HERE TO HELP YOU SECURE GREAT RATES!</span>       
+                <span id="tablet">NEED 10+ ROOMS FOR ANY OF THESE EVENTS?</span>
+                <span id="mobile">NEED 10+ ROOMS?</span>
             </div>
             <div class="lucid-button">
                 <a id="lucid-link" target="_blank" href="https://form.jotform.com/203066540331141?bookingPortal=CFP%20Championship">CONTACT US</a>

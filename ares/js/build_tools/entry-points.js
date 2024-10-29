@@ -15,13 +15,13 @@ module.exports = () => {
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'breeders_24-88325': './src/88325.js', // breeders 24
             // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
-            'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
-            // 'cfp_cotton_bowl_25-106138': './src/106138.js', // cfp cotton_bowl_25
-            // 'cfp_fiesta_bowl_25-106128': './src/106128.js', // cfp fiesta_bowl_25
-            // 'cfp_orange_bowl_25-106139': './src/106139.js', // cfp orange_bowl_25
-            // 'cfp_peach_bowl_25-106129': './src/106129.js', // cfp peach_bowl_25
-            // 'cfp_rose_bowl_25-106131': './src/106131.js', // cfp rose_bowl_25
-            // 'cfp_sugar_bowl_25-106136': './src/106136.js', // cfp sugar_bowl_25
+            // 'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
+            'cfp_cotton_bowl_25-106138': './src/106138.js', // cfp cotton_bowl_25
+            'cfp_fiesta_bowl_25-106128': './src/106128.js', // cfp fiesta_bowl_25
+            'cfp_orange_bowl_25-106139': './src/106139.js', // cfp orange_bowl_25
+            'cfp_peach_bowl_25-106129': './src/106129.js', // cfp peach_bowl_25
+            'cfp_rose_bowl_25-106131': './src/106131.js', // cfp rose_bowl_25
+            'cfp_sugar_bowl_25-106136': './src/106136.js', // cfp sugar_bowl_25
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
@@ -129,13 +129,14 @@ module.exports = () => {
             // 'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
             // 'cfp_atlanta_media2_25-105604': './src/105604.js', // cfp atlanta_media2_25
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
-            // 'cfp_fiesta_bowl_25-106128': './src/106128.js', // cfp fiesta_bowl_25
-            // 'cfp_cotton_bowl_25-106138': './src/106138.js', // cfp cotton_bowl_25
-            // 'cfp_orange_bowl_25-106139': './src/106139.js', // cfp orange_bowl_25
-            // 'cfp_peach_bowl_25-106129': './src/106129.js', // cfp peach_bowl_25
-            // 'cfp_rose_bowl_25-106131': './src/106131.js', // cfp rose_bowl_25
-            // 'cfp_sugar_bowl_25-106136': './src/106136.js', // cfp sugar_bowl_25
-            'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
+            'cfp_fiesta_bowl_25-106128': './src/106128.js', // cfp fiesta_bowl_25
+            'cfp_cotton_bowl_25-106138': './src/106138.js', // cfp cotton_bowl_25
+            'cfp_orange_bowl_25-106139': './src/106139.js', // cfp orange_bowl_25
+            'cfp_peach_bowl_25-106129': './src/106129.js', // cfp peach_bowl_25
+            'cfp_rose_bowl_25-106131': './src/106131.js', // cfp rose_bowl_25
+            'cfp_sugar_bowl_25-106136': './src/106136.js', // cfp sugar_bowl_25
+            // 'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
+            // 'cfp_landing_page_22-62631': './src/62631.js', // cfp landing_page_22
 
         };
 
@@ -143,7 +144,8 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
+            // 'cfp_landing_page_22-62631': './src/62631.js', // cfp landing_page_22
+            // 'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
             // 'cfp_cotton_bowl_25-106138': './src/106138.js', // cfp cotton_bowl_25
             // 'cfp_orange_bowl_25-106139': './src/106139.js', // cfp orange_bowl_25
             // 'cfp_peach_bowl_25-106129': './src/106129.js', // cfp peach_bowl_25

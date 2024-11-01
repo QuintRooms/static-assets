@@ -477,7 +477,6 @@ header {
 }
 
 .logo {
-  grid-column: 2;
   text-align: center;
   min-width: 300px;
   max-width: 2000px;
@@ -588,9 +587,10 @@ input#theConfirmationButton:hover {
     gap: unset;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    padding: initial;
+    justify-content: center;
+    padding: 0 6rem;
   }
 
   .logo {

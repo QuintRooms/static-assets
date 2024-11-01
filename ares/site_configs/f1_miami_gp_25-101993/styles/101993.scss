@@ -2,7 +2,7 @@
 
 $header_background: #000;
 $logo_flex_position: center;
-$logo_max_width: 400px;
+$logo_max_width: 2000px;
 $background_color: #fff;
 $primary_color: #008e97;
 $secondary_color: #008e97;
@@ -43,6 +43,7 @@ header {
     grid-column: 2;
     text-align: center;
     min-width: 300px;
+    max-width: 2000px;
 }
 
 #races-contact {

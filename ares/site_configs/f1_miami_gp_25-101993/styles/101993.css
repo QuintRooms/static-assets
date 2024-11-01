@@ -20,7 +20,7 @@ header {
 }
 
 .logo img {
-  max-width: 400px;
+  max-width: 2000px;
 }
 
 body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox .window, .WBConfirmedBooking .informMessage {
@@ -482,6 +482,7 @@ header {
   grid-column: 2;
   text-align: center;
   min-width: 300px;
+  max-width: 2000px;
 }
 
 #races-contact {

@@ -16,7 +16,7 @@ header {
 }
 
 .RootBody {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_gp_25-101993/img/banner.png) no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_gp_25-101993/img/banner.jpg) no-repeat center/cover;
 }
 
 .logo img {
@@ -578,7 +578,7 @@ input#theConfirmationButton:hover {
 
 @media only screen and (min-width: 801px) {
   .logo {
-    content: url(https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_gp_25-101993/img/banner.png);
+    content: url(https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_gp_25-101993/img/logo_lg.png);
   }
 }
 @media only screen and (max-width: 800px) {

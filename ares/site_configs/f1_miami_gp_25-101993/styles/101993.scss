@@ -16,7 +16,7 @@ $google_font_name: 'Titillium Web';
 $header_font_name: 'F1-Regular';
 $site_name: 'f1_miami_gp_25-101993';
 $path: set-path($env);
-$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat center / cover;
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../styles/sass/f1.scss';
@@ -27,7 +27,6 @@ $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{
 }
 
 header {
-    // background-image: url(#{$path}/site_configs/#{$site_name}/img/banner.png);
     // background-size: cover;
     // background-repeat: no-repeat;
     // background-position: center 45%;
@@ -151,7 +150,7 @@ input#theConfirmationButton {
 
 @media only screen and (min-width: 801px) {
     .logo {
-        content: url(#{$path}/site_configs/#{$site_name}/img/banner.png);
+        content: url(#{$path}/site_configs/#{$site_name}/img/logo_lg.png);
     }
 }
 

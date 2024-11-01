@@ -1,6 +1,6 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #000;
+$header_background: #008e97;
 $logo_flex_position: center;
 $logo_max_width: 2000px;
 $background_color: #fff;
@@ -16,8 +16,7 @@ $google_font_name: 'Titillium Web';
 $header_font_name: 'F1-Regular';
 $site_name: 'f1_miami_gp_25-101993';
 $path: set-path($env);
-// $banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat center / cover;
-$banner_image: #008e97;
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat center / cover;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 @import '../../../styles/sass/f1.scss';
@@ -32,9 +31,9 @@ header {
     // background-size: cover;
     // background-repeat: no-repeat;
     // background-position: center 45%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    display: flex;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 10px;
     justify-content: center;
     padding: 0 6rem;
 }
@@ -150,20 +149,20 @@ input#theConfirmationButton {
 //     color: #008e97;
 // }
 
-@media only screen and (min-width: 401px) {
+@media only screen and (min-width: 801px) {
     .logo {
         content: url(#{$path}/site_configs/#{$site_name}/img/banner.png);
     }
 }
 
-@media only screen and (max-width: 400px) {
-    header {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        justify-content: center;
-        padding: 0 6rem;
-    }
+@media only screen and (max-width: 800px) {
+    // header {
+    //     display: grid;
+    //     grid-template-columns: repeat(3, 1fr);
+    //     gap: 10px;
+    //     justify-content: center;
+    //     padding: 0 6rem;
+    // }
 
     header {
         grid-template-columns: unset;

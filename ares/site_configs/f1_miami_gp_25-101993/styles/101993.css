@@ -12,11 +12,11 @@
 /* Header */
 header {
   justify-content: center;
-  background: #000;
+  background: #008e97;
 }
 
 .RootBody {
-  background: #008e97;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_gp_25-101993/img/banner.png) no-repeat center/cover;
 }
 
 .logo img {
@@ -471,9 +471,7 @@ legend,
 }
 
 header {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
   justify-content: center;
   padding: 0 6rem;
 }
@@ -578,20 +576,12 @@ input#theConfirmationButton:hover {
   border-color: #E6006F;
 }
 
-@media only screen and (min-width: 401px) {
+@media only screen and (min-width: 801px) {
   .logo {
     content: url(https://dev-static.hotelsforhope.com/ares/site_configs/f1_miami_gp_25-101993/img/banner.png);
   }
 }
-@media only screen and (max-width: 400px) {
-  header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-content: center;
-    padding: 0 6rem;
-  }
-
+@media only screen and (max-width: 800px) {
   header {
     grid-template-columns: unset;
     gap: unset;

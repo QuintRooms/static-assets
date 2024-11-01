@@ -1,17 +1,17 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
-$header_background: #008e97;
+$header_background: #008996;
 $logo_flex_position: center;
 $logo_max_width: 2000px;
 $background_color: #fff;
-$primary_color: #008e97;
-$secondary_color: #008e97;
+$primary_color: #008996;
+$secondary_color: #008996;
 $primary_text_color: #fff;
-$secondary_text_color: #008e97;
-$border_color: #008e97;
+$secondary_text_color: #008996;
+$border_color: #008996;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #008e97;
-$button_hover_border_color: #008e97;
+$button_hover_text_color: #008996;
+$button_hover_border_color: #008996;
 $google_font_name: 'Titillium Web';
 $header_font_name: 'F1-Regular';
 $site_name: 'f1_miami_gp_25-101993';
@@ -83,11 +83,11 @@ header #races-contact {
 }
 
 .lucid-banner {
-    background-color: #008e97;
+    background-color: #000;
 }
 
 .lucid-content span {
-    background-color: #008e97;
+    background-color: #000;
 }
 
 .ArnPrimarySearchContainer {
@@ -145,13 +145,15 @@ input#theConfirmationButton {
 
 
 // .lucid-banner .lucid-button a {
-//     color: #008e97;
+//     color: #008996;
 // }
 
 @media only screen and (min-width: 801px) {
     .logo {
         content: url(#{$path}/site_configs/#{$site_name}/img/logo_lg.png);
+        max-width: 2000px;
     }
+    $logo_max_width: 2000px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -177,6 +179,7 @@ input#theConfirmationButton {
         grid-column: unset;
         text-align: initial;
         min-width: initial;
+        max-width: 300px;
         width: 100%;
         content: url(#{$path}/site_configs/#{$site_name}/img/logo.png);
     }
@@ -210,7 +213,7 @@ input#theConfirmationButton {
 }
 
 .mobile-nav-upper-ul {
-    background: #008e97;
+    background: #008996;
 
     li a {
         border-right: 1px solid #fff;

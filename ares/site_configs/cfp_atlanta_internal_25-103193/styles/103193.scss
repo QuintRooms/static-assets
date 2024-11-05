@@ -1,8 +1,8 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
 $header_background: #000;
-$logo_flex_position: flex-start;
-$logo_max_width: 650px;
+$logo_flex_position: center;
+$logo_max_width: 500px;
 $background_color: #fff;
 $secondary_background_color: #f0f0f0;
 $primary_color: #c9920e;
@@ -17,7 +17,7 @@ $google_font_name: 'Graphik-Regular';
 $site_name: 'cfp_atlanta_internal_25-103193';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
-$logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
+$logo_bg: none;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 

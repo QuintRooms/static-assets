@@ -187,19 +187,18 @@ body {
 header {
     border-bottom: unset;
     height: 115px;
-    justify-content: space-between;
+    // justify-content: space-between;
 }
 
-header a {
-    background: $logo_bg;
-}
+// header a {
+//     background: $logo_bg;
+// }
 
 a.logo {
     width: 40%;
 }
 
 .logo img {
-    margin-top: 40px;
     padding: 5px;
 }
 
@@ -296,9 +295,9 @@ span.exclusive-rate {
         width: unset;
     }
 
-    a.logo {
-        width: 40%;
-    }
+    // a.logo {
+    //     width: 40%;
+    // }
 
     .ArnSubPage {
         margin: 0 auto;

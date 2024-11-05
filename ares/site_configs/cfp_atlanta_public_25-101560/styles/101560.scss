@@ -1,8 +1,8 @@
 @import '../../../styles/sass/sass-functions/func.scss';
 
 $header_background: #000;
-$logo_flex_position: flex-start;
-$logo_max_width: 330px;
+$logo_flex_position: center;
+$logo_max_width: 500px;
 $background_color: #fff;
 $secondary_background_color: #f0f0f0;
 $primary_color: #c9920e;
@@ -14,10 +14,10 @@ $button_hover_background_color: #fff;
 $button_hover_text_color: #c9920e;
 $button_hover_border_color: #c9920e;
 $google_font_name: 'Graphik-Regular';
-$site_name: 'cfp_atlanta_public_25-101560';
+$site_name: 'cfp_atlanta_internal_25-103193';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
-$logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
+$logo_bg: none;
 
 @import '../../../styles/sass/config-styles/base-styles.config.scss';
 
@@ -47,7 +47,7 @@ $logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 1
 }
 
 .ArnSearchHeader,
-.SinglePropDetail .ArnLeftListContainer > span.translateMe {
+.SinglePropDetail .ArnLeftListContainer>span.translateMe {
     font-family: 'UnitedSansReg-Heavy';
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -186,21 +186,21 @@ body {
 
 header {
     border-bottom: unset;
-    height: 115px;
-    justify-content: space-between;
+    height: 120px;
+    // justify-content: space-between;
 }
 
-header a {
-    background: $logo_bg;
-}
+// header a {
+//     background: $logo_bg;
+// }
 
-a.logo {
-    width: 40%;
-}
+// a.logo {
+//     width: 40%;
+// }
 
 .logo img {
-    margin-top: 40px;
     padding: 5px;
+    margin-top: 5px;
 }
 
 .ArnSearchContainerMainDiv,
@@ -290,15 +290,16 @@ span.exclusive-rate {
 }
 
 @media screen and (max-width: 1100px) {
+
     .ArnSearchContainerMainDiv,
     .PropDetailView,
     #theBookingPage {
         width: unset;
     }
 
-    a.logo {
-        width: 40%;
-    }
+    // a.logo {
+    //     width: 40%;
+    // }
 
     .ArnSubPage {
         margin: 0 auto;
@@ -342,9 +343,6 @@ span.exclusive-rate {
 }
 
 @media screen and (max-width: 900px) {
-    .logo img {
-        max-width: 250px;
-    }
 
     .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
         color: #000;
@@ -381,6 +379,7 @@ span.exclusive-rate {
     header {
         flex-direction: column;
     }
+
     .event-week {
         flex-direction: row;
     }
@@ -399,11 +398,11 @@ span.exclusive-rate {
     }
 }
 
-@media screen and (max-width: 400px) {
-    .logo img {
-        max-width: 200px;
-    }
-}
+// @media screen and (max-width: 400px) {
+//     .logo img {
+//         max-width: 200px;
+//     }
+// }
 
 .CheckOutForm .DSFormFields {
     display: unset !important;

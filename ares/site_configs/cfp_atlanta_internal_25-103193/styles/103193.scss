@@ -186,7 +186,7 @@ body {
 
 header {
     border-bottom: unset;
-    height: 115px;
+    height: 120px;
     // justify-content: space-between;
 }
 
@@ -194,12 +194,13 @@ header {
 //     background: $logo_bg;
 // }
 
-a.logo {
-    width: 40%;
-}
+// a.logo {
+//     width: 40%;
+// }
 
 .logo img {
     padding: 5px;
+    margin-top: 5px;
 }
 
 .ArnSearchContainerMainDiv,
@@ -295,9 +296,9 @@ span.exclusive-rate {
         width: unset;
     }
 
-    // a.logo {
-    //     width: 40%;
-    // }
+    a.logo {
+        width: 40%;
+    }
 
     .ArnSubPage {
         margin: 0 auto;
@@ -341,9 +342,6 @@ span.exclusive-rate {
 }
 
 @media screen and (max-width: 900px) {
-    .logo img {
-        max-width: 250px;
-    }
 
     .SearchHotels .ArnSecondarySearchOuterContainer #theOtherSubmitButton {
         color: #000;

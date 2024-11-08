@@ -126,6 +126,7 @@ a.ArnShowRatesLink {
 //     display: none;
 // }
 
+
 .ArnSupportLinks.ArnSupportBottom {
     background-color: #000 !important;
 }
@@ -267,6 +268,10 @@ input {
 #adults {
     border: 1px solid #c9920e;
     border-radius: 8px;
+}
+
+.arnMapPopup h1 {
+    display: block;
 }
 
 @media screen and (min-width: 960px) {

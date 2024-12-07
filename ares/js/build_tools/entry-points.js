@@ -25,7 +25,10 @@ module.exports = () => {
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_houston_24-88767': './src/88767.js', // cfp houston_24
             // 'cfp_houston_internal_24-92253': './src/92253.js', // cfp houston_internal_24
-            'cfp_first_round_one_24-107616': './src/107616.js', // cfp first_round_one_24
+            // 'cfp_first_round_one_24-107616': './src/107616.js', // cfp first_round_one_24
+            'cfp_first_round_game_four_24-107617': './src/107617.js', // cfp first_round_game_four_24
+            'cfp_first_round_game_three_24-107619': './src/107619.js', // cfp first_round_game_three_24
+            'cfp_first_round_game_two_24-107621': './src/107621.js', // cfp first_round_game_two_24
             // 'cfp_houston_media_24-97359': './src/97359.js', // cfp houston_media_24
             // 'cfp_atlanta_25-90833': './src/90833.js', // cfp atlanta_25
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
@@ -139,7 +142,10 @@ module.exports = () => {
             // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp atlanta_public_25
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
             // 'cfp_atlanta_media2_25-105604': './src/105604.js', // cfp atlanta_media2_25
-            'cfp_first_round_one_24-107616': './src/107616.js', // cfp first_round_one_24
+            // 'cfp_first_round_one_24-107616': './src/107616.js', // cfp first_round_one_24
+            'cfp_first_round_game_four_24-107617': './src/107617.js', // cfp first_round_game_four_24
+            'cfp_first_round_game_three_24-107619': './src/107619.js', // cfp first_round_game_three_24
+            'cfp_first_round_game_two_24-107621': './src/107621.js', // cfp first_round_game_two_24
 
 
         };
@@ -148,6 +154,9 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'cfp_first_round_game_four_24-107617': './src/107617.js', // cfp first_round_game_four_24
+            'cfp_first_round_game_three_24-107619': './src/107619.js', // cfp first_round_game_three_24
+            'cfp_first_round_game_two_24-107621': './src/107621.js', // cfp first_round_game_two_24
             'cfp_first_round_one_24-107616': './src/107616.js', // cfp first_round_one_24
             // 'cfp_landing_page_22-62631': './src/62631.js', // cfp landing_page_22
             // 'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page

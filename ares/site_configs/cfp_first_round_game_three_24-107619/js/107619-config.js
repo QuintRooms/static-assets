@@ -48,7 +48,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/FIRST_ROUND_HEADER_LOGO_LINE.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/FIRST_ROUND_HEADER_LOGO_LINE_2.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email-logo.png`,
             logo_outbound_url: 'https://collegefootballplayoffhotels.com/',
         },

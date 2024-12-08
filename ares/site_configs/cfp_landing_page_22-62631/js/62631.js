@@ -64,10 +64,10 @@ async function changeButtonText() {
     view_hotels_buttons[5].innerHTML = 'VIEW HOTELS';
     view_hotels_buttons[6].innerHTML = 'VIEW HOTELS';
     view_hotels_buttons[7].innerHTML = 'VIEW HOTELS';
-    view_hotels_buttons[8].innerHTML = 'TBD';
-    view_hotels_buttons[9].innerHTML = 'TBD';
-    view_hotels_buttons[10].innerHTML = 'TBD';
-    view_hotels_buttons[11].innerHTML = 'TBD';
+    view_hotels_buttons[8].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[9].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[10].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[11].innerHTML = 'VIEW HOTELS';
 }
 
 

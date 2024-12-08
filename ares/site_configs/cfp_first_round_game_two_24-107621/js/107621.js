@@ -135,7 +135,7 @@ const insert_team_names_title = async () => {
         `
     <div class="team-names-container">
         <div class='team-names-text'>
-            TBD vs. TBD
+            TENNESSEE AT OHIO STATE
         </div>          
     </div>
     `

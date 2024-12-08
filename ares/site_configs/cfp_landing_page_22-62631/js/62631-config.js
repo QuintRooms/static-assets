@@ -101,6 +101,38 @@ export default function siteConfig() {
                 type_class: 'championship'
             },
             {
+                name: 'PLAYOFF FIRST ROUND: Indiana at Notre Dame',
+                display_date: 'December 20, 2024',
+                display_location: 'Notre Dame, IN',
+                end_date: '12/21/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=84021',
+                type_class: 'tbd'
+            },
+            {
+                name: 'PLAYOFF FIRST ROUND: SMU at Penn State',
+                display_date: 'December 21, 2024',
+                display_location: 'University Park, PA',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=84018',
+                type_class: 'tbd'
+            },
+            {
+                name: 'PLAYOFF FIRST ROUND: Tennessee at Ohio State',
+                display_date: 'December 21, 2024',
+                display_location: 'Columbus, OH',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=84023',
+                type_class: 'tbd'
+            },
+            {
+                name: 'PLAYOFF FIRST ROUND: Clemson at Texas',
+                display_date: 'December 21, 2024',
+                display_location: 'Austin, TX',
+                end_date: '12/22/2024', // M/D/YYYY
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=84019',
+                type_class: 'tbd'
+            },
+            {
                 name: 'Playoff Quarterfinal at the Vrbo Fiesta Bowl',
                 display_date: 'December 31, 2024',
                 display_location: 'Glendale, AZ',
@@ -147,39 +179,7 @@ export default function siteConfig() {
                 end_date: '01/11/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82622',
                 type_class: 'semifinal'
-            },
-            {
-                name: 'PLAYOFF FIRST ROUND: Indiana at Notre Dame',
-                display_date: 'December 20, 2024',
-                display_location: 'Notre Dame, IN',
-                end_date: '12/21/2024', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
-                type_class: 'tbd'
-            },
-            {
-                name: 'PLAYOFF FIRST ROUND: SMU at Penn State',
-                display_date: 'December 21, 2024',
-                display_location: 'University Park, PA',
-                end_date: '12/22/2024', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
-                type_class: 'tbd'
-            },
-            {
-                name: 'PLAYOFF FIRST ROUND: Tennessee at Ohio State',
-                display_date: 'December 21, 2024',
-                display_location: 'Columbus, OH',
-                end_date: '12/22/2024', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
-                type_class: 'tbd'
-            },
-            {
-                name: 'PLAYOFF FIRST ROUND: Clemson at Texas',
-                display_date: 'December 21, 2024',
-                display_location: 'Austin, TX',
-                end_date: '12/22/2024', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoff.com/news/2024/6/5/2425-schedule.aspx',
-                type_class: 'tbd'
-            },
-        ],
+            }
+        ]
     };
 }

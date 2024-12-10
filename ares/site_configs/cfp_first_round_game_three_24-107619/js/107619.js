@@ -71,7 +71,7 @@ async function changeButtonText() {
 }
 
 
-changeButtonText();
+// changeButtonText();
 
 async function renderEventGroupHeaders() {
     // await utilities.waitForSelectorInDOM('.ArnPrimarySearchContainer');
@@ -104,7 +104,7 @@ async function renderEventGroupHeaders() {
 
 }
 
-renderEventGroupHeaders();
+// renderEventGroupHeaders();
 
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.pb-container');
@@ -125,7 +125,7 @@ async function changeSearchText() {
     const search_text = search_label.firstChild;
     search_text.textContent = 'LOCATION SEARCH:'
 }
-changeSearchText();
+// changeSearchText();
 
 // Insert Team Names
 const insert_team_names_title = async () => {

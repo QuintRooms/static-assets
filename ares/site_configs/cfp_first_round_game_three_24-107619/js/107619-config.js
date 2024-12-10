@@ -20,12 +20,12 @@ export default function siteConfig() {
         map_size: '12',
         radius: '50',
         lodging: {
-            event_id: '',
+            event_id: '84021',
             event_name: 'College Football Playoff Hotels',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
-            is_lrg: '',
+            is_lrg: false,
         },
         cug: {
             is_cug: false,

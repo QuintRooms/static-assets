@@ -15,15 +15,6 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-// async function setLoadingScreen() {
-//     await utilities.waitForSelectorInDOM('#searching');
-//     const loader = document.querySelector('#searching');
-//     loader.style.display = 'block';
-// }
-
-// setLoadingScreen();
-
-
 async function renderLucidBanner() {
     await utilities.waitForSelectorInDOM('.events');
 
@@ -49,7 +40,7 @@ async function renderLucidBanner() {
     );
 }
 
-renderLucidBanner();
+// renderLucidBanner();
 
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.pb-container');

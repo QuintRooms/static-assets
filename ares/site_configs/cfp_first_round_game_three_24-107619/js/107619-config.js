@@ -39,7 +39,7 @@ export default function siteConfig() {
         partner_hotel_text: 'Partner Hotel',
         show_tax_inclusive_rates: false,
         dayjs_date_format: 'M/D/YYYY',
-        reviews_before_info: true,
+        reviews_before_info: false,
         show_stars: false,
         show_property_type: false,
         show_language_select: false,
@@ -83,6 +83,5 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'College Football Playoff Hotels',
         has_landing_page: false,
-        hide_search_on_landing_page: true,
     };
 }

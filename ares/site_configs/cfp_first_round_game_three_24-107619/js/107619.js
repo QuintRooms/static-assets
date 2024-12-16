@@ -15,33 +15,6 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-async function renderLucidBanner() {
-    await utilities.waitForSelectorInDOM('.events');
-
-    document.querySelector('.events').insertAdjacentHTML(
-        'afterend',
-        `
-        <div class="lucid-banner">
-            <div class="lucid-content">
-                <span id="desktop">NEED 10+ ROOMS FOR ANY OF THE CFP CHAMPIONSHIP GAMES? <br> WE'RE HERE TO HELP YOU SECURE GREAT RATES.</span>       
-                <span id="tablet">Need 10+ rooms for the CFP Championship games?</span>
-                <span id="mobile">Need 10+ rooms?</span>
-            </div>
-            <div class="lucid-button">
-                <a id="lucid-link" target="_blank" href="https://form.jotform.com/203066540331141?bookingPortal=CFP%20Championship">CONTACT US</a>
-            </div>
-        </div>
-        <style>
-        header {
-            border-bottom: unset !important;
-        }
-        </style>
-        `
-    );
-}
-
-// renderLucidBanner();
-
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.pb-container');
     const footer_logo_container = document.querySelector('.pb-container');
@@ -55,7 +28,6 @@ async function insertFooterText() {
 }
 insertFooterText();
 
-// Insert Team Names
 const insert_team_names_title = async () => {
     await utilities.waitForSelectorInDOM('header');
     document.querySelector('header').insertAdjacentHTML(
@@ -71,3 +43,26 @@ const insert_team_names_title = async () => {
 };
 
 insert_team_names_title();
+
+const replace_cancellation_popup_content = async () => {
+    await utilities.waitForSelectorInDOM('body');
+    page_name = utilities.getPageName();
+    if (page_name !== 'property-detail') return;
+
+    const cancel_policy_popup = document.querySelectorAll('.ArnRateCancelPolicyContainer');
+
+    cancel_policy_popup.forEach((popup) => {
+        popup.innerText = 'This room is non-cancellable.'
+    });
+
+    // document.querySelector('ArnRateCancelPolicyContainer').insertAdjacentHTML(
+    //     'beforeend',
+    //     `
+    // <div class="cancellation-policy-popup">
+    //     This room is non-cancellable.      
+    // </div>
+    // `
+    // );
+};
+
+// replace_cancellation_popup_content();

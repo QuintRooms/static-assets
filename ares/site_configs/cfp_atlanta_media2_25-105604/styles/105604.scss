@@ -293,6 +293,14 @@ span.exclusive-rate {
     display: block;
 }
 
+.ArnRateCancelAnchor {
+    display: none;
+}
+
+.RateCalendarPopupAnchor {
+    display: none;
+}
+
 @media screen and (max-width: 1100px) {
 
     .ArnSearchContainerMainDiv,

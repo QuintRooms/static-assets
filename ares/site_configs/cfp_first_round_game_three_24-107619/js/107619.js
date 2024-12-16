@@ -44,16 +44,16 @@ const insert_team_names_title = async () => {
 
 insert_team_names_title();
 
-const replace_cancellation_popup_content = async () => {
-    await utilities.waitForSelectorInDOM('body');
-    page_name = utilities.getPageName();
-    if (page_name !== 'property-detail') return;
+// const replace_cancellation_popup_content = async () => {
+//     await utilities.waitForSelectorInDOM('body');
+//     page_name = utilities.getPageName();
+//     if (page_name !== 'property-detail') return;
 
-    const cancel_policy_popup = document.querySelectorAll('.ArnRateCancelPolicyContainer');
+//     const cancel_policy_popup = document.querySelectorAll('.ArnRateCancelPolicyContainer');
 
-    cancel_policy_popup.forEach((popup) => {
-        popup.innerText = 'This room is non-cancellable.'
-    });
+//     cancel_policy_popup.forEach((popup) => {
+//         popup.innerText = 'This room is non-cancellable.'
+//     });
 
     // document.querySelector('ArnRateCancelPolicyContainer').insertAdjacentHTML(
     //     'beforeend',
@@ -63,6 +63,6 @@ const replace_cancellation_popup_content = async () => {
     // </div>
     // `
     // );
-};
+// };
 
 // replace_cancellation_popup_content();

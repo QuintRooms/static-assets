@@ -101,14 +101,6 @@ export default function siteConfig() {
                 type_class: 'championship'
             },
             {
-                name: 'PLAYOFF FIRST ROUND: Indiana at Notre Dame',
-                display_date: 'December 20, 2024',
-                display_location: 'Notre Dame, IN',
-                end_date: '12/21/2024', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=84021',
-                type_class: 'tbd'
-            },
-            {
                 name: 'PLAYOFF FIRST ROUND: SMU at Penn State',
                 display_date: 'December 21, 2024',
                 display_location: 'University Park, PA',

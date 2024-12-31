@@ -45,6 +45,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/cfp_2025_email_logo.png`,
             logo_outbound_url: 'https://collegefootballplayoff.com/',
         },
         map_marker_image_url: [`${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`, `${env_path.path}/site_configs/${directory_name}/img/favicon.png`],

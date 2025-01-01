@@ -118,9 +118,9 @@ export default function siteConfig() {
             },
             {
                 name: 'Playoff Quarterfinal at the Allstate Sugar Bowl',
-                display_date: 'January 1, 2025',
+                display_date: 'January 2, 2025',
                 display_location: 'New Orleans, LA',
-                end_date: '01/02/2025', // M/D/YYYY
+                end_date: '01/03/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82620',
                 type_class: 'quarterfinal'
             },

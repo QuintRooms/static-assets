@@ -101,14 +101,6 @@ export default function siteConfig() {
                 type_class: 'championship'
             },
             {
-                name: 'Playoff Quarterfinal at the Vrbo Fiesta Bowl',
-                display_date: 'December 31, 2024',
-                display_location: 'Glendale, AZ',
-                end_date: '01/1/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82612',
-                type_class: 'quarterfinal'
-            },
-            {
                 name: 'Playoff Quarterfinal at the Chick-fil-A Peach Bowl',
                 display_date: 'January 1, 2025',
                 display_location: 'Atlanta, GA',

@@ -101,38 +101,6 @@ export default function siteConfig() {
                 type_class: 'championship'
             },
             {
-                name: 'Playoff Quarterfinal at the Vrbo Fiesta Bowl',
-                display_date: 'December 31, 2024',
-                display_location: 'Glendale, AZ',
-                end_date: '01/1/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82612',
-                type_class: 'quarterfinal'
-            },
-            {
-                name: 'Playoff Quarterfinal at the Chick-fil-A Peach Bowl',
-                display_date: 'January 1, 2025',
-                display_location: 'Atlanta, GA',
-                end_date: '01/02/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82613',
-                type_class: 'quarterfinal'
-            },
-            {
-                name: 'Playoff Quarterfinal at the Rose Bowl Game presented by Prudential',
-                display_date: 'January 1, 2025',
-                display_location: 'Pasadena, CA',
-                end_date: '01/02/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82615',
-                type_class: 'quarterfinal'
-            },
-            {
-                name: 'Playoff Quarterfinal at the Allstate Sugar Bowl',
-                display_date: 'January 1, 2025',
-                display_location: 'New Orleans, LA',
-                end_date: '01/02/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82620',
-                type_class: 'quarterfinal'
-            },
-            {
                 name: 'Playoff Semifinal at the Capital One Orange Bowl',
                 display_date: 'January 9, 2025',
                 display_location: 'Miami, FL',

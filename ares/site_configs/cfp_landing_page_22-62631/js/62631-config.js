@@ -99,14 +99,6 @@ export default function siteConfig() {
                 end_date: '01/19/2026', // M/D/YYYY
                 portal_url: 'https://form.jotform.com/222285562425153',
                 type_class: 'championship'
-            },
-            {
-                name: 'Playoff Semifinal at the Capital One Orange Bowl',
-                display_date: 'January 9, 2025',
-                display_location: 'Miami, FL',
-                end_date: '01/10/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82623',
-                type_class: 'semifinal'
             }
         ]
     };

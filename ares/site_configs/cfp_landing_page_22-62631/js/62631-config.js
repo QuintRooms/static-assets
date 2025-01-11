@@ -107,14 +107,6 @@ export default function siteConfig() {
                 end_date: '01/10/2025', // M/D/YYYY
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82623',
                 type_class: 'semifinal'
-            },
-            {
-                name: 'Playoff Semifinal at the Goodyear Cotton Bowl Classic',
-                display_date: 'January 10, 2025',
-                display_location: 'Dallas, TX',
-                end_date: '01/11/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=82622',
-                type_class: 'semifinal'
             }
         ]
     };

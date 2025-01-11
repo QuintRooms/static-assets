@@ -93,14 +93,14 @@ async function renderEventGroupHeaders() {
         `
     ); 
 
-    lastChampionshipEvent.insertAdjacentHTML(
-        'afterend',
-        `
-        <div class="event-group-header-container">
-            <div class="event-group-header">PLAYOFF GAMES</div>
-        </div>
-        `
-    ); 
+    // lastChampionshipEvent.insertAdjacentHTML(
+    //     'afterend',
+    //     `
+    //     <div class="event-group-header-container">
+    //         <div class="event-group-header">PLAYOFF GAMES</div>
+    //     </div>
+    //     `
+    // ); 
 
 }
 

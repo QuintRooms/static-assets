@@ -35,7 +35,7 @@ const insert_team_names_title = async () => {
         `
     <div class="team-names-container">
         <div class='team-names-text'>
-            INDIANA AT NOTRE DAME
+            INDIANA  _AT_  NOTRE DAME
         </div>          
     </div>
     `

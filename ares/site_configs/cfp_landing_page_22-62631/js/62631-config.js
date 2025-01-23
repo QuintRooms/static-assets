@@ -85,14 +85,6 @@ export default function siteConfig() {
         hide_search_on_landing_page: false,
         landing_page_events: [
             {
-                name: '2025 College Football Playoff National Championship',
-                display_date: 'January 17 - 20, 2025',
-                display_location: 'Atlanta, GA',
-                end_date: '01/20/2025', // M/D/YYYY
-                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=78359',
-                type_class: 'championship'
-            },
-            {
                 name: '2026 College Football Playoff National Championship',
                 display_date: 'January 16 - 19, 2026',
                 display_location: 'Miami, FL',

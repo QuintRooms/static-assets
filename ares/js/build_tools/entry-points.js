@@ -39,7 +39,7 @@ module.exports = () => {
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'derby_rooms_test_2_25-108392': './src/108392.js', // derby rooms_test_2_25
-            'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
+            // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24
@@ -85,6 +85,7 @@ module.exports = () => {
             // 'sotx_winter_games_25-101018': './src/101018.js', // sotx winter_games_25
             // 'sotx_summer_games_24-94660': './src/94660.js', // sotx summer_games_24
             // 'sotx_fall_classic_24-102820': './src/102820.js', // sotx fall_classic_24
+            'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
             // 'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
             // 'sportsnet_holidays_cug-00001': './src/00001.js', // sportsnet holidays_cug
             // 'suenos_24-90956': './src/90956.js', // suenos 24
@@ -149,15 +150,16 @@ module.exports = () => {
             // 'cfp_first_round_game_three_24-107619': './src/107619.js', // cfp first_round_game_three_24
             // 'cfp_first_round_game_two_24-107621': './src/107621.js', // cfp first_round_game_two_24
             // 'derby_rooms_test_2_25-108392': './src/108392.js', // derby rooms_test_2_25
-            'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
-
+            // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
+            'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
+            'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
+            // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
             // 'cfp_first_round_game_four_24-107617': './src/107617.js', // cfp first_round_game_four_24
             // 'cfp_first_round_game_three_24-107619': './src/107619.js', // cfp first_round_game_three_24
             // 'cfp_first_round_game_two_24-107621': './src/107621.js', // cfp first_round_game_two_24

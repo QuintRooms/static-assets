@@ -1,39 +1,48 @@
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body,
 html {
   margin: 0;
   padding: 0;
-  font-size: 14px !important; }
+  font-size: 14px !important;
+}
 
 .MemberAuthenticated.SearchHotels .distanceLabel {
-  display: none; }
+  display: none;
+}
 
 .fixed {
-  position: fixed; }
+  position: fixed;
+}
 
 .hide {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .hidden {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .ArnSubPage {
   max-width: 1170px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 #lightbox {
   text-align: center;
   padding: 20px;
   text-transform: uppercase;
-  border-radius: 15px; }
+  border-radius: 15px;
+}
 
 #lightbox .WBChangePasswordFormActions {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 #lightbox .WBChangePasswordFormActions .ChangePasswordAction {
   width: 50%;
@@ -42,27 +51,33 @@ html {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 6px;
-  background: transparent; }
+  background: transparent;
+}
 
 #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
   transition-property: color, background;
   transition-duration: 0.8s;
-  transition-timing-function: ease-in-out; }
+  transition-timing-function: ease-in-out;
+}
 
-#lightbox .WBChangePasswordFormFields input[type='password'] {
+#lightbox .WBChangePasswordFormFields input[type=password] {
   border: unset;
-  width: 60%; }
+  width: 60%;
+}
 
 #lightbox .CancelAction {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 #lightbox .window-titlebar a,
 #lightbox .window-close a {
-  color: #666; }
+  color: #666;
+}
 
 #lightbox .window {
   padding: 10px;
-  text-align: center; }
+  text-align: center;
+}
 
 #lightbox .dialog-button-ok input {
   margin-top: 10px;
@@ -74,11 +89,12 @@ html {
   letter-spacing: 1px;
   font-weight: 700;
   border: 1px solid;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
-input[type='text'],
-input[type='password'],
-input[type='email'],
+input[type=text],
+input[type=password],
+input[type=email],
 select,
 textarea {
   font-size: 13px !important;
@@ -88,20 +104,24 @@ textarea {
   border: 1px solid #e0e0e0;
   margin-bottom: 6px;
   outline: none;
-  transition: box-shadow 0.15s ease-in-out; }
+  transition: box-shadow 0.15s ease-in-out;
+}
 
-input[type='text']:focus,
-input[type='password']:focus,
-input[type='email']:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
 select:focus,
 textarea:focus {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
 
-input[type='submit'] {
-  outline: none; }
+input[type=submit] {
+  outline: none;
+}
 
 textarea {
-  border: 1px solid #e0e0e0 !important; }
+  border: 1px solid #e0e0e0 !important;
+}
 
 .ArnSupportTop,
 .adminControl,
@@ -136,11 +156,13 @@ textarea {
 .ArnGoCitySearch,
 .ArnGoLandmarkSearch,
 .ArnGoAirportSearch {
-  display: none; }
+  display: none;
+}
 
 .SinglePropDetail .bestPrice {
   font-size: 0;
-  display: none; }
+  display: none;
+}
 
 /* Header Start */
 header {
@@ -149,10 +171,12 @@ header {
   background: #fff;
   z-index: 4;
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 .logo img {
-  padding: 15px; }
+  padding: 15px;
+}
 
 /* Header End */
 /* Buttons Start */
@@ -167,12 +191,14 @@ a.ArnShowRatesLink,
   background: #fff;
   color: #333;
   border: 1px solid #333;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 .CheckRates input.submit {
   background: #fff;
   color: #333;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 input#theSubmitButton:hover,
 input#theSubmitButton:focus,
@@ -195,24 +221,28 @@ input#theConfirmationButton:active,
 a.ArnShowRatesLink:hover,
 .WBConfirmedBooking .submit:hover,
 .GroupHoldForm .bookRoomButton:hover {
-  background: #e3e0e0;
+  background: rgb(227, 224, 224);
   color: #333;
-  border: 1px solid #333; }
+  border: 1px solid #333;
+}
 
 .CheckRates input.submit:hover,
 .CheckRates input.submit:focus,
 .CheckRates input.submit:active {
   background: #ccc;
-  color: #333; }
+  color: #333;
+}
 
 .WBResendOrCancelFormActions input {
-  margin: 0 10px; }
+  margin: 0 10px;
+}
 
 /* Buttons End */
 select#rooms,
 select#adults {
   border-radius: 0;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 #AdminControlsContainer {
   background: transparent;
@@ -221,10 +251,12 @@ select#adults {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 8; }
+  z-index: 8;
+}
 
 #commands {
-  display: flex; }
+  display: flex;
+}
 
 #commands a,
 #commands button {
@@ -232,18 +264,20 @@ select#adults {
   color: #333;
   text-decoration: none;
   margin: 0 12px;
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 #commands button {
   background: transparent;
   border: none;
   font-size: 15px;
   padding: 0;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #commands a:before,
 #commands button:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -254,19 +288,23 @@ select#adults {
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s; }
+  transition: all 0.3s ease-in-out 0s;
+}
 
 #commands a:hover:before,
 #commands button:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
-  transform: scaleX(1); }
+  transform: scaleX(1);
+}
 
 .hamburger {
-  display: none; }
+  display: none;
+}
 
 .config-container {
-  display: none; }
+  display: none;
+}
 
 .SearchHotels .config-container {
   background: #333;
@@ -275,69 +313,83 @@ select#adults {
   justify-content: flex-end;
   padding: 16px 8px;
   position: relative;
-  z-index: 8; }
+  z-index: 8;
+}
 
 #language {
-  order: 3; }
+  order: 3;
+}
 
 .currencies-container {
-  order: 2; }
+  order: 2;
+}
 
 /* Config Labels Start */
 .config-label {
-  display: flex; }
+  display: flex;
+}
 
 .config-label {
   cursor: pointer;
   color: #fff;
   border-bottom: 1px solid #868686;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .config-label span {
   pointer-events: none;
   padding: 2px;
   margin-right: 12px;
   white-space: nowrap;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 #language-label span {
-  overflow: visible; }
+  overflow: visible;
+}
 
 .config-label {
   width: 200px;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .RootBody .config-label,
 .SearchHotels .config-label {
-  display: flex; }
+  display: flex;
+}
 
 .config-label polyline,
 .config-label polyline {
   stroke: #868686;
-  transform: scale(0.85); }
+  transform: scale(0.85);
+}
 
 /* Config Labels End */
 /* Dropdown Start */
 .show-dropdown {
   display: block !important;
   background: #fff;
-  position: absolute; }
+  position: absolute;
+}
 
 /* Language Dropdown Start */
 #language {
   position: relative;
   width: 180px;
   order: 1;
-  margin: 0 30px 0 15px; }
+  margin: 0 30px 0 15px;
+}
 
 .language {
-  display: none; }
+  display: none;
+}
 
 .SearchHotels .language,
 .RootBody .language {
-  display: block; }
+  display: block;
+}
 
 .language-container {
   display: none;
@@ -346,32 +398,42 @@ select#adults {
   left: 0;
   background: #fff;
   width: 100%;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3); }
-  @media screen and (min-width: 1100px) {
-    .language-container {
-      top: -700px !important; } }
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 1100px) {
+  .language-container {
+    top: -700px !important;
+  }
+}
 
 .show-language-container {
   display: flex;
-  flex-direction: column; }
-  @media screen and (min-width: 1100px) {
-    .show-language-container {
-      animation: languageDrop 0.5s ease forwards; } }
+  flex-direction: column;
+}
+@media screen and (min-width: 1100px) {
+  .show-language-container {
+    animation: languageDrop 0.5s ease forwards;
+  }
+}
 
 @keyframes languageDrop {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   70% {
-    transform: translateY(800px); }
+    transform: translateY(800px);
+  }
   100% {
     transform: translateY(730px);
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 .language-container img,
 .config-label img {
   max-width: 24px;
   margin-right: 8px;
-  margin-bottom: -4px; }
+  margin-bottom: -4px;
+}
 
 .language-container div {
   margin-bottom: 0;
@@ -379,44 +441,53 @@ select#adults {
   padding: 10px 8px;
   transition: all 0.3s ease;
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 .language-container div:hover,
 .active-language {
   background: #e2e2e2;
-  color: #333; }
+  color: #333;
+}
 
 /* Language Dropdown End */
 /* Currency Dropdown Start */
 .currency {
-  display: none; }
+  display: none;
+}
 
 .RootBody .currency,
 .SearchHotels .currency {
-  display: block; }
+  display: block;
+}
 
 #CurrenciesContainer {
-  display: none; }
+  display: none;
+}
 
 .currency-content {
   padding: 12px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+}
 
 .currencies-container .dropdown {
   width: 100%;
   max-width: 800px;
   position: absolute;
   right: 0;
-  top: 42px; }
+  top: 42px;
+}
 
 .currency-content h4 {
-  margin: 12px 0 6px 0; }
+  margin: 12px 0 6px 0;
+}
 
 .currency-content div {
   padding: 6px 6px 6px 0;
   display: grid;
   grid-column-gap: 18px;
-  grid-template-columns: 1fr 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 .currency-content div span {
   white-space: nowrap;
@@ -424,36 +495,45 @@ select#adults {
   padding: 6px 24px 6px 6px;
   color: #333;
   transition: all 0.3s ease;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .currency-content div span:hover,
 .active-currency {
-  background: #ccc; }
+  background: #ccc;
+}
 
 @media screen and (max-width: 1000px) {
   .currencies-container {
-    position: static; }
+    position: static;
+  }
   .dropdown {
     top: 36px;
     width: 96%;
-    margin: 0 2%; }
+    margin: 0 2%;
+  }
   #currency-label {
-    margin-left: auto; } }
-
+    margin-left: auto;
+  }
+}
 /* Currencies IE CSS Hack */
 @media all and (-ms-high-contrast: none) {
   .show-currencies-container {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+  }
   .top-currencies {
     display: flex;
     flex-wrap: wrap;
-    width: 100% !important; }
+    width: 100% !important;
+  }
   .dropdown h4 {
-    width: 100%; }
+    width: 100%;
+  }
   .dropdown div {
-    width: 25%; } }
-
+    width: 25%;
+  }
+}
 /* Currency Dropdown End */
 /* Dropdown End */
 /* Header End */
@@ -466,33 +546,40 @@ select#adults {
   margin: 4px 12px 4px 12px;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
+  transition: all 0.3s ease-in-out;
+}
 
 .hamburger:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #hamburger.is-active .line:nth-child(2) {
-  opacity: 0; }
+  opacity: 0;
+}
 
 #hamburger.is-active .line:nth-child(1) {
   -webkit-transform: translateY(9px) rotate(45deg);
   -ms-transform: translateY(9px) rotate(45deg);
   -o-transform: translateY(9px) rotate(45deg);
-  transform: translateY(9px) rotate(45deg); }
+  transform: translateY(9px) rotate(45deg);
+}
 
 #hamburger.is-active .line:nth-child(3) {
   -webkit-transform: translateY(-5px) rotate(-45deg);
   -ms-transform: translateY(-5px) rotate(-45deg);
   -o-transform: translateY(-5px) rotate(-45deg);
-  transform: translateY(-5px) rotate(-45deg); }
+  transform: translateY(-5px) rotate(-45deg);
+}
 
 @media screen and (max-width: 800px) {
   .logo img {
     width: 100%;
-    max-width: 125px; }
+    max-width: 125px;
+  }
   .hamburger .line,
   .hamburger {
-    display: block; }
+    display: block;
+  }
   #commands {
     flex-direction: column;
     opacity: 0;
@@ -502,7 +589,8 @@ select#adults {
     width: 100%;
     box-shadow: 0 2px 12px 0 #000;
     position: absolute;
-    pointer-events: none; }
+    pointer-events: none;
+  }
   #commands.active {
     transform: translateY(126px);
     opacity: 1;
@@ -510,7 +598,8 @@ select#adults {
     width: 100%;
     background: #fff;
     transition: all 0.5s ease;
-    pointer-events: unset; }
+    pointer-events: unset;
+  }
   #commands a,
   #commands button {
     margin: 0;
@@ -521,67 +610,83 @@ select#adults {
     border-bottom: 1px solid #ccc;
     margin: 0;
     padding: 12px;
-    transition: all 0.4s ease; }
+    transition: all 0.4s ease;
+  }
   #commands a:before,
   #commands button:before {
-    content: unset; } }
-
+    content: unset;
+  }
+}
 /* Mobile Menu End */
 /* Map Start */
 .arn-leaflet-reset-button {
-  height: unset; }
+  height: unset;
+}
 
 .arnMapMarker {
-  border: 1px solid #4d4d4d;
+  border: 1px solid rgb(77, 77, 77);
   background: #fff;
-  color: #333; }
+  color: #333;
+}
 
 .arnMapMarkerTriangle {
-  border-top-color: #767272; }
+  border-top-color: rgb(118, 114, 114);
+}
 
 .arnMapMarker:hover .arnMapMarkerTriangle {
-  border-top-color: #767272; }
+  border-top-color: rgb(118, 114, 114);
+}
 
 .arnMapMarker:hover {
-  border: 1px solid #4d4d4d;
+  border: 1px solid rgb(77, 77, 77);
   background: #fff;
-  color: #333; }
+  color: #333;
+}
 
 .arnMapMarker.contracted-pin,
 .arnMapMarker.contracted-pin.highlight {
-  z-index: 8001; }
+  z-index: 8001;
+}
 
 .arnMapMarker:hover,
 .arnMapMarker.highlight {
   background-color: #fff;
-  border: 1px solid #444f74; }
+  border: 1px solid #444f74;
+}
 
 .arnMapMarker.highlight .arnMapMarkerTriangle {
-  border-top-color: #767272; }
+  border-top-color: rgb(118, 114, 114);
+}
 
 .noPrice {
-  display: none !important; }
+  display: none !important;
+}
 
 #arnCloseAnchorId svg {
   width: 15px;
   position: relative;
-  top: 2px; }
+  top: 2px;
+}
 
 /* Map End */
 /* Calendar Start */
 @media screen and (max-width: 600px) {
   .yui3-u-1-2,
   .yui3-u-12-24 {
-    display: block !important; }
+    display: block !important;
+  }
   .yui3-skin-sam .yui3-calendar-header-label {
-    font-size: 11px; }
+    font-size: 11px;
+  }
   .yui3-calendar-content {
-    left: 0; } }
-
+    left: 0;
+  }
+}
 /* Calendar End */
 /* Sort Container Start */
 #arnToggleMapDiv {
-  display: none; }
+  display: none;
+}
 
 .arrow {
   transform: rotate(90deg);
@@ -591,41 +696,51 @@ select#adults {
   position: relative;
   top: 4px;
   transition: all 0.3s ease;
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .ArnSortBy {
-  display: none; }
+  display: none;
+}
 
 .sort-wrapper h4 {
-  margin-bottom: 4px; }
+  margin-bottom: 4px;
+}
 
 .sort-wrapper a {
   color: #333;
   padding: 6px;
   text-decoration: none;
-  transition: all 0.4s ease; }
+  transition: all 0.4s ease;
+}
 
 .sort-wrapper div {
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .ArnSortByType {
-  display: none; }
+  display: none;
+}
 
 @media screen and (max-width: 800px) {
   .ArnSortBy {
-    display: initial; }
+    display: initial;
+  }
   .sort svg {
-    max-width: 14px; } }
-
+    max-width: 14px;
+  }
+}
 /* Sort Container End*/
 /* Search Results Layout Start */
 #Properties {
-  display: flex; }
+  display: flex;
+}
 
 #currentPropertyPage {
   position: relative;
   width: 50vw;
-  padding: 0 24px; }
+  padding: 0 24px;
+}
 
 #ArnPropertyMap {
   right: 0;
@@ -635,32 +750,40 @@ select#adults {
   overflow: hidden;
   order: 2;
   position: sticky;
-  margin-right: 12px; }
+  margin-right: 12px;
+}
 
 .SearchHotels .ArnPropertyMapInner {
   z-index: 8;
-  height: 100vh !important; }
+  height: 100vh !important;
+}
 
 .SearchHotels .ArnLeftSearchContainer {
-  margin-left: 12px; }
+  margin-left: 12px;
+}
 
 .ArnLeftSearchContainer,
 .ArnLeftListContainer {
   width: 200px;
-  display: block; }
+  display: block;
+}
 
 .ArnNoResults {
-  width: 100%; }
+  width: 100%;
+}
 
 @media screen and (max-width: 1105px) {
   .SearchHotels .ArnLeftSearchContainer {
-    margin-left: 0; }
+    margin-left: 0;
+  }
   #Properties {
     display: block;
-    padding: 0 18px; }
+    padding: 0 18px;
+  }
   #currentPropertyPage {
     width: calc(100vw - 253px);
-    padding: 0; }
+    padding: 0;
+  }
   #ArnPropertyMap {
     width: 100vw;
     transform: translateX(100%);
@@ -669,37 +792,46 @@ select#adults {
     overflow: hidden;
     position: fixed;
     height: 0;
-    margin-right: 0; }
+    margin-right: 0;
+  }
   .showMap {
     transform: translateX(0) !important;
     width: 100% !important;
     z-index: 7;
     transition: all 0.3s ease-in;
     display: block !important;
-    height: 100vh !important; } }
-
+    height: 100vh !important;
+  }
+}
 @media screen and (max-width: 800px) {
   #Properties {
-    padding: 0 8px; }
+    padding: 0 8px;
+  }
   #currentPropertyPage {
-    width: 100%; }
+    width: 100%;
+  }
   .SearchHotels .ArnSearchContainerMainTable {
     table-layout: fixed;
-    width: 100%; }
+    width: 100%;
+  }
   .SearchHotels .ArnPropertyMapInner {
     height: 100vh !important;
-    height: calc(var(--vh, 1vh) * 100) !important; }
+    height: calc(var(--vh, 1vh) * 100) !important;
+  }
   .rate {
-    display: none; } }
-
+    display: none;
+  }
+}
 @media screen and (max-width: 1024px) {
   body.ArnNoPropertyResults {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; }
+    min-height: 100vh;
+  }
   .ArnNoPropertyResults .ArnSearchContainerMainDiv {
-    flex-grow: 1; } }
-
+    flex-grow: 1;
+  }
+}
 /* Search Results Layout End */
 /* Search Container Start */
 #searching {
@@ -713,7 +845,8 @@ select#adults {
   display: flex !important;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 #searching h2 {
   width: 49px;
@@ -724,13 +857,14 @@ select#adults {
   right: 0;
   top: 0;
   bottom: 0;
-  font-size: 0; }
+  font-size: 0;
+}
 
 #searching h2:before {
-  content: '';
+  content: "";
   width: 49px;
   height: 5px;
-  background: white;
+  background: rgb(255, 255, 255);
   opacity: 0.1;
   position: absolute;
   top: 58px;
@@ -740,10 +874,11 @@ select#adults {
   -o-animation: shadow 0.58s linear infinite;
   -ms-animation: shadow 0.58s linear infinite;
   -webkit-animation: shadow 0.58s linear infinite;
-  -moz-animation: shadow 0.58s linear infinite; }
+  -moz-animation: shadow 0.58s linear infinite;
+}
 
 #searching h2:after {
-  content: '';
+  content: "";
   width: 49px;
   height: 49px;
   position: absolute;
@@ -754,131 +889,169 @@ select#adults {
   -o-animation: cssload-animate 0.58s linear infinite;
   -ms-animation: cssload-animate 0.58s linear infinite;
   -webkit-animation: cssload-animate 0.58s linear infinite;
-  -moz-animation: cssload-animate 0.58s linear infinite; }
+  -moz-animation: cssload-animate 0.58s linear infinite;
+}
 
 @keyframes cssload-animate {
   17% {
-    border-bottom-right-radius: 3px; }
+    border-bottom-right-radius: 3px;
+  }
   25% {
-    transform: translateY(9px) rotate(22.5deg); }
+    transform: translateY(9px) rotate(22.5deg);
+  }
   50% {
     transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 39px; }
+    border-bottom-right-radius: 39px;
+  }
   75% {
-    transform: translateY(9px) rotate(67.5deg); }
+    transform: translateY(9px) rotate(67.5deg);
+  }
   100% {
-    transform: translateY(0) rotate(90deg); } }
-
+    transform: translateY(0) rotate(90deg);
+  }
+}
 @-o-keyframes cssload-animate {
   17% {
-    border-bottom-right-radius: 3px; }
+    border-bottom-right-radius: 3px;
+  }
   25% {
-    -o-transform: translateY(9px) rotate(22.5deg); }
+    -o-transform: translateY(9px) rotate(22.5deg);
+  }
   50% {
     -o-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 39px; }
+    border-bottom-right-radius: 39px;
+  }
   75% {
-    -o-transform: translateY(9px) rotate(67.5deg); }
+    -o-transform: translateY(9px) rotate(67.5deg);
+  }
   100% {
-    -o-transform: translateY(0) rotate(90deg); } }
-
+    -o-transform: translateY(0) rotate(90deg);
+  }
+}
 @-ms-keyframes cssload-animate {
   17% {
-    border-bottom-right-radius: 3px; }
+    border-bottom-right-radius: 3px;
+  }
   25% {
-    -ms-transform: translateY(9px) rotate(22.5deg); }
+    -ms-transform: translateY(9px) rotate(22.5deg);
+  }
   50% {
     -ms-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 39px; }
+    border-bottom-right-radius: 39px;
+  }
   75% {
-    -ms-transform: translateY(9px) rotate(67.5deg); }
+    -ms-transform: translateY(9px) rotate(67.5deg);
+  }
   100% {
-    -ms-transform: translateY(0) rotate(90deg); } }
-
+    -ms-transform: translateY(0) rotate(90deg);
+  }
+}
 @-webkit-keyframes cssload-animate {
   17% {
-    border-bottom-right-radius: 3px; }
+    border-bottom-right-radius: 3px;
+  }
   25% {
-    -webkit-transform: translateY(9px) rotate(22.5deg); }
+    -webkit-transform: translateY(9px) rotate(22.5deg);
+  }
   50% {
     -webkit-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 39px; }
+    border-bottom-right-radius: 39px;
+  }
   75% {
-    -webkit-transform: translateY(9px) rotate(67.5deg); }
+    -webkit-transform: translateY(9px) rotate(67.5deg);
+  }
   100% {
-    -webkit-transform: translateY(0) rotate(90deg); } }
-
+    -webkit-transform: translateY(0) rotate(90deg);
+  }
+}
 @-moz-keyframes cssload-animate {
   17% {
-    border-bottom-right-radius: 3px; }
+    border-bottom-right-radius: 3px;
+  }
   25% {
-    -moz-transform: translateY(9px) rotate(22.5deg); }
+    -moz-transform: translateY(9px) rotate(22.5deg);
+  }
   50% {
     -moz-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 39px; }
+    border-bottom-right-radius: 39px;
+  }
   75% {
-    -moz-transform: translateY(9px) rotate(67.5deg); }
+    -moz-transform: translateY(9px) rotate(67.5deg);
+  }
   100% {
-    -moz-transform: translateY(0) rotate(90deg); } }
-
+    -moz-transform: translateY(0) rotate(90deg);
+  }
+}
 @keyframes shadow {
-  0%,
-  100% {
-    transform: scale(1, 1); }
+  0%, 100% {
+    transform: scale(1, 1);
+  }
   50% {
-    transform: scale(1.2, 1); } }
-
+    transform: scale(1.2, 1);
+  }
+}
 @-o-keyframes shadow {
-  0%,
-  100% {
-    -o-transform: scale(1, 1); }
+  0%, 100% {
+    -o-transform: scale(1, 1);
+  }
   50% {
-    -o-transform: scale(1.2, 1); } }
-
+    -o-transform: scale(1.2, 1);
+  }
+}
 @-ms-keyframes shadow {
-  0%,
-  100% {
-    -ms-transform: scale(1, 1); }
+  0%, 100% {
+    -ms-transform: scale(1, 1);
+  }
   50% {
-    -ms-transform: scale(1.2, 1); } }
-
+    -ms-transform: scale(1.2, 1);
+  }
+}
 @-webkit-keyframes shadow {
-  0%,
-  100% {
-    -webkit-transform: scale(1, 1); }
+  0%, 100% {
+    -webkit-transform: scale(1, 1);
+  }
   50% {
-    -webkit-transform: scale(1.2, 1); } }
-
+    -webkit-transform: scale(1.2, 1);
+  }
+}
 @-moz-keyframes shadow {
-  0%,
-  100% {
-    -moz-transform: scale(1, 1); }
+  0%, 100% {
+    -moz-transform: scale(1, 1);
+  }
   50% {
-    -moz-transform: scale(1.2, 1); } }
-
+    -moz-transform: scale(1.2, 1);
+  }
+}
 #searching img,
 #searching input {
-  display: none; }
+  display: none;
+}
 
 @media screen and (max-width: 600px) {
   .SearchHotels .ArnSearchContainerMainTable {
-    display: table; }
+    display: table;
+  }
   .SearchHotels .ArnPropAddress {
-    padding: 8px 0; } }
-
+    padding: 8px 0;
+  }
+}
 .ArnLeftListContainer {
-  padding-top: 48px; }
+  padding-top: 48px;
+}
 
 .ArnRightListContainer {
   width: 100%;
-  padding-top: 48px; }
+  padding-top: 48px;
+}
 
 .ArnSearchHeader {
   padding: 12px 0;
-  font-size: 19px; }
+  font-size: 19px;
+}
 
 .ArnPrimarySearchContainer {
-  padding: 12px; }
+  padding: 12px;
+}
 
 .ArnPrimarySearchContainer input,
 .ArnPrimarySearchContainer select,
@@ -886,14 +1059,17 @@ select#adults {
 .SimpleSearch select {
   border: none;
   padding: 8px 6px;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 div.autocomplete {
   color: #333;
-  font-size: 17px; }
+  font-size: 17px;
+}
 
 div.autocomplete ul li.selected {
-  background: #faaf18 !important; }
+  background: #faaf18 !important;
+}
 
 .SearchHotels #city,
 .SearchHotels #pointOfInterest,
@@ -907,31 +1083,38 @@ div.autocomplete ul li.selected {
   width: 100%;
   margin: 4px 0;
   -webkit-appearance: none;
-  border-radius: 0; }
+  border-radius: 0;
+}
 
 .ap-icon-pin {
-  display: none; }
+  display: none;
+}
 
 .SearchHotels #CheckInContainer,
 .SearchHotels #CheckOutContainer,
 .SearchHotels .ArnRooms,
 .SearchHotels .ArnAdults {
-  width: 48%; }
+  width: 48%;
+}
 
 .SearchHotels #CheckInContainer {
   float: left;
-  margin-right: 2%; }
+  margin-right: 2%;
+}
 
 .SearchHotels .ArnRooms {
   display: inline-block;
-  width: 92%; }
+  width: 92%;
+}
 
 .SearchHotels .ArnAdults {
-  margin-left: 4%; }
+  margin-left: 4%;
+}
 
 .SearchHotels #CheckOutContainer {
   display: inline-block;
-  margin-left: 2%; }
+  margin-left: 2%;
+}
 
 .SearchHotels #theSubmitButton,
 .CheckRates .submit {
@@ -939,10 +1122,12 @@ div.autocomplete ul li.selected {
   margin-top: 8px;
   background: transparent;
   border: 1px solid #fff;
-  transition: all 0.3s ease-out; }
+  transition: all 0.3s ease-out;
+}
 
 .SearchHotels .star {
-  transform: scale(0.9); }
+  transform: scale(0.9);
+}
 
 .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews,
 #thePropertyReviews {
@@ -950,11 +1135,13 @@ div.autocomplete ul li.selected {
   order: 1;
   position: absolute;
   bottom: 0;
-  left: 12px; }
+  left: 12px;
+}
 
 .SearchHotels .ArnPropClass,
 #PropertyClassesContainer {
-  display: none; }
+  display: none;
+}
 
 .propThumbTag {
   background: rgba(0, 0, 0, 0.75);
@@ -963,25 +1150,32 @@ div.autocomplete ul li.selected {
   width: 100%;
   color: #fff;
   font-size: 15px;
-  text-align: center; }
+  text-align: center;
+}
 
 @media screen and (max-width: 800px) {
   .propThumbTag {
-    width: inherit; }
+    width: inherit;
+  }
   #arnCloseAnchorId {
-    padding: 8px; }
+    padding: 8px;
+  }
   .SearchHotels .ArnSecondarySearchOuterContainer,
   .SearchHotels .ArnSearchHeader,
   .SearchHotels .subHeaderContainer .translateMe {
-    display: none; }
+    display: none;
+  }
   .SearchHotels .ArnLeftSearchContainer {
     width: 100%;
     margin-bottom: 18px;
-    border-bottom: 1px solid #ccc; }
+    border-bottom: 1px solid #ccc;
+  }
   .SearchHotels .ArnRightListContainer {
-    padding-top: 0; }
+    padding-top: 0;
+  }
   .SearchHotels .ArnPrimarySearchContainer {
-    display: none; }
+    display: none;
+  }
   .show-search-container {
     display: flex;
     flex-direction: row;
@@ -989,40 +1183,52 @@ div.autocomplete ul li.selected {
     padding: 0 18px;
     height: 60px;
     cursor: pointer;
-    position: relative; }
+    position: relative;
+  }
   .search-close {
     position: absolute;
     top: 12px;
     right: 0;
     width: 32px;
     opacity: 0;
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+  }
   .show-search-close {
-    opacity: 1; }
+    opacity: 1;
+  }
   .search-info span {
-    font-size: 12px; }
+    font-size: 12px;
+  }
   .show-search-container h3 {
-    margin: 0; }
+    margin: 0;
+  }
   .show-search-container svg {
-    margin-right: 18px; }
+    margin-right: 18px;
+  }
   .adults-count {
-    margin-left: 8px; }
+    margin-left: 8px;
+  }
   .SearchHotels .show-search {
-    display: block; }
+    display: block;
+  }
   .SearchHotels .ArnSearchHeader {
     z-index: 9;
     position: relative;
-    background: #fff; }
+    background: #fff;
+  }
   .sort {
     width: 125px;
-    text-align: center; }
+    text-align: center;
+  }
   .ArnSortBy {
-    width: 125px; } }
-
+    width: 125px;
+  }
+}
 @media screen and (max-width: 600px) {
   .SearchHotels .ArnTripAdvisorDetails.HasReviews {
-    justify-content: center; } }
-
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 800px) {
   /* Mobile Sort and Filter Start*/
   .sort-filter-overlay {
@@ -1032,58 +1238,73 @@ div.autocomplete ul li.selected {
     width: 100%;
     z-index: 10;
     background: rgba(0, 0, 0, 0.7);
-    display: none; }
+    display: none;
+  }
   .sort-filter-container {
     background: #fff;
     overflow: scroll;
     position: relative;
     width: 90vw;
-    height: 90vh; }
+    height: 90vh;
+  }
   .mobile-sort-container,
   .mobile-filter-container {
-    padding: 12px; }
+    padding: 12px;
+  }
   .mobile-sort-container h4,
   .mobile-filter-container h4 {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+  }
   .show-sort-filter {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden; }
+    overflow-x: hidden;
+  }
   .sort-wrapper {
     position: static;
     display: none;
-    width: unset; }
+    width: unset;
+  }
   .sort-wrapper a {
-    padding: 8px; }
+    padding: 8px;
+  }
   .sort-wrapper a:hover,
   .sort-wrapper a:focus,
   .sort-wrapper a:active,
   .sort-wrapper.sort-open .active {
-    background: unset; }
+    background: unset;
+  }
   .sort-wrapper .accordion svg {
-    display: none; }
+    display: none;
+  }
   .sort-wrapper a div {
-    pointer-events: none; }
+    pointer-events: none;
+  }
   .sort-filter-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px;
-    border-bottom: 1px solid #ccc; }
+    border-bottom: 1px solid #ccc;
+  }
   .sort-filter-header h3 {
-    margin: 0; }
+    margin: 0;
+  }
   .sort-filter-close {
     padding: 10px;
-    cursor: pointer; }
+    cursor: pointer;
+  }
   .sort-filter-close svg {
     width: 18px;
-    height: 18px; } }
-
+    height: 18px;
+  }
+}
 .ArnSortContainer,
 .sort-wrapper {
-  display: none; }
+  display: none;
+}
 
 /* Search Container End */
 /* Single Prop Page Start */
@@ -1095,11 +1316,13 @@ div.autocomplete ul li.selected {
 .SinglePropDetail .SearchActions,
 .imageDisclaimer,
 .reportProblemLink {
-  display: none !important; }
+  display: none !important;
+}
 
 .errors {
   padding: 0;
-  margin: 13px; }
+  margin: 13px;
+}
 
 .errors li {
   list-style-type: none;
@@ -1107,166 +1330,207 @@ div.autocomplete ul li.selected {
   background-color: #fbe7e7;
   padding: 10px;
   color: #f5484f;
-  width: 100%; }
+  width: 100%;
+}
 
 .SinglePropDetail #thePropertyMap {
-  margin-bottom: 18px; }
+  margin-bottom: 18px;
+}
 
 .SinglePropDetail .SimpleSearch {
   margin-bottom: 18px;
-  padding: 12px; }
+  padding: 12px;
+}
 
 .SinglePropDetail .ArnLeftListContainer {
-  width: 250px; }
+  width: 250px;
+}
 
 .SinglePropDetail .ArnLeftListContainer > span.translateMe {
   display: block;
   padding: 12px 0;
-  font-size: 19px; }
+  font-size: 19px;
+}
 
 .SinglePropDetail #thePropertyImages {
   padding: 0;
-  position: relative; }
+  position: relative;
+}
 
 .ArnContentContainer legend {
-  padding-top: 18px; }
+  padding-top: 18px;
+}
 
 legend {
   font-size: 24px;
   font-weight: 500;
-  width: 100%; }
+  width: 100%;
+}
 
 .SinglePropDetail .ArnPropName {
-  text-align: center; }
+  text-align: center;
+}
 
 .SinglePropDetail .ArnPropName .ArnPropNameLink span {
   font-size: 17px;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .SinglePropDetail .ArnMildText > div {
-  font-size: 0; }
+  font-size: 0;
+}
 
 .SinglePropDetail .ArnMildText > div img {
   text-align: center;
-  height: 400px; }
+  height: 400px;
+}
 
 .SinglePropDetail fieldset {
-  border: none; }
+  border: none;
+}
 
 .SinglePropDetail .ArnProperty {
-  margin-left: 18px; }
+  margin-left: 18px;
+}
 
 .SinglePropDetail .ArnSearchContainerMainTable > tbody > tr {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+}
 
 .SinglePropDetail .ArnAmenityContainer tbody tr {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(2),
 .SinglePropDetail .ArnAmenityContainer tbody tr td:nth-child(3) {
   display: none;
-  animation: amenityDrop 1s linear; }
+  animation: amenityDrop 1s linear;
+}
 
 @keyframes amenityDrop {
   0% {
     display: none;
-    opacity: 0; }
+    opacity: 0;
+  }
   1% {
     display: block;
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 .show-amenities {
-  display: block !important; }
+  display: block !important;
+}
 
 .SinglePropDetail #show-more-or-less {
   cursor: pointer;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 .SinglePropDetail .rowOne {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-column-gap: 3%; }
+  grid-column-gap: 3%;
+}
 
 .SinglePropDetail .CheckRates {
   grid-column-start: 1;
-  grid-column-end: 3; }
+  grid-column-end: 3;
+}
 
 .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {
   text-align: center;
   min-width: 175px;
-  width: 20%; }
+  width: 20%;
+}
 
 .SinglePropDetail .RoomTypeHeader {
-  display: none; }
+  display: none;
+}
 
 .SinglePropDetail table {
-  width: 100%; }
+  width: 100%;
+}
 
 .SinglePropDetail .RoomDescriptionHeader {
-  text-align: left; }
+  text-align: left;
+}
 
 .SinglePropDetail .rateRow {
   border-bottom: 1px solid #ccc;
   padding: 8px;
   margin: 18px 0;
-  position: relative; }
+  position: relative;
+}
 
 .SinglePropDetail .ArnRateTableHeader {
   padding: 8px;
-  background: #f3f3f3; }
+  background: #f3f3f3;
+}
 
 .SinglePropDetail .RateCalendarPopupAnchor {
   float: left;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .SinglePropDetail .ArnNightlyRate {
   font-size: 0;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .SinglePropDetail .averageNightly {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .SinglePropDetail .ArnNightlyRate strong {
   display: block;
   font-size: 13px;
   font-weight: 700;
   order: 1;
-  margin-top: 8px; }
+  margin-top: 8px;
+}
 
 .arnPrice {
-  font-size: 17px; }
+  font-size: 17px;
+}
 
 .arnUnit + div,
 .arnCurrency + div {
   font-weight: 500;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .full-stay {
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .SinglePropDetail .ArnRateCalendar {
   background: rgba(255, 255, 255, 0.8);
   color: #333;
-  text-align: center; }
+  text-align: center;
+}
 
 .SinglePropDetail .ArnRateCalendar tr:first-child {
-  background: #eee; }
+  background: #eee;
+}
 
 .SinglePropDetail .ArnRateCalendar td {
-  padding: 4px; }
+  padding: 4px;
+}
 
 .SinglePropDetail .RateCalendarPopupContents.arnPopupContents {
   position: absolute;
   width: 90%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+}
 
 .SinglePropDetail .RateCalendarPopupContainer.arnPopupContainer {
   position: absolute;
@@ -1274,7 +1538,8 @@ legend {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(6, 6, 6, 0.85); }
+  background-color: rgba(6, 6, 6, 0.85);
+}
 
 .SinglePropDetail .RateCalendarPopupClose.arnPopupClose {
   position: absolute;
@@ -1285,7 +1550,8 @@ legend {
   font-size: 19px;
   font-weight: 100;
   text-decoration: none;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+}
 
 .SinglePropDetail .ArnRateCancelPolicyContainer {
   min-width: 200px;
@@ -1294,10 +1560,12 @@ legend {
   position: absolute;
   display: inline-block;
   text-align: left;
-  right: 6px; }
+  right: 6px;
+}
 
 .SinglePropDetail .ArnRateCancelAnchor {
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .SinglePropDetail #moreRatesLink {
   background-color: #fff;
@@ -1310,10 +1578,12 @@ legend {
   text-decoration: none;
   margin: 20px 16px 20px 0;
   text-align: center;
-  transition: all 0.4s ease; }
+  transition: all 0.4s ease;
+}
 
 .SinglePropDetail #moreRatesLink:hover {
-  color: #fff !important; }
+  color: #fff !important;
+}
 
 .SinglePropDetail .ArnRateCancelPolicyContainer .close {
   position: absolute;
@@ -1322,7 +1592,8 @@ legend {
   padding: 8px;
   z-index: 2;
   font-size: 15px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .SinglePropDetail .ArnRateCancelPolicy {
   position: absolute;
@@ -1332,86 +1603,107 @@ legend {
   padding: 12px;
   z-index: 1;
   border: 1px solid #ccc;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
 .SinglePropDetail .bookRoom + br {
-  display: none; }
+  display: none;
+}
 
 .SinglePropDetail .bookRoom,
 .SinglePropDetail .holdRoom {
   margin: 8px auto;
   max-width: 150px;
-  font-size: 1rem; }
+  font-size: 1rem;
+}
 
 .SinglePropDetail .ArnPropertyMapInner {
-  height: 300px !important; }
+  height: 300px !important;
+}
 
 .SinglePropDetail .PropertyMap legend {
-  display: none; }
+  display: none;
+}
 
 .SinglePropDetail .PropLimitedAvail .ArnRateCell {
-  width: 100% !important; }
+  width: 100% !important;
+}
 
 .SinglePropDetail .ArnRateCell {
-  display: none; }
+  display: none;
+}
 
 @media screen and (min-width: 1000px) {
   .SinglePropDetail #theGeneralInfo {
     width: 48%;
-    display: inline; }
+    display: inline;
+  }
   .SinglePropDetail #thePropertyMap {
     display: inline;
-    width: 48%; } }
-
+    width: 48%;
+  }
+}
 .PropertyAmenities {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 .PropertyAmenities ul {
   margin: 0;
-  padding-left: 24px; }
+  padding-left: 24px;
+}
 
 .PropertyAmenities span {
   font-size: 17px;
   padding: 0;
-  width: initial; }
+  width: initial;
+}
 
 .ArnAmenityContainer {
-  margin-top: 12px; }
+  margin-top: 12px;
+}
 
 .SinglePropDetail .ArnTripAdvisorDetails.HasReviews {
   display: none !important;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .ArnTripAdvisorDetails.HasReviews img {
-  display: none; }
+  display: none;
+}
 
 .ArnTripAdvisorDetails.HasReviews .reviewCount {
   order: 1;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .ArnTripAdvisorDetails.HasReviews .ratingCount {
   order: 0;
   padding: 2px 4px;
   font-size: 12px;
-  margin-right: 4px; }
+  margin-right: 4px;
+}
 
 .ArnTripAdvisorDetails.HasReviews .reviewCount a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* Amenities Start */
 #thePropertyAmenities {
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 #thePropertyAmenities span {
   z-index: 9;
   position: relative;
-  background: #fff; }
+  background: #fff;
+}
 
 #thePropertyAmenities svg {
-  margin-left: 8px; }
+  margin-left: 8px;
+}
 
 /* .ArnAmenityContainer {
     opacity: 0;
@@ -1423,41 +1715,52 @@ legend {
 .SinglePropDetail #rooms,
 .SinglePropDetail #adults {
   margin-bottom: 4px;
-  width: 100%; }
+  width: 100%;
+}
 
 /* Single Prop Page End */
 /* Single Prop IE CSS Hacks */
 @media all and (-ms-high-contrast: none) {
   .SinglePropDetail .SimpleSearch .rowOne > td {
-    display: table-row; }
+    display: table-row;
+  }
   .SinglePropDetail .ArnChildren {
-    display: none !important; }
+    display: none !important;
+  }
   .SinglePropDetail .ArnSearchContainerMainTable {
-    table-layout: fixed; }
+    table-layout: fixed;
+  }
   .SinglePropDetail #theCheckIn,
   .SinglePropDetail #theCheckOut,
   .SinglePropDetail #rooms,
   .SinglePropDetail #adults {
-    max-width: 175px; } }
-
+    max-width: 175px;
+  }
+}
 @media screen and (max-width: 800px) {
   .SinglePropDetail .ArnSearchContainerMainTable {
-    overflow-x: hidden; }
+    overflow-x: hidden;
+  }
   .SinglePropDetail .ArnPropName,
   .SinglePropDetail .ArnRateCell {
-    padding: 8px 0; }
+    padding: 8px 0;
+  }
   .SinglePropDetail table {
-    border-spacing: 0; }
+    border-spacing: 0;
+  }
   .SinglePropDetail .ArnLeftListContainer {
-    display: none; }
+    display: none;
+  }
   .SinglePropDetail .ArnProperty {
     border: none;
     margin-left: 0;
-    padding: 0; }
+    padding: 0;
+  }
   .SinglePropDetail .ArnMildText > div img {
     width: 100%;
     height: 350px;
-    object-fit: cover; }
+    object-fit: cover;
+  }
   .SinglePropDetail .PropertyLinks {
     display: block;
     width: 100%;
@@ -1465,97 +1768,122 @@ legend {
     top: 65px;
     border-bottom: 1px solid #ccc;
     text-align: center;
-    padding: 12px; }
+    padding: 12px;
+  }
   .SinglePropDetail .PropertyLinks ul {
     padding: 0;
-    margin: 0; }
+    margin: 0;
+  }
   .SinglePropDetail .PropertyLinks ul li a {
     padding: 12px;
     color: #333;
-    text-decoration: none; }
+    text-decoration: none;
+  }
   .SinglePropDetail #thePropertyImages {
     position: static;
-    margin: 0; }
+    margin: 0;
+  }
   .ArnPhotoContainer > tbody > tr > td:nth-child(1) {
-    width: 100vw; }
+    width: 100vw;
+  }
   .ArnPhotoContainer > tbody > tr > td:nth-child(1) > div {
-    width: 100%; } }
-
+    width: 100%;
+  }
+}
 @media screen and (max-width: 560px) {
   .SinglePropDetail .RateRowHeader,
   .arnPopupAnchor {
-    display: none; }
+    display: none;
+  }
   .SinglePropDetail .ArnContentGeneralInfo tbody > tr {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+  }
   .SinglePropDetail .rateRow {
-    margin: 36px 0; }
+    margin: 36px 0;
+  }
   .SinglePropDetail .RoomDescription {
-    text-align: left; }
+    text-align: left;
+  }
   .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:first-child {
     width: 100%;
-    padding-right: 0; }
+    padding-right: 0;
+  }
   .SinglePropDetail .ArnContentGeneralInfo.ArnRateList > tbody > tr > td:nth-child(2) {
-    width: 100%; }
+    width: 100%;
+  }
   .SinglePropDetail .bookRoomCell {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    grid-template-rows: 1fr 0.5fr 0.25fr; }
+    grid-template-rows: 1fr 0.5fr 0.25fr;
+  }
   .SinglePropDetail table.SB16 .bookRoomCell,
   .SinglePropDetail table.SB20 .bookRoomCell {
-    grid-template-rows: 6fr 0.5fr 0.25fr; }
+    grid-template-rows: 6fr 0.5fr 0.25fr;
+  }
   .SinglePropDetail .bookRoom {
     max-width: 125px;
     width: 100%;
     align-self: start;
     justify-self: center;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    margin-top: 8px; }
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 8px;
+  }
   .SinglePropDetail .holdRoom {
     max-width: 125px;
     width: 100%;
     align-self: end;
     justify-self: center;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    margin-top: 10px; }
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 10px;
+  }
   .SinglePropDetail .ArnRateCancelAnchor {
     align-self: flex-start;
-    grid-column: 2 / 3;
-    grid-row: 3 / 4; }
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
   .SinglePropDetail .ArnNightlyRate {
     text-align: left;
-    width: 200px; }
+    width: 200px;
+  }
   .ArnContentContainer legend {
     text-align: left;
     font-weight: 700;
-    padding-left: 8px; }
+    padding-left: 8px;
+  }
   .SinglePropDetail #moreRatesLink {
     max-width: 170;
-    margin-right: 7px; }
+    margin-right: 7px;
+  }
   .roomCount {
     padding-top: 8px;
-    grid-row: 2 / 3;
-    grid-column: 2 / 3; } }
-
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+}
 @media screen and (max-width: 420px) {
   .SinglePropDetail .PropertyLinks ul li a {
     padding: 12px 6px;
-    font-size: 12px; } }
-
+    font-size: 12px;
+  }
+}
 @media screen and (max-width: 412px) {
   .SinglePropDetail .bookRoomCell {
-    grid-template-rows: 2fr 0.5fr 0.25fr; } }
-
+    grid-template-rows: 2fr 0.5fr 0.25fr;
+  }
+}
 /* Single Prop Page End */
 /* Secondary Search Container Start*/
 .ArnSecondarySearchOuterContainer {
-  padding: 8px; }
+  padding: 8px;
+}
 
 .RootBody .ArnSecondarySearchOuterContainer {
-  padding: 8px 0; }
+  padding: 8px 0;
+}
 
 #batchSize,
 .lblAmenities,
@@ -1568,35 +1896,43 @@ legend {
 .lblSortByPrice {
   font-weight: 600;
   margin-top: 12px;
-  margin-bottom: 4px; }
+  margin-bottom: 4px;
+}
 
 #PropertyTypesContainer {
-  display: none; }
+  display: none;
+}
 
 .ArnSearchField {
-  padding: 3px 0; }
+  padding: 3px 0;
+}
 
 .ArnSearchField a {
   width: 100%;
   display: block;
-  padding: 6px 0; }
+  padding: 6px 0;
+}
 
 .ArnSearchField div {
   display: flex;
   align-items: center;
-  padding: 4px 0; }
+  padding: 4px 0;
+}
 
 .ArnSecondarySearchOuterContainer span {
   font-size: 13px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .ArnSecondarySearchOuterContainer select {
   width: 100%;
-  padding: 6px; }
+  padding: 6px;
+}
 
-.ArnSecondarySearchOuterContainer input[type='checkbox'] {
+.ArnSecondarySearchOuterContainer input[type=checkbox] {
   width: 15px;
-  height: 15px; }
+  height: 15px;
+}
 
 #theOtherSubmitButton {
   width: 100%;
@@ -1604,12 +1940,14 @@ legend {
   padding: 8px 6px;
   border: none;
   background: transparent;
-  transition: all 0.3s ease-out; }
+  transition: all 0.3s ease-out;
+}
 
 .ArnSortByPrice,
 .ArnSortByDistance,
 .ArnSortByClass {
-  display: block !important; }
+  display: block !important;
+}
 
 /* Secondary Search Container End */
 /* Properties Container */
@@ -1628,57 +1966,69 @@ legend {
 .yourRateContainer,
 .rateExplainationDetails,
 .ArnPropNumber {
-  display: none; }
+  display: none;
+}
 
 .SearchHotels .ArnContainer {
   display: flex;
   flex-direction: row;
   margin-bottom: 18px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
-  position: relative; }
+  position: relative;
+}
 
 .SearchHotels .ArnPropThumb {
   position: relative;
   max-width: 25%;
   width: 100%;
   overflow: hidden;
-  height: 175px; }
+  height: 175px;
+}
 
 .SearchHotels .ArnPropThumb img {
   object-fit: cover;
   object-position: center center;
   width: 100%;
-  height: 175px; }
+  height: 175px;
+}
 
 .SearchHotels span.matchLabel {
-  display: none; }
+  display: none;
+}
 
 @media screen and (max-width: 600px) {
   .SearchHotels .ArnPropThumb {
-    max-width: 100%; }
+    max-width: 100%;
+  }
   .SearchHotels .ArnPages #batch {
-    text-align: center !important; } }
-
+    text-align: center !important;
+  }
+}
 .SearchHotels .ArnContainer {
   box-shadow: none;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .SearchHotels .ArnTripAdvisorDetails.HasReviews {
-  bottom: 8px; }
+  bottom: 8px;
+}
 
 .prop-hr {
   margin: 42px 0;
   height: 1px;
   border: none;
-  background: #ccc; }
+  background: #ccc;
+}
 
 .ArnImageLink {
-  height: 0; }
+  height: 0;
+}
 
 .roomCount {
   color: #ff4040;
   padding: 6px;
-  display: none; }
+  display: none;
+}
 
 .SearchHotels .ArnPropName {
   width: 50%;
@@ -1687,32 +2037,39 @@ legend {
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
-  padding: 0 12px; }
+  padding: 0 12px;
+}
 
 .ArnPropName,
 .ArnRateCell {
-  line-height: 1.4; }
+  line-height: 1.4;
+}
 
 .ArnPropNameLink {
   text-decoration: none;
-  margin-bottom: 4px; }
+  margin-bottom: 4px;
+}
 
 .ArnPropNameLink + br {
-  display: none; }
+  display: none;
+}
 
 .SearchHotels .ArnPropAddress {
   margin-bottom: 4px;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .SearchHotels .distanceLabel {
   margin-bottom: 8px;
   display: inline-block;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .ArnPropNameLink span {
   font-size: 17px;
   color: #333;
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 .ArnRateCell {
   display: flex;
@@ -1721,30 +2078,36 @@ legend {
   align-self: center;
   width: 25%;
   height: 175px;
-  text-align: right; }
+  text-align: right;
+}
 
 .ArnPriceCell .mainRate {
   font-size: 17px;
   font-weight: 700;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .arnPrice {
   display: block;
-  order: 1; }
+  order: 1;
+}
 
 .averageNightly {
   display: block;
   font-size: 17px;
-  order: 0; }
+  order: 0;
+}
 
 .averageNightly + div {
   font-size: 13px !important;
-  font-weight: 500 !important; }
+  font-weight: 500 !important;
+}
 
 .SearchHotels .ArnRateButton {
   max-width: 125px;
-  align-self: flex-end; }
+  align-self: flex-end;
+}
 
 .ArnShowRatesLink,
 .bookRoom,
@@ -1756,7 +2119,8 @@ legend {
   padding: 6px 12px;
   display: block;
   text-align: center;
-  transition: all 0.4s ease; }
+  transition: all 0.4s ease;
+}
 
 /* Full stay toggle start */
 .rs-toggle {
@@ -1764,7 +2128,8 @@ legend {
   width: 65px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none; }
+  -ms-user-select: none;
+}
 
 #rs-tax-inclusive {
   display: flex;
@@ -1773,31 +2138,37 @@ legend {
   z-index: 9;
   position: relative;
   order: 1;
-  margin-right: 15px; }
+  margin-right: 15px;
+}
 
 #rs-tax-inclusive > label {
-  margin-right: 12px; }
+  margin-right: 12px;
+}
 
 #rs-tax-inclusive label {
   color: #fff;
   font-weight: normal;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .rs-toggle-checkbox {
-  display: none; }
+  display: none;
+}
 
 .rs-toggle-label {
   display: block;
   overflow: hidden;
   cursor: pointer;
   border: 1px solid #535c79;
-  border-radius: 20px; }
+  border-radius: 20px;
+}
 
 .rs-toggle-inner {
   display: block;
   width: 200%;
   margin-left: -100%;
-  transition: margin 0.3s ease-in 0s; }
+  transition: margin 0.3s ease-in 0s;
+}
 
 .rs-toggle-inner:after,
 .rs-toggle-inner:before {
@@ -1810,20 +2181,23 @@ legend {
   font-size: 12px;
   color: #fff;
   font-weight: 700;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .rs-toggle-inner:before {
-  content: 'On';
+  content: "On";
   padding-left: 10px;
   background: #23305a;
-  color: #fff; }
+  color: #fff;
+}
 
 .rs-toggle-inner:after {
-  content: 'Off';
+  content: "Off";
   padding-right: 10px;
   background-color: #eee;
   color: #999;
-  text-align: right; }
+  text-align: right;
+}
 
 .rs-toggle-switch {
   display: block;
@@ -1837,100 +2211,131 @@ legend {
   right: 37px;
   border: 2px solid #999;
   border-radius: 20px;
-  transition: all 0.3s ease-in 0s; }
+  transition: all 0.3s ease-in 0s;
+}
 
 .rs-toggle-checkbox {
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .rs-toggle-checkbox:checked + .rs-toggle-label .rs-toggle-inner {
-  margin-left: 0; }
+  margin-left: 0;
+}
 
 .rs-toggle-checkbox:checked + .rs-toggle-label .rs-toggle-switch {
-  right: 0; }
+  right: 0;
+}
 
 @media screen and (max-width: 1105px) {
   .ArnRightListContainer {
-    padding-top: 0; }
+    padding-top: 0;
+  }
   .closeMap {
     z-index: 9;
     position: relative;
     margin-top: 10px;
-    margin-right: 10px; }
+    margin-right: 10px;
+  }
   .SearchHotels #arnToggleMapDiv,
   .SearchHotels .ArnSortContainer {
     display: block;
-    text-align: right; }
+    text-align: right;
+  }
   .SearchHotels .ArnSortContainer {
-    margin: 12px 0 36px 0px; }
+    margin: 12px 0 36px 0px;
+  }
   #arnOpenAnchorId {
-    display: none; }
+    display: none;
+  }
   #arnCloseAnchorId {
-    display: inline-block; }
+    display: inline-block;
+  }
   #arnCloseAnchorId,
   .sort {
     padding: 8px;
     border: none;
     transition: all 0.3s ease-out;
     text-decoration: none;
-    cursor: pointer; }
+    cursor: pointer;
+  }
   .sort svg {
-    vertical-align: middle; }
+    vertical-align: middle;
+  }
   .leaflet-top {
-    pointer-events: auto; }
+    pointer-events: auto;
+  }
   .ArnSortBy {
-    float: left; } }
-
+    float: left;
+  }
+}
 @media screen and (max-width: 800px) {
   .ArnSearchContainerMainTable > tbody > tr {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+  }
   .ArnLeftSearchContainer {
-    display: block !important; }
+    display: block !important;
+  }
   .ArnProperty {
-    margin-left: 0; }
+    margin-left: 0;
+  }
   #arnCloseAnchorId,
   .sort {
-    margin: 0 0 24px 0; }
+    margin: 0 0 24px 0;
+  }
   #arnCloseAnchorId.closeMap {
     margin-top: 10px;
-    margin-right: 10px; }
+    margin-right: 10px;
+  }
   .prop-hr {
-    margin: 42px 0; }
+    margin: 42px 0;
+  }
   .SearchHotels #arnToggleMapDiv {
-    width: 125px; }
+    width: 125px;
+  }
   .SearchHotels .ArnSortContainer {
     display: flex;
     justify-content: space-between;
-    visibility: hidden; } }
-
+    visibility: hidden;
+  }
+}
 @media screen and (max-width: 600px) {
   .SearchHotels #Properties {
-    margin: 0; }
+    margin: 0;
+  }
   .SearchHotels .ArnContainer {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+  }
   .SearchHotels .ArnPropName {
     height: unset;
     padding: 12px 0 0 0;
-    display: flex; }
+    display: flex;
+  }
   .SearchHotels .ArnPropThumb {
-    height: 175px; }
+    height: 175px;
+  }
   .SearchHotels .ArnPropThumb img {
-    height: 175px; }
+    height: 175px;
+  }
   .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
     position: static;
     justify-content: flex-start;
-    margin: 5px 0; }
+    margin: 5px 0;
+  }
   .ArnPropNameLink span,
   .SearchHotels .averageNightly {
-    font-size: 15px; }
+    font-size: 15px;
+  }
   .SearchHotels .ArnPropName,
   .SearchHotels .ArnRateCell {
     line-height: 1.4;
     width: initial;
-    text-align: left; }
+    text-align: left;
+  }
   .SearchHotels .ArnRateButton {
-    text-align: center; }
+    text-align: center;
+  }
   .SearchHotels .ArnRateCell {
     padding: 12px 0 0 0;
     display: flex;
@@ -1939,47 +2344,61 @@ legend {
     width: 100%;
     height: auto;
     align-self: none;
-    line-height: 1.6; }
+    line-height: 1.6;
+  }
   .SearchHotels .ArnPriceCell {
     text-align: left;
-    align-self: flex-end; }
+    align-self: flex-end;
+  }
   .SearchHotels .arnPrice {
     margin: 4px 0 0 0;
-    font-size: 11px; }
+    font-size: 11px;
+  }
   .SearchHotels .ArnPropAddress,
   .ArnTripAdvisorDetails.HasReviews .reviewCount {
-    font-size: 11px; }
+    font-size: 11px;
+  }
   .SearchHotels .ArnPropAddress {
-    display: none; }
+    display: none;
+  }
   .top-currencies,
   .currencies {
-    grid-template-columns: 50% 50%; }
+    grid-template-columns: 50% 50%;
+  }
   .top-currencies h4,
   .top-currencies + h4,
   .top-currencies {
-    grid-column-end: 3; }
+    grid-column-end: 3;
+  }
   .SearchHotels .ArnPropClass {
-    text-align: left; } }
-
+    text-align: left;
+  }
+}
 @media screen and (max-width: 600px) {
   .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
-    display: none !important; }
+    display: none !important;
+  }
   .currencies-container {
-    width: unset; }
+    width: unset;
+  }
   .SearchHotels .config-container,
   .RootBody .config-container {
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start; }
+    align-items: flex-start;
+  }
   #language {
-    margin: 0 0 12px 0; } }
-
+    margin: 0 0 12px 0;
+  }
+}
 /* Property Detail Page */
 .PropertyLinks ul li {
-  list-style: none; }
+  list-style: none;
+}
 
 .PropertyLinks ul li {
-  display: inline; }
+  display: inline;
+}
 
 /* Pagination */
 .ArnPages a {
@@ -1987,7 +2406,8 @@ legend {
   color: #333;
   display: inline-block;
   min-width: 25px;
-  text-align: center; }
+  text-align: center;
+}
 
 /* Footer */
 .ArnSupportLinks {
@@ -1998,24 +2418,29 @@ legend {
   background: #333;
   color: #fff;
   z-index: 9;
-  position: relative; }
+  position: relative;
+}
 
 .ArnSupportLinks a {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .pb-container {
-  padding-top: 24px; }
+  padding-top: 24px;
+}
 
 .pb-container img {
   width: 150px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #policies-fees,
 #t-and-cs {
   text-decoration: underline;
   cursor: pointer;
-  color: #333; }
+  color: #333;
+}
 
 /* #policies-fees:hover, #t-and-cs:hover{
     pointer-events: none;
@@ -2034,7 +2459,8 @@ legend {
   top: 50px;
   width: 500px;
   z-index: 10000;
-  padding: 50px; }
+  padding: 50px;
+}
 
 .throbber {
   margin: 0 auto;
@@ -2048,7 +2474,8 @@ legend {
   -webkit-animation: spin 1s linear infinite;
   -moz-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
-  filter: grayscale(100%); }
+  filter: grayscale(100%);
+}
 
 .pushContainer {
   background-color: transparent;
@@ -2061,77 +2488,93 @@ legend {
   display: block !important;
   padding: 10px 20px;
   width: initial;
-  width: auto; }
+  width: auto;
+}
 
 .ArnPushPageContent .pushContainer img {
   top: 94px;
-  filter: grayscale(100%); }
+  filter: grayscale(100%);
+}
 
 /* Prop Photos Start */
 .ArnPhotoContainer {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .ArnPhotoContainer > tbody > tr > td:nth-child(1) {
   position: relative;
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 .ArnPhotoContainer > tbody > tr > td:nth-child(1) > div {
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .propThumbs {
-  display: none; }
+  display: none;
+}
 
 .image-arrow {
   background: rgba(0, 0, 0, 0.85);
   z-index: 9999;
   position: absolute;
   padding: 12px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .image-arrow svg {
-  top: 2px; }
+  top: 2px;
+}
 
 .arrow-left {
   left: 1px;
-  transform: rotate(90deg); }
+  transform: rotate(90deg);
+}
 
 .arrow-right {
   right: 1px;
-  transform: rotate(-90deg); }
+  transform: rotate(-90deg);
+}
 
 /* Prop Photos End */
 .flip-svg {
   transform: rotate(-90deg);
-  transition: all 0.4s ease; }
+  transition: all 0.4s ease;
+}
 
 /* Checkout Start */
 #theAdditionalGuestLink,
 .DSFormFields,
 .paymentMethods {
-  display: none; }
+  display: none;
+}
 
 .creditcards {
   display: inline-block;
   vertical-align: middle;
   margin: 0.75rem 1rem 1.5rem 0;
   width: 45px;
-  height: 30px; }
+  height: 30px;
+}
 
 .creditcards img {
-  display: block; }
+  display: block;
+}
 
 .open-modal {
   text-decoration: underline;
   cursor: pointer;
   font-weight: 700;
-  font-size: 1rem; }
+  font-size: 1rem;
+}
 
 .modal-overlay {
-  display: none; }
+  display: none;
+}
 
 .show-modal {
   display: flex;
@@ -2143,7 +2586,8 @@ legend {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 9; }
+  z-index: 9;
+}
 
 .modal-container {
   background: #fff;
@@ -2152,88 +2596,108 @@ legend {
   overflow-y: scroll;
   width: 90vw;
   max-width: 600px;
-  height: 78vh; }
+  height: 78vh;
+}
 
 .modal-header {
   border-bottom: 1px solid #333;
   position: relative;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .modal-header h3 {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .close-modal svg {
   width: 18px;
   height: 18px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #theReservationFormContainer {
-  margin: 36px 0 0 0; }
+  margin: 36px 0 0 0;
+}
 
 #theBookingPage {
   width: 100%;
   max-width: 1000px;
-  color: #333; }
+  color: #333;
+}
 
 #theBookingPage h4 {
-  margin: 0; }
+  margin: 0;
+}
 
 #theBookingPage .GuestForms {
   display: inline-block;
   vertical-align: top;
   margin: 0 7% 0 0;
-  width: 60%; }
+  width: 60%;
+}
 
 #theBookingPage .PaymentPolicies {
   border: 1px solid #ccc;
   padding: 12px;
   display: inline-block;
   vertical-align: top;
-  width: 33%; }
+  width: 33%;
+}
 
 #theBookingPage fieldset {
   background: transparent;
   border: none;
-  padding: 12px 0 !important; }
+  padding: 12px 0 !important;
+}
 
 #theBookingPage legend {
   margin-top: 48px;
   font-size: 17px;
   font-weight: 700;
-  padding: 0; }
+  padding: 0;
+}
 
 #theStayPolicies legend {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 #theBookingPage td {
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 #theHotel {
   position: relative;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+}
 
 #theHotel legend {
   border: none;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 #theHotel .discount {
   display: inline-block;
   width: 30%;
-  text-align: right; }
+  text-align: right;
+}
 
 .MemberNotAuthenticated.CheckOutForm .totalRow + .discount {
-  display: none; }
+  display: none;
+}
 
 #theHotel img {
-  width: 100%; }
+  width: 100%;
+}
 
 #theHotelAddress {
   text-align: center;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 #mainHotelImage {
-  display: none; }
+  display: none;
+}
 
 .theHotelName {
   width: 100%;
@@ -2242,44 +2706,55 @@ legend {
   color: #333;
   text-align: left;
   padding: 12px 0 4px 0;
-  display: inline-block; }
+  display: inline-block;
+}
 
 #theHotel .discount {
-  display: none; }
+  display: none;
+}
 
 #theCharges {
   padding: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .checkOutSummaryTable {
-  display: none; }
+  display: none;
+}
 
 .ArnSubPage .FormFields {
-  margin-top: 12px; }
+  margin-top: 12px;
+}
 
 #theSpecialRequestsAjax textarea {
-  max-width: 595px; }
+  max-width: 595px;
+}
 
 #theAdditionalEmailsLink {
-  margin: -4px 0 12px 0; }
+  margin: -4px 0 12px 0;
+}
 
 .numberOfAdults td,
 .discountRow {
-  display: none; }
+  display: none;
+}
 
 .paymentRow,
 .totalRow {
-  display: none; }
+  display: none;
+}
 
 #theSmokingRoomAjax,
 #theRewardNumberAjax,
 .cvvInfo,
 .numberOfChildren {
-  display: none; }
+  display: none;
+}
 
 .paymethodLabel {
   display: block;
-  margin-top: 12px; }
+  margin-top: 12px;
+}
 
 #theConfirmationButton {
   border: 1px solid #fff;
@@ -2289,116 +2764,141 @@ legend {
   width: 100%;
   margin-top: 18px;
   max-width: 250px;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 #theBookingPage .ArnRateCalendar {
   border: none;
-  padding: 0 !important; }
+  padding: 0 !important;
+}
 
 #theBookingPage .ArnRateCalendar > tbody > tr.ArnRateEven:first-child {
-  display: none; }
+  display: none;
+}
 
 .ArnRateCalendar .ArnRateEven td,
 .ArnRateCalendar .ArnRateEven th,
 .ArnRateCalendar .ArnRateOdd td,
 .ArnRateCalendar .ArnRateOdd th {
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 .ArnRateCalendar .ArnRateEven td,
 .ArnRateCalendar .ArnRateEven th {
-  background: #f4f4f4; }
+  background: #f4f4f4;
+}
 
 #theRateTotals {
-  border: none; }
+  border: none;
+}
 
 .totalsTable {
   border: none;
-  padding: 0; }
+  padding: 0;
+}
 
 .totalsTable tr td,
 .totalsTable tr th {
   border-bottom: none !important;
   color: #333;
-  padding: 8px 0; }
+  padding: 8px 0;
+}
 
 .totalRow + .discount th,
 .totalRow + .discount td {
-  border-bottom: 1px solid #ccc !important; }
+  border-bottom: 1px solid #ccc !important;
+}
 
 .totalsTable tr th {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 #theRateDescription {
   width: 100%;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .billing-details-container {
   display: grid;
   grid-template-columns: 47% 47%;
   grid-template-rows: 50% 50%;
-  grid-column-gap: 6%; }
+  grid-column-gap: 6%;
+}
 
 .billing-details-container input,
 .billing-details-container select {
-  width: 100% !important; }
+  width: 100% !important;
+}
 
 .billing-details-container > div:nth-child(2) {
   grid-column-start: 1;
   grid-row-start: 1;
-  margin-top: 4px; }
+  margin-top: 4px;
+}
 
 .billing-details-container > div:nth-child(3) {
   grid-column-start: 2;
-  grid-row-start: 2; }
+  grid-row-start: 2;
+}
 
 .billing-details-container > div:nth-child(1) {
   grid-column-start: 1;
   grid-row-start: 2;
-  margin-top: 4px; }
+  margin-top: 4px;
+}
 
 .billing-details-container > div:nth-child(4) {
   grid-column-start: 2;
-  grid-row-start: 1; }
+  grid-row-start: 1;
+}
 
 .billing-details-container .guestCountryList,
 .billing-details-container .guestStateList {
-  margin-top: 4px; }
+  margin-top: 4px;
+}
 
 .security-code-exp-container {
   display: grid;
   grid-template-columns: 47% 47%;
   grid-template-rows: 100%;
-  grid-column-gap: 6%; }
+  grid-column-gap: 6%;
+}
 
 .ArnGuestNames table > tbody > tr {
   display: grid;
   grid-template-columns: 47% 47%;
   grid-template-rows: 100%;
-  grid-column-gap: 6%; }
+  grid-column-gap: 6%;
+}
 
 .credit-card-details {
   display: grid;
   grid-template-columns: 47% 47%;
   grid-template-rows: 50% 50%;
-  grid-column-gap: 6%; }
+  grid-column-gap: 6%;
+}
 
 #theCardExpirationFieldsAjax + div {
   grid-column-start: 1;
   grid-row-start: 1;
-  grid-column-end: 3; }
+  grid-column-end: 3;
+}
 
 #theCvvCode,
 #theCardExpirationFieldsAjax,
 #theCardExpirationFieldsAjax table {
-  width: 100%; }
+  width: 100%;
+}
 
 #theCardExpirationFieldsAjax table tr {
   display: grid;
   grid-template-columns: 47% 47%;
-  grid-column-gap: 6%; }
+  grid-column-gap: 6%;
+}
 
 #theCardVerificationAjax {
-  margin-right: 0; }
+  margin-right: 0;
+}
 
 #theGuestNameAjax .text,
 #theBookingPage .ArnGuestNames .text,
@@ -2410,10 +2910,12 @@ legend {
 .guestBillingAddress input,
 #theCreditCardNumberAjax input,
 #theCreditCardBillingName {
-  width: 100% !important; }
+  width: 100% !important;
+}
 
 #theMarketingOptInAjax .formField {
-  width: initial !important; }
+  width: initial !important;
+}
 
 #theMarketingOptInAjax label {
   display: inline;
@@ -2421,123 +2923,157 @@ legend {
   position: relative;
   top: -2px;
   left: 4px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .ErrorList,
 .errors {
-  border: 2px solid #ffdada; }
+  border: 2px solid #ffdada;
+}
 
 .Error,
 .error,
 .errors {
-  color: #ff6161; }
+  color: #ff6161;
+}
 
 .ErrorList ul,
 .errors ul {
-  list-style: none; }
+  list-style: none;
+}
 
 .FieldError {
-  border-color: #e0e0e0; }
+  border-color: #e0e0e0;
+}
 
 .HasError input {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-  border-color: #843534; }
+  border-color: #843534;
+}
 
 .confirmationWarning,
 #theMarketingOptInAjax {
-  display: flex; }
+  display: flex;
+}
 
 .confirmationWarning span,
 .confirmationAgreement span {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #theBookingPage #theRateSummaryInfo div {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .informMessage.WBConfirmedBookingMessage {
-  padding: 10px 70px; }
+  padding: 10px 70px;
+}
 
 .WBConfirmedBooking .dialog-buttons {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 .WBConfirmedBooking .dialog-buttons .dialog-button-ok input {
-  padding: 8px; }
+  padding: 8px;
+}
 
 .WBConfirmedBooking .dialog-button-cancel {
   margin: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 .WBConfirmedBooking .dialog-button-cancel a {
-  margin-top: 5px; }
+  margin-top: 5px;
+}
 
 .WBConfirmedBooking .informMessage .message,
 .WBConfirmedBooking .mailHeader {
-  display: none; }
+  display: none;
+}
 
 .theWBResendOrCancelForm {
-  max-width: 60vw; }
+  max-width: 60vw;
+}
 
 .theEmailAddressAjax input {
-  max-width: 50%; }
+  max-width: 50%;
+}
 
 .WBResendOrCancelFormActions input {
-  padding: 9px; }
+  padding: 9px;
+}
 
 @media screen and (max-width: 800px) {
   #theReservationFormContainer {
-    padding: 8px; }
+    padding: 8px;
+  }
   #theReservationFormContainer > table > tbody > tr {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+  }
   #theBookingPage fieldset {
-    margin-top: 36px; }
+    margin-top: 36px;
+  }
   fieldset#theCharges,
   fieldset#theHotel,
   #theHotel legend {
-    margin-top: 0; }
+    margin-top: 0;
+  }
   #theBookingPage .PaymentPolicies {
-    width: 100%; }
+    width: 100%;
+  }
   #theBookingPage .GuestForms {
     order: 1;
-    width: 100%; }
+    width: 100%;
+  }
   #theHotel img {
     margin: 0 auto 8px auto;
     display: block;
     border: 4px solid #fff;
     box-shadow: 0 1px 4px 0 #000;
-    max-width: 300px; }
+    max-width: 300px;
+  }
   #theBookingPage .ArnRateCalendar {
-    width: 100%; }
+    width: 100%;
+  }
   #theStayPolicies {
     width: 100%;
-    margin-left: 0; }
+    margin-left: 0;
+  }
   #theBookingPage legend#policies-legend {
     font-size: unset;
     text-decoration: underline;
     border-bottom: none;
-    cursor: pointer; }
+    cursor: pointer;
+  }
   #theBookingPage table {
     table-layout: fixed;
-    width: 100%; }
+    width: 100%;
+  }
   #theBookingPage td,
   #theBookingPage th {
-    word-wrap: break-word; }
+    word-wrap: break-word;
+  }
   #thePhoneNumberFieldsAjax table {
-    width: unset; }
+    width: unset;
+  }
   .guestCityZip tr {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+  }
   .guestCityZip .text,
   .countryList,
   .stateList {
-    width: 98% !important; }
+    width: 98% !important;
+  }
   #thePhoneNumberAjax input {
-    width: initial; } }
-
+    width: initial;
+  }
+}
 /* Single Prop IE CSS Hacks */
 @media all and (-ms-high-contrast: none) {
   .FormFields .text,
@@ -2551,26 +3087,31 @@ legend {
   .guestBillingAddress input,
   #theCreditCardNumberAjax input,
   #theCreditCardBillingName {
-    height: 32px; }
+    height: 32px;
+  }
   #theBookingPage .GuestForms {
-    margin: 0 6% 0 0; }
+    margin: 0 6% 0 0;
+  }
   .ArnSubPage .FormFields .checkbox {
-    width: 15px !important; } }
-
+    width: 15px !important;
+  }
+}
 /* Checkout End */
 /* Root Page Start */
 .RootBody .ArnNoResults,
 .RootBody .ArnRightListContainer,
 .RootBody #HotelNameContainer,
 .RootBody .ArnSearchHeader {
-  display: none; }
+  display: none;
+}
 
 #theCheckIn,
 #theCheckOut,
 #rooms,
 #adults {
   -webkit-appearance: none;
-  border-radius: 0; }
+  border-radius: 0;
+}
 
 /*.RootBody {
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('https://static.hotelsforhope.com/images/stock_photos/hamburg.jpg');
@@ -2580,110 +3121,138 @@ legend {
   color: #fff;
   text-transform: lowercase;
   font-weight: 500;
-  line-height: 1; }
+  line-height: 1;
+}
 
 .RootBody .ArnSearchContainerMainDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .RootBody .ArnPrimarySearchContainer {
   align-items: center;
   background: rgba(0, 0, 0, 0.6);
   border: none;
-  padding: 18px; }
+  padding: 18px;
+}
 
 .RootBody .ArnLeftSearchContainer {
-  width: 100%; }
+  width: 100%;
+}
 
 .RootBody #theSearchBox {
-  display: flex; }
+  display: flex;
+}
 
 .RootBody #theSubmitButton {
-  display: none; }
+  display: none;
+}
 
 .RootBody #theOtherSubmitButton {
-  max-width: 200px; }
+  max-width: 200px;
+}
 
 .RootBody input,
 .RootBody select {
   margin-bottom: 0;
   margin-top: 6px;
   height: 37px !important;
-  width: 100%; }
+  width: 100%;
+}
 
-.RootBody input[type='checkbox'] {
-  height: unset !important; }
+.RootBody input[type=checkbox] {
+  height: unset !important;
+}
 
 .RootBody .ArnSecondarySearchOuterContainer {
   color: #fff;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .RootBody .ArnAdvancedSearchImg {
-  display: none; }
+  display: none;
+}
 
 .RootBody .ArnRooms,
 .RootBody #CheckInContainer {
-  padding: 0 15px; }
+  padding: 0 15px;
+}
 
 .GroupHoldForm .ArnProperty {
-  max-width: 60vw; }
+  max-width: 60vw;
+}
 
 .GroupHoldForm .ArnContentButtonContainer {
-  display: none; }
+  display: none;
+}
 
 @media screen and (max-width: 920px) {
   #root-search-container {
-    margin: 0 12px; }
+    margin: 0 12px;
+  }
   .RootBody .ArnRooms,
   .RootBody #CheckInContainer {
-    padding: 0; }
+    padding: 0;
+  }
   .RootBody .ap-input-icon {
-    bottom: 4px; }
+    bottom: 4px;
+  }
   .RootBody .ArnPrimarySearchContainer {
-    flex-direction: column; }
+    flex-direction: column;
+  }
   .RootBody #theSearchBox {
     flex-direction: column;
-    width: 100%; }
+    width: 100%;
+  }
   .RootBody input,
   .RootBody select {
     width: 100%;
-    margin-bottom: 4px; }
+    margin-bottom: 4px;
+  }
   .RootBody .ArnStayTable {
-    width: 100%; }
+    width: 100%;
+  }
   .RootBody .ArnStayTable .ArnRooms,
   .RootBody .ArnStayTable .ArnAdults {
     display: block;
-    width: 100%; } }
-
+    width: 100%;
+  }
+}
 @media screen and (max-width: 600px) {
   .RootBody #AmentitiesContainer,
   .RootBody #PropertyClassesContainer,
   .RootBody #PropertyTypesContainer {
-    display: none; }
+    display: none;
+  }
   .RootBody #theOtherSubmitButton {
-    width: 100%; } }
-
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1105px) {
   .hideElement {
-    display: none !important; } }
-
+    display: none !important;
+  }
+}
 @media screen and (max-width: 375px) {
   body.RootBody {
     display: block !important;
-    background-size: auto; } }
-
+    background-size: auto;
+  }
+}
 /* Root Page End */
 /* Login and Registration Start */
 .WBLoginForm {
-  background: none !important; }
+  background: none !important;
+}
 
 .registrationText,
 #theWBValidatedRegistrationFormBody legend,
 #theReferredByAjax {
-  display: none; }
+  display: none;
+}
 
 body.RootBody,
 body.WBResendOrCancelForm,
@@ -2694,7 +3263,8 @@ body.HoldRoomsForm {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .RootBody .ArnSearchContainerMainDiv,
 .WBResendOrCancelForm,
@@ -2702,7 +3272,8 @@ body.HoldRoomsForm {
 .WBValidatedRegistrationFormContainer,
 .WBForgotPasswordFormContainer,
 .HoldRoomsForm .ArnSearchContainerMainDiv {
-  flex-grow: 1; }
+  flex-grow: 1;
+}
 
 .RootBody .ArnSearchContainerMainDiv,
 .WBResendOrCancelForm,
@@ -2710,7 +3281,8 @@ body.HoldRoomsForm {
 .WBValidatedRegistrationFormContainer,
 .WBForgotPasswordFormContainer,
 .HoldRoomsForm .ArnSearchContainerMainDiv {
-  width: 100%; }
+  width: 100%;
+}
 
 #theWBLoginFormBody,
 #theWBValidatedRegistrationFormBody,
@@ -2718,58 +3290,70 @@ body.HoldRoomsForm {
   margin: 10vh auto 0 auto;
   padding: 18px;
   width: 100%;
-  max-width: 400px; }
+  max-width: 400px;
+}
 
-#theWBLoginFormBody input[type='submit'],
-#theWBLoginFormBody input[type='text'],
-#theWBLoginFormBody input[type='password'] {
-  width: 100%; }
+#theWBLoginFormBody input[type=submit],
+#theWBLoginFormBody input[type=text],
+#theWBLoginFormBody input[type=password] {
+  width: 100%;
+}
 
 .WBLoginFormActions {
-  text-align: center; }
+  text-align: center;
+}
 
 .WBLoginFormActions .submit,
 .WBValidatedRegistrationFormActions .submit,
 .WBForgotPasswordFormActions .submit {
   margin: 18px 0;
   padding: 12px;
-  border: none; }
+  border: none;
+}
 
 .ForgotPasswordAction {
   text-decoration: none;
-  color: #333; }
+  color: #333;
+}
 
 .CancelAction {
   color: #333;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .redeem-promocode-container {
   border-top: 1px solid #ccc;
-  margin: 18px 0; }
+  margin: 18px 0;
+}
 
 .CreateAnAccountAction {
   display: inline-block;
   padding: 12px;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 #theWBValidatedRegistrationFormBody fieldset {
   border: none;
-  padding: 0; }
+  padding: 0;
+}
 
 #theWBValidatedRegistrationFormBody input,
 #theWBForgotPasswordFormBody input {
   display: block;
-  width: 100%; }
+  width: 100%;
+}
 
 .return-to-login {
   display: block;
   text-align: center;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 #theRememberMeAjax {
   line-height: 1;
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 /* Login and Registration End */
 /* Map Popup Start */
@@ -2779,19 +3363,22 @@ body.HoldRoomsForm {
 .arnMapPopup .original,
 .arnMapPopup .discount,
 .arnMapPopup .rebate {
-  display: none !important; }
+  display: none !important;
+}
 
 .leaflet-bar,
 .leaflet-bar a:first-child,
 .leaflet-bar a:last-child,
 .arnMapMarker {
-  border-radius: 0; }
+  border-radius: 0;
+}
 
 .arnMapPopup .imageContainer img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  object-position: center center; }
+  object-position: center center;
+}
 
 .arnMapPopup .rate {
   background: rgba(0, 0, 0, 0.7);
@@ -2800,36 +3387,44 @@ body.HoldRoomsForm {
   width: 100%;
   padding: 8px;
   font-size: 18px;
-  text-align: center; }
+  text-align: center;
+}
 
 .arnMapPopup label {
-  display: none; }
+  display: none;
+}
 
 .arnMapPopup h1 {
   color: #333;
   font-size: 14px;
   text-align: center;
   padding: 8px;
-  margin: 0; }
+  margin: 0;
+}
 
 .arnMapPopup a {
-  color: #333; }
+  color: #333;
+}
 
 .arnMapPopup .ArnTripAdvisorDetails.HasReviews {
-  text-align: center; }
+  text-align: center;
+}
 
 .arnMapPopup .ArnTripAdvisorDetails.HasReviews img {
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .leaflet-container .leaflet-marker-pane img {
   max-width: 50px !important;
   z-index: 8001 !important;
   border-radius: 50%;
-  display: block !important; }
+  display: block !important;
+}
 
 .discountPercent {
-  display: none; }
+  display: none;
+}
 
 @media screen and (max-width: 805px) {
   .arnClosePopupButton {
@@ -2840,117 +3435,146 @@ body.HoldRoomsForm {
     right: 0;
     cursor: pointer;
     z-index: 1;
-    padding: 3px 24px; }
+    padding: 3px 24px;
+  }
   #arnMapPopupMobile .imageContainer img {
     width: 300px !important;
     height: 235px !important;
-    margin: 42px auto 10px !important; }
+    margin: 42px auto 10px !important;
+  }
   .arnMapPopup .rate {
-    background: transparent; }
+    background: transparent;
+  }
   #arnMapPopupMobile {
     width: 50%;
     left: 20px;
     margin: auto;
-    z-index: 1001; }
+    z-index: 1001;
+  }
   #arnCloseAnchorId {
-    z-index: 9; } }
-
+    z-index: 9;
+  }
+}
 @media screen and (max-width: 600px) {
   #arnMapPopupMobile {
-    width: 90%; }
+    width: 90%;
+  }
   #arnMapPopupMobile .imageContainer img {
-    border-radius: 5px; } }
-
+    border-radius: 5px;
+  }
+}
 @media screen and (max-width: 350px) {
   #arnMapPopupMobile .imageContainer img {
     width: 250px !important;
-    height: 200px !important; } }
-
+    height: 200px !important;
+  }
+}
 @media screen and (max-width: 800px) {
   .hideElement {
-    display: none !important; }
+    display: none !important;
+  }
   #arnMapPopupMobile {
-    border-radius: 5px; } }
-
+    border-radius: 5px;
+  }
+}
 /* Map Popup End */
 /* Hold Room Page Start */
 .HoldRoomsForm .ArnShowRatesLink,
 .HoldRoomsForm .ArnReviewTab + a,
 .HoldRoomsForm .ArnContentButtonContainer,
 .GroupHoldForm .ArnShowRatesLink {
-  display: none; }
+  display: none;
+}
 
 .GroupHoldForm p.bookRoomButton:hover,
 .GroupHoldForm p.bookRoomButton {
   background: transparent;
-  border: none; }
+  border: none;
+}
 
 /* Hold Room Page End */
 /* Date Prompt Start */
 #theDatePrompt {
-  width: 500px; }
+  width: 500px;
+}
 
 #datePromptContainer {
   background: #fff;
-  text-align: center; }
+  text-align: center;
+}
 
 #datePromptContainer + .SimpleSearch {
   background: #fff !important;
   color: #333;
   border-radius: 0;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
 
 #datePromptContainer + .SimpleSearch table {
-  width: 70%; }
+  width: 70%;
+}
 
 #datePromptContainer + .SimpleSearch > table > tbody > tr {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 #datePromptContainer + .SimpleSearch #theQuickCheckIn,
 #datePromptContainer + .SimpleSearch #theQuickCheckOut {
-  width: 100%; }
+  width: 100%;
+}
 
 #datePromptContainer + .SimpleSearch .SearchActions,
 #datePromptContainer + .SimpleSearch .rowTwo {
-  display: none; }
+  display: none;
+}
 
 #datePromptContainer + .SimpleSearch .ArnAdults,
 #datePromptContainer + .SimpleSearch .ArnRooms {
   width: 100%;
-  margin: 0; }
+  margin: 0;
+}
 
 @media screen and (max-width: 600px) {
   #lightbox {
-    width: 100vw; }
+    width: 100vw;
+  }
   #theDatePrompt {
-    width: 100%; }
+    width: 100%;
+  }
   body.RootBody {
-    height: unset; } }
-
+    height: unset;
+  }
+}
 /* Date Prompt End */
 /* Confirmation Page Start */
 .FinalConfirmation .SuccessList {
-  display: none; }
+  display: none;
+}
 
 .FinalConfirmation .WBGuestFormConfirmed {
-  border: none !important; }
+  border: none !important;
+}
 
 .confirmation-messaging + hr {
   margin: 42px 0;
   border: none;
   height: 1px;
-  background: #ccc; }
+  background: #ccc;
+}
 
 @media screen and (max-width: 800px) {
   .confirmation-messaging {
-    margin-top: 42px; }
+    margin-top: 42px;
+  }
   #theBookingPage.ConfirmationPage .GuestForms {
-    margin-bottom: 42px; }
+    margin-bottom: 42px;
+  }
   #theBookingPage.ConfirmationPage #theAjaxPaymentPolicies {
-    order: 2; } }
-
+    order: 2;
+  }
+}
 /* Confirmation Page End */
 /* search-results page tags and sash start */
 span.exclusive-rate {
@@ -2960,12 +3584,14 @@ span.exclusive-rate {
   padding: 5px;
   margin: 5px;
   border: 1px solid #ccc;
-  z-index: 1; }
+  z-index: 1;
+}
 
 span#exclusive-event-rate {
   font-weight: 700;
   color: #111;
-  font-size: 15px; }
+  font-size: 15px;
+}
 
 div.custom-tag {
   position: absolute;
@@ -2975,34 +3601,40 @@ div.custom-tag {
   background: rgba(0, 0, 0, 0.64);
   color: #fff;
   text-align: center;
-  padding: 5px; }
+  padding: 5px;
+}
 
 /* autocomplete styles start */
 /* clears the 'X' from Internet Explorer */
-input[type='search']::-ms-clear {
+input[type=search]::-ms-clear {
   display: none;
   width: 0;
-  height: 0; }
+  height: 0;
+}
 
-input[type='search']::-ms-reveal {
+input[type=search]::-ms-reveal {
   display: none;
   width: 0;
-  height: 0; }
+  height: 0;
+}
 
 /* clears the 'X' from Chrome */
-input[type='search']::-webkit-search-decoration,
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-results-button,
-input[type='search']::-webkit-search-results-decoration {
-  display: none; }
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
 
 .SearchHotels #address-input {
   width: 100%;
-  margin: 7px 0; }
+  margin: 7px 0;
+}
 
 .RootBody input#city {
   position: absolute;
-  left: -10000px; }
+  left: -10000px;
+}
 
 /* autocomplete styles end */
 /* Image slideshow start */
@@ -3011,31 +3643,36 @@ input[type='search']::-webkit-search-results-decoration {
   position: relative;
   max-width: calc(100vw - 310px);
   overflow: hidden;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .carousel-slide {
   display: flex;
   transition: transform 0.8s ease-in-out;
-  max-width: 100vw; }
+  max-width: 100vw;
+}
 
 .image-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .image-number {
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  top: 0; }
+  top: 0;
+}
 
 .carousel-slide .image-wrapper img {
   width: 100vw;
   max-width: calc(100vw - 310px);
   height: 400px;
   object-fit: cover;
-  object-position: center center; }
+  object-position: center center;
+}
 
 #previousBtn,
 #nextBtn {
@@ -3048,139 +3685,174 @@ input[type='search']::-webkit-search-results-decoration {
   color: white;
   background-color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 #nextBtn {
-  right: 0; }
+  right: 0;
+}
 
 #previousBtn:hover,
 #nextBtn:hover {
   background-color: rgba(255, 255, 255, 0.8);
-  color: black;
-  transition: all 0.5s ease-out; }
+  color: rgb(0, 0, 0);
+  transition: all 0.5s ease-out;
+}
 
 @media screen and (max-width: 800px) {
   .carousel-container {
-    margin-bottom: 18px; }
+    margin-bottom: 18px;
+  }
   .carousel-container,
   .carousel-slide .image-wrapper img {
-    max-width: 691px; } }
-
+    max-width: 691px;
+  }
+}
 @media screen and (max-width: 700px) {
   .carousel-container,
   .carousel-slide .image-wrapper img {
     height: 200px;
-    max-width: 338px; } }
-
+    max-width: 338px;
+  }
+}
 @media screen and (max-width: 320px) {
   .carousel-container,
   .carousel-slide .image-wrapper img {
     height: 200px;
-    max-width: 310px; } }
-
+    max-width: 310px;
+  }
+}
 @media screen and (min-width: 1100px) {
   .carousel-container {
-    max-width: 800px; }
+    max-width: 800px;
+  }
   .carousel-slide .image-wrapper img {
-    max-width: 800px; } }
-
+    max-width: 800px;
+  }
+}
 /* Slideshow IE CSS Hacks */
 @media all and (-ms-high-contrast: none) {
   .image-wrapper {
-    display: inline-block; }
+    display: inline-block;
+  }
   .image-number {
     text-align: center;
-    width: 100%; } }
-
+    width: 100%;
+  }
+}
 /* Image slideshow end */
 /* LRG Start */
 .lowest-rate-link {
   order: 2;
   font-size: 13px;
   font-weight: normal;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .lowest-rate-link span {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .WBRateGuaranteeForm p,
 .WBRateGuaranteeForm > h1 {
-  display: none; }
+  display: none;
+}
 
 .eventRateGuarantee input {
-  width: 100%; }
+  width: 100%;
+}
 
 .eventRateGuarantee .row {
-  display: flex; }
+  display: flex;
+}
 
 .eventRateGuarantee .col-md-6 {
-  width: 100%; }
+  width: 100%;
+}
 
 .eventRateGuarantee p {
-  display: block; }
+  display: block;
+}
 
 .eventRateGuarantee h1 {
   color: #7ccd4f;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .eventRateGuarantee h2 {
   color: #5b5c5b;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .eventRateGuarantee p,
 .eventRateGuarantee li {
   font-weight: 400;
-  line-height: 1.4; }
+  line-height: 1.4;
+}
 
 .eventRateGuarantee li {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 .eventRateGuarantee li:before {
-  content: '- '; }
+  content: "- ";
+}
 
 .st0 {
-  fill: #79cf46; }
+  fill: #79cf46;
+}
 
 .st1 {
-  fill: #73c140; }
+  fill: #73c140;
+}
 
 .st2 {
-  fill: #ffffff; }
+  fill: #ffffff;
+}
 
 .st3 {
-  fill: #898989; }
+  fill: #898989;
+}
 
 .st4 {
-  fill: #6e6e6e; }
+  fill: #6e6e6e;
+}
 
 .st5 {
-  fill: #aeaeae; }
+  fill: #aeaeae;
+}
 
 @media screen and (max-width: 800px) {
   .eventRateGuarantee .row .hidden-sm {
-    display: none; } }
-
+    display: none;
+  }
+}
 /* social share buttons start */
 .social-share-buttons-container iframe {
-  margin: 10px; }
+  margin: 10px;
+}
 
 /* LRG End */
 /* GDPR Message IE CSS Hack */
 @media all and (-ms-high-contrast: none) {
   .iubenda-cs-default#iubenda-cs-banner .iubenda-cs-rationale {
-    height: 225px !important; } }
-
+    height: 225px !important;
+  }
+}
 /* Debounce */
 #theEmailAddressAjax {
-  position: relative; }
+  position: relative;
+}
 
 .tc-result {
-  top: 26px !important; }
+  top: 26px !important;
+}
 
 .invalidated {
   /* background-color: #f2adade5; */
   border: 1px solid red !important;
-  outline: none; }
+  outline: none;
+}
 
 /* Ads */
 .sidebar-ad img {
@@ -3188,67 +3860,83 @@ input[type='search']::-webkit-search-results-decoration {
   max-width: 185px;
   display: block;
   margin-top: 24px;
-  margin-left: 8px; }
+  margin-left: 8px;
+}
 
 .between-property-ad img {
   width: 100%;
   max-width: 800px;
   max-height: 200px;
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .confirmation-bottom-ad img {
   margin-top: 36px;
   display: block;
-  width: 100%; }
+  width: 100%;
+}
 
 /*  Hold Rooms */
 .HoldRoomsForm .ArnBodyWithSearchPages {
-  margin: auto; }
+  margin: auto;
+}
 
 .HoldRoomsForm .ArnSecondarySearchOuterContainer {
-  display: none; }
+  display: none;
+}
 
 .HoldRoomsForm .ArnProperty {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 900px; }
+  max-width: 900px;
+}
 
 #roomHoldForm input.text {
-  margin: 0 6px 6px 0; }
+  margin: 0 6px 6px 0;
+}
 
 #roomHoldForm table tr {
-  display: flex; }
+  display: flex;
+}
 
 #roomHoldForm table td {
   margin-right: 14px;
-  text-align: center; }
+  text-align: center;
+}
 
 #roomHoldForm table td select {
-  width: 75px; }
+  width: 75px;
+}
 
 .HoldRoomsForm .ArnPropClass {
-  display: none; }
+  display: none;
+}
 
 .HoldRoomsForm .ArnContainer .ArnTripAdvisorDetails.HasReviews {
-  position: static; }
+  position: static;
+}
 
 @media screen and (max-width: 1105px) {
   .HoldRoomsForm .ArnBodyWithSearchPages {
-    margin-top: 48px; } }
-
+    margin-top: 48px;
+  }
+}
 @media screen and (max-width: 1140px) {
   .HoldRoomsForm #Properties {
     display: block;
-    padding: 0 18px; } }
-
+    padding: 0 18px;
+  }
+}
 @media screen and (max-width: 600px) {
   .HoldRoomsForm .ArnProperty {
-    align-items: center; }
+    align-items: center;
+  }
   .HoldRoomsForm .ArnContainer {
-    width: 100%; } }
-
+    width: 100%;
+  }
+}
 /* Hold Rooms End */
 /* Percent Savings Start */
 .percentSavings {
@@ -3257,23 +3945,27 @@ input[type='search']::-webkit-search-results-decoration {
   text-transform: uppercase;
   font-weight: 700;
   display: none;
-  font-size: 1rem; }
+  font-size: 1rem;
+}
 
 .SinglePropDetail .percentSavings {
-  text-align: center; }
+  text-align: center;
+}
 
 @media screen and (max-width: 600px) {
   .ArnRateButton {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; } }
-
+    justify-content: space-between;
+  }
+}
 /* Percent Savings End */
 /* Pagination Start */
 #batch {
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 .ArnPages a,
 .active-page {
@@ -3282,7 +3974,8 @@ input[type='search']::-webkit-search-results-decoration {
   font-size: 1em;
   margin: 2px 6px;
   font-weight: bold;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* Pagination End */
 /* Stay 22 header button start */
@@ -3291,33 +3984,39 @@ input[type='search']::-webkit-search-results-decoration {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-  padding: 0.75rem; }
+  padding: 0.75rem;
+}
 
 .banner-content {
   display: flex;
   align-items: center;
-  width: 80%; }
+  width: 80%;
+}
 
 .banner-content a {
   max-width: 130px;
   width: 100%;
-  margin-left: 40px; }
+  margin-left: 40px;
+}
 
 .banner-content img {
   width: 100%;
-  filter: brightness(0) invert(1); }
+  filter: brightness(0) invert(1);
+}
 
 .banner-content span {
   color: #fff;
   font-size: 20px;
   margin-left: 30px;
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 .custom-button {
   background: #fff;
   display: flex;
   margin-right: 50px;
-  text-align: center; }
+  text-align: center;
+}
 
 .custom-button a {
   text-decoration: none;
@@ -3328,45 +4027,57 @@ input[type='search']::-webkit-search-results-decoration {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 12px; }
+  padding: 4px 12px;
+}
 
 .custom-button a:hover {
-  color: #000; }
+  color: #000;
+}
 
 @media screen and (max-width: 1080px) {
   .banner-content {
     display: flex;
     align-items: center;
-    width: 60%; }
+    width: 60%;
+  }
   .banner-content span {
     color: #fff;
     font-size: 16px;
     margin-left: 30px;
-    font-weight: 600; } }
-
+    font-weight: 600;
+  }
+}
 @media screen and (max-width: 960px) {
   .stay-22-banner {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+  }
   .banner-content span {
-    display: none; }
+    display: none;
+  }
   .banner-content a {
-    margin-left: 0; }
+    margin-left: 0;
+  }
   .custom-button {
-    margin-right: 10px; } }
-
+    margin-right: 10px;
+  }
+}
 @media screen and (max-width: 400px) {
   .stay-22-banner {
-    flex-direction: column; }
+    flex-direction: column;
+  }
   .banner-content {
-    justify-content: center; }
+    justify-content: center;
+  }
   .banner-content a {
-    margin-left: 0; }
+    margin-left: 0;
+  }
   .custom-button {
     margin-right: 0;
-    margin-top: 8px; } }
-
+    margin-top: 8px;
+  }
+}
 /* Stay 22 header button end */
 /* - - - - Covid-19 banner start - - - -  */
 .info-banner {
@@ -3380,34 +4091,40 @@ input[type='search']::-webkit-search-results-decoration {
   padding: 10px;
   font-family: inherit;
   position: relative;
-  z-index: 4; }
+  z-index: 4;
+}
 
 .message-content {
   display: flex;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+}
 
 .message-content h1 {
   font-size: 20px;
   font-weight: 700;
   color: #fff;
-  margin: 0px; }
+  margin: 0px;
+}
 
 .details-link {
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 .details-link svg {
   width: 18px;
   margin-left: 5px;
-  color: #fff; }
+  color: #fff;
+}
 
 .message-content .details-link h1 {
   text-decoration: underline;
   color: #fff;
   font-size: 20px;
   margin: 0 0 0 5px;
-  font-weight: 400; }
+  font-weight: 400;
+}
 
 .info-banner .close-alert {
   color: #fff;
@@ -3416,55 +4133,63 @@ input[type='search']::-webkit-search-results-decoration {
   background-color: #1a1a1a;
   margin: 8px;
   font-weight: 700;
-  font-size: 22px; }
+  font-size: 22px;
+}
 
 @media screen and (max-width: 600px) {
   .info-banner,
   .info-banner .message-content {
-    flex-direction: column; }
+    flex-direction: column;
+  }
   .info-banner .close-alert {
     position: absolute;
     top: 0;
-    right: 0; } }
-
+    right: 0;
+  }
+}
 /* - - - - Covid-19 banner end - - - -  */
 /* ----- CSS STYLES END -----*/
 /* ----- SASS STYLES START -----*/
 #theDatePrompt #datePromptContainer {
-  padding: 20px 0; }
-  #theDatePrompt #datePromptContainer img {
-    width: 50%; }
-
+  padding: 20px 0;
+}
+#theDatePrompt #datePromptContainer img {
+  width: 50%;
+}
 #theDatePrompt td.CheckIn,
 #theDatePrompt td.CheckOut,
 #theDatePrompt td.ArnRooms,
 #theDatePrompt td.ArnAdults {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; }
-  #theDatePrompt td.CheckIn input,
-  #theDatePrompt td.CheckIn select,
-  #theDatePrompt td.CheckOut input,
-  #theDatePrompt td.CheckOut select,
-  #theDatePrompt td.ArnRooms input,
-  #theDatePrompt td.ArnRooms select,
-  #theDatePrompt td.ArnAdults input,
-  #theDatePrompt td.ArnAdults select {
-    border: 1px solid #ccc; }
-
+  align-items: flex-start;
+}
+#theDatePrompt td.CheckIn input,
+#theDatePrompt td.CheckIn select,
+#theDatePrompt td.CheckOut input,
+#theDatePrompt td.CheckOut select,
+#theDatePrompt td.ArnRooms input,
+#theDatePrompt td.ArnRooms select,
+#theDatePrompt td.ArnAdults input,
+#theDatePrompt td.ArnAdults select {
+  border: 1px solid #ccc;
+}
 #theDatePrompt .ArnChildren,
 #theDatePrompt .ArnAdults br {
-  display: none; }
-
+  display: none;
+}
 #theDatePrompt .CheckRates {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 #lightbox {
   top: 0 !important;
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 .MemberAuthenticated.SearchHotels .leaflet-container .leaflet-marker-pane img {
-  display: none !important; }
+  display: none !important;
+}
 
 .SearchHotels .originalPrice,
 .SinglePropDetail .originalPrice {
@@ -3472,18 +4197,22 @@ input[type='search']::-webkit-search-results-decoration {
   font-size: 15px;
   font-weight: 500;
   color: #666;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .SearchHotels .originalPrice {
   display: inline;
-  margin-right: 5px; }
+  margin-right: 5px;
+}
 
 .SinglePropDetail .originalPrice {
   display: block;
-  padding: 0; }
+  padding: 0;
+}
 
 .tooltip-wrapper {
-  position: relative; }
+  position: relative;
+}
 
 .tooltip:hover span {
   opacity: 1;
@@ -3494,10 +4223,11 @@ input[type='search']::-webkit-search-results-decoration {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+}
 
 .tooltip-wrapper > span b {
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
   font-size: 11px;
   width: 14px;
   height: 14px;
@@ -3506,7 +4236,8 @@ input[type='search']::-webkit-search-results-decoration {
   border-radius: 100%;
   display: inline-block;
   position: relative;
-  top: -4px; }
+  top: -4px;
+}
 
 .tooltip span {
   background: none repeat scroll 0 0 #fff;
@@ -3528,40 +4259,46 @@ input[type='search']::-webkit-search-results-decoration {
   transition: all 0.3s ease-in-out;
   pointer-events: none;
   box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
-  font-family: 'Avenir', 'Helvetica';
-  font-size: 12px; }
+  font-family: "Avenir", "Helvetica";
+  font-size: 12px;
+}
 
 .tooltip span:after {
   border-color: #fff rgba(0, 0, 0, 0);
   border-style: solid;
   border-width: 15px 15px 0;
   bottom: -15px;
-  content: '';
+  content: "";
   display: block;
   left: 31px;
   position: absolute;
-  width: 0; }
+  width: 0;
+}
 
 .contact-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 100; }
-  .contact-float a {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: thick double #fff; }
-    .contact-float a:hover {
-      text-decoration: underline; }
-  .contact-float img {
-    width: 75%; }
+  z-index: 100;
+}
+.contact-float a {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: thick double #fff;
+}
+.contact-float a:hover {
+  text-decoration: underline;
+}
+.contact-float img {
+  width: 75%;
+}
 
 @media screen and (max-width: 1100px) {
   .contact-float {
@@ -3569,9 +4306,12 @@ input[type='search']::-webkit-search-results-decoration {
     bottom: 220px;
     right: -55px;
     z-index: 100;
-    transform: rotate(270deg); }
-    .contact-float a {
-      position: relative;
-      width: 150px;
-      height: 50px;
-      border-radius: unset; } }
+    transform: rotate(270deg);
+  }
+  .contact-float a {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    border-radius: unset;
+  }
+}

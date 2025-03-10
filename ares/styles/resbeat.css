@@ -22,7 +22,7 @@
 .WBValidatedRegistrationForm #theLastNameAjax input,
 .WBValidatedRegistrationForm #theEditablePasswordAjax input,
 .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
-input[type='email'].email-mask,
+input[type=email].email-mask,
 .WBLoginFormFields input, .return-to-login,
 .CancelAction,
 #theRememberMeAjax label, .RootBody .ArnSecondarySearchOuterContainer, .ArnSubPage h1, .RootBody .search-messaging #user-name, .RootBody .search-messaging, .SearchHotels .ArnPrimarySearchContainer, .support-details, .WBSupportForm input,
@@ -33,7 +33,8 @@ input[type='email'].email-mask,
 .SearchHotels .sort-wrapper h4, .SearchHotels .ArnContainer, .sort-filter-header h3,
 .mobile-filter-container h4,
 .mobile-sort-container .sort-wrapper h4, #lightbox .window-titlebar a, #lightbox .window-close a, #lightbox, #standardAvail legend, .ArnRateList .ArnRateCancelAnchor, .ArnRateList .RateCalendarPopupAnchor, .SearchHotels .lblPropertyType, .SearchHotels #PropertyTypesContainer span, .WBConfirmedBooking .informMessage, .emailWarningHeading {
-  color: #666 !important; }
+  color: #666 !important;
+}
 
 .WBSupportForm .ArnSupportChatTable td p:first-of-type,
 .WBSupportForm .ArnSupportChatTable td div + p + p, .WBSupportForm .SSForm .FormFields label, .useCancelFormWarning, .static-rewardsLink,
@@ -44,10 +45,12 @@ input[type='email'].email-mask,
 .MemberNotAuthenticated #thePasswordAjax label, .organizationsCommand, .MemberNotAuthenticated .redeem-promocode-container, .WBValidatedRegistrationForm #thePersonalInfoGroup label,
 #availableUser, .RootBody h1,
 .RootBody h3, .SearchHotels .ArnPropClass, .SearchHotels .arnUnit + div, .full-stay, .ConfirmationForm .supportInfo {
-  display: none !important; }
+  display: none !important;
+}
 
 .WBValidatedRegistrationForm #thePassCodeAjax {
-  display: none; }
+  display: none;
+}
 
 .WBLoginFormActions input,
 #register-btn a,
@@ -64,41 +67,50 @@ input[type='email'].email-mask,
   transition-property: color, background;
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .MemberNotAuthenticated .errorList.Login.Failed {
-  padding: 0 10px; }
+  padding: 0 10px;
+}
 
 .logo img {
   width: 100%;
   padding: 0;
-  margin: 12px; }
+  margin: 12px;
+}
 
 .config-container {
-  padding: 5px 10px 0 0 !important; }
+  padding: 5px 10px 0 0 !important;
+}
 
 .config-label {
-  background: #fff; }
+  background: #fff;
+}
 
 #theSubmitButton,
 #theOtherSubmitButton,
 .SinglePropDetail .CheckRates .submit,
 .CheckOutForm #theConfirmationButton, .WBConfirmedBooking .submit, .WBResendOrCancelFormActions input {
   border-radius: 40px;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 .total-points-earned th,
 .total-points-earned td,
 .discount th,
 .discount td, .ConfirmationForm .beat-em-value {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .SinglePropDetail .points-applied {
   display: block;
-  margin-bottom: 12px; }
+  margin-bottom: 12px;
+}
 
 .WBValidatedRegistrationFormActions input {
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 .WBValidatedRegistrationForm #thePassCodeAjax input,
 .WBValidatedRegistrationForm #theUserNameAjax input,
@@ -106,63 +118,77 @@ input[type='email'].email-mask,
 .WBValidatedRegistrationForm #theLastNameAjax input,
 .WBValidatedRegistrationForm #theEditablePasswordAjax input,
 .WBValidatedRegistrationForm #theEditableConfirmPasswordAjax input,
-input[type='email'].email-mask,
+input[type=email].email-mask,
 .WBLoginFormFields input {
   border: unset !important;
   font-weight: 200;
-  padding: 12px !important; }
+  padding: 12px !important;
+}
 
 .WBValidatedRegistrationForm .WBValidatedRegistrationFormActions input {
   font-weight: 200;
   padding: 12px;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .return-to-login,
 .CancelAction,
 #theRememberMeAjax label {
-  font-weight: 100; }
+  font-weight: 100;
+}
 
 #commands,
 #commands .logoutCommand {
   font-size: 14px;
-  outline: none; }
+  outline: none;
+}
 
 .ArnSubPage h1 {
   font-size: 30px;
-  font-weight: 100; }
+  font-weight: 100;
+}
 
 .WBForgotPasswordFormActions {
-  text-align: center; }
+  text-align: center;
+}
 
 .RootBody #PropertyTypesContainer {
-  display: block !important; }
+  display: block !important;
+}
 
 .RootBody .ArnSecondarySearchOuterContainer span {
-  margin-top: 6px; }
+  margin-top: 6px;
+}
 
 .RootBody .search-messaging {
-  display: block; }
+  display: block;
+}
 
 .RootBody .search-messaging #user-name {
   display: block !important;
   font-weight: 200;
-  font-size: 36px; }
+  font-size: 36px;
+}
 
 .RootBody .search-messaging #user-name strong {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .RootBody .search-messaging {
   text-align: center;
-  margin-top: 40px; }
+  margin-top: 40px;
+}
 
 .RootBody .search-messaging h4 {
   font-weight: 200;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 .RootBody .lblAmenities,
 .RootBody .lblRating,
 .RootBody .lblPropertyType {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .SearchHotels .beat-em {
   text-align: center;
@@ -170,7 +196,8 @@ input[type='email'].email-mask,
   margin-left: auto;
   border-radius: 20px 15px 0px 20px;
   width: 100%;
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 .SinglePropDetail .beat-em {
   text-align: center;
@@ -178,32 +205,39 @@ input[type='email'].email-mask,
   margin-bottom: 10px;
   border-radius: 20px 20px 20px 20px;
   width: 100%;
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 .ArnRateButton {
   width: 100%;
   max-width: 140px !important;
-  background: transparent; }
+  background: transparent;
+}
 
 .SearchHotels .ArnRateButton {
   align-self: center;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+}
 
 .SearchHotels .ArnRateCell {
-  text-align: center; }
+  text-align: center;
+}
 
 .SearchHotels .ArnPriceCell:first-child {
-  padding-top: 40px; }
+  padding-top: 40px;
+}
 
 .SearchHotels .ArnLimitedAvail {
-  margin-top: 20px; }
+  margin-top: 20px;
+}
 
 a.ArnShowRatesLink,
 .bookRoom,
 .holdRoom {
   border-radius: 40px;
   background: transparent !important;
-  padding: 6px 10px; }
+  padding: 6px 10px;
+}
 
 .LoginAction.submit,
 #register-btn a,
@@ -212,53 +246,66 @@ a.ArnShowRatesLink,
 #moreRatesLink,
 .WBSupportForm .SendRequestAction {
   border-radius: 40px;
-  padding: 12px; }
+  padding: 12px;
+}
 
 .SearchHotels .ArnPropName {
-  padding: 22px 23px; }
+  padding: 22px 23px;
+}
 
 .SearchHotels .ArnPropThumb {
-  border-radius: 15px 0 0 15px; }
+  border-radius: 15px 0 0 15px;
+}
 
 .SearchHotels .ArnContainer .ArnTripAdvisorDetails.HasReviews {
   bottom: 40px;
-  left: 20px; }
+  left: 20px;
+}
 
 .SearchHotels .originalPrice,
 .SinglePropDetail .originalPrice {
   display: block !important;
   text-decoration: line-through;
   font-size: 15px;
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 .SearchHotels .ArnPrimarySearchOuterContainer {
-  margin-top: 13px; }
+  margin-top: 13px;
+}
 
 .ArnPropNameLink span {
   font-size: 14px;
-  font-weight: 800; }
+  font-weight: 800;
+}
 
 .ratingCount {
   padding: 4px !important;
-  border-radius: 20px; }
+  border-radius: 20px;
+}
 
 .reviewCount {
-  align-self: center; }
+  align-self: center;
+}
 
 .CheckOutForm .originalPrice {
   display: block !important;
   text-decoration: line-through;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .SinglePropDetail .originalPrice {
-  font-size: 15px; }
+  font-size: 15px;
+}
 
 #theBookingPage legend {
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 .SinglePropDetail #moreRatesLink {
   width: 200px;
-  height: 35px; }
+  height: 35px;
+}
 
 .SinglePropDetail .points-earned {
   font-size: 15px;
@@ -267,7 +314,8 @@ a.ArnShowRatesLink,
   padding: 7px 0;
   position: absolute;
   bottom: 42px;
-  border-radius: 40px; }
+  border-radius: 40px;
+}
 
 .ConfirmationForm .points-earned {
   width: 100%;
@@ -275,21 +323,25 @@ a.ArnShowRatesLink,
   flex-direction: column;
   align-content: center;
   padding: 18px;
-  margin-top: 48px; }
+  margin-top: 48px;
+}
 
 .ConfirmationForm .rewards-span {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .ConfirmationForm .awarded-after-checkout {
-  margin: 20px 0 0 0; }
+  margin: 20px 0 0 0;
+}
 
 .ConfirmationForm .beat-em-value {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 18px;
-  margin-top: 12px; }
+  margin-top: 12px;
+}
 
 .MemberNotAuthenticated #thePassCodeAjax input,
 .MemberNotAuthenticated #theUserNameAjax input,
@@ -297,40 +349,48 @@ a.ArnShowRatesLink,
 .MemberNotAuthenticated #new-user-text,
 .MemberNotAuthenticated #theWBLoginFormBody h1,
 .MemberNotAuthenticated .ForgotPasswordAction {
-  font-weight: 100; }
+  font-weight: 100;
+}
 
 #lightbox {
   text-align: center;
   color: #666;
   padding: 20px;
-  border-radius: 15px; }
+  border-radius: 15px;
+}
 
 #lightbox .WBChangePasswordFormActions {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 #lightbox .WBChangePasswordFormActions .ChangePasswordAction {
   width: 50%;
   margin: 10px auto;
   border-radius: 40px;
   padding: 6px;
-  background: transparent; }
+  background: transparent;
+}
 
 #lightbox .WBChangePasswordFormActions .ChangePasswordAction:hover {
   transition-property: color, background;
   transition-duration: 0.8s;
-  transition-timing-function: ease-in-out; }
+  transition-timing-function: ease-in-out;
+}
 
-#lightbox .WBChangePasswordFormFields input[type='password'] {
+#lightbox .WBChangePasswordFormFields input[type=password] {
   border: unset;
-  width: 60%; }
+  width: 60%;
+}
 
 #lightbox .CancelAction {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 #lightbox .window {
   padding: 10px;
-  text-align: center; }
+  text-align: center;
+}
 
 #lightbox .dialog-button-ok input {
   margin-top: 10px;
@@ -339,31 +399,38 @@ a.ArnShowRatesLink,
   width: 40%;
   background: transparent;
   font-weight: 700;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .ArnSupportLinks {
   font-weight: 100;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
 .MemberNotAuthenticated #theUserNameAjax input,
 .MemberNotAuthenticated #thePasswordAjax input {
   border: unset;
   width: 100%;
-  padding: 12px !important; }
+  padding: 12px !important;
+}
 
 .MemberNotAuthenticated #new-user-text strong,
 .MemberNotAuthenticated #theWBLoginFormBody strong {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .MemberNotAuthenticated #new-user-text {
   font-size: 30px;
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
 .MemberNotAuthenticated .CreateAnAccountAction {
-  width: 100%; }
+  width: 100%;
+}
 
 .MemberNotAuthenticated #register-btn {
-  text-align: center; }
+  text-align: center;
+}
 
 .MemberNotAuthenticated .LoginAction,
 .SendMeNewPasswordAction.submit,
@@ -374,70 +441,87 @@ a.ArnShowRatesLink,
 .GuestForms legend,
 .WBSupportFormActions .SendRequestAction {
   outline: none;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 .MemberNotAuthenticated .WBLoginFormActions {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .message-content h1 {
-  display: block !important; }
+  display: block !important;
+}
 
 .ArnSearchHeader, .SinglePropDetail .ArnLeftListContainer > span.translateMe {
   font-weight: 200;
-  font-size: 22px; }
+  font-size: 22px;
+}
 
 .mobile-sort-container .sort-wrapper h4 {
   font-weight: 700;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .SearchHotels .lblAmenities,
 .SearchHotels .lblRating,
 .SearchHotels .lblPropertyType,
 .SearchHotels .sort-wrapper h4 {
   font-weight: 100;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 .SearchHotels .ArnContainer {
-  border-radius: 15px; }
+  border-radius: 15px;
+}
 
 .SearchHotels .prop-hr {
   visibility: hidden;
-  margin: 10px 0; }
+  margin: 10px 0;
+}
 
 .SearchHotels #thePropertyAmenities legend {
   -webkit-appearance: none;
-  -webkit-margin-top-collapse: separate; }
+  -webkit-margin-top-collapse: separate;
+}
 
 .arnMapPopup a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .hr {
   border: none;
   height: 1px;
-  background: #ccc; }
+  background: #ccc;
+}
 
 .CheckOutForm #theConfirmationPoliciesAjax {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .CheckOutForm .theHotelAddress {
   display: block;
-  text-align: left; }
+  text-align: left;
+}
 
 #theBookingPage .PaymentPolicies {
-  border: none; }
+  border: none;
+}
 
 .ArnSubPage.WBSupportForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 96px; }
+  grid-column-gap: 96px;
+}
 
 .WBSupportForm .FormFields {
-  margin-top: 6px; }
+  margin-top: 6px;
+}
 
 .WBSupportForm .SSForm {
   grid-column-start: 1;
-  grid-row-start: 2; }
+  grid-row-start: 2;
+}
 
 .WBSupportForm input,
 .WBSupportForm select,
@@ -447,176 +531,226 @@ a.ArnShowRatesLink,
   padding: 12px !important;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   border-color: ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  outline: 0; }
+  outline: 0;
+}
 
 .WBSupportForm .ArnSupportChatTable {
   grid-column-start: 2;
-  grid-row-start: 2; }
+  grid-row-start: 2;
+}
 
 .support-details {
   padding: 30px;
-  line-height: 1.7; }
+  line-height: 1.7;
+}
 
 .support-details h3 {
   font-size: 18px;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 .support-details a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .support-details p {
-  margin: 0; }
+  margin: 0;
+}
 
 .support-details p:last-child {
-  margin-top: 18px; }
+  margin-top: 18px;
+}
 
 #theHotelAddress {
   display: block !important;
-  text-align: left !important; }
+  text-align: left !important;
+}
 
 #AdminControlsContainer {
   justify-content: flex-end;
-  padding: 12px; }
+  padding: 12px;
+}
 
 body.WBSupportForm {
   display: flex;
   min-height: 100vh;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .ArnSubPage.WBSupportForm {
-  flex-grow: 1; }
+  flex-grow: 1;
+}
 
 @media screen and (max-width: 1200px) {
   .ArnSubPage {
-    padding: 12px; } }
-
+    padding: 12px;
+  }
+}
 @media screen and (min-width: 900px) {
   .RootBody .ArnPrimarySearchContainer {
     max-width: 800px;
-    min-width: 700px; }
+    min-width: 700px;
+  }
   .RootBody #CitySearchContainer {
-    width: 30vw; } }
-
+    width: 30vw;
+  }
+}
 @media screen and (max-width: 900px) {
   .RootBody #PropertyTypesContainer {
-    display: none !important; } }
-
+    display: none !important;
+  }
+}
 @media screen and (max-width: 800px) {
   .SearchHotels .ArnSecondarySearchOuterContainer hr:first-child {
-    display: block; }
+    display: block;
+  }
   .mobile-filter-container h4 {
-    display: none; }
+    display: none;
+  }
   .ArnSubPage.WBSupportForm {
-    grid-template-columns: 1fr; }
+    grid-template-columns: 1fr;
+  }
   .WBSupportForm .SSForm {
     grid-row-start: 3;
     grid-column-start: 1;
-    width: 100%; }
+    width: 100%;
+  }
   .WBSupportForm .ArnSupportChatTable {
     grid-row-start: 2;
     grid-column-start: 1;
     width: 100%;
-    margin-bottom: 24px; }
+    margin-bottom: 24px;
+  }
   .support-details {
-    padding: 18px; }
+    padding: 18px;
+  }
   .RootBody .ArnPrimarySearchContainer #AmentitiesContainer,
   .RootBody .ArnPrimarySearchContainer #PropertyClassesContainer,
   .RootBody .ArnPrimarySearchContainer #PropertyTypesContainer {
-    display: none !important; }
+    display: none !important;
+  }
   .SearchHotels .ArnPrimarySearchOuterContainer {
-    margin-top: 0px !important; }
+    margin-top: 0px !important;
+  }
   .RootBody #theOtherSubmitButton {
     width: 100%;
-    max-width: none; }
+    max-width: none;
+  }
   .currencies-container {
     margin: 4px auto;
-    padding: 6px; }
+    padding: 6px;
+  }
   .currencies-container #currency-label {
     color: #666;
     border-bottom: unset;
     justify-content: space-between;
     margin: unset;
-    width: 100%; }
+    width: 100%;
+  }
   .config-label .arrow {
-    margin-right: 10px; }
+    margin-right: 10px;
+  }
   .RootBody .currency {
     display: block;
-    width: 100%; }
+    width: 100%;
+  }
   .RootBody #language {
-    order: 2; }
+    order: 2;
+  }
   .RootBody .dropdown {
     width: 100%;
     grid-template-columns: 50% 50%;
     z-index: 400;
     position: unset;
-    margin: auto; }
+    margin: auto;
+  }
   .SearchHotels .currencies-container {
     position: relative;
-    z-index: 8; }
+    z-index: 8;
+  }
   .SearchHotels .currencies-container #currency-label {
-    margin: 0 0 0 10px; }
+    margin: 0 0 0 10px;
+  }
   .SearchHotels .dropdown {
     margin: 2% 2%;
-    grid-template-columns: 50% 50%; }
+    grid-template-columns: 50% 50%;
+  }
   .SinglePropDetail .points-earned {
     width: unset;
     background: unset;
     color: #666;
     top: 120px;
-    left: 9px; } }
-
+    left: 9px;
+  }
+}
 @media screen and (max-width: 600px) {
   .ArnSubPage {
-    padding: 0px; }
+    padding: 0px;
+  }
   #theWBLoginFormBody, #theWBValidatedRegistrationFormBody {
-    margin: 0 auto; }
+    margin: 0 auto;
+  }
   .MemberNotAuthenticated header {
-    display: unset; }
+    display: unset;
+  }
   .MemberNotAuthenticated .info-banner {
-    display: unset; }
+    display: unset;
+  }
   .SearchHotels .ArnPropName {
-    padding: 22px 15px; }
+    padding: 22px 15px;
+  }
   .SearchHotels .ArnPropAddress {
-    display: block !important; }
+    display: block !important;
+  }
   .SearchHotels .ArnRateCell {
-    width: 100%; }
+    width: 100%;
+  }
   .SearchHotels .ArnPrimarySearchOuterContainer {
-    margin-top: 0px !important; }
+    margin-top: 0px !important;
+  }
   .SearchHotels .ArnPriceCell {
     align-self: end;
-    margin-left: 15px; }
+    margin-left: 15px;
+  }
   .SearchHotels .ArnRateButton {
-    margin-right: 15px; }
+    margin-right: 15px;
+  }
   .SearchHotels div.beat-em {
     position: absolute;
     z-index: 1;
     width: 50%;
     right: -2px;
-    top: -1px; }
+    top: -1px;
+  }
   .SinglePropDetail .beat-em {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-column: 2/3;
+    grid-row: 1/2;
     max-width: 150px;
     width: 100%;
     align-self: flex-end;
-    justify-self: flex-end; }
+    justify-self: flex-end;
+  }
   .SinglePropDetail .bookRoom {
-    grid-row: 2 / 3;
+    grid-row: 2/3;
     max-width: 150px;
     align-self: flex-end;
     justify-self: flex-end;
-    margin: 0 0 10px 0; }
+    margin: 0 0 10px 0;
+  }
   .SinglePropDetail .ArnNightlyRate {
-    grid-row: 2 / 3; }
+    grid-row: 2/3;
+  }
   .SinglePropDetail .holdRoom {
-    max-width: 145px; }
+    max-width: 145px;
+  }
   .SinglePropDetail .bookRoomCell {
     grid-template-rows: 1fr 0.5fr 0.25fr;
-    grid-template-columns: 45% 55%; }
+    grid-template-columns: 45% 55%;
+  }
   .SinglePropDetail .points-earned {
     width: unset;
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
+    grid-row: 1/2;
+    grid-column: 1/2;
     top: unset;
     bottom: unset;
     background: unset;
@@ -625,77 +759,96 @@ body.WBSupportForm {
     color: #666;
     align-self: flex-end;
     justify-self: flex-start;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+  }
   .SinglePropDetail .ArnRateCancelAnchor {
     justify-self: end;
-    padding-right: 18px; }
+    padding-right: 18px;
+  }
   .CheckOutForm #confirmCheckBox {
     width: 26px;
-    border-radius: 3px; }
+    border-radius: 3px;
+  }
   .CheckOutForm .confirmationWarning input.checkbox {
     width: 44px;
-    border-radius: 3px; }
+    border-radius: 3px;
+  }
   .SearchHotels .ArnPropThumb {
-    border-radius: 15px 15px 0 0; } }
-
+    border-radius: 15px 15px 0 0;
+  }
+}
 /* ----- Resbeat css end -----*/
 /* ----- Sass start ----- */
 .WBForgotPasswordFormActions input {
-  border-radius: 40px; }
+  border-radius: 40px;
+}
 
 .WBResendOrCancelForm .WBResendOrCancelFormFields label {
-  display: none; }
-
+  display: none;
+}
 .WBResendOrCancelForm .WBResendOrCancelFormFields #theEmailAddressAjax input {
-  width: 40% !important; }
-
+  width: 40% !important;
+}
 .WBResendOrCancelForm .WBResendOrCancelFormFields input {
   width: 40% !important;
-  background: #f0f0f0 !important; }
+  background: #f0f0f0 !important;
+}
 
 .leaflet-container .leaflet-marker-pane img {
-  display: none !important; }
+  display: none !important;
+}
 
 .SearchHotels #address-input {
   width: 100%;
-  margin: 7px 0; }
+  margin: 7px 0;
+}
 
 .RootBody input#city {
   position: absolute;
-  left: -10000px; }
+  left: -10000px;
+}
 
 /* - - - - - Resbeat Retail Referral Registration Start - - - - */
 .WBValidatedRegistrationFormContainer {
-  display: flex; }
-  .WBValidatedRegistrationFormContainer #referral-info {
-    margin: 10vh auto 0 auto;
-    padding: 18px;
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column; }
-    .WBValidatedRegistrationFormContainer #referral-info p.referral-content {
-      color: #666;
-      letter-spacing: 1px;
-      font-size: 15px; }
-    .WBValidatedRegistrationFormContainer #referral-info h3 {
-      color: #666;
-      letter-spacing: 1px; }
-  .WBValidatedRegistrationFormContainer input.referral {
-    background-color: #e2ad37 !important;
-    border-color: #e2ad37 !important;
-    font-weight: 800; }
-    .WBValidatedRegistrationFormContainer input.referral:hover {
-      background-color: #fff !important;
-      border-color: #e2ad37 !important;
-      color: #e2ad37 !important; }
+  display: flex;
+}
+.WBValidatedRegistrationFormContainer #referral-info {
+  margin: 10vh auto 0 auto;
+  padding: 18px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.WBValidatedRegistrationFormContainer #referral-info p.referral-content {
+  color: #666;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+.WBValidatedRegistrationFormContainer #referral-info h3 {
+  color: #666;
+  letter-spacing: 1px;
+}
+.WBValidatedRegistrationFormContainer input.referral {
+  background-color: #e2ad37 !important;
+  border-color: #e2ad37 !important;
+  font-weight: 800;
+}
+.WBValidatedRegistrationFormContainer input.referral:hover {
+  background-color: #fff !important;
+  border-color: #e2ad37 !important;
+  color: #e2ad37 !important;
+}
 
 @media screen and (max-width: 770px) {
   .WBValidatedRegistrationFormContainer {
-    display: block; }
-    .WBValidatedRegistrationFormContainer #referral-info {
-      margin: 1vh auto 0 auto; }
-    .WBValidatedRegistrationFormContainer .theWBValidatedRegistrationFormBody {
-      margin: 0 auto; } }
-
+    display: block;
+  }
+  .WBValidatedRegistrationFormContainer #referral-info {
+    margin: 1vh auto 0 auto;
+  }
+  .WBValidatedRegistrationFormContainer .theWBValidatedRegistrationFormBody {
+    margin: 0 auto;
+  }
+}
 /* - - - - - Resbeat Retail Referral Registration End - - - - */

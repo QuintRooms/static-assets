@@ -56,7 +56,15 @@ renderLucidBanner();
 async function changeButtonText() {
     await utilities.waitForSelectorInDOM('.view-hotels');
     const view_hotels_buttons = document.querySelectorAll('.view-hotels');
+<<<<<<< Updated upstream
     view_hotels_buttons[0].innerHTML = 'SUBMIT REQUESTS';
+=======
+    view_hotels_buttons[0].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[1].innerHTML = 'SUBMIT REQUESTS';
+    view_hotels_buttons[2].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[3].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[4].innerHTML = 'VIEW HOTELS';
+>>>>>>> Stashed changes
 }
 
 

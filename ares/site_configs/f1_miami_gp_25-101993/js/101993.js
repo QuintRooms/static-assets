@@ -32,7 +32,7 @@ async function insertFooterText() {
         'beforebegin',
         `
        <img style="max-width: 175px; margin-top: 10px;" src="https://dev-static.hotelsforhope.com/ares/clients/formula_1/images/quint_logo_white.png" alt="Quint Logo" />
-        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Miami Grand Prix</p>
+        <p class="f1-partner-text">Authorized Hotel Booking Partner of the F1 Crypto.com Miami Grand Prix</p>
         `
     );
 }

@@ -65,7 +65,7 @@ module.exports = () => {
             }),
             new Dotenv(),
             new MiniCssExtractPlugin({
-                moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-5)}.css`,
+                moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-6)}.css`,
             }),
         ],
     };

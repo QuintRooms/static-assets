@@ -41,9 +41,9 @@ function addDirs() {
                 if (!fs.existsSync(`${file_path}/styles`)) {
                     fs.mkdirSync(`${file_path}/styles`);
                     console.log(`- - - - - Directory made in ${file} - - - - - -`);
-                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
-                } else if (!fs.existsSync(`${file_path}/styles/${file.slice(-5)}.scss`)) {
-                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
+                    appendFile(`${file_path}/styles/${file.slice(-6)}.scss`, scss_vars, file);
+                } else if (!fs.existsSync(`${file_path}/styles/${file.slice(-6)}.scss`)) {
+                    appendFile(`${file_path}/styles/${file.slice(-6)}.scss`, scss_vars, file);
                 }
             });
         });
@@ -64,9 +64,9 @@ function addToSrc() {
                 if (!fs.existsSync(`${file_path}/styles`)) {
                     fs.mkdirSync(`${file_path}/styles`);
                     console.log(`- - - - - Directory made in ${file} - - - - - -`);
-                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
-                } else if (!fs.existsSync(`${file_path}/styles/${file.slice(-5)}.scss`)) {
-                    appendFile(`${file_path}/styles/${file.slice(-5)}.scss`, scss_vars, file);
+                    appendFile(`${file_path}/styles/${file.slice(-6)}.scss`, scss_vars, file);
+                } else if (!fs.existsSync(`${file_path}/styles/${file.slice(-6)}.scss`)) {
+                    appendFile(`${file_path}/styles/${file.slice(-6)}.scss`, scss_vars, file);
                 }
             });
         });

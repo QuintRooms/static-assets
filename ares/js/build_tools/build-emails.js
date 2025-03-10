@@ -141,7 +141,7 @@ function buildSiteObject(siteConfig, siteStyles) {
  *@param String - the name of the site currently being built by Webpack. Has the format 'site_name-site_id'
  */
 function defineVars(site) {
-    site_id = site.slice(-6);
+    site_id = site.slice(-5);
     site_name = site;
     const site_config = fs.readFileSync(`${ares}/site_configs/${site_name}/js/${site_id}-config.js`, 'utf8');
     const site_styles = fs.readFileSync(`${ares}/site_configs/${site_name}/styles/${site_id}.scss`, 'utf8');

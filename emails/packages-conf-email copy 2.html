@@ -77,8 +77,8 @@
 					<tbody>
 						<tr class="logos" width="100%">
 							<td>
-								<img src="https://static.hotelsforhope.com/ares/images/quintrooms/quint_logo_blue.png"
-									style="height: auto; width: 100%; max-width: 200px;">
+								<img src="https://static.hotelsforhope.com/ares/images/quintrooms/qr-logo-color.png"
+									style="height: auto; width: 100%; max-width: 250px;">
 							</td>
 							<td style="text-align: right">
 								[if:Event=2019 Lolla Package]<img
@@ -149,12 +149,12 @@
 								[elseif:Event=College Football Playoff National Championship 2025]
 								<img
 									src="https://dev-static.hotelsforhope.com/ares/site_configs/cfp_landing_page_22-62631/img/CFP_2025_CHAMPIONSHIP.png"
-									style="height: auto; width: 100%; max-width: 200px;"
+									style="height: auto; width: 250px; max-width: 100%;"
 									alt="College Football Playoff National Championship Logo">
 								[elseif:Event=2025 College Football Playoff National Championship]
 								<img
 									src="https://dev-static.hotelsforhope.com/ares/site_configs/cfp_landing_page_22-62631/img/CFP_2025_CHAMPIONSHIP.png"
-									style="height: auto; width: 100%; max-width: 200px;"
+									style="height: auto; width: 250px; max-width: 100%;"
 									alt="College Football Playoff National Championship Logo">
 								[endif]
 							</td>
@@ -175,16 +175,8 @@
 
 				<table class="hotelInfoTable" width="100%">
 					<tr class="hotelInfo" width="100%">
-						[if:Event=College Football Playoff National Championship 2025]
-						<td background="https://dev-static.hotelsforhope.com/ares/site_configs/cfp_atlanta_public_25-101560/img/CFP_2025_package_email_banner.jpg"
-							style="padding: 0;background-size: cover; background-position: center top;" width="100%" colspan=2>
-						[elseif:Event=2025 College Football Playoff National Championship]
-						<td background="https://dev-static.hotelsforhope.com/ares/site_configs/cfp_atlanta_public_25-101560/img/CFP_2025_package_email_banner.jpg"
-							style="padding: 0;background-size: cover; background-position: center top;" width="100%" colspan=2>
-						[else]
 						<td background="https://dev-static.hotelsforhope.com/ares/emails/img/conf_image.jpg"
 							style="padding: 0;background-size: cover; background-position: center top;" width="100%" colspan=2>
-						[endif]
 							<!-- <td> -->
 							<!-- <img fill type="tile" src="https://dev-static.hotelsforhope.com/ares/site_configs/beach_it_23-84923/img/conf_image.jpg"
 								style="padding: 0;background-size: cover; background-position: center top; height: 300px; width: 100%" colspan=2> -->
@@ -479,7 +471,6 @@
 							Your Hotel Confirmation Number: [ConfirmationNumber,fallback=]
 						</td>
 					</tr>
-					[endif]
 				</table>
 				<table class="policies" width="100%" style="margin-top: 4px;">
 					[if:Event=Tortuga]
@@ -935,6 +926,8 @@
 					</tr>
 
 					[endif]
+					[if:Event=Farm Aid 2023]
+					[else]
 					<tr>
 						<td style="padding-top: 5px; padding-bottom: 5px;">
 							<div class="policyTitle"
@@ -944,6 +937,7 @@
 								[CancellationPolicy,fallback=]</div>
 						</td>
 					</tr>
+					[endif]
 					[if:PropertyPolicy]
 					<tr>
 						<td>
@@ -955,9 +949,6 @@
 						</td>
 					</tr>
 					[endif]
-					[if:Event=College Football Playoff National Championship 2025]
-					[elseif:Event=2025 College Football Playoff National Championship]
-					[else]
 					<tr>
 						<td>
 							<div class="policyTitle"
@@ -969,7 +960,6 @@
 								laws in effect at the time of guest stay.</div>
 						</td>
 					</tr>
-					[endif]
 					[if:PaymentPolicy]
 					<tr>
 						<td>
@@ -1266,8 +1256,7 @@
 					</tr>
 					[endif]
 					[if:Event=2023 Formula 1 Heineken Silver Las Vegas Grand Prix]
-					[elseif:Event=College Football Playoff National Championship 2025]
-					[elseif:Event=2025 College Football Playoff National Championship]
+					<tr></tr>
 					[else]
 					<tr>
 						<td style="padding-top: 5px; padding-bottom: 5px;">
@@ -1342,12 +1331,12 @@
 							<td
 								style="width: 50%; text-align: left; position: relative; vertical-align: top; font-family: 'Montserrat'; font-size: 10px; color: #939598;">
 								<div class="addressInfo">
-									Quint</br>
-									<span style="margin-top:5px">9335 Harris Corners Parkway, Suite 500</span></br>
-									<span style="margin-top:5px">Charlotte, NC 28269</span>
+									QuintRooms</br>
+									<span style="margin-top:5px">4029 South Capital of Texas Hwy, Suite 111</span></br>
+									<span style="margin-top:5px">Austin, Texas 78704</span>
 								</div>
-								<div class="email" style="margin-top: 5px;">rooms@quint.co</div>
-								<div class="phone" style="margin-top: 5px;">1.980.356.4209</div>
+								<div class="email" style="margin-top: 5px;">reservations@quintrooms.com</div>
+								<div class="phone" style="margin-top: 5px;">512.691.9555</div>
 							</td>
 							<td style="text-align: right" valign="top">
 								<!--[if gte mso 9]>

@@ -14,7 +14,7 @@ module.exports = () => {
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bonnaroo_24-90957': './src/90957.js', // bonnaroo 24
             // 'breeders_24-88325': './src/88325.js', // breeders 24
-            // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp 
+            // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp
             // 'cfp_atlanta_internal_25-103193': './src/103193.js', // cfp atlanta_internal_25
             // 'cfp_atlanta_media2_25-105604': './src/105604.js', // cfp atlanta_media2_25
             // 'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
@@ -43,7 +43,7 @@ module.exports = () => {
             // 'fairwell_festival_24-93554': './src/93554.js', // fairwell festival_24
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24
-            'farm_aid_25-109464': './src/109464.js', // farm aid_25
+            // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
             // 'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -104,7 +104,7 @@ module.exports = () => {
             // 'van_gogh_los_angeles-71013': './src/71013.js', // Van Gogh Los Angeles
             // 'van_gogh_landing_page-70958': './src/70958.js', // Van Gogh Los Angeles
             // 'veronica_test_site-102126': './src/102126.js', // veronica test_site
-        }; 
+        };
 
         // develop environment
     } else if (process.env.NODE_ENV === 'develop') {
@@ -153,20 +153,16 @@ module.exports = () => {
             // 'derby_rooms_test_2_25-108392': './src/108392.js', // derby rooms_test_2_25
             // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
             // 'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
-            'farm_aid_25-109464': './src/109464.js', // farm aid_25
-
+            // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-<<<<<<< Updated upstream
-            'farm_aid_25-109464': './src/109464.js', // farm aid_25
+            // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
             // 'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
             // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
-=======
->>>>>>> Stashed changes
             // 'cfp_first_round_game_four_24-107617': './src/107617.js', // cfp first_round_game_four_24
             // 'cfp_first_round_game_three_24-107619': './src/107619.js', // cfp first_round_game_three_24
             // 'cfp_first_round_game_two_24-107621': './src/107621.js', // cfp first_round_game_two_24

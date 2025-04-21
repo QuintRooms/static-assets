@@ -51,8 +51,9 @@ module.exports = () => {
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24
+            'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
-            'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
+            // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
             // // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -96,6 +97,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
+            // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
@@ -129,7 +131,7 @@ module.exports = () => {
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
-            'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
+            // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'sotx_summer_games_25-105438': './src/105438.js', // sotx summer_games_25
@@ -154,12 +156,16 @@ module.exports = () => {
             // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
             // 'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
+            // 'tortuga_26-110264': './src/110264.js', // tortuga 26
+            'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
+            // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
             // 'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
             // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25

@@ -44,6 +44,7 @@ module.exports = () => {
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
+            'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
             // 'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -51,7 +52,7 @@ module.exports = () => {
             // 'f1_lvgp_public_24-102817': './src/102817.js', // f1 lvgp_public_24
             // 'f1_lvgp_public_updated_24-102894': './src/102894.js', // f1 lvgp_public_updated_24
             // 'f1_lvgp_marshal_program_24-103622': './src/103622.js', // f1 lvgp_marshal_program_24
-            'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
+            // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'f1_miami_gp_24-90482': './src/90482.js', // f1 miami_gp_24
             // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
@@ -157,14 +158,16 @@ module.exports = () => {
             // 'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
-            'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
+            // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
+            'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
-            'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
+            'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
+            // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
             // 'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26

@@ -65,7 +65,11 @@ async function buildEmail(context, inputPath, fileName) {
 function createFiles(siteObj) {
     const data = JSON.stringify(siteObj);
     fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${site_id}.json`, data);
-    if (siteObj.has_custom_emails) {
+    //path for using a test email layout/ layout in development for the site
+    if (siteObj.has_test_emails) {
+        buildEmail(siteObj, 'emails/default_templates_mjml/test_confirmation.mjml', 'confirmation');
+        //path for using a custom email
+    } else if (siteObj.has_custom_emails) {
         const email_dir = fs.readdirSync(`${ares}/site_configs/${site_name}/emails`);
         email_dir.forEach((file) => {
             if (file.includes('.mjml')) {
@@ -77,6 +81,7 @@ function createFiles(siteObj) {
                 "\u001b[1;33m\n------------------------------------------------------------------------------------------------------------------\n\nNo custom emails exists, please build the custom email template you wish to compile at the following location:\n\n  site_configs\n         |\n         |- /emails\n               |\n               |- /confirmation\n                     |\n                     |- confirmation.html\n\nOr change the site's config 'has_custom_emails' to false to use the default room booking confirmation email.\n\n------------------------------------------------------------------------------------------------------------------"
             );
         }
+        //typical email path
     } else {
         buildEmail(siteObj, 'emails/default_templates_mjml/confirmation.mjml', 'confirmation');
     }

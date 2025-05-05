@@ -67,6 +67,7 @@ function createFiles(siteObj) {
     fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${site_id}.json`, data);
     //path for using a test email layout/ layout in development for the site
     if (siteObj.has_test_emails) {
+        console.log('inside test emails path.');
         buildEmail(siteObj, 'emails/default_templates_mjml/test_confirmation.mjml', 'confirmation');
         //path for using a custom email
     } else if (siteObj.has_custom_emails) {
@@ -83,6 +84,8 @@ function createFiles(siteObj) {
         }
         //typical email path
     } else {
+        console.log('inside standard email path.');
+        console.log(siteObj);
         buildEmail(siteObj, 'emails/default_templates_mjml/confirmation.mjml', 'confirmation');
     }
 }
@@ -127,6 +130,7 @@ function buildSiteObject(siteConfig, siteStyles) {
         secondary_color: extractValue(siteStyles, '$secondary_color:', ';'),
         client_name: extractValue(siteConfig, 'event_name:', ',').slice(1, -1),
         site_url: extractValue(siteConfig, 'logo_outbound_url:', ',').slice(1, -1),
+        has_test_emails: extractValue(siteConfig, 'has_test_emails:', ',') === 'true',
         has_custom_emails: extractValue(siteConfig, 'has_custom_emails:', ',') === 'true',
         logo: `https://dev-static.${domain}/ares/site_configs/${site_name}/img/${logo}`,
         theme: theme_color,

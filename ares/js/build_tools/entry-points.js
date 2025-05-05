@@ -100,8 +100,8 @@ module.exports = () => {
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
-            // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
-            'test_email_control_25-111177': './src/111177.js', // test email_control_25
+            'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
+            // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'two_step_inn_festival_24-90132': './src/90132.js', // two step_inn_festival_24
             // 'van_gogh_dallas-71011': './src/71011.js', // Van Gogh Dallas
@@ -162,8 +162,8 @@ module.exports = () => {
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
-            // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
-            'test_email_control_25-111177': './src/111177.js', // test email_control_25
+            'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
+            // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
         };
 
         // local environment

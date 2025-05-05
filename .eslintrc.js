@@ -50,5 +50,5 @@ module.exports = {
         ArnMapDispatcher: 'readonly',
         places: 'readonly',
     },
-    ignorePatterns: ['ares/node_modules/*', 'ares/dist/*', 'portals/dist/*', 'portals/dist/*', 'node_modules/*'],
+    ignorePatterns: ['ares/node_modules/*', 'ares/dist/*', 'portals/dist/*', 'portals/dist/*', 'node_modules/*', '*'],
 };

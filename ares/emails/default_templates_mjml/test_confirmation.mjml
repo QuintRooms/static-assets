@@ -96,9 +96,9 @@
           <span><b>Balance Due:</b> \{{CurrencySymbol}}\{{BalanceDue}}</span>
         </mj-text>
         <mj-raw>[if:CurrencySymbol=$]</mj-raw>
-          <mj-text padding-bottom="10px" color="#666">
-            <span><b>Rate Per Night:</b> \{{RoomRates}}</span>
-          </mj-text>
+        <mj-text padding-bottom="10px" color="#666">
+          <span><b>Rate Per Night:</b> \{{RoomRates}}</span>
+        </mj-text>
         <mj-raw>[endif]</mj-raw>
       </mj-column>
       <mj-column width="100%" padding-top="20px">

@@ -9706,8 +9706,8 @@
                     fav_icon_url: ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
                     header: {logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.png'), logo_outbound_url: 'https://www.farmaid.org/'},
                     map_marker_image_url: [
-                        ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
                         ''.concat(o.path, '/site_configs/').concat(i, '/img/map_marker_alt.png'),
+                        ''.concat(o.path, '/site_configs/').concat(i, '/img/favicon.png'),
                         ''.concat(o.path, '/site_configs/').concat(i, '/img/map_marker_alt.png'),
                         ''.concat(o.path, '/site_configs/').concat(i, '/img/map_marker_alt.png'),
                         ''.concat(o.path, '/site_configs/').concat(i, '/img/map_marker_alt.png'),

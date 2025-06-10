@@ -8273,10 +8273,13 @@
         function u(e, t) {
             for (var n = 0; n < t.length; n++) {
                 var r = t[n];
-                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, s(r.key), r);
+                (r.enumerable = r.enumerable || !1), (r.configurable = !0), 'value' in r && (r.writable = !0), Object.defineProperty(e, l(r.key), r);
             }
         }
-        function s(e) {
+        function s(e, t, n) {
+            return (t = l(t)) in e ? Object.defineProperty(e, t, {value: n, enumerable: !0, configurable: !0, writable: !0}) : (e[t] = n), e;
+        }
+        function l(e) {
             var t = (function (e, t) {
                 if ('object' != i(e) || !e) return e;
                 var n = e[Symbol.toPrimitive];
@@ -8289,10 +8292,10 @@
             })(e, 'string');
             return 'symbol' == i(t) ? t : t + '';
         }
-        var l = n(46),
-            f = n(58);
-        l.extend(f);
-        var d = new o.default();
+        var f = n(46),
+            d = n(58);
+        f.extend(d);
+        var h = new o.default();
         t.default = (function () {
             return (function (e, t, n) {
                 return t && u(e.prototype, t), n && u(e, n), Object.defineProperty(e, 'prototype', {writable: !1}), e;
@@ -8301,7 +8304,7 @@
                     !(function (e, t) {
                         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
                     })(this, e),
-                        (this.event_params = {
+                        s(this, 'event_params', {
                             properties: null,
                             utm_source: null,
                             utm_campaign: null,
@@ -8312,8 +8315,8 @@
                             cid: null,
                             points: null,
                         }),
-                        (this.lat = null),
-                        (this.lng = null),
+                        s(this, 'lat', null),
+                        s(this, 'lng', null),
                         (this.site_config = t),
                         (this.page_name = n),
                         (this.original_params = new URLSearchParams(document.querySelector('meta[name="originalParams"]').content)),
@@ -8354,7 +8357,7 @@
                                     for (;;)
                                         switch ((e.prev = e.next)) {
                                             case 0:
-                                                return (e.next = 2), d.waitForSelectorInDOM(t);
+                                                return (e.next = 2), h.waitForSelectorInDOM(t);
                                             case 2:
                                                 document.querySelector(t).removeAttribute(n);
                                             case 3:
@@ -8533,14 +8536,14 @@
                                 ('F1 United States Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                 ('F1 Miami Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e) ||
                                 ('F1 Canadian Grand Prix' === this.site_config.lodging.event_name && 16980 === t && 'standard' === e)
-                                ? ((r = l(a, 'M/D/YYYY').format('M/D/YYYY')), (o = l(c, 'M/D/YYYY').format('M/D/YYYY')), {check_in_value: r, nights: (i = l(o).diff(l(r), 'days'))})
+                                ? ((r = f(a, 'M/D/YYYY').format('M/D/YYYY')), (o = f(c, 'M/D/YYYY').format('M/D/YYYY')), {check_in_value: r, nights: (i = f(o).diff(f(r), 'days'))})
                                 : 'mandarin' === e || 'tw_mandarin' === e
-                                ? ((r = l(a, 'YYYY/M/D').format('YYYY/M/D')), (o = l(c, 'YYYY/M/D').format('YYYY/M/D')), {check_in_value: r, nights: (i = l(o).diff(l(r), 'days'))})
-                                : ((r = l(a, 'D/M/YYYY').format('M/D/YYYY')),
-                                  (o = l(c, 'D/M/YYYY').format('M/D/YYYY')),
-                                  (i = l(o).diff(l(r), 'days')),
-                                  (r = l(a, 'D/M/YYYY').format('D/M/YYYY')),
-                                  (o = l(c, 'D/M/YYYY').format('D/M/YYYY')),
+                                ? ((r = f(a, 'YYYY/M/D').format('YYYY/M/D')), (o = f(c, 'YYYY/M/D').format('YYYY/M/D')), {check_in_value: r, nights: (i = f(o).diff(f(r), 'days'))})
+                                : ((r = f(a, 'D/M/YYYY').format('M/D/YYYY')),
+                                  (o = f(c, 'D/M/YYYY').format('M/D/YYYY')),
+                                  (i = f(o).diff(f(r), 'days')),
+                                  (r = f(a, 'D/M/YYYY').format('D/M/YYYY')),
+                                  (o = f(c, 'D/M/YYYY').format('D/M/YYYY')),
                                   {check_in_value: r, nights: i});
                         },
                     },
@@ -8561,12 +8564,12 @@
                                 rooms: {key: 'rooms', value: this.getDropdownValue('#rooms')},
                                 adults: {key: 'adults', value: this.getDropdownValue('#adults')},
                                 children: {key: 'children', value: this.getDropdownValue('#kids')},
-                                currency: {key: 'currency', value: d.getMetaTagContent('currency') ? d.getMetaTagContent('currency') : 'USD'},
+                                currency: {key: 'currency', value: h.getMetaTagContent('currency') ? h.getMetaTagContent('currency') : 'USD'},
                                 amenities: {key: 'amenities', value: this.getFilters('#AmentitiesContainer .ArnSearchField div', 'lblAmenities')},
                                 propertyClasses: {key: 'propertyclasses', value: this.getFilters('#PropertyClassesContainer .ArnSearchField div', 'lblRating')},
                                 propertyTypes: {key: 'propertytypes', value: this.getFilters('#PropertyTypesContainer .ArnSearchField div', 'lblPropertyType')},
                                 optionalHotel: {key: 'hotelname', value: this.getOptionalHotelName('input#hotelName')},
-                                memberToken: {key: 'memberToken', value: d.getMetaTagContent('memberToken')},
+                                memberToken: {key: 'memberToken', value: h.getMetaTagContent('memberToken')},
                             }),
                                 'search-results' === this.page_name &&
                                     'lodging' === this.site_config.site_type.toLowerCase() &&
@@ -8590,7 +8593,7 @@
                             var e = this;
                             document.querySelector('form#searchForm').addEventListener('submit', function (t) {
                                 t.preventDefault();
-                                var n = e.setDateFormat(d.getMetaTagContent('theme'), e.site_config.affiliate_id, e.site_config.site_id);
+                                var n = e.setDateFormat(h.getMetaTagContent('theme'), e.site_config.affiliate_id, e.site_config.site_id);
                                 e.constructUrl(n);
                             });
                         },
@@ -9706,7 +9709,7 @@
                     header: {
                         logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.png'),
                         logo_outbound_url: 'https://www.tortugamusicfestival.com',
-                        email_logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/email_logo_2025.png'),
+                        email_logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/email_logo_26.png'),
                         background: 'url('.concat(o.path, '/site_configs/').concat(i, '/img/header-bg.png)'),
                     },
                     map_marker_image_url: [

@@ -9731,12 +9731,16 @@
                         confirmation_page_top: {is_active: !1, image_url: '', outbound_url: ''},
                         confirmation_page_bottom: {is_active: !1, image_url: '', outbound_url: ''},
                     },
-                    root_page_header_text: '',
-                    root_page_subheader_text: '',
+                    has_test_emails: !0,
+                    root_page_header_text: 'Start Your Search',
+                    root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
                     is_resbeat_client: !1,
                     confirmation_email_from: 'Quint Rooms',
                     has_group_booking_banner: !0,
                     group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Tortuga',
+                    has_landing_page: !1,
+                    has_custom_emails: !1,
+                    hide_search_on_landing_page: !0,
                 };
             });
         var o = new ((r = n(80)) && r.__esModule ? r : {default: r}).default(),

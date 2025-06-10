@@ -47,7 +47,7 @@ export default function siteConfig() {
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
             logo_outbound_url: 'https://www.tortugamusicfestival.com',
-            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email_logo_2025.png`,
+            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email_logo_26.png`,
             background: `url(${env_path.path}/site_configs/${directory_name}/img/header-bg.png)`,
         },
         map_marker_image_url: [

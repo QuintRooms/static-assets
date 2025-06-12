@@ -44,7 +44,7 @@ module.exports = () => {
             // 'farm_aid_24-98897': './src/98897.js', // farm aid_24
             // 'farm_aid_public_24-102806': './src/102806.js', // farm aid_public_24
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
-            'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
+            // 'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
             // 'farm_aid_prevclone_internal_24-102483': './src/102483.js', // farm aid_prevclone_internal_24
             // 'f1_canada_gp_24-91620': './src/91620.js', // f1 canada_gp_24
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -98,7 +98,7 @@ module.exports = () => {
             // 'ticket_manager-70009': './src/70009.js', // ticket manager
             // 'tortuga_24_public-88778': './src/88778.js', // tortuga 24_public
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
-            // 'tortuga_26-110264': './src/110264.js', // tortuga 26
+            'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
@@ -160,9 +160,9 @@ module.exports = () => {
             // 'sotx_winter_games_26-109271': './src/109271.js', // sotx winter_games_26
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
             // 'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
-            // 'tortuga_26-110264': './src/110264.js', // tortuga 26
+            'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
-            'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
+            // 'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
             // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
         };

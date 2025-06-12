@@ -25,13 +25,44 @@ const addExclusiveRateSashToExtraRooms = async () => {
     console.log('showMoreRatesLink =' + showMoreRatesLink);
     console.log('moreRatesDiv =' + moreRatesDiv);
 
-    // const rates = moreRatesDiv.querySelectorAll('div.rateRow');
-    // rates.forEach((el) => {
-    //     if (el.innerHTML.includes('Special Event Rate')) {
-    //         updateRoomDescription(el);
-    //     }
-    // });
+    function updateRoomDescription(selector) {
+        if (!document.querySelector('.SinglePropDetail')) return;
+        if (exclusiveRateText === '' || exclusiveRateText === undefined) return;
+        selector.innerHTML = selector.innerHTML.replace(
+            'Special Event Rate',
+            `<span class="prop-detail-exclusive-rate-tag exclusive-rate" style="position: static; margin:0 2px 2px 2px; display: inline-block; color: #fff; font-size: 14px; font-weight: light; padding: 5px;">Exclusive Rate</span>`
+        );
+    }
+
+    // Debounce timer to wait for rendering to finish
+    let debounceTimer = null;
+
+    // MutationObserver callback
+    const observer = new MutationObserver(() => {
+        // Reset debounce timer each time a mutation occurs
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            console.log('Finished rendering, scanning for text...');
+            const rates = moreRatesDiv.querySelectorAll('div.rateRow');
+            rates.forEach((el) => {
+                if (el.innerHTML.includes('Special Event Rate')) {
+                    updateRoomDescription(el);
+                }
+            });
+        }, 500); // wait 500ms after last mutation
+    });
+
+    // Setup observer on ratesList (or parent container)
+    observer.observe(moreRatesDiv, {childList: true, subtree: true});
+
+    targetElement.addEventListener('click', () => {
+        console.log('Waiting for new rates to load...');
+        // Nothing else is done here. The observer will detect DOM changes.
+    });
 };
+
+addExclusiveRateSashToExtraRooms();
+
 //Insert Sponsor Banner
 // const includeSponsorBanner = async () => {
 //     await utilities.waitForSelectorInDOM('header');
@@ -51,5 +82,3 @@ const addExclusiveRateSashToExtraRooms = async () => {
 //     `
 //     );
 // }
-
-addExclusiveRateSashToExtraRooms();

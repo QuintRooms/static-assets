@@ -52,4 +52,4 @@ const addExclusiveRateSashToExtraRooms = async () => {
 //     );
 // }
 
-addExclusiveRateSashToExtraRooms();
+// addExclusiveRateSashToExtraRooms();

@@ -14,6 +14,24 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
+const addExclusiveRateSashToExtraRooms = async () => {
+    await utilities.waitForSelectorInDOM('#standardAvail');
+    const page_name = utilities.getPageName();
+    if (!page_name === 'property-detail') return;
+    if (!document.querySelector('#moreRatesLink')) return;
+    const showMoreRatesLink = document.querySelector('#moreRatesLink');
+    const moreRatesDiv = document.querySelector('#moreRates');
+
+    console.log('showMoreRatesLink =' + showMoreRatesLink);
+    console.log('moreRatesDiv =' + moreRatesDiv);
+
+    // const rates = moreRatesDiv.querySelectorAll('div.rateRow');
+    // rates.forEach((el) => {
+    //     if (el.innerHTML.includes('Special Event Rate')) {
+    //         updateRoomDescription(el);
+    //     }
+    // });
+};
 //Insert Sponsor Banner
 // const includeSponsorBanner = async () => {
 //     await utilities.waitForSelectorInDOM('header');
@@ -34,4 +52,4 @@ new ChildPortal();
 //     );
 // }
 
-// includeSponsorBanner();
+addExclusiveRateSashToExtraRooms();

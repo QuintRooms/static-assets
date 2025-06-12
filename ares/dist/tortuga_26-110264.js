@@ -44,7 +44,7 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (n.p = ''),
-        n((n.s = 81));
+        n((n.s = 83));
 })([
     function (e, t, n) {
         var r = n(38)('wks'),
@@ -122,7 +122,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(60),
+            o = n(61),
             i = n(37),
             a = Object.defineProperty;
         t.f = n(6)
@@ -147,7 +147,7 @@
             o = n(11),
             i = n(8),
             a = n(31)('src'),
-            c = n(84),
+            c = n(86),
             u = ('' + c).split('toString');
         (n(14).inspectSource = function (e) {
             return c.call(e);
@@ -179,7 +179,7 @@
               };
     },
     function (e, t, n) {
-        var r = n(59),
+        var r = n(60),
             o = n(13);
         e.exports = function (e) {
             return r(o(e));
@@ -204,11 +204,11 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(74),
-            o = n(109),
+        var r = n(75),
+            o = n(111),
             i = n(35),
             a = n(12);
-        (e.exports = n(73)(
+        (e.exports = n(74)(
             Array,
             'Array',
             function (e, t) {
@@ -269,16 +269,16 @@
             i = n(6),
             a = n(5),
             c = n(9),
-            u = n(89).KEY,
+            u = n(91).KEY,
             s = n(4),
             l = n(38),
             f = n(40),
             d = n(31),
             h = n(0),
-            p = n(65),
-            y = n(66),
-            m = n(90),
-            v = n(68),
+            p = n(66),
+            y = n(67),
+            m = n(92),
+            v = n(69),
             g = n(1),
             b = n(3),
             w = n(17),
@@ -286,13 +286,13 @@
             _ = n(37),
             x = n(36),
             k = n(39),
-            L = n(91),
+            L = n(93),
             A = n(29),
-            E = n(67),
+            E = n(68),
             M = n(7),
             P = n(32),
-            q = A.f,
-            T = M.f,
+            T = A.f,
+            q = M.f,
             C = L.f,
             O = r.Symbol,
             j = r.JSON,
@@ -313,19 +313,19 @@
                     return (
                         7 !=
                         k(
-                            T({}, 'a', {
+                            q({}, 'a', {
                                 get: function () {
-                                    return T(this, 'a', {value: 7}).a;
+                                    return q(this, 'a', {value: 7}).a;
                                 },
                             })
                         ).a
                     );
                 })
                     ? function (e, t, n) {
-                          var r = q(N, t);
-                          r && delete N[t], T(e, t, n), r && e !== N && T(N, t, r);
+                          var r = T(N, t);
+                          r && delete N[t], q(e, t, n), r && e !== N && q(N, t, r);
                       }
-                    : T,
+                    : q,
             V = function (e) {
                 var t = (R[e] = k(O.prototype));
                 return (t._k = e), t;
@@ -345,8 +345,8 @@
                     (t = _(t, !0)),
                     g(n),
                     o(R, t)
-                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || T(e, D, x(1, {})), (e[D][t] = !0)), W(e, t, n))
-                        : T(e, t, n)
+                        ? (n.enumerable ? (o(e, D) && e[D][t] && (e[D][t] = !1), (n = k(n, {enumerable: x(0, !1)}))) : (o(e, D) || q(e, D, x(1, {})), (e[D][t] = !0)), W(e, t, n))
+                        : q(e, t, n)
                 );
             },
             Q = function (e, t) {
@@ -360,7 +360,7 @@
             },
             X = function (e, t) {
                 if (((e = S(e)), (t = _(t, !0)), e !== N || !o(R, t) || o(B, t))) {
-                    var n = q(e, t);
+                    var n = T(e, t);
                     return !n || !o(R, t) || (o(e, D) && e[D][t]) || (n.enumerable = !0), n;
                 }
             },
@@ -491,15 +491,15 @@
             f = n(5),
             d = n(3),
             h = n(19),
-            p = n(96),
-            y = n(97),
-            m = n(69),
-            v = n(70).set,
-            g = n(101)(),
-            b = n(71),
-            w = n(102),
-            S = n(103),
-            _ = n(104),
+            p = n(98),
+            y = n(99),
+            m = n(70),
+            v = n(71).set,
+            g = n(103)(),
+            b = n(72),
+            w = n(104),
+            S = n(105),
+            _ = n(106),
             x = u.TypeError,
             k = u.process,
             L = k && k.versions,
@@ -507,8 +507,8 @@
             E = u.Promise,
             M = 'process' == l(k),
             P = function () {},
-            q = (o = b.f),
-            T = !!(function () {
+            T = (o = b.f),
+            q = !!(function () {
                 try {
                     var e = E.resolve(1),
                         t = ((e.constructor = {})[n(0)('species')] = function (e) {
@@ -614,7 +614,7 @@
                     }
                 }
             };
-        T ||
+        q ||
             ((E = function (e) {
                 p(this, E, 'Promise', '_h'), h(e), r.call(this);
                 try {
@@ -625,9 +625,9 @@
             }),
             ((r = function (e) {
                 (this._c = []), (this._a = void 0), (this._s = 0), (this._d = !1), (this._v = void 0), (this._h = 0), (this._n = !1);
-            }).prototype = n(105)(E.prototype, {
+            }).prototype = n(107)(E.prototype, {
                 then: function (e, t) {
-                    var n = q(m(this, E));
+                    var n = T(m(this, E));
                     return (
                         (n.ok = 'function' != typeof e || e),
                         (n.fail = 'function' == typeof t && t),
@@ -646,21 +646,21 @@
                 var e = new r();
                 (this.promise = e), (this.resolve = s(F, e, 1)), (this.reject = s(I, e, 1));
             }),
-            (b.f = q =
+            (b.f = T =
                 function (e) {
                     return e === E || e === a ? new i(e) : o(e);
                 })),
-            f(f.G + f.W + f.F * !T, {Promise: E}),
+            f(f.G + f.W + f.F * !q, {Promise: E}),
             n(40)(E, 'Promise'),
-            n(106)('Promise'),
+            n(108)('Promise'),
             (a = n(14).Promise),
-            f(f.S + f.F * !T, 'Promise', {
+            f(f.S + f.F * !q, 'Promise', {
                 reject: function (e) {
-                    var t = q(this);
+                    var t = T(this);
                     return (0, t.reject)(e), t.promise;
                 },
             }),
-            f(f.S + f.F * (c || !T), 'Promise', {
+            f(f.S + f.F * (c || !q), 'Promise', {
                 resolve: function (e) {
                     return _(c && this === a ? E : this, e);
                 },
@@ -669,8 +669,8 @@
                 f.S +
                     f.F *
                         !(
-                            T &&
-                            n(107)(function (e) {
+                            q &&
+                            n(109)(function (e) {
                                 E.all(e).catch(P);
                             })
                         ),
@@ -678,7 +678,7 @@
                 {
                     all: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = T(t),
                             r = n.resolve,
                             o = n.reject,
                             i = w(function () {
@@ -700,7 +700,7 @@
                     },
                     race: function (e) {
                         var t = this,
-                            n = q(t),
+                            n = T(t),
                             r = n.reject,
                             o = w(function () {
                                 y(e, !1, function (e) {
@@ -714,8 +714,8 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(72)(!0);
-        n(73)(
+        var r = n(73)(!0);
+        n(74)(
             String,
             'String',
             function (e) {
@@ -788,7 +788,7 @@
         }
     },
     function (e, t, n) {
-        n(66)('asyncIterator');
+        n(67)('asyncIterator');
     },
     function (e, t, n) {
         var r = n(7).f,
@@ -812,7 +812,7 @@
         var r = n(5),
             o = n(53),
             i = n(10),
-            a = n(63),
+            a = n(64),
             c = n(15),
             u = [].slice;
         r(
@@ -848,7 +848,7 @@
             i = n(12),
             a = n(37),
             c = n(8),
-            u = n(60),
+            u = n(61),
             s = Object.getOwnPropertyDescriptor;
         t.f = n(6)
             ? s
@@ -871,7 +871,7 @@
         };
     },
     function (e, t, n) {
-        var r = n(61),
+        var r = n(62),
             o = n(52);
         e.exports =
             Object.keys ||
@@ -891,13 +891,13 @@
         var r = n(2),
             o = n(8),
             i = n(10),
-            a = n(92),
+            a = n(94),
             c = n(37),
             u = n(4),
             s = n(54).f,
             l = n(29).f,
             f = n(7).f,
-            d = n(94).trim,
+            d = n(96).trim,
             h = r.Number,
             p = h,
             y = h.prototype,
@@ -988,7 +988,7 @@
     },
     function (e, t, n) {
         var r = n(1),
-            o = n(87),
+            o = n(89),
             i = n(52),
             a = n(50)('IE_PROTO'),
             c = function () {},
@@ -1078,7 +1078,7 @@
             i = n(4),
             a = n(13),
             c = n(0),
-            u = n(56),
+            u = n(57),
             s = c('species'),
             l = !i(function () {
                 var e = /./;
@@ -1217,7 +1217,7 @@
             function d(e, t, n, r) {
                 var o = t && t.prototype instanceof g ? t : g,
                     i = Object.create(o.prototype),
-                    c = new T(r || []);
+                    c = new q(r || []);
                 return a(i, '_invoke', {value: E(e, n, c)}), i;
             }
             function h(e, t, n) {
@@ -1343,11 +1343,11 @@
                 var t = {tryLoc: e[0]};
                 1 in e && (t.catchLoc = e[1]), 2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])), this.tryEntries.push(t);
             }
-            function q(e) {
+            function T(e) {
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function T(e) {
+            function q(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(P, this), this.reset(!0);
             }
             function C(t) {
@@ -1419,8 +1419,8 @@
                     );
                 }),
                 (t.values = C),
-                (T.prototype = {
-                    constructor: T,
+                (q.prototype = {
+                    constructor: q,
                     reset: function (t) {
                         if (
                             ((this.prev = 0),
@@ -1430,7 +1430,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = e),
-                            this.tryEntries.forEach(q),
+                            this.tryEntries.forEach(T),
                             !t)
                         )
                             for (var n in this) 't' === n.charAt(0) && i.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e);
@@ -1492,7 +1492,7 @@
                     finish: function (e) {
                         for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                             var n = this.tryEntries[t];
-                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), q(n), v;
+                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), T(n), v;
                         }
                     },
                     catch: function (e) {
@@ -1502,7 +1502,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    q(n);
+                                    T(n);
                                 }
                                 return o;
                             }
@@ -1571,9 +1571,9 @@
             (t.default = void 0),
             n(21),
             n(22),
+            n(81),
             n(79),
-            n(77),
-            n(76),
+            n(55),
             n(44),
             n(20),
             n(34);
@@ -2768,7 +2768,7 @@
         e.exports = r && r.documentElement;
     },
     function (e, t, n) {
-        var r = n(61),
+        var r = n(62),
             o = n(52).concat('length', 'prototype');
         t.f =
             Object.getOwnPropertyNames ||
@@ -2778,7 +2778,94 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(72)(!0);
+        var r = n(1),
+            o = n(17),
+            i = n(15),
+            a = n(33),
+            c = n(56),
+            u = n(42),
+            s = Math.max,
+            l = Math.min,
+            f = Math.floor,
+            d = /\$([$&`']|\d\d?|<[^>]*>)/g,
+            h = /\$([$&`']|\d\d?)/g;
+        n(43)('replace', 2, function (e, t, n, p) {
+            return [
+                function (r, o) {
+                    var i = e(this),
+                        a = null == r ? void 0 : r[t];
+                    return void 0 !== a ? a.call(r, i, o) : n.call(String(i), r, o);
+                },
+                function (e, t) {
+                    var o = p(n, e, this, t);
+                    if (o.done) return o.value;
+                    var f = r(e),
+                        d = String(this),
+                        h = 'function' == typeof t;
+                    h || (t = String(t));
+                    var m = f.global;
+                    if (m) {
+                        var v = f.unicode;
+                        f.lastIndex = 0;
+                    }
+                    for (var g = []; ; ) {
+                        var b = u(f, d);
+                        if (null === b) break;
+                        if ((g.push(b), !m)) break;
+                        '' === String(b[0]) && (f.lastIndex = c(d, i(f.lastIndex), v));
+                    }
+                    for (var w, S = '', _ = 0, x = 0; x < g.length; x++) {
+                        b = g[x];
+                        for (var k = String(b[0]), L = s(l(a(b.index), d.length), 0), A = [], E = 1; E < b.length; E++) A.push(void 0 === (w = b[E]) ? w : String(w));
+                        var M = b.groups;
+                        if (h) {
+                            var P = [k].concat(A, L, d);
+                            void 0 !== M && P.push(M);
+                            var T = String(t.apply(void 0, P));
+                        } else T = y(k, d, L, A, M, t);
+                        L >= _ && ((S += d.slice(_, L) + T), (_ = L + k.length));
+                    }
+                    return S + d.slice(_);
+                },
+            ];
+            function y(e, t, r, i, a, c) {
+                var u = r + e.length,
+                    s = i.length,
+                    l = h;
+                return (
+                    void 0 !== a && ((a = o(a)), (l = d)),
+                    n.call(c, l, function (n, o) {
+                        var c;
+                        switch (o.charAt(0)) {
+                            case '$':
+                                return '$';
+                            case '&':
+                                return e;
+                            case '`':
+                                return t.slice(0, r);
+                            case "'":
+                                return t.slice(u);
+                            case '<':
+                                c = a[o.slice(1, -1)];
+                                break;
+                            default:
+                                var l = +o;
+                                if (0 === l) return n;
+                                if (l > s) {
+                                    var d = f(l / 10);
+                                    return 0 === d ? n : d <= s ? (void 0 === i[d - 1] ? o.charAt(1) : i[d - 1] + o.charAt(1)) : n;
+                                }
+                                c = i[l - 1];
+                        }
+                        return void 0 === c ? '' : c;
+                    })
+                );
+            }
+        });
+    },
+    function (e, t, n) {
+        'use strict';
+        var r = n(73)(!0);
         e.exports = function (e, t, n) {
             return t + (n ? r(e, t).length : 1);
         };
@@ -2787,7 +2874,7 @@
         'use strict';
         var r,
             o,
-            i = n(57),
+            i = n(58),
             a = RegExp.prototype.exec,
             c = String.prototype.replace,
             u = a,
@@ -3108,7 +3195,7 @@
     function (e, t, n) {
         var r = n(8),
             o = n(12),
-            i = n(62)(!1),
+            i = n(63)(!1),
             a = n(50)('IE_PROTO');
         e.exports = function (e, t) {
             var n,
@@ -3123,7 +3210,7 @@
     function (e, t, n) {
         var r = n(12),
             o = n(15),
-            i = n(63);
+            i = n(64);
         e.exports = function (e) {
             return function (t, n, a) {
                 var c,
@@ -3170,7 +3257,7 @@
         var r = n(2),
             o = n(14),
             i = n(30),
-            a = n(65),
+            a = n(66),
             c = n(7).f;
         e.exports = function (e) {
             var t = o.Symbol || (o.Symbol = i ? {} : r.Symbol || {});
@@ -3203,7 +3290,7 @@
             o,
             i,
             a = n(18),
-            c = n(64),
+            c = n(65),
             u = n(53),
             s = n(48),
             l = n(2),
@@ -3312,7 +3399,7 @@
             i = n(9),
             a = n(11),
             c = n(35),
-            u = n(108),
+            u = n(110),
             s = n(40),
             l = n(49),
             f = n(0)('iterator'),
@@ -3374,6 +3461,16 @@
             });
     },
     function (e, t, n) {
+        'use strict';
+        var r = n(5),
+            o = n(113);
+        r(r.P + r.F * n(114)('includes'), 'String', {
+            includes: function (e) {
+                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        });
+    },
+    function (e, t, n) {
         var r = n(3),
             o = n(10),
             i = n(0)('match');
@@ -3384,96 +3481,20 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(1),
-            o = n(17),
-            i = n(15),
-            a = n(33),
-            c = n(55),
-            u = n(42),
-            s = Math.max,
-            l = Math.min,
-            f = Math.floor,
-            d = /\$([$&`']|\d\d?|<[^>]*>)/g,
-            h = /\$([$&`']|\d\d?)/g;
-        n(43)('replace', 2, function (e, t, n, p) {
-            return [
-                function (r, o) {
-                    var i = e(this),
-                        a = null == r ? void 0 : r[t];
-                    return void 0 !== a ? a.call(r, i, o) : n.call(String(i), r, o);
-                },
-                function (e, t) {
-                    var o = p(n, e, this, t);
-                    if (o.done) return o.value;
-                    var f = r(e),
-                        d = String(this),
-                        h = 'function' == typeof t;
-                    h || (t = String(t));
-                    var m = f.global;
-                    if (m) {
-                        var v = f.unicode;
-                        f.lastIndex = 0;
-                    }
-                    for (var g = []; ; ) {
-                        var b = u(f, d);
-                        if (null === b) break;
-                        if ((g.push(b), !m)) break;
-                        '' === String(b[0]) && (f.lastIndex = c(d, i(f.lastIndex), v));
-                    }
-                    for (var w, S = '', _ = 0, x = 0; x < g.length; x++) {
-                        b = g[x];
-                        for (var k = String(b[0]), L = s(l(a(b.index), d.length), 0), A = [], E = 1; E < b.length; E++) A.push(void 0 === (w = b[E]) ? w : String(w));
-                        var M = b.groups;
-                        if (h) {
-                            var P = [k].concat(A, L, d);
-                            void 0 !== M && P.push(M);
-                            var q = String(t.apply(void 0, P));
-                        } else q = y(k, d, L, A, M, t);
-                        L >= _ && ((S += d.slice(_, L) + q), (_ = L + k.length));
-                    }
-                    return S + d.slice(_);
-                },
-            ];
-            function y(e, t, r, i, a, c) {
-                var u = r + e.length,
-                    s = i.length,
-                    l = h;
-                return (
-                    void 0 !== a && ((a = o(a)), (l = d)),
-                    n.call(c, l, function (n, o) {
-                        var c;
-                        switch (o.charAt(0)) {
-                            case '$':
-                                return '$';
-                            case '&':
-                                return e;
-                            case '`':
-                                return t.slice(0, r);
-                            case "'":
-                                return t.slice(u);
-                            case '<':
-                                c = a[o.slice(1, -1)];
-                                break;
-                            default:
-                                var l = +o;
-                                if (0 === l) return n;
-                                if (l > s) {
-                                    var d = f(l / 10);
-                                    return 0 === d ? n : d <= s ? (void 0 === i[d - 1] ? o.charAt(1) : i[d - 1] + o.charAt(1)) : n;
-                                }
-                                c = i[l - 1];
-                        }
-                        return void 0 === c ? '' : c;
-                    })
-                );
-            }
-        });
+        var r = n(5),
+            o = n(63)(!0);
+        r(r.P, 'Array', {
+            includes: function (e) {
+                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
+            },
+        }),
+            n(75)('includes');
     },
     function (e, t, n) {
         'use strict';
         n(119);
         var r = n(1),
-            o = n(57),
+            o = n(58),
             i = n(6),
             a = /./.toString,
             c = function (e) {
@@ -3521,7 +3542,7 @@
     },
     function (e, t, n) {
         'use strict';
-        n(82), n(133);
+        n(84), n(133);
     },
     function (e, t, n) {
         'use strict';
@@ -3535,8 +3556,8 @@
                           return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? 'symbol' : typeof e;
                       })(e);
         }
-        n(83), n(85), n(86), n(20), n(34), n(21), n(22), n(23), n(16), n(24), n(25), n(26), n(27), n(28);
-        var o = a(n(110)),
+        n(85), n(87), n(88), n(20), n(34), n(21), n(22), n(23), n(16), n(24), n(25), n(26), n(27), n(28), n(55), n(76), n(78);
+        var o = a(n(115)),
             i = a(n(132));
         function a(e) {
             return e && e.__esModule ? e : {default: e};
@@ -3571,7 +3592,7 @@
             function d(e, t, n, r) {
                 var o = t && t.prototype instanceof g ? t : g,
                     a = Object.create(o.prototype),
-                    c = new T(r || []);
+                    c = new q(r || []);
                 return i(a, '_invoke', {value: E(e, n, c)}), a;
             }
             function h(e, t, n) {
@@ -3697,11 +3718,11 @@
                 var t = {tryLoc: e[0]};
                 1 in e && (t.catchLoc = e[1]), 2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])), this.tryEntries.push(t);
             }
-            function q(e) {
+            function T(e) {
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function T(e) {
+            function q(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(P, this), this.reset(!0);
             }
             function C(t) {
@@ -3773,8 +3794,8 @@
                     );
                 }),
                 (t.values = C),
-                (T.prototype = {
-                    constructor: T,
+                (q.prototype = {
+                    constructor: q,
                     reset: function (t) {
                         if (
                             ((this.prev = 0),
@@ -3784,7 +3805,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = e),
-                            this.tryEntries.forEach(q),
+                            this.tryEntries.forEach(T),
                             !t)
                         )
                             for (var n in this) 't' === n.charAt(0) && o.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e);
@@ -3846,7 +3867,7 @@
                     finish: function (e) {
                         for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                             var n = this.tryEntries[t];
-                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), q(n), v;
+                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), T(n), v;
                         }
                     },
                     catch: function (e) {
@@ -3856,7 +3877,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    q(n);
+                                    T(n);
                                 }
                                 return o;
                             }
@@ -3994,30 +4015,55 @@
                 var e,
                     t =
                         ((e = c().mark(function e() {
-                            var t, n;
+                            var t, n, r, o;
                             return c().wrap(function (e) {
                                 for (;;)
                                     switch ((e.prev = e.next)) {
                                         case 0:
-                                            return (e.next = 2), m.waitForSelectorInDOM('#standardAvail');
-                                        case 2:
+                                            return (
+                                                (r = function (e) {
+                                                    document.querySelector('.SinglePropDetail') &&
+                                                        '' !== exclusiveRateText &&
+                                                        void 0 !== exclusiveRateText &&
+                                                        (e.innerHTML = e.innerHTML.replace(
+                                                            'Special Event Rate',
+                                                            '<span class="prop-detail-exclusive-rate-tag exclusive-rate" style="position: static; margin:0 2px 2px 2px; display: inline-block; color: #fff; font-size: 14px; font-weight: light; padding: 5px;">Exclusive Rate</span>'
+                                                        ));
+                                                }),
+                                                (e.next = 3),
+                                                m.waitForSelectorInDOM('#standardAvail')
+                                            );
+                                        case 3:
                                             if ('property-detail' !== !m.getPageName()) {
-                                                e.next = 5;
+                                                e.next = 6;
                                                 break;
                                             }
                                             return e.abrupt('return');
-                                        case 5:
+                                        case 6:
                                             if (document.querySelector('#moreRatesLink')) {
-                                                e.next = 7;
+                                                e.next = 8;
                                                 break;
                                             }
                                             return e.abrupt('return');
-                                        case 7:
+                                        case 8:
                                             (t = document.querySelector('#moreRatesLink')),
                                                 (n = document.querySelector('#moreRates')),
                                                 console.log('showMoreRatesLink =' + t),
-                                                console.log('moreRatesDiv =' + n);
-                                        case 11:
+                                                console.log('moreRatesDiv =' + n),
+                                                (o = null),
+                                                new MutationObserver(function () {
+                                                    clearTimeout(o),
+                                                        (o = setTimeout(function () {
+                                                            console.log('Finished rendering, scanning for text...'),
+                                                                n.querySelectorAll('div.rateRow').forEach(function (e) {
+                                                                    e.innerHTML.includes('Special Event Rate') && r(e);
+                                                                });
+                                                        }, 500));
+                                                }).observe(n, {childList: !0, subtree: !0}),
+                                                targetElement.addEventListener('click', function () {
+                                                    console.log('Waiting for new rates to load...');
+                                                });
+                                        case 16:
                                         case 'end':
                                             return e.stop();
                                     }
@@ -4077,7 +4123,7 @@
             a = n(1),
             c = n(3),
             u = n(4),
-            s = n(88),
+            s = n(90),
             l = (n(2).Reflect || {}).construct,
             f = u(function () {
                 function e() {}
@@ -4130,7 +4176,7 @@
         'use strict';
         var r = n(19),
             o = n(3),
-            i = n(64),
+            i = n(65),
             a = [].slice,
             c = {},
             u = function (e, t, n) {
@@ -4196,7 +4242,7 @@
     },
     function (e, t, n) {
         var r = n(32),
-            o = n(67),
+            o = n(68),
             i = n(47);
         e.exports = function (e) {
             var t = r(e),
@@ -4224,7 +4270,7 @@
     },
     function (e, t, n) {
         var r = n(3),
-            o = n(93).set;
+            o = n(95).set;
         e.exports = function (e, t, n) {
             var i,
                 a = t.constructor;
@@ -4259,7 +4305,7 @@
         var r = n(5),
             o = n(13),
             i = n(4),
-            a = n(95),
+            a = n(97),
             c = '[' + a + ']',
             u = RegExp('^' + c + c + '*'),
             s = RegExp(c + c + '*$'),
@@ -4287,11 +4333,11 @@
     },
     function (e, t, n) {
         var r = n(18),
-            o = n(98),
-            i = n(99),
+            o = n(100),
+            i = n(101),
             a = n(1),
             c = n(15),
-            u = n(100),
+            u = n(102),
             s = {},
             l = {};
         ((t = e.exports =
@@ -4343,7 +4389,7 @@
     },
     function (e, t, n) {
         var r = n(2),
-            o = n(70).set,
+            o = n(71).set,
             i = r.MutationObserver || r.WebKitMutationObserver,
             a = r.process,
             c = r.Promise,
@@ -4408,7 +4454,7 @@
     function (e, t, n) {
         var r = n(1),
             o = n(3),
-            i = n(71);
+            i = n(72);
         e.exports = function (e, t) {
             if ((r(e), o(t) && t.constructor === e)) return t;
             var n = i.f(e);
@@ -4490,6 +4536,33 @@
     },
     function (e, t, n) {
         'use strict';
+        var r = n(57);
+        n(5)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
+    },
+    function (e, t, n) {
+        var r = n(77),
+            o = n(13);
+        e.exports = function (e, t, n) {
+            if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
+            return String(o(e));
+        };
+    },
+    function (e, t, n) {
+        var r = n(0)('match');
+        e.exports = function (e) {
+            var t = /./;
+            try {
+                '/./'[e](t);
+            } catch (n) {
+                try {
+                    return (t[r] = !1), !'/./'[e](t);
+                } catch (e) {}
+            }
+            return !0;
+        };
+    },
+    function (e, t, n) {
+        'use strict';
         n(23),
             n(16),
             n(24),
@@ -4497,13 +4570,13 @@
             n(28),
             Object.defineProperty(t, '__esModule', {value: !0}),
             (t.default = void 0),
-            n(111),
-            n(113),
             n(116),
             n(76),
+            n(78),
+            n(55),
             n(117),
             n(21),
-            n(77),
+            n(79),
             n(44),
             n(26),
             n(121),
@@ -4517,7 +4590,7 @@
         var r = u(n(45)),
             o = u(n(129)),
             i = u(n(130)),
-            a = u(n(80)),
+            a = u(n(82)),
             c = u(n(131));
         function u(e) {
             return e && e.__esModule ? e : {default: e};
@@ -4562,7 +4635,7 @@
             function d(e, t, n, r) {
                 var i = t && t.prototype instanceof g ? t : g,
                     a = Object.create(i.prototype),
-                    c = new T(r || []);
+                    c = new q(r || []);
                 return o(a, '_invoke', {value: E(e, n, c)}), a;
             }
             function h(e, t, n) {
@@ -4688,11 +4761,11 @@
                 var t = {tryLoc: e[0]};
                 1 in e && (t.catchLoc = e[1]), 2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])), this.tryEntries.push(t);
             }
-            function q(e) {
+            function T(e) {
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function T(e) {
+            function q(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(P, this), this.reset(!0);
             }
             function C(t) {
@@ -4764,8 +4837,8 @@
                     );
                 }),
                 (t.values = C),
-                (T.prototype = {
-                    constructor: T,
+                (q.prototype = {
+                    constructor: q,
                     reset: function (t) {
                         if (
                             ((this.prev = 0),
@@ -4775,7 +4848,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = e),
-                            this.tryEntries.forEach(q),
+                            this.tryEntries.forEach(T),
                             !t)
                         )
                             for (var n in this) 't' === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e);
@@ -4837,7 +4910,7 @@
                     finish: function (e) {
                         for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                             var n = this.tryEntries[t];
-                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), q(n), v;
+                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), T(n), v;
                         }
                     },
                     catch: function (e) {
@@ -4847,7 +4920,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    q(n);
+                                    T(n);
                                 }
                                 return o;
                             }
@@ -4908,7 +4981,7 @@
         var y = 'hotelsforhope.com',
             m = new a.default(),
             v = n(46),
-            g = n(58);
+            g = n(59);
         v.extend(g);
         var b = new r.default(),
             w = new i.default(),
@@ -7278,13 +7351,13 @@
     },
     function (e, t, n) {
         'use strict';
-        var r = n(75),
+        var r = n(77),
             o = n(1),
-            i = n(69),
-            a = n(55),
+            i = n(70),
+            a = n(56),
             c = n(15),
             u = n(42),
-            s = n(56),
+            s = n(57),
             l = n(4),
             f = Math.min,
             d = [].push,
@@ -7366,54 +7439,6 @@
         });
     },
     function (e, t, n) {
-        'use strict';
-        var r = n(56);
-        n(5)({target: 'RegExp', proto: !0, forced: r !== /./.exec}, {exec: r});
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(5),
-            o = n(114);
-        r(r.P + r.F * n(115)('includes'), 'String', {
-            includes: function (e) {
-                return !!~o(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        });
-    },
-    function (e, t, n) {
-        var r = n(75),
-            o = n(13);
-        e.exports = function (e, t, n) {
-            if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
-            return String(o(e));
-        };
-    },
-    function (e, t, n) {
-        var r = n(0)('match');
-        e.exports = function (e) {
-            var t = /./;
-            try {
-                '/./'[e](t);
-            } catch (n) {
-                try {
-                    return (t[r] = !1), !'/./'[e](t);
-                } catch (e) {}
-            }
-            return !0;
-        };
-    },
-    function (e, t, n) {
-        'use strict';
-        var r = n(5),
-            o = n(62)(!0);
-        r(r.P, 'Array', {
-            includes: function (e) {
-                return o(this, e, arguments.length > 1 ? arguments[1] : void 0);
-            },
-        }),
-            n(74)('includes');
-    },
-    function (e, t, n) {
         var r = n(5);
         r(r.P, 'String', {repeat: n(118)});
     },
@@ -7431,7 +7456,7 @@
         };
     },
     function (e, t, n) {
-        n(6) && 'g' != /./g.flags && n(7).f(RegExp.prototype, 'flags', {configurable: !0, get: n(57)});
+        n(6) && 'g' != /./g.flags && n(7).f(RegExp.prototype, 'flags', {configurable: !0, get: n(58)});
     },
     function (e, t) {
         e.exports =
@@ -7444,7 +7469,7 @@
         'use strict';
         var r = n(1),
             o = n(15),
-            i = n(55),
+            i = n(56),
             a = n(42);
         n(43)('match', 1, function (e, t, n, c) {
             return [
@@ -7482,7 +7507,7 @@
     },
     function (e, t, n) {
         var r = n(18),
-            o = n(59),
+            o = n(60),
             i = n(17),
             a = n(15),
             c = n(124);
@@ -7522,7 +7547,7 @@
     },
     function (e, t, n) {
         var r = n(3),
-            o = n(68),
+            o = n(69),
             i = n(0)('species');
         e.exports = function (e) {
             var t;
@@ -7987,7 +8012,7 @@
                     });
                 }
                 (A.polyfill = !0), r.fetch || ((r.fetch = A), (r.Headers = p), (r.Request = S), (r.Response = x));
-            }.call(this, n(78));
+            }.call(this, n(80));
     },
     function (e, t, n) {
         (function (e) {
@@ -8304,7 +8329,7 @@
                         }
                     }
                 })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
-        }).call(this, n(78));
+        }).call(this, n(80));
     },
     function (e, t, n) {
         'use strict';
@@ -8351,7 +8376,7 @@
             function d(e, t, n, r) {
                 var i = t && t.prototype instanceof g ? t : g,
                     a = Object.create(i.prototype),
-                    c = new T(r || []);
+                    c = new q(r || []);
                 return o(a, '_invoke', {value: E(e, n, c)}), a;
             }
             function h(e, t, n) {
@@ -8477,11 +8502,11 @@
                 var t = {tryLoc: e[0]};
                 1 in e && (t.catchLoc = e[1]), 2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])), this.tryEntries.push(t);
             }
-            function q(e) {
+            function T(e) {
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function T(e) {
+            function q(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(P, this), this.reset(!0);
             }
             function C(t) {
@@ -8553,8 +8578,8 @@
                     );
                 }),
                 (t.values = C),
-                (T.prototype = {
-                    constructor: T,
+                (q.prototype = {
+                    constructor: q,
                     reset: function (t) {
                         if (
                             ((this.prev = 0),
@@ -8564,7 +8589,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = e),
-                            this.tryEntries.forEach(q),
+                            this.tryEntries.forEach(T),
                             !t)
                         )
                             for (var n in this) 't' === n.charAt(0) && r.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e);
@@ -8626,7 +8651,7 @@
                     finish: function (e) {
                         for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                             var n = this.tryEntries[t];
-                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), q(n), v;
+                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), T(n), v;
                         }
                     },
                     catch: function (e) {
@@ -8636,7 +8661,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    q(n);
+                                    T(n);
                                 }
                                 return o;
                             }
@@ -8682,7 +8707,7 @@
             return 'symbol' == i(t) ? t : t + '';
         }
         var f = n(46),
-            d = n(58);
+            d = n(59);
         f.extend(d);
         var h = new o.default();
         t.default = (function () {
@@ -9034,7 +9059,7 @@
             function d(e, t, n, r) {
                 var o = t && t.prototype instanceof g ? t : g,
                     i = Object.create(o.prototype),
-                    c = new T(r || []);
+                    c = new q(r || []);
                 return a(i, '_invoke', {value: E(e, n, c)}), i;
             }
             function h(e, t, n) {
@@ -9160,11 +9185,11 @@
                 var t = {tryLoc: e[0]};
                 1 in e && (t.catchLoc = e[1]), 2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])), this.tryEntries.push(t);
             }
-            function q(e) {
+            function T(e) {
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function T(e) {
+            function q(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(P, this), this.reset(!0);
             }
             function C(t) {
@@ -9236,8 +9261,8 @@
                     );
                 }),
                 (t.values = C),
-                (T.prototype = {
-                    constructor: T,
+                (q.prototype = {
+                    constructor: q,
                     reset: function (t) {
                         if (
                             ((this.prev = 0),
@@ -9247,7 +9272,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = e),
-                            this.tryEntries.forEach(q),
+                            this.tryEntries.forEach(T),
                             !t)
                         )
                             for (var n in this) 't' === n.charAt(0) && i.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e);
@@ -9309,7 +9334,7 @@
                     finish: function (e) {
                         for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                             var n = this.tryEntries[t];
-                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), q(n), v;
+                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), T(n), v;
                         }
                     },
                     catch: function (e) {
@@ -9319,7 +9344,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    q(n);
+                                    T(n);
                                 }
                                 return o;
                             }
@@ -9377,9 +9402,9 @@
             })(e, 'string');
             return 'symbol' == r(t) ? t : t + '';
         }
-        n(21), n(22), n(23), n(16), n(24), n(25), n(28), n(26), Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(44), n(27), n(79), n(20), n(34);
+        n(21), n(22), n(23), n(16), n(24), n(25), n(28), n(26), Object.defineProperty(t, '__esModule', {value: !0}), (t.default = void 0), n(44), n(27), n(81), n(20), n(34);
         var s = n(46),
-            l = n(58);
+            l = n(59);
         s.extend(l);
         t.default = (function () {
             return (
@@ -9666,7 +9691,7 @@
             function d(e, t, n, r) {
                 var o = t && t.prototype instanceof g ? t : g,
                     i = Object.create(o.prototype),
-                    c = new T(r || []);
+                    c = new q(r || []);
                 return a(i, '_invoke', {value: E(e, n, c)}), i;
             }
             function h(e, t, n) {
@@ -9792,11 +9817,11 @@
                 var t = {tryLoc: e[0]};
                 1 in e && (t.catchLoc = e[1]), 2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])), this.tryEntries.push(t);
             }
-            function q(e) {
+            function T(e) {
                 var t = e.completion || {};
                 (t.type = 'normal'), delete t.arg, (e.completion = t);
             }
-            function T(e) {
+            function q(e) {
                 (this.tryEntries = [{tryLoc: 'root'}]), e.forEach(P, this), this.reset(!0);
             }
             function C(t) {
@@ -9868,8 +9893,8 @@
                     );
                 }),
                 (t.values = C),
-                (T.prototype = {
-                    constructor: T,
+                (q.prototype = {
+                    constructor: q,
                     reset: function (t) {
                         if (
                             ((this.prev = 0),
@@ -9879,7 +9904,7 @@
                             (this.delegate = null),
                             (this.method = 'next'),
                             (this.arg = e),
-                            this.tryEntries.forEach(q),
+                            this.tryEntries.forEach(T),
                             !t)
                         )
                             for (var n in this) 't' === n.charAt(0) && o.call(this, n) && !isNaN(+n.slice(1)) && (this[n] = e);
@@ -9941,7 +9966,7 @@
                     finish: function (e) {
                         for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                             var n = this.tryEntries[t];
-                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), q(n), v;
+                            if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), T(n), v;
                         }
                     },
                     catch: function (e) {
@@ -9951,7 +9976,7 @@
                                 var r = n.completion;
                                 if ('throw' === r.type) {
                                     var o = r.arg;
-                                    q(n);
+                                    T(n);
                                 }
                                 return o;
                             }
@@ -10132,7 +10157,7 @@
                     hide_search_on_landing_page: !0,
                 };
             });
-        var o = new ((r = n(80)) && r.__esModule ? r : {default: r}).default(),
+        var o = new ((r = n(82)) && r.__esModule ? r : {default: r}).default(),
             i = 'tortuga_26-'.concat(110264);
     },
     function (e, t, n) {},

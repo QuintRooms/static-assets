@@ -9687,7 +9687,7 @@
                     site_type: 'lodging',
                     algolia_app_id: 'plCZXR0GZ7J1',
                     algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
-                    use_google_autocomplete: !1,
+                    use_google_autocomplete: !0,
                     distance_unit: 'useMiles',
                     lodging: {event_id: '', event_name: 'Farm Aid', event_dates: '', redirect_date: '', redirect_url: '', is_lrg: !1},
                     cug: {is_cug: !1, show_points: !1, allow_registration: !1, percent_off_text: 'off', show_percent_savings: !1},

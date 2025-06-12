@@ -4060,7 +4060,7 @@
                                                                 });
                                                         }, 500));
                                                 }).observe(n, {childList: !0, subtree: !0}),
-                                                targetElement.addEventListener('click', function () {
+                                                n.addEventListener('click', function () {
                                                     console.log('Waiting for new rates to load...');
                                                 });
                                         case 16:

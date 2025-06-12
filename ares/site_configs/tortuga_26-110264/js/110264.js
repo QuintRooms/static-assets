@@ -55,7 +55,7 @@ const addExclusiveRateSashToExtraRooms = async () => {
     // Setup observer on ratesList (or parent container)
     observer.observe(moreRatesDiv, {childList: true, subtree: true});
 
-    targetElement.addEventListener('click', () => {
+    moreRatesDiv.addEventListener('click', () => {
         console.log('Waiting for new rates to load...');
         // Nothing else is done here. The observer will detect DOM changes.
     });

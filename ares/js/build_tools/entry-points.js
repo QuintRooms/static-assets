@@ -17,10 +17,11 @@ module.exports = () => {
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'derby_rooms_test_2_25-108392': './src/108392.js', // derby rooms_test_2_25
             // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
+            'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
-            'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
+            // 'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
             // 'f1_lvgp_retail-100609': './src/100609.js', // f1 lvgp_retail
             // // 'f1_template-46972': './src/46972.js', // Formula 1 Template
             // 'f1e_cug-57182': './src/57182.js', // f1e cug
@@ -62,13 +63,15 @@ module.exports = () => {
             // 'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
             // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
-            'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
+            // 'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
+            'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
             'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
         };
     }

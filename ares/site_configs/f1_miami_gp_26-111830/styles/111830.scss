@@ -1,0 +1,227 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$header_background: #008996;
+$logo_flex_position: center;
+$logo_max_width: 2000px;
+$background_color: #fff;
+$primary_color: #008996;
+$secondary_color: #008996;
+$primary_text_color: #fff;
+$secondary_text_color: #008996;
+$border_color: #008996;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #008996;
+$button_hover_border_color: #008996;
+$google_font_name: 'Titillium Web';
+$header_font_name: 'F1-Regular';
+$site_name: 'f1_miami_gp_26-111830';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../styles/sass/f1.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+#searching {
+    background: #000;
+}
+
+header {
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center 45%;
+    display: flex;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 10px;
+    justify-content: center;
+    padding: 1rem 6rem;
+}
+
+.logo {
+    // grid-column: 2;
+    text-align: center;
+    min-width: 300px;
+    max-width: 2000px;
+}
+
+#races-contact {
+    grid-column: 3;
+    justify-self: end;
+}
+
+#races-contact li {
+    &:hover {
+        background: unset;
+    }
+}
+
+#races-contact a {
+    display: inline-block;
+    width: 100%;
+
+    &:hover {
+        color: #E6006F;
+    }
+}
+
+header #races-contact {
+    width: unset;
+}
+
+.ArnRateButton .ArnShowRatesLink {
+    border-width: 2px;
+    background: #E6006F;
+    border-color: #E6006F;
+    font-weight: bold;
+
+    &:hover {
+        background: #fff;
+        border-width: 2px;
+        color: #E6006F;
+        border-color: #E6006F;
+    }
+}
+
+.lucid-banner {
+    background-color: #000;
+}
+
+.lucid-content span {
+    background-color: #000;
+}
+
+.ArnPrimarySearchContainer {
+    background: #15151E;
+}
+
+.sort-wrapper .active {
+    background: #15151E;
+}
+
+#theOtherSubmitButton {
+    background: #15151E;
+    border: 1px solid #15151E;
+}
+
+.leaflet-touch .leaflet-bar {
+    background: #15151E;
+}
+
+.SimpleSearch {
+    background: #15151E;
+}
+
+.CheckRates input.submit {
+    background: #15151E;
+}
+
+.SinglePropDetail .bookRoom {
+    border-width: 2px;
+        background: #E6006F;
+        border-color: #E6006F;
+        font-weight: bold;
+    
+        &:hover {
+            background: #fff;
+            border-width: 2px;
+            color: #E6006F;
+            border-color: #E6006F;
+        }
+}
+
+input#theConfirmationButton {
+    border-width: 2px;
+        background: #E6006F;
+        border-color: #E6006F;
+        font-weight: bold;
+    
+        &:hover {
+            background: #fff;
+            border-width: 2px;
+            color: #E6006F;
+            border-color: #E6006F;
+        }
+}
+
+
+// .lucid-banner .lucid-button a {
+//     color: #008996;
+// }
+
+@media only screen and (min-width: 801px) {
+    .logo {
+        content: url(#{$path}/site_configs/#{$site_name}/img/logo_lg_25.png);
+        max-width: 2000px;
+    }
+    $logo_max_width: 2000px;
+}
+
+@media only screen and (max-width: 800px) {
+    // header {
+    //     display: grid;
+    //     grid-template-columns: repeat(3, 1fr);
+    //     gap: 10px;
+    //     justify-content: center;
+    //     padding: 0 6rem;
+    // }
+
+    header {
+        grid-template-columns: unset;
+        gap: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 6rem;
+    }
+
+    .logo {
+        grid-column: unset;
+        text-align: initial;
+        min-width: initial;
+        max-width: 300px;
+        width: 100%;
+        content: url(#{$path}/site_configs/#{$site_name}/img/logo.png);
+    }
+
+    #races-contact {
+        grid-column: unset;
+        justify-self: initial;
+    }
+
+    #races-contact a {
+        display: initial;
+        width: initial;
+    }
+
+    header #races-contact {
+        width: initial;
+    }
+}
+
+.f1-partner-text {
+    color: white;
+    margin: 0;
+}
+
+// .f1-h4h-logo img {
+//   max-width: 300px;
+// }
+
+.show-mobile-nav {
+    transform: translateY(68px);
+}
+
+.mobile-nav-upper-ul {
+    background: #008996;
+
+    li a {
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+}
+
+.ArnSortByBeachfront {
+    display: block;
+}

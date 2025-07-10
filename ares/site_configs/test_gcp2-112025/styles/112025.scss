@@ -1,0 +1,64 @@
+@import '../../../styles/sass/sass-functions/func.scss';
+
+$logo_flex_position: center;
+$logo_max_width: 400px;
+$background_color: #fff;
+$primary_color: #04539e;
+$secondary_color: #00a3df;
+$primary_text_color: #fff;
+$secondary_text_color: #04539e;
+$border_color: #04539e;
+$button_hover_background_color: #fff;
+$button_hover_text_color: #04539e;
+$button_hover_border_color: #04539e;
+$google_font_name: 'Montserrat';
+$site_name: 'test_gcp2-112025';
+$path: set-path($env);
+$banner_image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(#{$path}/site_configs/#{$site_name}/img/banner.jpg) no-repeat center / cover;
+// $header_background: #fff;
+$header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
+
+
+@import '../../../styles/sass/config-styles/base-styles.config.scss';
+@import '../../../js/components/lucid_banner/lucid-banner.scss';
+
+
+.leaflet-container .leaflet-marker-pane img {
+    max-width: 30px !important;
+}
+  .sponsor-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #04539e;
+    padding: 8px;
+  }
+  
+  .sponsor-logo img {
+    max-width: 50px;
+  }
+  
+  .sponsor-text {
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+    // letter-spacing: 1px;
+  }
+  
+  .sponsor-text-space {
+    width: 8px;
+  }
+
+  #datePromptContainer+.SimpleSearch {
+    background: #4ec1cd !important;
+  }
+
+  // #theDatePrompt #datePromptContainer img {
+  //   background: url(#{$path}/site_configs/#{$site_name}/img/logo_blue.png);
+  // }
+
+  #datePromptContainer {
+    background: #4ec1cd !important;
+  }

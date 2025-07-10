@@ -17,7 +17,7 @@ module.exports = () => {
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'derby_rooms_test_2_25-108392': './src/108392.js', // derby rooms_test_2_25
             // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
-            'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
+            // 'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
             // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'f1_miami_gp_25-101993': './src/101993.js', // f1 miami gp_25
@@ -46,6 +46,7 @@ module.exports = () => {
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
+            'test_gcp2-112025': './src/112025.js', // test gcp2
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'veronica_test_site-102126': './src/102126.js', // veronica test_site
         };
@@ -64,13 +65,15 @@ module.exports = () => {
             // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
             // 'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
-            'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
+            // 'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
+            'test_gcp2-112025': './src/112025.js', // test gcp2
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'test_gcp2-112025': './src/112025.js', // test gcp2
             'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
             'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
         };

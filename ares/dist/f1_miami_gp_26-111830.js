@@ -11031,7 +11031,7 @@
                     has_social_sharing: !0,
                     fav_icon_url: ''.concat(o.path, '/clients/formula_1/images/favicon.png'),
                     header: {
-                        logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo.png'),
+                        logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/logo_lg_25.png'),
                         email_logo_file_location: ''.concat(o.path, '/site_configs/').concat(i, '/img/email_logo_25.png'),
                         logo_outbound_url: 'https://f1miamigp.com/',
                     },

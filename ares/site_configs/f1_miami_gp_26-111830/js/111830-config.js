@@ -47,7 +47,7 @@ export default function siteConfig() {
         has_social_sharing: true,
         fav_icon_url: `${env_path.path}/clients/formula_1/images/favicon.png`,
         header: {
-            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo_lg_25.png`,
+            logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo_lg_25_no_f1.png`,
             email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email_logo_25.png`,
             logo_outbound_url: 'https://f1miamigp.com/',
         },

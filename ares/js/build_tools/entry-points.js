@@ -10,9 +10,10 @@ module.exports = () => {
             // 'cfp_atlanta_public_25-101560': './src/101560.js', // cfp
             // 'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
-            'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
+            // 'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
             // 'confidential_template-60276': './src/60276.js', // confidential template
             // 'ares_derek-70011': './src/70011.js', // ares derek
             // 'derby_rooms_cug_26-112374': './src/112374.js', // derby rooms_cug_26
@@ -71,13 +72,15 @@ module.exports = () => {
             // 'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
             // 'test_gcp2-112025': './src/112025.js', // test gcp2
             // 'derby_rooms_cug_26-112374': './src/112374.js', // derby rooms_cug_26
-            'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
+            // 'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
+            'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
             'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
             'derby_rooms_cug_26-112374': './src/112374.js', // derby rooms_cug_26
             'test_gcp2-112025': './src/112025.js', // test gcp2

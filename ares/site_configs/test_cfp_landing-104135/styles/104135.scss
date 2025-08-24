@@ -74,10 +74,6 @@ $border-radius-general: 8px;
 //     background: #000;
 // }
 
-.root-search-container {
-    display: none;
-}
-
 #searching h2:after {
     background:#c9920e;
 }
@@ -271,6 +267,10 @@ input {
 #adults {
     border: 1px solid #c9920e;
     border-radius: 8px;
+}
+
+.root-search-container {
+    display: none;
 }
 
 @media screen and (min-width: 960px) {

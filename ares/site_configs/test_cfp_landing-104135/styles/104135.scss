@@ -74,6 +74,10 @@ $border-radius-general: 8px;
 //     background: #000;
 // }
 
+.root-search-container {
+    display: none;
+}
+
 #searching h2:after {
     background:#c9920e;
 }

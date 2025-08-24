@@ -59,16 +59,16 @@ $border-radius-general: 8px;
     font-style: normal;
 }
 
-// .RootBody .ArnSearchContainerMainDiv h1 {
-//     text-transform: uppercase;
-//     display: block;
-//     color: #000;
-//     font-size: 30px;
-//     font-weight: 400;
-//     margin: 15px 0;
-//     text-align: center;
-//     font-family: 'UnitedSansReg-Heavy';
-// }
+.RootBody .ArnSearchContainerMainDiv h1 {
+    text-transform: uppercase;
+    display: block;
+    color: #000;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 15px 0;
+    text-align: center;
+    font-family: 'UnitedSansReg-Heavy';
+}
 
 // #searching {
 //     background: #000;
@@ -118,13 +118,13 @@ a.ArnShowRatesLink {
     text-transform: uppercase;
 }
 
-// .RootBody .ArnSearchContainerMainDiv h1 {
-//     display: none;
-// }
+.RootBody .ArnSearchContainerMainDiv h1 {
+    display: none;
+}
 
-// .RootBody h3 {
-//     display: none;
-// }
+.RootBody h3 {
+    display: none;
+}
 
 .ArnSupportLinks.ArnSupportBottom {
     background-color: #000 !important;

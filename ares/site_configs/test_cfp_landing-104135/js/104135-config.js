@@ -82,7 +82,7 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'College Football Playoff Hotels',
         has_landing_page: true,
-        hide_search_on_landing_page: false,
+        hide_search_on_landing_page: true,
         landing_page_events: [
             {
                 name: '2025 College Football Playoff National Championship',

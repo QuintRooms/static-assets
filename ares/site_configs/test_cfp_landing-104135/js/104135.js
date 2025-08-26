@@ -104,7 +104,7 @@ async function renderEventGroupHeaders() {
 
 }
 
-renderEventGroupHeaders();
+// renderEventGroupHeaders();
 
 async function insertFooterText() {
     await utilities.waitForSelectorInDOM('.pb-container');

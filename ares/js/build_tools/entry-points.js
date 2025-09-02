@@ -11,6 +11,8 @@ module.exports = () => {
             // 'cfp_BACKUP_landing_page-106417': './src/106417.js', // cfp BACKUP_landing_page
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
+            'cfp_miami_media_26-113720': './src/113720.js', // cfp miami_media_26
+            'cfp_miami_internal_26-113718': './src/113718.js', // cfp miami_internal_26
             // 'cfp_retail_22-67665': './src/67665.js', // cfp retail_22
             // 'cfp_retail_24-103769': './src/103769.js', // cfp retail_24
             // 'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
@@ -20,6 +22,7 @@ module.exports = () => {
             // 'derek_test_2-101088': './src/101088.js', // derek test_2
             // 'derby_rooms_test_2_25-108392': './src/108392.js', // derby rooms_test_2_25
             // 'derby_rooms_final_25-109284': './src/109284.js', // derby rooms_final_25
+            // 'derby_rooms_test_26-113709': './src/113709.js', // derby rooms_test_26
             // 'farm_aid_25-109464': './src/109464.js', // farm aid_25
             // 'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
             // f1_landing_page: './src/f1_landing_page.js', // Formula 1 landing page (F1 Rooms)
@@ -48,7 +51,7 @@ module.exports = () => {
             // 'tortuga_25-101623': './src/101623.js', // tortuga 25
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
-            'test_cfp_landing_3-113624': './src/113624.js', // test cfp_landing_3
+            // 'test_cfp_landing_3-113624': './src/113624.js', // test cfp_landing_3
             // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
             // 'test_gcp2-112025': './src/112025.js', // test gcp2
@@ -75,13 +78,20 @@ module.exports = () => {
             // 'derby_rooms_cug_26-112374': './src/112374.js', // derby rooms_cug_26
             // 'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
             // 'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
-            'test_cfp_landing_3-113624': './src/113624.js', // test cfp_landing_3
+            // 'test_cfp_landing_3-113624': './src/113624.js', // test cfp_landing_3
+            // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
+            // 'derby_rooms_test_26-113709': './src/113709.js', // derby rooms_test_26
+            'cfp_miami_media_26-113720': './src/113720.js', // cfp miami_media_26
+            'cfp_miami_internal_26-113718': './src/113718.js', // cfp miami_internal_26
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'cfp_miami_media_26-113720': './src/113720.js', // cfp miami_media_26
+            'cfp_miami_internal_26-113718': './src/113718.js', // cfp miami_internal_26
+            'derby_rooms_test_26-113709': './src/113709.js', // derby rooms_test_26
             'test_cfp_landing_3-113624': './src/113624.js', // test cfp_landing_3
             'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
             'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3

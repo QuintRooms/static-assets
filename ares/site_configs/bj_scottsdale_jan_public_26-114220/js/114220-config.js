@@ -70,6 +70,7 @@ export default function siteConfig() {
             },
         },
         // new options
+        has_test_emails: true,
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,

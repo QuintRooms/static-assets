@@ -8,7 +8,7 @@ let carousel_images;
  */
 async function getPropImages() {
     try {
-        const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${prop_id}`, {
+        const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h_2025&password=0Ba7R3wI{f7_|I9H&propertyid=${prop_id}`, {
             method: 'GET',
         }).then((response) => response.json());
         return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));

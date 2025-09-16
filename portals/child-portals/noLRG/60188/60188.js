@@ -67,7 +67,7 @@ function replaceImageSlideshow() {
   async function getPropImages() {
     try {
       let data = await fetch(
-        `https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h&password=hDzYz9HHwcJDDthPK&propertyid=${propId}`,
+        `https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h_2025&password=0Ba7R3wI{f7_|I9H&propertyid=${propId}`,
         {
           method: "GET"
         }

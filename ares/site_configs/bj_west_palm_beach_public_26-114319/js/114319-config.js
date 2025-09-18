@@ -19,7 +19,7 @@ export default function siteConfig() {
         radius: '50',
         lodging: {
             event_id: '',
-            event_name: 'Barrett-Jackson Scottsdale 2023',
+            event_name: 'Barrett-Jackson West Palm Beach',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -54,7 +54,7 @@ export default function siteConfig() {
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
-                is_active: true,
+                is_active: false,
                 image_url: `${env_path.path}/site_configs/${directory_name}/img/left_banner.jpg?v1`,
                 outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=01/25/2023&nights=4&siteid=83130',
             },

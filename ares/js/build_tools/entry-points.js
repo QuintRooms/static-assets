@@ -8,7 +8,7 @@ module.exports = () => {
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_26-113563': './src/113563.js', // bj scottsdale_26
-            // 'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
+            'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
             'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
@@ -85,7 +85,7 @@ module.exports = () => {
             // 'cfp_miami_media_26-113720': './src/113720.js', // cfp miami_media_26
             // 'cfp_miami_internal_26-113718': './src/113718.js', // cfp miami_internal_26
             // 'bj_scottsdale_26-113563': './src/113563.js', // bj scottsdale_26
-            // 'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
+            'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
             'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
         };
 

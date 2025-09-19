@@ -8,8 +8,8 @@ module.exports = () => {
             // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
             // 'bj_template_21-68719': './src/68719.js', // Barrett-Jackson Template 2021
             // 'bj_scottsdale_26-113563': './src/113563.js', // bj scottsdale_26
-            'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
-            'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
+            // 'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
+            // 'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
             // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
             // 'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
             // 'cfp_miami_media_26-113720': './src/113720.js', // cfp miami_media_26
@@ -56,6 +56,7 @@ module.exports = () => {
             // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
             // 'test_gcp2-112025': './src/112025.js', // test gcp2
+            'test_gcp3-114187': './src/114187.js', // test gcp3
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'veronica_test_site-102126': './src/102126.js', // veronica test_site
         };
@@ -85,14 +86,16 @@ module.exports = () => {
             // 'cfp_miami_media_26-113720': './src/113720.js', // cfp miami_media_26
             // 'cfp_miami_internal_26-113718': './src/113718.js', // cfp miami_internal_26
             // 'bj_scottsdale_26-113563': './src/113563.js', // bj scottsdale_26
-            'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
-            'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
+            // 'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
+            // 'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
+            'test_gcp3-114187': './src/114187.js', // test gcp3
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'test_gcp3-114187': './src/114187.js', // test gcp3
             'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
             'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
             'bj_scottsdale_26-113563': './src/113563.js', // bj scottsdale_26

@@ -3,14 +3,14 @@
 $logo_flex_position: center;
 $logo_max_width: 400px;
 $background_color: #fff;
-$primary_color: #c300d1;
+$primary_color: #d1d100;
 $secondary_color: #00a3df;
 $primary_text_color: #fff;
-$secondary_text_color: #c300d1;
-$border_color: #c300d1;
+$secondary_text_color: #d1d100;
+$border_color: #d1d100;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #c300d1;
-$button_hover_border_color: #c300d1;
+$button_hover_text_color: #d1d100;
+$button_hover_border_color: #d1d100;
 $google_font_name: 'Montserrat';
 $site_name: 'test_gcp2-112025';
 $path: set-path($env);
@@ -32,7 +32,7 @@ $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    background-color: #c300d1;
+    background-color: #d1d100;
     padding: 8px;
   }
   

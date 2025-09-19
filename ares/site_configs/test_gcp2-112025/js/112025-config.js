@@ -18,7 +18,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'Tortuga Music Festival',
+            event_name: 'TEST1',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

@@ -33,7 +33,7 @@ module.exports = () => {
                     loader: 'babel-loader',
                 },
                 {
-                    test: /\.scss$/,
+                    test: /\.s[ac]ss$/i, // allow .scss and .sass
                     exclude: /node_modules/,
                     use: [
                         MiniCssExtractPlugin.loader,
@@ -46,6 +46,7 @@ module.exports = () => {
                         {
                             loader: 'sass-loader',
                             options: {
+                                implementation: require('sass'), // <- force Dart Sass
                                 sourceMap: false,
                                 additionalData: `$env: ${process.env.NODE_ENV};\n $domain: '${process.env.domain}';`,
                             },
@@ -54,7 +55,7 @@ module.exports = () => {
                 },
                 {
                     test: /\.(png|jpg|svg)$/,
-                    use: [{loader: 'url-loader'}],
+                    use: [{ loader: 'url-loader' }],
                 },
             ],
         },
@@ -65,7 +66,7 @@ module.exports = () => {
             }),
             new Dotenv(),
             new MiniCssExtractPlugin({
-                moduleFilename: ({name}) => `./site_configs/[name]/styles/${name.slice(-6)}.css`,
+                moduleFilename: ({ name }) => `./site_configs/[name]/styles/${name.slice(-6)}.css`,
             }),
         ],
     };

@@ -3,14 +3,14 @@
 $logo_flex_position: center;
 $logo_max_width: 400px;
 $background_color: #fff;
-$primary_color: #d13f00;
+$primary_color: #57d3fd;
 $secondary_color: #00a3df;
 $primary_text_color: #fff;
-$secondary_text_color: #d13f00;
-$border_color: #d13f00;
+$secondary_text_color: #57d3fd;
+$border_color: #57d3fd;
 $button_hover_background_color: #fff;
-$button_hover_text_color: #d13f00;
-$button_hover_border_color: #d13f00;
+$button_hover_text_color: #57d3fd;
+$button_hover_border_color: #57d3fd;
 $google_font_name: 'Montserrat';
 $site_name: 'test_gcp3-114187';
 $path: set-path($env);
@@ -32,7 +32,7 @@ $header_background: url(#{$path}/site_configs/#{$site_name}/img/header-bg.png);
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    background-color: #d13f00;
+    background-color: #57d3fd;
     padding: 8px;
   }
   

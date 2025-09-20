@@ -18,7 +18,7 @@ export default function siteConfig() {
         distance_unit: 'useMiles',
         lodging: {
             event_id: '',
-            event_name: 'TEST2',
+            event_name: 'TESTComp3',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

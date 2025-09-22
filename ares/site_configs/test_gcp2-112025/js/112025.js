@@ -16,7 +16,7 @@ class ChildPortal extends BasePortal {
 new ChildPortal();
 
 async function addHiltonTags() {
-    await utilities.waitForSelectorInDOM('#theArnProperty');
+    await utilities.waitForSelectorInDOM('.ArnContainer');
     const hilton_prop_ids = [
         44621,
         3846047,

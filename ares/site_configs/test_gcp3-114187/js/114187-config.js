@@ -1,7 +1,6 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-
 const site_id = 114187;
 const directory_name = `test_gcp3-${site_id}`;
 
@@ -9,16 +8,18 @@ export default function siteConfig() {
     return {
         site_id,
         directory_name,
-        affiliate_id: 16365,
+        affiliate_id: 16659,
         master_id: 920,
         site_type: 'lodging',
         algolia_app_id: 'plCZXR0GZ7J1',
         algolia_api_key: 'b9763a419845b59957b8cc5c9b13440c',
         currency: 'USD',
         distance_unit: 'useMiles',
+        map_size: '12',
+        radius: '50',
         lodging: {
             event_id: '',
-            event_name: 'TESTComp3',
+            event_name: 'Barrett-Jackson Scottsdale',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -46,35 +47,18 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
-            logo_outbound_url: 'https://www.tortugamusicfestival.com',
-            email_logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/email_logo_2025.png`,
-            background: `url(${env_path.path}/site_configs/${directory_name}/img/header-bg.png)`,
+            logo_outbound_url: 'https://www.barrett-jackson.com/',
         },
-        map_marker_image_url: [
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-            `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
-        ],
+        map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         theme: 'light',
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
-                is_active: true,
-                image_url: `${env_path.path}/site_configs/${directory_name}/img/advert_banner.png`,
-                outbound_url: 'http://rocktheocean.com/',
+                is_active: false,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/left_banner.jpg?v1`,
+                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=01/25/2023&nights=4&siteid=83130',
             },
             between_property_ad: {
-                is_active: false,
-                image_url: '',
-                outbound_url: '',
-            },
-            confirmation_page_top: {
                 is_active: false,
                 image_url: '',
                 outbound_url: '',
@@ -86,11 +70,12 @@ export default function siteConfig() {
             },
         },
         // new options
-        root_page_header_text: '',
-        root_page_subheader_text: '',
+        has_test_emails: true,
+        root_page_header_text: 'Start Your Search',
+        root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=Tortuga',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Scottsdale',
     };
 }

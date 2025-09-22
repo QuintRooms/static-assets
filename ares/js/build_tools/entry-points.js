@@ -53,9 +53,9 @@ module.exports = () => {
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'test_cfp_landing_3-113624': './src/113624.js', // test cfp_landing_3
-            // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
+            'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
-            'test_gcp2-112025': './src/112025.js', // test gcp2
+            // 'test_gcp2-112025': './src/112025.js', // test gcp2
             // 'test_gcp3-114187': './src/114187.js', // test gcp3
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'veronica_test_site-102126': './src/102126.js', // veronica test_site
@@ -72,11 +72,11 @@ module.exports = () => {
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
-            // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
+            'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
             // 'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
             // 'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
-            'test_gcp2-112025': './src/112025.js', // test gcp2
+            // 'test_gcp2-112025': './src/112025.js', // test gcp2
             // 'derby_rooms_cug_26-112374': './src/112374.js', // derby rooms_cug_26
             // 'cfp_test_conn_3-112938': './src/112938.js', // cfp test_conn_3
             // 'cfp_miami_26-113545': './src/113545.js', // cfp miami_26
@@ -95,6 +95,7 @@ module.exports = () => {
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             'test_gcp2-112025': './src/112025.js', // test gcp2
             'test_gcp3-114187': './src/114187.js', // test gcp3
             'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26

@@ -17,6 +17,9 @@ new ChildPortal();
 
 function addHiltonTags() {
     const hilton_prop_ids = [
+        44621,
+        3846047,
+        208368,
         236618,
         16,
         31,

@@ -64,7 +64,7 @@ export default function siteConfig() {
                 outbound_url: 'https://www.barrett-jackson.com/',
             },
             confirmation_page_bottom: {
-                is_active: false,
+                is_active: true,
                 image_url: `${env_path.path}/site_configs/${directory_name}/img/horz_ad.png`,
                 outbound_url: 'https://www.barrett-jackson.com/',
             },

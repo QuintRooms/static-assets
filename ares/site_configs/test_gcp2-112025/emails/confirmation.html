@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="und" dir="auto" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
   <head>
-    <title>TEST2 Booking Confirmation</title>
+    <title>Barrett-Jackson Scottsdale Booking Confirmation</title>
     <!--[if !mso]><!-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<![endif]-->
@@ -68,7 +68,7 @@
     
     
       <div
-         aria-label="TEST2 Booking Confirmation" aria-roledescription="email" style="background-color:#fff;" role="article" lang="und" dir="auto"
+         aria-label="Barrett-Jackson Scottsdale Booking Confirmation" aria-roledescription="email" style="background-color:#fff;" role="article" lang="und" dir="auto"
       >
         <!-- Header -->
       
@@ -116,7 +116,7 @@
             <td  style="width:250px;">
               
       <img
-         alt="Logo" src="https://dev-static.hotelsforhope.com/ares/site_configs/test_gcp2-112025/img/email_logo_2025.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" title="Logo" width="250" height="auto"
+         alt="Logo" src="https://dev-static.hotelsforhope.com/ares/site_configs/test_gcp2-112025/img/logo.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" title="Logo" width="250" height="auto"
       />
     
             </td>
@@ -161,11 +161,11 @@
                 >
                   
       <p
-         style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:100%;"
+         style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:100%;"
       >
       </p>
       
-      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" ><tr><td style="height:0;line-height:0;"> &nbsp;
 </td></tr></table><![endif]-->
     
     
@@ -518,11 +518,11 @@
                 >
                   
       <p
-         style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:100%;"
+         style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:100%;"
       >
       </p>
       
-      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:480px;" role="presentation" width="480px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:480px;" role="presentation" width="480px" ><tr><td style="height:0;line-height:0;"> &nbsp;
 </td></tr></table><![endif]-->
     
     
@@ -652,7 +652,10 @@
                   
       <div
          style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Total:</b> {{CurrencySymbol}}{{Total}}</span></div>
+      ><span><b>Rate Per Night:</b> 
+          <br>
+          {{RoomRates}}
+          </span></div>
     
                 </td>
               </tr>
@@ -688,6 +691,18 @@
                   
       <div
          style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
+      ><span><b>Total:</b> {{CurrencySymbol}}{{Total}}</span></div>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td
+                   align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
       ><span><b>Deposit Charged:</b> {{CurrencySymbol}}{{DepositCharged}}</span></div>
     
                 </td>
@@ -704,19 +719,7 @@
     
                 </td>
               </tr>
-            [if:CurrencySymbol=$]
-              <tr>
-                <td
-                   align="left" style="font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"
-                >
-                  
-      <div
-         style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666666;"
-      ><span><b>Rate Per Night:</b> {{RoomRates}}</span></div>
-    
-                </td>
-              </tr>
-            [endif]
+            
         </tbody>
       </table>
     
@@ -751,11 +754,11 @@
                 >
                   
       <p
-         style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:100%;"
+         style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:100%;"
       >
       </p>
       
-      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:480px;" role="presentation" width="480px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:480px;" role="presentation" width="480px" ><tr><td style="height:0;line-height:0;"> &nbsp;
 </td></tr></table><![endif]-->
     
     
@@ -809,7 +812,7 @@
       >
         <tbody>
           <tr>
-            <td  style="background-color:#d13f00;vertical-align:top;padding-top:20px;padding-bottom:20px;">
+            <td  style="background-color:#c8102e;vertical-align:top;padding-top:20px;padding-bottom:20px;">
               
       <table
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
@@ -1126,11 +1129,11 @@
                 >
                   
       <p
-         style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:100%;"
+         style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:100%;"
       >
       </p>
       
-      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" ><tr><td style="height:0;line-height:0;"> &nbsp;
 </td></tr></table><![endif]-->
     
     
@@ -1317,7 +1320,7 @@
          style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
       ><h4>Reservation Information</h4>
           <!--email_off-->
-          <span>If you have any questions about your reservation or require further assistance, contact Quint at <a style="color:inherit; text-decoration: none;" href="tel:+ 1 980-356-4209">1.980.356.4209</a> or  <a style="color:inherit;" href="mailto:rooms@quint.co"> rooms@quint.co</a>. To speak to the hotel directly, contact the {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.quintrooms.com/v6/cancel-or-resend?siteid=112025">click here.</a></span>
+          <span>If you have any questions about your reservation or require further assistance, contact Quint at <a style="color:inherit; text-decoration: none;" href="tel:+ 1 980-356-4209">1.980.356.4209</a> or  <a style="color:inherit;" href="mailto:rooms@quint.co">rooms@quint.co</a>. To speak to the hotel directly, contact the {{Hotel}} at {{HotelPhone}}.To cancel or modify your reservation, <a style="color:inherit;" href="https://events.quintrooms.com/v6/cancel-or-resend?siteid=112025">click here.</a></span>
           <!--/email_off--></div>
     
                 </td>
@@ -1383,11 +1386,11 @@
                 >
                   
       <p
-         style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:100%;"
+         style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:100%;"
       >
       </p>
       
-      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #d13f00;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #c8102e;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" ><tr><td style="height:0;line-height:0;"> &nbsp;
 </td></tr></table><![endif]-->
     
     
@@ -1479,7 +1482,7 @@
                   
       <div
          style="font-family:Lato, sans-serif;font-size:13px;line-height:1;text-align:left;color:#666;"
-      ><a style="color:inherit;" href="tel:+ 1 980-356-4209">+ 1 980-356-4209</a></div>
+      ><a style="color:inherit;" href="tel:+ 1 980-356-4209">1.980.356.4209</a></div>
     
                 </td>
               </tr>
@@ -1544,7 +1547,7 @@
         
         <td  style="padding:4px;padding-top:0;padding-bottom:0;vertical-align:middle;">
           <table
-             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#d13f00;border-radius:20px;width:30px;"
+             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#c8102e;border-radius:20px;width:30px;"
           >
             <tbody>
               <tr>
@@ -1578,7 +1581,7 @@
         
         <td  style="padding:4px;padding-top:0;padding-bottom:0;vertical-align:middle;">
           <table
-             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#d13f00;border-radius:20px;width:30px;"
+             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#c8102e;border-radius:20px;width:30px;"
           >
             <tbody>
               <tr>
@@ -1612,7 +1615,7 @@
         
         <td  style="padding:4px;padding-top:0;padding-bottom:0;vertical-align:middle;">
           <table
-             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#d13f00;border-radius:20px;width:30px;"
+             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#c8102e;border-radius:20px;width:30px;"
           >
             <tbody>
               <tr>
@@ -1646,7 +1649,7 @@
         
         <td  style="padding:4px;padding-top:0;padding-bottom:0;vertical-align:middle;">
           <table
-             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#d13f00;border-radius:20px;width:30px;"
+             border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#c8102e;border-radius:20px;width:30px;"
           >
             <tbody>
               <tr>

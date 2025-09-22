@@ -1,10 +1,10 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './112025-config';
-// import Utilities from '../../js/utilities';
+import Utilities from '../../../js/utilities';
 
 const site_config = new SiteConfig();
 
-// const utilities = new Utilities();
+const utilities = new Utilities();
 
 class ChildPortal extends BasePortal {
     constructor() {

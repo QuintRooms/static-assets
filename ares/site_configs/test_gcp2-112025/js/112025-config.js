@@ -54,19 +54,19 @@ export default function siteConfig() {
         google_font_url: '//fonts.googleapis.com/css?family=Montserrat:100,500,700',
         ads: {
             sidebar_ad: {
-                is_active: false,
-                image_url: `${env_path.path}/site_configs/${directory_name}/img/left_banner.jpg?v1`,
-                outbound_url: 'https://events.quintrooms.com/v6?type=property&property=587&checkIn=01/25/2023&nights=4&siteid=83130',
+                is_active: true,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/vert_ad.png`,
+                outbound_url: 'https://www.barrett-jackson.com/',
             },
             between_property_ad: {
-                is_active: false,
-                image_url: '',
-                outbound_url: '',
+                is_active: true,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/horz_ad.png`,
+                outbound_url: 'https://www.barrett-jackson.com/',
             },
             confirmation_page_bottom: {
                 is_active: false,
-                image_url: '',
-                outbound_url: '',
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/horz_ad.png`,
+                outbound_url: 'https://www.barrett-jackson.com/',
             },
         },
         // new options

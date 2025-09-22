@@ -1,5 +1,6 @@
 /portals/node_modules
 /ares/node_modules
+/ares/dart_tool
 .history
 node_modules
 .DS_Store

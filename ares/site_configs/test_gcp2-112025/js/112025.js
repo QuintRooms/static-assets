@@ -15,7 +15,8 @@ class ChildPortal extends BasePortal {
 
 new ChildPortal();
 
-function addHiltonTags() {
+async function addHiltonTags() {
+    await utilities.waitForSelectorInDOM('#theArnProperty');
     const hilton_prop_ids = [
         44621,
         3846047,
@@ -99,10 +100,12 @@ function addHiltonTags() {
 
     hilton_prop_ids.forEach((prop) => {
         if (document.querySelector(`#theArnProperty${prop}`)) {
+            console.log(`inside prop: ${prop}`);
             document.querySelector(`#theArnProperty${prop} .ArnContainer`).style.background =
                 'url("https://static.hotelsforhope.com/portals/child-portals/noLRG/37396/images/hilton-logo.svg") no-repeat 100% 25px / 65%';
 
             if (window.matchMedia('(max-width: 500px)').matches) {
+                console.log(`inside matchmedia for prop: ${prop}`);
                 document.querySelector(`#theArnProperty${prop} .ArnContainer`).style.background =
                     'url("https://static.hotelsforhope.com/ares/bj_scottsdale_21-58513/img/hilton-logo.svg") 0 85% / 100% no-repeat';
             }

@@ -1,7 +1,7 @@
 @mixin append-images {
     $i: 0;
     @each $image in $bg-images {
-        $i: $i +1;
+        $i: $i + 1;
         .event-#{$i} {
             background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), $image;
         }
@@ -11,7 +11,7 @@
 @mixin append-header-images {
     $i: 0;
     @each $image in $header-images {
-        $i: $i +1;
+        $i: $i + 1;
         .search-header-#{$i} {
             background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), $image;
         }

@@ -67,6 +67,11 @@ export default function siteConfig() {
                 image_url: '',
                 outbound_url: '',
             },
+            landing_page_bottom: {
+                is_active: true,
+                image_url: `${env_path.path}/site_configs/${directory_name}/img/landing_ad.png`,
+                outbound_url: 'https://www.barrett-jackson.com/',
+            },
         },
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
@@ -76,16 +81,16 @@ export default function siteConfig() {
         hide_search_on_landing_page: true,
         landing_page_events: [
             {
-                name: '2023 Scottsdale Auction',
-                display_date: 'January 21 - January 29, 2023',
-                end_date: '1/30/2023', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=61383&utm_campaign=Barrett%20Jackson%20Scottsdale%202023`,
+                name: '2026 Scottsdale Auction',
+                display_date: 'January 21 - January 25, 2026',
+                end_date: '1/26/2026', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Scottsdale',
             },
             {
-                name: '2023 Palm Beach Auction',
-                display_date: 'April 13 - April 15, 2023',
-                end_date: '4/16/2023', // M/D/YYYY
-                portal_url: `http://events.${process.env.domain}/group-event?id=60955&utm_campaign=Barrett%20Jackson%20West%20Palm%20Beach%202023`,
+                name: '2026 Palm Beach Auction',
+                display_date: 'April 16 - April 18, 2026',
+                end_date: '4/19/2026', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20West%20Palm%20Beach',
             },
 
         ],

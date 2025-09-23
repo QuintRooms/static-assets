@@ -89,7 +89,7 @@ export default function siteConfig() {
                 display_date: 'January 16 - 19, 2026',
                 display_location: 'Miami, FL',
                 end_date: '01/19/2026', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/222285562425153',
+                portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=89688',
                 type_class: 'championship'
             }
         ]

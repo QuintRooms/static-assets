@@ -1,6 +1,9 @@
 import BasePortal from '../../../js/build';
 import SiteConfig from './58196-config';
 import LandingPage from '../../../js/components/landing_page/landing-page';
+import Utilities from '../../../js/utilities';
+
+const utilities = new Utilities();
 
 const site_config = new SiteConfig();
 

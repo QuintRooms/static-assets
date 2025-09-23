@@ -13,3 +13,18 @@ class ChildPortal extends BasePortal {
 
 new LandingPage(site_config.landing_page_events, site_config.hide_search_on_landing_page).init();
 new ChildPortal();
+
+async function addLandingPageBottomAdvertisement() {
+    await utilities.waitForSelectorInDOM('.events');
+
+    document.querySelector('.events').insertAdjacentHTML(
+        'afterend',
+        `
+            <a class="landing-bottom-ad" href="https://www.barrett-jackson.com/" target="_blank">
+                <img src="https://dev-static.hotelsforhope.com/ares/site_configs/ares/site_configs/bj_landing_page-58196/img/landing_ad.png" alt="Advertisement">
+            </a>
+        `
+    );
+}
+
+addLandingPageBottomAdvertisement();

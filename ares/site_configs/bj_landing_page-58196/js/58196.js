@@ -24,9 +24,11 @@ async function addLandingPageBottomAdvertisement() {
     document.querySelector('.events').insertAdjacentHTML(
         'afterend',
         `
+        <div class="landing-bottom-ad-container">
             <a class="landing-bottom-ad" href="https://www.barrett-jackson.com/" target="_blank">
                 <img src="https://static.${domain}/ares/site_configs/bj_landing_page-58196/img/landing_ad.png" alt="Advertisement">
             </a>
+        </div>
         `
     );
 }

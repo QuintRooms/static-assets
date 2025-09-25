@@ -97,7 +97,7 @@ export default function siteConfig() {
                 display_date: 'Jan 22 - Jan 25, 2027',
                 display_location: 'Las Vegas, NV',
                 end_date: '01/26/2027', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/222285562425153',
+                portal_url: 'https://form.jotform.com/252676530783162',
                 type_class: 'championship'
             }
         ]

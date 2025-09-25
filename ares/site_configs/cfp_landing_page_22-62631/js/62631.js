@@ -57,6 +57,7 @@ async function changeButtonText() {
     await utilities.waitForSelectorInDOM('.view-hotels');
     const view_hotels_buttons = document.querySelectorAll('.view-hotels');
     view_hotels_buttons[0].innerHTML = 'VIEW HOTELS';
+    view_hotels_buttons[1].innerHTML = 'SUBMIT REQUEST';
 }
 
 

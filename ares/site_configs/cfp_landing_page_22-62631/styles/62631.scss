@@ -18,10 +18,12 @@ $site_name: 'cfp_landing_page_22-62631';
 $path: set-path($env);
 $banner_image: url(#{$path}/site_configs/#{$site_name}/img/banner.png) no-repeat;
 $logo_bg: url(#{$path}/site_configs/#{$site_name}/img/logo_bg.svg)  top left / 117% 150% no-repeat;
-$bg-images-desktop: 
-url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_HORZ_WHITE_SM33.png);
+$bg-images-desktop: CFP_2027_CHAMPIONSHIP_SM33
+url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_HORZ_WHITE_SM33.png),
+url(#{$path}/site_configs/#{$site_name}/img/CFP_2027_CHAMPIONSHIP_SM33.png);
 $bg-images-mobile: 
-url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_VERT_WHITE_SM33.png);
+url(#{$path}/site_configs/#{$site_name}/img/CFP_2026_VERT_WHITE_SM33.png),
+url(#{$path}/site_configs/#{$site_name}/img/CFP_2027_CHAMPIONSHIP_SM33.png);
 $header-images: '';
 $border-radius-general: 8px;
 

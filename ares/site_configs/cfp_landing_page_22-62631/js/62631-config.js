@@ -92,7 +92,7 @@ export default function siteConfig() {
                 portal_url: 'https://collegefootballplayoffhotels.com/group-event?id=89688',
                 type_class: 'championship'
             },
-                        {
+            {
                 name: '2027 College Football Playoff National Championship',
                 display_date: 'Jan 22 - Jan 25, 2027',
                 display_location: 'Las Vegas, NV',

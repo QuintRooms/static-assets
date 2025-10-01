@@ -47,6 +47,7 @@ export default function siteConfig() {
         fav_icon_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
         header: {
             logo_file_location: `${env_path.path}/site_configs/${directory_name}/img/logo.png`,
+            email_ad_file_location: `${env_path.path}/site_configs/${directory_name}/img/horz_ad.png`,
             logo_outbound_url: 'https://www.barrett-jackson.com/',
         },
         map_marker_image_url: `${env_path.path}/site_configs/${directory_name}/img/favicon.png`,
@@ -70,7 +71,7 @@ export default function siteConfig() {
             },
         },
         // new options
-        has_test_emails: true,
+        has_advertisement_emails: true,
         root_page_header_text: 'Start Your Search',
         root_page_subheader_text: 'Reservations at 600K+ Hotels at Unbeatable Rates',
         is_resbeat_client: false,

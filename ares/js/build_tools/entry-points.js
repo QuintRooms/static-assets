@@ -53,10 +53,11 @@ module.exports = () => {
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'test_cfp_landing-104135': './src/104135.js', // test cfp_landing
             // 'test_cfp_landing_3-113624': './src/113624.js', // test cfp_landing_3
-            'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
+            // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
             // 'test_gcp2-112025': './src/112025.js', // test gcp2
             // 'test_gcp3-114187': './src/114187.js', // test gcp3
+            'test_gcp4-114763': './src/114763.js', // test gcp4
             // 'transportation_short_course_20-56735': './src/56735.js', // Transportation Short Course 2020
             // 'veronica_test_site-102126': './src/102126.js', // veronica test_site
         };
@@ -72,7 +73,7 @@ module.exports = () => {
             // 'tortuga_26-110264': './src/110264.js', // tortuga 26
             // 'f1_lvgp_marshal_program_25-110825': './src/110825.js', // f1 lvgp_marshal_program_25
             // 'farm_aid_internal_25-111117': './src/111117.js', // farm aid_internal_25
-            'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
+            // 'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             // 'test_email_control_25-111177': './src/111177.js', // test email_control_25
             // 'f1_miami_gp_26-111830': './src/111830.js', // f1 miami_gp_26
             // 'f1_canada_gp_26-111888': './src/111888.js', // f1 canada_gp_26
@@ -89,12 +90,17 @@ module.exports = () => {
             // 'bj_scottsdale_jan_public_26-114220': './src/114220.js', // bj scottsdale_jan_public_26
             // 'bj_west_palm_beach_public_26-114319': './src/114319.js', // bj west_palm_beach_public_26
             // 'test_gcp3-114187': './src/114187.js', // test gcp3
+            // 'cfp_landing_page_22-62631': './src/62631.js', // College football Playoff Championship Landing Page
+            // 'bj_landing_page-58196': './src/58196.js', // Barrett-Jackson Landing Page
+            'test_gcp4-114763': './src/114763.js', // test gcp4
+
         };
 
         // local environment
     } else if (process.env.NODE_ENV === 'local') {
         entry_points = {
             // new sites populate below
+            'test_gcp4-114763': './src/114763.js', // test gcp4
             'test_new_conf_emails_25-111173': './src/111173.js', // test new_conf_emails_25
             'test_gcp2-112025': './src/112025.js', // test gcp2
             'test_gcp3-114187': './src/114187.js', // test gcp3

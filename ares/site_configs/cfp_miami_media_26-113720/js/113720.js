@@ -119,10 +119,20 @@ removeHoldRoomsText();
 
 async function adjustMinNightsText() {
     console.log('inside removeHoldRoomsText');
-    await utilities.waitForSelectorInDOM('.roomDescription');
+    await utilities.waitForSelectorInDOM('body');
     console.log('passed waitForSelectorInDOM');
-    let roomDes = document.querySelector(".roomDescription");
-    roomDes.innerText = roomDes.innerText.replace('2-night', 'two night');
+    if (document.querySelector('.GroupHoldForm')) {
+        console.log('passed GroupHoldForm in DOM');
+        // const prop_id = document.querySelector('.propId').innerHTML;
+        let roomDes = document.querySelector(".roomDescription");
+        roomDes.innerText = roomDes.innerText.replace('2-night', 'two night');
+    }
+    if (document.querySelector('.CheckOutForm')) {
+        console.log('passed GroupHoldForm in DOM');
+        const roomDescriptionElement = document.querySelector("#theRateDescription p:nth-child(2)");
+        // const prop_id = document.querySelector('.propId').innerHTML;
+        roomDescriptionElement.innerText = roomDescriptionElement.innerText.replace('2-night', 'two night');
+    }
 }
 
 adjustMinNightsText();

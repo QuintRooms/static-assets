@@ -84,13 +84,13 @@ export default function siteConfig() {
                 name: '2026 Scottsdale Auction',
                 display_date: 'January 21 - January 25, 2026',
                 end_date: '1/26/2026', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Scottsdale',
+                portal_url: 'https://events.quintrooms.com/group-event?id=90352',
             },
             {
                 name: '2026 Palm Beach Auction',
                 display_date: 'April 16 - April 18, 2026',
                 end_date: '4/19/2026', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20West%20Palm%20Beach',
+                portal_url: 'https://events.quintrooms.com/group-event?id=90429',
             },
 
         ],

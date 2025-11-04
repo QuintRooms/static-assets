@@ -33,4 +33,4 @@ async function addLandingPageBottomAdvertisement() {
     );
 }
 
-addLandingPageBottomAdvertisement();
+// addLandingPageBottomAdvertisement();

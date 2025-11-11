@@ -82,7 +82,7 @@ export default function siteConfig() {
         landing_page_events: [
             {
                 name: '2026 Scottsdale Auction',
-                display_date: 'January 21 - January 25, 2026',
+                display_date: 'January 17 - January 25, 2026',
                 end_date: '1/26/2026', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/group-event?id=90352',
             },
@@ -91,6 +91,12 @@ export default function siteConfig() {
                 display_date: 'April 16 - April 18, 2026',
                 end_date: '4/19/2026', // M/D/YYYY
                 portal_url: 'https://events.quintrooms.com/group-event?id=90429',
+            },
+            {
+                name: '2026 Columbus Auction',
+                display_date: 'June 25 - June 27, 2026',
+                end_date: '6/28/2026', // M/D/YYYY
+                portal_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Columbus',
             },
 
         ],

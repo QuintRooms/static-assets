@@ -1,8 +1,8 @@
 import Path from '../../../js/build_tools/path';
 
 const env_path = new Path();
-const site_id = 114319;
-const directory_name = `bj_west_palm_beach_public_26-${site_id}`;
+const site_id = 115766;
+const directory_name = `bj_columbus_26-${site_id}`;
 
 export default function siteConfig() {
     return {
@@ -19,7 +19,7 @@ export default function siteConfig() {
         radius: '50',
         lodging: {
             event_id: '',
-            event_name: 'Barrett-Jackson West Palm Beach',
+            event_name: 'Barrett-Jackson Columbus',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',
@@ -76,6 +76,6 @@ export default function siteConfig() {
         is_resbeat_client: false,
         confirmation_email_from: 'Quint Rooms',
         has_group_booking_banner: true,
-        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20West%20Palm%20Beach',
+        group_booking_form_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Columbus',
     };
 }

@@ -27,15 +27,15 @@ class ChildPortal extends BasePortal {
     }
 
     async addLocationButtons() {
-        if (document.querySelector('meta[name="siteId"]').content !== '88767') return;
+        if (document.querySelector('meta[name="siteId"]').content !== '113545') return;
 
         await utilities.waitForSelectorInDOM('header');
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-location pull-right">
-                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66665">Book Downtown Location</a>
-                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=66674">Book Stadium Location</a>
-                <a id="galleria-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=69301">Book Galleria Location</a>
+                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=89688">Book Stadium Location</a>
+                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=92639">Book South Beach Location</a>
+                <a id="galleria-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=92653">Book Downtown Location</a>
             </div>`
         );
     }

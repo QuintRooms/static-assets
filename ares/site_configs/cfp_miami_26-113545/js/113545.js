@@ -33,9 +33,9 @@ class ChildPortal extends BasePortal {
         document.querySelector('header').insertAdjacentHTML(
             'beforeend',
             `<div class="event-location pull-right">
-                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=89688">Book Stadium Location</a>
-                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=92639">Book South Beach Location</a>
-                <a id="galleria-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=92653">Book Downtown Location</a>
+                <a id="stadium-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=89688">Book Stadium Location</a>
+                <a id="southbeach-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=92639">Book South Beach Location</a>
+                <a id="downtown-location" target="_blank" href="https://collegefootballplayoffhotels.com/group-event?id=92653">Book Downtown Location</a>
             </div>`
         );
     }
@@ -44,13 +44,13 @@ class ChildPortal extends BasePortal {
         if (!url) return new Error('URL is null');
 
         await utilities.waitForSelectorInDOM('#stadium-location');
+        await utilities.waitForSelectorInDOM('#southbeach-location');
         await utilities.waitForSelectorInDOM('#downtown-location');
-        await utilities.waitForSelectorInDOM('#galleria-location');
         await utilities.waitForSelectorInDOM('meta[name="originalParams"]');
 
-        const location_btns = document.querySelectorAll('#stadium-location, #downtown-location, #galleria-location');
+        const location_btns = document.querySelectorAll('#stadium-location, #southbeach-location, #downtown-location');
 
-        if (!document.querySelector('#stadium-location') || !document.querySelector('#downtown-location') || !document.querySelector('#galleria-location')) return;
+        if (!document.querySelector('#stadium-location') || !document.querySelector('#southbeach-location') || !document.querySelector('#downtown-location')) return;
 
         const params = new URL(url);
         const search_params = new URLSearchParams(params.search);
@@ -63,15 +63,15 @@ class ChildPortal extends BasePortal {
         let searchable_original_params = new URLSearchParams(original_params_content);
         const location_label = searchable_original_params.get('locationlabel');
 
-        if (location_label === 'NRG Stadium') {
-            location_btns[1].style.color = '#000';
-            location_btns[1].style.background = '#c9920e';
-        }
-        if (location_label === 'George R. Brown Convention Center (Playoff Fan Central)') {
+        if (location_label === 'Hard Rock Stadium') {
             location_btns[0].style.color = '#000';
             location_btns[0].style.background = '#c9920e';
         }
-        if (location_label === 'Galleria') {
+        if (location_label === 'Miami Convention Center') {
+            location_btns[1].style.color = '#000';
+            location_btns[1].style.background = '#c9920e';
+        }
+        if (location_label === 'Downtown Miami') {
             location_btns[2].style.color = '#000';
             location_btns[2].style.background = '#c9920e';
         }

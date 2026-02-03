@@ -96,7 +96,7 @@ export default function siteConfig() {
                 name: '2026 Columbus Auction',
                 display_date: 'June 25 - June 27, 2026',
                 end_date: '6/28/2026', // M/D/YYYY
-                portal_url: 'https://form.jotform.com/203066540331141?bookingPortal=BJAC%20Columbus',
+                portal_url: 'https://events.quintrooms.com/group-event?id=91827',
             },
 
         ],

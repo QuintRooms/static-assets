@@ -19,7 +19,7 @@ export default function siteConfig() {
         radius: '50',
         lodging: {
             event_id: '',
-            event_name: 'Barrett-Jackson West Palm Beach',
+            event_name: 'Barrett-Jackson Palm Beach',
             event_dates: '',
             redirect_date: '',
             redirect_url: '',

@@ -28,6 +28,23 @@ body, #thePropertyAmenities span, .WBRateGuaranteeForm2 .zsFormClass, #lightbox 
     background-color: $background_color;
 }
 
+.FinalConfirmation .confirmationHeader {
+    height: 20px !important;
+    background: $primary_color !important;
+}
+
+#theVideo {
+    display: none;
+}
+
+.thankYou {
+    display: none;
+}
+
+#theBookingPage td {
+    font-size: 12px;
+}
+
 /* Primary Background Color */
 #searching h2:after,
 #theConfirmationButton,

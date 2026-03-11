@@ -8,12 +8,13 @@ let props = [718107, 507388, 2332133, 2028020, 1258650, 313962, 282860, 224842, 
     let propImages;
     let carouselImages;
     let propId = '16664';
+    const {TRAVSRV_API_SECRET} = process.env;
 
 
     async function getPropImages() {
         try {
             let data = await fetch(
-                `https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h_2025&password=0Ba7R3wI{f7_|I9H&propertyid=${propId}`, {
+                `https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h_2025&password=${TRAVSRV_API_SECRET}&propertyid=${propId}`, {
                     method: "GET"
                 }
             ).then(response => response.json());

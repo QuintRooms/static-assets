@@ -8,6 +8,7 @@ import Path from './build_tools/path';
 import renderLucidBanner from './components/lucid_banner/lucid-banner';
 
 const {domain} = process.env;
+const {TRAVSRV_API_SECRET} = process.env;
 const env_path = new Path();
 const dayjs = require('dayjs');
 const custom_parse_format = require('dayjs/plugin/customParseFormat');
@@ -1473,7 +1474,10 @@ export default class BasePortal {
 
         async function getPropImages() {
             try {
-                const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`).then((response) => response.json());
+                // const data = await fetch(`https://api.hotelsforhope.com/arn/properties/${prop_id}`).then((response) => response.json());
+                const data = await fetch(`https://api.travsrv.com/api/content/findpropertyinfo?&username=h4h_2025&password=${TRAVSRV_API_SECRET}&propertyid=${prop_id}`, {
+                    method: 'GET',
+                }).then((response) => response.json());
                 reorderImagesArray(data.Images);
                 return data.Images.map((e) => e.ImagePath.replace(/_300/, '_804480'));
             } catch (error) {
@@ -1615,7 +1619,7 @@ export default class BasePortal {
 
     implementAds() {
         if (!this.site_config.ads || window.matchMedia('(max-width:800px)').matches) return;
-
+        
         const {ads} = this.site_config;
 
         if (this.page_name === 'search-results') {

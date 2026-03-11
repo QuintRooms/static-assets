@@ -67,9 +67,11 @@ function createFiles(siteObj) {
     fsx.outputFile(`${ares}/site_configs/${site_name}/emails/${site_id}.json`, data);
     //path for using a test email layout/ layout in development for the site
     if (siteObj.has_test_emails) {
-        console.log('inside test emails path.');
         buildEmail(siteObj, 'emails/default_templates_mjml/test_confirmation.mjml', 'confirmation');
-        //path for using a custom email
+    //path for using an email with an advertisement
+    } else if (siteObj.has_advertisement_emails) {
+        buildEmail(siteObj, 'emails/default_templates_mjml/confirmation_with_ad.mjml', 'confirmation');
+    //path for using a custom email
     } else if (siteObj.has_custom_emails) {
         const email_dir = fs.readdirSync(`${ares}/site_configs/${site_name}/emails`);
         email_dir.forEach((file) => {
@@ -84,7 +86,6 @@ function createFiles(siteObj) {
         }
         //typical email path
     } else {
-        console.log('inside standard email path.');
         console.log(siteObj);
         buildEmail(siteObj, 'emails/default_templates_mjml/confirmation.mjml', 'confirmation');
     }
@@ -121,6 +122,14 @@ function buildSiteObject(siteConfig, siteStyles) {
         console.log('\x1b[41m%s\x1b[0m', `/img/logo.png does not exist. Add a logo to ${site_name}-${site_id}. Error: ${e}`);
         return;
     }
+    
+    let emailad;
+    let hasAdvertisment;
+    hasAdvertisment = false;
+    if (siteConfig.includes('emailad_file_location')) {
+        emailad = extractValue(siteConfig, 'emailad_file_location:', ',').split('img/');
+        hasAdvertisment = true;
+    }
 
     const theme_color = extractValue(siteConfig, 'theme:', ',').slice(1, -1) === 'light' ? '#fff' : '#000';
 
@@ -131,10 +140,12 @@ function buildSiteObject(siteConfig, siteStyles) {
         client_name: extractValue(siteConfig, 'event_name:', ',').slice(1, -1),
         site_url: extractValue(siteConfig, 'logo_outbound_url:', ',').slice(1, -1),
         has_test_emails: extractValue(siteConfig, 'has_test_emails:', ',') === 'true',
+        has_advertisement_emails: extractValue(siteConfig, 'has_advertisement_emails:', ',') === 'true',
         has_custom_emails: extractValue(siteConfig, 'has_custom_emails:', ',') === 'true',
         logo: `https://dev-static.${domain}/ares/site_configs/${site_name}/img/${logo}`,
         theme: theme_color,
         text: theme_color === '#fff' ? '#666' : '#F5FFFA',
+        ...(hasAdvertisment && { emailad: `https://dev-static.${domain}/ares/site_configs/${site_name}/img/email_ad.png` }) // Conditionally adds 'emailad' if hasAdvertisment is true
     };
 
     // if site is RoomCash, base64 encode the portal url
